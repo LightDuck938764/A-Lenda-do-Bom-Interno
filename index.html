@@ -9580,7 +9580,8 @@ function fbInit() {
   } catch (e) { console.warn('firebase', e); FB.err = 'init'; return; }
   let res; FB.ready = new Promise(r => { res = r; });
   FB.auth.onAuthStateChanged(u => {
-    if (!u) { FB.auth.signInAnonymously().catch(e => { FB.err = e.code || 'anon'; acctRender(); res(null); }); return; }
+    if (!u) { FB.auth.signInAnonymously().catch(e => { console.warn('login anônimo', e); FB.err = (e && e.code) || 'anon'; if (typeof MP !== 'undefined' && MP.status !== 'on') MP.status = 'off'; acctRender(); }); return; }
+    FB.err = null;
     FB.user = u; res(u);
     if (FB.room) FB.room._bind(u.uid);
     FB.cloud = u.isAnonymous ? 'off' : 'on';
@@ -9755,11 +9756,15 @@ function acctRender() {
   el.hidden = false;
   const u = FB.user;
   if (!FB.ok || FB.err === 'init') { el.innerHTML = '<p class="hint">Login indisponível agora. Você pode jogar normalmente; o save fica neste navegador.</p>'; return; }
-  if (!u) { el.innerHTML = '<p class="hint">Conectando…</p>'; return; }
-  if (u.isAnonymous) {
-    el.innerHTML = `<button class="btn big g-login" id="bGoogle"><span class="g-ico">G</span> Entrar com Google</button><p class="hint">Salve seu personagem na nuvem e jogue em qualquer aparelho. Sem conta, o save fica só neste navegador.</p>`;
+  const gBtn = `<button class="btn big g-login" id="bGoogle"><span class="g-ico">G</span> Entrar com Google</button>`;
+  if (!u || u.isAnonymous) {
+    const nota = !u && FB.err ? `<p class="hint err">O modo online sem conta não conectou (${U.esc(String(FB.err).replace('auth/', ''))}). Entre com o Google para jogar online, ou jogue normalmente com o save neste navegador.</p>`
+      : !u ? '<p class="hint">Conectando ao modo online…</p>' : '';
+    el.innerHTML = gBtn + nota + `<p class="hint">Salve seu personagem na nuvem e jogue em qualquer aparelho. Sem conta, o save fica só neste navegador.</p>`;
     el.querySelector('#bGoogle').onclick = () => { SFX.init(); fbGoogleLogin(); };
-  } else {
+    return;
+  }
+  {
     const st = FB.syncing ? 'sincronizando…' : FB.cloud === 'erro' ? '⚠ não foi possível salvar na nuvem agora' : FB.cloud === 'salvando' ? 'salvando…' : 'save na nuvem ativo';
     el.innerHTML = `<p class="acct-on">✔ Conectado como <b>${U.esc(u.displayName || 'jogador')}</b> · ${st}</p><button class="btn ghost small" id="bSair">Sair da conta</button>`;
     el.querySelector('#bSair').onclick = () => fbLogout();
