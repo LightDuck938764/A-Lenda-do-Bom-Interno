@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="A Lenda do Bom Interno: RPG 2D em pixel art sobre o internato médico, com perguntas de residência.">
 <style>html,body{margin:0;padding:0;background:#0f1418}</style>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script>window.FIREBASE_CONFIG = {
+  apiKey: "AIzaSyAkyu33bXvFiJP3w4_YZX-sruMdgcZHGEM",
+  authDomain: "a-lenda-do-bom-interno.firebaseapp.com",
+  databaseURL: "https://a-lenda-do-bom-interno-default-rtdb.firebaseio.com",
+  projectId: "a-lenda-do-bom-interno",
+  storageBucket: "a-lenda-do-bom-interno.firebasestorage.app",
+  messagingSenderId: "938126485366",
+  appId: "1:938126485366:web:425a0bdae07e0f5d137c57"
+};</script>
 </head>
 <body>
 <title>A Lenda do Bom Interno</title>
@@ -360,6 +372,12 @@ body.has-ov .toast { font-size: 12px; padding: .4rem .6rem; }
 .duel-cmd button:disabled { opacity: .55; cursor: default; } .duel-cmd button.picked { opacity: 1; outline: 3px solid #ffd84a; }
 @media (max-width: 640px) { .duel-bottom { grid-template-columns: 1fr; } .duel-cmd button { min-height: 48px; font-size: 12px; } .duel-msg { min-height: 0; } }
 .duel-cv { width: min(100%, calc(52vh * 16 / 9)); height: auto; margin: 0 auto; }
+/* conta Google na tela inicial (só no site) */
+.acct { margin: 0 0 .8rem; display: flex; flex-direction: column; gap: .4rem; align-items: center; }
+.acct .hint { font-size: 12px; color: var(--muted); margin: 0; text-align: center; max-width: 380px; }
+.acct .g-login { background: #ffffff; color: #1f1f1f; display: inline-flex; align-items: center; gap: .6rem; }
+.acct .g-ico { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: conic-gradient(#ea4335 0 25%, #fbbc05 0 50%, #34a853 0 75%, #4285f4 0); color: #fff; font-weight: 800; font-size: 13px; }
+.acct .acct-on { margin: 0; font-size: 13px; color: #9fe0a0; text-align: center; }
 
 </style>
 <div id="app">
@@ -6653,6 +6671,7 @@ function saveGame() {
   if (!S || G.mode === 'title' || G.mode === 'create' || G.mode === 'order') return;
   if (G.player && G.map) { S.map = { id: G.map.id, x: G.player.x, y: G.player.y, dir: G.player.dir }; }
   try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) { /* armazenamento indisponível */ }
+  if (typeof cloudQueue === 'function') cloudQueue();   // site: copia também para a conta Google
 }
 function loadGame() {
   try { const raw = localStorage.getItem(SAVE_KEY); if (!raw) return null; return migrateSave(JSON.parse(raw)); } catch (e) { return null; }
@@ -7687,6 +7706,7 @@ function showTitle() {
         <p class="eyebrow">RPG de internato médico · pixel art</p>
         <h1 class="logo">${GAME_TITLE}</h1>
         <p class="sub">Cinco estágios. Cinco preceptores. Um jaleco ainda sem mancha de café.</p>
+        <div id="acctBox" class="acct" hidden></div>
         <div class="menu-col">
           ${save ? '<button class="btn big" id="bCont">Continuar</button>' : ''}
           <button class="btn big ${save ? 'ghost' : ''}" id="bNovo">Novo jogo</button>
@@ -7701,6 +7721,7 @@ function showTitle() {
   if (save) $('#bCont').onclick = () => { SFX.init(); const d = loadGame(); if (!d) { toast('Não foi possível carregar o save (dados incompatíveis).', 'bad'); return; } S = d; startExplore(true); };
   $('#bImp').onclick = () => importBox();
   $('#bSom').onclick = () => { SFX.on = !SFX.on; showTitle(); };
+  if (typeof acctRender === 'function') acctRender();
 }
 function drawTitleScene() {
   const cv = $('#titleScene'); if (!cv) return; const c = cv.getContext('2d'); c.imageSmoothingEnabled = false;
@@ -9093,7 +9114,7 @@ window.addEventListener('DOMContentLoaded', boot);
    disso aparece e o jogo funciona normalmente.
    ===================================================================== */
 const MP = {
-  room: null, ok: false, status: 'carregando', ghosts: new Map(), sentAt: 0, lastPres: '', lastLook: '',
+  room: null, ok: false, status: 'carregando', ghosts: new Map(), roster: new Map(), sentAt: 0, lastPres: '', lastLook: '',
   duel: null, out: null, inv: null, barHint: false,
 };
 const MP_ROUNDS = 5, MP_WIN = 3, MP_QTIME = 20, MP_REWARD_CAP = 5;
@@ -9101,11 +9122,15 @@ const MP_ROUNDS = 5, MP_WIN = 3, MP_QTIME = 20, MP_REWARD_CAP = 5;
 // ---------- conexão ----------
 (async function mpStart() {
   try {
-    if (!window.claude || typeof window.claude.use !== 'function') { MP.status = 'off'; return; }
-    const room = await window.claude.use('room');
+    await new Promise(r => setTimeout(r, 0));   // espera o resto do jogo carregar
+    // no site próprio a conexão é pelo Firebase; dentro do claude.ai, pela sala do artifact
+    let room = null;
+    if (typeof fbRoomReady === 'function' && window.FIREBASE_CONFIG) room = await fbRoomReady();
+    else if (window.claude && typeof window.claude.use === 'function') room = await window.claude.use('room');
+    else { MP.status = 'off'; return; }
     if (!room) { MP.status = 'off'; return; }
     MP.room = room; MP.status = 'conectando';
-    const fail = e => { MP.ok = false; MP.ghosts.clear(); MP.status = e && (e.code === 'not_granted' || e.code === 'revoked') ? 'negado' : 'off'; };
+    const fail = e => { MP.ok = false; MP.ghosts.clear(); MP.roster.clear(); MP.status = e && (e.code === 'not_granted' || e.code === 'revoked') ? 'negado' : 'off'; };
     room.onConnection(c => { MP.ok = !!c; if (MP.status !== 'negado' && MP.status !== 'off') MP.status = c ? 'on' : 'conectando'; }, fail);
     room.onPeers(ch => mpPeers(ch), fail);
     room.on('duelo', msg => { try { mpMsg(msg); } catch (e) { console.warn('duelo', e); } });
@@ -9130,14 +9155,16 @@ function mpLook(lk) {
 const MP_FALLBACK_LOOK = { skin: '#e0ac7e', hair: 'curto', hairC: '#3a2414', top: 'tshirt', topC: '#3a7bd5', bottomC: '#2b3a55', shoes: '#262626', coat: 'jaleco', badge: true };
 
 function mpPeers(ch) {
-  for (const p of ch.left) MP.ghosts.delete(p.peer);
+  for (const p of ch.left) { MP.ghosts.delete(p.peer); MP.roster.delete(p.peer); }
   for (const p of ch.peers) {
     if (p.isMe) continue;
     const pr = p.presence || {};
-    if (pr.v !== 1 || typeof pr.map !== 'string') { MP.ghosts.delete(p.peer); continue; }
+    if (pr.v !== 1 || typeof pr.map !== 'string') { MP.ghosts.delete(p.peer); MP.roster.delete(p.peer); continue; }
+    // elenco: todo mundo online, em qualquer mapa (contador e "Melhor Interno")
+    MP.roster.set(p.peer, { peer: p.peer, map: pr.map, nm: mpName(pr.nm), lv: Math.max(1, Math.min(99, pr.lv | 0)), rp: Math.max(-1000, Math.min(1000, Math.round(+pr.rp || 0))) });
     let g = MP.ghosts.get(p.peer);
     const tx = +pr.x, ty = +pr.y;
-    if (!isFinite(tx) || !isFinite(ty)) continue;
+    if (!isFinite(tx) || !isFinite(ty)) { MP.ghosts.delete(p.peer); continue; }   // está em outro mapa
     if (!g) { g = { peer: p.peer, x: tx, y: ty, animT: 0, frame: 0, look: MP_FALLBACK_LOOK, mp: true }; MP.ghosts.set(p.peer, g); }
     if (g.map !== pr.map) { g.x = tx; g.y = ty; }
     g.map = pr.map; g.tx = tx; g.ty = ty; g.dir = [0, 1, 2, 3].includes(pr.d) ? pr.d : 0; g.mv = !!pr.mv;
@@ -9192,9 +9219,9 @@ function mpDrawGhost(c, g, cx, cy) {
 // "Melhor Interno": quem tem mais pontos de reputação entre todos os internos online agora
 // (empate: maior nível; depois um critério fixo, para todos verem a mesma pessoa)
 function mpBest() {
-  if (!MP.room || !MP.ok || !S || !MP.ghosts.size) return null;
+  if (!MP.room || !MP.ok || !S || !MP.roster.size) return null;
   const me = mpMyPeer(); if (!me) return null;
-  const all = [...MP.ghosts.values()].map(g => ({ peer: g.peer, rp: g.rp || 0, lv: g.lv || 1 }));
+  const all = [...MP.roster.values()].map(g => ({ peer: g.peer, rp: g.rp || 0, lv: g.lv || 1 }));
   all.push({ peer: me, rp: Math.round(S.rep || 0), lv: level() });
   const top = all.filter(p => p.rp > 0).sort((a, b) => b.rp - a.rp || b.lv - a.lv || (a.peer < b.peer ? -1 : 1))[0];
   return top ? top.peer : null;
@@ -9237,15 +9264,15 @@ function mpNearbyPeer() {
 }
 function mpChip() {
   let el = document.getElementById('mpChip');
-  const n = MP.ok ? new Set([...MP.ghosts.values()].map(g => g.peer)).size : 0;
+  const n = MP.ok ? MP.roster.size : 0;
   const show = !!(S && G.map && !document.getElementById('hud').hidden);
   if (!el) { if (!show) return; el = document.createElement('div'); el.id = 'mpChip'; document.getElementById('stage').appendChild(el); }
   el.hidden = !show; if (!show) return;
-  const inBar = [...MP.ghosts.values()].filter(g => g.map === 'bar').length;
+  const inBar = [...MP.roster.values()].filter(g => g.map === 'bar').length;
   // estado da conexão sempre visível, para cada jogador saber se está no modo online
   const txt = MP.status === 'on' ? (n ? `🟢 Online · ${n} interno${n > 1 ? 's' : ''}${inBar ? ` · ${inBar} no bar` : ''}` : '🟢 Online · só você por aqui')
     : MP.status === 'conectando' || MP.status === 'carregando' ? '🟡 Conectando ao multiplayer…'
-    : MP.status === 'negado' ? '🔴 Multiplayer: esta conta não tem acesso (peça um convite)' : '⚪ Modo solo (multiplayer indisponível neste acesso)';
+    : MP.status === 'negado' ? (window.FIREBASE_CONFIG ? '🔴 Multiplayer recusou a conexão (recarregue a página)' : '🔴 Multiplayer: esta conta não tem acesso (peça um convite)') : '⚪ Modo solo (multiplayer indisponível neste acesso)';
   el.className = 'mp-' + MP.status;
   if (el.textContent !== txt) el.textContent = txt;
 }
@@ -9526,6 +9553,219 @@ function mpRender() {
   const v = $('#mpVolta'); if (v) v.onclick = () => closeOverlay();
   mpScene(performance.now());
 }
+
+/* =====================================================================
+   SITE PRÓPRIO (GitHub Pages) + FIREBASE
+   - Login com Google (opcional) e save na nuvem: o mesmo personagem em
+     qualquer aparelho. Sem login, cada jogador entra como anônimo (só
+     para o multiplayer) e o save fica no navegador, como antes.
+   - Multiplayer pelo Realtime Database, com a MESMA interface da sala do
+     claude.ai (emit/on/presence/peers/onPeers/onConnection), então o
+     resto do jogo não precisa saber de onde vem a conexão.
+   Organização dos dados:
+     online/{uid}  nome, nível, pontos, mapa, estado  (todo mundo lê; muda pouco)
+     pos/{uid}     mapa, x, y, direção, roupa         (cada um só escuta o próprio mapa)
+     inbox/{uid}   mensagens do duelo para essa pessoa
+     saves/{uid}   save na nuvem (só o dono lê e escreve)
+   Só existe no site: no artifact do claude.ai, window.FIREBASE_CONFIG não
+   é definido e nada disto roda.
+   ===================================================================== */
+const FB = { ok: false, auth: null, db: null, user: null, ready: null, room: null, err: null, cloud: 'off', upTimer: null, lastUp: 0, syncing: false };
+
+function fbInit() {
+  if (!window.FIREBASE_CONFIG || !window.firebase) return;
+  try {
+    firebase.initializeApp(window.FIREBASE_CONFIG);
+    FB.auth = firebase.auth(); FB.db = firebase.database(); FB.ok = true;
+  } catch (e) { console.warn('firebase', e); FB.err = 'init'; return; }
+  let res; FB.ready = new Promise(r => { res = r; });
+  FB.auth.onAuthStateChanged(u => {
+    if (!u) { FB.auth.signInAnonymously().catch(e => { FB.err = e.code || 'anon'; acctRender(); res(null); }); return; }
+    FB.user = u; res(u);
+    if (FB.room) FB.room._bind(u.uid);
+    FB.cloud = u.isAnonymous ? 'off' : 'on';
+    if (!u.isAnonymous) cloudSync();
+    acctRender();
+  });
+  window.addEventListener('pagehide', () => cloudFlush());
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') cloudFlush(); });
+}
+async function fbRoomReady() {
+  if (!FB.ok) return null;
+  const u = await FB.ready; if (!u) return null;
+  if (!FB.room) { FB.room = fbMakeRoom(); FB.room._bind(u.uid); }
+  return FB.room;
+}
+
+// ---------- multiplayer pelo Realtime Database ----------
+function fbMakeRoom() {
+  const db = FB.db, TS = () => firebase.database.ServerValue.TIMESTAMP;
+  const ONLINE = ['v', 'nm', 'lv', 'rp', 'map', 'st'], POS = ['map', 'x', 'y', 'd', 'mv', 'lk'];
+  const R = { uid: null, online: {}, pos: {}, mine: {}, peerH: [], topicH: {}, connH: [], errH: [], conn: false, last: [], posMap: undefined, posQ: null, inbox: null, sentOnline: '', sentPos: {}, posAt: 0, posTimer: null, offline: [] };
+  const pick = (o, ks) => { const r = {}; for (const k of ks) if (o[k] !== undefined) r[k] = o[k]; return r; };
+  function snap() {
+    const out = [];
+    for (const [uid, o] of Object.entries(R.online || {})) {
+      if (!o || o.v !== 1 || uid === R.uid) continue;
+      const pres = pick(o, ONLINE), p = R.pos[uid];
+      if (p && p.map === o.map && o.map === R.posMap) Object.assign(pres, pick(p, ['x', 'y', 'd', 'mv', 'lk']));
+      out.push({ peer: uid, by: uid, isMe: false, sameTab: false, kind: 'viewer', guest: false, presence: pres, updatedAt: Date.now() });
+    }
+    if (R.uid) out.push({ peer: R.uid, by: R.uid, isMe: true, sameTab: true, kind: 'viewer', guest: false, presence: Object.assign({}, R.mine), updatedAt: Date.now() });
+    return out;
+  }
+  function notify() {
+    const peers = snap(), ids = new Set(peers.map(p => p.peer));
+    const left = R.last.filter(p => !ids.has(p.peer)), joined = peers.filter(p => !R.last.some(q => q.peer === p.peer));
+    R.last = peers; for (const h of R.peerH) { try { h({ peers, joined, left, updated: peers }); } catch (e) { console.warn(e); } }
+  }
+  const fail = e => { console.warn('firebase sala', e); for (const h of R.errH) h({ code: e && e.code === 'PERMISSION_DENIED' ? 'not_granted' : 'upstream_error', message: String(e) }); };
+  function watchPos(map) {
+    if (map === R.posMap) return;
+    if (R.posQ) R.posQ.off();
+    R.posMap = map; R.pos = {};
+    if (typeof map !== 'string') { R.posQ = null; notify(); return; }
+    R.posQ = db.ref('pos').orderByChild('map').equalTo(map);
+    R.posQ.on('value', s => { R.pos = s.val() || {}; notify(); }, fail);
+  }
+  function sendPos(force) {
+    if (!R.uid) return;
+    const now = Date.now(); if (!force && now - R.posAt < 250) { if (!R.posTimer) R.posTimer = setTimeout(() => { R.posTimer = null; sendPos(true); }, 260); return; }
+    const cur = pick(R.mine, POS), diff = {};
+    for (const k of POS) { const a = JSON.stringify(cur[k] ?? null), b = JSON.stringify(R.sentPos[k] ?? null); if (a !== b) diff[k] = cur[k] ?? null; }
+    if (!Object.keys(diff).length) return;
+    R.posAt = now; R.sentPos = Object.assign({}, R.sentPos, cur);
+    db.ref('pos/' + R.uid).update(diff).catch(fail);
+  }
+  function sendOnline() {
+    if (!R.uid) return;
+    const o = pick(R.mine, ONLINE), key = JSON.stringify(o); if (key === R.sentOnline) return; R.sentOnline = key;
+    if (typeof o.map !== 'string') { db.ref('online/' + R.uid).remove().catch(() => {}); db.ref('pos/' + R.uid).remove().catch(() => {}); R.sentPos = {}; return; }
+    db.ref('online/' + R.uid).set(Object.assign(o, { t: TS() })).catch(fail);
+  }
+  const room = {
+    _bind(uid) {
+      if (R.uid === uid) return;
+      if (R.inbox) R.inbox.off();
+      R.uid = uid; R.sentOnline = ''; R.sentPos = {};
+      for (const k of ['online', 'pos', 'inbox']) db.ref(k + '/' + uid).onDisconnect().remove();
+      db.ref('inbox/' + uid).remove().catch(() => {}).then(() => {
+        R.inbox = db.ref('inbox/' + uid);
+        R.inbox.on('child_added', s => {
+          const v = s.val(); s.ref.remove().catch(() => {});
+          let m; try { m = JSON.parse(v.d); } catch (e) { return; }
+          if (!m || typeof m.topic !== 'string') return;
+          for (const h of (R.topicH[m.topic] || [])) h({ topic: m.topic, data: m.data, peer: v.from, by: v.from, isMe: v.from === R.uid, sameTab: v.from === R.uid, kind: 'viewer', guest: false });
+        }, fail);
+      });
+      sendOnline(); sendPos(true); notify();
+    },
+    // sai de tudo (antes de trocar de conta)
+    async _leave() { if (!R.uid) return; const uid = R.uid; if (R.inbox) R.inbox.off(); R.inbox = null; R.uid = null; await Promise.all(['online', 'pos', 'inbox'].map(k => db.ref(k + '/' + uid).remove().catch(() => {}))); },
+    async emit(topic, data) {
+      if (!R.uid || !data || typeof data.to !== 'string' || !/^[A-Za-z0-9_-]{1,128}$/.test(data.to)) return;
+      const d = JSON.stringify({ topic, data }); if (d.length >= 4000) throw { code: 'invalid_argument' };
+      await db.ref('inbox/' + data.to).push({ from: R.uid, d, t: TS() });
+    },
+    on(topic, h) { (R.topicH[topic] = R.topicH[topic] || []).push(h); return () => { R.topicH[topic] = R.topicH[topic].filter(x => x !== h); }; },
+    async presence(patch) {
+      for (const [k, v] of Object.entries(patch)) { if (v === null) delete R.mine[k]; else R.mine[k] = v; }
+      watchPos(typeof R.mine.map === 'string' ? R.mine.map : null);
+      sendOnline(); sendPos(false);
+    },
+    peers: () => R.last,
+    onPeers(h, onErr) { R.peerH.push(h); if (onErr) R.errH.push(onErr); setTimeout(() => h({ peers: snap(), joined: [], left: [], updated: [] }), 0); return () => {}; },
+    connected: () => R.conn,
+    onConnection(h, onErr) { R.connH.push(h); if (onErr) R.errH.push(onErr); setTimeout(() => h(R.conn), 0); return () => {}; },
+  };
+  db.ref('.info/connected').on('value', s => { R.conn = !!s.val(); for (const h of R.connH) h(R.conn); if (R.conn && R.uid) { for (const k of ['online', 'pos', 'inbox']) db.ref(k + '/' + R.uid).onDisconnect().remove(); R.sentOnline = ''; R.sentPos = {}; sendOnline(); sendPos(true); } });
+  db.ref('online').on('value', s => { R.online = s.val() || {}; notify(); }, fail);
+  return room;
+}
+
+// ---------- login com Google ----------
+async function fbGoogleLogin() {
+  if (!FB.ok) return;
+  const prov = new firebase.auth.GoogleAuthProvider(); prov.setCustomParameters({ prompt: 'select_account' });
+  try {
+    saveGame(); cloudFlush();
+    if (FB.room) await FB.room._leave();
+    await FB.auth.signInWithPopup(prov);
+  } catch (e) {
+    const c = e && e.code;
+    if (c === 'auth/popup-blocked' || c === 'auth/operation-not-supported-in-this-environment') { try { await FB.auth.signInWithRedirect(prov); return; } catch (e2) { toast('Não foi possível abrir o login do Google.', 'bad'); } }
+    else if (c === 'auth/unauthorized-domain') toast('Este endereço não está autorizado no Firebase (Domínios autorizados).', 'bad');
+    else if (c !== 'auth/popup-closed-by-user' && c !== 'auth/cancelled-popup-request') toast('Não foi possível entrar com o Google agora.', 'bad');
+    if (FB.room && FB.user) FB.room._bind(FB.user.uid);    // continua como estava
+  }
+}
+async function fbLogout() {
+  if (!FB.ok) return;
+  saveGame(); cloudFlush();
+  if (FB.room) await FB.room._leave();
+  FB.cloud = 'off';
+  await FB.auth.signOut();   // onAuthStateChanged entra de novo como anônimo
+  toast('Você saiu da conta. O save continua neste aparelho.');
+}
+
+// ---------- save na nuvem ----------
+function cloudUser() { return FB.ok && FB.user && !FB.user.isAnonymous ? FB.user : null; }
+function cloudQueue() {
+  if (!cloudUser() || FB.syncing) return;
+  clearTimeout(FB.upTimer);
+  FB.upTimer = setTimeout(cloudUpload, Date.now() - FB.lastUp > 20000 ? 2000 : 8000);
+}
+function cloudFlush() { if (FB.upTimer) { clearTimeout(FB.upTimer); FB.upTimer = null; cloudUpload(); } }
+function cloudUpload() {
+  const u = cloudUser(); if (!u || FB.syncing) return;
+  let raw; try { raw = localStorage.getItem(SAVE_KEY); } catch (e) { raw = null; }
+  if (!raw && S) raw = JSON.stringify(S);
+  if (!raw) return;
+  if (raw.length >= 500000) return;
+  FB.lastUp = Date.now(); FB.cloud = 'salvando';
+  FB.db.ref('saves/' + u.uid).set({ d: raw, t: firebase.database.ServerValue.TIMESTAMP }).then(() => { FB.cloud = 'on'; acctRender(); }).catch(e => { console.warn('nuvem', e); FB.cloud = 'erro'; acctRender(); });
+}
+function saveSummary(d) { if (!d || !d.player) return '—'; const L = (() => { let L = 1; while (L < BAL.maxLevel && (d.xpTotal || 0) >= BAL.xpForLevel(L + 1)) L++; return L; })(); const h = Math.floor((d.playTime || 0) / 3600), m = Math.floor(((d.playTime || 0) % 3600) / 60); return `<b>${U.esc(d.player.name || 'Interno(a)')}</b> · Nv ${L} · ${Object.keys(d.completed || {}).length}/5 estágios · ${h}h${String(m).padStart(2, '0')} de jogo`; }
+async function cloudSync() {
+  const u = cloudUser(); if (!u || FB.syncing) return;
+  FB.syncing = true; acctRender();
+  let cloud = null;
+  try { const s = await FB.db.ref('saves/' + u.uid).once('value'); const v = s.val(); if (v && typeof v.d === 'string') cloud = migrateSave(JSON.parse(v.d)); } catch (e) { console.warn('nuvem', e); FB.syncing = false; FB.cloud = 'erro'; acctRender(); return; }
+  const local = loadGame();
+  const useCloud = () => { try { localStorage.setItem(SAVE_KEY, JSON.stringify(cloud)); } catch (e) {} if (G.mode === 'title') showTitle(); toast('Save carregado da sua conta Google.', 'good'); };
+  const useLocal = () => { FB.syncing = false; cloudUpload(); acctRender(); toast('Seu progresso agora está salvo na sua conta Google.', 'good'); };
+  if (!cloud && !local) { FB.syncing = false; acctRender(); return; }
+  if (cloud && !local) { useCloud(); FB.syncing = false; acctRender(); return; }
+  if (!cloud && local) return useLocal();
+  // os dois existem: mesmo personagem → fica o que tem mais tempo de jogo; personagens diferentes → pergunta
+  if (cloud.created === local.created) { if ((cloud.playTime || 0) >= (local.playTime || 0)) { if ((cloud.playTime || 0) > (local.playTime || 0)) useCloud(); FB.syncing = false; acctRender(); } else useLocal(); return; }
+  if (G.mode !== 'title') { FB.syncing = false; return; }       // decide na próxima vez que estiver na tela inicial
+  const box = U.el('div', 'confirm', `<div class="panel small"><h3>Qual personagem você quer usar?</h3><p>Encontramos um save na sua conta e outro neste aparelho.</p>
+    <div class="menu-col"><button class="btn" id="svNuvem">☁ Da conta Google: ${saveSummary(cloud)}</button><button class="btn ghost" id="svLocal">💻 Deste aparelho: ${saveSummary(local)}</button></div>
+    <p class="hint">O que você não escolher será substituído.</p></div>`);
+  OV().appendChild(box);
+  box.querySelector('#svNuvem').onclick = () => { box.remove(); useCloud(); FB.syncing = false; acctRender(); };
+  box.querySelector('#svLocal').onclick = () => { box.remove(); useLocal(); acctRender(); };
+}
+
+// ---------- caixa da conta na tela inicial ----------
+function acctRender() {
+  const el = document.getElementById('acctBox'); if (!el) return;
+  if (!window.FIREBASE_CONFIG) { el.hidden = true; return; }
+  el.hidden = false;
+  const u = FB.user;
+  if (!FB.ok || FB.err === 'init') { el.innerHTML = '<p class="hint">Login indisponível agora. Você pode jogar normalmente; o save fica neste navegador.</p>'; return; }
+  if (!u) { el.innerHTML = '<p class="hint">Conectando…</p>'; return; }
+  if (u.isAnonymous) {
+    el.innerHTML = `<button class="btn big g-login" id="bGoogle"><span class="g-ico">G</span> Entrar com Google</button><p class="hint">Salve seu personagem na nuvem e jogue em qualquer aparelho. Sem conta, o save fica só neste navegador.</p>`;
+    el.querySelector('#bGoogle').onclick = () => { SFX.init(); fbGoogleLogin(); };
+  } else {
+    const st = FB.syncing ? 'sincronizando…' : FB.cloud === 'erro' ? '⚠ não foi possível salvar na nuvem agora' : FB.cloud === 'salvando' ? 'salvando…' : 'save na nuvem ativo';
+    el.innerHTML = `<p class="acct-on">✔ Conectado como <b>${U.esc(u.displayName || 'jogador')}</b> · ${st}</p><button class="btn ghost small" id="bSair">Sair da conta</button>`;
+    el.querySelector('#bSair').onclick = () => fbLogout();
+  }
+}
+fbInit();
 
 </script>
 
