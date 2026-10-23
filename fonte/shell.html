@@ -1,0 +1,44 @@
+<title>A Lenda do Bom Interno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Pixelify+Sans:wght@400;600;700&family=Silkscreen&display=swap">
+<style>
+/*__CSS__*/</style>
+<div id="app">
+  <div id="stage">
+    <canvas id="game" class="pix" aria-label="Mundo do jogo"></canvas>
+    <div id="hud" hidden>
+      <div class="hud-me">
+        <div class="nm"><b id="hName">Interno</b><span id="hLvl">Nv 1</span></div>
+        <div class="bar" style="--c:#e05050"><i id="hVida"></i><span id="hVidaT"></span></div>
+        <div class="bar" style="--c:#ffcf3a"><i id="hEn"></i><span id="hEnT"></span></div>
+        <div class="bar" style="--c:#b46cff"><i id="hXp"></i><span id="hXpT"></span></div>
+        <div class="coins">◉ <span id="hCoins">0</span> Moedas de Plantão</div>
+      </div>
+      <div class="hud-rep"><b>Reputação do Interno</b><div class="repbar"><i id="hRepFill"></i></div><span id="hRepT">0 · Bom Interno</span></div>
+      <div class="hud-obj" id="hObj"></div>
+      <div class="hud-loc" id="hLoc"></div>
+      <div id="sideq"></div>
+      <div class="hud-btns">
+        <button data-hud="map" aria-label="Mapa">MAPA<small>M</small></button>
+        <button data-hud="inv" aria-label="Inventário">ITEM<small>I</small></button>
+        <button data-hud="journal" aria-label="Diário">DIÁR<small>J</small></button>
+        <button data-hud="skills" aria-label="Habilidades">HAB<small>K</small></button>
+        <button data-hud="status" aria-label="Ficha">FICHA<small>C</small></button>
+        <button data-hud="caderno" aria-label="Caderno de erros">ERROS<small>N</small></button>
+        <button id="hudMenu" aria-label="Pausa">☰<small>Esc</small></button>
+      </div>
+    </div>
+    <div id="prompt" hidden></div>
+    <div id="toasts" aria-live="polite"></div>
+    <div id="touch">
+      <div class="dpad"><button data-d="up" aria-label="Cima">▲</button><button data-d="left" aria-label="Esquerda">◀</button><button data-d="right" aria-label="Direita">▶</button><button data-d="down" aria-label="Baixo">▼</button></div>
+      <div class="tbtns"><button data-k="map">M</button><button data-k="inv">I</button><button data-k="journal">J</button><button data-k="skills">K</button><button data-k="status">C</button><button data-k="caderno" aria-label="Caderno de erros">N</button><button data-k="pause">☰</button><button data-run hidden>CORRER</button><button class="e" data-k="E">E · AGIR</button></div>
+    </div>
+  </div>
+  <div id="overlay" hidden></div>
+</div>
+<script>/*__JS__*/</script>
+
+</body>
+</html>
