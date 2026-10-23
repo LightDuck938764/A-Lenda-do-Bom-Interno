@@ -8378,6 +8378,255 @@ CASO({ id: 'ci_raiva_profilaxia', area: 'cm', ala: 'infecto', dif: 2, tema: 'Aci
   ecd: 'Lavagem abundante com água e sabão é essencial. Acidente grave com animal não observável: soro ou imunoglobulina antirrábica infiltrada nas lesões e vacina em 4 doses (0, 3, 7, 14). Se o cão pudesse ser observado por 10 dias, conduta conforme a observação. Reforço antitetânico e considerar amoxicilina-clavulanato profilático em mordedura de mão.' });
 
 /* =====================================================================
+   CLÍNICA MÉDICA — ALA DE NEUROLOGIA
+   Cefaleias, crises e epilepsia, demências e parkinsonismo, esclerose
+   múltipla, Guillain-Barré, miastenia gravis, ELA, paralisia cerebral
+   e protocolo de morte encefálica. Casos originais inspirados nas
+   questões do banco (CLI1 a CLI11). Referências: Academia Brasileira
+   de Neurologia, ILAE, Resolução CFM 2.173/2017.
+   ===================================================================== */
+
+/* ---------- Cefaleias ---------- */
+CASO({ id: 'nr_enxaqueca', area: 'cm', ala: 'neuro', dif: 2, tema: 'Cefaleias', cond: 'Enxaqueca com aura com indicação de profilaxia', tags: ['neuro'],
+  pac: { nome: 'Fernanda Coutinho', idade: 29, sexo: 'F', tipo: 'adulto' },
+  qp: 'Dor de cabeça forte várias vezes por mês.',
+  hda: 'Cefaleia unilateral latejante, de 6 a 24 horas, com náuseas, fotofobia e fonofobia, piora com esforço. Antes de algumas crises vê "pontos brilhantes em zigue-zague" por 20 minutos. Seis crises por mês, faltando ao trabalho; usa analgésicos 12 dias por mês.',
+  ant: 'Usa anticoncepcional combinado. Mãe com enxaqueca.',
+  ef: 'Exame neurológico normal.',
+  sv: 'PA 118 x 74 mmHg',
+  pista: 'Crises frequentes e incapacitantes, com aura visual.',
+  dx: ['Enxaqueca com aura', 'Cefaleia do tipo tensional', 'Cefaleia em salvas', 'Hemorragia subaracnóidea'],
+  edx: 'Crises de 4 a 72 horas, unilaterais, pulsáteis, moderadas a fortes, piora com atividade, náuseas ou foto e fonofobia: enxaqueca. Aura visual reversível precedendo a dor: enxaqueca com aura.',
+  cd: ['Profilaxia e método sem estrógeno', 'Analgésico comum sempre que doer, sem limite de dias', 'Opioide para abortar as crises', 'Tomografia de crânio de urgência'],
+  ecd: 'Profilaxia indicada com 4 ou mais crises por mês ou crises incapacitantes; anticorpos anti-CGRP em refratários. Crise: AINE ou triptano no início. Uso de analgésico ≥ 10-15 dias por mês leva à cefaleia por uso excessivo de medicação. Enxaqueca com aura aumenta o risco de AVC com estrógeno: preferir método sem estrógeno.' });
+
+CASO({ id: 'nr_salvas', area: 'cm', ala: 'neuro', dif: 2, tema: 'Cefaleias', cond: 'Cefaleia em salvas', tags: ['neuro'],
+  pac: { nome: 'Rodrigo Prado', idade: 34, sexo: 'M', tipo: 'adulto' },
+  qp: 'Dor atrás do olho que acorda à noite.',
+  hda: 'Há 3 semanas, crises diárias de dor muito forte ao redor do olho direito, de 45 minutos, sempre na madrugada. Fica andando de um lado para outro. Olho lacrimeja, nariz escorre e a pálpebra cai durante a dor. Episódio igual no ano passado, na mesma época.',
+  ant: 'Tabagista.',
+  ef: 'Durante a crise: lacrimejamento, hiperemia conjuntival, rinorreia, ptose e miose à direita.',
+  sv: 'Normal',
+  pista: 'Homem, periorbital, curta duração, sinais autonômicos, inquietação.',
+  dx: ['Cefaleia em salvas', 'Enxaqueca', 'Neuralgia do trigêmeo', 'Glaucoma agudo'],
+  edx: 'Cefaleia trigêmino-autonômica: dor unilateral orbitária ou temporal, intensa, de 15 a 180 minutos, com sinais autonômicos ipsilaterais e agitação, em períodos (salvas). Mais comum em homens tabagistas.',
+  cd: ['O₂ a 100%, sumatriptana SC e verapamil', 'Propranolol e repouso em quarto escuro', 'Opioide intramuscular nas crises', 'Carbamazepina como primeira escolha'],
+  ecd: 'Crise: oxigênio a 100% (12-15 L/min por máscara não reinalante) ou sumatriptana subcutânea. Profilaxia: verapamil (com ECG); corticoide como ponte. Na neuralgia do trigêmeo (dor em choque de segundos), a carbamazepina é a escolha.' });
+
+CASO({ id: 'nr_hii', area: 'cm', ala: 'neuro', dif: 3, tema: 'Cefaleias', cond: 'Hipertensão intracraniana idiopática', tags: ['neuro'],
+  pac: { nome: 'Kelly Barros', idade: 27, sexo: 'F', tipo: 'adulto' },
+  qp: 'Dor de cabeça todos os dias e visão escurecendo de vez em quando.',
+  hda: 'Cefaleia diária há 3 meses, pior ao acordar. Episódios de escurecimento visual de segundos ao se levantar, zumbido pulsátil. Ganhou 12 kg no último ano.',
+  ant: 'Obesidade. Uso recente de isotretinoína.',
+  ef: 'IMC 36. Papiledema bilateral. Paralisia do VI nervo à esquerda. Sem outros déficits.',
+  sv: 'PA 122 x 78 mmHg',
+  lab: [['Pressão de abertura do líquor', '38 cmH₂O', '< 25'], ['Líquor: células, proteína, glicose', 'Normais', '']],
+  ex: 'Ressonância com venografia: sem massa, sem trombose venosa; sela vazia parcial e achatamento posterior dos globos oculares.',
+  pista: 'Mulher obesa, papiledema e pressão alta com líquor normal e imagem sem lesão.',
+  dx: ['Pseudotumor cerebral', 'Tumor cerebral de fossa posterior', 'Trombose venosa cerebral', 'Enxaqueca crônica'],
+  edx: 'Pseudotumor cerebral: hipertensão intracraniana com líquor normal, sem lesão estrutural ou trombose. Fatores: mulher jovem obesa, ganho de peso, tetraciclinas, retinoides. O principal risco é a perda visual.',
+  cd: ['Acetazolamida e perda de peso', 'Corticoide em dose alta por tempo prolongado', 'Craniotomia descompressiva', 'Triptano diário como profilaxia'],
+  ecd: 'Suspender o fator desencadeante, perda de peso (inclusive com agonistas de GLP-1 ou cirurgia bariátrica) e acetazolamida. Campimetria seriada. Perda visual progressiva: fenestração da bainha do nervo óptico, derivação liquórica ou stent de seio venoso.' });
+
+/* ---------- Crises e epilepsia ---------- */
+CASO({ id: 'nr_estado_mal', area: 'cm', ala: 'neuro', dif: 3, tema: 'Crise convulsiva e epilepsia', cond: 'Estado de mal epiléptico', tags: ['neuro'],
+  pac: { nome: 'André Teixeira', idade: 34, sexo: 'M', tipo: 'adulto' },
+  qp: 'Convulsionando sem parar.',
+  hda: 'Epilepsia em uso de carbamazepina, que parou há 1 semana. Crise tônico-clônica há 15 minutos; recebeu diazepam 10 mg IV há 8 minutos, mas continua em crise.',
+  ant: 'Epilepsia focal com generalização.',
+  ef: 'Crise tônico-clônica generalizada, sem recuperar a consciência.',
+  sv: 'SpO₂ 90% com O₂ · Glicemia capilar 112 mg/dL',
+  pista: 'Benzodiazepínico já foi feito: próximo degrau.',
+  dx: ['Estado de mal epiléptico estabelecido', 'Crise psicogênica não epiléptica', 'Síncope convulsiva', 'Crise isolada autolimitada'],
+  edx: 'Crise contínua por mais de 5 minutos ou crises repetidas sem recuperação da consciência: estado de mal. Após falha do benzodiazepínico (fase estabelecida), usa-se droga de segunda linha.',
+  cd: ['Fenitoína 20 mg/kg IV, até 50 mg/min', 'Repetir diazepam a cada 5 minutos', 'Haloperidol IV para sedação', 'Aguardar a crise cessar espontaneamente'],
+  ecd: 'ABC, glicemia, tiamina antes da glicose em etilistas. 1ª linha: benzodiazepínico (diazepam IV, midazolam IM ou intranasal, lorazepam), repetível uma vez. 2ª linha: fenitoína ou fosfenitoína, levetiracetam ou valproato. Refratário: intubação e anestésicos (midazolam, propofol, tiopental) com EEG contínuo.' });
+
+CASO({ id: 'nr_primeira_crise', area: 'cm', ala: 'neuro', dif: 2, tema: 'Crise convulsiva e epilepsia', cond: 'Primeira crise não provocada no adulto', tags: ['neuro'],
+  pac: { nome: 'Ricardo Nogueira', idade: 28, sexo: 'M', tipo: 'adulto' },
+  qp: 'Teve uma convulsão no trabalho.',
+  hda: 'Primeira crise tônico-clônica generalizada, de 2 minutos, com recuperação completa em 30 minutos. Sem febre, álcool, drogas, privação de sono ou trauma.',
+  ant: 'Motorista de aplicativo. Sem história familiar.',
+  ef: 'Exame neurológico normal, mordedura lateral da língua.',
+  sv: 'Normal',
+  lab: [['Glicemia, sódio, cálcio, magnésio', 'Normais', ''], ['Toxicológico', 'Negativo', '']],
+  ex: 'Ressonância de crânio normal. EEG sem atividade epileptiforme.',
+  pista: 'Uma única crise, sem causa e com exames normais, não é epilepsia.',
+  dx: ['Primeira crise epiléptica não provocada', 'Epilepsia estabelecida', 'Síncope vasovagal', 'Crise provocada por distúrbio metabólico'],
+  edx: 'Epilepsia: duas crises não provocadas com mais de 24 horas de intervalo, ou uma crise com alto risco de recorrência (lesão estrutural, EEG epileptiforme), ou síndrome epiléptica. Aqui, crise única com exames normais.',
+  cd: ['Não iniciar anticrise; orientar', 'Iniciar fenitoína e manter por toda a vida', 'Internar para EEG contínuo de 30 dias', 'Benzodiazepínico diário'],
+  ecd: 'O risco de recorrência é de cerca de 40% em 2 anos; o tratamento após a primeira crise reduz recorrência precoce, mas não muda o prognóstico a longo prazo, sendo decisão compartilhada. Orientar segurança (altura, natação, direção conforme legislação).' });
+
+CASO({ id: 'nr_jme', area: 'cm', ala: 'neuro', dif: 3, tema: 'Crise convulsiva e epilepsia', cond: 'Epilepsia mioclônica juvenil em mulher em idade fértil', tags: ['neuro'],
+  pac: { nome: 'Isabela Lacerda', idade: 19, sexo: 'F', tipo: 'adulto' },
+  qp: 'Teve convulsão depois de uma noite sem dormir.',
+  hda: 'Crise tônico-clônica ao acordar após uma festa. Há 2 anos tem "trancos" nos braços pela manhã, derrubando a escova de dentes.',
+  ant: 'Pretende engravidar nos próximos anos.',
+  ef: 'Exame neurológico normal.',
+  sv: 'Normal',
+  ex: 'EEG: poliespícula-onda generalizada a 4-6 Hz, com fotossensibilidade.',
+  pista: 'Mioclonias matinais, crise após privação de sono, adolescente.',
+  dx: ['Epilepsia mioclônica juvenil', 'Epilepsia focal do lobo temporal', 'Crises psicogênicas', 'Epilepsia ausência infantil'],
+  edx: 'Síndrome epiléptica generalizada genética: mioclonias ao despertar, crises tônico-clônicas (privação de sono, álcool), às vezes ausências, EEG com poliespícula-onda. Exige tratamento por toda a vida.',
+  cd: ['Levetiracetam ou lamotrigina', 'Carbamazepina em dose progressiva', 'Valproato como primeira escolha nela', 'Sem tratamento, apenas higiene do sono'],
+  ecd: 'O valproato é muito eficaz, mas é evitado em mulheres em idade fértil (teratogenicidade e efeitos no neurodesenvolvimento). Carbamazepina, oxcarbazepina e fenitoína podem piorar mioclonias e ausências. Ácido fólico e planejamento da gestação.' });
+
+CASO({ id: 'nr_crise_febril', area: 'ped', dif: 3, tema: 'Crise convulsiva e epilepsia', cond: 'Crise febril complexa em lactente com vacinação incompleta', tags: ['neuro', 'sepse'],
+  pac: { nome: 'Bento Arruda', idade: '8 meses', sexo: 'M', tipo: 'bebe' },
+  qp: 'Convulsionou com febre e "ficou mole" do lado direito.',
+  hda: 'Febre de 39,8 °C há 1 dia. Crise com abalos do braço e da perna direitos por 20 minutos, cessada com midazolam pelo SAMU. Uma hora depois, ainda sonolento e mexendo menos o lado direito. Tomou amoxicilina por 2 dias por "dor de ouvido".',
+  ant: 'Vacinas atrasadas desde os 4 meses (não recebeu Hib e pneumocócica completas).',
+  ef: 'Sonolento, irritável ao manuseio. Fontanela anterior abaulada. Paresia leve à direita (Todd versus lesão).',
+  sv: 'T 38,9 °C · FC 168 bpm',
+  lab: [['Leucócitos', '21.400/mm³', '6.000-17.500'], ['PCR', '96 mg/L', '< 5'], ['Glicemia', '94 mg/dL', '']],
+  pista: 'Focal, prolongada, abaixo de 1 ano, sem vacinas e com antibiótico prévio.',
+  dx: ['Crise febril complexa', 'Crise febril simples', 'Epilepsia ausência', 'Síncope febril'],
+  edx: 'Crise febril complexa: focal, mais de 15 minutos ou recorrente em 24 horas. Aqui há ainda fontanela abaulada, vacinação incompleta e antibiótico prévio (que pode mascarar meningite), o que obriga a excluir infecção do SNC.',
+  cd: ['Punção lombar e antibiótico empírico', 'Alta com antitérmico', 'Fenobarbital profilático contínuo', 'Somente EEG ambulatorial'],
+  ecd: 'Punção lombar indicada se sinais meníngeos, suspeita de infecção do SNC, lactentes de 6 a 12 meses sem Hib/pneumocócica completas ou em uso de antibiótico. Com déficit focal ou suspeita de hipertensão intracraniana, neuroimagem antes da punção, sem atrasar ceftriaxona. EEG e imagem não são rotina na crise febril simples.' });
+
+/* ---------- Demência e parkinsonismo ---------- */
+CASO({ id: 'nr_hpn', area: 'cm', ala: 'neuro', dif: 2, tema: 'Demência e parkinsonismo', cond: 'Hidrocefalia de pressão normal', tags: ['neuro'],
+  pac: { nome: 'Abelardo Rios', idade: 74, sexo: 'M', tipo: 'idoso' },
+  qp: 'Andando com dificuldade, esquecido e com perda de urina.',
+  hda: 'Há 1 ano: marcha lenta, de base alargada, com passos curtos "como se os pés grudassem no chão"; depois esquecimento e urgência urinária com escapes.',
+  ant: 'Hemorragia subaracnóidea há 10 anos.',
+  ef: 'Marcha magnética, sem tremor de repouso. Atenção e memória reduzidas.',
+  sv: 'Normal',
+  ex: 'Ressonância: ventriculomegalia desproporcional aos sulcos corticais. Teste de punção de alívio (tap test): melhora da marcha.',
+  pista: 'Tríade: marcha, cognição, urina.',
+  dx: ['Hidrocefalia de pressão normal', 'Doença de Alzheimer', 'Doença de Parkinson', 'Demência vascular isolada'],
+  edx: 'Tríade de Hakim-Adams (distúrbio de marcha, declínio cognitivo e incontinência urinária) com ventriculomegalia e melhora após retirada de líquor: causa potencialmente reversível de demência.',
+  cd: ['Derivação ventriculoperitoneal', 'Donepezila isolada', 'Levodopa com carbidopa', 'Oxibutinina e fisioterapia'],
+  ecd: 'A derivação ventriculoperitoneal melhora principalmente a marcha, sobretudo quando feita cedo. Outras causas reversíveis de demência a investigar: hipotireoidismo, deficiência de B12, depressão, drogas, hematoma subdural crônico, sífilis.' });
+
+CASO({ id: 'nr_dft', area: 'cm', ala: 'neuro', dif: 3, tema: 'Demência e parkinsonismo', cond: 'Demência frontotemporal variante comportamental', tags: ['neuro', 'psiq'],
+  pac: { nome: 'Luís Fernando Rocha', idade: 59, sexo: 'M', tipo: 'adulto' },
+  qp: 'A família diz que ele "virou outra pessoa".',
+  hda: 'Há 2 anos: desinibição (comentários inadequados, gastos excessivos), apatia, perda de empatia, comportamento compulsivo e preferência por doces. Memória relativamente preservada no início.',
+  ant: 'Sem doenças psiquiátricas prévias.',
+  ef: 'Reflexos primitivos presentes. Fluência verbal reduzida.',
+  sv: 'Normal',
+  ex: 'Ressonância: atrofia frontal e temporal anterior, assimétrica.',
+  pista: 'Comportamento e personalidade antes da memória, em idade mais jovem.',
+  dx: ['Demência frontotemporal', 'Doença de Alzheimer', 'Transtorno bipolar', 'Demência com corpos de Lewy'],
+  edx: 'Variante comportamental da DFT: início antes dos 65 anos, desinibição, apatia, perda de empatia, comportamentos compulsivos e hiperoralidade, com atrofia frontotemporal. Memória e orientação espacial relativamente preservadas no início (ao contrário do Alzheimer).',
+  cd: ['Suporte familiar e ISRS', 'Donepezila em dose alta contínua', 'Lítio para estabilizar o humor', 'Levodopa com carbidopa'],
+  ecd: 'Não há tratamento que modifique a doença. ISRS ou trazodona para sintomas comportamentais; inibidores da colinesterase não ajudam e podem piorar. Apoio à família, planejamento legal e financeiro.' });
+
+CASO({ id: 'nr_lewy', area: 'cm', ala: 'neuro', dif: 3, tema: 'Demência e parkinsonismo', cond: 'Demência com corpos de Lewy', tags: ['neuro', 'psiq'],
+  pac: { nome: 'Eunice Valadares', idade: 76, sexo: 'F', tipo: 'idoso' },
+  qp: 'Vê crianças na sala que não existem e piorou muito com um remédio para dormir.',
+  hda: 'Declínio cognitivo com dias bons e ruins há 1 ano, alucinações visuais bem formadas, quedas, "luta" durante o sono. Recebeu haloperidol no pronto-socorro e ficou rígida e confusa.',
+  ant: 'Hipotensão postural.',
+  ef: 'Parkinsonismo leve (bradicinesia, rigidez), sem tremor importante.',
+  sv: 'PA 140 x 80 deitada e 108 x 66 mmHg em pé',
+  pista: 'Flutuação, alucinações visuais, parkinsonismo e sensibilidade a antipsicóticos.',
+  dx: ['Demência com corpos de Lewy', 'Doença de Alzheimer', 'Doença de Parkinson sem demência', 'Delirium por infecção'],
+  edx: 'Critérios centrais: flutuação cognitiva, alucinações visuais recorrentes, parkinsonismo e transtorno comportamental do sono REM. Sensibilidade grave a antipsicóticos típicos. A demência aparece antes ou até 1 ano após o parkinsonismo (se depois, demência da doença de Parkinson).',
+  cd: ['Rivastigmina; evitar haloperidol', 'Aumentar a dose de haloperidol à noite', 'Levodopa em dose alta para a rigidez', 'Benzodiazepínico para dormir e acalmar'],
+  ecd: 'Inibidores da colinesterase (rivastigmina, donepezila) melhoram cognição e alucinações. Se antipsicótico for imprescindível: quetiapina ou clozapina em dose baixa. Levodopa pode piorar as alucinações. Tratar a hipotensão ortostática.' });
+
+CASO({ id: 'nr_parkinson', area: 'cm', ala: 'neuro', dif: 2, tema: 'Demência e parkinsonismo', cond: 'Doença de Parkinson', tags: ['neuro'],
+  pac: { nome: 'Antônio Carlos Reis', idade: 68, sexo: 'M', tipo: 'idoso' },
+  qp: 'Tremor na mão direita e lentidão.',
+  hda: 'Há 1 ano: tremor da mão direita em repouso, que melhora ao pegar objetos; lentidão para se vestir; letra ficou pequena. Perdeu o olfato há anos e tem constipação.',
+  ant: 'Não usa antipsicóticos, metoclopramida ou flunarizina.',
+  ef: 'Tremor de repouso em "contar dinheiro" à direita, rigidez em roda denteada, bradicinesia, hipomimia, marcha com passos curtos e menor balanço do braço direito.',
+  sv: 'Normal',
+  pista: 'Assimétrico, de repouso, com bradicinesia.',
+  dx: ['Doença de Parkinson', 'Tremor essencial', 'Parkinsonismo induzido por droga', 'Paralisia supranuclear progressiva'],
+  edx: 'Síndrome parkinsoniana (bradicinesia com tremor de repouso e/ou rigidez), assimétrica, com sintomas não motores (hiposmia, constipação) e sem sinais de alerta. Tremor essencial é de ação/postural, simétrico, melhora com álcool.',
+  cd: ['Levodopa com carbidopa e fisioterapia', 'Haloperidol em dose baixa', 'Propranolol isolado', 'Observar sem tratar'],
+  ecd: 'Levodopa é a droga mais eficaz e a preferida em idosos; agonistas dopaminérgicos (pramipexol) em jovens, com risco de compulsões. Flutuações motoras ("wearing off"): fracionar levodopa, associar entacapona, IMAO-B ou agonista. Exercício físico e fisioterapia. Boa resposta à levodopa reforça o diagnóstico.' });
+
+/* ---------- Doenças desmielinizantes e neuromusculares ---------- */
+CASO({ id: 'nr_esclerose_multipla', area: 'cm', ala: 'neuro', dif: 3, tema: 'Esclerose múltipla', cond: 'Esclerose múltipla remitente-recorrente', tags: ['neuro'],
+  pac: { nome: 'Carolina Weber', idade: 28, sexo: 'F', tipo: 'adulto' },
+  qp: 'Perda de força e formigamento na perna há 4 dias.',
+  hda: 'Há 2 anos teve perda visual dolorosa no olho esquerdo que melhorou em semanas. Agora fraqueza e dormência na perna direita. O calor piora os sintomas.',
+  ant: 'Saudável.',
+  ef: 'Paraparesia leve à direita, hiperreflexia, Babinski à direita, nível sensitivo vago. Defeito pupilar aferente relativo à esquerda.',
+  sv: 'Normal',
+  lab: [['Líquor', 'Bandas oligoclonais presentes (ausentes no soro)', '']],
+  ex: 'Ressonância: lesões ovoides periventriculares perpendiculares ao corpo caloso ("dedos de Dawson"), justacorticais e na medula; uma lesão captando contraste.',
+  pista: 'Disseminação no tempo e no espaço em mulher jovem.',
+  dx: ['Esclerose múltipla', 'Neuromielite óptica', 'Neurossífilis', 'AVC isquêmico lacunar'],
+  edx: 'Surtos neurológicos separados no tempo e no espaço (neurite óptica e mielite), lesões típicas na RM e bandas oligoclonais: esclerose múltipla. Na neuromielite óptica (anti-aquaporina-4), as lesões medulares são longitudinalmente extensas.',
+  cd: ['Pulso de metilprednisolona', 'Apenas fisioterapia motora e observação', 'Plasmaférese como primeira linha em todo surto', 'Antibiótico de amplo espectro empírico'],
+  ecd: 'Surto incapacitante: metilprednisolona 1 g/dia por 3 a 5 dias (plasmaférese se refratário). Terapias modificadoras reduzem surtos e progressão (interferon, glatirâmer, teriflunomida, fumarato; alta eficácia: natalizumabe, ocrelizumabe, fingolimode). Vitamina D, atividade física, cessar tabagismo.' });
+
+CASO({ id: 'nr_guillain_barre', area: 'cm', ala: 'neuro', dif: 2, tema: 'Síndrome de Guillain-Barré', cond: 'Síndrome de Guillain-Barré', tags: ['neuro', 'resp'],
+  pac: { nome: 'Vitor Hugo Lima', idade: 34, sexo: 'M', tipo: 'adulto' },
+  qp: 'Fraqueza que começou nos pés e está subindo.',
+  hda: 'Diarreia há 3 semanas. Há 5 dias formigamento nos pés e fraqueza progressiva nas pernas; hoje dificuldade para levantar os braços e para engolir.',
+  ant: 'Saudável.',
+  ef: 'Tetraparesia flácida, pior nas pernas, arreflexia global, paralisia facial bilateral. Sensibilidade pouco alterada. Sem nível sensitivo.',
+  sv: 'FC 118 bpm · PA oscilando 90-170 mmHg · Capacidade vital 18 mL/kg',
+  lab: [['Líquor (8º dia)', 'Proteína 160 mg/dL, 3 células/mm³', ''], ['Eletroneuromiografia', 'Polirradiculoneuropatia desmielinizante', '']],
+  pista: 'Paralisia ascendente arrefléxica e dissociação albuminocitológica.',
+  dx: ['Guillain-Barré', 'Mielite transversa aguda', 'Miastenia gravis', 'Paralisia periódica hipocalêmica'],
+  edx: 'Polirradiculoneuropatia aguda autoimune pós-infecciosa (Campylobacter jejuni, CMV, zika): fraqueza ascendente simétrica, arreflexia, disautonomia, dissociação albuminocitológica no líquor.',
+  cd: ['UTI e imunoglobulina IV', 'Pulso de corticoide isolado', 'Observar na enfermaria comum', 'Piridostigmina oral'],
+  ecd: 'Capacidade vital < 20 mL/kg, PImáx fraca, disfagia ou disautonomia importante indicam UTI e intubação eletiva. Imunoglobulina venosa ou plasmaférese (igualmente eficazes) aceleram a recuperação; corticoide não ajuda. Profilaxia de TVP e manejo da dor.' });
+
+CASO({ id: 'nr_miastenia', area: 'cm', ala: 'neuro', dif: 2, tema: 'Miastenia gravis', cond: 'Miastenia gravis generalizada com timoma', tags: ['neuro'],
+  pac: { nome: 'Luana Freitas', idade: 32, sexo: 'F', tipo: 'adulto' },
+  qp: 'Pálpebra caída e visão dupla que pioram à tarde.',
+  hda: 'Há 3 meses ptose alternante e diplopia que pioram com o uso e no fim do dia; agora cansaço para mastigar e fraqueza nos braços ao pentear o cabelo.',
+  ant: 'Saudável.',
+  ef: 'Ptose que piora com olhar sustentado para cima e melhora com gelo nas pálpebras. Fraqueza proximal fatigável. Reflexos e sensibilidade normais.',
+  sv: 'Capacidade vital normal',
+  lab: [['Anticorpo antirreceptor de acetilcolina', 'Positivo', ''], ['Estimulação repetitiva', 'Decremento', '']],
+  ex: 'TC de tórax: massa no mediastino anterior (timoma).',
+  pista: 'Fraqueza flutuante e fatigável, sem alteração sensitiva ou de reflexos.',
+  dx: ['Miastenia gravis', 'Síndrome de Lambert-Eaton', 'Esclerose múltipla', 'Botulismo'],
+  edx: 'Doença autoimune da junção neuromuscular (anticorpos contra receptor de acetilcolina): fraqueza flutuante e fatigável de músculos oculares, bulbares e proximais. Associação com timoma. Em Lambert-Eaton, a força melhora com o uso e há disautonomia.',
+  cd: ['Piridostigmina, imunossupressão e timectomia', 'Gentamicina para a infecção associada', 'Apenas observar a evolução', 'Betabloqueador em dose alta'],
+  ecd: 'Sintomático: piridostigmina. Imunossupressão: prednisona, azatioprina e outras. Timectomia (sempre com timoma e benéfica em generalizada com anticorpo positivo). Crise miastênica (insuficiência respiratória): UTI, imunoglobulina ou plasmaférese. Evitar aminoglicosídeos, quinolonas, magnésio, betabloqueadores.' });
+
+CASO({ id: 'nr_ela', area: 'cm', ala: 'neuro', dif: 3, tema: 'Esclerose lateral amiotrófica', cond: 'Esclerose lateral amiotrófica', tags: ['neuro'],
+  pac: { nome: 'Benedito Sarmento', idade: 58, sexo: 'M', tipo: 'adulto' },
+  qp: 'Mão fraca e "carne tremendo" nos braços.',
+  hda: 'Há 1 ano: fraqueza e afinamento da mão direita, câimbras e tremores musculares; agora fala arrastada e engasgos. Sem alterações sensitivas, urinárias ou intestinais.',
+  ant: 'Saudável.',
+  ef: 'Atrofia e fasciculações em mãos, braços e língua; ao mesmo tempo hiperreflexia, Hoffmann e Babinski. Sensibilidade normal.',
+  sv: 'Capacidade vital 65% do previsto',
+  ex: 'Eletroneuromiografia: denervação ativa e crônica em 3 regiões, condução sensitiva normal. RM de coluna cervical sem compressão.',
+  pista: 'Sinais de primeiro e segundo neurônio motor juntos, sem alteração sensitiva.',
+  dx: ['Esclerose lateral amiotrófica', 'Mielopatia cervical espondilótica', 'Miastenia gravis', 'Polineuropatia desmielinizante crônica'],
+  edx: 'Degeneração do primeiro neurônio (hiperreflexia, Babinski, espasticidade) e do segundo (atrofia, fasciculações, fraqueza) em várias regiões, sem alterações sensitivas, oculares ou esfincterianas.',
+  cd: ['Riluzol e VNI', 'Cirurgia descompressiva da coluna cervical', 'Pulso de corticoide mensal', 'Imunoglobulina IV mensal de manutenção'],
+  ecd: 'Riluzol aumenta discretamente a sobrevida (edaravona em casos selecionados). VNI melhora sobrevida e qualidade de vida na insuficiência respiratória; gastrostomia precoce na disfagia. Planejamento antecipado de cuidados e cuidados paliativos.' });
+
+CASO({ id: 'nr_paralisia_cerebral', area: 'ped', dif: 2, tema: 'Paralisia cerebral', cond: 'Paralisia cerebral espástica (diplegia) do prematuro', tags: ['neuro'],
+  pac: { nome: 'Gabriel Torres', idade: '2 anos', sexo: 'M', tipo: 'crianca' },
+  qp: 'Ainda não anda e "pernas duras".',
+  hda: 'Prematuro de 29 semanas, com hemorragia peri-intraventricular e leucomalácia periventricular na UTI neonatal. Sentou aos 12 meses; não anda. Usa bem as mãos e fala frases.',
+  ant: 'Prematuridade extrema.',
+  ef: 'Espasticidade e hiperreflexia nas pernas, mais que nos braços, pés em equino, cruzamento das pernas em tesoura ao ser suspenso. Cognição e mãos preservadas.',
+  sv: 'Crescimento adequado',
+  ex: 'Ressonância: leucomalácia periventricular.',
+  pista: 'Lesão não progressiva do cérebro imaturo, pernas mais afetadas.',
+  dx: ['Paralisia cerebral espástica', 'Atrofia muscular espinhal tipo 2', 'Distrofia muscular de Duchenne', 'Mielomeningocele lombossacra'],
+  edx: 'Paralisia cerebral: distúrbio permanente, não progressivo, do movimento e da postura por lesão do cérebro em desenvolvimento. Diplegia espástica (pernas mais que braços) está associada à prematuridade e leucomalácia periventricular. Classificação funcional pelo GMFCS.',
+  cd: ['Reabilitação multiprofissional', 'Aguardar, pois tende a melhorar sozinha com a idade', 'Pulso de corticoide', 'Cirurgia de coluna imediata'],
+  ecd: 'Fisioterapia, terapia ocupacional, fonoaudiologia, órteses; espasticidade com toxina botulínica, baclofeno, cirurgias ortopédicas e rizotomia em casos selecionados. Acompanhar quadril (luxação), epilepsia, deglutição, nutrição e visão.' });
+
+CASO({ id: 'nr_morte_encefalica', area: 'cm', ala: 'neuro', dif: 3, tema: 'Protocolo de morte encefálica', cond: 'Pré-requisitos do protocolo de morte encefálica', tags: ['neuro'],
+  pac: { nome: 'Wesley Cardoso', idade: 24, sexo: 'M', tipo: 'adulto' },
+  qp: 'Paciente em coma após acidente de moto.',
+  hda: 'TCE grave há 10 horas, com hematoma subdural e desvio de linha média na TC. Sem sedação desde a admissão. Glasgow 3, pupilas fixas e midriáticas, sem reflexos de tronco.',
+  ant: 'Sem doenças.',
+  ef: 'Coma aperceptivo, ausência de reflexos fotomotor, corneano, oculocefálico, vestíbulo-ocular e de tosse.',
+  sv: 'T 34,6 °C · PA 96 x 60 mmHg (com noradrenalina) · SpO₂ 98% · Sódio 152 mEq/L',
+  pista: 'Antes de iniciar o protocolo, todos os pré-requisitos precisam estar presentes.',
+  dx: ['Protocolo ainda não pode iniciar', 'Morte encefálica já confirmada pela TC', 'Estado vegetativo persistente', 'Síndrome do encarceramento (locked-in)'],
+  edx: 'Pela Resolução CFM 2.173/2017, pré-requisitos: lesão encefálica conhecida e irreversível, ausência de fatores confundidores, observação mínima de 6 horas (24 horas na encefalopatia hipóxico-isquêmica), temperatura > 35 °C, SpO₂ > 94% e PAS ≥ 100 mmHg ou PAM ≥ 65 mmHg em adultos.',
+  cd: ['Aquecer acima de 35 °C antes de iniciar', 'Iniciar os exames clínicos já', 'Declarar o óbito pela TC de crânio', 'Desligar o ventilador após um exame'],
+  ecd: 'Depois dos pré-requisitos: dois exames clínicos por médicos diferentes capacitados (intervalo mínimo de 1 hora em adultos), um teste de apneia e um exame complementar (EEG, Doppler transcraniano, arteriografia ou cintilografia). Notificação obrigatória à Central de Transplantes, independentemente da doação. A família é informada durante todo o processo.' });
+
+/* =====================================================================
    QUESTÕES RÁPIDAS, TRIAGENS, DESAFIOS DE CAPÍTULO, PROCEDIMENTOS,
    RIVAIS, EVENTOS E CONQUISTAS
    ===================================================================== */
