@@ -44,3 +44,8 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 
 ## Onde está salvo
 - Trabalho em andamento no branch **banco-de-casos** do repositório (o site no main não muda até o teste final). Publicar = merge no main.
+- Backup do código-fonte: branch codigo-fonte (scratchpad/scripts/backup.sh).
+- CM neuro → src/05l_cm_neuro.js (17, nr_; nr_crise_febril e nr_paralisia_cerebral em 'ped'; crise febril complexa para não repetir em_convulsao).
+- CM psiq → src/05m_cm_psiq.js (26, py_): delirium, pseudodemência, esquizofrenia, SNM, acatisia, parkinsonismo, discinesia tardia, humor, lítio, ansiedade, TOC, TEPT, adaptação, alimentares, 7 transtornos de personalidade.
+- CM reumato → src/05n_cm_reumato.js (22, rm_; AIJ x2 e IgA em 'ped'): gota, AR, espondiloartrites, vasculites, LES, ES, OA, gonocócica.
+- PENDENTE auditoria de duplicatas UBS x pediatria nova (ubs_baixa estatura, atraso constitucional, telarca, puberdade precoce, OMA, faringite, resfriado) e ped_ansiedade/ped_depressao antigos.
