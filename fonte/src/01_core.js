@@ -21,6 +21,20 @@ const AREAS = {
   ubs: { id: 'ubs', nome: 'Atenção Básica', curto: 'UBS', map: 'ubs', chefe: 'martinho', cor: '#3f8fd6', icone: '⌂', local: 'UBS Maria das Dores' },
 };
 const AREA_IDS = ['upa', 'ped', 'go', 'cm', 'cir', 'ubs'];
+// Alas da Clínica Médica (cada caso de CM tem 'ala' com uma destas chaves)
+const ALAS_CM = {
+  cardio: { nome: 'Cardiologia', placa: 'CARDIOLOGIA', cor: '#c0392b', manta: '#f2dede' },
+  pneumo: { nome: 'Pneumologia', placa: 'PNEUMOLOGIA', cor: '#2f7fb8', manta: '#dcebf5' },
+  endocrino: { nome: 'Endocrinologia', placa: 'ENDOCRINOLOGIA', cor: '#8e5bb8', manta: '#ece2f5' },
+  gastro: { nome: 'Gastroenterologia', placa: 'GASTROENTEROLOGIA', cor: '#c77d1f', manta: '#f5e8d4' },
+  hepato: { nome: 'Hepatologia', placa: 'HEPATOLOGIA', cor: '#7a8f1f', manta: '#eef2d6' },
+  hemato: { nome: 'Hematologia', placa: 'HEMATOLOGIA', cor: '#a3243b', manta: '#f5dfe4' },
+  infecto: { nome: 'Infectologia', placa: 'INFECTOLOGIA', cor: '#1f8f6a', manta: '#d9f0e6' },
+  nefro: { nome: 'Nefrologia', placa: 'NEFROLOGIA', cor: '#c4a21b', manta: '#f5efd2' },
+  neuro: { nome: 'Neurologia', placa: 'NEUROLOGIA', cor: '#3f5fc4', manta: '#dfe4f5' },
+  psiq: { nome: 'Psiquiatria', placa: 'PSIQUIATRIA', cor: '#4f9a8f', manta: '#dcefe9' },
+  reumato: { nome: 'Reumatologia', placa: 'REUMATOLOGIA', cor: '#b85b8f', manta: '#f5e0ec' },
+};
 const N_ESTAGIOS_TXT = 'seis';
 
 /* ---------------- Balanceamento centralizado ---------------- */

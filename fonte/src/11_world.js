@@ -141,7 +141,7 @@ function refillSpots(area) {
   if (!areaUnlocked(area)) return;
   const casos = G.spots.filter(sp => sp.obj.spot === 'caso');
   const active = casos.filter(sp => sp.s.active).length;
-  const want = Math.min(casos.length, area === 'cm' ? 6 : area === 'cir' ? 5 : 4);
+  const want = Math.min(casos.length, area === 'cm' ? 9 : area === 'cir' ? 5 : 4);
   const cand = U.shuffle(casos.filter(sp => !sp.s.active && (sp.s.cd || 0) <= S.playTime));
   for (let k = 0; k < want - active && k < cand.length; k++) activateSpot(cand[k], area);
   for (const sp of casos) if (!sp.s.look) sp.s.look = randomCivilLook(sp.s.seed, sp.obj.bebe ? 'bebe' : U.pick(['adulto', 'idoso']));
@@ -150,13 +150,16 @@ function pickCase(area, spot) {
   const step = areaStepIdx(area), done = !!S.completed[area];
   const maxDif = done ? 3 : step < 3 ? 1 : step < 6 ? 2 : 3;
   let pool = CASES.filter(c => c.area === area);
-  if (area === 'go') pool = pool.filter(c => (GO_QUARTO.includes(c.id) ? 'quarto' : 'ps') === (spot.obj.local || 'ps'));
+  if (area === 'go') { const loc = spot.obj.local === 'quarto' ? 'gineco' : spot.obj.local === 'ps' ? 'obst' : spot.obj.local; const g = pool.filter(c => goLocal(c) === loc); if (g.length) pool = g; }
+  if (area === 'cm' && spot.obj.ala) { const g = pool.filter(c => c.ala === spot.obj.ala); if (g.length) pool = g; }
   if (spot.obj.bebe) { const b = pool.filter(c => c.pac.tipo === 'bebe'); if (b.length) pool = b; }
   else if (area === 'ped') { const b = pool.filter(c => c.pac.tipo !== 'bebe'); if (b.length) pool = b; }
   const fresh = pool.filter(c => !S.seen.includes(c.id) || prioW(temaDe(c)) > 1); if (fresh.length >= 2) pool = fresh;
   const w = pool.map(c => ({ c, w: (c.dif <= maxDif ? 4 : 1) * prioW(temaDe(c)) }));
   return U.weighted(w).c;
 }
+// GO: obstetrícia no centro obstétrico/observação/alojamento; ginecologia no consultório, ultrassom e quartos
+function goLocal(c) { return c.local || (c.tags && c.tags.includes('obst') ? 'obst' : 'gineco'); }
 const GO_QUARTO = ['go_mioma2', 'go_swyer', 'go_rokitansky', 'go_morris', 'go_hac', 'go_kallmann', 'go_endometriose', 'go_endometriose2', 'go_mioma', 'go_adenomiose', 'go_polipo', 'go_sop1', 'go_sop2'];
 function activateSpot(sp, area) {
   const c = pickCase(area, sp); if (!c) return;

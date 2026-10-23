@@ -420,34 +420,39 @@ function buildMaps() {
     MAPS.go = M;
   }
   // ============ CLÍNICA MÉDICA ============
+  // Enfermaria dividida em alas por especialidade: cada ala recebe só os casos da sua área.
   {
-    const M = new MapB('cm', 'Enfermaria de Clínica Médica', 46, 32, 'cm');
-    for (let k = 0; k < 4; k++) M.room(k * 8, 0, 9, 13, '.', 'Quarto ' + (k + 1));
-    M.room(32, 0, 14, 13, ':', 'Sala da Clínica Médica');
-    M.room(0, 12, 46, 7, ',', 'Corredor');
-    for (let k = 0; k < 4; k++) M.room(k * 8, 18, 9, 14, '.', 'Quarto ' + (k + 5));
-    M.room(32, 18, 8, 8, ',', 'Posto'); M.room(39, 18, 7, 8, ',', 'Copa'); M.room(32, 25, 14, 7, ',', 'Sala de Procedimentos');
-    for (let k = 0; k < 4; k++) { M.door(k * 8 + 4, 12, 1, 2); M.door(k * 8 + 4, 18, 1, 2); M.win(k * 8 + 2, 0, 2).win(k * 8 + 6, 0, 1); }
-    M.door(38, 12, 1, 2); M.door(35, 18, 1, 2); M.door(42, 18, 1, 2); M.door(36, 25, 1, 2);
+    const M = new MapB('cm', 'Enfermaria de Clínica Médica', 86, 32, 'cm');
+    const NORTE = ['cardio', 'pneumo', 'endocrino', 'gastro', 'hepato', 'hemato'], SUL = ['infecto', 'nefro', 'neuro', 'psiq', 'reumato'];
+    NORTE.forEach((a, k) => M.room(k * 12, 0, 13, 13, '.', 'Ala de ' + ALAS_CM[a].nome));
+    M.room(72, 0, 14, 13, ':', 'Sala da Clínica Médica');
+    M.room(0, 12, 86, 7, ',', 'Corredor das Alas');
+    SUL.forEach((a, k) => M.room(k * 12, 18, 13, 14, '.', 'Ala de ' + ALAS_CM[a].nome));
+    M.room(60, 18, 13, 7, ',', 'Posto'); M.room(60, 24, 13, 8, ',', 'Copa'); M.room(72, 18, 14, 14, ',', 'Sala de Procedimentos');
+    NORTE.forEach((a, k) => { M.door(k * 12 + 6, 12, 1, 2); M.win(k * 12 + 2, 0, 2).win(k * 12 + 9, 0, 2); });
+    SUL.forEach((a, k) => M.door(k * 12 + 6, 18, 1, 2));
+    M.door(78, 12, 1, 2); M.door(66, 18, 1, 2); M.door(66, 24, 1, 2); M.door(78, 18, 1, 2); M.win(75, 0, 2).win(81, 0, 2);
     M.door(0, 15, 1, 2); M.warp(0, 15, 1, 2, 'lobby', 29.5, 2.6, 0);
-    // quartos: 2 pacientes cada
-    let qn = 1;
-    for (let k = 0; k < 4; k++) {
-      const x = k * 8; M.obj('leito', x + 2, 3, { spot: 'caso', quarto: qn, leito: 'A', blanket: '#e8eef2' }); M.obj('leito', x + 6, 3, { spot: 'caso', quarto: qn, leito: 'B', blanket: '#e8eef2' });
-      M.obj('cortina', x + 4, 3, { cor: '#dfe4ea' }); M.obj('mesa_cabeceira', x + 1, 3); M.obj('suporte_soro', x + 7, 6); M.obj('poltrona', x + 1, 8); qn++;
-    }
-    for (let k = 0; k < 4; k++) {
-      const x = k * 8; M.obj('leito', x + 2, 26, { spot: 'caso', quarto: qn, leito: 'A', blanket: '#e8eef2' }); M.obj('leito', x + 6, 26, { spot: 'caso', quarto: qn, leito: 'B', blanket: '#e8eef2' });
-      M.obj('cortina', x + 4, 27, { cor: '#dfe4ea' }); M.obj('mesa_cabeceira', x + 1, 27); M.obj('poltrona', x + 7, 21); M.obj('pia', x + 1, 21); qn++;
-    }
+    const placa = (a, x, wallY) => { const t = ALAS_CM[a].placa; const w = Math.min(11 * 16, t.length * 4 + 10); M.decal('placa', x * 16 + Math.round((13 * 16 - w) / 2), wallY * 16 + 3, w, 9, { texto: t, bg: ALAS_CM[a].cor }); };
+    const ala = (a, x, norte) => {
+      const yb = norte ? 3 : 26, cor = ALAS_CM[a].manta;
+      [2, 6, 10].forEach((dx, i) => M.obj('leito', x + dx, yb, { spot: 'caso', ala: a, leito: i + 1, blanket: cor }));
+      M.obj('cortina', x + 4, yb, { cor: '#dfe4ea' }); M.obj('cortina', x + 8, yb, { cor: '#dfe4ea' });
+      if (a === 'psiq') { M.obj('sofa', x + 2, norte ? 8 : 21, { cor: '#c9d8c4' }); M.obj('mesa_redonda', x + 8, norte ? 8 : 21); M.obj('planta', x + 11, norte ? 9 : 21); }
+      else { M.obj('suporte_soro', x + 11, norte ? 6 : 23); M.obj('poltrona', x + 1, norte ? 8 : 21); M.obj('pia', x + 11, norte ? 9 : 21); M.obj('mesa_cabeceira', x + 1, yb); }
+      if (a === 'infecto') M.decal('placa', x * 16 + 4, (norte ? 12 : 18) * 16 + 3, 48, 9, { texto: 'ISOLAMENTO', bg: '#c0392b' });
+      placa(a, x, norte ? 12 : 18);
+    };
+    NORTE.forEach((a, k) => ala(a, k * 12, true));
+    SUL.forEach((a, k) => ala(a, k * 12, false));
     // sala da clínica médica: painéis de madeira, sofás brancos, mesas redondas, janela para a cidade
-    M.decal('painel_madeira', 33 * 16, 2, 2 * 16, 30); M.decal('painel_madeira', 43 * 16, 2, 2 * 16, 30); M.decal('janela_cidade', 35 * 16 + 4, 4, 8 * 16 - 8, 24);
-    M.obj('sofa', 33, 8, { cor: '#ece8df', tag: 'sofa' }); M.obj('sofa', 37, 4, { cor: '#ece8df' }); M.obj('mesa_redonda', 38, 7); M.obj('cadeira_madeira', 37, 9); M.obj('cadeira_madeira', 39, 9);
-    M.obj('mesa', 41, 4); M.obj('mesa', 43, 8); M.obj('impressora', 44, 4); M.obj('cafeteira', 33, 3); M.obj('garrafa', 34, 3); M.obj('planta', 35, 3); M.obj('planta', 44, 10);
+    M.decal('painel_madeira', 73 * 16, 2, 2 * 16, 30); M.decal('painel_madeira', 83 * 16, 2, 2 * 16, 30); M.decal('janela_cidade', 75 * 16 + 4, 4, 8 * 16 - 8, 24);
+    M.obj('sofa', 73, 8, { cor: '#ece8df', tag: 'sofa' }); M.obj('sofa', 77, 4, { cor: '#ece8df' }); M.obj('mesa_redonda', 78, 7); M.obj('cadeira_madeira', 77, 9); M.obj('cadeira_madeira', 79, 9);
+    M.obj('mesa', 81, 4); M.obj('mesa', 83, 8); M.obj('impressora', 84, 4); M.obj('cafeteira', 73, 3); M.obj('garrafa', 74, 3); M.obj('planta', 75, 3); M.obj('planta', 84, 10);
     // posto, copa, procedimentos
-    M.row('balcao', 33, 22, 3, 1, { cor: '#dfe4e8' }); M.obj('mesa', 36, 20); M.obj('armario', 38, 22, { cor: '#dfe4e8' });
-    M.obj('garrafa', 40, 20); M.obj('micro', 41, 20); M.obj('armario', 44, 20, { cor: '#c9a46a' }); M.obj('armario', 44, 22, { cor: '#c9a46a' }); M.obj('bebedouro', 40, 23);
-    M.obj('maca', 35, 27, { spot: 'proc' }); M.obj('ultrassom', 37, 27); M.obj('carrinho_emerg', 33, 27); M.obj('mesa_instrum', 39, 28); M.obj('pia', 44, 27); M.obj('monitor', 41, 27);
+    M.row('balcao', 61, 22, 3, 1, { cor: '#dfe4e8' }); M.obj('mesa', 64, 20); M.obj('armario', 70, 20, { cor: '#dfe4e8' }); M.obj('mesa_simples', 68, 20, { papeis: true });
+    M.obj('garrafa', 61, 26); M.obj('micro', 62, 26); M.obj('armario', 70, 26, { cor: '#c9a46a' }); M.obj('armario', 70, 28, { cor: '#c9a46a' }); M.obj('bebedouro', 61, 29);
+    M.obj('maca', 75, 24, { spot: 'proc' }); M.obj('ultrassom', 77, 24); M.obj('carrinho_emerg', 73, 24); M.obj('mesa_instrum', 79, 25); M.obj('pia', 84, 24); M.obj('monitor', 81, 24); M.obj('armario', 84, 28, { cor: '#dfe4e8' });
     MAPS.cm = M;
   }
   // ============ CIRURGIA ============

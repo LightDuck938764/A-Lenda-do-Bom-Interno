@@ -37,6 +37,34 @@ function caseBonuses(c) {
 }
 
 /* ---------------- Executor de caso clínico (reutilizado nos chefes) ---------------- */
+/* ---------------- Exames: tabela de laboratório e imagens ampliáveis ---------------- */
+// lab: [['Hemoglobina', '8,2 g/dL', '12 a 16 g/dL'], ...] — o 3º item (referência) é opcional;
+// uma linha com um único texto vira subtítulo (ex.: ['Gasometria arterial']).
+function labTableHTML(rows) {
+  return `<table class="lab"><thead><tr><th>Exame</th><th>Resultado</th><th>Referência</th></tr></thead><tbody>${rows.map(r => r.length === 1
+    ? `<tr class="lab-sub"><td colspan="3">${U.esc(r[0])}</td></tr>`
+    : `<tr><td>${U.esc(r[0])}</td><td><b>${U.esc(r[1])}</b></td><td>${U.esc(r[2] || '')}</td></tr>`).join('')}</tbody></table>`;
+}
+// img: [{ f: 'arquivo.jpg', t: 'legenda neutra (sem dar a resposta)' }]
+const IMG_BASE = 'img/casos/';
+function caseImgsHTML(list) {
+  return `<div class="cimgs">${list.map((im, i) => `<button class="cimg" data-i="${i}" data-src="${U.esc(IMG_BASE + im.f)}" data-t="${U.esc(im.t || '')}"><img src="${U.esc(IMG_BASE + im.f)}" alt="${U.esc(im.t || 'Exame')}" loading="lazy"><span>${U.esc(im.t || '')}</span><i>🔍 ampliar</i></button>`).join('')}</div>`;
+}
+function bindCaseImgs(host) {
+  host.querySelectorAll('.cimg').forEach(b => b.onclick = () => openLightbox(b.dataset.src, b.dataset.t));
+  host.querySelectorAll('.cimg img').forEach(im => im.onerror = () => { im.closest('.cimg').classList.add('broken'); });
+}
+function openLightbox(src, t) {
+  const lb = document.createElement('div'); lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-label', t || 'Exame');
+  lb.innerHTML = `<figure><div class="lb-scroll"><img src="${U.esc(src)}" alt="${U.esc(t || 'Exame')}"></div><figcaption>${U.esc(t || '')} <small>Clique na imagem para aproximar · Esc para fechar</small></figcaption></figure><button class="lb-x" aria-label="Fechar">✕</button>`;
+  const close = () => { lb.remove(); document.removeEventListener('keydown', key, true); };
+  const key = e => { if (e.key === 'Escape') { e.stopPropagation(); e.preventDefault(); close(); } };
+  lb.onclick = e => { if (e.target === lb || e.target.classList.contains('lb-x')) close(); };
+  lb.querySelector('img').onclick = e => { e.stopPropagation(); lb.classList.toggle('zoom'); };
+  document.addEventListener('keydown', key, true);
+  document.body.appendChild(lb); lb.querySelector('.lb-x').focus();
+}
+
 function CaseRunner(host, c, opts = {}) {
   const bon = caseBonuses(c);
   const total = Math.max(25, Math.round(bon.time * (opts.timeMult || 1)));
@@ -55,8 +83,8 @@ function CaseRunner(host, c, opts = {}) {
     return txt.split(/(\s+)/).map(w => { if (/\s/.test(w) || w.length < 4 || /\d/.test(w)) return U.esc(w); const id = 'b' + (bid++); if (Math.random() < rate) { blurred.add(id); return `<span class="blur" data-b="${id}" title="Clique para investigar (2 energia)">${U.esc(w)}</span>`; } return U.esc(w); }).join('');
   };
   const p = c.pac;
-  const fields = [['Queixa principal', c.qp, 'qp'], ['História da doença atual', c.hda, 'hda'], ['Antecedentes e medicações', c.ant, 'ant'], ['Exame físico', c.ef, 'ef'], ['Sinais vitais', c.sv, 'sv'], ['Exames complementares', c.ex, 'ex'], ['Imagem / ultrassonografia', c.usg, 'usg']].filter(f => f[1]);
-  const chartHTML = fields.map(([l, t, k]) => `<div class="fld-c"><dt>${l}</dt><dd>${k === 'qp' || k === 'sv' ? U.esc(t) : blurText(t, k)}</dd></div>`).join('');
+  const fields = [['Queixa principal', c.qp, 'qp'], ['História da doença atual', c.hda, 'hda'], ['Antecedentes e medicações', c.ant, 'ant'], ['Exame físico', c.ef, 'ef'], ['Sinais vitais', c.sv, 'sv'], ['Exames laboratoriais', c.lab, 'lab'], ['Exames complementares', c.ex, 'ex'], ['Imagem / ultrassonografia', c.usg, 'usg'], ['Exames de imagem e traçados', c.img, 'img']].filter(f => f[1] && (!Array.isArray(f[1]) || f[1].length));
+  const chartHTML = fields.map(([l, t, k]) => `<div class="fld-c ${k === 'lab' || k === 'img' ? 'fld-x' : ''}"><dt>${l}</dt><dd>${k === 'lab' ? labTableHTML(t) : k === 'img' ? caseImgsHTML(t) : k === 'qp' || k === 'sv' ? U.esc(t) : blurText(t, k)}</dd></div>`).join('');
   const tipoTxt = { bebe: 'Lactente/RN', crianca: 'Criança', adolescente: 'Adolescente', idoso: 'Idoso(a)', gestante: 'Gestante', adulto: 'Adulto(a)' }[p.tipo] || '';
   host.innerHTML = `
     <header class="case-head"><div class="ch-port"></div><div class="ch-id"><p class="eyebrow">${AREAS[c.area].nome} · ${c.cond ? 'Caso clínico' : ''} · Dificuldade ${'★'.repeat(c.dif)}${'☆'.repeat(3 - c.dif)}</p><h2>${U.esc(p.nome)}</h2><p>${typeof p.idade === 'number' ? p.idade + ' anos' : U.esc(p.idade)} · ${p.sexo === 'F' ? 'Feminino' : 'Masculino'} · ${tipoTxt}</p></div>
@@ -70,6 +98,7 @@ function CaseRunner(host, c, opts = {}) {
         ${bon.notes.length ? `<ul class="bon">${bon.notes.map(n => `<li>${U.esc(n)}</li>`).join('')}</ul>` : '<p class="hint">Equipamentos e habilidades compatíveis com o caso aparecem aqui.</p>'}
       </aside></div>
     <footer class="case-foot" id="cFoot"></footer>`;
+  bindCaseImgs(host);
   host.querySelector('.ch-port').appendChild(portraitCanvas(opts.look || randomCivilLook(c.id.length * 97 + String(p.idade).length, p.tipo), 84, 84, { crop: true, scale: 4 }));
   const foot = host.querySelector('#cFoot');
   const setPhase = ph => { R.phase = ph; host.querySelectorAll('.phases li').forEach(li => li.classList.toggle('on', li.dataset.ph === ph)); renderFoot(); };

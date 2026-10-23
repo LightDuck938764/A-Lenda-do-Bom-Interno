@@ -11,6 +11,8 @@ if os.path.isdir(dst): shutil.rmtree(dst)
 os.makedirs(os.path.join(dst, 'src'))
 for f in sorted(os.listdir(os.path.join(root, 'src'))):
     if f.endswith('.js'): shutil.copy(os.path.join(root, 'src', f), os.path.join(dst, 'src', f))
+for d in ['tools', 'notas']:
+    if os.path.isdir(os.path.join(root, d)): shutil.copytree(os.path.join(root, d), os.path.join(dst, d))
 for f in ['build.py', 'make_site.py', 'style.css', 'shell.html', 'site_head.html']:
     shutil.copy(os.path.join(root, f), os.path.join(dst, f))
 if os.path.isdir(os.path.join(root, 'img')):

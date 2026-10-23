@@ -26,7 +26,7 @@ function NPC(o) { NPCS_DEF.push(Object.assign({ speed: 0.9, role: 'civil', beh: 
 // ---------- Rua ----------
 NPC({ id: 'pedestre1', nome: 'Pedestre', look: randomCivilLook(11), map: 'rua', x: 6, y: 18.5, beh: { t: 'wander', r: [0, 18, 47, 1] } });
 NPC({ id: 'pedestre2', nome: 'Acompanhante apressada', look: randomCivilLook(29), map: 'rua', x: 30, y: 12.5, beh: { t: 'wander', r: [17, 12, 30, 1] } });
-NPC({ id: 'pedestre3', nome: 'Seu Zé (aposentado)', look: randomCivilLook(53, 'idoso'), map: 'rua', x: 33, y: 23, beh: { t: 'wander', r: [26, 21, 18, 6] }, fala: ['Na minha época a UPA era um posto com dois bancos e um ventilador.', 'Esse Rodolfo vende o melhor pastel da região. E o pior café.'] });
+NPC({ id: 'pedestre3', nome: 'Seu Zé (aposentado)', look: randomCivilLook(53, 'idoso'), map: 'rua', x: 40, y: 26.5, beh: { t: 'wander', r: [24, 26, 22, 2] }, fala: ['Na minha época a UPA era um posto com dois bancos e um ventilador.', 'Esse Rodolfo vende o melhor pastel da região. E o pior café.'] });
 NPC({ id: 'pipoqueiro', nome: 'Pipoqueiro', look: Object.assign(randomCivilLook(71), { cap: '#c0392b', apron: '#f4f4f0' }), map: 'rua', x: 26, y: 19, fala: ['Pipoca doce ou salgada? ... Ah, você é interno. Já tá salgado o suficiente.', 'Vi o Leão chegando de manhã. Tava mais acordado do que parece, viu.'] });
 // ---------- Saguão ----------
 NPC({ id: 'marli', nome: 'Marli (recepção)', look: 'recep', map: 'lobby', x: 15, y: 17, role: 'equipe', fala: ['Bem-vindo ao Santa Esperança! As alas estão sinalizadas: Pediatria à esquerda, Cirurgia à direita, GO e Clínica ao fundo.', 'Precisa de alguma coisa? Se for a senha do Wi-Fi, ninguém sabe.'] });
@@ -77,11 +77,11 @@ NPC({ id: 'tec_go', nome: 'Técnica Rosilda', look: Object.assign({}, LOOKS.tec_
 NPC({ id: 'gestante1', nome: 'Gestante', look: randomCivilLook(401, 'gestante'), map: 'go', x: 22, y: 25, beh: { t: 'wander', r: [16, 23, 9, 4] }, fala: ['Primeira gravidez! Estou ansiosa e feliz.'] });
 NPC({ id: 'acomp_go', nome: 'Acompanhante', look: randomCivilLook(402), map: 'go', x: 5, y: 26, fala: ['Ela tá dormindo e o bebê também. Momento raro de paz.'] });
 // ---------- Clínica Médica ----------
-NPC({ id: 'vladimir', nome: 'Dr. Wagnão', look: 'vladimir', map: 'cm', x: 39, y: 6, role: 'preceptor', area: 'cm', speed: 0.6, beh: { t: 'wander', r: [33, 5, 11, 5] } });
-NPC({ id: 'res_kenji', nome: 'Kenji (R2)', look: 'res_kenji', map: 'cm', x: 20, y: 15, role: 'residente', area: 'cm', beh: { t: 'wander', r: [2, 14, 40, 3] } });
-NPC({ id: 'res_otavio', nome: 'Otávio (R1)', look: 'res_otavio', map: 'cm', x: 42, y: 9, role: 'residente', area: 'cm', beh: { t: 'wander', r: [40, 5, 4, 5] } });
-NPC({ id: 'res_bia', nome: 'Bia (R3)', look: 'res_bia', map: 'cm', x: 36, y: 22, role: 'residente', area: 'cm', beh: { t: 'wander', r: [33, 20, 5, 3] } });
-NPC({ id: 'enf_cm', nome: 'Enfermeiro Marcos', look: Object.assign({}, LOOKS.enf_jose, { skin: '#e0ac7e', hair: 'curto', scrub: '#5aa0d8' }), map: 'cm', x: 34, y: 20, role: 'equipe', fala: ['Quarto 3 leito B: glicemia de novo alta. Quarto 6: família quer conversar.', 'Aqui são 16 pacientes. Cada um com sua história.'] });
+NPC({ id: 'vladimir', nome: 'Dr. Wagnão', look: 'vladimir', map: 'cm', x: 79, y: 6, role: 'preceptor', area: 'cm', speed: 0.6, beh: { t: 'wander', r: [73, 5, 11, 5] } });
+NPC({ id: 'res_kenji', nome: 'Kenji (R2)', look: 'res_kenji', map: 'cm', x: 30, y: 15, role: 'residente', area: 'cm', beh: { t: 'wander', r: [2, 14, 80, 3] } });
+NPC({ id: 'res_otavio', nome: 'Otávio (R1)', look: 'res_otavio', map: 'cm', x: 82, y: 9, role: 'residente', area: 'cm', beh: { t: 'wander', r: [80, 5, 4, 5] } });
+NPC({ id: 'res_bia', nome: 'Bia (R3)', look: 'res_bia', map: 'cm', x: 65, y: 21, role: 'residente', area: 'cm', beh: { t: 'wander', r: [62, 20, 8, 2] } });
+NPC({ id: 'enf_cm', nome: 'Enfermeiro Marcos', look: Object.assign({}, LOOKS.enf_jose, { skin: '#e0ac7e', hair: 'curto', scrub: '#5aa0d8' }), map: 'cm', x: 63, y: 20, role: 'equipe', fala: ['Hematologia leito 2: hemograma saiu. Nefrologia leito 1: potássio de novo alto.', 'Agora são onze alas, uma por especialidade. Cada paciente fica na ala da sua doença.', 'Psiquiatria é no fim do corredor, lado sul. Ambiente calmo, sem suporte de soro à vista.'] });
 NPC({ id: 'gustavo_calado', nome: 'Gustavo Calado', look: { skin: '#d9a07a', hair: 'topete', hairC: '#3a2414', top: 'social', topC: '#7fc7d9', bottomC: '#2f4f86', shoes: '#ececec', facial: 'cavanhaque', mouth: 'smile', build: 'normal' }, map: 'cm', x: 22, y: 15.6, beh: { t: 'wander', r: [19, 14, 7, 2] }, fala: ['bixo pra mim você é MELHOR interno que ja passou nesse hospital'] });
 NPC({ id: 'familiar_cm', nome: 'Filha de paciente', look: randomCivilLook(501), map: 'cm', x: 12, y: 16, beh: { t: 'wander', r: [2, 14, 28, 3] }, fala: ['O Dr. Wagnão fala bonito, né? Às vezes eu não entendo nada, mas fico emocionada.'] });
 // ---------- Cirurgia ----------
@@ -199,12 +199,12 @@ const CHAINS = {
   cm: [
     { id: 'cm_intro', titulo: 'O Dr. Wagnão', tipo: 'talk', alvo: 'vladimir', local: 'Sala da Clínica Médica', desc: 'Apresente-se ao Dr. Wagnão na Sala da Clínica Médica.' },
     { id: 'cm_res', titulo: 'A visita', tipo: 'talk', alvo: 'res_kenji', local: 'Corredor da CM', desc: 'O R2 Kenji organiza a visita. Fale com ele.' },
-    { id: 'cm_casos1', titulo: 'Visita aos quartos', tipo: 'cases', n: 3, local: 'Quartos 1 a 8', desc: 'Avalie 3 pacientes da enfermaria.' },
+    { id: 'cm_casos1', titulo: 'Visita às alas', tipo: 'cases', n: 3, local: 'Alas de especialidade', desc: 'Avalie 3 pacientes nas alas da enfermaria (cada ala reúne os casos de uma especialidade).' },
     { id: 'cm_proc', titulo: 'Toracocentese supervisionada', tipo: 'proc', proc: 'toraco', local: 'Sala de Procedimentos (CM)', desc: 'Participe da toracocentese simulada.' },
     { id: 'cm_side', titulo: 'A enfermaria é viva', tipo: 'side', n: 1, local: 'Clínica Médica', desc: 'Conclua 1 pedido da equipe no prazo.' },
     { id: 'cm_cap', titulo: 'Desafio do Capítulo: O Quarto Duplo', tipo: 'challenge', ch: 'quarto', area: 'cm', local: 'Posto (CM)', desc: 'A R3 Bia pediu ajuda: separe corretamente os dados de dois pacientes do mesmo quarto.', alvo: 'res_bia' },
     { id: 'cm_proc2', titulo: 'Acesso venoso central', tipo: 'proc', proc: 'cvc', local: 'Sala de Procedimentos (CM)', desc: 'Participe da passagem simulada de acesso venoso central.' },
-    { id: 'cm_casos2', titulo: 'Casos complexos', tipo: 'cases', n: 2, local: 'Quartos', desc: 'Resolva mais 2 casos da enfermaria.' },
+    { id: 'cm_casos2', titulo: 'Casos complexos', tipo: 'cases', n: 2, local: 'Alas de especialidade', desc: 'Resolva mais 2 casos da enfermaria, em qualquer ala.' },
     { id: 'cm_boss', titulo: 'O Discurso Definitivo', tipo: 'boss', alvo: 'vladimir', local: 'Sala da Clínica Médica', desc: 'Enfrente o Dr. Wagnão na prova final de Clínica Médica.' },
   ],
   cir: [
