@@ -163,13 +163,14 @@ CASO({ id: 'ce_pe_diabetico', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabe
   ecd: 'Internação, controle glicêmico, antibiótico de amplo espectro após cultura de fragmento ósseo ou tecido profundo, desbridamento cirúrgico e avaliação vascular (índice tornozelo-braquial, Doppler), pois isquemia piora o prognóstico. Descarga do pé. Prevenção: exame anual dos pés com monofilamento.' });
 
 /* ---------- Tireoide ---------- */
-CASO({ id: 'ce_graves', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Doenças da tireoide', cond: 'Doença de Graves', tags: ['endocrino', 'cardio'],
+CASO({ id: 'ce_graves', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Doenças da tireoide', cond: 'Doença de Graves', tags: ['endocrino', 'cardio', 'ecg'],
   pac: { nome: 'Luciana Prates', idade: 32, sexo: 'F', tipo: 'adulto' },
   qp: 'Palpitação, emagrecimento e "olhos saltados".',
   hda: 'Perdeu 7 kg em 3 meses comendo bem. Calor excessivo, tremor, insônia, diarreia. Olhos irritados e mais "abertos".',
   ant: 'Tabagista.',
   ef: 'Bócio difuso com sopro, exoftalmia bilateral leve, retração palpebral, tremor fino, pele quente e úmida.',
   sv: 'FC 118 bpm · PA 140 x 60 mmHg',
+  img: [{ f: 'ecg_taquicardia_sinusal_dii.jpg', t: 'Eletrocardiograma (DII)' }],
   lab: [['TSH', '< 0,01 mUI/L', '0,4 a 4'], ['T4 livre', '4,2 ng/dL', '0,9 a 1,8'], ['TRAb', 'Positivo', 'Negativo']],
   pista: 'Bócio difuso, oftalmopatia e TRAb.',
   dx: ['Doença de Graves', 'Bócio multinodular tóxico', 'Tireoidite subaguda', 'Tireotoxicose factícia'],

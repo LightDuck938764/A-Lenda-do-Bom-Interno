@@ -17,3 +17,15 @@
 | ecg_hipocalemia.jpg | ECG 12 derivações: ondas T achatadas e ondas U proeminentes (hipocalemia em CAD) | Banco de questões: CLI1 #43 |
 | ecg_hipercalemia.jpg | ECG: ondas T apiculadas (hipercalemia, K 6,1, DRC) | Banco de questões: CLI10 #99 |
 | foto_face_hipotireoidismo.jpg | Face: edema periorbital e rarefação do terço lateral das sobrancelhas | Banco de questões: CLI5 #53 |
+| espirometria_asma_bd.jpg | Espirometria: distúrbio obstrutivo moderado com resposta ao broncodilatador | Banco de questões: CLI1 #126 |
+| rx_pancoast.jpg | RX tórax: opacidade no ápice pulmonar direito | Banco de questões: CLI3 #8 |
+| foto_sindrome_veia_cava_superior.jpg | Edema de face e pescoço com circulação colateral torácica | Banco de questões: CLI3 #101 |
+| rx_massa_mediastinal_svcs.jpg | RX tórax: alargamento mediastinal/massa | Banco de questões: CLI3 #101 |
+| rx_pneumonia_grave.jpg | RX tórax: opacidades alveolares bilaterais | Banco de questões: CLI8 #30 |
+| rx_dpoc_exacerbacao.jpg | RX tórax em DPOC exacerbada | Banco de questões: CLI9 #3 |
+| rx_fibrose_pulmonar.jpg | RX tórax: infiltrado reticular basal bilateral | Banco de questões: CLI9 #52 |
+| tc_fibrose_pulmonar.jpg | TC: faveolamento subpleural basal (padrão PIU) | Banco de questões: CLI9 #52 |
+| rx_sdra.jpg | RX tórax: infiltrados bilaterais difusos (SDRA/TRALI) | Banco de questões: CLI10 #46 |
+| rx_dpoc_cor_pulmonale.jpg | RX tórax: hiperinsuflação e artérias pulmonares proeminentes | Banco de questões: CLI5 #18 |
+| ecg_taquicardia_sinusal_dii.jpg | DII: taquicardia sinusal (~130 bpm) em tireotoxicose | Banco de questões: CLI9 #26 |
+| ecg_bavt_endocardite.jpg | ECG: bloqueio atrioventricular total (dissociação AV) | Banco de questões: CLI8 #4 |
