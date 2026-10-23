@@ -168,7 +168,7 @@ CASO({ id: 'cc_febre_reumatica', area: 'cm', ala: 'cardio', dif: 2, tema: 'Febre
   cd: ['Benzatina, anti-inflamatório e prednisona', 'Antibiótico oral por 3 dias', 'Só AINE, sem penicilina', 'Cirurgia mitral imediata'],
   ecd: 'Erradicar o estreptococo (penicilina benzatina), AAS ou naproxeno para a artrite e prednisona na cardite moderada a grave. Profilaxia secundária com benzatina a cada 21 dias: sem cardite até 21 anos ou 5 anos após o surto; cardite curada até 25 anos ou 10 anos; lesão residual até 40 anos ou por toda a vida.' });
 
-CASO({ id: 'cc_coreia_sydenham', area: 'cm', ala: 'cardio', dif: 2, tema: 'Febre reumática', cond: 'Coreia de Sydenham', tags: ['neuro', 'reumato'],
+CASO({ id: 'cc_coreia_sydenham', area: 'ped', dif: 2, tema: 'Febre reumática', cond: 'Coreia de Sydenham', tags: ['neuro', 'reumato'],
   pac: { nome: 'Lívia Torres', idade: 11, sexo: 'F', tipo: 'crianca' },
   qp: 'Movimentos involuntários e "desastrada".',
   hda: 'Há 3 semanas começou a derrubar objetos, a letra piorou e faz movimentos involuntários rápidos nos braços e na face, que somem ao dormir. Choro fácil.',
