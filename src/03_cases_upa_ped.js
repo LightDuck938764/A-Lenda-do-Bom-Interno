@@ -50,35 +50,6 @@ CASO({ id: 'upa_psic1', area: 'upa', dif: 2, cond: 'Quadro de agitação/psicose
   cd: ['Desescalada verbal em ambiente calmo, investigar causas orgânicas e acionar a psiquiatria; medicar, se preciso, de preferência por via oral', 'Contenção mecânica imediata como primeira medida, para garantir a segurança da equipe, e só depois tentar conversar e investigar causas orgânicas', 'Alta com orientação de procurar a UBS na próxima semana, já que não há risco clínico aparente no momento', 'Sedação intravenosa profunda com benzodiazepínico e antipsicótico, sem avaliar causas orgânicas, e alta após ele dormir'],
   ecd: 'A abordagem inicial da agitação é verbal, respeitosa e em ambiente com poucos estímulos. Contenção é medida de exceção. O primeiro episódio psicótico exige investigação clínica e seguimento especializado.' });
 
-CASO({ id: 'upa_apend1', area: 'upa', dif: 1, cond: 'Apendicite', tags: ['dor', 'febre', 'ef', 'vomito'],
-  pac: { nome: 'Bruno Teixeira', idade: 19, sexo: 'M', tipo: 'adulto' },
-  qp: 'Dor na barriga desde ontem.',
-  hda: 'Dor iniciada em região periumbilical há 18 horas, que migrou para a fossa ilíaca direita. Perda de apetite e náuseas, com um episódio de vômito.',
-  ant: 'Hígido.',
-  ef: 'Dor à palpação em fossa ilíaca direita, descompressão brusca dolorosa (Blumberg positivo). Sinal de Rovsing positivo.',
-  sv: 'T 37,9 °C · FC 98 bpm · PA 122/78 mmHg',
-  ex: 'Leucócitos 15.800/mm³ com desvio à esquerda. Urina tipo I sem alterações.',
-  pista: 'Dor que MIGRA do umbigo para a fossa ilíaca direita + anorexia + Blumberg: sequência clássica.',
-  dx: ['Apendicite aguda', 'Gastroenterite aguda', 'Cólica nefrética', 'Diverticulite aguda'],
-  edx: 'Migração da dor para a FID, anorexia, febre baixa, irritação peritoneal localizada e leucocitose formam o quadro clássico de apendicite.',
-  cd: ['Jejum, analgesia, antibiótico e avaliação da cirurgia para apendicectomia', 'Alta com antiespasmódico e analgésico, com retorno se a dor piorar nas próximas 24 horas', 'Colonoscopia eletiva para avaliar a fossa ilíaca direita e o apêndice', 'Laxativo e observação domiciliar, já que a dor pode ser constipação'],
-  ecd: 'A apendicite aguda é de tratamento cirúrgico. Analgesia não mascara o diagnóstico e deve ser oferecida.' });
-
-CASO({ id: 'upa_apend2', area: 'upa', dif: 2, cond: 'Apendicite', tags: ['dor', 'usg', 'img', 'ef'],
-  pac: { nome: 'Camila Duarte', idade: 26, sexo: 'F', tipo: 'adulto' },
-  qp: 'Dor no lado direito da barriga há 1 dia.',
-  hda: 'Dor em fossa ilíaca direita com piora progressiva, náuseas e febre baixa. Menstruação regular, última há 12 dias.',
-  ant: 'Sem comorbidades. Vida sexual ativa com parceiro fixo.',
-  ef: 'Dor e defesa em FID. Sem dor à mobilização do colo uterino. Sem corrimento.',
-  sv: 'T 38,0 °C · FC 102 bpm · PA 118/72 mmHg',
-  ex: 'Beta-hCG negativo. Leucócitos 14.200/mm³.',
-  usg: 'USG: apêndice com 9 mm de diâmetro, não compressível, com borramento da gordura adjacente. Ovários de aspecto normal.',
-  pista: 'Beta-hCG negativo afasta gravidez ectópica; sem dor à mobilização do colo, DIP fica menos provável. O USG é decisivo aqui.',
-  dx: ['Apendicite aguda', 'Gravidez ectópica rota', 'Doença inflamatória pélvica', 'Torção de ovário'],
-  edx: 'Em mulher com dor em FID, gravidez e causas ginecológicas precisam ser avaliadas. Beta-hCG negativo, exame ginecológico sem sinais de DIP e USG com apêndice espessado e não compressível confirmam apendicite.',
-  cd: ['Jejum, analgesia, antibiótico e avaliação cirúrgica para apendicectomia', 'Metotrexato intramuscular pela suspeita de gravidez ectópica íntegra', 'Antibiótico oral para doença inflamatória pélvica e alta com retorno em 72 horas', 'Repetir o ultrassom em 2 semanas, com analgesia e dieta leve em casa'],
-  ecd: 'Com diagnóstico de apendicite confirmado por imagem, a conduta é cirúrgica, com antibiótico e analgesia.' });
-
 CASO({ id: 'upa_tce1', area: 'upa', dif: 2, cond: 'Traumatismo cranioencefálico', tags: ['neuro', 'img', 'vomito'],
   pac: { nome: 'Wellington Souza', idade: 28, sexo: 'M', tipo: 'adulto' },
   qp: 'Caiu de moto há 2 horas, bateu a cabeça.',

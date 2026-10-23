@@ -122,7 +122,7 @@ CASO({ id: 'pn_ict_abo', area: 'ped', dif: 2, tema: 'Icterícia neonatal', cond:
   ecd: 'A icterícia nas primeiras 24 horas impede alta precoce. A decisão de fototerapia considera horas de vida, idade gestacional e o fator de risco hemólise. Imunoglobulina anti-D é dada à mãe Rh negativo, não ao RN.' });
 
 CASO({ id: 'pn_atresia_biliar', area: 'ped', dif: 3, tema: 'Icterícia neonatal', cond: 'Atresia de vias biliares', tags: ['neo', 'cir', 'usg'],
-  pac: { nome: 'Matheus Correia', idade: '5 semanas', sexo: 'M', tipo: 'bebe' },
+  pac: { nome: 'Matheus Coelho', idade: '5 semanas', sexo: 'M', tipo: 'bebe' },
   qp: 'Continua amarelo e as fezes estão "branquinhas".',
   hda: 'Icterícia desde a 2ª semana, que não melhorou. Fezes cada vez mais claras (comparadas com a escala de cor das fezes da Caderneta) e urina escura. Mama bem.',
   ant: 'Termo, triagem neonatal normal.',

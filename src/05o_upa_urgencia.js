@@ -345,7 +345,7 @@ CASO({ id: 'ue_iam_vd', area: 'upa', dif: 3, tema: 'Doença arterial coronariana
   ecd: 'O VD isquêmico depende de pré-carga: cristaloide, evitar nitratos, diuréticos e morfina; inotrópico se necessário; atropina ou marca-passo para bradicardia; reperfusão imediata.' });
 
 CASO({ id: 'ue_iam_atipico', area: 'upa', dif: 2, tema: 'Doença arterial coronariana', cond: 'IAM inferior com apresentação atípica em diabético', tags: ['cardio', 'ecg', 'nefro'],
-  pac: { nome: 'Osvaldo Teixeira', idade: 67, sexo: 'M', tipo: 'idoso' },
+  pac: { nome: 'Osvaldo Quintão', idade: 67, sexo: 'M', tipo: 'idoso' },
   qp: 'Mal-estar e enjoo.',
   hda: 'Há 30 minutos mal-estar, náuseas e sudorese, sem dor torácica.',
   ant: 'DRC não dialítica (creatinina 2,1 mg/dL), hipertensão, diabetes.',
