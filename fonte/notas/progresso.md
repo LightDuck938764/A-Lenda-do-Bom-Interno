@@ -21,6 +21,14 @@ Parte 2 (GO, Urgência, Cirurgia?) ainda não chegou.
 - PEDIATRIA_2 lido → src/03q_ped_gi.js (13 casos, prefixo pd_). ECG do banco: ecg_taquicardia_sinusal_crianca.jpg.
 - PEDIATRIA_3 lido → src/03r_ped_cresc.js (24 casos, prefixo pc_: DNPM, TEA, TDAH, estatura, obesidade, desnutrição, puberdade). Curvas OMS do banco: curva_estatura_menino_p3.jpg, curva_estatura_9anos_110cm.jpg.
 - PEDIATRIA_4 lido → src/03s_ped_neo_rean.js (14 casos, prefixo rn_: sala de parto SBP 2022, hérnia diafragmática com RX do banco rx_hernia_diafragmatica_rn.jpg, hipotermia terapêutica).
+- PEDIATRIA_5 → src/03t_ped_emerg.js (17, pa_: PALS, OVACE, afogamento, cáusticos). ECGs do banco: ecg_fv_crianca, ecg_tv_sem_pulso, ecg_ritmo_organizado_aesp, monitor_bradicardia_hipotensao.
+- PEDIATRIA_6 → src/03u_ped_vacinas.js (15, pv_), calendário técnico 2026 (gov.br).
+- PEDIATRIA_7 → src/03v_ped_sifilis_torch.js (11, ps_). RX do banco: rx_ossos_longos_sifilis_lactente (Revalida 2024), rx_ossos_longos_sifilis_rn (USP 2024; não usado ainda).
+- PEDIATRIA_8 → src/03w_ped_diversos.js (23, pm_). TC do banco: tc_hematoma_subdural_lactente; tc_pneumonia_necrotizante (anexada a pr_pneumonia_necrotizante).
+- Temas da lista sem questões → src/03x_ped_neonatal.js (19, pn_: resp. neonatal, sepse, icterícia, triagens, aleitamento, ferro SBP 2026) e src/03y_ped_cir_exant.js (27, pq_/px_: cirurgia pediátrica, anomalias anorretais, VUP, gigantismo, exantemáticas, Kawasaki).
+- Mastite lactacional ficou em pn_mastite (pediatria/aleitamento): no GO-puerpério não repetir mastite.
+- Removidos 17 casos antigos de pediatria repetidos (bronquiolite, APLV, icterícia, sarampo, rubéola, resfriado, TGA, coqueluche, autismo, TDAH, exantemáticas).
+- Tempo do caso: +20 s com tabela de exames, +15 s por imagem (máx. 30), +10 s com laudo.
 - valida.js agora mostra também % da conduta correta como a MAIS CURTA (evitar o padrão inverso; alvo: distribuição parecida entre as 4 posições de tamanho).
 
 ## Imagens pendentes (buscar em fonte livre e mostrar ao usuário)
@@ -28,6 +36,8 @@ Parte 2 (GO, Urgência, Cirurgia?) ainda não chegou.
 - Otoscopia: membrana timpânica abaulada (OMA).
 - Foto: pseudomembrana diftérica; gengivoestomatite herpética; herpangina.
 - RX de mão/punho para idade óssea (opcional, casos pc_).
+- RX tórax neonatal: DMH (reticulogranular), TTRN, SAM; RX dupla bolha (atresia duodenal); RX atresia de esôfago (sonda enrolada); RX corpo estranho brônquico (aprisionamento aéreo); RX bateria (duplo halo).
+- Fotos: onfalocele x gastrosquise; manchas de Koplik; face esbofeteada; varicela; mão-pé-boca; escarlatina/língua em framboesa; Kawasaki; higroma cístico; leucocoria.
 
 ## Casos antigos
 Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do mesmo tema na mesma área (sem repetição).

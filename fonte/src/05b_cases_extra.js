@@ -43,20 +43,6 @@ CASO({ id: 'ped_sarampo2', area: 'ped', dif: 2, cond: 'Sarampo', tags: ['ped', '
   cd: ['Internação com isolamento para aerossóis, oxigênio, antibiótico para pneumonia bacteriana secundária, vitamina A e notificação', 'Alta com sintomáticos e retorno em 48 horas, sem necessidade de notificar', 'Corticoide sistêmico para a pneumonite e alta com nebulização em casa', 'Isolamento domiciliar sem tratamento específico, já que a pneumonia do sarampo é sempre viral e não melhora com antibiótico nem oxigênio'],
   ecd: 'Pneumonia secundária no sarampo exige internação, suporte e antibiótico, mantendo isolamento e vitamina A.' });
 
-CASO({ id: 'ped_coqueluche2', area: 'ped', dif: 3, cond: 'Coqueluche', tags: ['ped', 'resp', 'infec', 'mon'],
-  pac: { nome: 'Isis (bebê)', idade: '7 semanas', sexo: 'F', tipo: 'bebe' },
-  qp: 'Mãe: "ela tosse até ficar roxa e para de respirar".',
-  hda: 'Tosse há 10 dias, agora em crises com cianose e episódios de apneia. Sem febre. A mãe não recebeu dTpa na gestação.',
-  ant: 'Nascida a termo. Recebeu apenas BCG e hepatite B.',
-  ef: 'Entre as crises, aparentemente bem. Durante a crise: cianose e bradicardia.',
-  sv: 'FC 150 bpm (cai para 80 na crise) · SpO₂ 82% na crise',
-  ex: 'Leucócitos 38.000/mm³ com linfocitose. PCR para Bordetella pertussis positivo.',
-  pista: 'Em menores de 3 meses, a coqueluche pode se manifestar com apneia e cianose em vez do guincho clássico. É grave.',
-  dx: ['Coqueluche grave em lactente jovem', 'Bronquiolite leve', 'Refluxo gastroesofágico', 'Aspiração de corpo estranho'],
-  edx: 'Tosse paroxística com apneia, cianose e linfocitose importante em lactente não vacinado, com PCR positivo: coqueluche grave.',
-  cd: ['Internação com monitorização cardiorrespiratória, macrolídeo, suporte e profilaxia/notificação dos contatos', 'Tratamento ambulatorial com azitromicina e retorno em 48 horas, mesmo no lactente pequeno com apneia e cianose durante os acessos', 'Xarope antitussígeno e mel para os acessos de tosse, com observação em casa', 'Aguardar a imunização dos 2 meses, que trata a infecção atual e protege os contatos da casa'],
-  ecd: 'Lactentes jovens com coqueluche têm alto risco de apneia, pneumonia e morte. A dTpa na gestação protege o recém-nascido.' });
-
 CASO({ id: 'ped_pediculose2', area: 'ped', dif: 2, cond: 'Pediculose', tags: ['ped', 'infec', 'ef'],
   pac: { nome: 'Rebeca', idade: '8 anos', sexo: 'F', tipo: 'crianca' },
   qp: 'Feridas atrás das orelhas e "caroços" no pescoço.',

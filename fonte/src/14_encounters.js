@@ -15,6 +15,8 @@ const SKILL_CLUE_TAGS = { med3: 'ef', med7: 'ecg', med8: 'gaso', med9: 'img', me
 const FARM_TAGS = ['farm2', 'farm3', 'farm4', 'farm5', 'farm6', 'farm7', 'farm8', 'farm9', 'farm10', 'farm11', 'farm12', 'farm14', 'farm15', 'farm16', 'farm17', 'farm18', 'farm19'];
 function caseBonuses(c) {
   const st = stats(); const tags = c.tags || []; const out = { time: BAL.caseTime[c.dif] + FORM.tempoFoco(st), notes: [], clue: false, elimCd: 0 };
+  // casos com exames (tabela, imagens, laudos) dão mais tempo de leitura
+  out.time += (c.lab ? 20 + Math.min(20, c.lab.length * 2) : 0) + Math.min(30, (c.img || []).length * 15) + (c.ex ? 10 : 0);
   const add = (s, why) => { out.time += s; out.notes.push(`+${s}s ${why}`); };
   for (const it of equippedItems()) {
     const tt = it.fx.toolTags || []; if (tt.some(t => tags.includes(t))) { add(it.fx.tagTime || 10, it.nome); out.clue = true; }
