@@ -29,3 +29,4 @@
 | rx_dpoc_cor_pulmonale.jpg | RX tórax: hiperinsuflação e artérias pulmonares proeminentes | Banco de questões: CLI5 #18 |
 | ecg_taquicardia_sinusal_dii.jpg | DII: taquicardia sinusal (~130 bpm) em tireotoxicose | Banco de questões: CLI9 #26 |
 | ecg_bavt_endocardite.jpg | ECG: bloqueio atrioventricular total (dissociação AV) | Banco de questões: CLI8 #4 |
+| eletroforese_pico_monoclonal.jpg | Eletroforese de proteínas séricas com pico monoclonal na região gama | Banco de questões: CLI11 #59 |
