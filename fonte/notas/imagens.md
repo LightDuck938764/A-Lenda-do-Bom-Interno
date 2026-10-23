@@ -49,3 +49,4 @@
 | ecg_ritmo_idioventricular.jpg | Monitor: ritmo de QRS largo e lento (idioventricular; AESP se sem pulso) | Banco de questões: CLI6 #65 |
 | tc_acm_hiperdensa.jpg | TC de crânio sem contraste: artéria cerebral média esquerda hiperdensa, sem hemorragia | Banco de questões: CLI4 #56 |
 | rm_avc_parietal_direito.jpg | RM FLAIR: hiperssinal cortical-subcortical parietal direito (infarto subagudo) | Banco de questões: CLI10 #43 |
+| peca_colectomia_rcu.jpg | Peça de colectomia: mucosa difusamente inflamada e contínua (retocolite ulcerativa) | Banco de questões: CLI3 #21 |

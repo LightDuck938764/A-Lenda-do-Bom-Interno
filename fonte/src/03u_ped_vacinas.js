@@ -98,7 +98,7 @@ CASO({ id: 'pv_hepb_mae', area: 'ped', dif: 2, tema: 'Imunizações', cond: 'Rec
   ecd: 'Vacina e imunoglobulina anti-hepatite B no pós-parto imediato, idealmente nas primeiras 12 horas (a imunoglobulina pode ser feita até 7 dias). A amamentação é permitida. Testa-se HBsAg e anti-HBs após o término do esquema.' });
 
 CASO({ id: 'pv_hiv_exposto', area: 'ped', dif: 2, tema: 'Imunizações', cond: 'Vacinação de lactente exposto ao HIV', tags: ['inf'],
-  pac: { nome: 'Davi Monteiro', idade: '2 meses', sexo: 'M', tipo: 'bebe' },
+  pac: { nome: 'Davi Rangel', idade: '2 meses', sexo: 'M', tipo: 'bebe' },
   qp: 'Veio vacinar; nasceu em casa e não tomou a BCG.',
   hda: 'Mãe vivendo com HIV, carga viral indetectável no fim da gestação. Recebeu profilaxia com antirretroviral por 4 semanas. Em fórmula infantil. Assintomático.',
   ant: 'Termo, sem intercorrências.',

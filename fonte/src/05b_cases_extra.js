@@ -170,48 +170,6 @@ CASO({ id: 'cm_lma2', area: 'cm', ala: 'hemato', dif: 3, cond: 'Leucemia mieloid
   cd: ['Iniciar ácido transretinoico (ATRA) imediatamente na suspeita, com suporte transfusional agressivo da coagulopatia', 'Aguardar o resultado da t(15;17) para iniciar o tratamento específico, mantendo só observação para não tratar sem confirmação genética', 'Heparina plena pela coagulação intravascular disseminada, sem transfusão de plaquetas', 'Corticoide em dose alta e alta com retorno para o resultado do mielograma em uma semana'],
   ecd: 'Na suspeita de LPA, o ATRA deve ser iniciado imediatamente, pois a principal causa de morte precoce é hemorrágica.' });
 
-CASO({ id: 'cir_apend2', area: 'cir', dif: 3, cond: 'Apendicite', tags: ['img', 'infec', 'febre', 'dor'],
-  pac: { nome: 'Sra. Neide Campos', idade: 61, sexo: 'F', tipo: 'idoso' },
-  qp: 'Dor no lado direito da barriga há 7 dias.',
-  hda: 'Dor em fossa ilíaca direita há 1 semana, que melhorou parcialmente, mas persistem febre e massa dolorosa.',
-  ant: 'Hipertensa.',
-  ef: 'Massa palpável e dolorosa em FID, sem peritonite difusa.',
-  sv: 'T 38,2 °C · FC 94 bpm · PA 132/80 mmHg',
-  ex: 'TC: abscesso periapendicular bem delimitado de 5 cm, sem pneumoperitônio livre.',
-  pista: 'Apendicite com mais de 5 dias e abscesso BLOQUEADO em paciente estável: a cirurgia imediata é mais arriscada que a drenagem.',
-  dx: ['Apendicite complicada com abscesso', 'Apendicite aguda não complicada', 'Câncer de ceco com perfuração bloqueada', 'Diverticulite de sigmoide'],
-  edx: 'Evolução prolongada, massa em FID e coleção periapendicular na TC: apendicite bloqueada com abscesso.',
-  cd: ['Drenagem percutânea guiada por imagem com antibiótico; investigar o cólon (idade) e discutir apendicectomia posterior', 'Apendicectomia laparoscópica imediata com dissecção do bloqueio, mesmo com o abscesso organizado e sem investigar o cólon depois', 'Colectomia total de urgência pela suspeita de neoplasia de cólon associada', 'Ileostomia em alça para desviar o trânsito e alta com antibiótico oral'],
-  ecd: 'No abscesso bloqueado em paciente estável, a drenagem percutânea com antibiótico reduz complicações. Acima dos 40–50 anos, investigar neoplasia de cólon.' });
-
-CASO({ id: 'cir_ccr2', area: 'cir', dif: 3, cond: 'Câncer colorretal', tags: ['img'],
-  pac: { nome: 'Sr. Hélio Duarte', idade: 58, sexo: 'M', tipo: 'adulto' },
-  qp: 'Sangue nas fezes e sensação de evacuação incompleta.',
-  hda: 'Há 3 meses, sangramento retal, tenesmo e afilamento das fezes.',
-  ant: 'Sem comorbidades.',
-  ef: 'Toque retal: lesão endurecida a 6 cm da borda anal.',
-  sv: 'Normais.',
-  ex: 'Colonoscopia com biópsia: adenocarcinoma de reto médio. RM de pelve: tumor T3 com linfonodos suspeitos. TC: sem metástases.',
-  pista: 'Câncer de RETO localmente avançado (T3/N+): a estratégia moderna começa ANTES da cirurgia.',
-  dx: ['Adenocarcinoma de reto localmente avançado', 'Doença hemorroidária com sangramento', 'Retocolite ulcerativa distal', 'Fissura anal crônica'],
-  edx: 'Lesão retal com biópsia de adenocarcinoma, estadiada como T3 com linfonodos suspeitos e sem metástases.',
-  cd: ['Terapia neoadjuvante seguida de excisão total do mesorreto', 'Ressecção local transanal isolada', 'Colostomia definitiva sem ressecção', 'Cirurgia imediata sem estadiamento por ressonância magnética'],
-  ecd: 'No câncer de reto localmente avançado, a neoadjuvância seguida de ressecção com excisão total do mesorreto reduz recidiva local.' });
-
-CASO({ id: 'cir_capanc2', area: 'cir', dif: 3, cond: 'Câncer de pâncreas', tags: ['img'],
-  pac: { nome: 'Dona Glória Ramos', idade: 71, sexo: 'F', tipo: 'idoso' },
-  qp: 'Amarelão, coceira e emagrecimento.',
-  hda: 'Icterícia progressiva há 1 mês, prurido intenso e perda de 9 kg.',
-  ant: 'Sem comorbidades graves.',
-  ef: 'Icterícia, vesícula palpável. Hepatomegalia nodular.',
-  sv: 'Normais.',
-  ex: 'TC: massa na cabeça do pâncreas envolvendo a artéria mesentérica superior em mais de 180°, com múltiplas metástases hepáticas. Biópsia hepática: adenocarcinoma.',
-  pista: 'Metástases hepáticas = doença estádio IV. A cirurgia de Whipple não muda o prognóstico aqui; o foco é aliviar sintomas.',
-  dx: ['Adenocarcinoma de pâncreas metastático', 'Adenocarcinoma de pâncreas ressecável', 'Coledocolitíase', 'Hepatite viral aguda'],
-  edx: 'Tumor de cabeça pancreática com invasão arterial e metástases hepáticas comprovadas: doença irressecável e metastática.',
-  cd: ['Não ressecar: drenagem biliar com prótese (de preferência endoscópica) e encaminhar para tratamento sistêmico e cuidados paliativos', 'Duodenopancreatectomia com ressecção das metástases hepáticas, buscando a cura cirúrgica sem quimioterapia ou cuidados paliativos', 'Pancreatectomia total de urgência para aliviar a icterícia e a dor', 'Colecistectomia isolada para tratar a icterícia, sem estadiamento adicional'],
-  ecd: 'Na doença metastática, a ressecção não traz benefício; a drenagem biliar alivia a icterícia e o prurido, com abordagem oncológica e paliativa.' });
-
 CASO({ id: 'cir_hsa2', area: 'cir', dif: 3, cond: 'Hemorragia subaracnóidea', tags: ['neuro', 'img'],
   pac: { nome: 'Sr. Otávio Lemos', idade: 55, sexo: 'M', tipo: 'adulto' },
   qp: 'Internado por HSA tratada; ficou sonolento hoje.',

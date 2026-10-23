@@ -23,7 +23,7 @@ CASO({ id: 'rm_gota_aguda', area: 'cm', ala: 'reumato', dif: 1, tema: 'Gota', co
   ecd: 'Crise: colchicina (melhor se iniciada em até 12-24 horas), AINE ou corticoide (oral ou intra-articular). Não suspender o hipouricemiante se já em uso. Losartana tem efeito uricosúrico. Aspirina em dose baixa eleva o ácido úrico.' });
 
 CASO({ id: 'rm_gota_tofacea', area: 'cm', ala: 'reumato', dif: 2, tema: 'Gota', cond: 'Gota tofácea crônica: terapia hipouricemiante', tags: ['reumato', 'nefro'],
-  pac: { nome: 'Raimundo Freitas', idade: 64, sexo: 'M', tipo: 'idoso' },
+  pac: { nome: 'Raimundo Calixto', idade: 64, sexo: 'M', tipo: 'idoso' },
   qp: 'Crises de gota quase todo mês e "caroços" nos dedos.',
   hda: 'Gota há 15 anos, tratando só as crises. Agora 5 crises por ano, nódulos amarelados nas mãos e cotovelos. Teve cálculo renal.',
   ant: 'Doença renal crônica estágio 3a.',
@@ -83,7 +83,7 @@ CASO({ id: 'rm_mtx_toxico', area: 'cm', ala: 'reumato', dif: 3, tema: 'Artrite r
 
 /* ---------- Espondiloartrites ---------- */
 CASO({ id: 'rm_espondilite', area: 'cm', ala: 'reumato', dif: 2, tema: 'Espondiloartrites', cond: 'Espondilite anquilosante com uveíte anterior', tags: ['reumato', 'ef'],
-  pac: { nome: 'Thiago Moraes', idade: 29, sexo: 'M', tipo: 'adulto' },
+  pac: { nome: 'Thiago Lisboa', idade: 29, sexo: 'M', tipo: 'adulto' },
   qp: 'Dor nas costas há anos, pior de madrugada, e olho vermelho.',
   hda: 'Dor lombar há 6 anos, insidiosa, que acorda na segunda metade da noite, rigidez matinal maior que 1 hora, melhora com exercício e piora com repouso. Dor alternante nas nádegas. Há 3 dias dor e vermelhidão no olho direito com fotofobia.',
   ant: 'Pai com "coluna de bambu".',
@@ -127,7 +127,7 @@ CASO({ id: 'rm_psoriasica', area: 'cm', ala: 'reumato', dif: 2, tema: 'Espondilo
   ecd: 'Periférica: metotrexato (trata pele e articulações), leflunomida, sulfassalazina; refratários: anti-TNF, anti-IL-17, anti-IL-12/23. Evitar corticoide sistêmico (rebote da psoríase ao retirar). Hidroxicloroquina pode piorar a psoríase.' });
 
 CASO({ id: 'rm_aij_oligo', area: 'ped', dif: 2, tema: 'Artrite idiopática juvenil', cond: 'AIJ oligoarticular com FAN positivo e risco de uveíte', tags: ['reumato'],
-  pac: { nome: 'Lívia Torres', idade: '3 anos', sexo: 'F', tipo: 'crianca' },
+  pac: { nome: 'Lívia Moreno', idade: '3 anos', sexo: 'F', tipo: 'crianca' },
   qp: 'Joelho inchado há 2 meses e mancando de manhã.',
   hda: 'Edema do joelho direito há 2 meses, sem trauma e sem febre; manca ao acordar e melhora ao longo do dia. Depois, tornozelo esquerdo.',
   ant: 'Saudável.',
@@ -170,7 +170,7 @@ CASO({ id: 'rm_arterite_temporal', area: 'cm', ala: 'reumato', dif: 2, tema: 'Va
   ecd: 'Sintomas visuais: metilprednisolona IV, depois prednisona 1 mg/kg; sem sintomas visuais, prednisona 40-60 mg. A biópsia de artéria temporal (ou ultrassom com sinal do halo) pode ser feita até 2 semanas após o início do corticoide. Tocilizumabe poupa corticoide. Proteção óssea.' });
 
 CASO({ id: 'rm_takayasu', area: 'cm', ala: 'reumato', dif: 3, tema: 'Vasculites', cond: 'Arterite de Takayasu', tags: ['reumato', 'cardio'],
-  pac: { nome: 'Yasmin Correia', idade: 24, sexo: 'F', tipo: 'adulto' },
+  pac: { nome: 'Yasmin Falcão', idade: 24, sexo: 'F', tipo: 'adulto' },
   qp: 'Braço esquerdo cansa e formiga ao pentear o cabelo.',
   hda: 'Há 1 ano febre baixa, emagrecimento e artralgias. Há 4 meses claudicação do braço esquerdo, tonturas ao olhar para cima.',
   ant: 'Sem doenças.',
@@ -319,7 +319,7 @@ CASO({ id: 'rm_osteoartrite', area: 'cm', ala: 'reumato', dif: 1, tema: 'Osteoar
   ecd: 'Base: educação, perda de peso, fortalecimento muscular e exercício aeróbico. Analgesia: AINE tópico, paracetamol, AINE oral por curto período, duloxetina; infiltração com corticoide nas crises. Artroplastia para dor refratária com limitação importante.' });
 
 CASO({ id: 'rm_artrite_septica', area: 'cm', ala: 'reumato', dif: 2, tema: 'Artrites infecciosas', cond: 'Síndrome artrite-dermatite gonocócica', tags: ['reumato', 'infecto'],
-  pac: { nome: 'Igor Siqueira', idade: 19, sexo: 'M', tipo: 'adulto' },
+  pac: { nome: 'Igor Bragança', idade: 19, sexo: 'M', tipo: 'adulto' },
   qp: 'Dor no punho e no tornozelo e pequenas bolhas na pele.',
   hda: 'Há 3 dias dor e edema em punho esquerdo e tornozelo direito, com febre e algumas lesões na pele. Vida sexual ativa com múltiplas parcerias, sem preservativo.',
   ant: 'Sem doenças.',
