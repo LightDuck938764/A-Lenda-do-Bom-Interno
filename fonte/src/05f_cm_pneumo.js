@@ -125,21 +125,6 @@ CASO({ id: 'cp_pac_internacao', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Pneumo
   cd: ['Internar, ceftriaxona e azitromicina', 'Amoxicilina oral em casa com retorno em 48 horas', 'Levofloxacino oral e retorno em 72 horas', 'Oseltamivir isolado'],
   ecd: 'CURB-65: 0-1 ambulatorial; 2 internação; ≥ 3 grave (considerar UTI, sobretudo com critérios maiores: choque ou ventilação mecânica). Esquema hospitalar: betalactâmico (ceftriaxona) com macrolídeo, ou quinolona respiratória isolada. Hemoculturas e escarro antes do antibiótico, sem atrasá-lo.' });
 
-CASO({ id: 'cp_pac_ambulatorial', area: 'cm', ala: 'pneumo', dif: 1, tema: 'Pneumonia', cond: 'Pneumonia comunitária de baixo risco', tags: ['pneumo'],
-  pac: { nome: 'Larissa Pinheiro', idade: 34, sexo: 'F', tipo: 'adulto' },
-  qp: 'Febre e tosse com catarro há 3 dias.',
-  hda: 'Febre de 38,5 °C, tosse produtiva e dor ao respirar fundo à esquerda. Alimenta-se bem.',
-  ant: 'Sem doenças, sem uso recente de antibiótico.',
-  ef: 'Estertores em base esquerda, lúcida.',
-  sv: 'PA 118 x 72 mmHg · FR 20 irpm · SpO₂ 96%',
-  lab: [['Ureia', '24 mg/dL', '']],
-  ex: 'Radiografia: consolidação em lobo inferior esquerdo.',
-  pista: 'CURB-65 = 0, sem comorbidades.',
-  dx: ['Pneumonia de baixo risco', 'Pneumonia grave com indicação de UTI', 'Tuberculose pulmonar', 'Bronquite aguda viral'],
-  edx: 'Adulto jovem, sem comorbidades, CURB-65 zero e boa aceitação oral: tratamento ambulatorial.',
-  cd: ['Amoxicilina oral e reavaliar', 'Internar para ceftriaxona venosa por 7 dias', 'Levofloxacino como primeira escolha', 'Apenas sintomáticos'],
-  ecd: 'Pela SBPT, amoxicilina (ou macrolídeo) para pacientes sem comorbidades; com comorbidades ou antibiótico recente, amoxicilina-clavulanato com macrolídeo ou quinolona respiratória. Quinolonas são reservadas para evitar resistência e efeitos adversos.' });
-
 CASO({ id: 'cp_pac_uti', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Pneumonia', cond: 'Pneumonia grave com choque séptico (indicação de UTI)', tags: ['pneumo', 'sepse', 'img'],
   pac: { nome: 'Odete Ramos', idade: 70, sexo: 'F', tipo: 'idoso' },
   qp: 'Febre, tosse e muita falta de ar.',
@@ -230,19 +215,19 @@ CASO({ id: 'cp_asma_grave', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Asma', con
   cd: ['O₂, broncodilatadores, corticoide e magnésio', 'Só salbutamol e alta em 1 hora', 'Sedação com benzodiazepínico', 'Antibiótico de largo espectro'],
   ecd: 'Oxigênio para SpO₂ 93-95%, beta-2-agonista repetido com brometo de ipratrópio, corticoide sistêmico na primeira hora, sulfato de magnésio venoso nos graves. Considerar UTI e intubação se exaustão ou rebaixamento. Na alta: corticoide inalatório sempre (nunca só beta-2 de curta ação).' });
 
-CASO({ id: 'cp_asma_diagnostico', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Asma', cond: 'Asma: diagnóstico pela espirometria e início do tratamento (GINA)', tags: ['pneumo', 'img'],
-  pac: { nome: 'Mariana Seixas', idade: 18, sexo: 'F', tipo: 'adulto' },
-  qp: 'Chiado e falta de ar ao correr.',
-  hda: 'Há 3 meses: chiado, tosse seca e dispneia aos esforços, quase todos os dias, piores pela manhã. Acorda à noite 2 vezes por semana.',
-  ant: 'Rinite alérgica.',
-  ef: 'Sibilos difusos discretos.',
-  sv: 'SpO₂ 98%',
-  img: [{ f: 'espirometria_asma_bd.jpg', t: 'Espirometria com prova broncodilatadora' }],
-  pista: 'Obstrução com resposta significativa ao broncodilatador.',
-  dx: ['Asma', 'DPOC', 'Disfunção de cordas vocais', 'Restrição pulmonar'],
-  edx: 'Distúrbio ventilatório obstrutivo com aumento do VEF₁ ≥ 12% e ≥ 200 mL após broncodilatador, com sintomas típicos variáveis: asma.',
-  cd: ['Budesonida-formoterol', 'Salbutamol isolado conforme a necessidade', 'Corticoide oral contínuo em dose baixa', 'Montelucaste como única medicação'],
-  ecd: 'GINA 2025: não se trata asma só com beta-2 de curta ação. Preferência pela via 1, com corticoide inalatório-formoterol: em sintomas frequentes, manutenção e alívio com o mesmo inalador. Revisar técnica, adesão e fatores desencadeantes.' });
+CASO({ id: 'cp_asma_diagnostico', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Asma', cond: 'Asma no adulto ex-tabagista tratada como DPOC', tags: ['pneumo', 'img'],
+  pac: { nome: 'Ademir Seixas', idade: 46, sexo: 'M', tipo: 'adulto' },
+  qp: 'Internou de novo por chiado; "a bombinha da DPOC não resolve".',
+  hda: 'Segunda internação no ano por crise de sibilância após resfriado. Fumou 8 maços-ano e parou há 15 anos. Desde a infância tem "bronquite" e rinite; os sintomas variam muito, com noites boas e ruins. Recebeu diagnóstico clínico de DPOC e usa só tiotrópio.',
+  ant: 'Rinite alérgica, eczema na infância. Eosinófilos 520/mm³.',
+  ef: 'Sibilos esparsos, sem baqueteamento.',
+  sv: 'SpO₂ 95%',
+  img: [{ f: 'espirometria_asma_bd.jpg', t: 'Espirometria com prova broncodilatadora (após a alta)' }],
+  pista: 'Carga tabágica baixa, atopia, variabilidade e grande resposta ao broncodilatador.',
+  dx: ['Asma', 'DPOC', 'Bronquiectasias', 'Insuficiência cardíaca'],
+  edx: 'Distúrbio obstrutivo com aumento do VEF₁ ≥ 12% e ≥ 200 mL após broncodilatador, sintomas variáveis desde a infância, atopia e eosinofilia: asma. Na DPOC a obstrução persiste (VEF₁/CVF < 0,7 pós-BD), com exposição significativa.',
+  cd: ['Corticoide inalatório-formoterol', 'Manter só o tiotrópio', 'Associar salmeterol sem corticoide', 'Corticoide oral contínuo'],
+  ecd: 'Na asma, broncodilatador de longa ação nunca deve ser usado sem corticoide inalatório (aumenta mortalidade). GINA: corticoide inalatório-formoterol como manutenção e alívio; tiotrópio pode ser acrescentado nas etapas 4-5. Plano de ação, técnica inalatória e retorno após a alta.' });
 
 /* ---------- Câncer de pulmão e outras ---------- */
 CASO({ id: 'cp_pancoast', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Câncer de pulmão', cond: 'Tumor de Pancoast com síndrome de Horner', tags: ['pneumo', 'img', 'neuro'],
