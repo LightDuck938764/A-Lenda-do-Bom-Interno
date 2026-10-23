@@ -30,3 +30,22 @@
 | ecg_taquicardia_sinusal_dii.jpg | DII: taquicardia sinusal (~130 bpm) em tireotoxicose | Banco de questões: CLI9 #26 |
 | ecg_bavt_endocardite.jpg | ECG: bloqueio atrioventricular total (dissociação AV) | Banco de questões: CLI8 #4 |
 | eletroforese_pico_monoclonal.jpg | Eletroforese de proteínas séricas com pico monoclonal na região gama | Banco de questões: CLI11 #59 |
+| ecg_wellens.jpg | ECG: ondas T bifásicas em V2-V3 (padrão de Wellens), sem supra de ST | Banco de questões: CLI3 #23 |
+| ecg_iam_anterior_hiperagudo.jpg | ECG: ondas T hiperagudas e supra de ST em V3-V4 (IAM anterior precoce) | Banco de questões: CLI3 #105 (cabeçalho com dados do paciente recortado) |
+| ecg_iamcsst_anterior.jpg | ECG: supradesnivelamento de ST de V2 a V6 (IAM anterior extenso) | Banco de questões: CLI3 #82 |
+| ecg_iamcsst_anterosseptal.jpg | ECG: supradesnivelamento de ST de V1 a V4 (IAM anterosseptal) | Banco de questões: CLI3 #142 |
+| ecg_iam_inferior_vd.jpg | ECG: supra de ST em DII, DIII e aVF com infra recíproco em DI e aVL (IAM inferior) | Banco de questões: CLI3 #134 |
+| ecg_iam_inferior.jpg | ECG: supra de ST em DII, DIII e aVF com infra recíproco em aVL | Banco de questões: CLI7 #118 |
+| ecg_angina_instavel_dinamico.jpg | Dois ECGs: na dor e após nitrato, com alterações dinâmicas de ST-T em parede anterior | Banco de questões: CLI7 #15 |
+| ecg_scasest_avr.jpg | ECG: taquicardia, infra de ST difuso com supra em aVR | Banco de questões: CLI7 #45 |
+| ecg_pericardite.jpg | ECG: supra de ST difuso côncavo com infra de PR (pericardite aguda) | Banco de questões: CLI11 #49 |
+| ecg_tv_instavel.jpg | ECG: taquicardia de QRS largo regular (~170 bpm), taquicardia ventricular | Banco de questões: CLI6 #5 |
+| ecg_tv_monomorfica.jpg | Tira de ritmo: taquicardia ventricular monomórfica | Banco de questões: CLI6 #23 |
+| ecg_tsv.jpg | DII: taquicardia de QRS estreito, regular, ~160 bpm (taquicardia supraventricular) | Banco de questões: CLI6 #12 |
+| ecg_flutter_atrial.jpg | ECG: ondas F em dente de serra em DII, DIII e aVF (flutter atrial com condução variável) | Banco de questões: CLI6 #44 |
+| ecg_bav_mobitz2.jpg | DII longo: PR constante com ondas P bloqueadas súbitas (BAV 2º grau Mobitz II) | Banco de questões: CLI11 #96 |
+| ecg_torsades.jpg | Tira de ritmo: taquicardia ventricular polimórfica com variação de amplitude (torsades de pointes) | Banco de questões: CLI6 #75 |
+| ecg_tv_sem_pulso_adulto.jpg | Monitor: taquicardia de QRS largo muito rápida (TV; sem pulso no caso) | Banco de questões: CLI6 #56 |
+| ecg_ritmo_idioventricular.jpg | Monitor: ritmo de QRS largo e lento (idioventricular; AESP se sem pulso) | Banco de questões: CLI6 #65 |
+| tc_acm_hiperdensa.jpg | TC de crânio sem contraste: artéria cerebral média esquerda hiperdensa, sem hemorragia | Banco de questões: CLI4 #56 |
+| rm_avc_parietal_direito.jpg | RM FLAIR: hiperssinal cortical-subcortical parietal direito (infarto subagudo) | Banco de questões: CLI10 #43 |
