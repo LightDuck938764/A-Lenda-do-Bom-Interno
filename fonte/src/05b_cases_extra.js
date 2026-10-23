@@ -128,7 +128,7 @@ CASO({ id: 'go_mioma2', area: 'go', dif: 2, cond: 'Mioma uterino', tags: ['usg']
   cd: ['Miomectomia histeroscópica, preservando o útero, e correção da anemia', 'Histerectomia total, que é o tratamento definitivo do sangramento, mesmo com desejo de gestar', 'Embolização das artérias uterinas sem discutir o desejo de gestar', 'Apenas observar, com ferro oral, até a menopausa'],
   ecd: 'Miomas submucosos sintomáticos em mulheres que desejam engravidar são tratados por miomectomia histeroscópica.' });
 
-CASO({ id: 'cm_alzheimer2', area: 'cm', dif: 3, cond: 'Doença de Alzheimer', tags: ['neuro', 'infec', 'sedacao'],
+CASO({ id: 'cm_alzheimer2', area: 'cm', ala: 'neuro', dif: 3, cond: 'Doença de Alzheimer', tags: ['neuro', 'infec', 'sedacao'],
   pac: { nome: 'Sr. Abel Teixeira', idade: 82, sexo: 'M', tipo: 'idoso' },
   qp: 'Filho: "ele já tinha Alzheimer, mas hoje está muito pior e agitado".',
   hda: 'Doença de Alzheimer moderada. Há 2 dias, piora súbita: sonolência alternada com agitação, especialmente à noite, e falas desconexas. Urina com odor forte.',
@@ -142,7 +142,7 @@ CASO({ id: 'cm_alzheimer2', area: 'cm', dif: 3, cond: 'Doença de Alzheimer', ta
   cd: ['Tratar a causa (sondagem para a retenção e antibiótico), medidas não farmacológicas para delirium e evitar sedativos de rotina', 'Aumentar a dose da donepezila e associar memantina, já que a confusão aguda indica progressão rápida da demência e não causa clínica', 'Benzodiazepínico para dormir e reduzir a agitação noturna, sem investigar causas clínicas', 'Contenção mecânica contínua para evitar quedas, com haloperidol de horário'],
   ecd: 'O delirium é uma emergência clínica: trate a causa e use medidas ambientais (orientação, sono, família, óculos). Benzodiazepínicos tendem a piorar o quadro.' });
 
-CASO({ id: 'cm_hernia2', area: 'cm', dif: 3, cond: 'Hérnia de disco', tags: ['neuro', 'img', 'dor'],
+CASO({ id: 'cm_hernia2', area: 'cm', ala: 'neuro', dif: 3, cond: 'Hérnia de disco', tags: ['neuro', 'img', 'dor'],
   pac: { nome: 'Sr. Jairo Alves', idade: 46, sexo: 'M', tipo: 'adulto' },
   qp: 'Dor nas costas e "não consegue urinar".',
   hda: 'Lombalgia há 1 semana. Hoje: dor irradiada para as duas pernas, dormência na região do períneo e dificuldade para urinar.',
@@ -156,7 +156,7 @@ CASO({ id: 'cm_hernia2', area: 'cm', dif: 3, cond: 'Hérnia de disco', tags: ['n
   cd: ['Avaliação neurocirúrgica de urgência para descompressão cirúrgica e sondagem vesical', 'Fisioterapia intensiva e retorno em 6 semanas, com ressonância eletiva se não houver melhora da dor ciática', 'Repouso e anti-inflamatório por 2 semanas, com sondagem vesical se necessário', 'Alta com analgésico e orientação de procurar a UBS se a dor piorar'],
   ecd: 'A cauda equina exige descompressão urgente para preservar a função esfincteriana e motora.' });
 
-CASO({ id: 'cm_lma2', area: 'cm', dif: 3, cond: 'Leucemia mieloide aguda', tags: ['anticoag', 'infec'],
+CASO({ id: 'cm_lma2', area: 'cm', ala: 'hemato', dif: 3, cond: 'Leucemia mieloide aguda', tags: ['anticoag', 'infec'],
   pac: { nome: 'Fernanda Rocha', idade: 34, sexo: 'F', tipo: 'adulto' },
   qp: 'Manchas roxas e sangramento que não para.',
   hda: 'Há 1 semana, equimoses espontâneas, sangramento gengival e menstruação muito volumosa.',

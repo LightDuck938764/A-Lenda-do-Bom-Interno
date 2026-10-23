@@ -1,5 +1,5 @@
 /* ============================ CLÍNICA MÉDICA ============================ */
-CASO({ id: 'cm_pneumo1', area: 'cm', dif: 1, cond: 'Pneumonia', tags: ['resp', 'infec', 'febre', 'img', 'ef'],
+CASO({ id: 'cm_pneumo1', area: 'cm', ala: 'pneumo', dif: 1, cond: 'Pneumonia', tags: ['resp', 'infec', 'febre', 'img', 'ef'],
   pac: { nome: 'Sr. Gilberto Ramos', idade: 54, sexo: 'M', tipo: 'adulto' },
   qp: 'Febre e tosse com catarro há 3 dias.',
   hda: 'Tosse produtiva amarelada, febre e dor ao respirar fundo no lado direito.',
@@ -13,7 +13,7 @@ CASO({ id: 'cm_pneumo1', area: 'cm', dif: 1, cond: 'Pneumonia', tags: ['resp', '
   cd: ['Tratamento ambulatorial com antibiótico oral (ex.: amoxicilina) e reavaliação em 48 a 72 horas', 'Internação em UTI para antibiótico venoso de amplo espectro e ventilação não invasiva', 'Antiviral isolado (oseltamivir), sem antibiótico, já que a febre começou há poucos dias e o paciente é jovem e sem comorbidades', 'Apenas sintomáticos, sem antibiótico, com radiografia de controle em uma semana'],
   ecd: 'Com CURB-65 = 0 e sem comorbidades, o tratamento pode ser ambulatorial com beta-lactâmico oral e reavaliação precoce.' });
 
-CASO({ id: 'cm_pneumo2', area: 'cm', dif: 3, cond: 'Pneumonia', tags: ['resp', 'infec', 'sepse', 'choque', 'febre'],
+CASO({ id: 'cm_pneumo2', area: 'cm', ala: 'pneumo', dif: 3, cond: 'Pneumonia', tags: ['resp', 'infec', 'sepse', 'choque', 'febre'],
   pac: { nome: 'Sr. Osvaldo Lima', idade: 78, sexo: 'M', tipo: 'idoso' },
   qp: 'Filha: "Ele está confuso desde ontem e com febre".',
   hda: 'Tosse há 4 dias, febre e piora do estado geral. Hoje está desorientado.',
@@ -27,7 +27,7 @@ CASO({ id: 'cm_pneumo2', area: 'cm', dif: 3, cond: 'Pneumonia', tags: ['resp', '
   cd: ['Internar (considerar UTI), colher hemoculturas, antibiótico venoso precoce (beta-lactâmico + macrolídeo) e ressuscitação volêmica', 'Amoxicilina oral e alta com retorno em 48 horas, já que a febre deve ceder com o antibiótico', 'Aguardar o resultado das culturas para iniciar o antibiótico certo, evitando o uso empírico de amplo espectro e a resistência bacteriana no hospital', 'Apenas oxigênio e observação na enfermaria, com hidratação venosa e reavaliação em 24 horas'],
   ecd: 'Na pneumonia grave com sepse, o antibiótico deve ser iniciado precocemente (idealmente na primeira hora), com culturas e reposição volêmica guiada.' });
 
-CASO({ id: 'cm_hiv1', area: 'cm', dif: 2, cond: 'HIV', tags: ['infec'],
+CASO({ id: 'cm_hiv1', area: 'cm', ala: 'infecto', dif: 2, cond: 'HIV', tags: ['infec'],
   pac: { nome: 'Leandro Batista', idade: 32, sexo: 'M', tipo: 'adulto' },
   qp: 'Emagrecimento e diarreia há 2 meses.',
   hda: 'Perda de 8 kg, diarreia intermitente, sudorese noturna e placas brancas na boca.',
@@ -41,7 +41,7 @@ CASO({ id: 'cm_hiv1', area: 'cm', dif: 2, cond: 'HIV', tags: ['infec'],
   cd: ['Iniciar TARV o quanto antes, profilaxia para pneumocistose com sulfametoxazol-trimetoprima, rastrear infecções oportunistas e acolher sem estigma', 'Aguardar o CD4 cair abaixo de 50 células para iniciar a TARV, tratando agora apenas a candidíase oral', 'Tratar apenas a candidíase com fluconazol e repetir CD4 e carga viral em 6 meses antes de decidir', 'Comunicar a família e o empregador sem autorização do paciente, para garantir a adesão e a proteção dos contatos, já que o HIV é de notificação compulsória'],
   ecd: 'A TARV é indicada para todas as pessoas com HIV, o mais precocemente possível (com exceções como meningite criptocócica ou tuberculosa). O sigilo é direito do paciente.' });
 
-CASO({ id: 'cm_hiv2', area: 'cm', dif: 3, cond: 'HIV', tags: ['infec', 'resp', 'gaso', 'img', 'cortic'],
+CASO({ id: 'cm_hiv2', area: 'cm', ala: 'infecto', dif: 3, cond: 'HIV', tags: ['infec', 'resp', 'gaso', 'img', 'cortic'],
   pac: { nome: 'Thiago Moraes', idade: 38, sexo: 'M', tipo: 'adulto' },
   qp: 'Falta de ar que piora há 3 semanas.',
   hda: 'Dispneia progressiva aos esforços, tosse seca e febre baixa. Diagnóstico de HIV há 1 ano, abandonou a TARV.',
@@ -55,7 +55,7 @@ CASO({ id: 'cm_hiv2', area: 'cm', dif: 3, cond: 'HIV', tags: ['infec', 'resp', '
   cd: ['Sulfametoxazol-trimetoprima em dose de tratamento associado a corticoide (PaO₂ <70 mmHg) e reiniciar TARV nas primeiras semanas', 'Amoxicilina isolada em dose alta, tratando como pneumonia comunitária típica', 'Aguardar a baciloscopia e a cultura para micobactérias antes de iniciar qualquer tratamento, já que tuberculose é a principal hipótese', 'Reiniciar a TARV imediatamente e não tratar a infecção, que melhora com a recuperação imunológica'],
   ecd: 'Na pneumocistose moderada a grave (PaO₂ <70 mmHg), o corticoide adjuvante reduz mortalidade. A TARV deve ser reiniciada em até cerca de 2 semanas.' });
 
-CASO({ id: 'cm_chagas1', area: 'cm', dif: 2, cond: 'Doença de Chagas', tags: ['cardio', 'ecg', 'ic', 'anticoag', 'usg'],
+CASO({ id: 'cm_chagas1', area: 'cm', ala: 'cardio', dif: 2, cond: 'Doença de Chagas', tags: ['cardio', 'ecg', 'ic', 'anticoag', 'usg'],
   pac: { nome: 'Sr. Sebastião Oliveira', idade: 61, sexo: 'M', tipo: 'idoso' },
   qp: 'Cansaço e coração "batendo fora do ritmo".',
   hda: 'Dispneia progressiva aos esforços há 1 ano e palpitações. Natural do interior da Bahia, morou em casa de pau a pique na infância.',
@@ -70,7 +70,7 @@ CASO({ id: 'cm_chagas1', area: 'cm', dif: 2, cond: 'Doença de Chagas', tags: ['
   cd: ['Tratar a IC com fração reduzida (bloqueio neuro-hormonal), investigar arritmias e prevenir tromboembolismo conforme o risco', 'Benznidazol como tratamento curativo da cardiopatia chagásica crônica avançada, dispensando o tratamento da insuficiência cardíaca', 'Cirurgia de revascularização miocárdica, já que a disfunção ventricular é isquêmica', 'Alta sem seguimento, já que a doença de Chagas crônica não tem tratamento eficaz nessa fase'],
   ecd: 'Na cardiopatia chagásica estabelecida, o benefício do antiparasitário é limitado. O foco é tratar a IC, arritmias e prevenir embolias.' });
 
-CASO({ id: 'cm_chagas2', area: 'cm', dif: 2, cond: 'Doença de Chagas', tags: ['img'],
+CASO({ id: 'cm_chagas2', area: 'cm', ala: 'cardio', dif: 2, cond: 'Doença de Chagas', tags: ['img'],
   pac: { nome: 'Dona Aparecida Silva', idade: 55, sexo: 'F', tipo: 'adulto' },
   qp: 'Comida "entala" no peito.',
   hda: 'Disfagia progressiva há 3 anos, primeiro para sólidos e depois também para líquidos. Regurgitação de alimentos não digeridos e perda de 6 kg.',
@@ -84,7 +84,7 @@ CASO({ id: 'cm_chagas2', area: 'cm', dif: 2, cond: 'Doença de Chagas', tags: ['
   cd: ['Endoscopia digestiva alta para excluir neoplasia e tratamento conforme o grau (dilatação ou cardiomiotomia)', 'Inibidor de bomba de prótons isolado e dieta pastosa, tratando como doença do refluxo', 'Benznidazol para reverter o megaesôfago e a disfagia, com reavaliação radiológica em 6 meses, sem endoscopia', 'Dieta líquida definitiva sem investigação endoscópica, já que a disfagia é esperada'],
   ecd: 'Antes de tratar o megaesôfago, a endoscopia afasta câncer (que tem risco aumentado). O tratamento depende do grau de dilatação.' });
 
-CASO({ id: 'cm_alzheimer', area: 'cm', dif: 2, cond: 'Doença de Alzheimer', tags: ['neuro', 'img'],
+CASO({ id: 'cm_alzheimer', area: 'cm', ala: 'neuro', dif: 2, cond: 'Doença de Alzheimer', tags: ['neuro', 'img'],
   pac: { nome: 'Dona Zilda Campos', idade: 76, sexo: 'F', tipo: 'idoso' },
   qp: 'Filha: "Ela está esquecendo tudo".',
   hda: 'Esquecimento progressivo há 2 anos: repete perguntas, perde objetos, se perdeu voltando da padaria. Dificuldade com dinheiro. Sem flutuações ao longo do dia e sem alucinações.',
@@ -98,7 +98,7 @@ CASO({ id: 'cm_alzheimer', area: 'cm', dif: 2, cond: 'Doença de Alzheimer', tag
   cd: ['Inibidor de colinesterase (ex.: donepezila), orientação e suporte à família, medidas de segurança e planejamento de cuidados', 'Antipsicótico contínuo em dose plena para controlar os esquecimentos e a desorientação', 'Benzodiazepínico toda noite para dormir e reduzir a ansiedade, como tratamento principal da demência, sem orientar a família cuidadora', 'Nenhuma conduta, porque esquecer é "da idade" e não há tratamento nem orientação útil'],
   ecd: 'Inibidores de colinesterase são tratamento sintomático na demência leve a moderada. O cuidado ao cuidador e a segurança são parte central.' });
 
-CASO({ id: 'cm_hernia', area: 'cm', dif: 1, cond: 'Hérnia de disco', tags: ['neuro', 'dor', 'ef'],
+CASO({ id: 'cm_hernia', area: 'cm', ala: 'neuro', dif: 1, cond: 'Hérnia de disco', tags: ['neuro', 'dor', 'ef'],
   pac: { nome: 'Rodrigo Pereira', idade: 42, sexo: 'M', tipo: 'adulto' },
   qp: 'Dor nas costas que desce pela perna.',
   hda: 'Há 2 semanas, após carregar peso, lombalgia com dor irradiada para a face lateral da perna até o dorso do pé esquerdo.',
@@ -112,7 +112,7 @@ CASO({ id: 'cm_hernia', area: 'cm', dif: 1, cond: 'Hérnia de disco', tags: ['ne
   cd: ['Tratamento conservador (analgesia, manter-se ativo, fisioterapia) e reavaliação; imagem se sinais de alarme ou falha após cerca de 6 semanas', 'Cirurgia imediata para todos os casos de hérnia de disco com dor ciática, mesmo sem déficit', 'Repouso absoluto no leito por 3 semanas e corticoide em dose alta, evitando qualquer atividade física', 'Ressonância de urgência e afastamento definitivo do trabalho, já que a hérnia de disco não melhora sem cirurgia e piora com qualquer movimento ou fisioterapia ativa'],
   ecd: 'A maioria das hérnias discais melhora com tratamento conservador. Repouso prolongado não é recomendado. Cirurgia é para déficit progressivo, cauda equina ou dor refratária.' });
 
-CASO({ id: 'cm_has1', area: 'cm', dif: 1, cond: 'Hipertensão arterial', tags: ['cardio', 'pa'],
+CASO({ id: 'cm_has1', area: 'cm', ala: 'cardio', dif: 1, cond: 'Hipertensão arterial', tags: ['cardio', 'pa'],
   pac: { nome: 'Sr. Antônio Rezende', idade: 50, sexo: 'M', tipo: 'adulto' },
   qp: 'Veio mostrar a MAPA.',
   hda: 'Medidas de consultório 152/96 e 148/94 mmHg. MAPA confirma médias elevadas. Assintomático.',
@@ -126,7 +126,7 @@ CASO({ id: 'cm_has1', area: 'cm', dif: 1, cond: 'Hipertensão arterial', tags: [
   cd: ['Mudanças de estilo de vida e início de anti-hipertensivo considerando o risco cardiovascular, com metas e seguimento', 'Captopril sublingual no consultório para baixar a pressão antes de liberar o paciente', 'Nenhuma conduta: é pressão alta "leve" e só precisa de remédio se surgirem sintomas como dor de cabeça ou tontura frequentes', 'Internação para controle pressórico com medicação venosa e investigação de causas secundárias'],
   ecd: 'Com HAS estágio 1 e risco moderado a alto, recomenda-se associar mudança de estilo de vida e tratamento farmacológico. Não há indicação de redução aguda.' });
 
-CASO({ id: 'cm_has2', area: 'cm', dif: 3, cond: 'Hipertensão arterial', tags: ['cardio', 'pa', 'neuro'],
+CASO({ id: 'cm_has2', area: 'cm', ala: 'cardio', dif: 3, cond: 'Hipertensão arterial', tags: ['cardio', 'pa', 'neuro'],
   pac: { nome: 'Sra. Lourdes Dantas', idade: 63, sexo: 'F', tipo: 'idoso' },
   qp: 'Pressão "22 por 13" na farmácia.',
   hda: 'Esqueceu os anti-hipertensivos por 1 semana. Cefaleia leve. Nega dor torácica, dispneia, alterações visuais ou neurológicas.',
@@ -140,63 +140,7 @@ CASO({ id: 'cm_has2', area: 'cm', dif: 3, cond: 'Hipertensão arterial', tags: [
   cd: ['Reintroduzir/ajustar anti-hipertensivos orais e reduzir a PA gradualmente em 24 a 48 horas, com seguimento próximo', 'Nitroprussiato intravenoso em UTI para baixar a pressão nas primeiras horas, já que toda PA acima de 180/120 é emergência, mesmo sem lesão aguda', 'Nifedipino sublingual em doses repetidas até a PA ficar abaixo de 140/90 mmHg', 'Reduzir a PA para 120/80 mmHg na primeira hora com medicação venosa, para evitar um AVC'],
   ecd: 'Sem lesão aguda de órgão-alvo, a redução deve ser gradual com medicação oral. Nifedipino sublingual é contraindicado pelo risco de hipotensão e isquemia.' });
 
-CASO({ id: 'cm_dm1', area: 'cm', dif: 1, cond: 'Diabetes mellitus', tags: ['diabetes'],
-  pac: { nome: 'Sr. Fábio Cunha', idade: 47, sexo: 'M', tipo: 'adulto' },
-  qp: 'Sede e vontade de urinar o tempo todo.',
-  hda: 'Poliúria e polidipsia há 2 meses. Sem perda de peso importante.',
-  ant: 'Obesidade, pai diabético.',
-  ef: 'IMC 32 kg/m². Acantose nigricans.',
-  sv: 'PA 132/84 mmHg',
-  ex: 'Glicemia de jejum 168 e 182 mg/dl. HbA1c 7,9%. Taxa de filtração glomerular 85 ml/min.',
-  pista: 'Adulto obeso com história familiar, sem cetose e sem emagrecimento importante: perfil de DM2.',
-  dx: ['Diabetes mellitus tipo 2', 'Diabetes mellitus tipo 1', 'Pré-diabetes', 'Diabetes insipidus'],
-  edx: 'Duas glicemias de jejum ≥126 mg/dl e HbA1c ≥6,5% em adulto obeso: DM2.',
-  cd: ['Mudança de estilo de vida, metformina e rastreio de complicações', 'Insulina basal-bolus imediata, já que a glicemia está alta', 'Nenhuma conduta medicamentosa, apenas repetir os exames em 1 ano', 'Dieta sem nenhum carboidrato como única medida'],
-  ecd: 'Metformina é a primeira escolha na maioria dos pacientes com DM2 sem contraindicação, junto às mudanças de estilo de vida.' });
-
-CASO({ id: 'cm_dm2', area: 'cm', dif: 2, cond: 'Diabetes mellitus', tags: ['diabetes', 'cardio'],
-  pac: { nome: 'Sr. Ronaldo Brito', idade: 62, sexo: 'M', tipo: 'idoso' },
-  qp: 'Retorno: "a glicose não baixa".',
-  hda: 'DM2 há 8 anos em uso de metformina em dose plena. Infarto do miocárdio há 2 anos.',
-  ant: 'Doença arterial coronariana, hipertensão.',
-  ef: 'IMC 30 kg/m².',
-  sv: 'PA 128/78 mmHg',
-  ex: 'HbA1c 8,1%. TFG 70 ml/min.',
-  pista: 'DM2 com doença cardiovascular estabelecida: escolha um segundo fármaco que reduza eventos cardiovasculares.',
-  dx: ['Diabetes tipo 2 não controlado com doença aterosclerótica', 'Diabetes tipo 1 de início tardio (LADA)', 'Pré-diabetes com risco cardiovascular', 'Hipoglicemia de rebote por excesso de sulfonilureia'],
-  edx: 'HbA1c acima da meta em paciente com DM2 e doença coronariana estabelecida.',
-  cd: ['Associar inibidor de SGLT2 ou agonista de GLP-1 com benefício cardiovascular comprovado', 'Suspender a metformina e iniciar insulina NPH em dose alta ao deitar', 'Associar apenas sulfonilureia, que reduz a HbA1c de forma rápida e barata e também protege o coração', 'Manter o tratamento sem mudança, já que a HbA1c está perto da meta'],
-  ecd: 'Em DM2 com doença cardiovascular aterosclerótica, iSGLT2 ou agonista de GLP-1 reduzem eventos cardiovasculares, independentemente da HbA1c.' });
-
-CASO({ id: 'cm_cad1', area: 'cm', dif: 3, cond: 'Cetoacidose diabética', tags: ['diabetes', 'cad', 'gaso', 'hidrat', 'vomito'],
-  pac: { nome: 'Júlia Mendes', idade: 19, sexo: 'F', tipo: 'adulto' },
-  qp: 'Vômitos e falta de ar.',
-  hda: 'DM1 há 5 anos. Há 2 dias com gastroenterite, parou a insulina "porque não estava comendo". Hoje: dor abdominal, vômitos e respiração ofegante.',
-  ant: 'DM1.',
-  ef: 'Desidratada, respiração profunda e rápida (Kussmaul), hálito cetônico. Abdome doloroso difusamente, sem irritação peritoneal.',
-  sv: 'FC 118 bpm · PA 102/64 mmHg · FR 30 irpm',
-  ex: 'Glicemia 480 mg/dl. Gasometria: pH 7,12, bicarbonato 9 mEq/L. Cetonemia positiva. Potássio 4,0 mEq/L.',
-  pista: 'Hiperglicemia + acidose metabólica + cetose = CAD. Potássio ≥3,3: pode começar a insulina após iniciar a hidratação.',
-  dx: ['Cetoacidose diabética', 'Estado hiperosmolar hiperglicêmico', 'Gastroenterite aguda isolada', 'Acidose láctica'],
-  edx: 'Glicemia >250, pH <7,3, bicarbonato <18 e cetonemia em paciente com DM1 que suspendeu a insulina: cetoacidose diabética.',
-  cd: ['Hidratação venosa vigorosa, insulina regular intravenosa contínua (com K ≥3,3), reposição de potássio e monitorização frequente', 'Bicarbonato de sódio de rotina antes de qualquer medida, para corrigir a acidose rapidamente', 'Insulina subcutânea em dose alta e alta com retorno no dia seguinte para nova glicemia', 'Restringir líquidos pelo risco de edema cerebral e iniciar insulina em bolus com qualquer valor de potássio, sem monitorização cardíaca'],
-  ecd: 'O tratamento da CAD se apoia em hidratação, insulina IV e reposição de potássio, com monitorização de glicemia, eletrólitos e gasometria. Bicarbonato só em acidose extrema.' });
-
-CASO({ id: 'cm_cad2', area: 'cm', dif: 3, cond: 'Cetoacidose diabética', tags: ['diabetes', 'cad', 'gaso', 'hidrat'],
-  pac: { nome: 'Caio Ferraz', idade: 24, sexo: 'M', tipo: 'adulto' },
-  qp: 'Muito fraco e com vômitos.',
-  hda: 'DM1, infecção urinária há 3 dias. Vômitos, dor abdominal e fraqueza muscular intensa.',
-  ant: 'DM1.',
-  ef: 'Desidratado, respiração de Kussmaul, fraqueza muscular difusa.',
-  sv: 'FC 112 bpm · PA 108/68 mmHg',
-  ex: 'Glicemia 520 mg/dl. pH 7,10. Bicarbonato 8 mEq/L. Cetonemia positiva. POTÁSSIO 2,9 mEq/L. ECG com ondas U.',
-  pista: 'K <3,3: insulina agora empurraria o potássio para dentro das células e pode provocar arritmia fatal.',
-  dx: ['Cetoacidose diabética com hipocalemia', 'Estado hiperosmolar hiperglicêmico', 'Paralisia periódica isolada', 'Acidose láctica'],
-  edx: 'CAD com potássio sérico baixo (depleção corporal importante).',
-  cd: ['Hidratação venosa e reposição de potássio ANTES de iniciar a insulina, com monitorização cardíaca', 'Insulina intravenosa imediata em dose plena, já que a glicemia alta é a prioridade', 'Bicarbonato em bolus para corrigir a acidose e trazer o potássio de volta para dentro das células, antes da hidratação', 'Alta com insulina subcutânea e reposição oral de potássio, com retorno em 24 horas'],
-  ecd: 'Com potássio <3,3 mEq/L, a insulina deve ser adiada até a reposição, pelo risco de hipocalemia grave e arritmias.' });
-
-CASO({ id: 'cm_lma', area: 'cm', dif: 3, cond: 'Leucemia mieloide aguda', tags: ['infec', 'febre'],
+CASO({ id: 'cm_lma', area: 'cm', ala: 'hemato', dif: 3, cond: 'Leucemia mieloide aguda', tags: ['infec', 'febre'],
   pac: { nome: 'Sr. Henrique Prado', idade: 58, sexo: 'M', tipo: 'adulto' },
   qp: 'Cansaço, febre e gengiva sangrando.',
   hda: 'Há 3 semanas, fadiga progressiva, febre e sangramento gengival ao escovar. Manchas roxas pelo corpo.',
@@ -210,7 +154,7 @@ CASO({ id: 'cm_lma', area: 'cm', dif: 3, cond: 'Leucemia mieloide aguda', tags: 
   cd: ['Internar com a hematologia, mielograma com imunofenotipagem e citogenética, suporte transfusional, prevenção de lise tumoral e tratamento da febre', 'Seguimento ambulatorial em 3 meses com novo hemograma, já que a febre pode ser viral e os blastos, reacionais', 'Inibidor de tirosina quinase como única conduta, sem mielograma nem suporte transfusional, pela semelhança com a leucemia mieloide crônica em fase acelerada', 'Corticoide em dose alta e alta hospitalar, com retorno em uma semana para avaliar a resposta da medula'],
   ecd: 'Leucemia aguda é urgência hematológica: confirmar o diagnóstico e o subtipo, dar suporte (transfusão, antibiótico na neutropenia febril, prevenção de lise) e iniciar quimioterapia.' });
 
-CASO({ id: 'cm_lla', area: 'cm', dif: 2, cond: 'Leucemia linfoide aguda', tags: ['infec', 'img', 'dor'],
+CASO({ id: 'cm_lla', area: 'cm', ala: 'hemato', dif: 2, cond: 'Leucemia linfoide aguda', tags: ['infec', 'img', 'dor'],
   pac: { nome: 'Igor Santana', idade: 22, sexo: 'M', tipo: 'adulto' },
   qp: 'Dor nos ossos, febre e "ínguas".',
   hda: 'Há 1 mês, dores ósseas, febre, cansaço e aumento de linfonodos. Dispneia leve ao deitar.',
@@ -224,7 +168,7 @@ CASO({ id: 'cm_lla', area: 'cm', dif: 2, cond: 'Leucemia linfoide aguda', tags: 
   cd: ['Internar com a hematologia, completar o estadiamento (inclusive do sistema nervoso central), suporte transfusional, prevenção de lise tumoral e iniciar quimioterapia', 'Antibiótico oral para a febre e retorno em 1 semana com novo hemograma, já que linfocitose sugere infecção viral', 'Biópsia de linfonodo eletiva em 2 meses, mantendo o acompanhamento ambulatorial e a escola normalmente', 'Corticoide isolado em dose alta e alta hospitalar, já que a redução dos gânglios confirma a boa resposta e dispensa o mielograma e a quimioterapia de indução por ora'],
   ecd: 'A LLA exige tratamento hematológico imediato. Massa mediastinal impõe cuidado com via aérea e veia cava superior.' });
 
-CASO({ id: 'cm_ic1', area: 'cm', dif: 2, cond: 'Insuficiência cardíaca', tags: ['cardio', 'ic', 'usg'],
+CASO({ id: 'cm_ic1', area: 'cm', ala: 'cardio', dif: 2, cond: 'Insuficiência cardíaca', tags: ['cardio', 'ic', 'usg'],
   pac: { nome: 'Sr. Valdir Pacheco', idade: 64, sexo: 'M', tipo: 'idoso' },
   qp: 'Retorno após internação por insuficiência cardíaca.',
   hda: 'Estável, sem congestão. Cansa ao subir dois lances de escada.',
@@ -239,7 +183,7 @@ CASO({ id: 'cm_ic1', area: 'cm', dif: 2, cond: 'Insuficiência cardíaca', tags:
   cd: ['Otimizar os quatro pilares: inibidor do sistema renina-angiotensina (ou sacubitril-valsartana), betabloqueador, antagonista mineralocorticoide e iSGLT2', 'Digoxina isolada em dose plena, que reduz a mortalidade e substitui os demais medicamentos, suspendendo o betabloqueador e a espironolactona por segurança', 'Suspender todos os medicamentos para evitar hipotensão e reintroduzir um por vez a cada 3 meses', 'Adicionar verapamil para controlar a frequência cardíaca e reduzir a pressão arterial'],
   ecd: 'Os quatro pilares reduzem mortalidade na ICFEr. Bloqueadores de canal de cálcio não di-hidropiridínicos (verapamil, diltiazem) devem ser evitados.' });
 
-CASO({ id: 'cm_ic2', area: 'cm', dif: 2, cond: 'Insuficiência cardíaca', tags: ['cardio', 'ic', 'usg', 'pa'],
+CASO({ id: 'cm_ic2', area: 'cm', ala: 'cardio', dif: 2, cond: 'Insuficiência cardíaca', tags: ['cardio', 'ic', 'usg', 'pa'],
   pac: { nome: 'Dona Iolanda Reis', idade: 74, sexo: 'F', tipo: 'idoso' },
   qp: 'Falta de ar e pernas inchadas.',
   hda: 'Dispneia aos médios esforços e edema vespertino há 6 meses.',
@@ -254,7 +198,7 @@ CASO({ id: 'cm_ic2', area: 'cm', dif: 2, cond: 'Insuficiência cardíaca', tags:
   cd: ['Diurético para a congestão, inibidor de SGLT2, controle da PA, da frequência na FA e das comorbidades', 'Betabloqueador em dose máxima como única medida, já que ele reduz a mortalidade em toda insuficiência cardíaca', 'Digoxina isolada para melhorar a contração do coração', 'Restrição hídrica isolada sem medicação, com retorno em 3 meses'],
   ecd: 'Na ICFEp, diuréticos aliviam a congestão e iSGLT2 reduzem hospitalizações. O controle de comorbidades é parte central.' });
 
-CASO({ id: 'cm_colest1', area: 'cm', dif: 1, cond: 'Hipercolesterolemia', tags: ['cardio'],
+CASO({ id: 'cm_colest1', area: 'cm', ala: 'cardio', dif: 1, cond: 'Hipercolesterolemia', tags: ['cardio'],
   pac: { nome: 'Sra. Regina Lopes', idade: 45, sexo: 'F', tipo: 'adulto' },
   qp: 'Exames de rotina: "colesterol muito alto".',
   hda: 'Assintomática. Pai infartou aos 48 anos.',
@@ -268,7 +212,7 @@ CASO({ id: 'cm_colest1', area: 'cm', dif: 1, cond: 'Hipercolesterolemia', tags: 
   cd: ['Estatina de alta potência, mudança de estilo de vida e rastreamento dos familiares', 'Apenas dieta por 2 anos antes de medicar, já que ele é jovem e sem sintomas', 'Fibrato isolado, que é a primeira escolha quando o LDL passa de 190 mg/dL', 'Nenhuma conduta: é genético, então dieta e remédios não alteram o risco e os familiares não precisam ser examinados'],
   ecd: 'LDL ≥190 mg/dl já indica estatina de alta potência. Na HF, o rastreamento em cascata dos familiares é fundamental.' });
 
-CASO({ id: 'cm_colest2', area: 'cm', dif: 2, cond: 'Hipercolesterolemia', tags: ['cardio', 'sca'],
+CASO({ id: 'cm_colest2', area: 'cm', ala: 'cardio', dif: 2, cond: 'Hipercolesterolemia', tags: ['cardio', 'sca'],
   pac: { nome: 'Sr. Jorge Amaral', idade: 60, sexo: 'M', tipo: 'idoso' },
   qp: 'Consulta pós-infarto.',
   hda: 'IAM há 6 meses, tratado com angioplastia. Usa estatina de alta potência na dose máxima, com boa adesão.',

@@ -14,3 +14,6 @@
 | rx_ossos_longos_sifilis_rn.jpg | RX ossos longos do RN: alterações metafisárias e periostais | Banco de questões: PEDIATRIA_7 #54 (USP-SP 2024) |
 | tc_hematoma_subdural_lactente.jpg | TC crânio: hematoma subdural agudo à direita com efeito de massa | Banco de questões: PEDIATRIA_8 #28 (USP-SP 2026) |
 | tc_pneumonia_necrotizante.jpg | TC tórax: consolidação com múltiplas cavitações à direita (pneumonia necrotizante) | Banco de questões: PEDIATRIA_8 #148 (SES-PE 2025) |
+| ecg_hipocalemia.jpg | ECG 12 derivações: ondas T achatadas e ondas U proeminentes (hipocalemia em CAD) | Banco de questões: CLI1 #43 |
+| ecg_hipercalemia.jpg | ECG: ondas T apiculadas (hipercalemia, K 6,1, DRC) | Banco de questões: CLI10 #99 |
+| foto_face_hipotireoidismo.jpg | Face: edema periorbital e rarefação do terço lateral das sobrancelhas | Banco de questões: CLI5 #53 |
