@@ -456,6 +456,7 @@ CASO({ id: 'pr_pneumonia_necrotizante', area: 'ped', dif: 3, tema: 'Pneumonia na
   sv: 'T 38,6 °C (pico) · FR 26 irpm · SpO₂ 96% com 0,5 L/min',
   lab: [['Cultura do líquido pleural', 'Streptococcus pneumoniae', ''], ['Antibiograma', 'Sensível à penicilina e à ceftriaxona', ''], ['Proteína C reativa', '9 mg/dL (era 26 na admissão)', '< 1 mg/dL']],
   ex: 'Tomografia de tórax: áreas de necrose e pequenas cavidades no lobo inferior direito, sem nova coleção pleural.',
+  img: [{ f: 'tc_pneumonia_necrotizante.jpg', t: 'Tomografia de tórax (cortes coronais e axiais)' }],
   pista: 'Na pneumonia necrotizante a febre demora a ceder.',
   dx: ['Pneumonia necrotizante pneumocócica em evolução favorável', 'Falha terapêutica por pneumococo resistente', 'Abscesso pulmonar por anaeróbios', 'Infecção hospitalar por germe multirresistente'],
   edx: 'Em pneumonia necrotizante a febre pode persistir por dias, mesmo com tratamento adequado. Bom estado geral, queda da PCR e menor necessidade de oxigênio indicam melhora.',

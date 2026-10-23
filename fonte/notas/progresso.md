@@ -31,3 +31,6 @@ Parte 2 (GO, Urgência, Cirurgia?) ainda não chegou.
 
 ## Casos antigos
 Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do mesmo tema na mesma área (sem repetição).
+
+## Onde está salvo
+- Trabalho em andamento no branch **banco-de-casos** do repositório (o site no main não muda até o teste final). Publicar = merge no main.
