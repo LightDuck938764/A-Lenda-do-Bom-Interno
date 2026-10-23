@@ -112,20 +112,6 @@ CASO({ id: 'cm_lla', area: 'cm', ala: 'hemato', dif: 2, cond: 'Leucemia linfoide
   cd: ['Internar com a hematologia, completar o estadiamento (inclusive do sistema nervoso central), suporte transfusional, prevenção de lise tumoral e iniciar quimioterapia', 'Antibiótico oral para a febre e retorno em 1 semana com novo hemograma, já que linfocitose sugere infecção viral', 'Biópsia de linfonodo eletiva em 2 meses, mantendo o acompanhamento ambulatorial e a escola normalmente', 'Corticoide isolado em dose alta e alta hospitalar, já que a redução dos gânglios confirma a boa resposta e dispensa o mielograma e a quimioterapia de indução por ora'],
   ecd: 'A LLA exige tratamento hematológico imediato. Massa mediastinal impõe cuidado com via aérea e veia cava superior.' });
 
-CASO({ id: 'cm_colest1', area: 'cm', ala: 'cardio', dif: 1, cond: 'Hipercolesterolemia', tags: ['cardio'],
-  pac: { nome: 'Sra. Regina Lopes', idade: 45, sexo: 'F', tipo: 'adulto' },
-  qp: 'Exames de rotina: "colesterol muito alto".',
-  hda: 'Assintomática. Pai infartou aos 48 anos.',
-  ant: 'Sem diabetes.',
-  ef: 'Xantomas em tendões de Aquiles. Arco corneano.',
-  sv: 'PA 120/80 mmHg',
-  ex: 'LDL 214 mg/dl. Triglicerídeos 130 mg/dl. TSH normal. Sem proteinúria.',
-  pista: 'LDL ≥190 + xantomas tendinosos + doença coronariana precoce na família: hipercolesterolemia familiar provável. Causas secundárias excluídas.',
-  dx: ['Hipercolesterolemia familiar provável', 'Hipertrigliceridemia isolada', 'Dislipidemia secundária a hipotireoidismo', 'Dislipidemia secundária a síndrome nefrótica'],
-  edx: 'LDL muito elevado com xantomas e história familiar precoce, com TSH normal e sem proteinúria: hipercolesterolemia familiar provável.',
-  cd: ['Estatina de alta potência, mudança de estilo de vida e rastreamento dos familiares', 'Apenas dieta por 2 anos antes de medicar, já que ele é jovem e sem sintomas', 'Fibrato isolado, que é a primeira escolha quando o LDL passa de 190 mg/dL', 'Nenhuma conduta: é genético, então dieta e remédios não alteram o risco e os familiares não precisam ser examinados'],
-  ecd: 'LDL ≥190 mg/dl já indica estatina de alta potência. Na HF, o rastreamento em cascata dos familiares é fundamental.' });
-
 CASO({ id: 'cm_colest2', area: 'cm', ala: 'cardio', dif: 2, cond: 'Hipercolesterolemia', tags: ['cardio', 'sca'],
   pac: { nome: 'Sr. Jorge Amaral', idade: 60, sexo: 'M', tipo: 'idoso' },
   qp: 'Consulta pós-infarto.',

@@ -326,33 +326,6 @@ CASO({ id: 'ubs_ira_resfriado', area: 'ubs', dif: 1, cond: 'Resfriado comum', te
   cd: ['Sintomáticos (analgésico e antitérmico), hidratação, lavagem nasal com soro e orientação de sinais de alarme, sem antibiótico', 'Amoxicilina por 10 dias para evitar complicação bacteriana, além de antitérmico e lavagem nasal com soro fisiológico várias vezes ao dia', 'Azitromicina por 5 dias e xarope antitussígeno, para encurtar a duração dos sintomas', 'Corticoide oral por 5 dias para reduzir a inflamação da garganta e a coriza'],
   ecd: 'O resfriado é viral e melhora sozinho em 7 a 10 dias. Antibiótico não acelera a melhora e aumenta efeitos adversos e resistência — evitá-lo é prevenção quaternária.' });
 
-CASO({ id: 'ubs_ira_faringite', area: 'ubs', dif: 2, cond: 'Faringoamigdalite estreptocócica', tema: 'Infecções respiratórias agudas', tags: ['ivas'],
-  pac: { nome: 'Isabela Costa', idade: 8, sexo: 'F', tipo: 'crianca' },
-  qp: 'Febre alta e dor de garganta há 1 dia.',
-  hda: 'Sem tosse e sem coriza. Dor para engolir. O irmão teve "dor de garganta com pus" na semana passada.',
-  ant: 'Vacinas em dia. Sem alergias.',
-  ef: 'Amígdalas aumentadas e hiperemiadas, com exsudato, petéquias no palato, linfonodos cervicais anteriores dolorosos.',
-  sv: 'T 39,1 °C · FC 118 bpm',
-  ex: 'Teste rápido para estreptococo do grupo A: positivo.',
-  pista: 'Febre, exsudato, gânglios dolorosos e AUSÊNCIA de tosse e coriza.',
-  dx: ['Faringoamigdalite por estreptococo do grupo A', 'Faringite viral por adenovírus com exsudato', 'Mononucleose infecciosa pelo vírus Epstein-Barr', 'Difteria em criança com vacinação incompleta'],
-  edx: 'Escore de Centor/McIsaac alto, sem sintomas virais e com teste rápido positivo: faringoamigdalite pelo estreptococo do grupo A.',
-  cd: ['Amoxicilina por 10 dias ou penicilina G benzatina em dose única, além de sintomáticos', 'Apenas sintomáticos, já que a maioria das faringites é viral e melhora sozinha', 'Azitromicina por 1 dia, com a mesma eficácia da penicilina para prevenir febre reumática', 'Amoxicilina por 3 dias, suficiente para eliminar o estreptococo da orofaringe'],
-  ecd: 'O antibiótico alivia os sintomas e, sobretudo, previne a febre reumática. A penicilina benzatina pode ser aplicada na própria UBS. Macrolídeos ficam para quem tem alergia à penicilina.' });
-
-CASO({ id: 'ubs_ira_otite', area: 'ubs', dif: 2, cond: 'Otite média aguda', tema: 'Infecções respiratórias agudas', tags: ['ouvido', 'ivas'],
-  pac: { nome: 'Pedro Lucas', idade: '1 ano e 6 meses', sexo: 'M', tipo: 'crianca' },
-  qp: 'Febre e choro à noite, puxando a orelha.',
-  hda: 'Resfriado há 4 dias; desde ontem febre de 38,9 °C e irritabilidade.',
-  ant: 'Vacinas em dia.',
-  ef: 'Otoscopia: membranas timpânicas hiperemiadas e abauladas dos dois lados, sem otorreia.',
-  sv: 'T 38,7 °C',
-  pista: 'Membrana timpânica ABAULADA de início agudo.',
-  dx: ['Otite média aguda bilateral', 'Otite externa aguda difusa', 'Otite média com efusão (secretora)', 'Resfriado comum com dor referida'],
-  edx: 'Membrana timpânica abaulada e hiperemiada, de início agudo, com dor ou irritabilidade e febre: otite média aguda.',
-  cd: ['Amoxicilina e analgesia', 'Gotas otológicas de antibiótico e corticoide', 'Observação por 2 semanas, sem analgesia', 'Lavagem otológica e descongestionante'],
-  ecd: 'Abaixo de 2 anos e com otite bilateral, o antibiótico é indicado; a amoxicilina é a primeira escolha. Acima de 2 anos, em quadros leves e unilaterais, a observação vigiada com analgesia pode ser uma opção.' });
-
 CASO({ id: 'ubs_ira_pac', area: 'ubs', dif: 2, cond: 'Pneumonia adquirida na comunidade de baixo risco', tema: 'Infecções respiratórias agudas', tags: ['resp', 'img'],
   pac: { nome: 'Rodrigo Fontes', idade: 35, sexo: 'M', tipo: 'adulto' },
   qp: 'Febre, tosse com catarro amarelado e dor do lado direito do peito há 3 dias.',
@@ -606,18 +579,6 @@ CASO({ id: 'ubs_cd_atraso', area: 'ubs', dif: 2, cond: 'Atraso do desenvolviment
   edx: 'Sentar sem apoio é esperado por volta dos 6 aos 9 meses. Sem sentar, sem balbucio e sem resposta ao nome aos 12 meses há atraso em vários domínios, mesmo usando a idade corrigida (10 meses).',
   cd: ['Encaminhar para estimulação precoce e avaliação especializada (neuropediatria), com avaliação auditiva e visual, mantendo o acompanhamento na UBS', 'Aguardar até os 3 anos, porque prematuros sempre recuperam os marcos sozinhos, e só então encaminhar se o atraso persistir', 'Tranquilizar a família de que cada criança tem seu ritmo e encerrar o acompanhamento do desenvolvimento nesta consulta', 'Iniciar polivitamínico e estimulação em casa, reavaliando somente na consulta de 2 anos, sem outros exames ou encaminhamentos especializados pelo SUS'],
   ecd: 'A intervenção precoce aproveita a plasticidade cerebral. Em prematuros usa-se a idade corrigida até cerca de 2 anos. Atraso de linguagem sempre pede avaliação da audição.' });
-
-CASO({ id: 'ubs_cd_familiar', area: 'ubs', dif: 2, cond: 'Baixa estatura familiar', tema: 'Crescimento e desenvolvimento', tags: ['ped'],
-  pac: { nome: 'Melissa Andrade', idade: 8, sexo: 'F', tipo: 'crianca' },
-  qp: 'A mãe acha que ela é "a menor da turma".',
-  hda: 'A curva de altura sempre acompanhou o escore-z −2, paralela às linhas. O pai mede 1,60 m e a mãe, 1,50 m.',
-  ef: 'Proporções corporais normais, sem dismorfismos. Peso adequado para a altura. Sem sinais puberais.',
-  ex: 'Idade óssea compatível com a idade cronológica (8 anos). Hemograma, função tireoidiana e anticorpos para doença celíaca normais.',
-  pista: 'Velocidade de crescimento normal e idade óssea = idade cronológica.',
-  dx: ['Baixa estatura familiar', 'Atraso constitucional do crescimento', 'Deficiência de hormônio do crescimento', 'Hipotireoidismo adquirido'],
-  edx: 'Curva paralela (velocidade normal), altura compatível com o alvo genético e idade óssea igual à cronológica: baixa estatura familiar.',
-  cd: ['Tranquilizar a família e manter o acompanhamento da curva e da velocidade de crescimento na UBS', 'Encaminhar para hormônio de crescimento, indicado para toda criança abaixo do escore-z −2 na curva da OMS', 'Iniciar levotiroxina empírica, porque o hipotireoidismo subclínico é a causa mais comum', 'Prescrever dieta hipercalórica e suplemento, já que a baixa estatura reflete desnutrição'],
-  ecd: 'As variantes normais (familiar e atraso constitucional) não precisam de tratamento. Sinais de alerta: queda de canal na curva, velocidade de crescimento baixa e desproporção corporal.' });
 
 CASO({ id: 'ubs_cd_constitucional', area: 'ubs', dif: 3, cond: 'Atraso constitucional do crescimento e da puberdade', tema: 'Crescimento e desenvolvimento', tags: ['ped'],
   pac: { nome: 'Matheus Correia', idade: 14, sexo: 'M', tipo: 'adolescente' },
