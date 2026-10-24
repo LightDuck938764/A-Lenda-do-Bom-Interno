@@ -9,7 +9,7 @@
    ===================================================================== */
 
 /* ---------- Hepatites virais e IHA ---------- */
-CASO({ id: 'cf_hepatite_a', area: 'cm', ala: 'hepato', dif: 1, tema: 'Hepatites virais', cond: 'Hepatite A aguda', tags: ['hepato', 'infecto'],
+CASO({ id: 'cf_hepatite_a', area: 'cm', ala: 'hepato', dif: 1, tema: 'Hepatites virais', cond: 'Hepatite A aguda', tags: ['hepato', 'infecto', 'infec'],
   pac: { nome: 'Lucas Barreto', idade: 23, sexo: 'M', tipo: 'adulto' },
   qp: 'Olhos amarelos e urina escura.',
   hda: 'Há 1 semana febre, náuseas e cansaço; há 3 dias icterícia, colúria e fezes claras. Colega de república com quadro igual há 1 mês.',
@@ -23,7 +23,7 @@ CASO({ id: 'cf_hepatite_a', area: 'cm', ala: 'hepato', dif: 1, tema: 'Hepatites 
   cd: ['Suporte e notificar', 'Antiviral específico por 12 semanas', 'Corticoide em dose alta', 'Internação em UTI para todos os casos'],
   ecd: 'Tratamento de suporte, com sinais de alarme (INR alargando, encefalopatia). Notificação, medidas de higiene e vacinação (ou imunoglobulina) dos contatos suscetíveis. A vacina está no calendário infantil (15 meses).' });
 
-CASO({ id: 'cf_hepatite_b_cronica', area: 'cm', ala: 'hepato', dif: 3, tema: 'Hepatites virais', cond: 'Hepatite B crônica HBeAg negativo com indicação de tratamento', tags: ['hepato', 'infecto'],
+CASO({ id: 'cf_hepatite_b_cronica', area: 'cm', ala: 'hepato', dif: 3, tema: 'Hepatites virais', cond: 'Hepatite B crônica HBeAg negativo com indicação de tratamento', tags: ['hepato', 'infecto', 'infec'],
   pac: { nome: 'Wang Li', idade: 45, sexo: 'M', tipo: 'adulto' },
   qp: 'HBsAg positivo em exame para doação de sangue.',
   hda: 'Assintomático. Mãe faleceu de "câncer de fígado".',
@@ -37,7 +37,7 @@ CASO({ id: 'cf_hepatite_b_cronica', area: 'cm', ala: 'hepato', dif: 3, tema: 'He
   cd: ['Tenofovir ou entecavir e rastrear CHC', 'Interferon por 4 semanas', 'Sem tratamento, só acompanhar', 'Lamivudina isolada por 3 meses'],
   ecd: 'Tratamento com análogos de alta barreira genética (tenofovir ou entecavir), em geral por tempo indefinido nos HBeAg negativos. Rastreamento de carcinoma hepatocelular com ultrassom semestral (história familiar, origem asiática, fibrose). Testar e vacinar contatos.' });
 
-CASO({ id: 'cf_hepatite_c', area: 'cm', ala: 'hepato', dif: 2, tema: 'Hepatites virais', cond: 'Hepatite C crônica', tags: ['hepato', 'infecto'],
+CASO({ id: 'cf_hepatite_c', area: 'cm', ala: 'hepato', dif: 2, tema: 'Hepatites virais', cond: 'Hepatite C crônica', tags: ['hepato', 'infecto', 'infec'],
   pac: { nome: 'Rosa Maria Teles', idade: 58, sexo: 'F', tipo: 'adulto' },
   qp: 'Teste rápido de hepatite C positivo na campanha.',
   hda: 'Assintomática. Transfusão em 1987 durante cesárea.',
@@ -80,7 +80,7 @@ CASO({ id: 'cf_ascite', area: 'cm', ala: 'hepato', dif: 2, tema: 'Cirrose e comp
   cd: ['Sal restrito, espironolactona e furosemida', 'Restrição hídrica rigorosa isolada', 'Paracentese de alívio diária', 'Betabloqueador em dose alta para tratar a ascite'],
   ecd: 'Restrição de sódio (cerca de 2 g/dia) e diuréticos na proporção de 100 mg de espironolactona para 40 mg de furosemida. Ascite volumosa: paracentese com albumina (6-8 g por litro retirado acima de 5 L). Refratária: paracenteses seriadas, TIPS, transplante. Abstinência alcoólica muda o prognóstico.' });
 
-CASO({ id: 'cf_pbe', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirrose e complicações', cond: 'Peritonite bacteriana espontânea', tags: ['hepato', 'sepse'],
+CASO({ id: 'cf_pbe', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirrose e complicações', cond: 'Peritonite bacteriana espontânea', tags: ['hepato', 'sepse', 'infec'],
   pac: { nome: 'Adelino Fonseca', idade: 61, sexo: 'M', tipo: 'idoso' },
   qp: 'Febre, dor na barriga e confusão.',
   hda: 'Cirrose por hepatite C com ascite. Há 2 dias febre baixa, dor abdominal difusa e sonolência.',
@@ -240,7 +240,7 @@ CASO({ id: 'cf_adenoma', area: 'cm', ala: 'hepato', dif: 2, tema: 'Câncer de f�
   cd: ['Suspender o hormônio e ressecar', 'Manter o anticoncepcional e observar', 'Quimioterapia', 'Transplante hepático'],
   ecd: 'Suspender estrógenos e reduzir o peso. Ressecção se > 5 cm, crescimento, sangramento ou em homens. Lesões < 5 cm em mulheres podem ser observadas após suspensão do hormônio. Hemangioma e hiperplasia nodular focal não precisam de tratamento.' });
 
-CASO({ id: 'cf_esquistossomose', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirrose e complicações', cond: 'Hipertensão portal esquistossomótica', tags: ['hepato', 'infecto'],
+CASO({ id: 'cf_esquistossomose', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirrose e complicações', cond: 'Hipertensão portal esquistossomótica', tags: ['hepato', 'infecto', 'infec'],
   pac: { nome: 'José Inácio Barbosa', idade: 53, sexo: 'M', tipo: 'adulto' },
   qp: 'Baço grande e varizes no esôfago.',
   hda: 'Natural de Pernambuco, banhos de rio na infância. Nunca sangrou. Função hepática preservada.',

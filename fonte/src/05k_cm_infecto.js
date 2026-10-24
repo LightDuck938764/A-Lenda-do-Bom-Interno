@@ -10,7 +10,7 @@
    ===================================================================== */
 
 /* ---------- Meningites e encefalites ---------- */
-CASO({ id: 'ci_meningite_pneumo', area: 'cm', ala: 'infecto', dif: 2, tema: 'Meningite bacteriana', cond: 'Meningite bacteriana no adulto jovem', tags: ['infecto', 'neuro', 'sepse'],
+CASO({ id: 'ci_meningite_pneumo', area: 'cm', ala: 'infecto', dif: 2, tema: 'Meningite bacteriana', cond: 'Meningite bacteriana no adulto jovem', tags: ['infecto', 'neuro', 'sepse', 'infec'],
   pac: { nome: 'Rafael Moreno', idade: 31, sexo: 'M', tipo: 'adulto' },
   qp: 'Dor de cabeça muito forte, febre e confusão.',
   hda: 'Otite média há 1 semana. Há 18 horas cefaleia intensa, febre alta, vômitos; hoje sonolento.',
@@ -24,7 +24,7 @@ CASO({ id: 'ci_meningite_pneumo', area: 'cm', ala: 'infecto', dif: 2, tema: 'Men
   cd: ['Dexametasona e ceftriaxona', 'Aciclovir isolado em dose plena', 'Aguardar a cultura para iniciar o antibiótico', 'Penicilina benzatina IM'],
   ecd: 'Dexametasona 10 mg de 6/6 horas por 4 dias, iniciada antes ou junto com a primeira dose do antibiótico, reduz mortalidade e sequelas (principalmente surdez) na pneumocócica. Vancomicina associada onde há pneumococo resistente. Notificação compulsória.' });
 
-CASO({ id: 'ci_meningite_idoso', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meningite bacteriana', cond: 'Suspeita de meningite em idoso com sinal focal (antibiótico antes da tomografia)', tags: ['infecto', 'neuro'],
+CASO({ id: 'ci_meningite_idoso', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meningite bacteriana', cond: 'Suspeita de meningite em idoso com sinal focal (antibiótico antes da tomografia)', tags: ['infecto', 'neuro', 'infec'],
   pac: { nome: 'José Lindoval', idade: 75, sexo: 'M', tipo: 'idoso' },
   qp: 'Febre, confusão e fraqueza no braço.',
   hda: 'Febre e cefaleia há 2 dias, confusão hoje e uma crise convulsiva.',
@@ -37,7 +37,7 @@ CASO({ id: 'ci_meningite_idoso', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meni
   cd: ['Antibiótico com ampicilina antes da TC', 'TC primeiro e antibiótico só após o resultado da punção lombar', 'Punção lombar imediata sem imagem', 'Só antibiótico oral'],
   ecd: 'O antibiótico não pode esperar a tomografia: colhem-se hemoculturas e inicia-se o tratamento empírico. Acima de 50 anos ou imunossuprimidos: ceftriaxona com ampicilina (Listeria), com ou sem vancomicina.' });
 
-CASO({ id: 'ci_meningococcemia', area: 'cm', ala: 'infecto', dif: 2, tema: 'Meningite bacteriana', cond: 'Doença meningocócica (meningococcemia)', tags: ['infecto', 'sepse', 'choque'],
+CASO({ id: 'ci_meningococcemia', area: 'cm', ala: 'infecto', dif: 2, tema: 'Meningite bacteriana', cond: 'Doença meningocócica (meningococcemia)', tags: ['infecto', 'sepse', 'choque', 'infec'],
   pac: { nome: 'Talita Moreira', idade: 19, sexo: 'F', tipo: 'adulto' },
   qp: 'Febre alta e manchas roxas que se espalham.',
   hda: 'Estudante, mora em república. Febre alta há 12 horas, mialgia intensa, vômitos; manchas apareceram há 3 horas e aumentam rapidamente.',
@@ -50,7 +50,7 @@ CASO({ id: 'ci_meningococcemia', area: 'cm', ala: 'infecto', dif: 2, tema: 'Meni
   cd: ['Ceftriaxona já e profilaxia dos contatos', 'Punção lombar antes de qualquer antibiótico', 'Antitérmico e observação', 'Corticoide isolado'],
   ecd: 'Antibiótico na primeira hora, mesmo antes de exames. Precaução por gotículas nas primeiras 24 horas. Notificação imediata. Quimioprofilaxia dos contatos íntimos (domiciliares, república, beijo) com rifampicina (ou ciprofloxacino dose única, ou ceftriaxona IM).' });
 
-CASO({ id: 'ci_meningite_tb', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meningite bacteriana', cond: 'Meningite tuberculosa', tags: ['infecto', 'neuro'],
+CASO({ id: 'ci_meningite_tb', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meningite bacteriana', cond: 'Meningite tuberculosa', tags: ['infecto', 'neuro', 'infec'],
   pac: { nome: 'Sandro Pires', idade: 38, sexo: 'M', tipo: 'adulto' },
   qp: 'Dor de cabeça há 3 semanas e visão dupla.',
   hda: 'Cefaleia progressiva, febre baixa, emagrecimento e, há 3 dias, diplopia e sonolência.',
@@ -65,7 +65,7 @@ CASO({ id: 'ci_meningite_tb', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meningi
   cd: ['RIPE por 12 meses e corticoide', 'Ceftriaxona por 10 dias', 'Aciclovir venoso', 'RIPE por 6 meses sem corticoide'],
   ecd: 'Esquema: 2 meses de RIPE e 10 meses de rifampicina com isoniazida, associado a corticoide (dexametasona ou prednisona) por 4 a 8 semanas, que reduz mortalidade. Avaliar derivação se hidrocefalia sintomática. Na coinfecção com HIV, a TARV é iniciada após 4 a 8 semanas.' });
 
-CASO({ id: 'ci_encefalite_herpetica', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meningite bacteriana', cond: 'Encefalite herpética', tags: ['infecto', 'neuro'],
+CASO({ id: 'ci_encefalite_herpetica', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meningite bacteriana', cond: 'Encefalite herpética', tags: ['infecto', 'neuro', 'infec'],
   pac: { nome: 'Gilson Amaral', idade: 50, sexo: 'M', tipo: 'adulto' },
   qp: 'Febre, comportamento estranho e convulsão.',
   hda: 'Há 3 dias febre e cefaleia; hoje confuso, falando coisas sem sentido, com alucinações olfatórias e uma crise convulsiva.',
@@ -81,7 +81,7 @@ CASO({ id: 'ci_encefalite_herpetica', area: 'cm', ala: 'infecto', dif: 3, tema: 
   ecd: 'Iniciar aciclovir na suspeita (mortalidade de 70% sem tratamento), por 14 a 21 dias. Controle das crises. Sequelas cognitivas são comuns; encefalite autoimune anti-NMDA pode ocorrer depois.' });
 
 /* ---------- HIV/aids ---------- */
-CASO({ id: 'ci_hiv_inicio', area: 'cm', ala: 'infecto', dif: 2, tema: 'HIV/aids', cond: 'Início da terapia antirretroviral', tags: ['infecto'],
+CASO({ id: 'ci_hiv_inicio', area: 'cm', ala: 'infecto', dif: 2, tema: 'HIV/aids', cond: 'Início da terapia antirretroviral', tags: ['infecto', 'infec'],
   pac: { nome: 'Matheus Varela', idade: 27, sexo: 'M', tipo: 'adulto' },
   qp: 'Teste rápido de HIV reagente.',
   hda: 'Diagnosticado em testagem de rotina, confirmado com segundo teste. Assintomático. Quer começar o tratamento logo.',
@@ -95,7 +95,7 @@ CASO({ id: 'ci_hiv_inicio', area: 'cm', ala: 'infecto', dif: 2, tema: 'HIV/aids'
   cd: ['TARV já (TDF, 3TC e DTG)', 'Esperar o CD4 cair abaixo de 200', 'Só profilaxias, sem TARV', 'Monoterapia com dolutegravir'],
   ecd: 'O PCDT recomenda TARV imediata para todas as pessoas vivendo com HIV, independentemente do CD4 (benefício individual e indetectável = intransmissível). Esquema preferencial: TDF + 3TC + DTG. Rastrear TB, hepatites, sífilis e vacinar.' });
 
-CASO({ id: 'ci_neurotoxo', area: 'cm', ala: 'infecto', dif: 3, tema: 'HIV/aids', cond: 'Neurotoxoplasmose na aids', tags: ['infecto', 'neuro'],
+CASO({ id: 'ci_neurotoxo', area: 'cm', ala: 'infecto', dif: 3, tema: 'HIV/aids', cond: 'Neurotoxoplasmose na aids', tags: ['infecto', 'neuro', 'infec'],
   pac: { nome: 'Cléber Assunção', idade: 39, sexo: 'M', tipo: 'adulto' },
   qp: 'Fraqueza no braço direito e dor de cabeça.',
   hda: 'HIV há 5 anos, abandonou a TARV. Há 1 semana cefaleia, febre baixa e fraqueza progressiva à direita; hoje uma convulsão.',
@@ -110,7 +110,7 @@ CASO({ id: 'ci_neurotoxo', area: 'cm', ala: 'infecto', dif: 3, tema: 'HIV/aids',
   cd: ['Sulfadiazina, pirimetamina e folínico', 'Biópsia cerebral antes de qualquer tratamento', 'Anfotericina B', 'Radioterapia de crânio'],
   ecd: 'Tratamento por 6 semanas, depois profilaxia secundária até CD4 > 200 por 6 meses com TARV. Sem melhora clínico-radiológica em 2 semanas: pensar em linfoma primário do SNC (lesão única, periventricular, EBV no líquor) e considerar biópsia. Profilaxia primária com sulfametoxazol-trimetoprima se CD4 < 100 e IgG positivo.' });
 
-CASO({ id: 'ci_criptococose', area: 'cm', ala: 'infecto', dif: 3, tema: 'HIV/aids', cond: 'Meningite criptocócica na aids', tags: ['infecto', 'neuro'],
+CASO({ id: 'ci_criptococose', area: 'cm', ala: 'infecto', dif: 3, tema: 'HIV/aids', cond: 'Meningite criptocócica na aids', tags: ['infecto', 'neuro', 'infec'],
   pac: { nome: 'Rosimeire Lopes', idade: 34, sexo: 'F', tipo: 'adulto' },
   qp: 'Dor de cabeça muito forte há 2 semanas.',
   hda: 'HIV recém-diagnosticado, sem TARV. Cefaleia progressiva, febre baixa, náuseas, visão borrada.',
@@ -124,7 +124,7 @@ CASO({ id: 'ci_criptococose', area: 'cm', ala: 'infecto', dif: 3, tema: 'HIV/aid
   cd: ['Anfotericina e flucitosina, punções de alívio', 'TARV imediata no mesmo dia', 'Acetazolamida e manitol para a pressão', 'Fluconazol oral em baixa dose e alta'],
   ecd: 'Indução com anfotericina B (preferencialmente lipossomal) e flucitosina por 1-2 semanas, depois fluconazol. Punções lombares de alívio diárias até pressão < 20 cmH₂O (acetazolamida, manitol e corticoide não ajudam). TARV precoce aumenta mortalidade: iniciar após 4 a 6 semanas.' });
 
-CASO({ id: 'ci_pep', area: 'cm', ala: 'infecto', dif: 1, tema: 'HIV/aids', cond: 'Profilaxia pós-exposição ao HIV', tags: ['infecto'],
+CASO({ id: 'ci_pep', area: 'cm', ala: 'infecto', dif: 1, tema: 'HIV/aids', cond: 'Profilaxia pós-exposição ao HIV', tags: ['infecto', 'infec'],
   pac: { nome: 'Daniel Rocha', idade: 24, sexo: 'M', tipo: 'adulto' },
   qp: 'A camisinha rompeu ontem à noite.',
   hda: 'Relação anal receptiva com parceiro de sorologia desconhecida há 30 horas.',
@@ -139,7 +139,7 @@ CASO({ id: 'ci_pep', area: 'cm', ala: 'infecto', dif: 1, tema: 'HIV/aids', cond:
   ecd: 'PEP deve ser iniciada o quanto antes (idealmente nas primeiras 2 horas e no máximo até 72 horas), com tenofovir, lamivudina e dolutegravir por 28 dias. Testagem para HIV em 30 e 90 dias, avaliação de IST, contracepção de emergência quando aplicável, vacinação para hepatite B. Encaminhar para PrEP.' });
 
 /* ---------- Arboviroses e febres hemorrágicas ---------- */
-CASO({ id: 'ci_dengue_hepatite', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', cond: 'Dengue grave por comprometimento de órgão (hepatite)', tags: ['infecto', 'hepato'],
+CASO({ id: 'ci_dengue_hepatite', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', cond: 'Dengue grave por comprometimento de órgão (hepatite)', tags: ['infecto', 'hepato', 'infec'],
   pac: { nome: 'Oswaldo Pinheiro', idade: 41, sexo: 'M', tipo: 'adulto' },
   qp: 'Olhos amarelos e muito enjoo depois da dengue.',
   hda: 'Dengue confirmada há 6 dias. Febre cedeu há 2 dias, mas surgiram vômitos, dor no hipocôndrio direito, icterícia e sonolência. Tomou paracetamol 1 g de 4 em 4 horas por conta própria.',
@@ -153,7 +153,7 @@ CASO({ id: 'ci_dengue_hepatite', area: 'cm', ala: 'infecto', dif: 3, tema: 'Deng
   cd: ['UTI e suspender o paracetamol', 'Corticoide em pulso venoso', 'Transfusão profilática de plaquetas', 'Alta com hidratação oral'],
   ecd: 'Grupo D: leito de terapia intensiva, reposição volêmica guiada, correção de hipoglicemia e coagulopatia, vigilância de encefalopatia. Paracetamol limitado a 3 g/dia (evitar na hepatite grave); N-acetilcisteína é usada na lesão hepática grave. Plaquetas só com sangramento ativo. Notificação imediata.' });
 
-CASO({ id: 'ci_dengue_c', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', cond: 'Dengue com sinais de alarme (grupo C)', tags: ['infecto', 'hidrat'],
+CASO({ id: 'ci_dengue_c', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', cond: 'Dengue com sinais de alarme (grupo C)', tags: ['infecto', 'hidrat', 'infec'],
   pac: { nome: 'Joana Bezerra', idade: 28, sexo: 'F', tipo: 'adulto' },
   qp: 'A febre passou, mas está com muita dor na barriga e vomitando.',
   hda: 'Dengue há 5 dias; febre cedeu ontem. Internada há 1 hora por dor abdominal intensa, vômitos persistentes e tontura; já recebeu SF 0,9% 10 mL/kg. Continua com dor e vomitando.',
@@ -168,7 +168,7 @@ CASO({ id: 'ci_dengue_c', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', co
   cd: ['Repetir SF 10 mL/kg', 'Trocar por hidratação oral', 'Transfusão de plaquetas', 'Corticoide venoso em pulso'],
   ecd: 'Grupo C: cristaloide 10 mL/kg na primeira hora, reavaliando sinais vitais, diurese e hematócrito após cada etapa; sem melhora, repetir até 3 vezes. Com melhora, manutenção (25 mL/kg em 6 h, depois 25 mL/kg em 8 h). Se não houver resposta após 3 etapas ou surgir choque, conduzir como grupo D. Plaquetopenia isolada sem sangramento importante não indica transfusão.' });
 
-CASO({ id: 'ci_dengue_d', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', cond: 'Dengue grave com choque (grupo D)', tags: ['infecto', 'choque', 'hidrat'],
+CASO({ id: 'ci_dengue_d', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', cond: 'Dengue grave com choque (grupo D)', tags: ['infecto', 'choque', 'hidrat', 'infec'],
   pac: { nome: 'Marcos Paulo Lima', idade: 32, sexo: 'M', tipo: 'adulto' },
   qp: 'Muito fraco, suando frio, depois de 5 dias de dengue.',
   hda: 'Dengue confirmada. Hoje sudorese, confusão e mãos frias.',
@@ -182,7 +182,7 @@ CASO({ id: 'ci_dengue_d', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', co
   cd: ['SF 20 mL/kg em 20 min, até 3 vezes, e UTI', 'Restrição hídrica e diurético', 'Transfusão de plaquetas como primeira medida', 'Hidratação oral supervisionada'],
   ecd: 'Expansão rápida com cristaloide 20 mL/kg em até 20 minutos, repetida até 3 vezes; sem melhora, considerar albumina, hemorragia oculta (hematócrito caindo) e drogas vasoativas. Após estabilizar, reduzir o volume (risco de sobrecarga na fase de reabsorção).' });
 
-CASO({ id: 'ci_chikungunya', area: 'cm', ala: 'infecto', dif: 3, tema: 'Arboviroses', cond: 'Chikungunya atípica grave com encefalite em idosa', tags: ['infecto', 'neuro', 'nefro'],
+CASO({ id: 'ci_chikungunya', area: 'cm', ala: 'infecto', dif: 3, tema: 'Arboviroses', cond: 'Chikungunya atípica grave com encefalite em idosa', tags: ['infecto', 'neuro', 'nefro', 'infec'],
   pac: { nome: 'Neide Carvalho', idade: 78, sexo: 'F', tipo: 'idoso' },
   qp: 'Febre, dor em todas as juntas e ficou confusa.',
   hda: 'Febre alta súbita há 5 dias com poliartralgia incapacitante em mãos e tornozelos e exantema. Hoje confusa, sonolenta, urinando pouco. Vizinhos com o mesmo quadro.',
@@ -196,7 +196,7 @@ CASO({ id: 'ci_chikungunya', area: 'cm', ala: 'infecto', dif: 3, tema: 'Arboviro
   cd: ['Internar e suspender IECA e diurético', 'Corticoide em pulso', 'AINE em dose plena para a artrite', 'Aciclovir e alta precoce'],
   ecd: 'Não há antiviral: suporte com hidratação ajustada à cardiopatia, controle glicêmico, ajuste ou suspensão de nefrotóxicos e anti-hipertensivos, analgesia com dipirona ou paracetamol (AINE contraindicado na fase aguda, na lesão renal e até excluir dengue). Notificação. Fases subaguda e crônica: AINE, corticoide, hidroxicloroquina, metotrexato.' });
 
-CASO({ id: 'ci_zika', area: 'cm', ala: 'infecto', dif: 3, tema: 'Arboviroses', cond: 'Síndrome congênita do zika suspeita no pré-natal', tags: ['infecto', 'obst', 'usg'],
+CASO({ id: 'ci_zika', area: 'cm', ala: 'infecto', dif: 3, tema: 'Arboviroses', cond: 'Síndrome congênita do zika suspeita no pré-natal', tags: ['infecto', 'obst', 'usg', 'infec'],
   pac: { nome: 'Lorena Salvador', idade: 26, sexo: 'F', tipo: 'adulto' },
   qp: 'Encaminhada porque o ultrassom mostrou "cabeça pequena" do bebê.',
   hda: 'Gestante de 28 semanas. Com 10 semanas teve exantema pruriginoso, conjuntivite e febre baixa, sem investigação. Ultrassom morfológico atual com alterações.',
@@ -211,7 +211,7 @@ CASO({ id: 'ci_zika', area: 'cm', ala: 'infecto', dif: 3, tema: 'Arboviroses', c
   cd: ['Pré-natal de alto risco e notificar', 'Interromper a gestação na mesma semana', 'Antiviral específico para o feto', 'Cesárea imediata às 28 semanas'],
   ecd: 'Notificação, acompanhamento em medicina fetal, apoio psicológico, via de parto por indicação obstétrica em hospital com neonatologia. O RN deve ter medida do perímetro cefálico, exames de imagem, fundo de olho, avaliação auditiva e estimulação precoce. Prevenção: repelente, telas, preservativo na gestação.' });
 
-CASO({ id: 'ci_febre_amarela', area: 'cm', ala: 'infecto', dif: 3, tema: 'Febre amarela', cond: 'Febre amarela grave', tags: ['infecto', 'hepato', 'nefro'],
+CASO({ id: 'ci_febre_amarela', area: 'cm', ala: 'infecto', dif: 3, tema: 'Febre amarela', cond: 'Febre amarela grave', tags: ['infecto', 'hepato', 'nefro', 'infec'],
   pac: { nome: 'Adalberto Siqueira', idade: 41, sexo: 'M', tipo: 'adulto' },
   qp: 'Olhos amarelos, vômitos com sangue e urina pouca.',
   hda: 'Trabalhador rural em área de mata com mortes de macacos. Há 7 dias febre, cefaleia e mialgia; melhorou por 1 dia e depois piorou com icterícia, hematêmese e oligúria. Nunca vacinado.',
@@ -225,7 +225,7 @@ CASO({ id: 'ci_febre_amarela', area: 'cm', ala: 'infecto', dif: 3, tema: 'Febre 
   cd: ['Suporte em UTI e notificação', 'Penicilina cristalina', 'Vacina contra febre amarela agora', 'AAS para a febre'],
   ecd: 'Não há antiviral eficaz: suporte intensivo (diálise, hemocomponentes, controle de encefalopatia), avaliação para transplante em casos selecionados. Evitar AAS e AINE. Prevenção pela vacina (dose única para a maioria; 9 meses e reforço aos 4 anos na infância).' });
 
-CASO({ id: 'ci_leptospirose', area: 'cm', ala: 'infecto', dif: 3, tema: 'Leptospirose', cond: 'Leptospirose grave (síndrome de Weil)', tags: ['infecto', 'nefro', 'pneumo'],
+CASO({ id: 'ci_leptospirose', area: 'cm', ala: 'infecto', dif: 3, tema: 'Leptospirose', cond: 'Leptospirose grave (síndrome de Weil)', tags: ['infecto', 'nefro', 'pneumo', 'infec'],
   pac: { nome: 'Denílson Andrade', idade: 34, sexo: 'M', tipo: 'adulto' },
   qp: 'Febre, dor nas panturrilhas, olhos amarelos e falta de ar.',
   hda: 'Há 9 dias limpou a casa após enchente. Febre alta, cefaleia, dor intensa nas panturrilhas; há 2 dias icterícia, urina escura e hoje tosse com sangue.',
@@ -240,7 +240,7 @@ CASO({ id: 'ci_leptospirose', area: 'cm', ala: 'infecto', dif: 3, tema: 'Leptosp
   cd: ['Penicilina ou ceftriaxona e diálise', 'Doxiciclina oral e alta', 'Aguardar sorologia para tratar', 'Corticoide isolado'],
   ecd: 'Antibiótico em qualquer fase (formas graves: penicilina cristalina, ceftriaxona ou ampicilina; leves: doxiciclina ou amoxicilina). Diálise precoce, ventilação protetora na hemorragia pulmonar. Notificação compulsória. Quimioprofilaxia com doxiciclina pode ser feita após exposição de alto risco.' });
 
-CASO({ id: 'ci_leish_visceral', area: 'cm', ala: 'infecto', dif: 3, tema: 'Leishmaniose', cond: 'Leishmaniose visceral (calazar)', tags: ['infecto', 'hemato'],
+CASO({ id: 'ci_leish_visceral', area: 'cm', ala: 'infecto', dif: 3, tema: 'Leishmaniose', cond: 'Leishmaniose visceral (calazar)', tags: ['infecto', 'hemato', 'infec'],
   pac: { nome: 'Francisco Alves', idade: 32, sexo: 'M', tipo: 'adulto' },
   qp: 'Febre há 2 meses e barriga grande.',
   hda: 'Febre irregular há 2 meses, emagrecimento, fraqueza. Mora no interior do Piauí; vários cães doentes na vizinhança.',
@@ -254,7 +254,7 @@ CASO({ id: 'ci_leish_visceral', area: 'cm', ala: 'infecto', dif: 3, tema: 'Leish
   cd: ['Anfotericina B lipossomal', 'Esplenectomia', 'Cloroquina', 'Ivermectina'],
   ecd: 'Anfotericina B lipossomal é a primeira escolha no Brasil em situações de maior risco (idade > 50 anos, insuficiência renal, cardíaca ou hepática, HIV, gravidade, gestantes); antimoniato de meglumina nos demais. Tratar infecções associadas (principal causa de morte), notificação, controle do vetor e dos cães.' });
 
-CASO({ id: 'ci_malaria_falciparum', area: 'cm', ala: 'infecto', dif: 3, tema: 'Malária', cond: 'Malária grave por Plasmodium falciparum', tags: ['infecto', 'neuro', 'hemato'],
+CASO({ id: 'ci_malaria_falciparum', area: 'cm', ala: 'infecto', dif: 3, tema: 'Malária', cond: 'Malária grave por Plasmodium falciparum', tags: ['infecto', 'neuro', 'hemato', 'infec'],
   pac: { nome: 'Leandro Pires', idade: 36, sexo: 'M', tipo: 'adulto' },
   qp: 'Febre com calafrios e confusão após viagem.',
   hda: 'Voltou de Moçambique há 12 dias, sem quimioprofilaxia. Febre alta com calafrios há 4 dias; hoje confuso e com urina escura.',
@@ -268,7 +268,7 @@ CASO({ id: 'ci_malaria_falciparum', area: 'cm', ala: 'infecto', dif: 3, tema: 'M
   cd: ['Artesunato venoso, glicose e UTI', 'Cloroquina oral e alta', 'Primaquina isolada', 'Aguardar a sorologia'],
   ecd: 'Artesunato venoso (ou artemeter IM) por pelo menos 24 horas, depois derivado de artemisinina oral (artemeter-lumefantrina). Corrigir hipoglicemia, suporte renal. Malária não complicada por falciparum: ACT oral. P. vivax: cloroquina com primaquina (para os hipnozoítos), após checar G6PD.' });
 
-CASO({ id: 'ci_febre_maculosa', area: 'cm', ala: 'infecto', dif: 3, tema: 'Febre maculosa', cond: 'Febre maculosa brasileira', tags: ['infecto', 'sepse'],
+CASO({ id: 'ci_febre_maculosa', area: 'cm', ala: 'infecto', dif: 3, tema: 'Febre maculosa', cond: 'Febre maculosa brasileira', tags: ['infecto', 'sepse', 'infec'],
   pac: { nome: 'Edilene Prado', idade: 29, sexo: 'F', tipo: 'adulto' },
   qp: 'Febre alta, dor no corpo e manchas, inclusive nas palmas das mãos.',
   hda: 'Há 1 semana fez trilha numa fazenda com capivaras no interior de São Paulo e retirou um carrapato da perna. Há 5 dias febre alta, cefaleia, mialgia; há 2 dias exantema que começou nos punhos e tornozelos.',
@@ -282,7 +282,7 @@ CASO({ id: 'ci_febre_maculosa', area: 'cm', ala: 'infecto', dif: 3, tema: 'Febre
   cd: ['Doxiciclina imediata', 'Penicilina cristalina', 'Aguardar a sorologia pareada', 'Só sintomáticos'],
   ecd: 'Doxiciclina é a droga de escolha em qualquer idade, iniciada na suspeita (o atraso aumenta muito a mortalidade); cloranfenicol é alternativa. Diagnóstico confirmado depois por sorologia pareada (RIFI). Notificação compulsória.' });
 
-CASO({ id: 'ci_estrongiloidiase', area: 'cm', ala: 'infecto', dif: 3, tema: 'Parasitoses intestinais', cond: 'Hiperinfecção por Strongyloides em usuário de corticoide', tags: ['infecto', 'gastro', 'sepse'],
+CASO({ id: 'ci_estrongiloidiase', area: 'cm', ala: 'infecto', dif: 3, tema: 'Parasitoses intestinais', cond: 'Hiperinfecção por Strongyloides em usuário de corticoide', tags: ['infecto', 'gastro', 'sepse', 'infec'],
   pac: { nome: 'Raimundo Matos', idade: 63, sexo: 'M', tipo: 'idoso' },
   qp: 'Diarreia, tosse e febre depois que começou corticoide.',
   hda: 'Usa prednisona 40 mg/dia há 1 mês por DPOC exacerbada. Há 1 semana diarreia, dor abdominal, tosse com sangue e febre. Foi agricultor, andava descalço.',
@@ -297,7 +297,7 @@ CASO({ id: 'ci_estrongiloidiase', area: 'cm', ala: 'infecto', dif: 3, tema: 'Par
   ecd: 'Ivermectina diária até negativação (formas graves podem exigir via parenteral), antibiótico para a bacteremia e redução da imunossupressão. Prevenção: tratar empiricamente com ivermectina ou rastrear antes de corticoide em dose alta ou imunossupressores em pessoas de áreas endêmicas.' });
 
 /* ---------- Animais peçonhentos e mordedura ---------- */
-CASO({ id: 'ci_botropico', area: 'cm', ala: 'infecto', dif: 2, tema: 'Acidentes por animais peçonhentos', cond: 'Acidente botrópico moderado', tags: ['infecto', 'hemato'],
+CASO({ id: 'ci_botropico', area: 'cm', ala: 'infecto', dif: 2, tema: 'Acidentes por animais peçonhentos', cond: 'Acidente botrópico moderado', tags: ['infecto', 'hemato', 'infec'],
   pac: { nome: 'Valter Neves', idade: 45, sexo: 'M', tipo: 'adulto' },
   qp: 'Picada de cobra no pé há 2 horas.',
   hda: 'Picado por jararaca na roça. Fizeram garrote e cortaram o local.',
@@ -311,7 +311,7 @@ CASO({ id: 'ci_botropico', area: 'cm', ala: 'infecto', dif: 2, tema: 'Acidentes 
   cd: ['Soro antibotrópico e retirar o garrote', 'Garrote apertado e incisão no local', 'Só analgesia e observação', 'Soro anticrotálico'],
   ecd: 'Soroterapia o mais rápido possível (número de ampolas pela gravidade; leve 2-4, moderado 4-8, grave 12), com observação para reações. Não usar garrote, incisões ou sucção. Hidratação (risco de lesão renal), analgesia, antitetânica, avaliar síndrome compartimental e abscesso.' });
 
-CASO({ id: 'ci_crotalico', area: 'cm', ala: 'infecto', dif: 3, tema: 'Acidentes por animais peçonhentos', cond: 'Acidente crotálico', tags: ['infecto', 'nefro', 'neuro'],
+CASO({ id: 'ci_crotalico', area: 'cm', ala: 'infecto', dif: 3, tema: 'Acidentes por animais peçonhentos', cond: 'Acidente crotálico', tags: ['infecto', 'nefro', 'neuro', 'infec'],
   pac: { nome: 'Josué Ribeiro', idade: 52, sexo: 'M', tipo: 'adulto' },
   qp: 'Picada de cobra com chocalho, "pálpebras caindo".',
   hda: 'Picado por cascavel na mão há 4 horas. Pouca dor no local. Agora visão dupla, pálpebras pesadas e urina escura.',
@@ -325,7 +325,7 @@ CASO({ id: 'ci_crotalico', area: 'cm', ala: 'infecto', dif: 3, tema: 'Acidentes 
   cd: ['Soro anticrotálico e hidratação', 'Soro antibotrópico', 'Garrote e anticolinesterásico', 'Apenas observar 24 horas'],
   ecd: 'Soro anticrotálico (ou antibotrópico-crotálico) conforme a gravidade, hidratação para diurese alta (prevenção da lesão renal por mioglobina), monitorar função renal. Não fazer garrote ou incisões.' });
 
-CASO({ id: 'ci_escorpiao', area: 'ped', dif: 3, tema: 'Acidentes por animais peçonhentos', cond: 'Escorpionismo grave em criança', tags: ['infecto', 'cardio'],
+CASO({ id: 'ci_escorpiao', area: 'ped', dif: 3, tema: 'Acidentes por animais peçonhentos', cond: 'Escorpionismo grave em criança', tags: ['infecto', 'cardio', 'infec'],
   pac: { nome: 'Pedro Lucas Silva', idade: 6, sexo: 'M', tipo: 'crianca' },
   qp: 'Picado por escorpião amarelo há 1 hora, vomitando sem parar.',
   hda: 'Picado no pé ao calçar o tênis. Dor intensa local; depois vômitos repetidos, sudorese e agitação.',
@@ -338,7 +338,7 @@ CASO({ id: 'ci_escorpiao', area: 'ped', dif: 3, tema: 'Acidentes por animais pe�
   cd: ['Soro antiescorpiônico', 'Só anestésico local e alta', 'Corticoide e anti-histamínico', 'Garrote e gelo'],
   ecd: 'Casos moderados e graves (sobretudo crianças até 7-10 anos): soro antiescorpiônico (2-3 ampolas moderado, 4-6 grave), monitorização, tratar edema pulmonar e choque. Casos leves (só dor): analgesia e bloqueio anestésico local, observação.' });
 
-CASO({ id: 'ci_loxosceles', area: 'cm', ala: 'infecto', dif: 3, tema: 'Acidentes por animais peçonhentos', cond: 'Loxoscelismo cutâneo-hemolítico (aranha-marrom)', tags: ['infecto', 'hemato', 'nefro'],
+CASO({ id: 'ci_loxosceles', area: 'cm', ala: 'infecto', dif: 3, tema: 'Acidentes por animais peçonhentos', cond: 'Loxoscelismo cutâneo-hemolítico (aranha-marrom)', tags: ['infecto', 'hemato', 'nefro', 'infec'],
   pac: { nome: 'Cristina Valente', idade: 42, sexo: 'F', tipo: 'adulto' },
   qp: 'Mancha roxa dolorosa na coxa e urina escura.',
   hda: 'Mora em Curitiba. Há 2 dias sentiu uma picada leve ao vestir uma calça guardada; horas depois dor em queimação e mancha que cresceu. Hoje urina escura e icterícia.',
@@ -352,7 +352,7 @@ CASO({ id: 'ci_loxosceles', area: 'cm', ala: 'infecto', dif: 3, tema: 'Acidentes
   cd: ['Soro antiloxoscélico e corticoide', 'Desbridamento cirúrgico imediato da lesão', 'Só antibiótico', 'Anestesia local e alta'],
   ecd: 'Soro antiloxoscélico (ou antiaracnídico) nas formas moderada/grave e cutâneo-hemolítica; prednisona por 5 dias; hidratação e monitorização renal. Desbridamento só depois da delimitação da necrose. Antibiótico se infecção secundária.' });
 
-CASO({ id: 'ci_anafilaxia_abelha', area: 'cm', ala: 'infecto', dif: 2, tema: 'Acidentes por animais peçonhentos', cond: 'Anafilaxia após picada de abelha', tags: ['infecto', 'choque', 'resp'],
+CASO({ id: 'ci_anafilaxia_abelha', area: 'cm', ala: 'infecto', dif: 2, tema: 'Acidentes por animais peçonhentos', cond: 'Anafilaxia após picada de abelha', tags: ['infecto', 'choque', 'resp', 'infec'],
   pac: { nome: 'Roberta Duarte', idade: 37, sexo: 'F', tipo: 'adulto' },
   qp: 'Picada de abelha há 10 minutos, falta de ar e inchaço.',
   hda: 'Picada única no braço. Logo depois urticária generalizada, rouquidão, falta de ar e tontura.',
@@ -365,7 +365,7 @@ CASO({ id: 'ci_anafilaxia_abelha', area: 'cm', ala: 'infecto', dif: 2, tema: 'Ac
   cd: ['Adrenalina IM na coxa', 'Anti-histamínico oral e observar', 'Corticoide venoso como primeira medida', 'Retirar o ferrão com pinça e liberar'],
   ecd: 'Adrenalina intramuscular (0,01 mg/kg, máximo 0,5 mg) no vasto lateral, repetível a cada 5-15 minutos; deitar com pernas elevadas, oxigênio, cristaloide. Anti-histamínico e corticoide são adjuvantes. Retirar o ferrão raspando. Prescrever adrenalina autoinjetável e encaminhar para imunoterapia com veneno.' });
 
-CASO({ id: 'ci_raiva_profilaxia', area: 'cm', ala: 'infecto', dif: 2, tema: 'Acidentes por animais peçonhentos', cond: 'Profilaxia da raiva após mordedura grave de cão', tags: ['infecto'],
+CASO({ id: 'ci_raiva_profilaxia', area: 'cm', ala: 'infecto', dif: 2, tema: 'Acidentes por animais peçonhentos', cond: 'Profilaxia da raiva após mordedura grave de cão', tags: ['infecto', 'infec'],
   pac: { nome: 'Carlos Augusto Brito', idade: 29, sexo: 'M', tipo: 'adulto' },
   qp: 'Mordido por cachorro de rua na mão.',
   hda: 'Cão desconhecido, que fugiu, mordeu a mão há 3 horas. Nunca recebeu vacina antirrábica.',

@@ -53,7 +53,7 @@ CASO({ id: 'rm_ar_inicial', area: 'cm', ala: 'reumato', dif: 2, tema: 'Artrite r
   cd: ['Metotrexato com ácido fólico', 'Corticoide em dose alta por tempo indefinido', 'Somente AINE até surgirem erosões', 'Anti-TNF como primeira droga'],
   ecd: 'Pelo PCDT do Ministério da Saúde, o metotrexato (com ácido fólico) é a droga modificadora de primeira linha, iniciada precocemente (janela de oportunidade). Corticoide em dose baixa e por curto prazo como ponte. Sem meta atingida: combinar sintéticos ou associar biológico. Rastrear TB latente e hepatites antes de imunossupressores.' });
 
-CASO({ id: 'rm_ar_biologico', area: 'cm', ala: 'reumato', dif: 3, tema: 'Artrite reumatoide', cond: 'Artrite reumatoide refratária: preparo para anti-TNF', tags: ['reumato', 'infecto'],
+CASO({ id: 'rm_ar_biologico', area: 'cm', ala: 'reumato', dif: 3, tema: 'Artrite reumatoide', cond: 'Artrite reumatoide refratária: preparo para anti-TNF', tags: ['reumato', 'infecto', 'infec'],
   pac: { nome: 'Marlene Tavares', idade: 45, sexo: 'F', tipo: 'adulto' },
   qp: 'As juntas continuam inflamadas apesar dos remédios.',
   hda: 'AR há 6 anos. Usou metotrexato em dose máxima e depois associado a leflunomida, por mais de 6 meses, sem atingir remissão. Reumatologista indicou adalimumabe.',
@@ -97,7 +97,7 @@ CASO({ id: 'rm_espondilite', area: 'cm', ala: 'reumato', dif: 2, tema: 'Espondil
   cd: ['AINE, fisioterapia e oftalmologia hoje', 'Metotrexato como primeira escolha para a coluna', 'Repouso absoluto no leito', 'Corticoide sistêmico prolongado'],
   ecd: 'Primeira linha: AINE em dose plena e exercícios. Sem resposta: anti-TNF ou anti-IL-17. Metotrexato e sulfassalazina não agem na doença axial (só periférica). Uveíte: colírio de corticoide e cicloplégico com oftalmologista.' });
 
-CASO({ id: 'rm_artrite_reativa', area: 'cm', ala: 'reumato', dif: 2, tema: 'Espondiloartrites', cond: 'Artrite reativa pós-uretrite', tags: ['reumato', 'infecto'],
+CASO({ id: 'rm_artrite_reativa', area: 'cm', ala: 'reumato', dif: 2, tema: 'Espondiloartrites', cond: 'Artrite reativa pós-uretrite', tags: ['reumato', 'infecto', 'infec'],
   pac: { nome: 'Leandro Pacheco', idade: 26, sexo: 'M', tipo: 'adulto' },
   qp: 'Joelho e tornozelo inchados e olhos vermelhos.',
   hda: 'Há 3 semanas ardência ao urinar com secreção clara após relação sem preservativo. Há 5 dias dor e edema no joelho esquerdo e tornozelo direito, dor no calcanhar e conjuntivite bilateral.',
@@ -318,7 +318,7 @@ CASO({ id: 'rm_osteoartrite', area: 'cm', ala: 'reumato', dif: 1, tema: 'Osteoar
   cd: ['Perda de peso e exercício', 'Corticoide oral contínuo', 'Metotrexato semanal', 'Artroplastia total imediata'],
   ecd: 'Base: educação, perda de peso, fortalecimento muscular e exercício aeróbico. Analgesia: AINE tópico, paracetamol, AINE oral por curto período, duloxetina; infiltração com corticoide nas crises. Artroplastia para dor refratária com limitação importante.' });
 
-CASO({ id: 'rm_artrite_septica', area: 'cm', ala: 'reumato', dif: 2, tema: 'Artrites infecciosas', cond: 'Síndrome artrite-dermatite gonocócica', tags: ['reumato', 'infecto'],
+CASO({ id: 'rm_artrite_septica', area: 'cm', ala: 'reumato', dif: 2, tema: 'Artrites infecciosas', cond: 'Síndrome artrite-dermatite gonocócica', tags: ['reumato', 'infecto', 'infec'],
   pac: { nome: 'Igor Bragança', idade: 19, sexo: 'M', tipo: 'adulto' },
   qp: 'Dor no punho e no tornozelo e pequenas bolhas na pele.',
   hda: 'Há 3 dias dor e edema em punho esquerdo e tornozelo direito, com febre e algumas lesões na pele. Vida sexual ativa com múltiplas parcerias, sem preservativo.',

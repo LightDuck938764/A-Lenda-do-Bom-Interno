@@ -120,7 +120,7 @@ CASO({ id: 'ch_falciforme_crise', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anem
   cd: ['Opioide, hidratação e hidroxiureia', 'Transfusão de troca imediata', 'Só dipirona e alta', 'Antibiótico de amplo espectro'],
   ecd: 'Analgesia escalonada rápida (opioides quando necessário), hidratação, espirometria de incentivo (prevenir síndrome torácica aguda). Hidroxiureia aumenta a hemoglobina fetal e reduz crises, síndrome torácica e mortalidade. Vacinação e, em crianças, penicilina profilática.' });
 
-CASO({ id: 'ch_crise_aplastica', area: 'cm', ala: 'hemato', dif: 3, tema: 'Anemias', cond: 'Crise aplástica por parvovírus B19 na doença falciforme', tags: ['hemato', 'infecto'],
+CASO({ id: 'ch_crise_aplastica', area: 'cm', ala: 'hemato', dif: 3, tema: 'Anemias', cond: 'Crise aplástica por parvovírus B19 na doença falciforme', tags: ['hemato', 'infecto', 'infec'],
   pac: { nome: 'Kauane Souza', idade: 19, sexo: 'F', tipo: 'adulto' },
   qp: 'Cansaço extremo e palidez há 4 dias.',
   hda: 'Doença falciforme. Há 1 semana teve febre baixa e coriza. Sem dor, sem aumento do baço percebido.',
@@ -163,7 +163,7 @@ CASO({ id: 'ch_llc', area: 'cm', ala: 'hemato', dif: 2, tema: 'Leucemias', cond:
   cd: ['Observação', 'Quimioterapia agressiva imediata', 'Transplante de medula óssea', 'Esplenectomia'],
   ecd: 'Doença inicial e assintomática: observar ("watch and wait"). Tratar se sintomas B, citopenias progressivas (estágios avançados), linfonodos ou baço volumosos ou duplicação rápida dos linfócitos. Complicações: infecções, anemia hemolítica autoimune, transformação (Richter).' });
 
-CASO({ id: 'ch_neutropenia_febril', area: 'cm', ala: 'hemato', dif: 3, tema: 'Leucemias', cond: 'Neutropenia febril após quimioterapia', tags: ['hemato', 'sepse'],
+CASO({ id: 'ch_neutropenia_febril', area: 'cm', ala: 'hemato', dif: 3, tema: 'Leucemias', cond: 'Neutropenia febril após quimioterapia', tags: ['hemato', 'sepse', 'infec'],
   pac: { nome: 'Carolina Viana', idade: 45, sexo: 'F', tipo: 'adulto' },
   qp: 'Febre 10 dias após a quimioterapia.',
   hda: 'Em tratamento de leucemia mieloide aguda. Febre de 38,6 °C há 2 horas, calafrio. Cateter venoso central.',
@@ -294,7 +294,7 @@ CASO({ id: 'ch_von_willebrand', area: 'cm', ala: 'hemato', dif: 2, tema: 'Distú
   cd: ['Desmopressina', 'Transfusão de plaquetas', 'Vitamina K', 'Corticoide'],
   ecd: 'Desmopressina (libera fator de von Willebrand dos estoques) no tipo 1; concentrado de fator VIII com fator de von Willebrand nos tipos graves ou sem resposta. Ácido tranexâmico e anticoncepcional hormonal ajudam na menorragia. Evitar AAS e AINE.' });
 
-CASO({ id: 'ch_civd', area: 'cm', ala: 'hemato', dif: 3, tema: 'Distúrbios da hemostasia', cond: 'Coagulação intravascular disseminada na sepse', tags: ['hemato', 'sepse'],
+CASO({ id: 'ch_civd', area: 'cm', ala: 'hemato', dif: 3, tema: 'Distúrbios da hemostasia', cond: 'Coagulação intravascular disseminada na sepse', tags: ['hemato', 'sepse', 'infec'],
   pac: { nome: 'Joaquim Peres', idade: 66, sexo: 'M', tipo: 'idoso' },
   qp: 'Sangramento nos locais de punção na UTI.',
   hda: 'Choque séptico por colangite. Hoje sangramento em acessos venosos e hematúria.',

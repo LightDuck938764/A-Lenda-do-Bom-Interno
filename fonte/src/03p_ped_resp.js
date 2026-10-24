@@ -405,7 +405,7 @@ CASO({ id: 'pr_pac_grave', area: 'ped', dif: 2, tema: 'Pneumonia na criança', c
   cd: ['Internação, oxigênio e penicilina cristalina ou ampicilina venosa', 'Amoxicilina oral em dose dobrada com retorno em 24 horas', 'Oxacilina com ceftriaxona venosas, para cobrir estafilococo desde o início', 'Azitromicina venosa isolada, cobrindo germes atípicos'],
   ecd: 'Pneumonia grave na criança exige internação. O pneumococo continua sensível à penicilina em altas doses na maioria dos casos, por isso penicilina cristalina ou ampicilina são a primeira escolha. Oxacilina entra se houver suspeita de estafilococo (pneumatoceles, piora rápida, lesões de pele).' });
 
-CASO({ id: 'pr_pac_menor2m', area: 'ped', dif: 2, tema: 'Pneumonia na criança', cond: 'Pneumonia em lactente menor de 2 meses', tags: ['resp', 'febre', 'sepse'],
+CASO({ id: 'pr_pac_menor2m', area: 'ped', dif: 2, tema: 'Pneumonia na criança', cond: 'Pneumonia em lactente menor de 2 meses', tags: ['resp', 'febre', 'sepse', 'infec'],
   pac: { nome: 'Théo Rezende', idade: '6 semanas', sexo: 'M', tipo: 'bebe' },
   qp: 'Febre e respiração rápida desde ontem.',
   hda: 'Febre de 38,3 °C, mamadas mais curtas e tosse. Sem contato com tossidores crônicos.',
@@ -432,7 +432,7 @@ CASO({ id: 'pr_derrame_simples', area: 'ped', dif: 2, tema: 'Pneumonia na crian�
   cd: ['Manter a ampicilina e acompanhar a evolução clínica e ultrassonográfica', 'Drenar o tórax, pois todo derrame em menor de 5 anos precisa de drenagem', 'Trocar para vancomicina com meropeném pelo surgimento do derrame', 'Indicar toracoscopia com decorticação no mesmo dia'],
   ecd: 'Derrames pequenos e livres costumam regredir apenas com o antibiótico. Drenagem é indicada em derrames moderados a grandes, com septos, pus, pH abaixo de 7,2 ou glicose abaixo de 40 mg/dL, ou com piora clínica. O ultrassom é o melhor exame para avaliar o espaço pleural na criança.' });
 
-CASO({ id: 'pr_empiema', area: 'ped', dif: 3, tema: 'Pneumonia na criança', cond: 'Empiema pleural', tags: ['resp', 'img', 'usg', 'sepse'],
+CASO({ id: 'pr_empiema', area: 'ped', dif: 3, tema: 'Pneumonia na criança', cond: 'Empiema pleural', tags: ['resp', 'img', 'usg', 'sepse', 'infec'],
   pac: { nome: 'Arthur Macedo', idade: 3, sexo: 'M', tipo: 'crianca' },
   qp: 'Febre alta há 7 dias e piora da falta de ar.',
   hda: 'Pneumonia diagnosticada há 1 semana, tratada com amoxicilina oral, sem melhora. Há 24 horas prostrado, com dor torácica e dificuldade para respirar.',
@@ -477,7 +477,7 @@ CASO({ id: 'pr_mycoplasma', area: 'ped', dif: 1, tema: 'Pneumonia na criança', 
   cd: ['Azitromicina por 5 dias', 'Amoxicilina por 10 dias', 'Ceftriaxona intramuscular por 7 dias', 'Corticoide sistêmico, sem antibiótico'],
   ecd: 'O Mycoplasma não tem parede celular, por isso betalactâmicos não funcionam; os macrolídeos são a primeira escolha (alternativas: doxiciclina em maiores de 8 anos ou levofloxacino). O eritema multiforme associado costuma melhorar com o tratamento da infecção e cuidados de suporte.' });
 
-CASO({ id: 'pr_choque_septico_pneumonia', area: 'ped', dif: 3, tema: 'Pneumonia na criança', cond: 'Choque séptico de foco pulmonar', tags: ['resp', 'sepse', 'choque'],
+CASO({ id: 'pr_choque_septico_pneumonia', area: 'ped', dif: 3, tema: 'Pneumonia na criança', cond: 'Choque séptico de foco pulmonar', tags: ['resp', 'sepse', 'choque', 'infec'],
   pac: { nome: 'Beatriz Coelho', idade: 4, sexo: 'F', tipo: 'crianca' },
   qp: 'Febre, tosse e cansaço há 3 dias; muito prostrada nas últimas horas.',
   hda: 'Febre alta, tosse e cansaço progressivo. Hoje sonolenta, extremidades frias e diurese reduzida.',

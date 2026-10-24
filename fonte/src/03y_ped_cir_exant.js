@@ -325,7 +325,7 @@ CASO({ id: 'px_varicela', area: 'ped', dif: 2, tema: 'Doenças exantemáticas', 
   cd: ['Aciclovir oral em até 24 h e sem AAS', 'AAS para a febre e anti-histamínico para o prurido', 'Corticoide oral em dose baixa para o prurido intenso', 'Só sintomáticos, pois aciclovir nunca é indicado em imunocompetentes'],
   ecd: 'Aciclovir oral (iniciado nas primeiras 24 horas do exantema) em maiores de 12 anos, doença crônica de pele ou pulmão, uso de corticoide inalatório ou em cursos curtos, uso crônico de salicilato e casos secundários domiciliares. Aciclovir venoso para imunodeprimidos e formas graves. AAS é contraindicado (síndrome de Reye). Afastamento até todas as lesões virarem crostas.' });
 
-CASO({ id: 'px_varicela_complicada', area: 'ped', dif: 3, tema: 'Doenças exantemáticas', cond: 'Varicela complicada por infecção bacteriana secundária', tags: ['inf', 'sepse'],
+CASO({ id: 'px_varicela_complicada', area: 'ped', dif: 3, tema: 'Doenças exantemáticas', cond: 'Varicela complicada por infecção bacteriana secundária', tags: ['inf', 'sepse', 'infec'],
   pac: { nome: 'Sofia Lins', idade: 4, sexo: 'F', tipo: 'crianca' },
   qp: 'A febre voltou no 5º dia da catapora.',
   hda: 'Catapora há 5 dias; a febre tinha passado no 3º dia. Ontem voltou febre alta e surgiu uma área vermelha, quente e dolorosa na coxa, em volta de uma lesão coçada.',

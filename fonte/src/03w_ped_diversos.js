@@ -36,7 +36,7 @@ CASO({ id: 'pm_stec_sem_shu', area: 'ped', dif: 2, tema: 'Nefropediatria', cond:
   cd: ['Hidratar, sem antibiótico, e monitorar hemograma e rim', 'Ciprofloxacino por 3 dias, como em toda disenteria na infância', 'Loperamida para reduzir o número de evacuações', 'Alta sem retorno, pois os exames iniciais estão normais'],
   ecd: 'Na suspeita de STEC, antibióticos (que aumentam a liberação de toxina) e antidiarreicos são evitados. Monitora-se hemoglobina, plaquetas, creatinina e diurese nos dias seguintes. Hidratação venosa precoce parece proteger o rim.' });
 
-CASO({ id: 'pm_itu_menor_2m', area: 'ped', dif: 2, tema: 'Nefropediatria', cond: 'Infecção urinária febril em lactente menor de 2 meses', tags: ['nefro', 'sepse'],
+CASO({ id: 'pm_itu_menor_2m', area: 'ped', dif: 2, tema: 'Nefropediatria', cond: 'Infecção urinária febril em lactente menor de 2 meses', tags: ['nefro', 'sepse', 'infec'],
   pac: { nome: 'Bernardo Sá', idade: '50 dias', sexo: 'M', tipo: 'bebe' },
   qp: 'Febre há 24 horas e irritabilidade.',
   hda: 'Mamando menos. Sem tosse, sem diarreia.',

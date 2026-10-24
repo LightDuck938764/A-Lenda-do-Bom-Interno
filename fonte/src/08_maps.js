@@ -396,19 +396,19 @@ function buildMaps() {
     M.decal('letras', 17 * 16, 12 * 16 + 1, 13 * 16, 14, { texto: 'CENTRO OBSTETRICO', fg: '#1d2a6a', s: 2 });
     M.decal('saida', 26 * 16, 12 * 16 + 18, 14, 7);
     // consultório ginecológico
-    M.obj('mesa_gineco', 5, 4, { spot: 'caso', local: 'ps' }); M.obj('cortina', 4, 4, { cor: '#f2f2ee' }); M.obj('mesa', 1, 7); M.obj('pia', 7, 8); M.obj('armario', 1, 3);
+    M.obj('mesa_gineco', 5, 4, { spot: 'caso', local: 'gineco' }); M.obj('cortina', 4, 4, { cor: '#f2f2ee' }); M.obj('mesa', 1, 7); M.obj('pia', 7, 8); M.obj('armario', 1, 3);
     // ultrassom
-    M.obj('maca', 11, 3, { spot: 'caso', local: 'ps' }); M.obj('ultrassom', 12, 3); M.obj('mesa', 13, 8);
+    M.obj('maca', 11, 3, { spot: 'caso', local: 'gineco' }); M.obj('ultrassom', 12, 3); M.obj('mesa', 13, 8);
     // centro obstétrico: berço aquecido, mural mãe-bebê, relógio
     M.decal('mural_mae', 21 * 16, 2, 5 * 16, 30); M.decal('relogio', 18 * 16, 6, 12, 12);
-    M.obj('leito', 18, 4, { spot: 'caso', local: 'ps', blanket: '#e6f0f5' }); M.obj('incubadora', 19, 4); M.obj('monitor', 17, 4);
+    M.obj('leito', 18, 4, { spot: 'caso', local: 'obst', blanket: '#e6f0f5' }); M.obj('incubadora', 19, 4); M.obj('monitor', 17, 4);
     M.obj('cortina', 21, 6, { cor: '#f2f2ee' });
-    M.obj('leito', 27, 4, { spot: 'caso', local: 'ps', blanket: '#e6f0f5' }); M.obj('incubadora', 28, 4); M.obj('monitor', 29, 4); M.obj('carrinho_emerg', 24, 9); M.obj('pia', 17, 9);
+    M.obj('leito', 27, 4, { spot: 'caso', local: 'obst', blanket: '#e6f0f5' }); M.obj('incubadora', 28, 4); M.obj('monitor', 29, 4); M.obj('carrinho_emerg', 24, 9); M.obj('pia', 17, 9);
     // observação
-    for (const bx of [32, 35, 38]) M.obj('leito', bx, 3, { spot: 'caso', local: 'ps', blanket: '#f2e6c8' });
+    for (const bx of [32, 35, 38]) M.obj('leito', bx, 3, { spot: 'caso', local: 'obst', blanket: '#f2e6c8' });
     M.obj('cortina', 34, 3, { cor: '#efe3b8' }); M.obj('cortina', 37, 3, { cor: '#efe3b8' }); M.obj('monitor', 40, 8);
     // alojamento conjunto: leitos com berços acrílicos e cortinas creme
-    for (const bx of [2, 6, 10]) { M.obj('leito', bx, 21, { spot: 'caso', local: 'quarto', blanket: '#ffffff' }); M.obj('bercinho', bx + 1, 22); }
+    for (const bx of [2, 6, 10]) { M.obj('leito', bx, 21, { spot: 'caso', local: 'obst', blanket: '#ffffff' }); M.obj('bercinho', bx + 1, 22); }
     M.obj('cortina', 4, 21, { cor: '#efe3b8' }); M.obj('cortina', 8, 21, { cor: '#efe3b8' }); M.obj('pia', 13, 26); M.obj('poltrona', 2, 26);
     // PS GO recepção
     M.row('balcao', 15, 21, 4, 1, { cor: '#f2e6c8', vidro: true }); for (const ry of [24, 26]) M.row('cadeira_metal', 16, ry, 5); M.obj('planta', 26, 21); M.obj('bebedouro', 26, 25);
@@ -416,7 +416,7 @@ function buildMaps() {
     // posto, residentes, quartos
     M.row('balcao', 28, 22, 3, 1, { cor: '#f2e6c8' }); M.obj('mesa', 32, 20, { pc: true });
     M.obj('mesa', 35, 20); M.obj('impressora', 39, 20); M.obj('cafeteira', 40, 20); M.obj('garrafa', 40, 22); M.obj('sofa', 35, 22, { cor: '#c86b98', tag: 'sofa' });
-    M.obj('leito', 29, 26, { spot: 'caso', local: 'quarto', blanket: '#e8d9f0' }); M.obj('leito', 34, 26, { spot: 'caso', local: 'quarto', blanket: '#d9f0e8' }); M.obj('leito', 38, 26, { spot: 'caso', local: 'quarto', blanket: '#f0e8d9' }); M.obj('armario', 40, 26);
+    M.obj('leito', 29, 26, { spot: 'caso', local: 'gineco', blanket: '#e8d9f0' }); M.obj('leito', 34, 26, { spot: 'caso', local: 'gineco', blanket: '#d9f0e8' }); M.obj('leito', 38, 26, { spot: 'caso', local: 'gineco', blanket: '#f0e8d9' }); M.obj('armario', 40, 26);
     MAPS.go = M;
   }
   // ============ CLÍNICA MÉDICA ============

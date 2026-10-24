@@ -133,7 +133,7 @@ CASO({ id: 'ce_neuropatia', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Diabete
   cd: ['Suspender AINE e duloxetina ou gabapentinoide', 'Amitriptilina em dose alta à noite', 'Manter o ibuprofeno diariamente', 'Opioide forte como primeira escolha'],
   ecd: 'Primeira linha: duloxetina, pregabalina ou gabapentina (ajustar à função renal); tricíclicos são opção, mas evitados em idosos e no glaucoma de ângulo fechado. AINE crônico prejudica o rim. Controle glicêmico, cuidado com os pés e calçados adequados.' });
 
-CASO({ id: 'ce_pe_diabetico', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabetes mellitus', cond: 'Pé diabético infectado com osteomielite', tags: ['endocrino', 'sepse'],
+CASO({ id: 'ce_pe_diabetico', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabetes mellitus', cond: 'Pé diabético infectado com osteomielite', tags: ['endocrino', 'sepse', 'infec'],
   pac: { nome: 'Orlando Batista', idade: 62, sexo: 'M', tipo: 'adulto' },
   qp: 'Ferida no pé que não fecha e agora está vermelha.',
   hda: 'Úlcera na cabeça do 1º metatarso há 2 meses, indolor. Há 5 dias com vermelhidão, secreção e febre.',

@@ -8,7 +8,7 @@
    ===================================================================== */
 
 /* ---------- Tuberculose ---------- */
-CASO({ id: 'cp_tb_pulmonar', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculose', cond: 'Tuberculose pulmonar bacilífera', tags: ['pneumo', 'infecto'],
+CASO({ id: 'cp_tb_pulmonar', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculose', cond: 'Tuberculose pulmonar bacilífera', tags: ['pneumo', 'infecto', 'infec'],
   pac: { nome: 'Edvaldo Nunes', idade: 42, sexo: 'M', tipo: 'adulto' },
   qp: 'Tosse há 2 meses e emagrecimento.',
   hda: 'Tosse produtiva há 8 semanas, febre vespertina, sudorese noturna e perda de 7 kg. Um colega de obra teve "pneumonia que não sarava".',
@@ -23,7 +23,7 @@ CASO({ id: 'cp_tb_pulmonar', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculo
   cd: ['RIPE por 6 meses, notificar e avaliar contatos', 'Amoxicilina com clavulanato por 14 dias', 'Isoniazida isolada por 6 meses', 'Internar e aguardar a cultura de 60 dias antes de tratar'],
   ecd: 'Esquema básico: rifampicina, isoniazida, pirazinamida e etambutol por 2 meses e rifampicina e isoniazida por 4 meses. Notificação, tratamento diretamente observado, cultura com teste de sensibilidade, testagem para HIV e avaliação de todos os contatos (crianças prioritárias).' });
 
-CASO({ id: 'cp_tb_hiv', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', cond: 'Coinfecção tuberculose e HIV: momento de iniciar a TARV', tags: ['pneumo', 'infecto'],
+CASO({ id: 'cp_tb_hiv', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', cond: 'Coinfecção tuberculose e HIV: momento de iniciar a TARV', tags: ['pneumo', 'infecto', 'infec'],
   pac: { nome: 'Fátima Amorim', idade: 36, sexo: 'F', tipo: 'adulto' },
   qp: 'Febre, tosse e perda de peso.',
   hda: 'Diagnóstico de HIV nesta internação. Tosse e febre há 1 mês, emagrecimento de 10 kg.',
@@ -38,7 +38,7 @@ CASO({ id: 'cp_tb_hiv', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', 
   cd: ['RIPE já e TARV em até 2 semanas', 'TARV e RIPE só depois de 6 meses', 'Só TARV agora e RIPE depois', 'Nenhum tratamento até a cultura'],
   ecd: 'Iniciar RIPE e, em até 2 semanas, a TARV (reduz mortalidade, especialmente com CD4 baixo). Exceção: meningite tuberculosa, em que a TARV é adiada para 4 a 8 semanas. Atenção às interações da rifampicina (dobrar o dolutegravir). Profilaxia com sulfametoxazol-trimetoprima.' });
 
-CASO({ id: 'cp_iris', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', cond: 'Síndrome inflamatória da reconstituição imune (IRIS) na tuberculose', tags: ['pneumo', 'infecto'],
+CASO({ id: 'cp_iris', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', cond: 'Síndrome inflamatória da reconstituição imune (IRIS) na tuberculose', tags: ['pneumo', 'infecto', 'infec'],
   pac: { nome: 'Alan Pires', idade: 30, sexo: 'M', tipo: 'adulto' },
   qp: 'Piorou depois que começou o remédio do HIV.',
   hda: 'TB pulmonar e HIV (CD4 inicial 40). Melhorou com 3 semanas de RIPE. Iniciou TARV há 2 semanas; agora febre alta, aumento de linfonodos cervicais e piora radiológica. Toma tudo corretamente.',
@@ -52,7 +52,7 @@ CASO({ id: 'cp_iris', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', co
   cd: ['Manter RIPE e TARV; considerar prednisona', 'Suspender a TARV definitivamente', 'Trocar para esquema de tuberculose resistente', 'Suspender todos os medicamentos por 2 semanas'],
   ecd: 'Mantêm-se os tratamentos; anti-inflamatório ou corticoide nos casos moderados a graves; drenagem de linfonodos supurados se necessário. Prednisona profilática pode ser usada ao iniciar a TARV em pacientes de alto risco (CD4 < 100).' });
 
-CASO({ id: 'cp_iltb', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculose', cond: 'Infecção latente pela tuberculose em contato', tags: ['pneumo', 'infecto'],
+CASO({ id: 'cp_iltb', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculose', cond: 'Infecção latente pela tuberculose em contato', tags: ['pneumo', 'infecto', 'infec'],
   pac: { nome: 'Juliana Matias', idade: 30, sexo: 'F', tipo: 'adulto' },
   qp: 'O marido está com tuberculose; quer saber se precisa tratar.',
   hda: 'Contato domiciliar de caso bacilífero. Sem tosse, febre ou perda de peso.',
@@ -81,7 +81,7 @@ CASO({ id: 'cp_tb_hepatotox', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tubercul
   cd: ['Suspender e reintroduzir aos poucos', 'Manter o RIPE e dar sintomáticos para náusea', 'Suspender só o etambutol', 'Trocar definitivamente por esquema de resistência'],
   ecd: 'Investigar outras causas (hepatites virais, álcool). Quando as transaminases caírem a menos de 2 vezes o normal, reintroduzir uma droga de cada vez (rifampicina com etambutol, depois isoniazida, depois pirazinamida), identificando a responsável. Se houver gravidade ou demora, esquema alternativo sem drogas hepatotóxicas.' });
 
-CASO({ id: 'cp_tb_resistente', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', cond: 'Tuberculose resistente à rifampicina', tags: ['pneumo', 'infecto'],
+CASO({ id: 'cp_tb_resistente', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', cond: 'Tuberculose resistente à rifampicina', tags: ['pneumo', 'infecto', 'infec'],
   pac: { nome: 'Carlos Eduardo Lima', idade: 35, sexo: 'M', tipo: 'adulto' },
   qp: 'Ainda tosse depois de 2 meses de tratamento.',
   hda: 'Tratamento anterior de TB abandonado há 2 anos. Retratamento iniciado há 2 meses com RIPE, mas a baciloscopia continua positiva.',
@@ -110,7 +110,7 @@ CASO({ id: 'cp_tb_pleural', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculos
   ecd: 'Tratamento clínico com o esquema básico; não precisa de drenagem. Investigar TB pulmonar associada (escarro induzido) e HIV.' });
 
 /* ---------- Pneumonia ---------- */
-CASO({ id: 'cp_pac_internacao', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Pneumonia', cond: 'Pneumonia comunitária com indicação de internação', tags: ['pneumo', 'sepse'],
+CASO({ id: 'cp_pac_internacao', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Pneumonia', cond: 'Pneumonia comunitária com indicação de internação', tags: ['pneumo', 'sepse', 'infec'],
   pac: { nome: 'Afonso Vieira', idade: 72, sexo: 'M', tipo: 'idoso' },
   qp: 'Tosse com catarro, febre e falta de ar há 3 dias.',
   hda: 'Febre alta, tosse produtiva amarelada e dispneia. Hoje mais confuso.',
@@ -125,7 +125,7 @@ CASO({ id: 'cp_pac_internacao', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Pneumo
   cd: ['Internar, ceftriaxona e azitromicina', 'Amoxicilina oral em casa com retorno em 48 horas', 'Levofloxacino oral e retorno em 72 horas', 'Oseltamivir isolado'],
   ecd: 'CURB-65: 0-1 ambulatorial; 2 internação; ≥ 3 grave (considerar UTI, sobretudo com critérios maiores: choque ou ventilação mecânica). Esquema hospitalar: betalactâmico (ceftriaxona) com macrolídeo, ou quinolona respiratória isolada. Hemoculturas e escarro antes do antibiótico, sem atrasá-lo.' });
 
-CASO({ id: 'cp_pac_uti', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Pneumonia', cond: 'Pneumonia grave com choque séptico (indicação de UTI)', tags: ['pneumo', 'sepse', 'img'],
+CASO({ id: 'cp_pac_uti', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Pneumonia', cond: 'Pneumonia grave com choque séptico (indicação de UTI)', tags: ['pneumo', 'sepse', 'img', 'infec'],
   pac: { nome: 'Odete Ramos', idade: 70, sexo: 'F', tipo: 'idoso' },
   qp: 'Febre, tosse e muita falta de ar.',
   hda: 'Há 2 dias com febre, tosse produtiva e dispneia progressiva. Hoje confusa e sudoreica.',

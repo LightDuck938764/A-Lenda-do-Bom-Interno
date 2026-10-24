@@ -153,7 +153,7 @@ CASO({ id: 'ue_mobitz2', area: 'upa', dif: 3, tema: 'Arritmias', cond: 'BAV de 2
   cd: ['Marca-passo definitivo', 'Suspender o carvedilol e reavaliar em 6 meses', 'Atropina e Holter ambulatorial', 'Propafenona e anticoagulante'],
   ecd: 'Mobitz II e BAV total sintomáticos (ou Mobitz II mesmo assintomático, por risco de progressão) têm indicação de marca-passo definitivo, sem esperar retirar drogas quando a doença do sistema de condução é a causa. Até lá, monitorização e marca-passo transcutâneo disponível.' });
 
-CASO({ id: 'ue_bavt_chagas', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'BAV total chagásico com síncope', tags: ['cardio', 'infecto'],
+CASO({ id: 'ue_bavt_chagas', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'BAV total chagásico com síncope', tags: ['cardio', 'infecto', 'infec'],
   pac: { nome: 'Sebastião Dornelas', idade: 72, sexo: 'M', tipo: 'idoso' },
   qp: 'Desmaiou na roça.',
   hda: 'Síncope súbita sem pródromos, recuperação rápida. Tonturas há semanas. Morou em casa de pau a pique na infância.',

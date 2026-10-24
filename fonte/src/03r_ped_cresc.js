@@ -213,7 +213,7 @@ CASO({ id: 'pc_obesidade_genetica', area: 'ped', dif: 3, tema: 'Desnutrição e 
   ecd: 'Obesidade grave e precoce associada a atraso do desenvolvimento, baixa estatura ou dismorfias deve levantar suspeita de causa genética. Na Prader-Willi, o GH melhora composição corporal e estatura, e o controle ambiental da comida é essencial.' });
 
 /* ---------- Desnutrição ---------- */
-CASO({ id: 'pc_kwashiorkor', area: 'ped', dif: 3, tema: 'Desnutrição e obesidade', cond: 'Desnutrição grave edematosa (kwashiorkor) — fase de estabilização', tags: ['hidrat', 'sepse'],
+CASO({ id: 'pc_kwashiorkor', area: 'ped', dif: 3, tema: 'Desnutrição e obesidade', cond: 'Desnutrição grave edematosa (kwashiorkor) — fase de estabilização', tags: ['hidrat', 'sepse', 'infec'],
   pac: { nome: 'Raíssa Nascimento', idade: '1 ano e 6 meses', sexo: 'F', tipo: 'bebe' },
   qp: 'Apática e com inchaço nas pernas há 1 semana.',
   hda: 'Desmamou aos 8 meses; alimenta-se basicamente de mingau de amido e café com leite ralo. Família em situação de insegurança alimentar.',

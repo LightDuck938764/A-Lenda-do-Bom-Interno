@@ -95,7 +95,7 @@ CASO({ id: 'cc_estenose_mitral', area: 'cm', ala: 'cardio', dif: 3, tema: 'Valvo
   ecd: 'Na FA com estenose mitral moderada a grave, o anticoagulante é a varfarina (os anticoagulantes diretos não são indicados). Betabloqueador prolonga a diástole. Valvoplastia mitral percutânea por balão é o tratamento de escolha com anatomia favorável; cirurgia se desfavorável.' });
 
 /* ---------- Endocardite ---------- */
-CASO({ id: 'cc_endocardite', area: 'cm', ala: 'cardio', dif: 2, tema: 'Endocardite infecciosa', cond: 'Endocardite infecciosa de valva nativa (critérios de Duke)', tags: ['cardio', 'infecto', 'sepse'],
+CASO({ id: 'cc_endocardite', area: 'cm', ala: 'cardio', dif: 2, tema: 'Endocardite infecciosa', cond: 'Endocardite infecciosa de valva nativa (critérios de Duke)', tags: ['cardio', 'infecto', 'sepse', 'infec'],
   pac: { nome: 'Lindalva Rocha', idade: 69, sexo: 'F', tipo: 'idoso' },
   qp: 'Febre há 3 semanas.',
   hda: 'Febre diária, cansaço, perda de peso. Tratamento dentário (extração) há 1 mês, sem profilaxia.',
@@ -110,7 +110,7 @@ CASO({ id: 'cc_endocardite', area: 'cm', ala: 'cardio', dif: 2, tema: 'Endocardi
   cd: ['Penicilina ou ceftriaxona por 4 semanas', 'Antibiótico oral por 7 dias e retorno', 'Corticoide e anticoagulação plena', 'Aguardar a febre baixar antes de tratar'],
   ecd: 'Estreptococos do grupo viridans sensíveis: penicilina cristalina ou ceftriaxona por 4 semanas (2 semanas em casos selecionados com aminoglicosídeo). O eco transesofágico detecta vegetações pequenas e complicações (abscesso). Na EI aguda, pensar em S. aureus.' });
 
-CASO({ id: 'cc_endocardite_abscesso', area: 'cm', ala: 'cardio', dif: 3, tema: 'Endocardite infecciosa', cond: 'Endocardite com abscesso perivalvar e bloqueio AV total', tags: ['cardio', 'infecto', 'ecg'],
+CASO({ id: 'cc_endocardite_abscesso', area: 'cm', ala: 'cardio', dif: 3, tema: 'Endocardite infecciosa', cond: 'Endocardite com abscesso perivalvar e bloqueio AV total', tags: ['cardio', 'infecto', 'ecg', 'infec'],
   pac: { nome: 'Raul Ventura', idade: 59, sexo: 'M', tipo: 'adulto' },
   qp: 'Piorou no 3º dia de antibiótico.',
   hda: 'Internado por endocardite infecciosa de valva mitral (vegetação ao eco), em uso de ceftriaxona e vancomicina. Hoje palidez, tontura e pressão baixa.',
@@ -124,7 +124,7 @@ CASO({ id: 'cc_endocardite_abscesso', area: 'cm', ala: 'cardio', dif: 3, tema: '
   cd: ['Marca-passo temporário e cirurgia', 'Trocar o antibiótico e observar na enfermaria', 'Atropina e alta da UTI', 'Suspender o antibiótico'],
   ecd: 'Indicações cirúrgicas na fase ativa: insuficiência cardíaca por disfunção valvar, infecção não controlada (abscesso, bloqueios, fístulas, febre persistente, germes difíceis como fungos), prevenção de embolia (vegetações > 10 mm com embolia ou > 15-30 mm).' });
 
-CASO({ id: 'cc_endocardite_tricuspide', area: 'cm', ala: 'cardio', dif: 2, tema: 'Endocardite infecciosa', cond: 'Endocardite tricúspide em usuário de drogas injetáveis', tags: ['cardio', 'infecto', 'pneumo'],
+CASO({ id: 'cc_endocardite_tricuspide', area: 'cm', ala: 'cardio', dif: 2, tema: 'Endocardite infecciosa', cond: 'Endocardite tricúspide em usuário de drogas injetáveis', tags: ['cardio', 'infecto', 'pneumo', 'infec'],
   pac: { nome: 'Fábio Lacerda', idade: 37, sexo: 'M', tipo: 'adulto' },
   qp: 'Febre alta, tosse e dor ao respirar.',
   hda: 'Usuário de cocaína injetável. Há 10 dias febre com calafrios, depois tosse e dor pleurítica.',
