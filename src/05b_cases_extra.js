@@ -113,16 +113,3 @@ CASO({ id: 'cm_lma2', area: 'cm', ala: 'hemato', dif: 3, cond: 'Leucemia mieloid
   cd: ['Iniciar ácido transretinoico (ATRA) imediatamente na suspeita, com suporte transfusional agressivo da coagulopatia', 'Aguardar o resultado da t(15;17) para iniciar o tratamento específico, mantendo só observação para não tratar sem confirmação genética', 'Heparina plena pela coagulação intravascular disseminada, sem transfusão de plaquetas', 'Corticoide em dose alta e alta com retorno para o resultado do mielograma em uma semana'],
   ecd: 'Na suspeita de LPA, o ATRA deve ser iniciado imediatamente, pois a principal causa de morte precoce é hemorrágica.' });
 
-CASO({ id: 'cir_hsa2', area: 'cir', dif: 3, cond: 'Hemorragia subaracnóidea', tags: ['neuro', 'img'],
-  pac: { nome: 'Sr. Otávio Lemos', idade: 55, sexo: 'M', tipo: 'adulto' },
-  qp: 'Internado por HSA tratada; ficou sonolento hoje.',
-  hda: 'Aneurisma embolizado no dia 1. No 4º dia, piora do nível de consciência e cefaleia progressiva, sem novo déficit focal.',
-  ant: 'HSA aneurismática.',
-  ef: 'Glasgow caiu de 15 para 11. Olhar desviado para baixo.',
-  sv: 'PA 150/90 mmHg',
-  ex: 'TC: dilatação dos ventrículos laterais e do terceiro ventrículo, sem novo sangramento.',
-  pista: 'Ventrículos dilatados após HSA = hidrocefalia aguda (o sangue obstrui a reabsorção do líquor).',
-  dx: ['Hidrocefalia aguda pós-HSA', 'Ressangramento do aneurisma', 'AVC isquêmico extenso', 'Hematoma subdural crônico'],
-  edx: 'Rebaixamento com dilatação ventricular na TC e sem novo sangramento após HSA: hidrocefalia aguda.',
-  cd: ['Derivação ventricular externa de urgência pela neurocirurgia', 'Punção lombar de alívio repetida, sem avaliação de imagem prévia', 'Craniotomia para nova clipagem', 'Aguardar resolução espontânea'],
-  ecd: 'A hidrocefalia aguda sintomática após HSA é tratada com derivação ventricular externa.' });

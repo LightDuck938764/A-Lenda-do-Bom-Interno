@@ -64,20 +64,6 @@ CASO({ id: 'upa_tce1', area: 'upa', dif: 2, cond: 'Traumatismo cranioencefálico
   cd: ['Tomografia de crânio sem contraste e observação neurológica', 'Alta com orientações de sinais de alarme e analgésico simples', 'Ressonância de crânio eletiva em 30 dias, sem observação', 'Punção lombar para afastar hemorragia subaracnoide'],
   ecd: 'Pelas regras de decisão clínica (como a Canadian CT Head Rule), dois ou mais vômitos e Glasgow <15 após 2h indicam TC de crânio.' });
 
-CASO({ id: 'upa_tce2', area: 'upa', dif: 3, cond: 'Traumatismo cranioencefálico', tags: ['neuro', 'img'],
-  pac: { nome: 'Marcos Lima', idade: 40, sexo: 'M', tipo: 'adulto' },
-  qp: 'Vítima de agressão com pedaço de madeira na região temporal.',
-  hda: 'Desmaiou no local, acordou e conversou normalmente por cerca de 1 hora. Depois ficou sonolento e com fala arrastada.',
-  ant: 'Sem doenças conhecidas.',
-  ef: 'Glasgow 9. Pupila direita midriática e pouco reagente. Hemiparesia à esquerda.',
-  sv: 'PA 168/96 mmHg · FC 56 bpm · FR 14 irpm',
-  ex: 'TC de crânio: coleção hiperdensa biconvexa (em lente) temporal direita, com desvio da linha média.',
-  pista: 'Intervalo lúcido + imagem biconvexa (em lente) = assinatura do hematoma extradural, geralmente por lesão da artéria meníngea média.',
-  dx: ['Hematoma extradural agudo', 'Hematoma subdural crônico', 'Hemorragia subaracnóidea aneurismática', 'Concussão cerebral'],
-  edx: 'Trauma temporal, intervalo lúcido, anisocoria e coleção biconvexa na TC caracterizam hematoma extradural com efeito de massa.',
-  cd: ['Proteger a via aérea e acionar a neurocirurgia para drenagem cirúrgica de urgência', 'Observação clínica com nova tomografia em 24 horas, se o nível de consciência piorar', 'Corticoide em altas doses e manitol, aguardando melhora do edema sem cirurgia', 'Punção lombar para descompressão e alívio da hipertensão intracraniana'],
-  ecd: 'Hematoma extradural com efeito de massa e piora neurológica é emergência neurocirúrgica. Corticoide não é indicado em TCE e punção lombar é contraindicada com efeito de massa.' });
-
 CASO({ id: 'upa_atest1', area: 'upa', dif: 1, cond: 'Busca por atestado', tags: ['neuro', 'dor', 'ef'],
   pac: { nome: 'Igor Fontes', idade: 21, sexo: 'M', tipo: 'adulto' },
   qp: '"Doutor, preciso de um atestado. Tô com dor de cabeça desde sexta." (É segunda, 7h da manhã.)',

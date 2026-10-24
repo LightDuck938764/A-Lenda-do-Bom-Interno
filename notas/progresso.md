@@ -64,3 +64,12 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 - PENDENTE com partograma: período pélvico prolongado e parto precipitado (banco não tem; pedido ao usuário o manual do MS 2001 ou liberar bvsms.saude.gov.br). Não criar sem partograma aprovado.
 - Tags: adicionada 'infec' em todos os casos com 'infecto'/'sepse' (as habilidades usam 'infec'); 'diabetes', 'convul', 'anticoag', 'choque', 'cortic' nos casos de GO pertinentes.
 - PENDENTE: usar CIR1-6 (estômago, esôfago, trauma, vascular, uro, hérnias, tireoide…) e decidir PREV1-4.
+
+## Cirurgia (banco parte 2: CIR1-6)
+- 05q_cir_trauma.js (22: tr_ trauma — via aérea cirúrgica, respondedor transitório, LAD/neuroproteção, pneumotórax aberto, tórax instável, aorta, hemotórax retido, baço com blush, fígado TNO, cinto/Chance, toracoabdominal, compartimental abdominal, controle de danos, choque neurogênico, compartimental de perna, lesão vascular, bexiga, gestante; qm_ queimaduras — inalação, grande queimado, escarotomia, elétrica).
+- 05r_cir_geral.js (22, cs_: fundoplicatura, DRGE no obeso, Barrett com DAG, Boerhaave, megaesôfago IV, úlcera perfurada, ca gástrico distal, hérnia interna pós-bypass, volvo de sigmoide, íleo biliar, Ogilvie, hérnias inguinal/femoral/umbilical, hemorroidas IV, trombose hemorroidária, fissura, abscesso perianal, pilonidal, Marjolin, melanoma, pneumotórax espontâneo).
+- 05s_cir_vasc_uro.js (15: va_ AAA x3, dissecção B, isquemia aguda, carótida; ur_ cálculo expulsivo, cálculo 2 cm, cistostomia, HPB, próstata, testículo, Fournier, hematúria, massa renal).
+- 05t_cir_periop.js (13, po_: stent recente, ponte de heparina, profilaxia colectomia, hipertermia maligna, toxicidade de anestésico local, febre precoce, ISC, abscesso cavitário, deiscência de anastomose, evisceração, fístula enterocutânea, nutrição precoce, TEV).
+- Imagens do banco CIR: tc_laceracao_hepatica, tc_trauma_cinto_chance, tc/rx_hemotorax_retido, angiotc_disseccao_tipo_b, tc_hernia_interna, foto_hernia_umbilical_estrangulada, foto_ulcera_marjolin, foto_fournier, foto_hemorroidas_prolapsadas. (O índice imgs do todas2.json está deslocado: a folha scratchpad/banco2/sheets_cir mostra a imagem certa por questão.)
+- Removidos por duplicar eventos de emergência: cir_hsd (em_subdural), cir_polit1 (em_abd_fechado), cir_polit2 (em_ptx), cir_hsa2 (= cir_hsa), upa_tce2 (em_extradural).
+- PREV1-4 ainda não usados.

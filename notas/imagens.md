@@ -70,3 +70,13 @@
 | monitorizacao_glicemica.jpg | Relatório de monitorização contínua da glicose | Banco de questões: GO1 #113 |
 | ctg_estimulo_sonoro.jpg | Cardiotocografia com estímulo sonoro (ES) e resposta fetal | Banco de questões: GO3 #101 |
 | ctg_pe_sem_gravidade.jpg | Cardiotocografia anteparto: linha de base ~145 bpm, variabilidade moderada, sem desacelerações | Banco de questões: GO1 #119 |
+| tc_laceracao_hepatica.jpg | TC de abdome com contraste: laceração hepática (segmentos posteriores do lobo direito) com líquido peri-hepático, sem extravasamento | Banco de questões: CIR4 #33 |
+| tc_trauma_cinto_chance.jpg | TC: borramento/hematoma mesentérico com líquido livre e fratura por flexão-distração lombar (Chance) | Banco de questões: CIR1 #29 |
+| tc_hemotorax_retido.jpg | TC de tórax: coleção pleural direita loculada (hemotórax retido) | Banco de questões: CIR3 #79 |
+| rx_hemotorax_retido.jpg | Radiografia de tórax: velamento e nível hidroaéreo à direita | Banco de questões: CIR3 #79 |
+| angiotc_disseccao_tipo_b.jpg | Angiotomografia: dissecção da aorta descendente com derrame pleural esquerdo | Banco de questões: CIR6 #77 |
+| tc_hernia_interna.jpg | TC: redemoinho (swirl) dos vasos mesentéricos com alças dilatadas | Banco de questões: CIR1 #58 |
+| foto_hernia_umbilical_estrangulada.jpg | Hiperemia periumbilical sobre hérnia umbilical | Banco de questões: CIR1 #102 |
+| foto_ulcera_marjolin.jpg | Úlcera vegetante em cicatriz antiga de queimadura | Banco de questões: CIR3 #138 |
+| foto_fournier.jpg | Fasceíte necrosante perineal com necrose extensa | Banco de questões: CIR6 #113 |
+| foto_hemorroidas_prolapsadas.jpg | Prolapso hemorroidário circunferencial (inspeção anal) | Banco de questões: CIR3 #123 |
