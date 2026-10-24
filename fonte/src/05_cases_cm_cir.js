@@ -128,20 +128,6 @@ CASO({ id: 'cm_colest2', area: 'cm', ala: 'cardio', dif: 2, cond: 'Hipercolester
 
 /* ============================ CIRURGIA ============================
    As alternativas de conduta sempre representam estratégias cirúrgicas. */
-CASO({ id: 'cir_hsd', area: 'cir', dif: 3, cond: 'Hematoma subdural agudo', tags: ['neuro', 'img', 'anticoag'],
-  pac: { nome: 'Sr. Domingos Leite', idade: 74, sexo: 'M', tipo: 'idoso' },
-  qp: 'Queda da própria altura há 6 horas; agora "confuso".',
-  hda: 'Bateu a cabeça. Inicialmente bem, piorou progressivamente.',
-  ant: 'Fibrilação atrial em uso de varfarina.',
-  ef: 'Glasgow 12, hemiparesia direita leve.',
-  sv: 'PA 160/90 mmHg · FC 64 bpm',
-  ex: 'INR 3,2. TC: coleção hiperdensa em crescente (côncavo-convexa) à esquerda, com 15 mm de espessura e desvio da linha média de 8 mm.',
-  pista: 'Crescente (côncavo-convexa) = SUBDURAL. Aguda, >10 mm e desvio >5 mm: indicação cirúrgica. Anticoagulação precisa ser revertida.',
-  dx: ['Hematoma subdural agudo', 'Hematoma extradural', 'Hemorragia subaracnóidea', 'AVC isquêmico'],
-  edx: 'Coleção hiperdensa em crescente após trauma em idoso anticoagulado: hematoma subdural agudo.',
-  cd: ['Reverter a anticoagulação e realizar craniotomia para drenagem de urgência', 'Trepanação eletiva em 3 semanas, quando o hematoma se liquefizer', 'Observação neurológica sem cirurgia, mantendo o anticoagulante', 'Craniectomia descompressiva bilateral profilática sem reverter a anticoagulação'],
-  ecd: 'HSD agudo com espessura >10 mm ou desvio >5 mm tem indicação de drenagem por craniotomia. Trepanação é a técnica típica do hematoma crônico.' });
-
 CASO({ id: 'cir_hsa', area: 'cir', dif: 3, cond: 'Hemorragia subaracnóidea', tags: ['neuro', 'img', 'pa'],
   pac: { nome: 'Sra. Cláudia Peixoto', idade: 48, sexo: 'F', tipo: 'adulto' },
   qp: '"A pior dor de cabeça da minha vida."',
@@ -183,35 +169,6 @@ CASO({ id: 'cir_daop', area: 'cir', dif: 3, cond: 'Doença arterial obstrutiva p
   edx: 'Dor isquêmica de repouso e lesão trófica com ITB <0,4: isquemia crônica crítica.',
   cd: ['Revascularização do membro (endovascular ou bypass com veia safena, conforme anatomia)', 'Amputação primária acima do joelho, já que a isquemia crítica com dor em repouso não tem outro tratamento', 'Simpatectomia lombar para melhorar a circulação colateral, sem revascularização', 'Fasciotomia dos compartimentos da perna para aliviar a dor isquêmica'],
   ecd: 'Com leito distal adequado, a revascularização é a estratégia para salvar o membro. A amputação primária é reservada a membros inviáveis.' });
-
-CASO({ id: 'cir_polit1', area: 'cir', dif: 3, cond: 'Politrauma', tags: ['choque', 'usg', 'mon'],
-  pac: { nome: 'Jefferson (motoboy)', idade: 27, sexo: 'M', tipo: 'adulto' },
-  qp: 'Colisão moto x carro.',
-  hda: 'Trazido pelo SAMU. Via aérea pérvia, colar cervical. Recebeu 1 litro de cristaloide e hemoderivados sem resposta.',
-  ant: 'Desconhecidos.',
-  ef: 'Escoriações em flanco esquerdo. Murmúrio vesicular presente bilateralmente. Jugulares colabadas. Pelve estável.',
-  sv: 'PA 78/46 mmHg · FC 138 bpm',
-  usg: 'FAST: líquido livre no espaço esplenorrenal e na pelve. Pericárdio sem líquido.',
-  ex: 'Hemoglobina 8,1 g/dl.',
-  pista: 'Instável, não respondedor e FAST positivo: o lugar dele é o centro cirúrgico, não o tomógrafo.',
-  dx: ['Choque hemorrágico por trauma abdominal (baço)', 'Pneumotórax hipertensivo à esquerda', 'Tamponamento cardíaco traumático', 'Choque neurogênico por lesão medular cervical'],
-  edx: 'Instabilidade com FAST positivo em abdome, pericárdio livre, ausculta preservada e jugulares colabadas: choque hemorrágico de origem abdominal.',
-  cd: ['Laparotomia exploradora de urgência com controle de danos', 'Tomografia de abdome antes de qualquer decisão, mesmo instável', 'Laparoscopia diagnóstica eletiva', 'Embolização agendada para a manhã seguinte'],
-  ecd: 'Paciente instável não respondedor com FAST positivo deve ir direto para laparotomia. A TC é reservada a pacientes estáveis.' });
-
-CASO({ id: 'cir_polit2', area: 'cir', dif: 3, cond: 'Politrauma', tags: ['choque', 'resp', 'mon'],
-  pac: { nome: 'Douglas (ciclista)', idade: 31, sexo: 'M', tipo: 'adulto' },
-  qp: 'Atropelamento; piora súbita da falta de ar na sala de trauma.',
-  hda: 'Trauma torácico à esquerda. Ficou muito dispneico e hipotenso.',
-  ant: 'Hígido.',
-  ef: 'Desvio da traqueia para a direita, murmúrio vesicular abolido à esquerda, hipertimpanismo à esquerda, turgência jugular.',
-  sv: 'PA 76/40 mmHg · FC 142 bpm · SpO₂ 80%',
-  ex: 'Sem tempo para raio-X.',
-  pista: 'Diagnóstico CLÍNICO: desvio de traqueia + MV abolido + hipertimpanismo + choque obstrutivo. Não espere exame de imagem.',
-  dx: ['Pneumotórax hipertensivo', 'Hemotórax maciço', 'Tamponamento cardíaco', 'Contusão pulmonar isolada'],
-  edx: 'MV abolido com hipertimpanismo, desvio traqueal contralateral e turgência jugular com choque: pneumotórax hipertensivo.',
-  cd: ['Descompressão torácica imediata seguida de drenagem torácica em selo d\'água', 'Raio-X de tórax e gasometria arterial antes de decidir qualquer procedimento no tórax', 'Toracotomia de reanimação imediata no pronto-socorro', 'Pericardiocentese pela suspeita de tamponamento cardíaco associado'],
-  ecd: 'O pneumotórax hipertensivo é diagnóstico clínico e exige descompressão imediata, seguida de drenagem torácica.' });
 
 CASO({ id: 'cir_capulm', area: 'cir', dif: 2, cond: 'Câncer de pulmão', tags: ['resp', 'img'],
   pac: { nome: 'Sr. Álvaro Menezes', idade: 63, sexo: 'M', tipo: 'idoso' },
