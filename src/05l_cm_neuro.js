@@ -92,7 +92,7 @@ CASO({ id: 'nr_jme', area: 'cm', ala: 'neuro', dif: 3, tema: 'Crise convulsiva e
   cd: ['Levetiracetam ou lamotrigina', 'Carbamazepina em dose progressiva', 'Valproato como primeira escolha nela', 'Sem tratamento, apenas higiene do sono'],
   ecd: 'O valproato é muito eficaz, mas é evitado em mulheres em idade fértil (teratogenicidade e efeitos no neurodesenvolvimento). Carbamazepina, oxcarbazepina e fenitoína podem piorar mioclonias e ausências. Ácido fólico e planejamento da gestação.' });
 
-CASO({ id: 'nr_crise_febril', area: 'ped', dif: 3, tema: 'Crise convulsiva e epilepsia', cond: 'Crise febril complexa em lactente com vacinação incompleta', tags: ['neuro', 'sepse'],
+CASO({ id: 'nr_crise_febril', area: 'ped', dif: 3, tema: 'Crise convulsiva e epilepsia', cond: 'Crise febril complexa em lactente com vacinação incompleta', tags: ['neuro', 'sepse', 'infec'],
   pac: { nome: 'Bento Arruda', idade: '8 meses', sexo: 'M', tipo: 'bebe' },
   qp: 'Convulsionou com febre e "ficou mole" do lado direito.',
   hda: 'Febre de 39,8 °C há 1 dia. Crise com abalos do braço e da perna direitos por 20 minutos, cessada com midazolam pelo SAMU. Uma hora depois, ainda sonolento e mexendo menos o lado direito. Tomou amoxicilina por 2 dias por "dor de ouvido".',

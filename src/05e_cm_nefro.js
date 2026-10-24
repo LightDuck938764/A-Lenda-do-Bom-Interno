@@ -126,7 +126,7 @@ CASO({ id: 'cn_rabdomiolise', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbi
   ecd: 'Cristaloide em grande volume visando diurese de 200 a 300 mL/h, monitorando potássio, cálcio, fósforo e síndrome compartimental. AINE piora a lesão renal. Bicarbonato não mostrou benefício consistente. Diálise se hipercalemia refratária, acidose ou oligúria.' });
 
 /* ---------- Ácido-base ---------- */
-CASO({ id: 'cn_acidose_lactica', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbios ácido-básicos', cond: 'Acidose metabólica com ânion gap aumentado (lática) na sepse', tags: ['nefro', 'gaso', 'sepse'],
+CASO({ id: 'cn_acidose_lactica', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbios ácido-básicos', cond: 'Acidose metabólica com ânion gap aumentado (lática) na sepse', tags: ['nefro', 'gaso', 'sepse', 'infec'],
   pac: { nome: 'Antenor Lacerda', idade: 69, sexo: 'M', tipo: 'idoso' },
   qp: 'Febre, confusão e falta de ar.',
   hda: 'Pneumonia há 3 dias, piora hoje.',
@@ -198,7 +198,7 @@ CASO({ id: 'cn_lra_prerrenal', area: 'cm', ala: 'nefro', dif: 2, tema: 'Insufici
   cd: ['Volume e suspender diurético, BRA e AINE', 'Hemodiálise de urgência', 'Furosemida em dose alta', 'Corticoide pela suspeita de nefrite intersticial'],
   ecd: 'A pré-renal reverte rapidamente com a correção da perfusão; se mantida, evolui para necrose tubular aguda. Em uso de diuréticos, a FENa perde acurácia: usar a fração de excreção de ureia (< 35% sugere pré-renal).' });
 
-CASO({ id: 'cn_nta', area: 'cm', ala: 'nefro', dif: 2, tema: 'Insuficiência renal aguda', cond: 'Necrose tubular aguda isquêmica', tags: ['nefro', 'sepse'],
+CASO({ id: 'cn_nta', area: 'cm', ala: 'nefro', dif: 2, tema: 'Insuficiência renal aguda', cond: 'Necrose tubular aguda isquêmica', tags: ['nefro', 'sepse', 'infec'],
   pac: { nome: 'Leonor Cardoso', idade: 63, sexo: 'F', tipo: 'adulto' },
   qp: 'Urina diminuída no 3º dia de internação.',
   hda: 'Choque séptico por colangite, ficou 24 horas com hipotensão importante antes da drenagem. Recebeu vancomicina e contraste. Agora com pressão estável, mas diurese de 300 mL/dia.',
@@ -314,7 +314,7 @@ CASO({ id: 'cn_lesao_minima', area: 'cm', ala: 'nefro', dif: 2, tema: 'Glomerulo
   cd: ['Prednisona e suspender o AINE', 'Ciclofosfamida como primeira escolha', 'Apenas restrição proteica', 'Plasmaférese'],
   ecd: 'Responde muito bem a corticoide (resposta mais lenta em adultos). Complicações da síndrome nefrótica: tromboses (sobretudo na membranosa), infecções (pneumococo, peritonite espontânea), dislipidemia, lesão renal.' });
 
-CASO({ id: 'cn_gesf_hiv', area: 'cm', ala: 'nefro', dif: 3, tema: 'Glomerulopatias', cond: 'Glomeruloesclerose segmentar e focal colapsante associada ao HIV', tags: ['nefro', 'infecto'],
+CASO({ id: 'cn_gesf_hiv', area: 'cm', ala: 'nefro', dif: 3, tema: 'Glomerulopatias', cond: 'Glomeruloesclerose segmentar e focal colapsante associada ao HIV', tags: ['nefro', 'infecto', 'infec'],
   pac: { nome: 'Josué Batista', idade: 35, sexo: 'M', tipo: 'adulto' },
   qp: 'Urina espumosa e inchaço.',
   hda: 'HIV diagnosticado há 3 anos, sem tratamento. Edema há 1 mês.',

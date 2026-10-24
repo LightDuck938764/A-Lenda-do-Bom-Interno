@@ -22,7 +22,7 @@ CASO({ id: 'py_delirium_hiper', area: 'cm', ala: 'psiq', dif: 2, tema: 'Delirium
   cd: ['Tratar as causas e reorientar', 'Contenção mecânica e diazepam venoso', 'Mais prometazina à noite para dormir', 'Iniciar donepezila'],
   ecd: 'Tratar o fator precipitante (retenção urinária, dor, infecção, drogas anticolinérgicas), devolver óculos e aparelho auditivo, reorientar, manter ciclo sono-vigília e presença da família. Antipsicótico em dose baixa (haloperidol, quetiapina) apenas para agitação com risco. Benzodiazepínico só na abstinência alcoólica ou de benzodiazepínicos. O delirium aumenta mortalidade e risco de demência.' });
 
-CASO({ id: 'py_delirium_hipo', area: 'cm', ala: 'psiq', dif: 3, tema: 'Delirium', cond: 'Delirium hipoativo por infecção urinária', tags: ['psiq', 'sepse'],
+CASO({ id: 'py_delirium_hipo', area: 'cm', ala: 'psiq', dif: 3, tema: 'Delirium', cond: 'Delirium hipoativo por infecção urinária', tags: ['psiq', 'sepse', 'infec'],
   pac: { nome: 'Celeste Moura', idade: 86, sexo: 'F', tipo: 'idoso' },
   qp: 'A filha acha que ela "está deprimida", quieta e sem comer.',
   hda: 'Há 3 dias ficou sonolenta, apática, sem interesse em comer, respondendo pouco. Antes, era independente e conversava bem. Urina com odor forte.',

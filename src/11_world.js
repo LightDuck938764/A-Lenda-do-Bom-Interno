@@ -150,6 +150,7 @@ function pickCase(area, spot) {
   const step = areaStepIdx(area), done = !!S.completed[area];
   const maxDif = done ? 3 : step < 3 ? 1 : step < 6 ? 2 : 3;
   let pool = CASES.filter(c => c.area === area);
+  // GO: 'obst' = centro obstétrico, observação e alojamento; 'gineco' = consultório, USG e quartos
   if (area === 'go') { const loc = spot.obj.local === 'quarto' ? 'gineco' : spot.obj.local === 'ps' ? 'obst' : spot.obj.local; const g = pool.filter(c => goLocal(c) === loc); if (g.length) pool = g; }
   if (area === 'cm' && spot.obj.ala) { const g = pool.filter(c => c.ala === spot.obj.ala); if (g.length) pool = g; }
   if (spot.obj.bebe) { const b = pool.filter(c => c.pac.tipo === 'bebe'); if (b.length) pool = b; }
@@ -160,7 +161,6 @@ function pickCase(area, spot) {
 }
 // GO: obstetrícia no centro obstétrico/observação/alojamento; ginecologia no consultório, ultrassom e quartos
 function goLocal(c) { return c.local || (c.tags && c.tags.includes('obst') ? 'obst' : 'gineco'); }
-const GO_QUARTO = ['go_mioma2', 'go_swyer', 'go_rokitansky', 'go_morris', 'go_hac', 'go_kallmann', 'go_endometriose', 'go_endometriose2', 'go_mioma', 'go_adenomiose', 'go_polipo', 'go_sop1', 'go_sop2'];
 function activateSpot(sp, area) {
   const c = pickCase(area, sp); if (!c) return;
   sp.s.active = true; sp.s.caseId = c.id;

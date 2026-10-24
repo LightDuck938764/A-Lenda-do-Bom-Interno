@@ -14,7 +14,7 @@
 
 ## Banco recebido (parte 1): PEDIATRIA_1..8 e CLI1..11 (2.550 questões)
 Blocos de Pediatria: 1 = infecções respiratórias; 2 = diarreia; 3 = crescimento/nutrição; 4 = reanimação neonatal; 5 = PALS/afogamento/OVACE; 6 = vacinas; 7 = sífilis congênita e TORCH; 8 = variados (constipação, SHU, Down, cardiopatias, triagem, ITU, maus-tratos).
-Parte 2 (GO, Urgência, Cirurgia?) ainda não chegou.
+Parte 2 recebida (zips CIR1-6, GO1-6, PREV1-4), extraída em scratchpad/banco2 (todas2.json; go_c.txt = GO por tema). ATENÇÃO: o campo imgs do todas2.json às vezes aponta para a imagem errada (índice de página deslocado) — sempre olhar a imagem antes de usar.
 
 ## Feito
 - PEDIATRIA_1 lido → src/03p_ped_resp.js (35 casos, prefixo pr_).
@@ -50,9 +50,17 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 - CM reumato → src/05n_cm_reumato.js (22, rm_; AIJ x2 e IgA em 'ped'): gota, AR, espondiloartrites, vasculites, LES, ES, OA, gonocócica.
 - PENDENTE auditoria de duplicatas UBS x pediatria nova (ubs_baixa estatura, atraso constitucional, telarca, puberdade precoce, OMA, faringite, resfriado) e ped_ansiedade/ped_depressao antigos.
 - Auditoria de duplicatas (scratchpad/scripts/dups.js): removidos ubs_ira_faringite, ubs_ira_otite, ubs_cd_familiar, ce_prediabetes, cp_pac_ambulatorial, cm_colest1. Reescritos para nível hospitalar: ci_dengue_b→ci_dengue_hepatite, ci_dengue_c (2ª etapa), ci_chikungunya (atípica), ci_zika (síndrome congênita), ce_dm2_dcv (DM+ICFEr), cp_asma_diagnostico (asma tratada como DPOC).
-- PENDENTE: go_hac duplica ce_hac_nao_classica → refazer go_hac como amenorreia primária/HAC clássica na parte GO. upa_apend1/2 x cir_apend/2 → resolver em Urgência/Cirurgia.
 - Urgência → src/05o_upa_urgencia.js (31, ue_): taquiarritmias, PCR adulto, bradi/BAV, crise hipertensiva, DAC, pericardite/tamponamento, AVC. Removidos upa_iam1/2, upa_avc1/2, upa_ic1/2, upa_pcr1/2. 19 imagens do banco (ECGs de CLI3/6/7/11, TC/RM de CLI4/CLI10). Excluídas: arquivo pessoal (CLI3 i-001/i-020-011/i-031; CLI4 i-017-002, i-032, i-038; CLI6 i-032-015, i-038-023; CLI7 i-004 = CLI8 i-022), créditos externos (ecgedu CLI6 i-039, LITFL CLI11 i-046, ecgpm CLI7 i-046). CLI3 i-034-019 com cabeçalho de dados do paciente recortado.
 - Sem imagem do banco (candidatas à internet, mostrar ao usuário): TC de hemorragia cerebelar/intraparenquimatosa, ECG de tamponamento (alternância elétrica), ECG de FA pré-excitada (WPW), ECG de BAVT.
 - Cirurgia → src/05p_cir_digestivo.js (39, cx_): apendicite (3), diverticular (4), pólipos/CCR (6), RCU (2, peça do banco CLI3#21), Crohn (3), C. difficile, SII, carcinoide (2), pancreatite aguda (6) e crônica, câncer de pâncreas, vias biliares (7), fígado (3). Removidos cir_apend/2, upa_apend1/2, cir_colecist1/2, cir_pancr1/2, cir_ccr/2, cir_ca_intestino, cir_capanc/2. Mantidos cir_hsd, cir_hsa/2, cir_ureter, cir_daop, cir_polit1/2, cir_capulm.
 - Nomes de pacientes repetidos corrigidos.
-- Imagens da internet: o ambiente bloqueia download (upload.wikimedia.org/commons.wikimedia.org recusados pelo proxy; WebFetch exige URL vinda do usuário). Pedido ao usuário: liberar esses domínios em Configurações > Capacidades OU anexar as imagens. Lista do que falta está acima (pediatria, exantemas, RX neonatais, urgência).
+- Imagens da internet: domínios liberados pelo usuário. Busca: python3 scratchpad/scripts/commons.py "termo" n. Montar página de conferência com cada candidata + licença e só usar após aprovação.
+
+## Ginecologia e Obstetrícia (banco parte 2: GO1-6)
+- Ginecologia (local 'gineco'): 04b_go_gineco_endo.js (24, gg_: amenorreias, HAC clássica, hiperprolactinemia, SOP, climatério, osteoporose, uroginecologia), 04c_go_gineco_inf.js (18, gi_: vulvovaginites, cervicite, DIP, úlceras, sífilis por fase, violência sexual com gestação → aborto legal, mioma, pólipo, adenomiose, endometriose), 04d_go_gineco_onco.js (13, gm_: mama, ovário, colo, endométrio).
+- Obstetrícia (local 'obst'): 04e_go_obst_parto.js (17, op_: datação, indução/Bishop, estática, CTG, prolapso de cordão, distocia de ombro, 3 distocias COM partograma, taquicardia fetal, oligoâmnio/PBF, 41 semanas, fórcipe, fase latente, situação transversa, VBAC, óbito fetal), 04f_go_obst_sang.js (21, os_: abortamentos x6, IIC, colo curto, SAF, mola completa/parcial, NTG, ectópica MTX, localização desconhecida, placenta prévia, acretismo, DPP, Bandl-Frommel, vasa prévia, Rh x2), 04g_go_obst_clin.js (26, oc_: hipertensivas x9, hiperglicemia x4, gemelares x4, HIV e herpes no parto, HPP atonia, retenção placentária, endometrite, tromboflebite pélvica, blues, depressão pós-parto, psicose puerperal).
+- Removidos: src/04_cases_go.js inteiro (30 casos antigos) e go_herpes2, go_sifilis2, go_vaginose2, go_mioma2. GO_QUARTO removido do 11_world.js.
+- Evitados (já são eventos/UBS): em_rpmo, em_corio, em_parto, em_tpp, em_ectopica (rota), em_violencia, ubs_pn_dmg, ubs_pn_aas, ubs_pn_inicio, ubs_pn_gbs, pn_mastite.
+- PENDENTE com partograma: período pélvico prolongado e parto precipitado (banco não tem; pedido ao usuário o manual do MS 2001 ou liberar bvsms.saude.gov.br). Não criar sem partograma aprovado.
+- Tags: adicionada 'infec' em todos os casos com 'infecto'/'sepse' (as habilidades usam 'infec'); 'diabetes', 'convul', 'anticoag', 'choque', 'cortic' nos casos de GO pertinentes.
+- PENDENTE: usar CIR1-6 (estômago, esôfago, trauma, vascular, uro, hérnias, tireoide…) e decidir PREV1-4.

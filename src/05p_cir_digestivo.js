@@ -23,7 +23,7 @@ CASO({ id: 'cx_apendicite', area: 'cir', dif: 1, tema: 'Apendicite aguda', cond:
   cd: ['Apendicectomia', 'Alta com antiespasmódico e retorno', 'Colonoscopia ambulatorial', 'Observação por 48 horas'],
   ecd: 'Apendicectomia (preferencialmente laparoscópica) com antibioticoprofilaxia; na apendicite não complicada, sem antibiótico pós-operatório. Tratamento só com antibiótico é opção em casos selecionados sem apendicolito, com recorrência de cerca de 30%.' });
 
-CASO({ id: 'cx_apendicite_abscesso', area: 'cir', dif: 2, tema: 'Apendicite aguda', cond: 'Apendicite complicada com abscesso (plastrão)', tags: ['dor', 'img', 'sepse'],
+CASO({ id: 'cx_apendicite_abscesso', area: 'cir', dif: 2, tema: 'Apendicite aguda', cond: 'Apendicite complicada com abscesso (plastrão)', tags: ['dor', 'img', 'sepse', 'infec'],
   pac: { nome: 'Renata Lobo', idade: 42, sexo: 'F', tipo: 'adulto' },
   qp: 'Dor na barriga há 6 dias e febre.',
   hda: 'Dor em FID há 6 dias, tratada como "virose" com antiespasmódico. Mantém febre e dor localizada, aceita dieta.',
@@ -69,7 +69,7 @@ CASO({ id: 'cx_diverticulite_simples', area: 'cir', dif: 1, tema: 'Doença diver
   cd: ['Tratamento ambulatorial', 'Cirurgia de Hartmann de urgência', 'Colonoscopia na fase aguda', 'Internação em UTI'],
   ecd: 'Não complicada em imunocompetente sem comorbidade grave: tratamento ambulatorial, analgesia, dieta conforme tolerância; antibiótico pode ser omitido em casos selecionados. Colonoscopia 6-8 semanas após (excluir neoplasia), principalmente se não houver colonoscopia recente. Colonoscopia na fase aguda é contraindicada.' });
 
-CASO({ id: 'cx_diverticulite_abscesso', area: 'cir', dif: 2, tema: 'Doença diverticular', cond: 'Diverticulite complicada com abscesso pélvico (Hinchey II)', tags: ['dor', 'img', 'sepse'],
+CASO({ id: 'cx_diverticulite_abscesso', area: 'cir', dif: 2, tema: 'Doença diverticular', cond: 'Diverticulite complicada com abscesso pélvico (Hinchey II)', tags: ['dor', 'img', 'sepse', 'infec'],
   pac: { nome: 'Ronaldo Seabra', idade: 66, sexo: 'M', tipo: 'idoso' },
   qp: 'Dor em baixo ventre e febre alta há 4 dias.',
   hda: 'Dor em FIE e hipogástrio, febre de 39 °C, urgência miccional.',
@@ -84,7 +84,7 @@ CASO({ id: 'cx_diverticulite_abscesso', area: 'cir', dif: 2, tema: 'Doença dive
   cd: ['Antibiótico IV e drenagem guiada', 'Antibiótico oral e alta hospitalar', 'Colectomia total de urgência', 'Apenas analgesia e dieta zero'],
   ecd: 'Abscesso pequeno (< 3-4 cm): antibiótico venoso; maior: drenagem percutânea guiada. Após a resolução, colonoscopia e considerar sigmoidectomia eletiva, individualizada. Sem melhora ou com peritonite: cirurgia.' });
 
-CASO({ id: 'cx_diverticulite_peritonite', area: 'cir', dif: 3, tema: 'Doença diverticular', cond: 'Diverticulite perfurada com peritonite fecal (Hinchey IV)', tags: ['dor', 'choque', 'sepse'],
+CASO({ id: 'cx_diverticulite_peritonite', area: 'cir', dif: 3, tema: 'Doença diverticular', cond: 'Diverticulite perfurada com peritonite fecal (Hinchey IV)', tags: ['dor', 'choque', 'sepse', 'infec'],
   pac: { nome: 'Teodoro Albuquerque', idade: 74, sexo: 'M', tipo: 'idoso' },
   qp: 'Dor em toda a barriga e pressão baixa.',
   hda: 'Dor em FIE há 3 dias que se generalizou subitamente há 6 horas.',
@@ -247,7 +247,7 @@ CASO({ id: 'cx_crohn_ileite', area: 'cir', dif: 2, tema: 'Doença de Crohn', con
   cd: ['Corticoide e biológico', 'Mesalazina oral isolada em dose alta', 'Colectomia total', 'Antibiótico contínuo'],
   ecd: 'Doença moderada-grave ileocecal: indução com budesonida ou corticoide e estratégia precoce com biológico (anti-TNF, vedolizumabe, ustequinumabe) ± imunomodulador. Mesalazina tem pouco efeito no Crohn. Cessar tabagismo. Rastrear TB latente e hepatite B antes do biológico.' });
 
-CASO({ id: 'cx_crohn_abscesso', area: 'cir', dif: 3, tema: 'Doença de Crohn', cond: 'Abscesso intra-abdominal na doença de Crohn', tags: ['gastro', 'img', 'sepse'],
+CASO({ id: 'cx_crohn_abscesso', area: 'cir', dif: 3, tema: 'Doença de Crohn', cond: 'Abscesso intra-abdominal na doença de Crohn', tags: ['gastro', 'img', 'sepse', 'infec'],
   pac: { nome: 'Luana Pires', idade: 28, sexo: 'F', tipo: 'adulto' },
   qp: 'Dor em FID e febre há 5 dias.',
   hda: 'Crohn há 7 anos, em uso de azatioprina. Dor progressiva em FID, febre e massa palpável.',
@@ -276,7 +276,7 @@ CASO({ id: 'cx_crohn_perianal', area: 'cir', dif: 3, tema: 'Doença de Crohn', c
   ecd: 'Exame sob anestesia, drenagem do abscesso e colocação de sedenho (seton) frouxo, antibiótico (metronidazol ou ciprofloxacino) e anti-TNF (infliximabe) com imunomodulador. Fistulotomia em fístula complexa arrisca incontinência. Aminossalicilatos não têm eficácia na doença perianal.' });
 
 /* ---------- Outras colites e distúrbios funcionais ---------- */
-CASO({ id: 'cx_c_difficile', area: 'cir', dif: 2, tema: 'Colite pseudomembranosa', cond: 'Colite por Clostridioides difficile', tags: ['gastro', 'infecto'],
+CASO({ id: 'cx_c_difficile', area: 'cir', dif: 2, tema: 'Colite pseudomembranosa', cond: 'Colite por Clostridioides difficile', tags: ['gastro', 'infecto', 'infec'],
   pac: { nome: 'Dagoberto Ramos', idade: 76, sexo: 'M', tipo: 'idoso' },
   qp: 'Diarreia aquosa muitas vezes por dia.',
   hda: 'Internado há 10 dias por pneumonia, em uso de ceftriaxona e clindamicina. Há 3 dias, 8 evacuações líquidas por dia, cólicas e febre.',
@@ -350,7 +350,7 @@ CASO({ id: 'cx_pancreatite_biliar', area: 'cir', dif: 2, tema: 'Pancreatite agud
   cd: ['Suporte e colecistectomia na internação', 'Antibiótico profilático', 'CPRE de rotina', 'Jejum por 2 semanas'],
   ecd: 'Hidratação com Ringer lactato moderada e guiada por metas (evitar excesso), analgesia (inclusive opioides), dieta oral precoce conforme tolerância. Antibiótico profilático não é indicado. CPRE só com colangite ou obstrução biliar persistente. Colecistectomia na mesma internação na pancreatite biliar leve (reduz recorrência).' });
 
-CASO({ id: 'cx_pancreatite_grave', area: 'cir', dif: 3, tema: 'Pancreatite aguda', cond: 'Pancreatite aguda alcoólica grave com necrose infectada', tags: ['dor', 'img', 'sepse', 'choque'],
+CASO({ id: 'cx_pancreatite_grave', area: 'cir', dif: 3, tema: 'Pancreatite aguda', cond: 'Pancreatite aguda alcoólica grave com necrose infectada', tags: ['dor', 'img', 'sepse', 'choque', 'infec'],
   pac: { nome: 'Valter Moura', idade: 46, sexo: 'M', tipo: 'adulto' },
   qp: 'Piora da febre na 4ª semana de internação por pancreatite.',
   hda: 'Internado há 25 dias por pancreatite alcoólica grave com insuficiência respiratória e renal transitórias. Melhorou, mas há 3 dias voltou a ter febre e piora clínica.',
@@ -456,7 +456,7 @@ CASO({ id: 'cx_colelitiase', area: 'cir', dif: 1, tema: 'Doenças das vias bilia
   cd: ['Colecistectomia eletiva', 'Ursodesoxicólico por toda a vida', 'Observar até a terceira crise', 'CPRE'],
   ecd: 'Colelitíase sintomática: colecistectomia videolaparoscópica eletiva. Assintomática: em geral, observação; considerar cirurgia em vesícula em porcelana, cálculo > 2,5-3 cm, pólipo > 1 cm, anemia hemolítica (falciforme), candidatos a transplante. O nódulo com cicatriz central sugere hiperplasia nodular focal (benigno, sem tratamento).' });
 
-CASO({ id: 'cx_colecistite', area: 'cir', dif: 2, tema: 'Doenças das vias biliares', cond: 'Colecistite aguda calculosa', tags: ['dor', 'usg', 'sepse'],
+CASO({ id: 'cx_colecistite', area: 'cir', dif: 2, tema: 'Doenças das vias biliares', cond: 'Colecistite aguda calculosa', tags: ['dor', 'usg', 'sepse', 'infec'],
   pac: { nome: 'Sônia Prado', idade: 52, sexo: 'F', tipo: 'adulto' },
   qp: 'Dor do lado direito há 2 dias, febre e vômitos.',
   hda: 'Dor contínua em hipocôndrio direito há 36 horas, após refeição, febre e vômitos. Já teve "crises de vesícula".',
@@ -471,7 +471,7 @@ CASO({ id: 'cx_colecistite', area: 'cir', dif: 2, tema: 'Doenças das vias bilia
   cd: ['Colecistectomia precoce', 'Alta com analgésico', 'CPRE', 'Colecistectomia só após 3 meses'],
   ecd: 'Hidratação, analgesia, antibiótico e colecistectomia videolaparoscópica precoce (idealmente em até 72 horas, aceitável até 7-10 dias). Paciente de alto risco cirúrgico ou grau III sem condições: colecistostomia percutânea. Colecistite alitiásica: pacientes críticos.' });
 
-CASO({ id: 'cx_colecistostomia', area: 'cir', dif: 3, tema: 'Doenças das vias biliares', cond: 'Colecistite aguda grave em idoso de alto risco', tags: ['dor', 'choque', 'sepse'],
+CASO({ id: 'cx_colecistostomia', area: 'cir', dif: 3, tema: 'Doenças das vias biliares', cond: 'Colecistite aguda grave em idoso de alto risco', tags: ['dor', 'choque', 'sepse', 'infec'],
   pac: { nome: 'Agenor Faria', idade: 88, sexo: 'M', tipo: 'idoso' },
   qp: 'Febre, dor na barriga e pressão caindo.',
   hda: 'Dor em hipocôndrio direito há 4 dias, febre e confusão desde ontem.',
@@ -501,7 +501,7 @@ CASO({ id: 'cx_coledocolitiase', area: 'cir', dif: 2, tema: 'Doenças das vias b
   cd: ['CPRE e colecistectomia', 'Colangio-RM antes de qualquer decisão', 'Ácido ursodesoxicólico', 'Colecistectomia sem tratar o colédoco'],
   ecd: 'Alto risco: CPRE com extração dos cálculos (ou exploração laparoscópica do colédoco no mesmo tempo da colecistectomia, em centros com experiência), seguida de colecistectomia na mesma internação.' });
 
-CASO({ id: 'cx_colangite', area: 'cir', dif: 3, tema: 'Doenças das vias biliares', cond: 'Colangite aguda grave (pêntade de Reynolds)', tags: ['dor', 'sepse', 'choque', 'hepato'],
+CASO({ id: 'cx_colangite', area: 'cir', dif: 3, tema: 'Doenças das vias biliares', cond: 'Colangite aguda grave (pêntade de Reynolds)', tags: ['dor', 'sepse', 'choque', 'hepato', 'infec'],
   pac: { nome: 'Antenor Viegas', idade: 72, sexo: 'M', tipo: 'idoso' },
   qp: 'Febre com calafrios, amarelão e confusão.',
   hda: 'Dor em HD, febre com calafrios e icterícia há 2 dias. Hoje confuso e hipotenso.',

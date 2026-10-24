@@ -50,3 +50,23 @@
 | tc_acm_hiperdensa.jpg | TC de crânio sem contraste: artéria cerebral média esquerda hiperdensa, sem hemorragia | Banco de questões: CLI4 #56 |
 | rm_avc_parietal_direito.jpg | RM FLAIR: hiperssinal cortical-subcortical parietal direito (infarto subagudo) | Banco de questões: CLI10 #43 |
 | peca_colectomia_rcu.jpg | Peça de colectomia: mucosa difusamente inflamada e contínua (retocolite ulcerativa) | Banco de questões: CLI3 #21 |
+| partograma_parada_descida.jpg | Partograma: dilatação completa às 7 h, apresentação parada no plano -1 por 2 h, FCF caindo | Banco de questões: GO5 #70 (mesmo partograma do GO5 #3) |
+| partograma_parada_dilatacao.jpg | Partograma manuscrito: dilatação parada em 5 cm em três toques consecutivos, contrações curtas | Banco de questões: GO5 #94 |
+| ctg_parada_dilatacao.jpg | Cardiotocografia intraparto da mesma paciente (traçado tranquilizador) | Banco de questões: GO5 #94 |
+| partograma_fase_ativa_prolongada.jpg | Partograma OMS: dilatação lenta cruzando as linhas de alerta e ação, 2 contrações em 10 min | Banco de questões: GO5 #125 / GO3 #128 |
+| ctg_desaceleracao_tardia.jpg | Cardiotocografia intraparto com desacelerações tardias (categoria II) | Banco de questões: GO3 #128 |
+| ctg_hipoxia_pe.jpg | Cardiotocografia anteparto com desacelerações e variabilidade reduzida (hipóxia fetal) | Banco de questões: GO3 #25 |
+| ctg_taquicardia_fetal.jpg | Cardiotocografia intraparto com taquicardia fetal (linha de base elevada) | Banco de questões: GO3 #62 |
+| ctg_reativa.jpg | Cardiotocografia reativa: linha de base ~140 bpm, acelerações, sem desacelerações | Banco de questões: GO3 #149 |
+| usg_endometrioma.jpg | USG transvaginal: cisto ovariano esquerdo com conteúdo em vidro fosco (endometrioma) | Banco de questões: GO2 #65 |
+| usg_tumor_ovario.jpg | USG endovaginal: massa anexial sólido-cística com septos e projeções (suspeita de malignidade) | Banco de questões: GO4 #117 |
+| foto_mola_hidatiforme.jpg | Material eliminado: vesículas em cacho de uva (mola hidatiforme) | Banco de questões: GO5 #23 |
+| foto_herpes_vulvar.jpg | Vulva com vesículas e úlceras rasas dolorosas (herpes genital) | Banco de questões: GO6 #112 |
+| foto_cistocele.jpg | Exame com Valsalva: abaulamento da parede vaginal anterior (cistocele) | Banco de questões: GO6 #50 |
+| micro_clue_cell.jpg | Microscopia do conteúdo vaginal: célula-alvo (clue cell) | Banco de questões: GO4 #8 |
+| histeroscopia_polipo.jpg | Histeroscopia: lesão polipoide lisa na cavidade endometrial (pólipo) | Banco de questões: GO3 #64 |
+| mamografia_birads2.jpg | Mamografia (MLO): calcificação grosseira tipo pipoca (achado benigno, BI-RADS 2) | Banco de questões: GO3 #142 |
+| foto_acne_sop.jpg | Acne inflamatória em face (hiperandrogenismo) | Banco de questões: GO2 #103 |
+| monitorizacao_glicemica.jpg | Relatório de monitorização contínua da glicose | Banco de questões: GO1 #113 |
+| ctg_estimulo_sonoro.jpg | Cardiotocografia com estímulo sonoro (ES) e resposta fetal | Banco de questões: GO3 #101 |
+| ctg_pe_sem_gravidade.jpg | Cardiotocografia anteparto: linha de base ~145 bpm, variabilidade moderada, sem desacelerações | Banco de questões: GO1 #119 |

@@ -50,7 +50,7 @@ CASO({ id: 'pn_sam', area: 'ped', dif: 3, tema: 'Distúrbios respiratórios do r
   cd: ['Ventilação, surfactante e óxido nítrico', 'Aspiração traqueal repetida e alta para o alojamento', 'Prostaglandina E1 para manter o canal arterial aberto', 'Restrição hídrica e diurético de alça'],
   ecd: 'Manejo em UTI: oxigenação adequada evitando hiperóxia, ventilação gentil, surfactante (inativado pelo mecônio), sedação, suporte hemodinâmico e óxido nítrico inalado na hipertensão pulmonar. ECMO nos refratários.' });
 
-CASO({ id: 'pn_sepse_precoce', area: 'ped', dif: 2, tema: 'Sepse neonatal', cond: 'Sepse neonatal precoce', tags: ['neo', 'sepse'],
+CASO({ id: 'pn_sepse_precoce', area: 'ped', dif: 2, tema: 'Sepse neonatal', cond: 'Sepse neonatal precoce', tags: ['neo', 'sepse', 'infec'],
   pac: { nome: 'RN de Gisele Amorim', idade: '14 horas de vida', sexo: 'F', tipo: 'bebe' },
   qp: 'Gemente e mamando mal.',
   hda: 'Termo, 37 semanas. Bolsa rota há 22 horas antes do parto, mãe com febre de 38,6 °C no trabalho de parto e líquido fétido. Pesquisa de estreptococo do grupo B não realizada; não recebeu antibiótico intraparto.',
@@ -64,7 +64,7 @@ CASO({ id: 'pn_sepse_precoce', area: 'ped', dif: 2, tema: 'Sepse neonatal', cond
   cd: ['Hemocultura e ampicilina com gentamicina', 'Ceftriaxona IM em dose única e alta hospitalar', 'Oxacilina com vancomicina', 'Observar 48 horas sem antibiótico'],
   ecd: 'Colher hemocultura (e líquor quando o RN estiver estável) e iniciar ampicilina mais aminoglicosídeo. Corrigir a hipoglicemia e a hipotermia. Ceftriaxona é evitada no período neonatal (desloca a bilirrubina da albumina e precipita com cálcio).' });
 
-CASO({ id: 'pn_sepse_tardia', area: 'ped', dif: 3, tema: 'Sepse neonatal', cond: 'Sepse neonatal tardia associada a cateter', tags: ['neo', 'sepse'],
+CASO({ id: 'pn_sepse_tardia', area: 'ped', dif: 3, tema: 'Sepse neonatal', cond: 'Sepse neonatal tardia associada a cateter', tags: ['neo', 'sepse', 'infec'],
   pac: { nome: 'RN de Mirian Castro', idade: '18 dias', sexo: 'M', tipo: 'bebe' },
   qp: 'Apneias e piora clínica na UTI neonatal.',
   hda: 'Prematuro de 28 semanas, com cateter central de inserção periférica para nutrição parenteral. Hoje: apneias, intolerância à dieta, distensão abdominal leve.',
