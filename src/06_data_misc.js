@@ -8,18 +8,18 @@ function QQ(a, q, o, e) { QUICK.push({ a, q, o, e }); }
 QQ('upa', 'Frequência de compressões torácicas na RCP do adulto?', ['100 a 120 por minuto', '60 a 80 por minuto', '140 a 160 por minuto', '80 a 90 por minuto'], 'A diretriz recomenda 100–120 compressões/min.');
 QQ('upa', 'Profundidade das compressões no adulto?', ['5 a 6 cm', '2 a 3 cm', '8 a 10 cm', '3 a 4 cm'], 'Pelo menos 5 cm, sem ultrapassar 6 cm.');
 QQ('upa', 'Quais ritmos de PCR são chocáveis?', ['Fibrilação ventricular e TV sem pulso', 'Assistolia e atividade elétrica sem pulso', 'BAV total e bradicardia sinusal grave', 'Fibrilação atrial e flutter atrial'], 'Apenas FV e TV sem pulso são chocáveis.');
-QQ('upa', 'Janela habitual para trombólise IV no AVC isquêmico?', ['Até 4,5 horas do início dos sintomas', 'Até 24 horas, sempre', 'Somente nos primeiros 30 minutos', 'Em qualquer momento'], 'A trombólise IV é indicada até 4,5h (casos selecionados podem ter outras estratégias).');
+QQ('upa', 'Janela habitual para trombólise IV no AVC isquêmico?', ['Até 4,5 horas do início', 'Até 24 horas, em qualquer caso', 'Só nos primeiros 30 minutos', 'Em qualquer momento da internação'], 'A trombólise IV é indicada até 4,5h (casos selecionados podem ter outras estratégias).');
 QQ('upa', 'Antídoto da intoxicação por opioides?', ['Naloxona', 'Flumazenil', 'Atropina', 'N-acetilcisteína'], 'Naloxona reverte a depressão respiratória por opioides.');
 QQ('upa', 'Antídoto da intoxicação por paracetamol?', ['N-acetilcisteína', 'Azul de metileno', 'Vitamina K', 'Flumazenil'], 'N-acetilcisteína repõe glutationa.');
 QQ('upa', 'Primeira linha para agitação por intoxicação por cocaína?', ['Benzodiazepínico', 'Betabloqueador isolado', 'Naloxona', 'Flumazenil'], 'Benzodiazepínicos reduzem a hiperatividade simpática.');
 QQ('upa', 'Glasgow mínimo possível?', ['3', '0', '1', '5'], 'A escala vai de 3 a 15.');
-QQ('upa', 'Tríade de Beck (tamponamento cardíaco)?', ['Hipotensão, abafamento de bulhas e turgência jugular', 'Febre, icterícia e dor em hipocôndrio direito', 'Bradicardia, hipertensão e respiração irregular', 'Dor, palidez e ausência de pulso no membro'], 'É a tríade clássica do tamponamento.');
+QQ('upa', 'Tríade de Beck (tamponamento cardíaco)?', ['Hipotensão, bulhas abafadas e turgência jugular', 'Febre, icterícia e dor em hipocôndrio direito', 'Bradicardia, hipertensão e respiração irregular', 'Dor, palidez e ausência de pulso no membro afetado'], 'É a tríade clássica do tamponamento.');
 QQ('upa', 'Ordem do atendimento inicial ao politraumatizado?', ['X-A-B-C-D-E', 'A-B-C sem controle de hemorragia', 'D-C-B-A', 'Exames de imagem primeiro'], 'Hemorragia exsanguinante (X), via aérea, ventilação, circulação, neurológico, exposição.');
 QQ('upa', 'Dengue com sinais de alarme: qual medicação evitar?', ['AAS e anti-inflamatórios', 'Dipirona e paracetamol', 'Soro fisiológico venoso', 'Soro de reidratação oral'], 'Risco de sangramento.');
-QQ('upa', 'IAM com supra: qual a prioridade?', ['Reperfusão o mais rápido possível', 'Teste ergométrico antes de tudo', 'Aguardar a troponina seriada', 'Alta com analgésico e retorno'], 'Tempo é músculo.');
+QQ('upa', 'IAM com supra: qual a prioridade?', ['Reperfusão imediata', 'Teste ergométrico antes de tudo', 'Aguardar a troponina seriada', 'Alta com analgésico e retorno'], 'Tempo é músculo.');
 // PED
 QQ('ped', 'Faixa etária típica da bronquiolite viral?', ['Menores de 2 anos', '5 a 10 anos', 'Adolescentes', 'Adultos jovens'], 'Principalmente lactentes.');
-QQ('ped', 'Principal agente da bronquiolite?', ['Vírus sincicial respiratório', 'Influenza B', 'Staphylococcus aureus', 'Streptococcus pneumoniae'], 'O VSR é o principal agente.');
+QQ('ped', 'Principal agente da bronquiolite?', ['Vírus sincicial respiratório', 'Influenza B', 'Staphylococcus aureus resistente', 'Streptococcus pneumoniae'], 'O VSR é o principal agente.');
 QQ('ped', 'Icterícia nas primeiras 24h de vida é:', ['Sempre patológica', 'Sempre fisiológica', 'Típica do leite materno', 'Normal em todo RN'], 'Exige investigação (hemólise).');
 QQ('ped', 'Exantema que surge quando a febre desaparece?', ['Exantema súbito', 'Sarampo', 'Escarlatina', 'Doença mão-pé-boca'], 'Típico do HHV-6/7.');
 QQ('ped', 'Manchas de Koplik são características de:', ['Sarampo', 'Rubéola', 'Escarlatina', 'Caxumba'], 'Enantema patognomônico do sarampo.');
@@ -32,26 +32,26 @@ QQ('ped', 'Febre em criança com anemia falciforme exige:', ['Antibiótico paren
 QQ('ped', 'Cardiopatia cianótica canal-dependente: o que manter o canal aberto?', ['Prostaglandina E1', 'Indometacina', 'Ibuprofeno', 'Oxigênio a 100% isolado'], 'PGE1 mantém o canal arterial.');
 // GO
 QQ('go', 'Sangramento vermelho vivo e indolor no 3º trimestre:', ['Placenta prévia', 'Descolamento prematuro de placenta', 'Rotura uterina', 'Trabalho de parto'], 'Indolor e vivo = prévia.');
-QQ('go', 'Útero hipertônico e doloroso com sangramento escuro:', ['Descolamento prematuro de placenta', 'Placenta prévia centro-total', 'Rotura uterina completa', 'Trabalho de parto prematuro'], 'Clássico do DPP.');
+QQ('go', 'Útero hipertônico e doloroso com sangramento escuro:', ['Descolamento de placenta', 'Placenta prévia centro-total', 'Rotura uterina completa', 'Trabalho de parto prematuro'], 'Clássico do DPP.');
 QQ('go', 'Na suspeita de placenta prévia, o que NÃO fazer?', ['Toque vaginal', 'Ultrassom', 'Monitorizar o feto', 'Avaliar sinais vitais'], 'O toque pode desencadear hemorragia.');
 QQ('go', 'Colo fechado + embrião com BCF + sangramento discreto:', ['Ameaça de abortamento', 'Abortamento inevitável', 'Abortamento retido', 'Abortamento incompleto'], 'Gestação ainda viável.');
 QQ('go', 'Odor de peixe + células-guia:', ['Vaginose bacteriana', 'Candidíase vulvovaginal', 'Tricomoníase', 'Gonorreia'], 'Critérios de Amsel.');
-QQ('go', 'Tratamento adequado da sífilis na gestante:', ['Penicilina benzatina', 'Azitromicina', 'Doxiciclina', 'Ceftriaxona isolada'], 'Só a penicilina previne sífilis congênita de forma adequada.');
+QQ('go', 'Tratamento adequado da sífilis na gestante:', ['Penicilina benzatina', 'Azitromicina oral', 'Doxiciclina por 14 dias', 'Ceftriaxona isolada'], 'Só a penicilina previne sífilis congênita de forma adequada.');
 QQ('go', 'Colo uterino "em framboesa":', ['Tricomoníase', 'Candidíase', 'Vaginose', 'Herpes'], 'Colpite macular.');
 QQ('go', 'Cariótipo da insensibilidade completa aos andrógenos:', ['46,XY', '46,XX', '45,X', '47,XXY'], 'Síndrome de Morris.');
-QQ('go', 'Amenorreia primária + anosmia:', ['Síndrome de Kallmann', 'Síndrome de Turner', 'MRKH', 'SOP'], 'Hipogonadismo hipogonadotrófico com anosmia.');
+QQ('go', 'Amenorreia primária + anosmia:', ['Síndrome de Kallmann', 'Síndrome de Turner', 'Síndrome de Rokitansky (MRKH)', 'SOP'], 'Hipogonadismo hipogonadotrófico com anosmia.');
 QQ('go', 'Critérios de Rotterdam para SOP: quantos são necessários?', ['2 de 3', '3 de 3', '1 de 3', '4 de 5'], 'Após excluir outras causas.');
 QQ('go', 'Útero globoso, aumentado difusamente, em multípara com dismenorreia:', ['Adenomiose', 'Mioma', 'Pólipo', 'Endometrioma'], 'Clássico da adenomiose.');
-QQ('go', 'Exame que diagnostica e trata o pólipo endometrial:', ['Histeroscopia', 'Colposcopia', 'Laparoscopia', 'Mamografia'], 'Polipectomia histeroscópica.');
+QQ('go', 'Exame que diagnostica e trata o pólipo endometrial:', ['Histeroscopia', 'Colposcopia', 'Laparoscopia diagnóstica', 'Mamografia'], 'Polipectomia histeroscópica.');
 // CM
 QQ('cm', 'No CURB-65, o "C" significa:', ['Confusão mental', 'Creatinina', 'Cianose central', 'Cefaleia'], 'Confusão, Ureia, FR, PA, idade ≥65.');
 QQ('cm', 'CD4 que indica profilaxia para pneumocistose:', ['Abaixo de 200 células/mm³', 'Abaixo de 500 células/mm³', 'Abaixo de 1.000 células/mm³', 'Acima de 350 células/mm³'], 'Sulfametoxazol-trimetoprima.');
-QQ('cm', 'ECG clássico da cardiopatia chagásica:', ['BRD + bloqueio divisional anterossuperior', 'Supra de ST difuso com infra de PR', 'Onda delta e PR curto', 'Onda T apiculada isolada'], 'BRD + BDAS.');
+QQ('cm', 'ECG clássico da cardiopatia chagásica:', ['BRD + BDAS', 'Supra de ST difuso com infra de PR', 'Onda delta e PR curto', 'Onda T apiculada isolada'], 'BRD + BDAS.');
 QQ('cm', 'Primeira linha farmacológica no DM2 sem contraindicação:', ['Metformina', 'Insulina NPH', 'Glibenclamida', 'Acarbose'], 'Com mudança de estilo de vida.');
 QQ('cm', 'Potássio mínimo para iniciar insulina na CAD:', ['3,3 mEq/L', '2,0 mEq/L', '5,5 mEq/L', 'Não importa'], 'Abaixo disso, repor primeiro.');
 QQ('cm', 'Bastonetes de Auer sugerem:', ['Leucemia mieloide aguda', 'Leucemia linfoide aguda', 'Linfoma de Hodgkin', 'Mieloma múltiplo'], 'Marcador da linhagem mieloide.');
 QQ('cm', 'Classe que faz parte dos 4 pilares da ICFEr:', ['Inibidor de SGLT2', 'Verapamil', 'Digoxina isolada', 'Anti-inflamatório'], 'iSGLT2 reduz mortalidade e internações.');
-QQ('cm', 'LDL ≥ 190 mg/dl sem outras causas:', ['Estatina de alta potência', 'Somente dieta por 5 anos', 'Fibrato', 'Ômega-3'], 'Hipercolesterolemia grave.');
+QQ('cm', 'LDL ≥ 190 mg/dl sem outras causas:', ['Estatina de alta potência', 'Somente dieta por 5 anos', 'Fibrato em dose plena', 'Ômega-3'], 'Hipercolesterolemia grave.');
 QQ('cm', 'Nifedipino sublingual na PA elevada:', ['Contraindicado', 'Primeira linha', 'Indicado sempre', 'Recomendado em idosos'], 'Hipotensão abrupta e isquemia.');
 QQ('cm', 'Sinal de Lasègue positivo sugere:', ['Radiculopatia lombar', 'Meningite bacteriana', 'Apendicite aguda', 'Colecistite aguda'], 'Estiramento da raiz nervosa.');
 QQ('cm', 'Inibidor de colinesterase usado na doença de Alzheimer:', ['Donepezila', 'Haloperidol', 'Levodopa', 'Clonazepam'], 'Tratamento sintomático.');
@@ -60,14 +60,14 @@ QQ('cm', 'Pneumocistose com PaO₂ < 70 mmHg: o que associar ao SMX-TMP?', ['Cor
 QQ('cir', 'Tríade de Charcot:', ['Febre, icterícia e dor em hipocôndrio direito', 'Dor, palidez e ausência de pulso', 'Hipotensão, bulhas abafadas e jugular túrgida', 'Cefaleia, vômitos e papiledema'], 'Colangite aguda.');
 QQ('cir', 'Lesão biconvexa (em lente) na TC de crânio:', ['Hematoma extradural', 'Hematoma subdural', 'Hemorragia subaracnóidea', 'Contusão'], 'Geralmente arterial.');
 QQ('cir', 'Coleção em crescente (côncavo-convexa) na TC:', ['Hematoma subdural', 'Hematoma extradural', 'AVC isquêmico', 'Abscesso'], 'Veias pontes.');
-QQ('cir', 'Vesícula palpável e indolor com icterícia sugere:', ['Neoplasia periampular', 'Colecistite aguda', 'Hepatite A', 'Cólica biliar'], 'Sinal de Courvoisier-Terrier.');
-QQ('cir', 'Cirurgia para tumor ressecável de cabeça de pâncreas:', ['Duodenopancreatectomia', 'Colecistectomia', 'Gastrectomia total', 'Esplenectomia isolada'], 'Cirurgia de Whipple.');
+QQ('cir', 'Vesícula palpável e indolor com icterícia sugere:', ['Neoplasia periampular', 'Colecistite aguda calculosa', 'Hepatite A', 'Cólica biliar'], 'Sinal de Courvoisier-Terrier.');
+QQ('cir', 'Cirurgia para tumor ressecável de cabeça de pâncreas:', ['Duodenopancreatectomia', 'Colecistectomia', 'Gastrectomia total', 'Esplenectomia com pancreatectomia distal'], 'Cirurgia de Whipple.');
 QQ('cir', 'Pneumotórax hipertensivo: conduta imediata?', ['Descompressão torácica', 'Raio-X de tórax primeiro', 'TC de tórax urgente', 'Observação e oxigênio'], 'Diagnóstico clínico.');
-QQ('cir', 'Momentos do checklist de Cirurgia Segura (OMS):', ['Antes da indução, antes da incisão e antes de sair da sala', 'Só antes da incisão, com a equipe completa', 'Só ao final da cirurgia, antes do curativo', 'Na admissão hospitalar, na indução anestésica e na alta'], 'Sign in, time out e sign out.');
+QQ('cir', 'Momentos do checklist de Cirurgia Segura (OMS):', ['Antes da indução, da incisão e da saída da sala', 'Só antes da incisão, com a equipe completa', 'Só ao final da cirurgia, antes do curativo', 'Na admissão hospitalar, na indução anestésica e na alta'], 'Sign in, time out e sign out.');
 QQ('cir', 'Cálculo ureteral obstrutivo com infecção:', ['Desobstrução urgente (duplo J ou nefrostomia)', 'Analgesia, antibiótico oral e alta', 'Ureteroscopia com litotripsia imediata, sem drenar', 'Aguardar a eliminação espontânea'], 'Rim infectado e obstruído precisa ser drenado.');
 QQ('cir', 'Índice tornozelo-braquial < 0,4 com dor em repouso:', ['Isquemia crítica', 'Normal', 'Insuficiência venosa', 'Claudicação leve'], 'Membro ameaçado.');
-QQ('cir', 'Cirurgia de Hartmann:', ['Ressecção com colostomia terminal e coto retal fechado', 'Colectomia total com anastomose ileorretal', 'Apendicectomia com drenagem da cavidade', 'Gastroenteroanastomose em Y de Roux'], 'Opção segura na urgência.');
-QQ('cir', 'Paciente instável, FAST positivo, não respondedor:', ['Laparotomia de urgência', 'Tomografia de abdome', 'Observação', 'Laparoscopia eletiva'], 'TC só em estáveis.');
+QQ('cir', 'Cirurgia de Hartmann:', ['Ressecção com colostomia terminal e coto retal fechado', 'Colectomia total com anastomose ileorretal', 'Apendicectomia com drenagem da cavidade', 'Gastroenteroanastomose em Y de Roux com vagotomia'], 'Opção segura na urgência.');
+QQ('cir', 'Paciente instável, FAST positivo, não respondedor:', ['Laparotomia de urgência', 'Tomografia de abdome com contraste', 'Observação em UTI', 'Laparoscopia eletiva'], 'TC só em estáveis.');
 QQ('cir', 'Pancreatite biliar leve: quando retirar a vesícula?', ['Na mesma internação', 'Somente após nova crise', 'Nunca', 'Após 1 ano'], 'Reduz recorrência.');
 
 /* ---------- Triagens (ordenar por prioridade: 1 = mais urgente) ---------- */
