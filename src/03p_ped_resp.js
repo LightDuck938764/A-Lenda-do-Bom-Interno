@@ -219,6 +219,7 @@ CASO({ id: 'pr_oma_lactente', area: 'ped', dif: 1, tema: 'Otite média aguda', c
   ant: 'Nascida a termo. Vacinas em dia. Não frequenta creche. Nunca usou antibiótico.',
   ef: 'Bom estado geral, hidratada. Otoscopia: membranas timpânicas hiperemiadas, opacas e abauladas bilateralmente, sem otorreia. Ausculta pulmonar normal.',
   sv: 'T 38,6 °C · FC 140 bpm',
+  img: [{ f: 'foto_otoscopia_oma.jpg', t: 'Otoscopia' }],
   pista: 'Idade abaixo de 2 anos e acometimento bilateral.',
   dx: ['Otite média aguda bilateral', 'Otite média com efusão (secretora)', 'Otite externa aguda', 'Miringite viral sem efusão'],
   edx: 'O abaulamento da membrana timpânica é o achado mais específico de otite média aguda; somado a febre e otalgia de início agudo, confirma o diagnóstico. Hiperemia isolada não basta.',

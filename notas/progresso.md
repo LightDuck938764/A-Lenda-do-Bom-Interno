@@ -80,7 +80,7 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 
 ## Imagens da internet
 - Rodada 1 (Wikimedia): 16 aprovadas e já no jogo/site (registro em notas/imagens.md). Página: https://claude.ai/artifact/9GwHC4Bu1sXqYGsQLZiB68
-- Rodada 2 (PMC + Commons, só CC BY/CC BY-SA/CC0/domínio público): 9 candidatas aguardando o usuário. Página: https://claude.ai/artifact/HAENbTvCaEimb4JhacaKzX (db coleção `decisoes`, doc id r2_*). Lista em notas/candidatas/cands_r2.json; arquivos em scratchpad/r2/aprova/img.
+- Rodada 2 (PMC + Commons, só CC BY/CC BY-SA/CC0/domínio público): 8 aprovadas e no jogo (bateria, atresia de esôfago, HNF com TC acrescentada ao exame, hemangioma, onfalocele, Kawasaki, escarlatina, gastrosquise em ilustração). OMA recusada; o usuário mandou outra otoscopia, que entrou em pr_oma_lactente. Página: https://claude.ai/artifact/HAENbTvCaEimb4JhacaKzX (db coleção `decisoes`, doc id r2_*). Lista em notas/candidatas/cands_r2.json; arquivos em scratchpad/r2/aprova/img.
   - Ajuste combinado se aprovar r2_hnf: acrescentar TC trifásica ao exame de cx_hnf antes da RM.
 - Descartadas na rodada 2: WPW (o artigo mostra FA SEM pré-excitação), gengivoestomatite (adulto jovem), Mycoplasma (consolidação lobar, caso é intersticial), PAC/derrame/empiema (lado/lobo diferentes do caso ou paciente adulto), TTRN (RX do 5º dia, inespecífico).
 - Ainda sem imagem aberta: TTRN, Mycoplasma intersticial, PAC lobo inferior direito em pré-escolar, derrame/empiema à esquerda, hematoma cerebelar, FA pré-excitada (WPW), gengivoestomatite em criança pequena.
