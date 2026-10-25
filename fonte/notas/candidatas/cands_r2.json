@@ -1,0 +1,112 @@
+[
+ {
+  "id": "r2_bateria",
+  "caso_id": "pa_bateria_esofago",
+  "area": "Pediatria",
+  "caso": "Ingestão de bateria em disco impactada no esôfago",
+  "mostra": "Radiografia frontal e lateral: bateria em disco no esôfago proximal (duplo contorno)",
+  "lic": "CC BY 4.0",
+  "autor": "Amodio J. et al.",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12731419/",
+  "fonte": "ver artigo (PMC)",
+  "file": "img/r2_bateria.jpg"
+ },
+ {
+  "id": "r2_atresia",
+  "caso_id": "pq_atresia_esofago",
+  "area": "Neonatologia",
+  "caso": "Atresia de esôfago com fístula distal",
+  "mostra": "Radiografia de tórax: sonda orogástrica enrolada no coto esofágico superior (recorte só do tórax)",
+  "lic": "CC BY 4.0",
+  "autor": "Jung E. et al.",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10514492/",
+  "fonte": "ver artigo (PMC)",
+  "file": "img/r2_atresia.jpg"
+ },
+ {
+  "id": "r2_oma",
+  "caso_id": "pr_oma_lactente",
+  "area": "Pediatria",
+  "caso": "Otite média aguda bilateral em lactente",
+  "mostra": "Otoscopia: membrana timpânica hiperemiada, opaca e abaulada (OMA)",
+  "lic": "CC BY 4.0",
+  "autor": "Lindman I. et al.",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13573547/",
+  "fonte": "ver artigo (PMC)",
+  "file": "img/r2_oma.jpg"
+ },
+ {
+  "id": "r2_hnf",
+  "caso_id": "cx_hnf",
+  "area": "Cirurgia",
+  "caso": "Hiperplasia nodular focal",
+  "mostra": "TC trifásica: lesão hipervascular homogênea na fase arterial com cicatriz central, que se iguala ao fígado nas fases tardias",
+  "lic": "CC BY 4.0",
+  "autor": "Scialpi M. et al.",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4301902/",
+  "fonte": "ver artigo (PMC)",
+  "obs": "o caso hoje cita só a RM; acrescento a TC trifásica antes da RM no exame (a RM continua igual).",
+  "file": "img/r2_hnf.jpg"
+ },
+ {
+  "id": "r2_hemangioma",
+  "caso_id": "cx_hemangioma",
+  "area": "Cirurgia",
+  "caso": "Hemangioma hepático incidental",
+  "mostra": "TC com contraste: realce periférico nodular na fase arterial (em cima) e preenchimento centrípeto na fase portal (embaixo)",
+  "lic": "CC BY-SA 4.0",
+  "autor": "Hellerhoff",
+  "page": "https://commons.wikimedia.org/wiki/File:Leberhaemangiom_in_der_Computertomografie_81W_-_CT_axial_KM_arteriell_und_portalvenoes_-_001.jpg",
+  "fonte": "ver na Commons",
+  "file": "img/r2_hemangioma.jpg"
+ },
+ {
+  "id": "r2_onfalocele",
+  "caso_id": "pq_onfalocele",
+  "area": "Cirurgia pediátrica",
+  "caso": "Onfalocele",
+  "mostra": "Recém-nascido com onfalocele: vísceras (fígado e alças) cobertas por membrana, cordão inserido no saco",
+  "lic": "CC BY 4.0",
+  "autor": "Misticoni F. et al.",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13041776/",
+  "fonte": "ver artigo (PMC)",
+  "file": "img/r2_onfalocele.jpg"
+ },
+ {
+  "id": "r2_kawasaki",
+  "caso_id": "px_kawasaki",
+  "area": "Pediatria",
+  "caso": "Doença de Kawasaki",
+  "mostra": "Lábios vermelhos e fissurados com língua em framboesa (Kawasaki)",
+  "lic": "CC BY 2.0",
+  "autor": "Dong Soo Kim (derivado por Natr)",
+  "page": "https://commons.wikimedia.org/wiki/File:Kawasaki_symptoms_B.jpg",
+  "fonte": "ver na Commons",
+  "file": "img/r2_kawasaki.jpg"
+ },
+ {
+  "id": "r2_escarlatina",
+  "caso_id": "px_escarlatina",
+  "area": "Pediatria",
+  "caso": "Escarlatina",
+  "mostra": "Exantema em lixa no dorso (A) e língua em framboesa (B) em criança de 4 anos",
+  "lic": "CC BY 4.0",
+  "autor": "Matsubara V.H. et al. (fotos: Dr. Zuzanna Ślebioda)",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10213718/",
+  "fonte": "ver artigo (PMC)",
+  "file": "img/r2_escarlatina.jpg"
+ },
+ {
+  "id": "r2_gastrosquise",
+  "caso_id": "pq_gastrosquise",
+  "area": "Cirurgia pediátrica",
+  "caso": "Gastrosquise",
+  "mostra": "Ilustração médica (não é foto): alças intestinais expostas, sem membrana, à direita do cordão",
+  "lic": "Domínio público",
+  "autor": "CDC (EUA)",
+  "page": "https://commons.wikimedia.org/wiki/File:Gastroschisis-web.jpg",
+  "fonte": "ver na Commons",
+  "obs": "é um desenho do CDC, não uma foto; não achei foto com licença aberta que baixasse. Se preferir só foto, recuse.",
+  "file": "img/r2_gastrosquise.jpg"
+ }
+]
