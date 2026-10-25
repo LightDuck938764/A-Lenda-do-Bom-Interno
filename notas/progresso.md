@@ -78,9 +78,11 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 - PREV é quase todo teoria (SUS, epidemiologia, vigilância, trabalho, ética): entrou como perguntas rápidas dos recém-formados da UBS (QD), não como casos. Novo arquivo src/06d_data_ubs_prev.js (63 perguntas: Yasser — RR, NNT/NNH, OR, imunidade coletiva, letalidade, transição, VPP; Camila — notificação, surtos, endemia, fases de ensaio, ITT, confundimento, vieses, rastreamento, prevenção quaternária, cuidados inversos; Renan — CAT, material biológico, chumbo, asma ocupacional, organofosforado, níquel, PAIR, LER/DORT, sigilo, atestados, publicidade, adolescente, DO de morte violenta, recusa terapêutica; Bianca — Conselhos/8.142, CIB/CIT, LC 141, complementar, equidade, regionalização, RAS, CAPS III, matriciamento, PTS, PNH, Ouvidoria, atributos de Starfield, acesso, telessaúde).
 - Perguntas rápidas (QQ/QD) também tinham a correta como a mais longa em 43%: rebalanceadas para ~10% com tools/quick_opcoes.py (JSON {"início da pergunta": [correta, ...]}; só mexe em linhas QQ(/QD().
 
-## Imagens da internet aguardando aprovação
-- Página de aprovação (artifact privado "Imagens para Aprovar", db coleção `decisoes`, doc id = id da candidata, campos status ok/no e nota): https://claude.ai/artifact/9GwHC4Bu1sXqYGsQLZiB68
-- 16 candidatas da Wikimedia Commons (lista com caso, licença e autor em notas/candidatas/cands.json; arquivos em scratchpad/aprova/img). Só importar as aprovadas (tools/img_banco.py adaptado ou cópia + registro em notas/imagens.md com licença/autor) e adicionar img: [...] ao caso.
-- Descartadas por não corresponderem ao caso: bateria (no estômago), gengivoestomatite (adolescente com aparelho), HNF (USG, não TC), escarlatina (pouco visível).
-- Faltam (Wikimedia limitou downloads com erro 429): Kawasaki, gastrosquise, onfalocele, hematoma cerebelar, hemangioma, TTRN, Mycoplasma, atresia de esôfago, WPW com FA, OMA. Tentar de novo devagar.
-- Partogramas de período pélvico prolongado e parto precipitado: Commons não tem; bvsms.saude.gov.br continua bloqueado (403). Depende de o usuário anexar.
+## Imagens da internet
+- Rodada 1 (Wikimedia): 16 aprovadas e já no jogo/site (registro em notas/imagens.md). Página: https://claude.ai/artifact/9GwHC4Bu1sXqYGsQLZiB68
+- Rodada 2 (PMC + Commons, só CC BY/CC BY-SA/CC0/domínio público): 9 candidatas aguardando o usuário. Página: https://claude.ai/artifact/HAENbTvCaEimb4JhacaKzX (db coleção `decisoes`, doc id r2_*). Lista em notas/candidatas/cands_r2.json; arquivos em scratchpad/r2/aprova/img.
+  - Ajuste combinado se aprovar r2_hnf: acrescentar TC trifásica ao exame de cx_hnf antes da RM.
+- Descartadas na rodada 2: WPW (o artigo mostra FA SEM pré-excitação), gengivoestomatite (adulto jovem), Mycoplasma (consolidação lobar, caso é intersticial), PAC/derrame/empiema (lado/lobo diferentes do caso ou paciente adulto), TTRN (RX do 5º dia, inespecífico).
+- Ainda sem imagem aberta: TTRN, Mycoplasma intersticial, PAC lobo inferior direito em pré-escolar, derrame/empiema à esquerda, hematoma cerebelar, FA pré-excitada (WPW), gengivoestomatite em criança pequena.
+- Domínios ainda bloqueados (403): phil.cdc.gov, openi.nlm.nih.gov, ebi.ac.uk/europepmc, zenodo, openverse, radiopaedia, dermnet, arca.fiocruz.br; bvsms.saude.gov.br dá 503. upload.wikimedia.org responde 429 (limite) na maior parte das vezes.
+- Partogramas de período pélvico prolongado e parto precipitado: sem fonte aberta; depende de o usuário anexar.
