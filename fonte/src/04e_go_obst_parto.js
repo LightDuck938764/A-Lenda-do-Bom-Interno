@@ -3,8 +3,8 @@
    Centro obstétrico (local 'obst'). Partogramas e cardiotocografias do
    banco de questões (GO1, GO3, GO5). Diretriz Nacional de Assistência ao
    Parto Normal (2022), Manual de Gestação de Alto Risco (MS, 2022).
-   Período pélvico prolongado e parto precipitado aguardam partograma
-   aprovado pelo usuário.
+   Partogramas de período pélvico prolongado e parto precipitado: manual
+   do MS "Parto, aborto e puerpério" (imagens enviadas pelo usuário).
    ===================================================================== */
 
 CASO({ id: 'op_diag_gravidez', area: 'go', local: 'obst', dif: 2, tema: 'Diagnóstico de gravidez', cond: 'Datação da gestação com DUM incerta', tags: ['obst', 'usg'],
@@ -131,6 +131,34 @@ CASO({ id: 'op_parada_descida', area: 'go', local: 'obst', dif: 3, tema: 'Distoc
   edx: 'Parada secundária da descida: dilatação completa e apresentação no mesmo plano em dois toques com 1 h de intervalo. Com apresentação alta (acima do plano 0) e sinais de desproporção, a causa é desproporção cefalopélvica.',
   cd: ['Cesariana', 'Fórcipe de alívio no plano -1', 'Aumentar a ocitocina e aguardar', 'Manobra de Kristeller'],
   ecd: 'Desproporção com apresentação alta: cesárea. Fórcipe ou vácuo só com apresentação insinuada e baixa (plano +2 ou abaixo), variedade conhecida e sem desproporção.' });
+
+CASO({ id: 'op_periodo_pelvico', area: 'go', local: 'obst', dif: 3, tema: 'Distocias', cond: 'Período pélvico prolongado', tags: ['obst'],
+  pac: { nome: 'Daniela Furtado', idade: 23, sexo: 'F', tipo: 'gestante' },
+  qp: 'Dilatação completa há 3 horas e o bebê ainda não nasceu.',
+  hda: 'Primigesta, 40 semanas, risco habitual. Internada com 5 cm e apresentação alta e móvel. Amniotomia na 5ª hora, líquido claro. Dilatação completa na 7ª hora, com a cabeça no plano -1; iniciada ocitocina. Na 9ª hora, cabeça no plano +1.',
+  ant: 'Sem comorbidades. Altura uterina 33 cm, peso fetal estimado 3.300 g.',
+  ef: '10ª hora. Dilatação completa, cabeça no plano +3 de De Lee, variedade occipitopúbica, sem bossa ou cavalgamento. Dinâmica com ocitocina: 4 contrações de mais de 40 s em 10 min. BCF 118 bpm (era 125-140).',
+  sv: 'PA 120 x 80 mmHg · FC 90 bpm · T 36,8 °C',
+  img: [{ f: 'partograma_periodo_pelvico.jpg', t: 'Partograma' }],
+  pista: 'Dilatação completa há 3 h; a cabeça desce, mas devagar, e já está baixa.',
+  dx: ['Período pélvico prolongado', 'Parada secundária da descida', 'Fase ativa prolongada', 'Parada secundária da dilatação'],
+  edx: 'No partograma, a dilatação ficou completa na 7ª hora, mas a cabeça levou 3 horas para descer do plano -1 ao +3: descida progressiva, porém lenta, é período pélvico prolongado. Difere da parada secundária da descida, em que a altura não muda em dois toques com 1 h de intervalo. A causa mais comum é a contratilidade deficiente, corrigida com ocitocina.',
+  cd: ['Fórcipe de alívio ou vácuo', 'Cesárea por desproporção cefalopélvica', 'Manobra de Kristeller', 'Suspender a ocitocina e aguardar'],
+  ecd: 'Com a contratilidade já corrigida, cabeça baixa (+3) em variedade anterior, expulsivo prolongado e BCF começando a cair, abrevia-se o parto com fórcipe de alívio ou vácuo-extrator. Cesárea fica para apresentação alta ou sinais de desproporção. Kristeller é proscrita.' });
+
+CASO({ id: 'op_parto_precipitado', area: 'go', local: 'obst', dif: 2, tema: 'Distocias', cond: 'Parto precipitado com sangramento por laceração', tags: ['obst'],
+  pac: { nome: 'Rosana Teles', idade: 31, sexo: 'F', tipo: 'gestante' },
+  qp: 'O bebê nasceu muito rápido e agora ela está sangrando.',
+  hda: 'Terceira gestação, dois partos normais, 39 semanas. Chegou com 3 cm e contrações muito fortes. Uma hora depois, 6 cm; na hora seguinte, dilatação completa e bolsa rota com líquido claro. Parto vaginal 15 minutos depois, sem ocitocina. Recém-nascido com Apgar 8/9.',
+  ant: 'Sem comorbidades. Pré-natal sem intercorrências.',
+  ef: 'Dequitação completa há 10 min. Útero contraído, na altura da cicatriz umbilical. Sangramento vaginal vermelho vivo, contínuo, apesar do útero firme.',
+  sv: 'PA 120 x 78 mmHg · FC 98 bpm',
+  img: [{ f: 'partograma_parto_precipitado.jpg', t: 'Partograma' }],
+  pista: 'De 3 a 10 cm em cerca de 2 h, com contrações longas e frequentes; útero firme, mas sangra.',
+  dx: ['Parto precipitado', 'Fase ativa prolongada', 'Período pélvico prolongado', 'Parada secundária da descida'],
+  edx: 'Parto precipitado (taquitócico): dilatação, descida e expulsão em 4 h ou menos. No partograma, a dilatação vai de 3 a 10 cm em cerca de 2 h, bem à esquerda da linha de alerta, com 4 a 5 contrações de mais de 40 s em 10 min. É mais comum em multíparas. Riscos: lacerações do canal de parto, atonia uterina e hipóxia fetal.',
+  cd: ['Revisão do canal de parto', 'Massagem uterina e ocitocina', 'Curetagem uterina', 'Observar por 1 hora'],
+  ecd: 'Sangramento com útero contraído após parto precipitado sugere laceração: revisar colo, vagina e períneo com boa exposição e suturar. Manter vigilância de atonia (o útero pode relaxar depois da taquissistolia) e examinar o recém-nascido, pelo risco de trauma e hipóxia.' });
 
 /* ---------- Vitalidade fetal e situações especiais ---------- */
 CASO({ id: 'op_taquicardia_fetal', area: 'go', local: 'obst', dif: 3, tema: 'Vitalidade fetal', cond: 'Taquicardia fetal intraparto após rotura prolongada de membranas', tags: ['obst', 'cardio'],

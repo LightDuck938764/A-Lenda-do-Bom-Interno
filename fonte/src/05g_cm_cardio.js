@@ -239,7 +239,7 @@ CASO({ id: 'cc_tosse_ieca', area: 'cm', ala: 'cardio', dif: 1, tema: 'Hipertens�
   ecd: 'Os BRA não aumentam a bradicinina e raramente causam tosse. A tosse desaparece em 1 a 4 semanas (às vezes até 3 meses) após suspender o iECA. Angioedema também é efeito da bradicinina e contraindica o iECA.' });
 
 /* ---------- Fibrilação atrial (ambulatorial) ---------- */
-CASO({ id: 'cc_fa_anticoag', area: 'cm', ala: 'cardio', dif: 2, tema: 'Arritmias', cond: 'Fibrilação atrial: anticoagulação pelo CHA₂DS₂-VASc', tags: ['cardio'],
+CASO({ id: 'cc_fa_anticoag', area: 'cm', ala: 'cardio', dif: 2, tema: 'Arritmias', cond: 'Fibrilação atrial: anticoagulação pelo CHA₂DS₂-VASc', tags: ['cardio', 'ecg'],
   pac: { nome: 'Agenor Batista', idade: 76, sexo: 'M', tipo: 'idoso' },
   qp: 'Descobriu "coração batendo descompassado" na consulta.',
   hda: 'Assintomático. ECG com fibrilação atrial, frequência de 84 bpm. Sem valvopatia mitral moderada ou grave, sem prótese.',
@@ -247,8 +247,9 @@ CASO({ id: 'cc_fa_anticoag', area: 'cm', ala: 'cardio', dif: 2, tema: 'Arritmias
   ef: 'Ritmo irregular, sem sopros.',
   sv: 'PA 134 x 82 mmHg · FC 84 bpm',
   lab: [['TFGe', '58 mL/min', ''], ['Hemoglobina', '13,8 g/dL', '']],
+  img: [{ f: 'ecg_fa_resposta_controlada.jpg', t: 'Eletrocardiograma' }],
   pista: 'Calcule o escore: idade, hipertensão, diabetes.',
-  dx: ['FA com alto risco embólico', 'FA de baixo risco', 'Flutter atrial', 'Extrassístoles atriais'],
+  dx: ['FA com alto risco embólico', 'FA de baixo risco embólico', 'Flutter atrial com bloqueio variável', 'Taquicardia atrial multifocal'],
   edx: 'CHA₂DS₂-VASc: IC (1), hipertensão (1), idade ≥ 75 (2), diabetes (1), AVC/AIT (2), doença vascular (1), idade 65-74 (1), sexo feminino (1). Aqui: hipertensão 1 + idade 2 + diabetes 1 = 4.',
-  cd: ['Anticoagulante oral direto', 'AAS 100 mg ao dia', 'Nenhuma profilaxia', 'Clopidogrel com AAS'],
+  cd: ['Anticoagulante oral direto', 'AAS 100 mg ao dia', 'Nenhuma profilaxia antitrombótica', 'Clopidogrel associado ao AAS'],
   ecd: 'Anticoagular homens com escore ≥ 2 e mulheres com ≥ 3 (considerar com 1 e 2, respectivamente). Anticoagulantes diretos (apixabana, rivaroxabana, dabigatrana, edoxabana) são preferidos à varfarina, exceto em estenose mitral moderada/grave e prótese mecânica. AAS não é alternativa. Avaliar risco de sangramento (HAS-BLED) para corrigir fatores, não para negar anticoagulação.' });

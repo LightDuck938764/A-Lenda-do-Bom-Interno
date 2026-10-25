@@ -4879,8 +4879,8 @@ CASO({ id: 'gm_endometrio', area: 'go', local: 'gineco', dif: 2, tema: 'Câncer 
    Centro obstétrico (local 'obst'). Partogramas e cardiotocografias do
    banco de questões (GO1, GO3, GO5). Diretriz Nacional de Assistência ao
    Parto Normal (2022), Manual de Gestação de Alto Risco (MS, 2022).
-   Período pélvico prolongado e parto precipitado aguardam partograma
-   aprovado pelo usuário.
+   Partogramas de período pélvico prolongado e parto precipitado: manual
+   do MS "Parto, aborto e puerpério" (imagens enviadas pelo usuário).
    ===================================================================== */
 
 CASO({ id: 'op_diag_gravidez', area: 'go', local: 'obst', dif: 2, tema: 'Diagnóstico de gravidez', cond: 'Datação da gestação com DUM incerta', tags: ['obst', 'usg'],
@@ -5007,6 +5007,34 @@ CASO({ id: 'op_parada_descida', area: 'go', local: 'obst', dif: 3, tema: 'Distoc
   edx: 'Parada secundária da descida: dilatação completa e apresentação no mesmo plano em dois toques com 1 h de intervalo. Com apresentação alta (acima do plano 0) e sinais de desproporção, a causa é desproporção cefalopélvica.',
   cd: ['Cesariana', 'Fórcipe de alívio no plano -1', 'Aumentar a ocitocina e aguardar', 'Manobra de Kristeller'],
   ecd: 'Desproporção com apresentação alta: cesárea. Fórcipe ou vácuo só com apresentação insinuada e baixa (plano +2 ou abaixo), variedade conhecida e sem desproporção.' });
+
+CASO({ id: 'op_periodo_pelvico', area: 'go', local: 'obst', dif: 3, tema: 'Distocias', cond: 'Período pélvico prolongado', tags: ['obst'],
+  pac: { nome: 'Daniela Furtado', idade: 23, sexo: 'F', tipo: 'gestante' },
+  qp: 'Dilatação completa há 3 horas e o bebê ainda não nasceu.',
+  hda: 'Primigesta, 40 semanas, risco habitual. Internada com 5 cm e apresentação alta e móvel. Amniotomia na 5ª hora, líquido claro. Dilatação completa na 7ª hora, com a cabeça no plano -1; iniciada ocitocina. Na 9ª hora, cabeça no plano +1.',
+  ant: 'Sem comorbidades. Altura uterina 33 cm, peso fetal estimado 3.300 g.',
+  ef: '10ª hora. Dilatação completa, cabeça no plano +3 de De Lee, variedade occipitopúbica, sem bossa ou cavalgamento. Dinâmica com ocitocina: 4 contrações de mais de 40 s em 10 min. BCF 118 bpm (era 125-140).',
+  sv: 'PA 120 x 80 mmHg · FC 90 bpm · T 36,8 °C',
+  img: [{ f: 'partograma_periodo_pelvico.jpg', t: 'Partograma' }],
+  pista: 'Dilatação completa há 3 h; a cabeça desce, mas devagar, e já está baixa.',
+  dx: ['Período pélvico prolongado', 'Parada secundária da descida', 'Fase ativa prolongada', 'Parada secundária da dilatação'],
+  edx: 'No partograma, a dilatação ficou completa na 7ª hora, mas a cabeça levou 3 horas para descer do plano -1 ao +3: descida progressiva, porém lenta, é período pélvico prolongado. Difere da parada secundária da descida, em que a altura não muda em dois toques com 1 h de intervalo. A causa mais comum é a contratilidade deficiente, corrigida com ocitocina.',
+  cd: ['Fórcipe de alívio ou vácuo', 'Cesárea por desproporção cefalopélvica', 'Manobra de Kristeller', 'Suspender a ocitocina e aguardar'],
+  ecd: 'Com a contratilidade já corrigida, cabeça baixa (+3) em variedade anterior, expulsivo prolongado e BCF começando a cair, abrevia-se o parto com fórcipe de alívio ou vácuo-extrator. Cesárea fica para apresentação alta ou sinais de desproporção. Kristeller é proscrita.' });
+
+CASO({ id: 'op_parto_precipitado', area: 'go', local: 'obst', dif: 2, tema: 'Distocias', cond: 'Parto precipitado com sangramento por laceração', tags: ['obst'],
+  pac: { nome: 'Rosana Teles', idade: 31, sexo: 'F', tipo: 'gestante' },
+  qp: 'O bebê nasceu muito rápido e agora ela está sangrando.',
+  hda: 'Terceira gestação, dois partos normais, 39 semanas. Chegou com 3 cm e contrações muito fortes. Uma hora depois, 6 cm; na hora seguinte, dilatação completa e bolsa rota com líquido claro. Parto vaginal 15 minutos depois, sem ocitocina. Recém-nascido com Apgar 8/9.',
+  ant: 'Sem comorbidades. Pré-natal sem intercorrências.',
+  ef: 'Dequitação completa há 10 min. Útero contraído, na altura da cicatriz umbilical. Sangramento vaginal vermelho vivo, contínuo, apesar do útero firme.',
+  sv: 'PA 120 x 78 mmHg · FC 98 bpm',
+  img: [{ f: 'partograma_parto_precipitado.jpg', t: 'Partograma' }],
+  pista: 'De 3 a 10 cm em cerca de 2 h, com contrações longas e frequentes; útero firme, mas sangra.',
+  dx: ['Parto precipitado', 'Fase ativa prolongada', 'Período pélvico prolongado', 'Parada secundária da descida'],
+  edx: 'Parto precipitado (taquitócico): dilatação, descida e expulsão em 4 h ou menos. No partograma, a dilatação vai de 3 a 10 cm em cerca de 2 h, bem à esquerda da linha de alerta, com 4 a 5 contrações de mais de 40 s em 10 min. É mais comum em multíparas. Riscos: lacerações do canal de parto, atonia uterina e hipóxia fetal.',
+  cd: ['Revisão do canal de parto', 'Massagem uterina e ocitocina', 'Curetagem uterina', 'Observar por 1 hora'],
+  ecd: 'Sangramento com útero contraído após parto precipitado sugere laceração: revisar colo, vagina e períneo com boa exposição e suturar. Manter vigilância de atonia (o útero pode relaxar depois da taquissistolia) e examinar o recém-nascido, pelo risco de trauma e hipóxia.' });
 
 /* ---------- Vitalidade fetal e situações especiais ---------- */
 CASO({ id: 'op_taquicardia_fetal', area: 'go', local: 'obst', dif: 3, tema: 'Vitalidade fetal', cond: 'Taquicardia fetal intraparto após rotura prolongada de membranas', tags: ['obst', 'cardio'],
@@ -8038,7 +8066,7 @@ CASO({ id: 'cc_tosse_ieca', area: 'cm', ala: 'cardio', dif: 1, tema: 'Hipertens�
   ecd: 'Os BRA não aumentam a bradicinina e raramente causam tosse. A tosse desaparece em 1 a 4 semanas (às vezes até 3 meses) após suspender o iECA. Angioedema também é efeito da bradicinina e contraindica o iECA.' });
 
 /* ---------- Fibrilação atrial (ambulatorial) ---------- */
-CASO({ id: 'cc_fa_anticoag', area: 'cm', ala: 'cardio', dif: 2, tema: 'Arritmias', cond: 'Fibrilação atrial: anticoagulação pelo CHA₂DS₂-VASc', tags: ['cardio'],
+CASO({ id: 'cc_fa_anticoag', area: 'cm', ala: 'cardio', dif: 2, tema: 'Arritmias', cond: 'Fibrilação atrial: anticoagulação pelo CHA₂DS₂-VASc', tags: ['cardio', 'ecg'],
   pac: { nome: 'Agenor Batista', idade: 76, sexo: 'M', tipo: 'idoso' },
   qp: 'Descobriu "coração batendo descompassado" na consulta.',
   hda: 'Assintomático. ECG com fibrilação atrial, frequência de 84 bpm. Sem valvopatia mitral moderada ou grave, sem prótese.',
@@ -8046,10 +8074,11 @@ CASO({ id: 'cc_fa_anticoag', area: 'cm', ala: 'cardio', dif: 2, tema: 'Arritmias
   ef: 'Ritmo irregular, sem sopros.',
   sv: 'PA 134 x 82 mmHg · FC 84 bpm',
   lab: [['TFGe', '58 mL/min', ''], ['Hemoglobina', '13,8 g/dL', '']],
+  img: [{ f: 'ecg_fa_resposta_controlada.jpg', t: 'Eletrocardiograma' }],
   pista: 'Calcule o escore: idade, hipertensão, diabetes.',
-  dx: ['FA com alto risco embólico', 'FA de baixo risco', 'Flutter atrial', 'Extrassístoles atriais'],
+  dx: ['FA com alto risco embólico', 'FA de baixo risco embólico', 'Flutter atrial com bloqueio variável', 'Taquicardia atrial multifocal'],
   edx: 'CHA₂DS₂-VASc: IC (1), hipertensão (1), idade ≥ 75 (2), diabetes (1), AVC/AIT (2), doença vascular (1), idade 65-74 (1), sexo feminino (1). Aqui: hipertensão 1 + idade 2 + diabetes 1 = 4.',
-  cd: ['Anticoagulante oral direto', 'AAS 100 mg ao dia', 'Nenhuma profilaxia', 'Clopidogrel com AAS'],
+  cd: ['Anticoagulante oral direto', 'AAS 100 mg ao dia', 'Nenhuma profilaxia antitrombótica', 'Clopidogrel associado ao AAS'],
   ecd: 'Anticoagular homens com escore ≥ 2 e mulheres com ≥ 3 (considerar com 1 e 2, respectivamente). Anticoagulantes diretos (apixabana, rivaroxabana, dabigatrana, edoxabana) são preferidos à varfarina, exceto em estenose mitral moderada/grave e prótese mecânica. AAS não é alternativa. Avaliar risco de sangramento (HAS-BLED) para corrigir fatores, não para negar anticoagulação.' });
 
 /* =====================================================================
@@ -10324,7 +10353,7 @@ CASO({ id: 'ue_mobitz2', area: 'upa', dif: 3, tema: 'Arritmias', cond: 'BAV de 2
   cd: ['Marca-passo definitivo', 'Suspender o carvedilol e reavaliar em 6 meses', 'Atropina e Holter ambulatorial', 'Propafenona e anticoagulante'],
   ecd: 'Mobitz II e BAV total sintomáticos (ou Mobitz II mesmo assintomático, por risco de progressão) têm indicação de marca-passo definitivo, sem esperar retirar drogas quando a doença do sistema de condução é a causa. Até lá, monitorização e marca-passo transcutâneo disponível.' });
 
-CASO({ id: 'ue_bavt_chagas', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'BAV total chagásico com síncope', tags: ['cardio', 'infecto', 'infec'],
+CASO({ id: 'ue_bavt_chagas', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'BAV total chagásico com síncope', tags: ['cardio', 'infecto', 'infec', 'ecg'],
   pac: { nome: 'Sebastião Dornelas', idade: 72, sexo: 'M', tipo: 'idoso' },
   qp: 'Desmaiou na roça.',
   hda: 'Síncope súbita sem pródromos, recuperação rápida. Tonturas há semanas. Morou em casa de pau a pique na infância.',
@@ -10547,7 +10576,7 @@ CASO({ id: 'ue_pericardite', area: 'upa', dif: 2, tema: 'Doenças do pericárdio
   cd: ['AINE e colchicina', 'Prednisona 1 mg/kg por 3 meses', 'Anticoagulação plena com heparina', 'Angioplastia primária'],
   ecd: 'Ibuprofeno ou AAS em dose anti-inflamatória com proteção gástrica e colchicina por 3 meses (reduz recorrência). Corticoide só se contraindicação ou causas específicas (aumenta recorrência). Restringir atividade física. Sinais de mau prognóstico (febre > 38 °C, derrame volumoso, tamponamento, falha em 1 semana) indicam internação.' });
 
-CASO({ id: 'ue_tamponamento', area: 'upa', dif: 3, tema: 'Doenças do pericárdio', cond: 'Tamponamento cardíaco neoplásico', tags: ['cardio', 'choque', 'usg'],
+CASO({ id: 'ue_tamponamento', area: 'upa', dif: 3, tema: 'Doenças do pericárdio', cond: 'Tamponamento cardíaco neoplásico', tags: ['cardio', 'choque', 'usg', 'ecg'],
   pac: { nome: 'Lúcia Medeiros', idade: 54, sexo: 'F', tipo: 'adulto' },
   qp: 'Falta de ar que piorou muito hoje.',
   hda: 'Dispneia progressiva há 2 semanas, agora em repouso, com tontura. Tratou câncer de mama há 3 anos.',
