@@ -23,14 +23,14 @@ CASO({ id: 'pn_dmh', area: 'ped', dif: 2, tema: 'Distúrbios respiratórios do r
   cd: ['CPAP precoce e surfactante se FiO₂ alta', 'Furosemida e restrição hídrica', 'Antibiótico isolado e O₂ em capacete a 100%', 'Ventilação de alta frequência sem surfactante'],
   ecd: 'CPAP desde a sala de parto; surfactante se a necessidade de O₂ persistir alta (por exemplo, FiO₂ acima de 30%), por técnica minimamente invasiva ou intubação e extubação rápida. Prevenção: corticoide antenatal entre 24 e 34 semanas. A sepse precoce por estreptococo do grupo B pode ter o mesmo quadro radiológico.' });
 
-CASO({ id: 'pn_ttrn', area: 'ped', dif: 1, tema: 'Distúrbios respiratórios do recém-nascido', cond: 'Taquipneia transitória do recém-nascido', tags: ['neo', 'resp'],
+CASO({ id: 'pn_ttrn', area: 'ped', dif: 1, tema: 'Distúrbios respiratórios do recém-nascido', cond: 'Taquipneia transitória do recém-nascido', tags: ['neo', 'resp', 'img'],
   pac: { nome: 'RN de Tatiane Gouveia', idade: '4 horas de vida', sexo: 'F', tipo: 'bebe' },
   qp: 'Respiração rápida desde o nascimento.',
   hda: 'Termo, 38 semanas, cesárea eletiva sem trabalho de parto. Taquipneia com retração leve, sem piora.',
   ant: 'Mãe asmática, sem intercorrências.',
   ef: 'Taquipneia, tiragem leve, sem gemência. Bom estado geral.',
   sv: 'FR 84 irpm · SpO₂ 92% em ar ambiente · 95% com O₂ a 25%',
-  ex: 'Radiografia de tórax: hiperinsuflação, congestão peri-hilar, líquido nas cisuras, área cardíaca normal.',
+  ex: 'Radiografia de tórax: pulmões hiperinsuflados, com cúpulas diafragmáticas retificadas; estrias densas que se irradiam dos hilos (congestão vascular e linfática); cisura horizontal espessada por líquido e pequena lâmina de líquido nos seios costofrênicos; área cardíaca normal. Transparência pulmonar preservada na periferia.',
   pista: 'Cesárea eletiva sem trabalho de parto: o líquido pulmonar não foi absorvido.',
   dx: ['Taquipneia transitória', 'Doença da membrana hialina', 'Pneumonia neonatal por estreptococo B', 'Cardiopatia congênita cianótica'],
   edx: 'Retardo na reabsorção do líquido pulmonar fetal, mais comum na cesárea sem trabalho de parto. Taquipneia nas primeiras horas, com melhora em 24 a 72 horas, radiografia com congestão peri-hilar e líquido nas cisuras.',
