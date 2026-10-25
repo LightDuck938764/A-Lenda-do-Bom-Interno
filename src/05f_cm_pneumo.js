@@ -110,7 +110,7 @@ CASO({ id: 'cp_tb_pleural', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculos
   ecd: 'Tratamento clínico com o esquema básico; não precisa de drenagem. Investigar TB pulmonar associada (escarro induzido) e HIV.' });
 
 /* ---------- Pneumonia ---------- */
-CASO({ id: 'cp_pac_internacao', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Pneumonia', cond: 'Pneumonia comunitária com indicação de internação', tags: ['pneumo', 'sepse', 'infec'],
+CASO({ id: 'cp_pac_internacao', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Pneumonia', cond: 'Pneumonia comunitária com indicação de internação', tags: ['pneumo', 'sepse', 'infec', 'img'],
   pac: { nome: 'Afonso Vieira', idade: 72, sexo: 'M', tipo: 'idoso' },
   qp: 'Tosse com catarro, febre e falta de ar há 3 dias.',
   hda: 'Febre alta, tosse produtiva amarelada e dispneia. Hoje mais confuso.',
@@ -118,7 +118,7 @@ CASO({ id: 'cp_pac_internacao', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Pneumo
   ef: 'Confuso (desorientado no tempo), estertores crepitantes em base direita, broncofonia aumentada.',
   sv: 'PA 96 x 58 mmHg · FC 108 bpm · FR 31 irpm · SpO₂ 90%',
   lab: [['Ureia', '58 mg/dL', ''], ['Leucócitos', '18.000/mm³', '']],
-  ex: 'Radiografia: consolidação em lobo inferior direito com broncograma aéreo.',
+  ex: 'Radiografia: consolidação em lobo inferior direito com broncograma aéreo, borrando a cúpula diafragmática direita na incidência frontal e projetada sobre a coluna posterior no perfil (sinal da coluna); borda cardíaca direita preservada.',
   pista: 'Calcule o CURB-65.',
   dx: ['Pneumonia grave (CURB-65 = 5)', 'Pneumonia leve de tratamento ambulatorial', 'Tromboembolismo pulmonar', 'Insuficiência cardíaca descompensada'],
   edx: 'CURB-65: confusão (1), ureia > 50 mg/dL (1), FR ≥ 30 (1), PA sistólica < 90 ou diastólica ≤ 60 (1, aqui pela diastólica de 58) e idade ≥ 65 (1) = 5 pontos. Pontuação ≥ 3 indica pneumonia grave, com avaliação para UTI.',
