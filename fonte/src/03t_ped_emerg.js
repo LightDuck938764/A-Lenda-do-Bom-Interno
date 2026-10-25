@@ -165,6 +165,7 @@ CASO({ id: 'pa_bateria_esofago', area: 'ped', dif: 3, tema: 'Obstrução de vias
   ef: 'Sialorreia, sem desconforto respiratório agora, ausculta normal.',
   sv: 'SpO₂ 98%',
   ex: 'Radiografia cervical e de tórax: objeto metálico arredondado no esôfago proximal, com imagem de duplo contorno (halo) na incidência frontal.',
+  img: [{ f: 'rx_bateria_esofago.jpg', t: 'Radiografia frontal e lateral' }],
   pista: 'Duplo contorno = bateria em disco.',
   dx: ['Bateria em disco no esôfago', 'Moeda impactada no esôfago proximal', 'Corpo estranho na traqueia', 'Esofagite viral herpética'],
   edx: 'O duplo contorno (halo) diferencia a bateria em disco da moeda. A bateria gera corrente elétrica e lesão cáustica na mucosa em poucas horas.',
