@@ -85,4 +85,5 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 - Descartadas na rodada 2: WPW (o artigo mostra FA SEM pré-excitação), gengivoestomatite (adulto jovem), Mycoplasma (consolidação lobar, caso é intersticial), PAC/derrame/empiema (lado/lobo diferentes do caso ou paciente adulto), TTRN (RX do 5º dia, inespecífico).
 - Ainda sem imagem aberta: TTRN, Mycoplasma intersticial, PAC lobo inferior direito em pré-escolar, derrame/empiema à esquerda, hematoma cerebelar, FA pré-excitada (WPW), gengivoestomatite em criança pequena.
 - Domínios ainda bloqueados (403): phil.cdc.gov, openi.nlm.nih.gov, ebi.ac.uk/europepmc, zenodo, openverse, radiopaedia, dermnet, arca.fiocruz.br; bvsms.saude.gov.br dá 503. upload.wikimedia.org responde 429 (limite) na maior parte das vezes.
-- Partogramas de período pélvico prolongado e parto precipitado: sem fonte aberta; depende de o usuário anexar.
+- Partogramas de período pélvico prolongado e parto precipitado: enviados pelo usuário (manual do MS "Parto, aborto e puerpério"); casos op_periodo_pelvico e op_parto_precipitado criados. O formulário em branco do MS que ele mandou antes foi descartado a pedido dele.
+- ECG de FA com resposta controlada (enviado pelo usuário, Aprenda ECG) no caso cc_fa_anticoag. Não serve para ue_fa_wpw (QRS estreito, sem pré-excitação); WPW segue sem imagem.

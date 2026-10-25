@@ -153,7 +153,7 @@ CASO({ id: 'ue_mobitz2', area: 'upa', dif: 3, tema: 'Arritmias', cond: 'BAV de 2
   cd: ['Marca-passo definitivo', 'Suspender o carvedilol e reavaliar em 6 meses', 'Atropina e Holter ambulatorial', 'Propafenona e anticoagulante'],
   ecd: 'Mobitz II e BAV total sintomáticos (ou Mobitz II mesmo assintomático, por risco de progressão) têm indicação de marca-passo definitivo, sem esperar retirar drogas quando a doença do sistema de condução é a causa. Até lá, monitorização e marca-passo transcutâneo disponível.' });
 
-CASO({ id: 'ue_bavt_chagas', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'BAV total chagásico com síncope', tags: ['cardio', 'infecto', 'infec'],
+CASO({ id: 'ue_bavt_chagas', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'BAV total chagásico com síncope', tags: ['cardio', 'infecto', 'infec', 'ecg'],
   pac: { nome: 'Sebastião Dornelas', idade: 72, sexo: 'M', tipo: 'idoso' },
   qp: 'Desmaiou na roça.',
   hda: 'Síncope súbita sem pródromos, recuperação rápida. Tonturas há semanas. Morou em casa de pau a pique na infância.',
@@ -376,7 +376,7 @@ CASO({ id: 'ue_pericardite', area: 'upa', dif: 2, tema: 'Doenças do pericárdio
   cd: ['AINE e colchicina', 'Prednisona 1 mg/kg por 3 meses', 'Anticoagulação plena com heparina', 'Angioplastia primária'],
   ecd: 'Ibuprofeno ou AAS em dose anti-inflamatória com proteção gástrica e colchicina por 3 meses (reduz recorrência). Corticoide só se contraindicação ou causas específicas (aumenta recorrência). Restringir atividade física. Sinais de mau prognóstico (febre > 38 °C, derrame volumoso, tamponamento, falha em 1 semana) indicam internação.' });
 
-CASO({ id: 'ue_tamponamento', area: 'upa', dif: 3, tema: 'Doenças do pericárdio', cond: 'Tamponamento cardíaco neoplásico', tags: ['cardio', 'choque', 'usg'],
+CASO({ id: 'ue_tamponamento', area: 'upa', dif: 3, tema: 'Doenças do pericárdio', cond: 'Tamponamento cardíaco neoplásico', tags: ['cardio', 'choque', 'usg', 'ecg'],
   pac: { nome: 'Lúcia Medeiros', idade: 54, sexo: 'F', tipo: 'adulto' },
   qp: 'Falta de ar que piorou muito hoje.',
   hda: 'Dispneia progressiva há 2 semanas, agora em repouso, com tontura. Tratou câncer de mama há 3 anos.',
