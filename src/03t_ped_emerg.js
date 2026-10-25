@@ -147,12 +147,13 @@ CASO({ id: 'pa_corpo_estranho_bronquico', area: 'ped', dif: 2, tema: 'Obstruçã
   qp: 'Tosse há 5 dias, que começou de repente.',
   hda: 'A mãe lembra que começou a tossir muito enquanto comia amendoim no sofá. Desde então, chiado. Usou salbutamol prescrito em outra UPA, sem melhora.',
   ant: 'Nunca teve chiado antes.',
-  ef: 'Bom estado, sem febre. Murmúrio diminuído e sibilos localizados no hemitórax direito.',
+  ef: 'Bom estado, sem febre. Murmúrio diminuído e sibilos localizados no hemitórax esquerdo.',
   sv: 'FR 32 irpm · SpO₂ 95%',
-  ex: 'Radiografia de tórax em expiração: hiperinsuflação do pulmão direito com desvio do mediastino para a esquerda (aprisionamento aéreo).',
+  ex: 'Radiografia de tórax em expiração: hiperinsuflação do pulmão esquerdo com desvio do mediastino para a direita (aprisionamento aéreo).',
+  img: [{ f: 'rx_corpo_estranho_bronquico.jpg', t: 'Radiografia de tórax' }],
   pista: 'Sibilância unilateral, de início súbito, sem resposta ao broncodilatador.',
   dx: ['Corpo estranho brônquico', 'Primeira crise de asma', 'Bronquiolite viral aguda', 'Pneumonia com derrame pleural'],
-  edx: 'Engasgo com amendoim, sibilância e murmúrio diminuído unilaterais, sem resposta ao broncodilatador e aprisionamento aéreo na radiografia: corpo estranho no brônquio (mais comum à direita, porque o brônquio direito é mais vertical).',
+  edx: 'Engasgo com amendoim, sibilância e murmúrio diminuído unilaterais, sem resposta ao broncodilatador e aprisionamento aéreo na radiografia: corpo estranho no brônquio (mais comum à direita, porque o brônquio direito é mais vertical, mas pode ocorrer à esquerda, como aqui).',
   cd: ['Broncoscopia rígida para retirada', 'Corticoide oral e salbutamol por 7 dias', 'Fisioterapia respiratória e alta com retorno', 'Antibiótico e nova radiografia em 14 dias'],
   ecd: 'Radiografia normal não afasta o diagnóstico: a maioria dos objetos (alimentos) é radiotransparente. História sugestiva já indica broncoscopia, que é diagnóstica e terapêutica. Atraso aumenta pneumonias de repetição e bronquiectasias.' });
 
