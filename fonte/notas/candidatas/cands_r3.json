@@ -1,0 +1,80 @@
+[
+ {
+  "id": "r3_wpw",
+  "caso_id": "ue_fa_wpw",
+  "area": "Urgência",
+  "caso": "Fibrilação atrial pré-excitada (WPW)",
+  "mostra": "ECG de 12 derivações: taquicardia irregular, QRS largos de formas variáveis, FC até 300 bpm (FA pré-excitada)",
+  "lic": "CC BY 4.0",
+  "autor": "Silverman A. et al.",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6166305/",
+  "fonte": "ver artigo (PMC)",
+  "obs": "Opção 1 para o caso de WPW (traçado mais limpo).",
+  "file": "img/r3_wpw.jpg"
+ },
+ {
+  "id": "r3_wpw2",
+  "caso_id": "ue_fa_wpw",
+  "area": "Urgência",
+  "caso": "Fibrilação atrial pré-excitada (WPW)",
+  "mostra": "ECG de 12 derivações fotografado: taquicardia irregular de QRS largos que mudam de forma batimento a batimento (padrão \"em sanfona\")",
+  "lic": "CC BY 4.0",
+  "autor": "Diallo T.H. et al.",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10173537/",
+  "fonte": "ver artigo (PMC)",
+  "obs": "Opção 2 para o mesmo caso (foto do papel, com moldura vermelha). Aprove só uma das duas.",
+  "file": "img/r3_wpw2.jpg"
+ },
+ {
+  "id": "r3_cerebelar",
+  "caso_id": "ue_hematoma_cerebelar",
+  "area": "Urgência",
+  "caso": "Hematoma cerebelar com compressão do tronco e hidrocefalia",
+  "mostra": "TC de crânio sem contraste: hematoma hiperdenso volumoso na fossa posterior (cerebelo), recorte do painel pré-operatório",
+  "lic": "CC BY 4.0",
+  "autor": "Jalal H. et al.",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13079656/",
+  "fonte": "ver artigo (PMC)",
+  "obs": "A imagem é pequena (recorte de uma figura com 6 cortes). Não mostra os ventrículos laterais dilatados; o laudo do caso continua descrevendo a hidrocefalia.",
+  "file": "img/r3_cerebelar.jpg"
+ },
+ {
+  "id": "r3_derrame",
+  "caso_id": "pr_derrame_simples",
+  "area": "Pediatria",
+  "caso": "Pneumonia com derrame parapneumônico (menina de 4 anos)",
+  "mostra": "Radiografia de tórax de criança de 2 anos e meio: opacidade na base esquerda apagando a cúpula diafragmática, com derrame no seio costofrênico",
+  "lic": "CC BY 4.0",
+  "autor": "Diawara I. et al.",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5408360/",
+  "fonte": "ver artigo (PMC)",
+  "obs": "A original é azulada; deixei em tons de cinza (só mudei a cor). Resolução baixa.",
+  "file": "img/r3_derrame.jpg"
+ },
+ {
+  "id": "r3_empiema",
+  "caso_id": "pr_empiema",
+  "area": "Pediatria",
+  "caso": "Empiema pleural (menino de 3 anos)",
+  "mostra": "Radiografia de tórax de menina de 5 anos com pneumonia complicada: opacificação completa do hemitórax esquerdo, sem ver cúpula nem borda do coração",
+  "lic": "CC BY 4.0",
+  "autor": "Rafailidis V. et al.",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8566417/",
+  "fonte": "ver artigo (PMC)",
+  "obs": "Opção 1 para o empiema: é pneumonia complicada de verdade, mas a imagem é pequena.",
+  "file": "img/r3_empiema.jpg"
+ },
+ {
+  "id": "r3_empiema2",
+  "caso_id": "pr_empiema",
+  "area": "Pediatria",
+  "caso": "Empiema pleural (menino de 3 anos)",
+  "mostra": "Radiografia de tórax de lactente: hemitórax esquerdo todo branco (derrame volumoso) com desvio do mediastino para a direita",
+  "lic": "CC BY 4.0",
+  "autor": "Zhu Y. et al.",
+  "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11234768/",
+  "fonte": "ver artigo (PMC)",
+  "obs": "Opção 2: imagem maior e nítida, mas o derrame do artigo foi causado por cateter (PICC), não por pneumonia, e o cateter e os eletrodos aparecem na imagem. Aprove só uma das duas.",
+  "file": "img/r3_empiema2.jpg"
+ }
+]
