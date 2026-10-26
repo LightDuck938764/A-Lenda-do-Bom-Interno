@@ -32,9 +32,11 @@
     <div id="prompt" hidden></div>
     <div id="toasts" aria-live="polite"></div>
     <div id="touch">
-      <div class="dpad"><button data-d="up" aria-label="Cima">▲</button><button data-d="left" aria-label="Esquerda">◀</button><button data-d="right" aria-label="Direita">▶</button><button data-d="down" aria-label="Baixo">▼</button></div>
-      <div class="tbtns"><button data-k="map">M</button><button data-k="inv">I</button><button data-k="journal">J</button><button data-k="skills">K</button><button data-k="status">C</button><button data-k="caderno" aria-label="Caderno de erros">N</button><button data-k="pause">☰</button><button data-run hidden>CORRER</button><button class="e" data-k="E">E · AGIR</button></div>
+      <div id="joyZone" aria-label="Joystick: arraste para andar"><div class="joy-base"><div class="joy-knob"></div></div></div>
+      <div class="tmenu"><button data-k="map" aria-label="Mapa">MAPA</button><button data-k="inv" aria-label="Inventário">ITENS</button><button data-k="journal" aria-label="Diário">DIÁRIO</button><button data-k="pause" aria-label="Pausa">☰</button><button data-k="skills" aria-label="Habilidades">HABIL.</button><button data-k="status" aria-label="Ficha">FICHA</button><button data-k="caderno" aria-label="Caderno de erros">ERROS</button></div>
+      <div class="tact"><button data-run hidden aria-label="Correr">CORRER</button><button class="e" data-k="E" aria-label="Agir">AGIR</button></div>
     </div>
+    <div id="girar" aria-live="polite"><div><i class="girar-tel"></i><b>Gire o celular</b><p>A Lenda do Bom Interno é jogada com o celular deitado (modo paisagem).</p></div></div>
   </div>
   <div id="overlay" hidden></div>
 </div>

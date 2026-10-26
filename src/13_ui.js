@@ -8,8 +8,14 @@ function rarTag(r) { return `<span class="rar" style="--rc:${RARIDADES[r].cor}">
 function statsLine(st) { return Object.entries(st || {}).map(([k, v]) => `<span class="${v >= 0 ? 'pos' : 'neg'}">${v >= 0 ? '+' : ''}${v} ${STAT_NOME[k] || k}</span>`).join(' '); }
 function portraitCanvas(look, w = 96, h = 96, opts = {}) { const cv = document.createElement('canvas'); cv.width = w; cv.height = h; cv.className = 'pix'; SPR.portrait(cv, look, opts); return cv; }
 
-function setOverlay(html, cls = '') { const o = OV(); o.className = cls; o.innerHTML = html; o.hidden = !html; document.body.classList.toggle('has-ov', !!html); return o; }
+function setOverlay(html, cls = '') { const o = OV(); o.className = cls; o.innerHTML = html; o.scrollTop = 0; o.hidden = !html; document.body.classList.toggle('has-ov', !!html); return o; }
 function closeOverlay(mode = 'explore') { if (G.panelName && String(G.panelName).startsWith('mp_') && typeof mpOnClose === 'function') { const pn = G.panelName; G.panelName = null; mpOnClose(pn); } setOverlay(''); G.mode = mode; G.keys = {}; SFX.play('ui'); }
+
+/* Ajuda de controles: teclado no computador, toque no celular */
+function controlesHTML() {
+  if (IS_TOUCH) return '<ul class="keys"><li><b>Andar:</b> encoste o polegar no lado esquerdo da tela e arraste (joystick)</li><li><b>AGIR:</b> falar, atender, abrir portas</li><li>Botões à direita: mapa, itens, diário, habilidades, ficha, erros e pausa</li></ul>';
+  return '<ul class="keys"><li><kbd>WASD</kbd>/<kbd>setas</kbd> andar</li><li><kbd>E</kbd> interagir</li><li><kbd>M</kbd> mapa</li><li><kbd>I</kbd> inventário</li><li><kbd>J</kbd> diário</li><li><kbd>K</kbd> habilidades</li><li><kbd>C</kbd> ficha</li><li><kbd>N</kbd> caderno de erros</li><li><kbd>Esc</kbd> pausa</li></ul>';
+}
 
 /* ---------------- Tela inicial ---------------- */
 let NEWMODE = 'internato';
@@ -179,7 +185,7 @@ function showIntro() {
     <p class="eyebrow">Primeiro dia</p><h2>${U.esc(S.player.name)}, interno(a) do ${HOSPITAL_NOME}</h2>
     <p>Você chega com o jaleco passado, o crachá torto e um café na mão. Do outro lado da avenida, o Rodolfo já abriu o bar e grita "bom dia, doutor(a)!" para qualquer pessoa de branco.</p>
     <p>Seu primeiro estágio é <b style="color:${first.cor}">${first.nome}</b> (${first.local}). ${S.order[0] === 'upa' ? 'A UPA fica à esquerda na avenida.' : S.order[0] === 'ubs' ? 'A UBS Maria das Dores fica do outro lado da avenida, à direita do bar do Rodolfo.' : 'Entre no hospital pela porta principal e siga as placas do saguão.'}</p>
-    <ul class="keys"><li><kbd>WASD</kbd>/<kbd>setas</kbd> andar</li><li><kbd>E</kbd> interagir</li><li><kbd>M</kbd> mapa</li><li><kbd>I</kbd> inventário</li><li><kbd>J</kbd> diário</li><li><kbd>K</kbd> habilidades</li><li><kbd>C</kbd> ficha</li><li><kbd>N</kbd> caderno de erros</li><li><kbd>Esc</kbd> pausa</li></ul>
+    ${controlesHTML()}
     <button class="btn big" id="inGo">Começar o plantão</button></div></div>`, 'full');
   $('#inGo').onclick = () => startExplore(false);
 }
@@ -187,19 +193,20 @@ function showIntroVest() {
   setOverlay(`<div class="screen intro"><div class="panel story">
     <p class="eyebrow">Modo Vestibulando</p><h2>${U.esc(S.player.name)}, bem-vindo(a) ao ${HOSPITAL_NOME}</h2>
     <p>Aqui não há estágios em sequência nem missões: todas as portas estão abertas. UPA, Pediatria, GO, Clínica Médica, Cirurgia e UBS têm pacientes esperando atendimento nos leitos, e emergências podem surgir a qualquer momento. Os preceptores, residentes e o Rodolfo continuam por aí, com as mesmas histórias de sempre.</p>
-    <p>Os outros jogadores do Modo Vestibulando aparecem no mapa com o nome sobre a cabeça. No bar do Rodolfo, chegue perto de alguém e aperte <kbd>E</kbd> para um duelo de perguntas. Quem tiver mais pontos de reputação entre os jogadores online ganha a placa dourada de <b>Melhor Interno</b>.</p>
-    <ul class="keys"><li><kbd>WASD</kbd>/<kbd>setas</kbd> andar</li><li><kbd>E</kbd> interagir</li><li><kbd>M</kbd> mapa</li><li><kbd>I</kbd> inventário</li><li><kbd>J</kbd> diário</li><li><kbd>K</kbd> habilidades</li><li><kbd>C</kbd> ficha</li><li><kbd>N</kbd> caderno de erros</li><li><kbd>Esc</kbd> pausa</li></ul>
+    <p>Os outros jogadores do Modo Vestibulando aparecem no mapa com o nome sobre a cabeça. No bar do Rodolfo, chegue perto de alguém e aperte <kbd>${TECLA_E()}</kbd> para um duelo de perguntas. Quem tiver mais pontos de reputação entre os jogadores online ganha a placa dourada de <b>Melhor Interno</b>.</p>
+    ${controlesHTML()}
     <button class="btn big" id="inGo">Entrar no hospital</button></div></div>`, 'full');
   $('#inGo').onclick = () => startExplore(false);
 }
 function startExplore(loaded) {
+  telaCheia();
   setOverlay(''); G.mode = 'explore';
   G.player = null; enterMap(S.map.id, S.map.x, S.map.y, S.map.dir);
   clampVitals(); if (!loaded) { S.vida = stats().vidaMax; S.energia = stats().energiaMax; }
   $('#hud').hidden = false;
   const a = currentArea(); const st = a && chainStep(a);
   if (st && st.tipo === 'find') setupMainFind(st);
-  if (!loaded && isVest()) setTimeout(() => toast('<b>Modo Vestibulando</b><br><small>Todos os setores estão abertos. Procure os leitos com paciente e aperte E para atender.</small>', 'quest'), 600);
+  if (!loaded && isVest()) setTimeout(() => toast('<b>Modo Vestibulando</b><br><small>Todos os setores estão abertos. Procure os leitos com paciente e aperte ' + TECLA_E() + ' para atender.</small>', 'quest'), 600);
   else if (!loaded && st) setTimeout(() => toast(`<b>Missão:</b> ${st.titulo}<br><small>${st.desc}</small>`, 'quest'), 600);
   else toast(`Bem-vindo(a) de volta, ${U.esc(S.player.name)}!`);
   if (loaded && !isVest() && S.flags.novoEstagio && AREAS[S.flags.novoEstagio]) { const A = AREAS[S.flags.novoEstagio]; delete S.flags.novoEstagio; setTimeout(() => toast(`<b>Novo estágio no internato:</b> ${A.nome} (${A.local})<br><small>Ele entrou como o ${S.order.indexOf(A.id) + 1}º estágio da sua sequência. A UBS fica do outro lado da avenida, ao lado do bar.</small>`, 'quest'), 1400); }
@@ -250,7 +257,7 @@ function startDialog(npcId, falas, onEnd, choices, npcObj) {
   const prevMode = G.mode; G.mode = 'dialog';
   let i = 0, typing = null;
   const box = U.el('div', 'dialog');
-  box.innerHTML = `<div class="dlg-port"></div><div class="dlg-body"><b class="dlg-name">${U.esc(nome)}</b><p class="dlg-text"></p><div class="dlg-ch"></div><span class="dlg-next">E / Espaço ▸</span></div>`;
+  box.innerHTML = `<div class="dlg-port"></div><div class="dlg-body"><b class="dlg-name">${U.esc(nome)}</b><p class="dlg-text"></p><div class="dlg-ch"></div><span class="dlg-next">${IS_TOUCH ? 'toque para continuar ▸' : 'E / Espaço ▸'}</span></div>`;
   box.querySelector('.dlg-port').appendChild(portraitCanvas(look, 92, 92, { crop: true, scale: 5 }));
   document.getElementById('stage').appendChild(box);
   const tEl = box.querySelector('.dlg-text');
@@ -478,13 +485,14 @@ function openStatus() {
 
 /* ---------- Pausa ---------- */
 function openPause() {
-  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button><button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzT">Tela inicial (trocar de modo)</button><button class="btn ghost" id="pzN">Recomeçar este modo</button>
-    <div class="help"><h3>Controles</h3><p><kbd>WASD</kbd>/<kbd>setas</kbd> andar · <kbd>E</kbd> interagir · <kbd>M</kbd> mapa · <kbd>I</kbd> inventário · <kbd>J</kbd> diário · <kbd>K</kbd> habilidades · <kbd>C</kbd> ficha · <kbd>Esc</kbd> pausa${hasSkill('int18') ? ' · <kbd>Shift</kbd> correr' : ''}</p><p class="disclaimer">O progresso é salvo automaticamente neste navegador. Use "Exportar save" para guardar uma cópia. Conteúdo educacional: não substitui protocolos, supervisão ou orientação médica real.</p></div></div>`;
+  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button>${IS_TOUCH ? `<button class="btn ghost" id="pzFS">${document.fullscreenElement || document.webkitFullscreenElement ? 'Sair da tela cheia' : 'Tela cheia'}</button>` : ''}<button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzT">Tela inicial (trocar de modo)</button><button class="btn ghost" id="pzN">Recomeçar este modo</button>
+    <div class="help"><h3>Controles</h3>${IS_TOUCH ? controlesHTML() : `<p><kbd>WASD</kbd>/<kbd>setas</kbd> andar · <kbd>E</kbd> interagir · <kbd>M</kbd> mapa · <kbd>I</kbd> inventário · <kbd>J</kbd> diário · <kbd>K</kbd> habilidades · <kbd>C</kbd> ficha · <kbd>Esc</kbd> pausa${hasSkill('int18') ? ' · <kbd>Shift</kbd> correr' : ''}</p>`}<p class="disclaimer">O progresso é salvo automaticamente neste navegador. Use "Exportar save" para guardar uma cópia. Conteúdo educacional: não substitui protocolos, supervisão ou orientação médica real.</p></div></div>`;
   openPanel('pause', 'Pausa', body, { cls: 'small' });
   $('#pzC').onclick = () => closeOverlay();
   $('#pzF').onclick = () => { closeOverlay(); openStatus(); };
   $('#pzS').onclick = () => { saveGame(); toast('Jogo salvo.'); };
   $('#pzSom').onclick = () => { SFX.on = !SFX.on; reopen(openPause); };
+  if ($('#pzFS')) $('#pzFS').onclick = () => { const on = document.fullscreenElement || document.webkitFullscreenElement; telaCheia(on ? 'sair' : true); setTimeout(() => { if (G.panelName === 'pause') reopen(openPause); }, 400); };
   $('#pzE').onclick = () => { const code = exportSave(); const box = U.el('div', 'confirm', `<div class="panel small"><h3>Exportar save</h3><p>Guarde este código para restaurar o progresso.</p><textarea rows="6" readonly>${code}</textarea><div class="row"><button class="btn" id="exCp">Copiar</button><button class="btn ghost" id="exX">Fechar</button></div></div>`); OV().appendChild(box); const ta = box.querySelector('textarea'); box.querySelector('#exCp').onclick = () => { try { navigator.clipboard.writeText(code).then(() => toast('Copiado!'), () => { ta.select(); }); } catch (e) { ta.select(); } }; box.querySelector('#exX').onclick = () => box.remove(); };
   $('#pzI').onclick = () => importBox();
   const sair = () => { S = null; G.map = null; G.npcs = []; G.followers = []; G.psy = null; G.player = null; $('#hud').hidden = true; CR = null; ORD = []; showTitle(); };

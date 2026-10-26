@@ -7,7 +7,7 @@ const MOVE_KEYS = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'KeyW', 'K
 function fitCanvas() {
   const st = document.getElementById('stage'); if (!st || !CV) return;
   const w = st.clientWidth, h = st.clientHeight;
-  let s = Math.min(w / VW, h / VH); if (s >= 1) { const f = Math.floor(s); if (f / s >= 0.8) s = f; }
+  let s = Math.min(w / VW, h / VH); if (s >= 1 && !IS_TOUCH) { const f = Math.floor(s); if (f / s >= 0.8) s = f; }
   CV.style.width = Math.floor(VW * s) + 'px'; CV.style.height = Math.floor(VH * s) + 'px';
 }
 function isTyping(e) { const t = e.target; return t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT'); }
@@ -40,21 +40,63 @@ function onKeyDown(e) {
 }
 function onKeyUp(e) { G.keys[e.code] = false; }
 
+/* Joystick analógico de toque: o dedo encosta em qualquer ponto do lado esquerdo,
+   a base aparece ali e o pino segue o dedo. Quanto mais longe do centro, mais rápido anda. */
+const JOY = { id: null, cx: 0, cy: 0, R: 46 };
+let joyReset = () => { G.touchDir = null; G.touchMag = 0; };
+const IS_TOUCH = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+function TECLA_E() { return IS_TOUCH ? 'AGIR' : 'E'; }
+function telaCheia(forcar) {
+  const el = document.documentElement, fs = document.fullscreenElement || document.webkitFullscreenElement;
+  if (fs) { if (forcar === 'sair') (document.exitFullscreen || document.webkitExitFullscreen || (() => { })).call(document); return; }
+  if (!IS_TOUCH && !forcar) return;
+  const req = el.requestFullscreen || el.webkitRequestFullscreen; if (!req) return;
+  try {
+    const p = req.call(el, { navigationUI: 'hide' });
+    const lock = () => { try { const o = screen.orientation; if (o && o.lock) o.lock('landscape').catch(() => { }); } catch (e) { } };
+    if (p && p.then) p.then(lock).catch(() => { }); else lock();
+  } catch (e) { }
+}
 function setupTouch() {
   const t = document.getElementById('touch'); if (!t) return;
-  const dirs = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] };
-  t.querySelectorAll('[data-d]').forEach(b => {
-    const d = dirs[b.dataset.d];
-    const on = e => { e.preventDefault(); SFX.init(); G.touchDir = d; }, off = e => { e.preventDefault(); if (G.touchDir === d) G.touchDir = null; };
-    b.addEventListener('pointerdown', on); b.addEventListener('pointerup', off); b.addEventListener('pointerleave', off); b.addEventListener('pointercancel', off);
-  });
-  t.querySelectorAll('[data-k]').forEach(b => b.addEventListener('click', e => {
+  const zone = document.getElementById('joyZone');
+  if (zone) {
+    const base = zone.querySelector('.joy-base'), knob = zone.querySelector('.joy-knob');
+    joyReset = () => { JOY.id = null; base.removeAttribute('style'); base.classList.remove('on'); knob.style.transform = ''; G.touchDir = null; G.touchMag = 0; };
+    const move = (x, y) => {
+      let dx = x - JOY.cx, dy = y - JOY.cy; const d = Math.hypot(dx, dy), R = JOY.R;
+      if (d > R) { dx = dx / d * R; dy = dy / d * R; }
+      knob.style.transform = `translate(${dx.toFixed(1)}px, ${dy.toFixed(1)}px)`;
+      const mag = Math.min(1, d / R);
+      if (mag < 0.2) { G.touchDir = null; G.touchMag = 0; } else { G.touchDir = [dx / Math.hypot(dx, dy), dy / Math.hypot(dx, dy)]; G.touchMag = mag; }
+    };
+    zone.addEventListener('pointerdown', e => {
+      if (JOY.id !== null) return;
+      e.preventDefault(); SFX.init();
+      const zr = zone.getBoundingClientRect(); JOY.R = (base.offsetWidth || 92) / 2;
+      JOY.id = e.pointerId; try { zone.setPointerCapture(e.pointerId); } catch (_) { }
+      const m = JOY.R + 4;
+      JOY.cx = Math.max(zr.left + m, Math.min(zr.right - m, e.clientX)); JOY.cy = Math.max(zr.top + m, Math.min(zr.bottom - m, e.clientY));
+      base.style.left = (JOY.cx - zr.left - JOY.R) + 'px'; base.style.top = (JOY.cy - zr.top - JOY.R) + 'px'; base.style.bottom = 'auto';
+      base.classList.add('on'); move(e.clientX, e.clientY);
+    });
+    zone.addEventListener('pointermove', e => { if (e.pointerId === JOY.id) { e.preventDefault(); move(e.clientX, e.clientY); } });
+    const end = e => { if (e.pointerId === JOY.id) joyReset(); };
+    ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(ev => zone.addEventListener(ev, end));
+    zone.addEventListener('contextmenu', e => e.preventDefault());
+  }
+  t.addEventListener('contextmenu', e => e.preventDefault());
+  // pointerdown (e não click): o celular não gera "click" para o segundo dedo, e o jogador
+  // precisa apertar AGIR ou abrir um menu enquanto segura o joystick
+  t.querySelectorAll('[data-k]').forEach(b => b.addEventListener('pointerdown', e => {
+    if (e.button > 0) return;
     e.preventDefault(); SFX.init(); const k = b.dataset.k;
+    if (navigator.vibrate) try { navigator.vibrate(8); } catch (_) { }
     if (G.mode === 'dialog') { G.dialog && G.dialog.next(); return; }
     if (k === 'E') { if (G.mode === 'explore') interact(); else if (G.mode === 'proc' && G.execPress) G.execPress(); }
     else if (G.mode === 'explore' || G.mode === 'panel') togglePanel(k);
   }));
-  const run = t.querySelector('[data-run]'); if (run) { run.addEventListener('pointerdown', () => G.touchSprint = true); run.addEventListener('pointerup', () => G.touchSprint = false); run.addEventListener('pointerleave', () => G.touchSprint = false); }
+  const run = t.querySelector('[data-run]'); if (run) { run.addEventListener('pointerdown', e => { e.preventDefault(); G.touchSprint = true; }); ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(ev => run.addEventListener(ev, () => G.touchSprint = false)); }
 }
 
 function loop(now) {
@@ -79,7 +121,8 @@ function boot() {
   try { buildMaps(); } catch (e) { console.error(e); }
   fitCanvas(); window.addEventListener('resize', fitCanvas);
   window.addEventListener('keydown', onKeyDown); window.addEventListener('keyup', onKeyUp);
-  window.addEventListener('blur', () => { G.keys = {}; G.touchDir = null; });
+  window.addEventListener('blur', () => { G.keys = {}; joyReset(); });
+  document.body.classList.toggle('is-touch', IS_TOUCH);
   document.addEventListener('visibilitychange', () => { if (document.hidden) saveGame(); });
   window.addEventListener('beforeunload', saveGame);
   setupTouch();

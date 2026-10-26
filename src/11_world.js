@@ -208,6 +208,7 @@ function updateWorld(dt) {
   if (G.followers.length && hasSkill('int13')) spd *= 1.2;
   const sprint = hasSkill('int18') && (G.keys.ShiftLeft || G.keys.ShiftRight || G.touchSprint) && S.energia > 1;
   if (sprint && (dx || dy)) { spd *= 1.7; S.energia = Math.max(0, S.energia - dt * 1.5); }
+  if (G.touchDir && G.touchMag) spd *= Math.max(0.45, Math.min(1, G.touchMag * 1.15)); // joystick analógico
   if (dx || dy) {
     const len = Math.hypot(dx, dy); dx /= len; dy /= len;
     P.dir = Math.abs(dx) > Math.abs(dy) ? (dx < 0 ? 2 : 3) : (dy < 0 ? 1 : 0);
@@ -368,7 +369,7 @@ function updateInteractPrompt() {
   const it = findInteractable();
   if (!it) { el.hidden = true; return; }
   el.hidden = false;
-  el.innerHTML = it.kind === 'peer' ? `<kbd>E</kbd> ${it.g.st === 'livre' ? 'Desafiar ' + U.esc(it.g.nm) + ' para um duelo' : U.esc(it.g.nm) + (it.g.st === 'duelo' ? ' está em um duelo' : ' está ocupado(a)')}` : `<kbd>E</kbd> ${it.kind === 'npc' ? (it.n.psy ? '⚠ Atender ' + U.esc(it.n.nome) + ' (crise)' : it.n.emerg && G.psy ? '⚠ Atender emergência: ' + U.esc(G.psy.E.titulo) : 'Falar com ' + U.esc(it.n.nome)) : U.esc(interactLabel(it.o))}`;
+  el.innerHTML = it.kind === 'peer' ? `<kbd>${TECLA_E()}</kbd> ${it.g.st === 'livre' ? 'Desafiar ' + U.esc(it.g.nm) + ' para um duelo' : U.esc(it.g.nm) + (it.g.st === 'duelo' ? ' está em um duelo' : ' está ocupado(a)')}` : `<kbd>${TECLA_E()}</kbd> ${it.kind === 'npc' ? (it.n.psy ? '⚠ Atender ' + U.esc(it.n.nome) + ' (crise)' : it.n.emerg && G.psy ? '⚠ Atender emergência: ' + U.esc(G.psy.E.titulo) : 'Falar com ' + U.esc(it.n.nome)) : U.esc(interactLabel(it.o))}`;
 }
 function interact() {
   if (G.mode !== 'explore') return;
