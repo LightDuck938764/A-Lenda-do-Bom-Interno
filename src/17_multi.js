@@ -26,7 +26,7 @@ const MP_ROUNDS = 5, MP_WIN = 3, MP_QTIME = 20, MP_REWARD_CAP = 5;
     else { MP.status = 'off'; return; }
     if (!room) { MP.status = 'off'; return; }
     MP.room = room; MP.status = 'conectando';
-    const fail = e => { MP.ok = false; MP.ghosts.clear(); MP.roster.clear(); MP.status = e && (e.code === 'not_granted' || e.code === 'revoked') ? 'negado' : 'off'; };
+    const fail = e => { MP.ok = false; MP.ghosts.clear(); MP.roster.clear(); MP.err = (e && (e.message || e.code)) || ''; MP.status = e && (e.code === 'not_granted' || e.code === 'revoked') ? 'negado' : 'off'; console.warn('multiplayer', e); };
     room.onConnection(c => { MP.ok = !!c; if (MP.status !== 'negado' && MP.status !== 'off') MP.status = c ? 'on' : 'conectando'; }, fail);
     room.onPeers(ch => mpPeers(ch), fail);
     room.on('duelo', msg => { try { mpMsg(msg); } catch (e) { console.warn('duelo', e); } });
@@ -158,6 +158,14 @@ function mpNearbyPeer() {
   for (const g of mpGhostsHere()) { const d = Math.hypot(g.x - fx, g.y - fy), d2 = Math.hypot(g.x - P.x, g.y - P.y); if ((d < 0.9 || d2 < 1.1) && d2 < 1.6 && d < bd) { bd = d; best = g; } }
   return best;
 }
+// nome curto de cada lugar, para dizer onde o outro interno está
+const MP_LUGAR = { rua: 'Avenida', lobby: 'Saguão', upa: 'UPA', ped: 'Pediatria', go: 'GO', cm: 'Clínica Médica', cir: 'Cirurgia', bar: 'Bar do Rodolfo', ubs: 'UBS' };
+function mpLugar(id) { return MP_LUGAR[id] || (MAPS[id] && MAPS[id].nome) || 'outro setor'; }
+function mpMotivoOff() {
+  if (window.FIREBASE_CONFIG && !window.firebase) return 'a rede bloqueou o servidor do jogo';
+  if (typeof FB !== 'undefined' && FB.err) return 'login anônimo falhou: ' + String(FB.err).replace('auth/', '');
+  return 'sem conexão';
+}
 function mpChip() {
   let el = document.getElementById('mpChip');
   const n = MP.ok ? MP.roster.size : 0;
@@ -165,11 +173,11 @@ function mpChip() {
   if (!el) { if (!show) return; el = document.createElement('div'); el.id = 'mpChip'; document.getElementById('stage').appendChild(el); }
   el.hidden = !show; if (!show) return;
   if (!isVest()) { const t = '🔒 Modo Internato · jogo individual'; el.className = 'mp-off'; if (el.textContent !== t) el.textContent = t; return; }
-  const inBar = [...MP.roster.values()].filter(g => g.map === 'bar').length;
-  // estado da conexão sempre visível, para cada jogador saber se está no modo online
-  const txt = MP.status === 'on' ? (n ? `🟢 Online · ${n} interno${n > 1 ? 's' : ''}${inBar ? ` · ${inBar} no bar` : ''}` : '🟢 Online · só você por aqui')
-    : MP.status === 'conectando' || MP.status === 'carregando' ? '🟡 Conectando ao multiplayer…'
-    : MP.status === 'negado' ? (window.FIREBASE_CONFIG ? '🔴 Multiplayer recusou a conexão (recarregue a página)' : '🔴 Multiplayer: esta conta não tem acesso (peça um convite)') : '⚪ Modo solo (multiplayer indisponível neste acesso)';
+  const outros = [...MP.roster.values()], aqui = outros.filter(g => g.map === G.map.id).length;
+  // estado da conexão sempre visível, e onde os outros estão (para conseguirem se encontrar)
+  const txt = MP.status === 'on' ? (n === 1 ? `🟢 Online · ${outros[0].nm} ${outros[0].map === G.map.id ? 'está aqui' : 'está em: ' + mpLugar(outros[0].map)}` : n ? `🟢 Online · ${n} internos · ${aqui ? aqui + ' aqui' : 'nenhum aqui (veja o MAPA)'}` : '🟢 Online · só você por aqui')
+    : MP.status === 'conectando' || MP.status === 'carregando' ? '🟡 Conectando ao modo online…'
+    : MP.status === 'negado' ? (window.FIREBASE_CONFIG ? '🔴 O servidor recusou a conexão (permissão do banco de dados)' : '🔴 Multiplayer: esta conta não tem acesso (peça um convite)') : `⚪ Modo solo (${mpMotivoOff()})`;
   el.className = 'mp-' + MP.status;
   if (el.textContent !== txt) el.textContent = txt;
 }
