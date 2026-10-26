@@ -19,7 +19,7 @@ CASO({ id: 'py_delirium_hiper', area: 'cm', ala: 'psiq', dif: 2, tema: 'Delirium
   pista: 'Início agudo, flutuação e desatenção (CAM positivo).',
   dx: ['Delirium hiperativo', 'Doença de Alzheimer', 'Esquizofrenia de início tardio', 'Demência com corpos de Lewy'],
   edx: 'Pelo Confusion Assessment Method: início agudo e curso flutuante, desatenção, e pensamento desorganizado ou alteração do nível de consciência. Fatores: idade, cirurgia de quadril, anticolinérgico (prometazina), retenção urinária, privação sensorial.',
-  cd: ['Tratar as causas e reorientar', 'Contenção mecânica e diazepam venoso', 'Mais prometazina à noite para dormir', 'Iniciar donepezila'],
+  cd: ['Tratar o precipitante, reorientar e haloperidol em baixa dose', 'Contenção mecânica no leito e diazepam 10 mg EV de horário noturno', 'Prometazina 50 mg IM à noite para restabelecer o sono', 'Donepezila 5 mg/dia pela provável demência de base'],
   ecd: 'Tratar o fator precipitante (retenção urinária, dor, infecção, drogas anticolinérgicas), devolver óculos e aparelho auditivo, reorientar, manter ciclo sono-vigília e presença da família. Antipsicótico em dose baixa (haloperidol, quetiapina) apenas para agitação com risco. Benzodiazepínico só na abstinência alcoólica ou de benzodiazepínicos. O delirium aumenta mortalidade e risco de demência.' });
 
 CASO({ id: 'py_delirium_hipo', area: 'cm', ala: 'psiq', dif: 3, tema: 'Delirium', cond: 'Delirium hipoativo por infecção urinária', tags: ['psiq', 'sepse', 'infec'],
@@ -33,7 +33,7 @@ CASO({ id: 'py_delirium_hipo', area: 'cm', ala: 'psiq', dif: 3, tema: 'Delirium'
   pista: 'Quieta não quer dizer deprimida: houve mudança aguda da atenção.',
   dx: ['Delirium hipoativo', 'Depressão maior de início tardio', 'Demência avançada', 'AVC de tronco encefálico'],
   edx: 'O delirium hipoativo (sonolência, apatia, lentidão) é o subtipo mais comum em idosos e o mais subdiagnosticado, com pior prognóstico. Causas: ITU, desidratação, hipernatremia e anticolinérgicos.',
-  cd: ['Tratar a ITU, hidratar e suspender a oxibutinina', 'Iniciar sertralina e reavaliar', 'Haloperidol em horário fixo', 'Benzodiazepínico à noite'],
+  cd: ['Tratar a ITU, hidratar e suspender a oxibutinina', 'Sertralina 50 mg/dia pela apatia e reavaliar em 4 semanas', 'Haloperidol 1 mg em horário fixo de 8/8 h por 7 dias', 'Clonazepam 0,5 mg à noite para regular o ciclo sono-vigília'],
   ecd: 'O tratamento é o da causa: antibiótico, correção volêmica e do sódio, revisão de medicamentos (anticolinérgicos como oxibutinina, difenidramina e tricíclicos devem ser suspensos em idosos de risco). Antipsicóticos não têm papel no delirium hipoativo.' });
 
 CASO({ id: 'py_pseudodemencia', area: 'cm', ala: 'psiq', dif: 3, tema: 'Demência', cond: 'Depressão no idoso simulando demência', tags: ['psiq'],
@@ -47,7 +47,7 @@ CASO({ id: 'py_pseudodemencia', area: 'cm', ala: 'psiq', dif: 3, tema: 'Demênci
   pista: 'Ele se queixa mais do que a família; início datado e sintomas depressivos.',
   dx: ['Depressão maior', 'Doença de Alzheimer leve', 'Demência frontotemporal', 'Luto normal'],
   edx: 'Na "pseudodemência" depressiva, o próprio paciente enfatiza o déficit, o início é mais rápido e datado, as respostas são "não sei" e há sintomas depressivos. No Alzheimer o paciente costuma minimizar e a família é que se queixa. Depressão tardia pode ser pródromo de demência: reavaliar.',
-  cd: ['Sertralina e psicoterapia', 'Donepezila e memantina', 'Diazepam para a insônia', 'Instituição de longa permanência'],
+  cd: ['Sertralina e psicoterapia; reavaliar a cognição depois', 'Donepezila 10 mg e memantina 20 mg/dia pela demência', 'Diazepam 10 mg à noite para a insônia terminal', 'Encaminhar para instituição de longa permanência para idosos'],
   ecd: 'ISRS (sertralina, escitalopram) são primeira linha no idoso; evitar tricíclicos (anticolinérgicos, hipotensão, arritmia). Reavaliar a cognição após o tratamento do humor. Investigar causas reversíveis de declínio cognitivo (TSH, B12, sífilis, imagem).' });
 
 /* ---------- Esquizofrenia e antipsicóticos ---------- */
@@ -62,7 +62,7 @@ CASO({ id: 'py_esquizo_1episodio', area: 'cm', ala: 'psiq', dif: 2, tema: 'Esqui
   pista: 'Mais de 6 meses, delírios e alucinações, declínio funcional.',
   dx: ['Esquizofrenia', 'Transtorno esquizofreniforme', 'Transtorno psicótico breve', 'Delirium hiperativo'],
   edx: 'Pelo DSM-5-TR, dois ou mais entre delírios, alucinações, discurso desorganizado, comportamento desorganizado e sintomas negativos, por 6 meses ou mais (1 mês de fase ativa), com prejuízo funcional. Esquizofreniforme: 1 a 6 meses; psicótico breve: menos de 1 mês.',
-  cd: ['Antipsicótico atípico e CAPS', 'Benzodiazepínico isolado', 'Internação de longa permanência', 'Eletroconvulsoterapia de primeira linha'],
+  cd: ['Risperidona em dose baixa e acompanhamento no CAPS', 'Clonazepam 2 mg/dia isolado até a remissão dos sintomas', 'Internação psiquiátrica de longa permanência para estabilizar', 'Eletroconvulsoterapia como primeira linha no primeiro episódio'],
   ecd: 'Antipsicótico (risperidona, olanzapina, aripiprazol, entre outros) em monoterapia e dose mínima eficaz, psicoeducação e Projeto Terapêutico Singular na Rede de Atenção Psicossocial. Monitorar peso, glicemia e lipídios. Sintomas negativos (abulia, alogia, anedonia, embotamento) respondem pouco.' });
 
 CASO({ id: 'py_esquizo_refrat', area: 'cm', ala: 'psiq', dif: 3, tema: 'Esquizofrenia', cond: 'Esquizofrenia resistente ao tratamento', tags: ['psiq', 'hemato'],
@@ -75,7 +75,7 @@ CASO({ id: 'py_esquizo_refrat', area: 'cm', ala: 'psiq', dif: 3, tema: 'Esquizof
   pista: 'Dois antipsicóticos diferentes, em dose e tempo adequados, sem resposta.',
   dx: ['Esquizofrenia resistente', 'Má adesão ao tratamento', 'Transtorno esquizoafetivo', 'Psicose induzida por substância'],
   edx: 'Resistência: falha de pelo menos dois antipsicóticos diferentes, em dose terapêutica, por 6 semanas ou mais cada, com adesão garantida.',
-  cd: ['Clozapina', 'Associar três antipsicóticos', 'Voltar ao haloperidol oral', 'Suspender todo antipsicótico'],
+  cd: ['Clozapina com hemograma semanal', 'Associar três antipsicóticos em dose plena', 'Voltar ao haloperidol oral em dose alta', 'Suspender todos os antipsicóticos por 4 semanas'],
   ecd: 'Clozapina é o único antipsicótico com eficácia comprovada na esquizofrenia resistente e reduz suicídio. Riscos: agranulocitose (hemograma semanal nos primeiros meses), miocardite, convulsões, sialorreia, constipação grave e síndrome metabólica. ECT pode ser associada em casos refratários à clozapina.' });
 
 CASO({ id: 'py_snm', area: 'cm', ala: 'psiq', dif: 3, tema: 'Efeitos adversos de antipsicóticos', cond: 'Síndrome neuroléptica maligna', tags: ['psiq', 'neuro', 'nefro'],
@@ -89,7 +89,7 @@ CASO({ id: 'py_snm', area: 'cm', ala: 'psiq', dif: 3, tema: 'Efeitos adversos de
   pista: 'Antipsicótico, rigidez, hipertermia, disautonomia e CPK muito alta.',
   dx: ['Síndrome neuroléptica maligna', 'Síndrome serotoninérgica', 'Hipertermia maligna', 'Meningite bacteriana'],
   edx: 'Reação idiossincrásica ao bloqueio dopaminérgico: febre, rigidez em cano de chumbo, alteração mental, instabilidade autonômica, CPK elevada e leucocitose, em dias. Síndrome serotoninérgica: início em horas, hiperreflexia, clônus, midríase, diarreia.',
-  cd: ['Suspender o antipsicótico e dantrolene', 'Aumentar a dose do haloperidol', 'Biperideno IM isolado', 'Ciproeptadina oral'],
+  cd: ['Suspender o haloperidol, UTI, hidratação e dantrolene', 'Aumentar o haloperidol pela agitação e pela febre', 'Biperideno 5 mg IM isolado e manter o haloperidol na mesma dose', 'Ciproeptadina 12 mg VO e resfriamento externo'],
   ecd: 'Suspender todos os antidopaminérgicos, UTI, hidratação vigorosa (rabdomiólise), resfriamento, benzodiazepínico; casos moderados a graves: bromocriptina (agonista dopaminérgico) e/ou dantrolene (relaxante muscular). ECT em casos refratários. Reintroduzir antipsicótico só após 2 semanas, de baixa potência.' });
 
 CASO({ id: 'py_acatisia', area: 'cm', ala: 'psiq', dif: 2, tema: 'Efeitos adversos de antipsicóticos', cond: 'Acatisia induzida por antipsicótico', tags: ['psiq'],
@@ -102,7 +102,7 @@ CASO({ id: 'py_acatisia', area: 'cm', ala: 'psiq', dif: 2, tema: 'Efeitos advers
   pista: 'Inquietação subjetiva e motora logo após iniciar antipsicótico.',
   dx: ['Acatisia', 'Episódio maníaco', 'Distonia aguda', 'Síndrome das pernas inquietas'],
   edx: 'Acatisia: sensação subjetiva de inquietude com movimentos repetitivos, dias a semanas após iniciar ou aumentar antipsicótico (inclusive aripiprazol). Confundida com agitação psicótica, levando ao erro de aumentar a dose. Associada a risco de suicídio e má adesão.',
-  cd: ['Reduzir a dose e propranolol', 'Aumentar o aripiprazol pela agitação', 'Associar haloperidol IM', 'Biperideno como primeira escolha'],
+  cd: ['Reduzir o aripiprazol e iniciar propranolol 10 mg', 'Aumentar o aripiprazol pela agitação motora e inquietação', 'Associar haloperidol 5 mg IM nos momentos de inquietação', 'Biperideno 2 mg de 12/12 h como primeira escolha'],
   ecd: 'Reduzir a dose ou trocar o antipsicótico; propranolol em dose baixa é a primeira linha; alternativas: mirtazapina em dose baixa, benzodiazepínico. Anticolinérgicos têm pouco efeito na acatisia (são da distonia e do parkinsonismo).' });
 
 CASO({ id: 'py_parkinsonismo_droga', area: 'cm', ala: 'psiq', dif: 2, tema: 'Efeitos adversos de antipsicóticos', cond: 'Parkinsonismo e distonia induzidos por antipsicótico', tags: ['psiq', 'neuro'],
@@ -115,7 +115,7 @@ CASO({ id: 'py_parkinsonismo_droga', area: 'cm', ala: 'psiq', dif: 2, tema: 'Efe
   pista: 'Simétrico, subagudo, após antagonista dopaminérgico, sem febre.',
   dx: ['Parkinsonismo por drogas', 'Doença de Parkinson idiopática', 'Síndrome neuroléptica maligna', 'Discinesia tardia'],
   edx: 'Parkinsonismo medicamentoso: simétrico, semanas após antipsicóticos potentes, metoclopramida, flunarizina ou cinarizina. Distonia aguda (horas a dias; torcicolo, crise oculógira) e acatisia são outros efeitos extrapiramidais agudos.',
-  cd: ['Retirar a metoclopramida e trocar o antipsicótico', 'Iniciar levodopa', 'Aumentar o haloperidol', 'Dantrolene'],
+  cd: ['Suspender a metoclopramida e trocar para quetiapina', 'Iniciar levodopa com carbidopa 250/25 mg de 8/8 h', 'Aumentar o haloperidol para controlar a psicose residual', 'Dantrolene 1 mg/kg EV pela rigidez em roda denteada'],
   ecd: 'Retirar os antidopaminérgicos desnecessários, reduzir a dose ou trocar para antipsicótico de menor risco extrapiramidal (quetiapina, clozapina). Anticolinérgico (biperideno) alivia o parkinsonismo e trata a distonia aguda (biperideno IM). Levodopa costuma ser evitada, pois pode piorar a psicose.' });
 
 CASO({ id: 'py_discinesia_tardia', area: 'cm', ala: 'psiq', dif: 3, tema: 'Efeitos adversos de antipsicóticos', cond: 'Discinesia tardia', tags: ['psiq', 'neuro'],
@@ -128,7 +128,7 @@ CASO({ id: 'py_discinesia_tardia', area: 'cm', ala: 'psiq', dif: 3, tema: 'Efeit
   pista: 'Movimentos orofaciais após anos de antipsicótico típico.',
   dx: ['Discinesia tardia', 'Distonia aguda', 'Doença de Huntington', 'Parkinsonismo medicamentoso'],
   edx: 'Movimentos involuntários hipercinéticos (orofaciais, coreicos) após meses a anos de bloqueio dopaminérgico, por hipersensibilidade dos receptores. Fatores de risco: idade, mulher, antipsicótico típico, tempo de uso. Pode ser irreversível.',
-  cd: ['Trocar para clozapina', 'Aumentar o haloperidol para mascarar', 'Aumentar o biperideno', 'Associar levodopa'],
+  cd: ['Trocar por clozapina e retirar o biperideno', 'Aumentar o haloperidol para mascarar os movimentos', 'Aumentar o biperideno para 4 mg de 8/8 h e manter o haloperidol', 'Associar levodopa com carbidopa e manter o esquema'],
   ecd: 'Prevenção: menor dose e reavaliação periódica (escala AIMS). Tratamento: trocar para clozapina (ou quetiapina), retirar anticolinérgicos (pioram a discinesia), inibidores do VMAT2 (valbenazina, deutetrabenazina, tetrabenazina). Aumentar o antipsicótico mascara temporariamente, mas agrava a longo prazo.' });
 
 /* ---------- Humor ---------- */
@@ -142,7 +142,7 @@ CASO({ id: 'py_depressao_maior', area: 'cm', ala: 'psiq', dif: 2, tema: 'Depress
   pista: 'Resposta parcial com dose inicial, bem tolerada, após 4 a 6 semanas.',
   dx: ['Depressão maior', 'Transtorno bipolar tipo II', 'Distimia', 'Transtorno de adaptação'],
   edx: 'Episódio depressivo: cinco ou mais sintomas por 2 semanas, incluindo humor deprimido ou anedonia. Resposta é queda de 50% ou mais nos sintomas; parcial, entre 25 e 50%.',
-  cd: ['Aumentar a dose da fluoxetina', 'Trocar por tricíclico', 'Associar lítio já', 'Manter e reavaliar em 1 ano'],
+  cd: ['Aumentar a fluoxetina de 20 para 40 mg/dia', 'Trocar por amitriptilina 75 mg/dia à noite', 'Associar carbonato de lítio 600 mg/dia já', 'Manter 20 mg/dia e reavaliar a resposta em 1 ano'],
   ecd: 'Avaliar a resposta após 4 a 8 semanas: sem efeitos adversos e resposta parcial, otimizar a dose; sem resposta, trocar de antidepressivo; depois, potencializar (lítio, antipsicótico atípico) ou associar. Manter por 6 a 12 meses após a remissão no primeiro episódio. Psicoterapia associada.' });
 
 CASO({ id: 'py_mania', area: 'cm', ala: 'psiq', dif: 2, tema: 'Depressão', cond: 'Episódio maníaco no transtorno bipolar tipo I', tags: ['psiq'],
@@ -155,7 +155,7 @@ CASO({ id: 'py_mania', area: 'cm', ala: 'psiq', dif: 2, tema: 'Depressão', cond
   pista: 'Mania com prejuízo grave, depois de um episódio depressivo.',
   dx: ['Transtorno bipolar tipo I', 'Transtorno bipolar tipo II', 'Ciclotimia', 'Depressão com sintomas ansiosos'],
   edx: 'Mania: humor elevado ou irritável com energia aumentada por pelo menos 1 semana (ou qualquer duração se internação), com prejuízo marcante. Um episódio maníaco basta para bipolar tipo I. No tipo II há hipomania (4 dias, sem prejuízo grave) e depressão.',
-  cd: ['Lítio', 'Sertralina em dose alta', 'Benzodiazepínico isolado', 'Apenas psicoterapia semanal'],
+  cd: ['Carbonato de lítio (ou quetiapina)', 'Sertralina 100 mg/dia e clonazepam à noite', 'Clonazepam 2 mg isolado até a mania ceder', 'Psicoterapia semanal, sem estabilizador do humor'],
   ecd: 'Mania aguda: lítio, valproato ou antipsicótico atípico (quetiapina, olanzapina, risperidona), isolados ou combinados. Antidepressivo em monoterapia pode induzir virada maníaca e ciclagem rápida. Lítio: monitorar litemia, função renal e tireoidiana; reduz suicídio.' });
 
 CASO({ id: 'py_litio_intox', area: 'cm', ala: 'psiq', dif: 3, tema: 'Depressão', cond: 'Intoxicação por lítio após AINE e desidratação', tags: ['psiq', 'nefro', 'intox'],
@@ -169,7 +169,7 @@ CASO({ id: 'py_litio_intox', area: 'cm', ala: 'psiq', dif: 3, tema: 'Depressão'
   pista: 'AINE e desidratação reduzem a excreção renal do lítio.',
   dx: ['Intoxicação por lítio', 'Síndrome neuroléptica maligna', 'AVC de cerebelo', 'Encefalopatia de Wernicke'],
   edx: 'Lítio tem janela terapêutica estreita e é eliminado pelos rins. AINEs, IECA/BRA, tiazídicos, desidratação e hiponatremia elevam a litemia. Sintomas: náuseas, vômitos, diarreia, tremor grosseiro, ataxia, confusão, convulsões e arritmias.',
-  cd: ['Suspender o lítio e hemodiálise', 'Carvão ativado em múltiplas doses', 'Furosemida em dose alta', 'Apenas reduzir a dose do lítio'],
+  cd: ['Suspender o lítio, SF 0,9% e hemodiálise', 'Carvão ativado em múltiplas doses e observação', 'Furosemida 80 mg EV para aumentar a excreção do lítio', 'Só reduzir a dose do lítio pela metade e manter o AINE'],
   ecd: 'Suspender lítio e drogas interativas, soro fisiológico. Hemodiálise: litemia > 4,0 mEq/L, ou > 2,5 com sintomas neurológicos graves ou insuficiência renal, ou rebaixamento de consciência. Carvão ativado não adsorve lítio; irrigação intestinal em formulação de liberação lenta. O lítio crônico causa diabetes insípido nefrogênico e hipotireoidismo.' });
 
 /* ---------- Ansiedade, TOC, trauma ---------- */
@@ -185,7 +185,7 @@ CASO({ id: 'py_panico', area: 'cm', ala: 'psiq', dif: 2, tema: 'Ansiedade', cond
   pista: 'Ataques inesperados e recorrentes com medo de novas crises e esquiva.',
   dx: ['Pânico com agorafobia', 'Síndrome coronariana aguda', 'Ansiedade generalizada', 'Feocromocitoma'],
   edx: 'Ataques de pânico inesperados e recorrentes, com pelo menos 1 mês de preocupação com novas crises ou mudança de comportamento. Agorafobia: medo e esquiva de locais onde escapar seria difícil (diagnóstico separado, nem sempre presente).',
-  cd: ['ISRS e TCC', 'Benzodiazepínico contínuo como base', 'Betabloqueador isolado', 'Cateterismo cardíaco'],
+  cd: ['Sertralina em dose baixa crescente e TCC com exposição', 'Clonazepam 2 mg/dia contínuo como base do tratamento', 'Propranolol 40 mg de 12/12 h isolado para as palpitações', 'Cateterismo cardíaco pela dor torácica recorrente'],
   ecd: 'Primeira linha: ISRS (sertralina, escitalopram, paroxetina) ou venlafaxina, iniciando em dose baixa (hipersensibilidade inicial), e terapia cognitivo-comportamental com exposição. Benzodiazepínico apenas como ponte nas primeiras semanas. Excluir causas orgânicas uma vez, sem repetir exames a cada crise.' });
 
 CASO({ id: 'py_tag', area: 'cm', ala: 'psiq', dif: 1, tema: 'Ansiedade', cond: 'Transtorno de ansiedade generalizada', tags: ['psiq'],
@@ -198,7 +198,7 @@ CASO({ id: 'py_tag', area: 'cm', ala: 'psiq', dif: 1, tema: 'Ansiedade', cond: '
   pista: 'Preocupação difusa, crônica (6 meses ou mais), com sintomas somáticos.',
   dx: ['Ansiedade generalizada', 'Transtorno de pânico', 'Fobia social', 'Hipertireoidismo subclínico'],
   edx: 'TAG: ansiedade e preocupação excessivas na maioria dos dias por pelo menos 6 meses, sobre vários temas, com 3 ou mais entre inquietação, fadiga, dificuldade de concentração, irritabilidade, tensão muscular e alteração do sono.',
-  cd: ['ISRS ou IRSN e TCC', 'Clonazepam de uso contínuo', 'Bupropiona em dose plena', 'Haloperidol'],
+  cd: ['Escitalopram (ou venlafaxina) e TCC', 'Clonazepam 1 mg/dia de uso contínuo por 12 meses', 'Bupropiona 300 mg/dia para a ansiedade e o cansaço', 'Haloperidol 1 mg/dia à noite'],
   ecd: 'Primeira linha: ISRS (escitalopram, sertralina) ou IRSN (venlafaxina, duloxetina) e TCC; pregabalina e buspirona são alternativas. Benzodiazepínicos só por curto prazo (dependência, quedas). Bupropiona pode piorar a ansiedade.' });
 
 CASO({ id: 'py_toc', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtorno obsessivo-compulsivo', cond: 'Transtorno obsessivo-compulsivo', tags: ['psiq'],
@@ -211,7 +211,7 @@ CASO({ id: 'py_toc', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtorno obsessiv
   pista: 'Obsessões egodistônicas e compulsões para neutralizar a ansiedade.',
   dx: ['TOC', 'Personalidade obsessivo-compulsiva', 'Esquizofrenia', 'Ansiedade generalizada'],
   edx: 'TOC: obsessões (pensamentos intrusivos, indesejados, que causam angústia) e/ou compulsões (atos repetitivos para reduzir a ansiedade), consumindo mais de 1 hora por dia ou causando prejuízo. É egodistônico. No transtorno de personalidade obsessivo-compulsiva (perfeccionismo, rigidez), os traços são egossintônicos e não há obsessões verdadeiras.',
-  cd: ['ISRS em dose alta e TCC', 'Benzodiazepínico isolado', 'Antipsicótico em monoterapia', 'Eletroconvulsoterapia'],
+  cd: ['Fluoxetina em dose alta por 12 semanas e TCC', 'Clonazepam 2 mg/dia isolado para reduzir a ansiedade', 'Risperidona em monoterapia nas obsessões de contaminação', 'Eletroconvulsoterapia como primeira escolha'],
   ecd: 'ISRS (fluoxetina, sertralina, fluvoxamina) em doses mais altas e por mais tempo (10 a 12 semanas) que na depressão; clomipramina é alternativa. TCC com exposição e prevenção de resposta. Refratários: potencializar com antipsicótico atípico em dose baixa; neurocirurgia ou estimulação em casos extremos. ECT não tem boa evidência no TOC.' });
 
 CASO({ id: 'py_tept', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtorno de estresse pós-traumático', cond: 'Transtorno de estresse pós-traumático', tags: ['psiq'],
@@ -224,7 +224,7 @@ CASO({ id: 'py_tept', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtorno de estr
   pista: 'Mais de 1 mês após trauma: revivência, esquiva, humor negativo e hiperexcitação.',
   dx: ['TEPT', 'Transtorno de estresse agudo', 'Transtorno de adaptação', 'Transtorno de pânico'],
   edx: 'TEPT: exposição a morte, ameaça de morte, lesão grave ou violência sexual, com intrusão, evitação, alterações negativas de cognição e humor e hiperexcitação por mais de 1 mês. Estresse agudo: 3 dias a 1 mês após o trauma.',
-  cd: ['Psicoterapia focada no trauma', 'Benzodiazepínico contínuo', 'Debriefing obrigatório em grupo', 'Antipsicótico típico'],
+  cd: ['Psicoterapia focada no trauma (TCC ou EMDR) e sertralina', 'Clonazepam contínuo por 6 meses e psicoterapia de apoio', 'Debriefing psicológico obrigatório em grupo na primeira semana', 'Haloperidol 5 mg/dia para os pesadelos e a hipervigilância'],
   ecd: 'Primeira linha: psicoterapia focada no trauma (TCC, terapia de processamento cognitivo, EMDR) e/ou ISRS (sertralina, paroxetina) ou venlafaxina. Prazosina para pesadelos em casos selecionados. Benzodiazepínicos não são recomendados (podem piorar o desfecho). Rastrear depressão, uso de álcool e risco de suicídio.' });
 
 CASO({ id: 'py_adaptacao', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtorno de adaptação', cond: 'Transtorno de adaptação com humor deprimido', tags: ['psiq'],
@@ -237,7 +237,7 @@ CASO({ id: 'py_adaptacao', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtorno de
   pista: 'Estressor identificável, sintomas desproporcionais em até 3 meses, sem critério para outro transtorno.',
   dx: ['Transtorno de adaptação', 'Depressão maior', 'Distimia', 'TEPT'],
   edx: 'Sintomas emocionais ou comportamentais em até 3 meses após um estressor identificável, com sofrimento desproporcional ou prejuízo, que não preenchem critérios de outro transtorno e regridem em até 6 meses após o fim do estressor.',
-  cd: ['Psicoterapia de apoio', 'Antidepressivo obrigatório', 'Benzodiazepínico por 6 meses', 'Afastamento do trabalho por 1 ano'],
+  cd: ['Psicoterapia breve de apoio e reavaliar em 4-6 semanas', 'Sertralina obrigatória por 12 meses e psicoterapia', 'Clonazepam 1 mg/dia por 6 meses para a insônia', 'Afastamento do trabalho por 1 ano e acompanhamento no CAPS'],
   ecd: 'Tratamento principal: psicoterapia breve de apoio ou focada em resolução de problemas, atividade física e reavaliação em 4 a 6 semanas. Antidepressivos têm pouca vantagem sobre placebo em sintomas depressivos leves. Reavaliar se houver evolução para depressão maior ou risco.' });
 
 /* ---------- Transtornos alimentares ---------- */
@@ -252,7 +252,7 @@ CASO({ id: 'py_anorexia', area: 'cm', ala: 'psiq', dif: 3, tema: 'Transtornos al
   pista: 'Peso muito baixo, medo de engordar e distorção de imagem.',
   dx: ['Anorexia nervosa', 'Bulimia nervosa', 'Hipertireoidismo', 'Doença celíaca grave'],
   edx: 'Anorexia nervosa: restrição que leva a peso significativamente baixo, medo intenso de ganhar peso e distorção da imagem corporal. O peso baixo diferencia da bulimia. IMC < 15 é extremo. Amenorreia saiu dos critérios no DSM-5.',
-  cd: ['Internar e realimentar devagar', 'Dieta hipercalórica imediata em casa', 'Fluoxetina isolada', 'Só psicoterapia ambulatorial'],
+  cd: ['Internar e realimentar devagar, monitorando o fósforo', 'Dieta de 3.000 kcal/dia imediata em casa, com nutricionista', 'Fluoxetina 20 mg/dia isolada e retorno ambulatorial', 'Só psicoterapia ambulatorial semanal e pesagem quinzenal'],
   ecd: 'Internação: FC < 40-50, hipotensão, hipotermia, distúrbios eletrolíticos, síncope, IMC muito baixo. Realimentar de forma progressiva com monitoração de fósforo, potássio e magnésio (síndrome de realimentação: hipofosfatemia, insuficiência cardíaca, arritmias). Tratamento central: reabilitação nutricional e terapia familiar ou TCC; medicamentos têm papel limitado.' });
 
 CASO({ id: 'py_bulimia', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtornos alimentares', cond: 'Bulimia nervosa', tags: ['psiq', 'nefro', 'gaso'],
@@ -266,7 +266,7 @@ CASO({ id: 'py_bulimia', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtornos ali
   pista: 'Compulsão com compensação e peso normal.',
   dx: ['Bulimia nervosa', 'Anorexia nervosa purgativa', 'Transtorno de compulsão alimentar', 'Síndrome de Bartter'],
   edx: 'Bulimia: compulsões alimentares recorrentes com comportamentos compensatórios (vômitos, laxantes, diuréticos, jejum, exercício) pelo menos 1 vez por semana por 3 meses, autoavaliação influenciada pelo peso, sem peso baixo. Vômitos: alcalose metabólica hipoclorêmica e hipocalemia.',
-  cd: ['Repor potássio, fluoxetina e TCC', 'Bupropiona', 'Internação compulsória', 'Dieta restritiva'],
+  cd: ['Repor potássio, fluoxetina 60 mg/dia e TCC', 'Bupropiona 300 mg/dia para as compulsões alimentares', 'Internação psiquiátrica compulsória por 30 dias', 'Dieta restritiva de 1.200 kcal/dia com nutricionista'],
   ecd: 'TCC é a primeira linha; fluoxetina (60 mg/dia) é o fármaco aprovado e reduz compulsões e purgação. Bupropiona é contraindicada (risco de convulsão). Corrigir distúrbios hidroeletrolíticos e avaliar ECG. Cuidados odontológicos.' });
 
 /* ---------- Transtornos de personalidade ---------- */
@@ -280,7 +280,7 @@ CASO({ id: 'py_tp_paranoide', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtorno
   pista: 'Padrão invasivo e duradouro de desconfiança, sem psicose.',
   dx: ['Personalidade paranoide', 'Esquizofrenia paranoide', 'Transtorno delirante', 'Personalidade esquizoide'],
   edx: 'Grupo A (excêntrico). Desconfiança e suspeita invasivas desde o início da vida adulta, com interpretação de intenções malévolas, sem sintomas psicóticos persistentes. No transtorno delirante há um delírio fixo e no esquizofrênico, alucinações e desorganização.',
-  cd: ['Explicar com clareza cada etapa', 'Confrontar a desconfiança com firmeza', 'Haloperidol de depósito', 'Internação psiquiátrica'],
+  cd: ['Explicar com clareza cada exame e cada etapa do cuidado', 'Confrontar a desconfiança com firmeza desde a primeira consulta', 'Haloperidol decanoato mensal para as ideias persecutórias', 'Internação psiquiátrica involuntária para avaliação'],
   ecd: 'Comunicação honesta, previsível e respeitosa, sem excesso de proximidade; explicar o motivo de cada exame. Psicoterapia se o paciente aceitar. Medicamentos só para comorbidades ou sintomas específicos.' });
 
 CASO({ id: 'py_tp_esquizoide', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtornos de personalidade', cond: 'Transtorno de personalidade esquizoide', tags: ['psiq'],
@@ -293,7 +293,7 @@ CASO({ id: 'py_tp_esquizoide', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtorn
   pista: 'Desapego social sem desejo de relações e sem excentricidade.',
   dx: ['Personalidade esquizoide', 'Personalidade esquizotípica', 'Personalidade evitativa', 'Transtorno do espectro autista'],
   edx: 'Grupo A. Distanciamento das relações sociais e restrição da expressão emocional, sem desejo de intimidade. Na evitativa, o paciente deseja relações, mas tem medo de rejeição; na esquizotípica há excentricidade, pensamento mágico e distorções perceptivas.',
-  cd: ['Respeitar a distância', 'Antipsicótico atípico', 'Forçar terapia de grupo semanal', 'Internação'],
+  cd: ['Respeitar a distância, sem forçar vínculo', 'Risperidona 2 mg/dia pelo isolamento social', 'Exigir participação em terapia de grupo semanal', 'Internação para avaliação psiquiátrica completa'],
   ecd: 'Raramente procura tratamento. Abordagem respeitosa, sem forçar intimidade; psicoterapia individual se desejar. Tratar comorbidades como depressão.' });
 
 CASO({ id: 'py_tp_esquizotipico', area: 'cm', ala: 'psiq', dif: 3, tema: 'Transtornos de personalidade', cond: 'Transtorno de personalidade esquizotípica', tags: ['psiq'],
@@ -306,7 +306,7 @@ CASO({ id: 'py_tp_esquizotipico', area: 'cm', ala: 'psiq', dif: 3, tema: 'Transt
   pista: 'Excentricidade, pensamento mágico e ansiedade social, sem psicose franca.',
   dx: ['Personalidade esquizotípica', 'Esquizofrenia', 'Personalidade esquizoide', 'Personalidade paranoide'],
   edx: 'Grupo A. Desconforto agudo com relacionamentos, distorções cognitivas ou perceptivas (ideias de referência, pensamento mágico) e comportamento excêntrico. Pertence ao espectro da esquizofrenia, mas sem psicose persistente.',
-  cd: ['Psicoterapia', 'Clozapina em dose plena', 'Eletroconvulsoterapia', 'Lítio em dose plena'],
+  cd: ['Psicoterapia de apoio e treino de habilidades sociais', 'Clozapina em dose plena com hemograma semanal pelos sintomas psicóticos', 'Eletroconvulsoterapia pelas crenças estranhas', 'Carbonato de lítio em dose plena (litemia 0,8-1,2)'],
   ecd: 'Psicoterapia de apoio e treino de habilidades sociais. Antipsicóticos em dose baixa para sintomas quase psicóticos transitórios. Acompanhar a possível evolução para esquizofrenia.' });
 
 CASO({ id: 'py_tp_antissocial', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtornos de personalidade', cond: 'Transtorno de personalidade antissocial', tags: ['psiq'],
@@ -319,7 +319,7 @@ CASO({ id: 'py_tp_antissocial', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtor
   pista: 'Desrespeito aos direitos dos outros e transtorno de conduta antes dos 15 anos.',
   dx: ['Personalidade antissocial', 'Personalidade borderline', 'Personalidade narcisista', 'Transtorno bipolar'],
   edx: 'Grupo B (dramático). Padrão de desrespeito e violação dos direitos dos outros desde os 15 anos; diagnóstico só a partir dos 18 anos, com evidência de transtorno de conduta antes dos 15. Impulsividade, irresponsabilidade, mentiras, agressividade e ausência de remorso.',
-  cd: ['Recusar e manter limites', 'Prescrever clonazepam para criar vínculo', 'Lítio para a impulsividade', 'Chamar a polícia'],
+  cd: ['Recusar o benzodiazepínico e manter limites firmes', 'Prescrever clonazepam em dose baixa para criar vínculo', 'Carbonato de lítio para a impulsividade e a agressividade', 'Chamar a segurança e encerrar o atendimento sem avaliação'],
   ecd: 'Limites firmes e consistentes, sem prescrever drogas de abuso. Tratar comorbidades (uso de substâncias é frequente). Respostas terapêuticas são limitadas; abordagens estruturadas podem reduzir comportamentos de risco.' });
 
 CASO({ id: 'py_tp_borderline', area: 'cm', ala: 'psiq', dif: 3, tema: 'Transtornos de personalidade', cond: 'Transtorno de personalidade borderline', tags: ['psiq'],
@@ -332,7 +332,7 @@ CASO({ id: 'py_tp_borderline', area: 'cm', ala: 'psiq', dif: 3, tema: 'Transtorn
   pista: 'Instabilidade de afeto, autoimagem e relações, com impulsividade e medo de abandono.',
   dx: ['Personalidade borderline', 'Transtorno bipolar tipo I', 'Personalidade histriônica', 'Depressão maior'],
   edx: 'Grupo B. Padrão de instabilidade das relações, da autoimagem e dos afetos, com impulsividade marcante. As oscilações de humor duram horas e são reativas a estressores interpessoais, diferentemente dos episódios de dias a semanas do transtorno bipolar.',
-  cd: ['Terapia dialética', 'Aumentar o clonazepam', 'Lítio em dose alta', 'Alta sem seguimento algum'],
+  cd: ['Plano de segurança e terapia comportamental dialética', 'Aumentar o clonazepam para 4 mg/dia nas crises de raiva', 'Carbonato de lítio em dose alta para a instabilidade afetiva', 'Alta sem seguimento, pois as crises são para chamar atenção'],
   ecd: 'Avaliação de risco a cada crise, com plano de segurança. Tratamento principal: psicoterapia estruturada (terapia comportamental dialética, terapia baseada em mentalização). Medicamentos só para comorbidades ou sintomas-alvo; evitar benzodiazepínicos (desinibição, dependência) e grandes quantidades de remédios em casa.' });
 
 CASO({ id: 'py_tp_histrionico', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtornos de personalidade', cond: 'Transtorno de personalidade histriônica', tags: ['psiq'],
@@ -345,7 +345,7 @@ CASO({ id: 'py_tp_histrionico', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtor
   pista: 'Busca de atenção, emoções superficiais e dramáticas, sedução.',
   dx: ['Personalidade histriônica', 'Personalidade borderline', 'Personalidade narcisista', 'Transtorno de sintomas somáticos'],
   edx: 'Grupo B. Emotividade excessiva e busca de atenção: desconforto quando não é o centro, comportamento sedutor, emoções superficiais e mutáveis, discurso impressionista, teatralidade, sugestionabilidade. Na borderline predominam instabilidade, impulsividade e autolesão.',
-  cd: ['Limites e consultas fixas', 'Tomografia de crânio a cada visita', 'Antipsicótico de depósito', 'Ignorar todas as queixas'],
+  cd: ['Limites claros e consultas agendadas em horário fixo', 'TC de crânio a cada nova queixa neurológica relatada', 'Haloperidol decanoato mensal pela teatralidade', 'Desconsiderar as queixas novas para não reforçar o comportamento'],
   ecd: 'Manter postura empática, porém com limites profissionais claros; consultas agendadas (não só nas crises); valorizar queixas novas com exame adequado, evitando investigações repetidas. Psicoterapia psicodinâmica ou de apoio.' });
 
 CASO({ id: 'py_tp_narcisista', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtornos de personalidade', cond: 'Transtorno de personalidade narcisista', tags: ['psiq'],
@@ -358,5 +358,5 @@ CASO({ id: 'py_tp_narcisista', area: 'cm', ala: 'psiq', dif: 2, tema: 'Transtorn
   pista: 'Grandiosidade, necessidade de admiração e falta de empatia, de forma estável.',
   dx: ['Personalidade narcisista', 'Episódio maníaco', 'Personalidade antissocial', 'Personalidade histriônica'],
   edx: 'Grupo B. Padrão invasivo de grandiosidade, necessidade de admiração e falta de empatia, com fragilidade da autoestima diante de críticas. Diferente da mania, é estável ao longo da vida, sem aceleração ou redução da necessidade de sono.',
-  cd: ['Validar e manter as regras', 'Trocar toda a equipe a pedido', 'Confrontá-lo publicamente', 'Lítio'],
+  cd: ['Validar a preocupação e manter as regras do serviço', 'Trocar toda a equipe de enfermagem a pedido dele', 'Confrontá-lo publicamente sobre o comportamento', 'Carbonato de lítio para reduzir a grandiosidade e a irritabilidade'],
   ecd: 'Evitar confronto direto e humilhação; validar a preocupação com a qualidade do cuidado mantendo limites e a organização do serviço. Psicoterapia é o tratamento, mas raramente buscada; tratar comorbidades (depressão, uso de substâncias).' });

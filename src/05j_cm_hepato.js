@@ -20,7 +20,7 @@ CASO({ id: 'cf_hepatite_a', area: 'cm', ala: 'hepato', dif: 1, tema: 'Hepatites 
   pista: 'Transmissão fecal-oral, IgM positivo.',
   dx: ['Hepatite A aguda', 'Hepatite B aguda', 'Hepatite medicamentosa', 'Coledocolitíase'],
   edx: 'Hepatite aguda (transaminases muito elevadas, padrão hepatocelular) com anti-HAV IgM reagente. Não cronifica; formas fulminantes são raras e mais comuns em adultos mais velhos e hepatopatas.',
-  cd: ['Suporte e notificar', 'Antiviral específico por 12 semanas', 'Corticoide em dose alta', 'Internação em UTI para todos os casos'],
+  cd: ['Suporte, notificar e vacinar contatos suscetíveis', 'Tenofovir 300 mg/dia por 12 semanas', 'Prednisona 40 mg/dia por 2 semanas', 'Internação em UTI e N-acetilcisteína venosa para todos os casos'],
   ecd: 'Tratamento de suporte, com sinais de alarme (INR alargando, encefalopatia). Notificação, medidas de higiene e vacinação (ou imunoglobulina) dos contatos suscetíveis. A vacina está no calendário infantil (15 meses).' });
 
 CASO({ id: 'cf_hepatite_b_cronica', area: 'cm', ala: 'hepato', dif: 3, tema: 'Hepatites virais', cond: 'Hepatite B crônica HBeAg negativo com indicação de tratamento', tags: ['hepato', 'infecto', 'infec'],
@@ -34,7 +34,7 @@ CASO({ id: 'cf_hepatite_b_cronica', area: 'cm', ala: 'hepato', dif: 3, tema: 'He
   pista: 'HBsAg por mais de 6 meses, replicação e lesão hepática.',
   dx: ['Hepatite B crônica HBeAg negativo', 'Hepatite B aguda', 'Imunidade por vacina', 'Infecção curada'],
   edx: 'HBsAg por mais de 6 meses define infecção crônica. HBeAg negativo com DNA alto e transaminases elevadas: hepatite crônica HBeAg negativo (mutante pré-core), com atividade e fibrose. Anti-HBc IgM negativo afasta infecção aguda.',
-  cd: ['Tenofovir ou entecavir e rastrear CHC', 'Interferon por 4 semanas', 'Sem tratamento, só acompanhar', 'Lamivudina isolada por 3 meses'],
+  cd: ['Tenofovir ou entecavir e US semestral para CHC', 'Interferon peguilado por 4 semanas', 'Sem tratamento, só repetir a carga viral e as transaminases anualmente', 'Lamivudina isolada por 3 meses'],
   ecd: 'Tratamento com análogos de alta barreira genética (tenofovir ou entecavir), em geral por tempo indefinido nos HBeAg negativos. Rastreamento de carcinoma hepatocelular com ultrassom semestral (história familiar, origem asiática, fibrose). Testar e vacinar contatos.' });
 
 CASO({ id: 'cf_hepatite_c', area: 'cm', ala: 'hepato', dif: 2, tema: 'Hepatites virais', cond: 'Hepatite C crônica', tags: ['hepato', 'infecto', 'infec'],
@@ -48,7 +48,7 @@ CASO({ id: 'cf_hepatite_c', area: 'cm', ala: 'hepato', dif: 2, tema: 'Hepatites 
   pista: 'Anti-HCV mostra contato; o RNA confirma infecção ativa.',
   dx: ['Hepatite C crônica', 'Hepatite C curada (cicatriz sorológica)', 'Hepatite B oculta', 'Hepatite autoimune'],
   edx: 'Anti-HCV reagente indica exposição; HCV-RNA detectável confirma infecção ativa. Cerca de 70-80% cronificam, com risco de cirrose e carcinoma hepatocelular.',
-  cd: ['Antiviral de ação direta por 12 semanas', 'Interferon peguilado com ribavirina por 48 semanas', 'Não tratar sem cirrose', 'Só repetir exames anualmente'],
+  cd: ['Sofosbuvir + velpatasvir por 12 semanas', 'Interferon peguilado com ribavirina por 48 semanas', 'Não tratar, pois ainda não há cirrose', 'Repetir HCV-RNA e elastografia anualmente'],
   ecd: 'Todo portador de HCV-RNA detectável deve ser tratado: sofosbuvir com velpatasvir (ou glecaprevir com pibrentasvir) por 8 a 12 semanas, com taxas de cura acima de 95%. Avaliar interações e testar HBV (risco de reativação). Cura: RNA indetectável 12 semanas após o fim (resposta virológica sustentada).' });
 
 CASO({ id: 'cf_paracetamol', area: 'cm', ala: 'hepato', dif: 3, tema: 'Insuficiência hepática aguda', cond: 'Insuficiência hepática aguda por paracetamol', tags: ['hepato', 'intox'],
@@ -62,7 +62,7 @@ CASO({ id: 'cf_paracetamol', area: 'cm', ala: 'hepato', dif: 3, tema: 'Insufici�
   pista: 'Mesmo tardia, a N-acetilcisteína ainda ajuda.',
   dx: ['IHA por paracetamol', 'Hepatite A fulminante', 'Hepatite isquêmica', 'Síndrome HELLP'],
   edx: 'Coagulopatia (INR ≥ 1,5) e encefalopatia em fígado previamente sadio, em menos de 26 semanas: insuficiência hepática aguda. O metabólito NAPQI esgota a glutationa e causa necrose centrolobular.',
-  cd: ['N-acetilcisteína IV e UTI', 'Carvão ativado isolado e alta', 'Plasma para normalizar o INR e observar', 'Furosemida para a lesão renal'],
+  cd: ['N-acetilcisteína EV e UTI (avaliar transplante)', 'Carvão ativado isolado e alta após 6 horas de observação', 'Plasma fresco para normalizar o INR e observar', 'Furosemida e hemodiálise pela lesão renal'],
   ecd: 'N-acetilcisteína venosa, mesmo tardia; UTI, corrigir hipoglicemia, monitorar edema cerebral. Critérios do King’s College (pH < 7,3, ou INR > 6,5 com creatinina > 3,4 e encefalopatia graus III-IV) indicam transplante. Avaliação psiquiátrica após a estabilização.' });
 
 /* ---------- Cirrose e complicações ---------- */
@@ -77,7 +77,7 @@ CASO({ id: 'cf_ascite', area: 'cm', ala: 'hepato', dif: 2, tema: 'Cirrose e comp
   pista: 'GASA ≥ 1,1 e proteína baixa.',
   dx: ['Ascite por hipertensão portal', 'Ascite carcinomatosa', 'Ascite tuberculosa', 'Peritonite bacteriana espontânea'],
   edx: 'GASA ≥ 1,1 g/dL indica hipertensão portal; proteína < 2,5 g/dL sugere cirrose (na insuficiência cardíaca, a proteína é alta). PMN < 250 afasta PBE.',
-  cd: ['Sal restrito, espironolactona e furosemida', 'Restrição hídrica rigorosa isolada', 'Paracentese de alívio diária', 'Betabloqueador em dose alta para tratar a ascite'],
+  cd: ['Sódio 2 g/dia, espironolactona 100 mg e furosemida 40 mg/dia', 'Restrição hídrica de 1 L/dia isolada', 'Paracentese de alívio diária sem albumina', 'Propranolol em dose alta para reduzir a pressão portal e tratar a ascite'],
   ecd: 'Restrição de sódio (cerca de 2 g/dia) e diuréticos na proporção de 100 mg de espironolactona para 40 mg de furosemida. Ascite volumosa: paracentese com albumina (6-8 g por litro retirado acima de 5 L). Refratária: paracenteses seriadas, TIPS, transplante. Abstinência alcoólica muda o prognóstico.' });
 
 CASO({ id: 'cf_pbe', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirrose e complicações', cond: 'Peritonite bacteriana espontânea', tags: ['hepato', 'sepse', 'infec'],
@@ -91,7 +91,7 @@ CASO({ id: 'cf_pbe', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirrose e complic
   pista: 'PMN ≥ 250/mm³ no líquido ascítico.',
   dx: ['Peritonite bacteriana espontânea', 'Peritonite secundária por perfuração', 'Ascite neutrocítica estéril', 'Carcinomatose peritoneal'],
   edx: 'PMN ≥ 250/mm³ no líquido ascítico, sem foco cirúrgico, define PBE (geralmente monobacteriana, gram-negativo entérico). Na secundária, há múltiplos germes, glicose baixa, DHL alta e proteína alta.',
-  cd: ['Ceftriaxona e albumina', 'Laparotomia exploradora', 'Antibiótico oral sem albumina', 'Paracentese de grande volume e alta'],
+  cd: ['Ceftriaxona e albumina 1,5 g/kg no D1 e 1 g/kg no D3', 'Laparotomia exploradora de urgência', 'Ciprofloxacino VO sem albumina e alta', 'Paracentese de grande volume, sem antibiótico, e alta hospitalar'],
   ecd: 'Cefalosporina de 3ª geração por 5 dias e albumina 1,5 g/kg no dia 1 e 1 g/kg no dia 3 (reduz síndrome hepatorrenal e mortalidade, especialmente com creatinina > 1 ou bilirrubina > 4). Profilaxia secundária com norfloxacino ou ciprofloxacino. Encaminhar para avaliação de transplante.' });
 
 CASO({ id: 'cf_hda_varicosa', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirrose e complicações', cond: 'Hemorragia digestiva alta varicosa', tags: ['hepato', 'gastro', 'choque'],
@@ -105,7 +105,7 @@ CASO({ id: 'cf_hda_varicosa', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirrose 
   pista: 'Vasoconstritor, antibiótico e endoscopia: o que reduz mortalidade?',
   dx: ['Hemorragia varicosa', 'Úlcera péptica sangrante', 'Síndrome de Mallory-Weiss', 'Gastropatia hipertensiva leve'],
   edx: 'Cirrótico com HDA volumosa: presumir origem varicosa até a endoscopia.',
-  cd: ['Vasoconstritor, antibiótico e ligadura', 'Expansão vigorosa até Hb de 12 g/dL', 'Só IBP e endoscopia eletiva', 'Balão esofágico como primeira medida'],
+  cd: ['Terlipressina, ceftriaxona e ligadura elástica em até 12 h', 'Cristaloide vigoroso até Hb de 12 g/dL', 'Omeprazol EV e endoscopia eletiva', 'Balão de Sengstaken-Blakemore como primeira medida, antes da endoscopia'],
   ecd: 'Reposição volêmica cautelosa (transfundir com Hb < 7, alvo 7-8, pois excesso aumenta a pressão portal), vasoconstritor esplâncnico por 2 a 5 dias, antibiótico profilático (ceftriaxona) e endoscopia em até 12 horas com ligadura elástica. Falha: TIPS (ou balão como ponte). TIPS precoce em alto risco (Child C 10-13 ou B com sangramento ativo). Profilaxia secundária: betabloqueador não seletivo com ligadura.' });
 
 CASO({ id: 'cf_profilaxia_varizes', area: 'cm', ala: 'hepato', dif: 2, tema: 'Cirrose e complicações', cond: 'Profilaxia primária de sangramento varicoso', tags: ['hepato'],
@@ -119,7 +119,7 @@ CASO({ id: 'cf_profilaxia_varizes', area: 'cm', ala: 'hepato', dif: 2, tema: 'Ci
   pista: 'Prevenir o primeiro sangramento.',
   dx: ['Varizes sem sangramento prévio', 'Hemorragia varicosa ativa', 'Gastropatia hipertensiva isolada', 'Esôfago de Barrett'],
   edx: 'Hipertensão portal clinicamente significativa com varizes de médio ou grosso calibre: indicação de profilaxia primária.',
-  cd: ['Carvedilol', 'Nitrato isolado', 'TIPS profilático', 'Escleroterapia mensal'],
+  cd: ['Carvedilol 6,25 mg/dia até 12,5 mg/dia', 'Mononitrato de isossorbida 20 mg de 12/12 h isolado', 'TIPS profilático', 'Escleroterapia mensal das varizes'],
   ecd: 'Betabloqueador não seletivo (carvedilol 6,25 mg/dia até 12,5 mg/dia, ou propranolol) ou ligadura elástica. Pelo Baveno VII, betabloqueador é preferido, pois também reduz descompensações (ascite). Na profilaxia secundária, associam-se betabloqueador e ligadura.' });
 
 CASO({ id: 'cf_encefalopatia', area: 'cm', ala: 'hepato', dif: 2, tema: 'Cirrose e complicações', cond: 'Encefalopatia hepática precipitada por constipação e diurético', tags: ['hepato', 'neuro'],
@@ -133,7 +133,7 @@ CASO({ id: 'cf_encefalopatia', area: 'cm', ala: 'hepato', dif: 2, tema: 'Cirrose
   pista: 'Encontrar e tratar o fator precipitante.',
   dx: ['Encefalopatia hepática', 'AVC isquêmico', 'Hipoglicemia', 'Meningite bacteriana'],
   edx: 'Confusão, inversão do ciclo sono-vigília e asterixis em cirrótica. Precipitantes: constipação, excesso de diurético (hipocalemia, desidratação), infecção, sangramento, sedativos, distúrbios eletrolíticos.',
-  cd: ['Lactulose e corrigir precipitantes', 'Restrição proteica rigorosa', 'Benzodiazepínico para a agitação', 'Dosar amônia e só tratar se estiver alta'],
+  cd: ['Lactulose (2-3 evacuações/dia) e suspender o diurético', 'Restrição proteica de 0,5 g/kg/dia', 'Diazepam EV para a agitação', 'Dosar a amônia sérica e só tratar se estiver acima do limite normal'],
   ecd: 'Lactulose oral ou em enema, titulando para 2-3 evacuações pastosas/dia; rifaximina associada nos recorrentes. Não restringir proteína (piora a desnutrição). Amônia sérica não é necessária para o diagnóstico. Sempre afastar PBE e hemorragia.' });
 
 CASO({ id: 'cf_hepatorrenal', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirrose e complicações', cond: 'Síndrome hepatorrenal (lesão renal aguda)', tags: ['hepato', 'nefro'],
@@ -147,7 +147,7 @@ CASO({ id: 'cf_hepatorrenal', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirrose 
   pista: 'Rim estruturalmente normal que não responde à albumina.',
   dx: ['Síndrome hepatorrenal', 'Necrose tubular aguda', 'Glomerulonefrite por crioglobulina', 'Obstrução urinária'],
   edx: 'LRA em cirrótico com ascite, sem resposta a 2 dias de suspensão de diuréticos e expansão com albumina, sem choque, nefrotóxicos ou doença renal estrutural: síndrome hepatorrenal (vasoconstrição renal funcional).',
-  cd: ['Terlipressina com albumina', 'Furosemida em dose alta', 'Hemodiálise imediata como tratamento definitivo', 'Soro fisiológico em grande volume'],
+  cd: ['Terlipressina e albumina', 'Furosemida 80 mg EV', 'Hemodiálise imediata como tratamento definitivo', 'SF 0,9% 3 L em 2 horas'],
   ecd: 'Vasoconstritor (terlipressina; noradrenalina em UTI) com albumina. O tratamento definitivo é o transplante hepático. Prevenção: albumina na PBE e nas paracenteses grandes, evitar AINE e diuréticos em excesso.' });
 
 /* ---------- Doenças metabólicas e alcoólica ---------- */
@@ -163,7 +163,7 @@ CASO({ id: 'cf_masld', area: 'cm', ala: 'hepato', dif: 2, tema: 'Doenças hepát
   pista: 'Avaliar o grau de fibrose é o que define o risco.',
   dx: ['MASLD com fibrose', 'Hepatite alcoólica', 'Hepatite autoimune', 'Hemocromatose'],
   edx: 'Esteatose com pelo menos um critério cardiometabólico, sem consumo significativo de álcool: MASLD. FIB-4 indeterminado seguido de elastografia elevada sugere fibrose significativa (risco de cirrose e eventos).',
-  cd: ['Perder peso e agonista de GLP-1', 'Nenhuma intervenção, pois é benigno', 'Biópsia hepática obrigatória em todos os casos', 'Dieta sem gordura isolada por 1 mês'],
+  cd: ['Perda de 7-10% do peso e semaglutida', 'Nenhuma intervenção, pois é benigna', 'Biópsia hepática para todos os casos', 'Dieta sem gordura por 1 mês e silimarina'],
   ecd: 'Perda de peso de 7 a 10% melhora a inflamação e a fibrose. Controle do diabetes com drogas que ajudam o fígado (agonistas de GLP-1, pioglitazona), estatina para dislipidemia (segura). Resmetirom aprovado em alguns países para MASH com fibrose. Principal causa de morte: doença cardiovascular.' });
 
 CASO({ id: 'cf_hepatite_alcoolica', area: 'cm', ala: 'hepato', dif: 3, tema: 'Doenças hepáticas metabólicas', cond: 'Hepatite alcoólica grave', tags: ['hepato'],
@@ -177,7 +177,7 @@ CASO({ id: 'cf_hepatite_alcoolica', area: 'cm', ala: 'hepato', dif: 3, tema: 'Do
   pista: 'TGO maior que TGP, Maddrey ≥ 32.',
   dx: ['Hepatite alcoólica grave', 'Hepatite A aguda', 'Colangite aguda', 'Hepatite medicamentosa'],
   edx: 'Icterícia de início recente em etilista pesado, transaminases moderadas com TGO/TGP > 2 (raramente > 300-400), leucocitose e febre. Maddrey ≥ 32 indica forma grave.',
-  cd: ['Prednisolona após afastar infecção', 'Corticoide mesmo com infecção ativa', 'Pentoxifilina como primeira escolha', 'Cirurgia de urgência'],
+  cd: ['Prednisolona 40 mg/dia após afastar infecção', 'Prednisolona mesmo com a PBE ativa', 'Pentoxifilina 400 mg de 8/8 h como 1ª escolha', 'Encaminhar para TIPS de urgência'],
   ecd: 'Prednisolona 40 mg/dia por 28 dias, reavaliando no 7º dia (escore de Lille). Afastar infecção e sangramento antes. Suporte nutricional, tiamina, manejo da abstinência. Transplante precoce em casos selecionados.' });
 
 CASO({ id: 'cf_hemocromatose', area: 'cm', ala: 'hepato', dif: 3, tema: 'Doenças hepáticas metabólicas', cond: 'Hemocromatose hereditária', tags: ['hepato', 'endocrino'],
@@ -191,7 +191,7 @@ CASO({ id: 'cf_hemocromatose', area: 'cm', ala: 'hepato', dif: 3, tema: 'Doença
   pista: 'Saturação de transferrina muito alta.',
   dx: ['Hemocromatose hereditária', 'Hemossiderose transfusional', 'Doença de Wilson', 'MASLD'],
   edx: 'Absorção excessiva de ferro por mutação do HFE (C282Y homozigoto): depósito em fígado, pâncreas (diabetes "bronzeado"), pele, articulações, coração e hipófise. Saturação de transferrina > 45% é o melhor rastreio.',
-  cd: ['Flebotomias periódicas', 'Quelante de cobre', 'Suplemento de vitamina C', 'Transplante hepático imediato'],
+  cd: ['Flebotomias semanais até ferritina 50-100 ng/mL', 'D-penicilamina (quelante de cobre)', 'Vitamina C 1 g/dia', 'Transplante hepático imediato pela sobrecarga de ferro'],
   ecd: 'Flebotomias semanais até ferritina 50-100 ng/mL e depois manutenção. Evitar suplementos de ferro e vitamina C. Rastrear familiares de primeiro grau. Ferritina > 1.000 sugere fibrose avançada: rastrear cirrose e carcinoma hepatocelular.' });
 
 CASO({ id: 'cf_wilson', area: 'cm', ala: 'hepato', dif: 3, tema: 'Doenças hepáticas metabólicas', cond: 'Doença de Wilson', tags: ['hepato', 'neuro', 'psiq'],
@@ -206,7 +206,7 @@ CASO({ id: 'cf_wilson', area: 'cm', ala: 'hepato', dif: 3, tema: 'Doenças hepá
   pista: 'Jovem com doença hepática e neuropsiquiátrica.',
   dx: ['Doença de Wilson', 'Hemocromatose', 'Esclerose múltipla', 'Hepatite autoimune'],
   edx: 'Defeito no transportador ATP7B (autossômico recessivo): o cobre não é excretado na bile e se acumula no fígado, cérebro (núcleos da base) e córnea. Ceruloplasmina baixa, cobre urinário alto, anéis de Kayser-Fleischer. Pode haver hemólise Coombs negativa.',
-  cd: ['Quelante e depois zinco', 'Flebotomias semanais', 'Corticoide em dose alta', 'Dieta rica em cobre'],
+  cd: ['D-penicilamina (ou trientina) e depois zinco', 'Flebotomias semanais até normalizar a ceruloplasmina', 'Prednisona 1 mg/kg/dia', 'Dieta rica em cobre e frutos do mar'],
   ecd: 'Quelantes aumentam a excreção urinária de cobre; zinco reduz a absorção (manutenção ou casos pré-sintomáticos). Evitar alimentos ricos em cobre (frutos do mar, chocolate, castanhas, vísceras). Insuficiência hepática aguda por Wilson indica transplante. Rastrear irmãos.' });
 
 /* ---------- Tumores hepáticos e hipertensão portal esquistossomótica ---------- */
@@ -222,7 +222,7 @@ CASO({ id: 'cf_chc', area: 'cm', ala: 'hepato', dif: 3, tema: 'Câncer de fígad
   pista: 'Em cirrótico, a imagem típica dispensa biópsia.',
   dx: ['Carcinoma hepatocelular', 'Hemangioma hepático', 'Hiperplasia nodular focal', 'Metástase de cólon'],
   edx: 'Em cirrótico, nódulo ≥ 1 cm com realce arterial e washout na TC ou RM confirma CHC sem biópsia. Único, < 5 cm, função hepática preservada, sem hipertensão portal: BCLC A (muito precoce/precoce).',
-  cd: ['Ressecção hepática', 'Sorafenibe como primeira linha', 'Quimioembolização paliativa', 'Biópsia obrigatória antes de qualquer decisão'],
+  cd: ['Ressecção hepática (BCLC A, sem hipertensão portal)', 'Sorafenibe como primeira linha', 'Quimioembolização transarterial paliativa', 'Biópsia percutânea do nódulo antes de qualquer decisão terapêutica'],
   ecd: 'BCLC A: ressecção (função preservada, sem hipertensão portal), ablação por radiofrequência ou micro-ondas, ou transplante dentro dos critérios de Milão (1 nódulo ≤ 5 cm ou até 3 ≤ 3 cm). Intermediário: quimioembolização. Avançado: imunoterapia (atezolizumabe e bevacizumabe).' });
 
 CASO({ id: 'cf_adenoma', area: 'cm', ala: 'hepato', dif: 2, tema: 'Câncer de fígado', cond: 'Adenoma hepatocelular associado a anticoncepcional', tags: ['hepato'],
@@ -237,7 +237,7 @@ CASO({ id: 'cf_adenoma', area: 'cm', ala: 'hepato', dif: 2, tema: 'Câncer de f�
   pista: 'Mulher jovem, anticoncepcional, lesão grande com sangramento.',
   dx: ['Adenoma hepatocelular', 'Hiperplasia nodular focal', 'Hemangioma', 'Carcinoma hepatocelular'],
   edx: 'Adenoma: tumor benigno ligado a estrógenos (anticoncepcional) e anabolizantes, com risco de sangramento e, raramente, transformação maligna (maior em homens, > 5 cm e subtipo beta-catenina). A hiperplasia nodular focal tem cicatriz central e não sangra.',
-  cd: ['Suspender o hormônio e ressecar', 'Manter o anticoncepcional e observar', 'Quimioterapia', 'Transplante hepático'],
+  cd: ['Suspender o anticoncepcional e ressecção do adenoma', 'Manter o anticoncepcional e repetir o ultrassom anualmente', 'Quimioembolização do adenoma', 'Transplante hepático'],
   ecd: 'Suspender estrógenos e reduzir o peso. Ressecção se > 5 cm, crescimento, sangramento ou em homens. Lesões < 5 cm em mulheres podem ser observadas após suspensão do hormônio. Hemangioma e hiperplasia nodular focal não precisam de tratamento.' });
 
 CASO({ id: 'cf_esquistossomose', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirrose e complicações', cond: 'Hipertensão portal esquistossomótica', tags: ['hepato', 'infecto', 'infec'],
@@ -252,5 +252,5 @@ CASO({ id: 'cf_esquistossomose', area: 'cm', ala: 'hepato', dif: 3, tema: 'Cirro
   pista: 'Hipertensão portal pré-sinusoidal com função hepática normal.',
   dx: ['Esquistossomose hepatoesplênica', 'Cirrose alcoólica descompensada', 'Trombose de veia porta', 'Síndrome de Budd-Chiari'],
   edx: 'Os ovos de Schistosoma mansoni causam fibrose periportal (pré-sinusoidal): hipertensão portal com grande esplenomegalia, hiperesplenismo e varizes, mas função hepática preservada (sem ascite, icterícia ou encefalopatia significativas).',
-  cd: ['Betabloqueador ou ligadura', 'Transplante hepático', 'Paracenteses seriadas', 'Lactulose contínua'],
+  cd: ['Propranolol ou ligadura elástica das varizes', 'Transplante hepático pela hipertensão portal pré-sinusoidal', 'Paracenteses seriadas com albumina a cada 2 semanas', 'Lactulose contínua'],
   ecd: 'Profilaxia primária com betabloqueador não seletivo (carvedilol ou propranolol) ou ligadura. Após sangramento, a cirurgia clássica no Brasil é a desconexão ázigo-portal com esplenectomia (DAPE), associada à terapia endoscópica. Praziquantel se infecção ativa.' });

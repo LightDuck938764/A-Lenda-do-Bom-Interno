@@ -21,7 +21,7 @@ CASO({ id: 'pq_higroma', area: 'ped', dif: 2, tema: 'Cirurgia pediátrica', cond
   pista: 'Massa cística, transiluminável, no triângulo posterior.',
   dx: ['Higroma cístico', 'Cisto do ducto tireoglosso', 'Hemangioma infantil', 'Linfonodomegalia supurada'],
   edx: 'Malformação linfática macrocística, geralmente no triângulo posterior do pescoço, presente ao nascer ou nos 2 primeiros anos. Pode crescer com infecções ou sangramento intralesional. Associa-se a síndromes como Turner e trissomias quando diagnosticada no pré-natal.',
-  cd: ['Ressonância e escleroterapia ou ressecção', 'Punção aspirativa repetida', 'Propranolol oral por 6 meses, como no hemangioma infantil', 'Antibiótico e observar'],
+  cd: ['RM cervical e escleroterapia (OK-432 ou bleomicina) ou ressecção', 'Punção aspirativa repetida', 'Propranolol oral por 6 meses, como no hemangioma infantil', 'Amoxicilina-clavulanato por 10 dias e observar a regressão da massa'],
   ecd: 'Lesões macrocísticas respondem bem à escleroterapia (por exemplo, OK-432, bleomicina, doxiciclina); a ressecção cirúrgica é opção, com risco de lesão nervosa. Lesões extensas com compressão de via aérea exigem planejamento do parto (EXIT). Propranolol é para hemangioma.' });
 
 CASO({ id: 'pq_tireoglosso', area: 'ped', dif: 2, tema: 'Cirurgia pediátrica', cond: 'Cisto do ducto tireoglosso', tags: ['cir', 'usg'],
@@ -48,7 +48,7 @@ CASO({ id: 'pq_torcicolo', area: 'ped', dif: 1, tema: 'Cirurgia pediátrica', co
   pista: 'Parto difícil e "oliva" no esternocleidomastóideo.',
   dx: ['Torcicolo muscular congênito', 'Fratura de clavícula', 'Higroma cístico', 'Plagiocefalia por craniossinostose'],
   edx: 'Fibrose do esternocleidomastóideo (pseudotumor), associada a parto pélvico ou difícil: a cabeça inclina para o lado afetado e o queixo roda para o lado oposto. Pode associar-se a displasia do quadril.',
-  cd: ['Fisioterapia com alongamento', 'Tenotomia imediata', 'Colar cervical rígido por 3 meses', 'Biópsia da massa'],
+  cd: ['Fisioterapia com alongamento passivo do esternocleidomastóideo', 'Tenotomia do esternocleidomastóideo imediata no período neonatal', 'Colar cervical rígido por 3 meses', 'Biópsia da massa'],
   ecd: 'A maioria resolve com alongamento passivo, estímulos para virar a cabeça para o lado oposto e posicionamento. Cirurgia (alongamento ou tenotomia) se persistir após 12 a 18 meses ou houver assimetria facial progressiva. Examinar o quadril.' });
 
 /* ---------- Parede abdominal ---------- */
@@ -107,7 +107,7 @@ CASO({ id: 'pq_atresia_duodenal', area: 'ped', dif: 2, tema: 'Cirurgia pediátri
   pista: 'Dupla bolha, vômitos biliosos e síndrome de Down.',
   dx: ['Atresia duodenal', 'Estenose hipertrófica do piloro', 'Volvo de intestino médio', 'Doença de Hirschsprung'],
   edx: 'Vômitos biliosos precoces (obstrução abaixo da papila na maioria), polidrâmnio e dupla bolha sem ar distal: atresia duodenal. Cerca de 30% têm síndrome de Down.',
-  cd: ['SOG, hidratação e duodenoduodenostomia', 'Laxativos e dieta fracionada', 'Piloromiotomia de Ramstedt', 'Enema opaco terapêutico para desfazer a obstrução'],
+  cd: ['SOG aberta, hidratação EV e duodenoduodenostomia', 'Lactulose, dieta fracionada e observação clínica por 72 horas', 'Piloromiotomia de Ramstedt', 'Enema opaco terapêutico para desfazer a obstrução'],
   ecd: 'Vômito bilioso no RN é emergência cirúrgica até prova em contrário. Se houver ar distal com dupla bolha, a prioridade é afastar má rotação com volvo (exame contrastado de urgência). Na atresia, a correção é eletiva após estabilização, com ecocardiograma.' });
 
 CASO({ id: 'pq_piloro', area: 'ped', dif: 2, tema: 'Cirurgia pediátrica', cond: 'Estenose hipertrófica do piloro', tags: ['cir', 'hidrat', 'usg'],
@@ -204,7 +204,7 @@ CASO({ id: 'pq_criptorquidia', area: 'ped', dif: 1, tema: 'Cirurgia pediátrica'
   pista: 'Não desceu até 6 meses: não vai descer sozinho.',
   dx: ['Criptorquidia inguinal unilateral', 'Testículo retrátil', 'Anorquia', 'Hérnia inguinal encarcerada'],
   edx: 'Testículo fora da bolsa que não pode ser trazido ao escroto: criptorquidia. O testículo retrátil desce com manobras e permanece na bolsa (é variante normal). A descida espontânea após os 6 meses é rara.',
-  cd: ['Orquidopexia entre 6 e 18 meses', 'Esperar até a puberdade', 'hCG como 1ª escolha', 'Ultrassom agora e repetir aos 5 anos'],
+  cd: ['Orquidopexia entre 6 e 18 meses de idade', 'Aguardar a descida espontânea até a puberdade', 'hCG intramuscular como primeira escolha de tratamento', 'Ultrassom agora e repetir aos 5 anos'],
   ecd: 'A orquidopexia precoce reduz o risco de infertilidade, facilita o exame do testículo (maior risco de câncer) e corrige a hérnia associada. Testículo não palpável: laparoscopia diagnóstica e terapêutica (ultrassom não é necessário). Criptorquidia bilateral não palpável com hipospádia: investigar distúrbio da diferenciação sexual.' });
 
 CASO({ id: 'pq_fimose', area: 'ped', dif: 1, tema: 'Cirurgia pediátrica', cond: 'Fimose fisiológica', tags: ['cir'],
@@ -217,7 +217,7 @@ CASO({ id: 'pq_fimose', area: 'ped', dif: 1, tema: 'Cirurgia pediátrica', cond:
   pista: 'A maioria dos meninos pequenos tem prepúcio não retrátil.',
   dx: ['Fimose fisiológica', 'Fimose patológica (balanite xerótica)', 'Parafimose', 'Hipospádia'],
   edx: 'Aderências balanoprepuciais e prepúcio não retrátil são normais nos primeiros anos e se resolvem com as ereções e o crescimento. Fimose patológica tem cicatriz esbranquiçada (líquen escleroso) ou causa infecções.',
-  cd: ['Não forçar a retração e manter higiene', 'Postectomia de urgência', 'Retrair à força no consultório com anestésico tópico', 'Antibiótico tópico'],
+  cd: ['Não forçar a retração e manter higiene', 'Postectomia de urgência', 'Retrair à força no consultório com anestésico tópico', 'Pomada de neomicina com bacitracina no prepúcio por 14 dias'],
   ecd: 'Forçar a retração causa fissuras, cicatriz e fimose verdadeira, e pode causar parafimose (emergência: redução manual ou cirúrgica). Se persistir após 3-4 anos, corticoide tópico; postectomia em fimose patológica, balanopostites ou ITU de repetição.' });
 
 CASO({ id: 'pq_torcao_testicular', area: 'ped', dif: 2, tema: 'Cirurgia pediátrica', cond: 'Torção testicular', tags: ['cir'],
@@ -230,7 +230,7 @@ CASO({ id: 'pq_torcao_testicular', area: 'ped', dif: 2, tema: 'Cirurgia pediátr
   pista: 'O tempo é testículo.',
   dx: ['Torção testicular', 'Orquiepididimite', 'Torção de apêndice testicular', 'Hérnia inguinal encarcerada'],
   edx: 'Dor súbita e intensa, náuseas, testículo alto e horizontal, reflexo cremastérico ausente e sinal de Prehn negativo: torção do cordão espermático. A viabilidade cai muito após 6 horas.',
-  cd: ['Exploração cirúrgica imediata', 'Antibiótico e anti-inflamatório', 'Ultrassom com Doppler ambulatorial na semana seguinte', 'Gelo e observação'],
+  cd: ['Exploração cirúrgica imediata', 'Ceftriaxona e ibuprofeno pela suspeita de orquiepididimite', 'Ultrassom com Doppler ambulatorial na semana seguinte', 'Gelo local, suspensório escrotal e observação por 6 horas'],
   ecd: 'Diante de quadro típico, não se atrasa a cirurgia para fazer exame. Ultrassom com Doppler só se não atrasar a exploração. Destorção, avaliação da viabilidade (orquiectomia se necrótico) e orquidopexia bilateral. A torção de apêndice tem dor mais localizada no polo superior, com "ponto azul".' });
 
 CASO({ id: 'pq_vup', area: 'ped', dif: 3, tema: 'Nefropediatria', cond: 'Hidronefrose bilateral por válvula de uretra posterior', tags: ['nefro', 'usg', 'neo'],
@@ -275,7 +275,7 @@ CASO({ id: 'px_sarampo', area: 'ped', dif: 2, tema: 'Doenças exantemáticas', c
   pista: 'Os "3 Cs" e as manchas na mucosa jugal.',
   dx: ['Sarampo', 'Rubéola', 'Exantema súbito', 'Escarlatina'],
   edx: 'Pródromo com febre alta, tosse, coriza e conjuntivite (os "3 Cs"), manchas de Koplik e exantema maculopapular morbiliforme craniocaudal, confluente, que surge no auge da febre: sarampo.',
-  cd: ['Notificar, isolar, vitamina A e bloqueio vacinal', 'Antibiótico oral e retorno às aulas em 2 dias, quando a febre ceder', 'Corticoide oral e alta sem notificação, por ser doença comum', 'Aciclovir oral por 7 dias e isolamento de contato'],
+  cd: ['Notificar, isolamento respiratório, vitamina A e bloqueio vacinal', 'Antibiótico oral e retorno às aulas em 2 dias, quando a febre ceder', 'Corticoide oral e alta sem notificação, por ser doença comum', 'Aciclovir oral por 7 dias e isolamento de contato'],
   ecd: 'Doença de notificação compulsória imediata. Transmissão por aerossóis (precaução para aerossóis, quarto privativo), de 6 dias antes a 4 dias após o exantema. Vitamina A reduz gravidade e mortalidade. Contatos suscetíveis: vacina até 72 horas ou imunoglobulina até 6 dias. Complicações: otite, pneumonia (principal causa de óbito), encefalite e panencefalite esclerosante subaguda.' });
 
 CASO({ id: 'px_rubeola', area: 'ped', dif: 2, tema: 'Doenças exantemáticas', cond: 'Rubéola', tags: ['inf'],
@@ -316,7 +316,7 @@ CASO({ id: 'px_eritema_infeccioso', area: 'ped', dif: 2, tema: 'Doenças exantem
   pista: 'Face esbofeteada e exantema rendilhado. Quem da família está em risco?',
   dx: ['Eritema infeccioso', 'Lúpus eritematoso sistêmico', 'Escarlatina', 'Sarampo'],
   edx: 'Eritema infeccioso (quinta doença), causado pelo parvovírus B19: face esbofeteada seguida de exantema rendilhado que recidiva com calor e sol. Quando o exantema aparece, a criança já não transmite.',
-  cd: ['Sintomáticos e alertar sobre o irmão', 'Afastar da escola por 14 dias', 'Antibiótico tópico', 'Corticoide oral por 5 dias'],
+  cd: ['Sintomáticos e alertar sobre o irmão', 'Afastar da escola por 14 dias a partir do exantema', 'Mupirocina tópica nas bochechas por 7 dias', 'Prednisolona 1 mg/kg/dia por 5 dias'],
   ecd: 'O parvovírus infecta precursores eritroides: em portadores de anemias hemolíticas (falciforme, esferocitose) pode causar crise aplásica grave; em gestantes, anemia fetal e hidropsia; em imunodeprimidos, anemia crônica. Em adultos, artrite é comum.' });
 
 CASO({ id: 'px_varicela', area: 'ped', dif: 2, tema: 'Doenças exantemáticas', cond: 'Varicela em adolescente (indicação de aciclovir)', tags: ['inf'],
@@ -330,7 +330,7 @@ CASO({ id: 'px_varicela', area: 'ped', dif: 2, tema: 'Doenças exantemáticas', 
   pista: 'Lesões em vários estágios ao mesmo tempo. Ele tem alguma indicação de antiviral?',
   dx: ['Varicela', 'Herpes-zóster disseminado', 'Doença mão-pé-boca', 'Impetigo bolhoso'],
   edx: 'Exantema vesicular pruriginoso, centrípeto, com polimorfismo regional (lesões em vários estágios ao mesmo tempo): varicela. Maiores de 12 anos e casos secundários no domicílio tendem a ter doença mais grave.',
-  cd: ['Aciclovir oral em até 24 h e sem AAS', 'AAS para a febre e anti-histamínico para o prurido', 'Corticoide oral em dose baixa para o prurido intenso', 'Só sintomáticos, pois aciclovir nunca é indicado em imunocompetentes'],
+  cd: ['Aciclovir VO em até 24 h do exantema, sem AAS', 'AAS para a febre e anti-histamínico para o prurido', 'Corticoide oral em dose baixa para o prurido intenso', 'Só sintomáticos, pois aciclovir nunca é indicado em imunocompetentes'],
   ecd: 'Aciclovir oral (iniciado nas primeiras 24 horas do exantema) em maiores de 12 anos, doença crônica de pele ou pulmão, uso de corticoide inalatório ou em cursos curtos, uso crônico de salicilato e casos secundários domiciliares. Aciclovir venoso para imunodeprimidos e formas graves. AAS é contraindicado (síndrome de Reye). Afastamento até todas as lesões virarem crostas.' });
 
 CASO({ id: 'px_varicela_complicada', area: 'ped', dif: 3, tema: 'Doenças exantemáticas', cond: 'Varicela complicada por infecção bacteriana secundária', tags: ['inf', 'sepse', 'infec'],
@@ -343,7 +343,7 @@ CASO({ id: 'px_varicela_complicada', area: 'ped', dif: 3, tema: 'Doenças exante
   pista: 'Febre que retorna após melhora é sinal de complicação.',
   dx: ['Celulite secundária à varicela', 'Evolução habitual da varicela', 'Herpes-zóster disseminado', 'Reação vacinal tardia'],
   edx: 'A complicação mais comum da varicela é a infecção bacteriana da pele por Streptococcus pyogenes e Staphylococcus aureus. Febre que reaparece ou persiste após o 4º dia sugere complicação; dor desproporcional, crepitação e toxemia sugerem fasciite necrosante.',
-  cd: ['Antibiótico contra estafilococo e estreptococo', 'Aciclovir oral apenas, pois a febre é do próprio vírus', 'Anti-inflamatório não esteroide e observar por 48 horas', 'AAS e compressas quentes na área'],
+  cd: ['Oxacilina EV para estafilococo e estreptococo', 'Aciclovir oral apenas, pois a febre é do próprio vírus', 'Anti-inflamatório não esteroide e observar por 48 horas', 'AAS e compressas quentes na área'],
   ecd: 'Celulite localizada com bom estado: cefalexina ou oxacilina conforme a gravidade, ou clindamicina se houver suspeita de toxina. Anti-inflamatórios não esteroides são evitados na varicela (associação com fasciite necrosante). Outras complicações: pneumonia, ataxia cerebelar, encefalite.' });
 
 CASO({ id: 'px_mao_pe_boca', area: 'ped', dif: 1, tema: 'Doenças exantemáticas', cond: 'Doença mão-pé-boca', tags: ['inf'],
@@ -357,7 +357,7 @@ CASO({ id: 'px_mao_pe_boca', area: 'ped', dif: 1, tema: 'Doenças exantemáticas
   pista: 'Mãos, pés e boca.',
   dx: ['Doença mão-pé-boca', 'Varicela', 'Gengivoestomatite herpética', 'Sarampo'],
   edx: 'Enterovírus (principalmente coxsackie A16 e A6, enterovírus 71): úlceras orais e vesículas em mãos, pés e nádegas. Coxsackie A6 pode causar formas mais extensas e, semanas depois, descamação e queda das unhas (onicomadese).',
-  cd: ['Analgesia, hidratação e alimentos frios', 'Aciclovir oral por 7 dias', 'Antibiótico oral', 'Corticoide e anti-histamínico'],
+  cd: ['Analgésico, hidratação e alimentos frios', 'Aciclovir 20 mg/kg VO de 6/6 h por 7 dias', 'Amoxicilina 50 mg/kg/dia por 10 dias', 'Corticoide e anti-histamínico'],
   ecd: 'Autolimitada em 7 a 10 dias. O principal risco é a desidratação pela dor oral. Sinais de alarme: sonolência, mioclonias, vômitos persistentes, ataxia (complicações neurológicas do enterovírus 71). Higiene das mãos e troca de fraldas com cuidado (eliminação fecal por semanas).' });
 
 CASO({ id: 'px_escarlatina', area: 'ped', dif: 2, tema: 'Doenças exantemáticas', cond: 'Escarlatina', tags: ['inf'],
@@ -372,7 +372,7 @@ CASO({ id: 'px_escarlatina', area: 'ped', dif: 2, tema: 'Doenças exantemáticas
   pista: 'Pele em lixa, Pastia, Filatov e língua em framboesa.',
   dx: ['Escarlatina', 'Doença de Kawasaki', 'Sarampo', 'Síndrome da pele escaldada estafilocócica'],
   edx: 'Faringoamigdalite por Streptococcus pyogenes produtor de toxina eritrogênica: exantema em lixa, linhas de Pastia, sinal de Filatov (palidez perioral), língua em framboesa. Depois, descamação lamelar das mãos e pés.',
-  cd: ['Amoxicilina por 10 dias ou benzatina', 'Aciclovir oral', 'Corticoide oral e anti-histamínico para o exantema', 'Só sintomáticos'],
+  cd: ['Amoxicilina por 10 dias (ou penicilina benzatina)', 'Aciclovir oral por 7 dias e afastamento escolar', 'Corticoide oral e anti-histamínico para o exantema', 'Só sintomáticos, pois o exantema indica infecção viral'],
   ecd: 'O tratamento previne febre reumática. Afastamento da escola até 24 horas de antibiótico. Complicações tardias: febre reumática e glomerulonefrite pós-estreptocócica (esta não é prevenida pelo antibiótico).' });
 
 CASO({ id: 'px_kawasaki', area: 'ped', dif: 3, tema: 'Doenças exantemáticas', cond: 'Doença de Kawasaki', tags: ['cardio', 'inf'],
@@ -387,5 +387,5 @@ CASO({ id: 'px_kawasaki', area: 'ped', dif: 3, tema: 'Doenças exantemáticas', 
   pista: 'Febre ≥ 5 dias e 4 ou 5 critérios.',
   dx: ['Doença de Kawasaki', 'Escarlatina', 'Sarampo', 'Reação à amoxicilina'],
   edx: 'Vasculite de médios vasos da infância. Critérios: febre por 5 dias ou mais e pelo menos 4 de 5: conjuntivite bilateral não exsudativa, alterações de lábios e mucosa oral, exantema polimorfo, alterações de extremidades (edema, eritema, depois descamação periungueal) e linfonodo cervical ≥ 1,5 cm.',
-  cd: ['Imunoglobulina IV, AAS e ecocardiograma', 'Amoxicilina com clavulanato por 10 dias pela falha da amoxicilina', 'Corticoide oral isolado e alta com retorno em 1 semana', 'Apenas antitérmicos e observar a resolução espontânea'],
+  cd: ['Imunoglobulina EV 2 g/kg, AAS e ecocardiograma', 'Amoxicilina com clavulanato por 10 dias pela falha da amoxicilina', 'Corticoide oral isolado e alta com retorno em 1 semana', 'Apenas antitérmicos e observar a resolução espontânea'],
   ecd: 'O principal risco são os aneurismas de coronárias. A imunoglobulina venosa, idealmente nos primeiros 10 dias de febre, reduz muito esse risco. AAS em dose anti-inflamatória e depois antiagregante. Ecocardiograma ao diagnóstico, com 1-2 semanas e 4-6 semanas. Vacinas de vírus vivos são adiadas por 11 meses após a imunoglobulina.' });

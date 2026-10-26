@@ -17,7 +17,7 @@ CASO({ id: 'cg_drge', area: 'cm', ala: 'gastro', dif: 1, tema: 'Doenças do esô
   pista: 'Sintomas típicos, jovem, sem sinais de alarme.',
   dx: ['DRGE', 'Acalásia', 'Câncer de esôfago', 'Angina estável'],
   edx: 'Pirose e regurgitação frequentes são sintomas típicos de DRGE. Sinais de alarme (disfagia, odinofagia, perda de peso, sangramento, anemia, idade > 40-45 anos com sintomas novos, história familiar de câncer) indicam endoscopia antes do tratamento.',
-  cd: ['IBP por 8 semanas e medidas comportamentais', 'Endoscopia obrigatória antes de qualquer tratamento', 'Fundoplicatura de imediato', 'Antiácido somente nas crises'],
+  cd: ['Omeprazol 20 mg/dia por 8 semanas e medidas antirrefluxo', 'Endoscopia digestiva alta com biópsia antes de iniciar o IBP', 'Fundoplicatura de Nissen laparoscópica após 4 semanas de IBP', 'Domperidona 10 mg antes das refeições por 4 semanas, sem IBP'],
   ecd: 'Medidas: perda de peso, elevar a cabeceira, evitar refeições volumosas e deitar após comer, reduzir álcool e tabaco. IBP em jejum, 30 minutos antes do café. Recidiva frequente, sintomas atípicos ou refratariedade: endoscopia e, se necessário, pHmetria.' });
 
 CASO({ id: 'cg_barrett', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do esôfago', cond: 'Esôfago de Barrett sem displasia', tags: ['gastro'],
@@ -31,7 +31,7 @@ CASO({ id: 'cg_barrett', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do e
   pista: 'Troca do epitélio escamoso por colunar com células caliciformes.',
   dx: ['Barrett sem displasia', 'Esofagite eosinofílica', 'Adenocarcinoma de esôfago', 'Esofagite erosiva grau A de Los Angeles'],
   edx: 'Barrett: metaplasia intestinal do epitélio esofágico distal, complicação da DRGE crônica e lesão precursora do adenocarcinoma de esôfago.',
-  cd: ['IBP e vigilância endoscópica', 'Esofagectomia', 'Ablação imediata mesmo sem displasia', 'Suspender o IBP após cicatrizar a mucosa'],
+  cd: ['IBP contínuo e EDA com biópsias a cada 3 a 5 anos', 'Ablação por radiofrequência e IBP em dose dobrada', 'EDA com biópsias a cada 6 meses por 2 anos', 'Esofagectomia transhiatal com linfadenectomia mediastinal'],
   ecd: 'Sem displasia: IBP e vigilância endoscópica (3 a 5 anos). Displasia de baixo grau: ablação endoscópica ou vigilância mais curta. Alto grau ou câncer intramucoso: ressecção endoscópica e ablação.' });
 
 CASO({ id: 'cg_acalasia', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do esôfago', cond: 'Acalásia', tags: ['gastro', 'img'],
@@ -45,7 +45,7 @@ CASO({ id: 'cg_acalasia', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do 
   pista: 'Disfagia paradoxal (líquidos e sólidos) e bico de pássaro.',
   dx: ['Acalásia idiopática', 'Câncer de esôfago', 'Estenose péptica', 'Divertículo de Zenker'],
   edx: 'Perda dos neurônios inibitórios do plexo mioentérico: o esfíncter esofágico inferior não relaxa e o corpo perde a peristalse. Manometria é o exame diagnóstico. A endoscopia afasta pseudoacalásia por tumor. No Brasil, a doença de Chagas (megaesôfago) é diagnóstico diferencial importante.',
-  cd: ['Miotomia de Heller, POEM ou dilatação', 'IBP em dose dobrada por 1 ano', 'Gastrostomia definitiva', 'Esofagectomia como primeira opção'],
+  cd: ['Miotomia de Heller laparoscópica com fundoplicatura parcial', 'Dilatação com sondas de Savary e IBP contínuo', 'Nifedipino 10 mg antes das refeições como tratamento definitivo', 'Fundoplicatura de Nissen total isolada'],
   ecd: 'Tratamentos que reduzem a pressão do esfíncter: miotomia laparoscópica de Heller com fundoplicatura parcial, miotomia endoscópica (POEM) ou dilatação pneumática. Toxina botulínica para quem não pode ser operado. Risco aumentado de carcinoma espinocelular a longo prazo.' });
 
 CASO({ id: 'cg_zenker', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do esôfago', cond: 'Divertículo de Zenker', tags: ['gastro'],
@@ -59,7 +59,7 @@ CASO({ id: 'cg_zenker', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do es
   pista: 'Idoso, disfagia alta, halitose e regurgitação tardia.',
   dx: ['Divertículo de Zenker', 'Acalásia', 'Câncer de esôfago cervical', 'Refluxo gastroesofágico'],
   edx: 'Divertículo de pulsão (falso) no triângulo de Killian, entre o constritor inferior da faringe e o cricofaríngeo. O esofagograma é o exame de escolha; a endoscopia deve ser cuidadosa (risco de perfuração).',
-  cd: ['Miotomia do cricofaríngeo', 'IBP e observar a evolução', 'Dilatação pneumática do esfíncter inferior', 'Dieta líquida definitiva'],
+  cd: ['Miotomia do cricofaríngeo com diverticulectomia', 'Dilatação pneumática do esfíncter esofágico inferior', 'IBP em dose dobrada e nova endoscopia em 3 meses', 'Gastrostomia endoscópica e dieta zero por via oral'],
   ecd: 'Tratamento indicado nos sintomáticos: secção do músculo cricofaríngeo (componente essencial) associada a diverticulectomia ou diverticulopexia, por via aberta ou endoscópica.' });
 
 CASO({ id: 'cg_ca_esofago', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do esôfago', cond: 'Carcinoma espinocelular de esôfago', tags: ['gastro'],
@@ -73,8 +73,8 @@ CASO({ id: 'cg_ca_esofago', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças d
   pista: 'Disfagia progressiva de sólidos para líquidos em tabagista e etilista.',
   dx: ['Carcinoma espinocelular', 'Adenocarcinoma de esôfago distal', 'Acalásia', 'Estenose péptica benigna'],
   edx: 'Espinocelular: terço médio, associado a tabaco, álcool, bebidas muito quentes, acalásia e tilose. Adenocarcinoma: terço distal, associado a DRGE, Barrett e obesidade. Rouquidão sugere invasão do nervo laríngeo recorrente.',
-  cd: ['Estadiar e terapia oncológica', 'Dilatação esofágica e alta', 'IBP e reavaliação em 3 meses', 'Cirurgia sem estadiamento'],
-  ecd: 'Estadiamento define o tratamento: ressecção endoscópica em lesões muito precoces; quimiorradioterapia neoadjuvante seguida de esofagectomia nos localmente avançados ressecáveis; quimiorradioterapia definitiva ou paliação (prótese, nutrição) nos avançados.' });
+  cd: ['Quimioterapia paliativa e prótese esofágica para nutrição', 'Quimiorradioterapia neoadjuvante seguida de esofagectomia', 'Esofagectomia transtorácica com linfadenectomia em 3 campos', 'Dissecção endoscópica da submucosa com margens livres'],
+  ecd: 'Estadiamento define o tratamento: ressecção endoscópica em lesões muito precoces; quimiorradioterapia neoadjuvante seguida de esofagectomia nos localmente avançados ressecáveis; quimiorradioterapia definitiva ou paliação (prótese, nutrição) nos avançados. Aqui, o linfonodo supraclavicular e a rouquidão (nervo laríngeo recorrente) indicam doença irressecável: tratamento paliativo.' });
 
 /* ---------- Estômago ---------- */
 CASO({ id: 'cg_ulcera_hp', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do estômago', cond: 'Úlcera duodenal associada ao H. pylori', tags: ['gastro'],
@@ -88,7 +88,7 @@ CASO({ id: 'cg_ulcera_hp', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do
   pista: 'Erradicar o agente reduz recidiva.',
   dx: ['Úlcera duodenal por H. pylori', 'Úlcera por AINE', 'Gastrinoma', 'Câncer gástrico'],
   edx: 'H. pylori e AINE são as principais causas de úlcera péptica. Úlcera duodenal não precisa de biópsia para afastar câncer (a gástrica precisa).',
-  cd: ['Erradicar o H. pylori por 14 dias', 'Só IBP por 4 semanas', 'Antiácido conforme a dor', 'Vagotomia'],
+  cd: ['Omeprazol, amoxicilina e claritromicina por 14 dias', 'Omeprazol 40 mg/dia por 8 semanas, sem antibioticoterapia', 'Omeprazol, amoxicilina e metronidazol por 7 dias', 'Biópsia da úlcera e nova endoscopia antes de tratar'],
   ecd: 'Esquema de primeira linha no Brasil: IBP, amoxicilina 1 g e claritromicina 500 mg, de 12 em 12 horas por 14 dias (alternativas: quádruplo com bismuto; levofloxacino). Confirmar a erradicação após pelo menos 4 semanas do antibiótico e 2 semanas sem IBP (teste respiratório, antígeno fecal ou endoscopia).' });
 
 CASO({ id: 'cg_hda_ulcera', area: 'cm', ala: 'gastro', dif: 3, tema: 'Hemorragia digestiva', cond: 'Hemorragia digestiva alta por úlcera péptica (Forrest Ib)', tags: ['gastro', 'choque'],
@@ -103,7 +103,7 @@ CASO({ id: 'cg_hda_ulcera', area: 'cm', ala: 'gastro', dif: 3, tema: 'Hemorragia
   pista: 'Sangramento ativo visto na endoscopia.',
   dx: ['HDA por úlcera péptica ativa', 'Hemorragia varicosa', 'Síndrome de Mallory-Weiss', 'Angiodisplasia de cólon'],
   edx: 'HDA não varicosa por úlcera associada a AINE/AAS. Classificação de Forrest: Ia (jato) e Ib (porejamento) ativos; IIa (vaso visível) e IIb (coágulo aderido) recentes; IIc e III de baixo risco.',
-  cd: ['IBP venoso e terapia endoscópica dupla', 'Só IBP oral e alta', 'Cirurgia de urgência antes da endoscopia', 'Octreotida e ligadura elástica'],
+  cd: ['Injeção de adrenalina + clipe endoscópico e IBP venoso', 'Injeção de adrenalina isolada e IBP por via oral', 'Octreotida venosa e ligadura elástica da lesão', 'Arteriografia com embolização da artéria gastroduodenal'],
   ecd: 'Estabilização (cristaloide, transfusão se Hb < 7, alvo 7-9), escore de Glasgow-Blatchford, IBP venoso, endoscopia em até 24 horas. Lesões de alto risco (Ia, Ib, IIa): hemostasia endoscópica combinada (adrenalina com método térmico ou mecânico) e IBP em alta dose por 72 horas. Biópsia e pesquisa de H. pylori; suspender AINE.' });
 
 CASO({ id: 'cg_ca_gastrico', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do estômago', cond: 'Adenocarcinoma gástrico avançado', tags: ['gastro', 'hemato'],
@@ -118,8 +118,8 @@ CASO({ id: 'cg_ca_gastrico', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças 
   pista: 'Sinais de doença à distância no exame físico.',
   dx: ['Adenocarcinoma gástrico', 'Úlcera péptica benigna', 'Linfoma MALT', 'GIST gástrico'],
   edx: 'Adenocarcinoma gástrico: idosos, H. pylori, dieta, tabagismo. Linfonodo de Virchow e nódulo da Irmã Maria José indicam doença disseminada. Lauren: tipo intestinal (associado a gastrite atrófica) e difuso (células em anel de sinete, linite plástica, mais agressivo).',
-  cd: ['Estadiar e terapia sistêmica', 'Gastrectomia total imediata sem estadiamento', 'Só tratar o H. pylori', 'IBP e endoscopia em 1 ano'],
-  ecd: 'Tumores localmente avançados ressecáveis: quimioterapia perioperatória (FLOT) e gastrectomia com linfadenectomia D2. Doença metastática: quimioterapia paliativa (com imunoterapia ou anti-HER2 conforme biomarcadores), suporte nutricional e controle de sangramento.' });
+  cd: ['Quimioterapia paliativa com fluoropirimidina e platina', 'Gastrectomia subtotal com linfadenectomia D2', 'Quimioterapia perioperatória FLOT e gastrectomia total D2', 'Erradicação do H. pylori e EDA de controle em 3 meses'],
+  ecd: 'Tumores localmente avançados ressecáveis: quimioterapia perioperatória (FLOT) e gastrectomia com linfadenectomia D2. Doença metastática: quimioterapia paliativa (com imunoterapia ou anti-HER2 conforme biomarcadores), suporte nutricional e controle de sangramento. Aqui, o linfonodo de Virchow e o nódulo da Irmã Maria José indicam doença metastática: tratamento paliativo.' });
 
 CASO({ id: 'cg_gist', area: 'cm', ala: 'gastro', dif: 3, tema: 'Doenças do estômago', cond: 'Tumor estromal gastrointestinal (GIST)', tags: ['gastro'],
   pac: { nome: 'Helena Coutinho', idade: 59, sexo: 'F', tipo: 'adulto' },
@@ -132,7 +132,7 @@ CASO({ id: 'cg_gist', area: 'cm', ala: 'gastro', dif: 3, tema: 'Doenças do est�
   pista: 'Tumor subepitelial com c-KIT positivo.',
   dx: ['GIST gástrico', 'Adenocarcinoma gástrico', 'Leiomioma', 'Linfoma gástrico'],
   edx: 'GIST: tumor mesenquimal mais comum do trato digestivo (estômago > intestino delgado), originado das células intersticiais de Cajal, com mutação de KIT ou PDGFRA. Imuno-histoquímica CD117 e DOG1.',
-  cd: ['Ressecção e avaliar imatinibe', 'Gastrectomia com linfadenectomia D2 obrigatória', 'Quimioterapia convencional', 'Observar, pois é benigno'],
+  cd: ['Ressecção em cunha com margem livre, sem linfadenectomia', 'Gastrectomia total com linfadenectomia D2 e esplenectomia associada', 'Quimioterapia com FLOT seguida de gastrectomia D2', 'Imatinibe por 3 anos como tratamento exclusivo'],
   ecd: 'Ressecção completa sem necessidade de linfadenectomia (raramente dá metástase linfonodal). Imatinibe adjuvante por 3 anos nos de alto risco (tamanho, índice mitótico, localização, ruptura) e nos metastáticos ou irressecáveis.' });
 
 /* ---------- Intestino ---------- */
@@ -148,7 +148,7 @@ CASO({ id: 'cg_celiaca_adulto', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenç
   pista: 'Dermatite herpetiforme é a "celíaca da pele".',
   dx: ['Doença celíaca', 'Síndrome do intestino irritável', 'Doença de Crohn', 'Alergia alimentar IgE mediada'],
   edx: 'Enteropatia autoimune ao glúten: anticorpo antitransglutaminase IgA (com IgA total normal, pois a deficiência de IgA dá falso-negativo) e biópsia com atrofia vilositária, ainda em dieta com glúten.',
-  cd: ['Dieta sem glúten por toda a vida', 'Corticoide e dieta livre', 'Dieta sem lactose isolada', 'Antibiótico por 14 dias'],
+  cd: ['Dieta sem glúten por toda a vida (dapsona para a pele)', 'Prednisona 40 mg/dia até normalizar a biópsia', 'Dieta sem glúten por 6 meses e depois reintrodução gradual', 'Dieta sem lactose e rifaximina por 14 dias'],
   ecd: 'Retirar trigo, centeio e cevada (aveia, se contaminada); arroz, milho, mandioca e fubá são permitidos. A dermatite herpetiforme responde à dieta e à dapsona. Complicações: osteoporose, linfoma de células T associado à enteropatia.' });
 
 CASO({ id: 'cg_obstrucao_bridas', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do intestino', cond: 'Obstrução intestinal por bridas', tags: ['gastro', 'cir', 'hidrat'],
@@ -163,7 +163,7 @@ CASO({ id: 'cg_obstrucao_bridas', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doen
   pista: 'Cirurgia abdominal prévia, sem sinais de sofrimento de alça.',
   dx: ['Obstrução de delgado por bridas', 'Íleo paralítico', 'Volvo de sigmoide', 'Pseudo-obstrução colônica (Ogilvie)'],
   edx: 'Bridas pós-operatórias são a principal causa de obstrução de delgado. Delgado: alças centrais, pregas coniventes que atravessam toda a alça; cólon: haustrações que não atravessam, alças periféricas.',
-  cd: ['Jejum, SNG, hidratação e contraste', 'Laxativos e alta', 'Colonoscopia descompressiva', 'Laparotomia imediata sem tratamento clínico'],
+  cd: ['Jejum, SNG, hidratação, reposição de K e contraste hidrossolúvel', 'Laparotomia exploradora imediata com lise das bridas e enterólise', 'Colonoscopia descompressiva seguida de neostigmina venosa', 'Óleo mineral por via oral e enema glicerinado'],
   ecd: 'Sem sinais de estrangulamento (febre, taquicardia, dor contínua, peritonite, leucocitose, lactato alto), tenta-se tratamento conservador por 48-72 horas; o contraste hidrossolúvel tem valor diagnóstico e terapêutico. Sinais de sofrimento ou falha: cirurgia.' });
 
 CASO({ id: 'cg_isquemia_mesenterica', area: 'cm', ala: 'gastro', dif: 3, tema: 'Doenças do intestino', cond: 'Isquemia mesentérica aguda embólica', tags: ['gastro', 'cardio', 'cir'],
@@ -177,7 +177,7 @@ CASO({ id: 'cg_isquemia_mesenterica', area: 'cm', ala: 'gastro', dif: 3, tema: '
   pista: 'Dor desproporcional ao exame físico em paciente com fonte embólica.',
   dx: ['Isquemia mesentérica embólica', 'Pancreatite aguda', 'Diverticulite aguda', 'Gastroenterite'],
   edx: 'Dor intensa desproporcional ao exame, em paciente com FA sem anticoagulação: embolia da artéria mesentérica superior. Acidose lática e leucocitose. Peritonite indica necrose (tardio).',
-  cd: ['Angio-TC, heparina e revascularizar', 'Analgésico e observar 24 horas', 'Colonoscopia de urgência', 'Alta com antiespasmódico'],
+  cd: ['Heparina plena e embolectomia da artéria mesentérica superior', 'Trombólise sistêmica com alteplase e nova angio-TC em 24 h', 'Papaverina intra-arterial e observação clínica por 48 horas', 'Colonoscopia de urgência e antibioticoterapia de amplo espectro'],
   ecd: 'Angio-TC é o exame de escolha. Heparina plena, ressuscitação, antibiótico e revascularização (embolectomia cirúrgica ou endovascular) com ressecção de alças inviáveis e reavaliação (second look). Mortalidade alta, que depende da rapidez.' });
 
 CASO({ id: 'cg_colite_isquemica', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doenças do intestino', cond: 'Colite isquêmica', tags: ['gastro'],
@@ -191,5 +191,5 @@ CASO({ id: 'cg_colite_isquemica', area: 'cm', ala: 'gastro', dif: 2, tema: 'Doen
   pista: 'Áreas de fronteira vascular após baixo fluxo.',
   dx: ['Colite isquêmica', 'Retocolite ulcerativa', 'Câncer colorretal', 'Diverticulite perfurada'],
   edx: 'A forma mais comum de isquemia intestinal: geralmente não oclusiva, em idosos, após hipoperfusão, acometendo áreas de fronteira (ângulo esplênico, junção retossigmoide). O reto costuma ser poupado (dupla irrigação).',
-  cd: ['Suporte e observação', 'Colectomia total de urgência', 'Corticoide em dose alta', 'Anticoagulação plena'],
+  cd: ['Hidratação venosa, jejum e observação clínica', 'Prednisona 40 mg/dia e mesalazina 4 g/dia por via oral', 'Heparina plena e arteriografia mesentérica de urgência', 'Colectomia segmentar com anastomose primária'],
   ecd: 'A maioria resolve com suporte; antibiótico nos casos moderados a graves. Peritonite, gangrena ou piora clínica indicam cirurgia. Pode evoluir com estenose tardia.' });

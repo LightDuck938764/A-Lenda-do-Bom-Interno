@@ -20,7 +20,7 @@ CASO({ id: 'cp_tb_pulmonar', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculo
   pista: 'Sintomático respiratório com cavitação apical.',
   dx: ['Tuberculose pulmonar bacilífera', 'Pneumonia bacteriana comunitária', 'Câncer de pulmão escavado', 'Abscesso pulmonar anaeróbio'],
   edx: 'Tosse por 3 semanas ou mais (sintomático respiratório), febre vespertina, sudorese noturna, emagrecimento e cavitação apical, com TRM-TB detectável e sem resistência à rifampicina: tuberculose pulmonar sensível.',
-  cd: ['RIPE por 6 meses, notificar e avaliar contatos', 'Amoxicilina com clavulanato por 14 dias', 'Isoniazida isolada por 6 meses', 'Internar e aguardar a cultura de 60 dias antes de tratar'],
+  cd: ['RIPE por 2 meses e RI por 4 meses, notificar e avaliar contatos', 'Amoxicilina-clavulanato por 14 dias e nova baciloscopia', 'Isoniazida isolada por 6 meses e notificar', 'Aguardar a cultura com teste de sensibilidade para iniciar o RIPE'],
   ecd: 'Esquema básico: rifampicina, isoniazida, pirazinamida e etambutol por 2 meses e rifampicina e isoniazida por 4 meses. Notificação, tratamento diretamente observado, cultura com teste de sensibilidade, testagem para HIV e avaliação de todos os contatos (crianças prioritárias).' });
 
 CASO({ id: 'cp_tb_hiv', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', cond: 'Coinfecção tuberculose e HIV: momento de iniciar a TARV', tags: ['pneumo', 'infecto', 'infec'],
@@ -35,7 +35,7 @@ CASO({ id: 'cp_tb_hiv', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', 
   pista: 'Quando começar a TARV, sabendo que não há meningite?',
   dx: ['TB pulmonar em pessoa com aids', 'Pneumocistose isolada', 'Pneumonia bacteriana comum', 'Linfoma pulmonar primário'],
   edx: 'Na imunossupressão grave, a TB costuma ter apresentação atípica (lobos inferiores, sem cavitação, linfonodomegalia, formas extrapulmonares).',
-  cd: ['RIPE já e TARV em até 2 semanas', 'TARV e RIPE só depois de 6 meses', 'Só TARV agora e RIPE depois', 'Nenhum tratamento até a cultura'],
+  cd: ['Iniciar RIPE agora e TARV em até 2 semanas', 'Iniciar RIPE e adiar a TARV para depois dos 6 meses de RIPE', 'Iniciar TARV agora e RIPE após 8 semanas', 'Iniciar RIPE e TARV no mesmo dia, com efavirenz'],
   ecd: 'Iniciar RIPE e, em até 2 semanas, a TARV (reduz mortalidade, especialmente com CD4 baixo). Exceção: meningite tuberculosa, em que a TARV é adiada para 4 a 8 semanas. Atenção às interações da rifampicina (dobrar o dolutegravir). Profilaxia com sulfametoxazol-trimetoprima.' });
 
 CASO({ id: 'cp_iris', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', cond: 'Síndrome inflamatória da reconstituição imune (IRIS) na tuberculose', tags: ['pneumo', 'infecto', 'infec'],
@@ -49,7 +49,7 @@ CASO({ id: 'cp_iris', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', co
   pista: 'Piora logo após a TARV, com resposta virológica e imunológica.',
   dx: ['IRIS paradoxal', 'Falha do tratamento por resistência', 'Abandono da medicação', 'Nova infecção oportunista sem relação'],
   edx: 'Piora paradoxal semanas após iniciar a TARV, com queda da carga viral e aumento de CD4: a recuperação imune gera resposta inflamatória contra os antígenos do bacilo. Diagnóstico de exclusão (afastar resistência, outra infecção e má adesão).',
-  cd: ['Manter RIPE e TARV; considerar prednisona', 'Suspender a TARV definitivamente', 'Trocar para esquema de tuberculose resistente', 'Suspender todos os medicamentos por 2 semanas'],
+  cd: ['Manter RIPE e TARV e associar prednisona', 'Suspender a TARV até terminar o RIPE', 'Trocar o RIPE por esquema para TB resistente', 'Suspender RIPE e TARV por 2 semanas'],
   ecd: 'Mantêm-se os tratamentos; anti-inflamatório ou corticoide nos casos moderados a graves; drenagem de linfonodos supurados se necessário. Prednisona profilática pode ser usada ao iniciar a TARV em pacientes de alto risco (CD4 < 100).' });
 
 CASO({ id: 'cp_iltb', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculose', cond: 'Infecção latente pela tuberculose em contato', tags: ['pneumo', 'infecto', 'infec'],
@@ -64,7 +64,7 @@ CASO({ id: 'cp_iltb', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculose', co
   pista: 'Sem doença ativa, com teste positivo.',
   dx: ['Infecção latente pelo M. tuberculosis', 'Tuberculose pulmonar ativa', 'Reação cruzada pela BCG sem significado', 'Tuberculose extrapulmonar'],
   edx: 'Contato assintomático, radiografia normal e prova tuberculínica ≥ 5 mm (ou IGRA positivo), independentemente da BCG: infecção latente.',
-  cd: ['Tratamento preventivo (3HP)', 'Esquema RIPE completo de 6 meses', 'Repetir a prova em 1 ano', 'Revacinar com BCG'],
+  cd: ['Isoniazida + rifapentina semanais por 12 doses (3HP)', 'RIPE completo por 6 meses e baciloscopias mensais', 'Repetir a prova tuberculínica em 1 ano', 'Revacinar com BCG intradérmica e repetir a prova em 1 ano'],
   ecd: 'O Ministério da Saúde prioriza o 3HP (isoniazida e rifapentina semanais por 12 doses); alternativas: 4R (rifampicina por 4 meses) ou isoniazida por 6 a 9 meses. Antes, sempre excluir TB ativa. Contatos com prova inicial negativa repetem em 8 semanas (viragem).' });
 
 CASO({ id: 'cp_tb_hepatotox', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', cond: 'Hepatotoxicidade pelo esquema RIPE', tags: ['pneumo', 'hepato'],
@@ -78,7 +78,7 @@ CASO({ id: 'cp_tb_hepatotox', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tubercul
   pista: 'Transaminases acima de 3 vezes com sintomas e icterícia.',
   dx: ['Hepatite medicamentosa pelo RIPE', 'Hepatite A aguda', 'Cirrose alcoólica descompensada', 'Coledocolitíase'],
   edx: 'Isoniazida, rifampicina e pirazinamida são hepatotóxicas, sobretudo em idosos, etilistas e hepatopatas. Suspende-se o esquema se transaminases > 3 vezes o normal com sintomas ou icterícia, ou > 5 vezes sem sintomas.',
-  cd: ['Suspender e reintroduzir aos poucos', 'Manter o RIPE e dar sintomáticos para náusea', 'Suspender só o etambutol', 'Trocar definitivamente por esquema de resistência'],
+  cd: ['Suspender o RIPE e reintroduzir uma droga por vez', 'Manter o RIPE e associar metoclopramida e silimarina', 'Suspender só a pirazinamida e manter RIE', 'Trocar definitivamente por esquema para TB resistente'],
   ecd: 'Investigar outras causas (hepatites virais, álcool). Quando as transaminases caírem a menos de 2 vezes o normal, reintroduzir uma droga de cada vez (rifampicina com etambutol, depois isoniazida, depois pirazinamida), identificando a responsável. Se houver gravidade ou demora, esquema alternativo sem drogas hepatotóxicas.' });
 
 CASO({ id: 'cp_tb_resistente', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tuberculose', cond: 'Tuberculose resistente à rifampicina', tags: ['pneumo', 'infecto', 'infec'],
@@ -92,7 +92,7 @@ CASO({ id: 'cp_tb_resistente', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Tubercu
   pista: 'O que o teste rápido molecular detecta além do bacilo?',
   dx: ['Tuberculose resistente à rifampicina', 'Falência por má adesão sem resistência', 'Micobacteriose não tuberculosa', 'Câncer de pulmão'],
   edx: 'Baciloscopia positiva no 2º mês e resistência à rifampicina no TRM-TB (que detecta mutações no gene rpoB). Fatores de risco: abandono e retratamento.',
-  cd: ['Referência para esquema de resistência', 'Manter o RIPE por mais 6 meses com supervisão', 'Acrescentar só estreptomicina ao RIPE atual', 'Isoniazida em dose dobrada'],
+  cd: ['Referência para esquema com bedaquilina, pretomanida e linezolida', 'Prolongar o RIPE para 12 meses com tratamento supervisionado', 'Acrescentar estreptomicina e levofloxacino ao RIPE atual por 12 meses', 'Dobrar a dose da isoniazida e manter rifampicina'],
   ecd: 'Tuberculose resistente é tratada em centros de referência, com esquemas como bedaquilina, pretomanida, linezolida e moxifloxacino (BPaL-M) por 6 meses, ajustados ao teste de sensibilidade. Tratamento supervisionado e apoio psicossocial são essenciais.' });
 
 CASO({ id: 'cp_tb_pleural', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculose', cond: 'Tuberculose pleural', tags: ['pneumo'],
@@ -106,7 +106,7 @@ CASO({ id: 'cp_tb_pleural', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Tuberculos
   pista: 'Exsudato linfocítico com ADA alta.',
   dx: ['Tuberculose pleural', 'Derrame parapneumônico complicado', 'Derrame por insuficiência cardíaca', 'Derrame neoplásico'],
   edx: 'Exsudato (critérios de Light) com predomínio linfocítico, poucas células mesoteliais e ADA elevada em jovem de área endêmica: tuberculose pleural. BAAR no líquido raramente é positivo; biópsia pleural mostra granulomas.',
-  cd: ['Esquema RIPE de 6 meses', 'Drenagem torácica fechada e antibiótico', 'Pleurodese com talco', 'Furosemida'],
+  cd: ['RIPE por 6 meses, sem drenagem', 'Drenagem torácica fechada e RIPE', 'Pleurodese com talco por videotoracoscopia', 'Toracocenteses de alívio semanais e RIPE'],
   ecd: 'Tratamento clínico com o esquema básico; não precisa de drenagem. Investigar TB pulmonar associada (escarro induzido) e HIV.' });
 
 /* ---------- Pneumonia ---------- */
@@ -122,7 +122,7 @@ CASO({ id: 'cp_pac_internacao', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Pneumo
   pista: 'Calcule o CURB-65.',
   dx: ['Pneumonia grave (CURB-65 = 5)', 'Pneumonia leve de tratamento ambulatorial', 'Tromboembolismo pulmonar', 'Insuficiência cardíaca descompensada'],
   edx: 'CURB-65: confusão (1), ureia > 50 mg/dL (1), FR ≥ 30 (1), PA sistólica < 90 ou diastólica ≤ 60 (1, aqui pela diastólica de 58) e idade ≥ 65 (1) = 5 pontos. Pontuação ≥ 3 indica pneumonia grave, com avaliação para UTI.',
-  cd: ['Internar, ceftriaxona e azitromicina', 'Amoxicilina oral em casa com retorno em 48 horas', 'Levofloxacino oral e retorno em 72 horas', 'Oseltamivir isolado'],
+  cd: ['Internar com ceftriaxona e azitromicina venosas', 'Amoxicilina VO em casa com retorno em 48 horas', 'Levofloxacino VO em casa e retorno em 72 horas', 'Internar com piperacilina-tazobactam e vancomicina'],
   ecd: 'CURB-65: 0-1 ambulatorial; 2 internação; ≥ 3 grave (considerar UTI, sobretudo com critérios maiores: choque ou ventilação mecânica). Esquema hospitalar: betalactâmico (ceftriaxona) com macrolídeo, ou quinolona respiratória isolada. Hemoculturas e escarro antes do antibiótico, sem atrasá-lo.' });
 
 CASO({ id: 'cp_pac_uti', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Pneumonia', cond: 'Pneumonia grave com choque séptico (indicação de UTI)', tags: ['pneumo', 'sepse', 'img', 'infec'],
@@ -137,7 +137,7 @@ CASO({ id: 'cp_pac_uti', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Pneumonia', c
   pista: 'Critérios maiores de gravidade.',
   dx: ['Pneumonia com choque séptico', 'Edema agudo de pulmão cardiogênico', 'Tromboembolismo pulmonar maciço', 'Exacerbação de asma'],
   edx: 'Pneumonia com choque séptico (hipotensão refratária a volume, lactato alto) e insuficiência respiratória: critério maior de gravidade (ATS/IDSA), indicação de UTI.',
-  cd: ['UTI, noradrenalina e antibiótico', 'Enfermaria com amoxicilina venosa e reavaliação', 'Alta com levofloxacino oral', 'Furosemida e nitroglicerina'],
+  cd: ['UTI, ceftriaxona + azitromicina, cristaloide e noradrenalina', 'Enfermaria com ampicilina-sulbactam venosa e reavaliação em 48 horas', 'Levofloxacino VO e reavaliação ambulatorial em 72 horas', 'Furosemida, nitroglicerina e VNI na emergência'],
   ecd: 'Antibiótico na primeira hora, cristaloide 30 mL/kg, noradrenalina para PAM ≥ 65, suporte ventilatório (oxigênio de alto fluxo, VNI ou intubação). Considerar cobertura para Pseudomonas ou MRSA se fatores de risco, e corticoide (hidrocortisona) na pneumonia grave.' });
 
 CASO({ id: 'cp_empiema', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Pneumonia', cond: 'Derrame parapneumônico complicado (indicação de drenagem)', tags: ['pneumo', 'usg'],
@@ -152,7 +152,7 @@ CASO({ id: 'cp_empiema', area: 'cm', ala: 'pneumo', dif: 2, tema: 'Pneumonia', c
   pista: 'pH < 7,2, glicose < 60, Gram positivo, septações.',
   dx: ['Derrame parapneumônico complicado', 'Derrame parapneumônico simples', 'Transudato por insuficiência cardíaca', 'Quilotórax'],
   edx: 'pH < 7,2, glicose < 60 mg/dL, DHL > 1.000, Gram ou cultura positivos, pus ou loculações indicam derrame complicado ou empiema.',
-  cd: ['Drenagem torácica', 'Só trocar o antibiótico', 'Toracocentese de alívio isolada', 'Corticoide sistêmico'],
+  cd: ['Drenagem torácica fechada e manter o antibiótico', 'Trocar a ceftriaxona por meropeném, sem drenagem', 'Toracocentese de alívio isolada e repetir em 48 h', 'Prednisona 40 mg/dia para reduzir a inflamação pleural'],
   ecd: 'Drenagem torácica (dreno de tórax). Loculações podem exigir fibrinolítico intrapleural (alteplase com dornase) ou videotoracoscopia. Antibiótico com cobertura para anaeróbios por 2 a 6 semanas.' });
 
 /* ---------- DPOC ---------- */
@@ -168,7 +168,7 @@ CASO({ id: 'cp_dpoc_exacerbacao', area: 'cm', ala: 'pneumo', dif: 3, tema: 'DPOC
   pista: 'Acidose respiratória aguda sobre crônica, paciente colaborativo.',
   dx: ['DPOC exacerbada com acidose', 'Pneumotórax hipertensivo', 'Edema agudo de pulmão', 'Asma grave de início tardio'],
   edx: 'Piora da dispneia e do escarro (volume e purulência) em DPOC, com pH < 7,35 e pCO₂ elevada: exacerbação com insuficiência respiratória hipercápnica. Bicarbonato alto mostra componente crônico.',
-  cd: ['VNI, broncodilatador, corticoide e antibiótico', 'O₂ em alto fluxo para manter SpO₂ de 100%', 'Sedação com benzodiazepínico para reduzir a taquipneia', 'Só broncodilatador e alta'],
+  cd: ['VNI, salbutamol + ipratrópio, prednisona e antibiótico', 'O₂ em máscara com reservatório para SpO₂ de 100%', 'Midazolam para reduzir a taquipneia e O₂ em cateter nasal a 5 L/min', 'Intubação orotraqueal imediata e ventilação mecânica'],
   ecd: 'VNI é o suporte de escolha com pH entre 7,25 e 7,35 (e pode ser tentada até menos, se colaborativo), reduzindo intubação e mortalidade. Intubar se piora, rebaixamento importante, instabilidade ou falha da VNI. Oxigênio excessivo piora a hipercapnia. Prednisona 40 mg por 5 dias; antibiótico com escarro purulento.' });
 
 CASO({ id: 'cp_dpoc_estavel', area: 'cm', ala: 'pneumo', dif: 2, tema: 'DPOC', cond: 'DPOC estável: diagnóstico e tratamento inicial', tags: ['pneumo'],
@@ -182,7 +182,7 @@ CASO({ id: 'cp_dpoc_estavel', area: 'cm', ala: 'pneumo', dif: 2, tema: 'DPOC', c
   pista: 'O diagnóstico exige espirometria pós-broncodilatador.',
   dx: ['DPOC GOLD 2 (grupo B)', 'Asma não controlada', 'Insuficiência cardíaca', 'Fibrose pulmonar idiopática'],
   edx: 'VEF₁/CVF pós-broncodilatador < 0,70 confirma obstrução persistente. VEF₁ entre 50 e 79%: GOLD 2. Muitos sintomas (mMRC ≥ 2) e sem exacerbações: grupo B.',
-  cd: ['Parar de fumar, LAMA + LABA e vacinas', 'Corticoide inalatório isolado', 'Prednisona oral contínua em dose baixa', 'Oxigênio domiciliar contínuo'],
+  cd: ['Cessar o tabagismo, tiotrópio + olodaterol e vacinas', 'Budesonida inalatória isolada', 'Prednisona 5 mg/dia contínua e salbutamol se necessário', 'Oxigênio domiciliar contínuo'],
   ecd: 'Cessação do tabagismo é a medida que mais muda a evolução. No grupo B: dupla broncodilatação (LAMA + LABA). Corticoide inalatório associado se exacerbações frequentes com eosinófilos ≥ 300 (ou ≥ 100 com exacerbações). Vacinas (influenza, pneumococo, covid, VSR em idosos), reabilitação pulmonar.' });
 
 CASO({ id: 'cp_cor_pulmonale', area: 'cm', ala: 'pneumo', dif: 3, tema: 'DPOC', cond: 'DPOC com cor pulmonale e indicação de oxigenoterapia domiciliar', tags: ['pneumo', 'cardio', 'img'],
@@ -197,7 +197,7 @@ CASO({ id: 'cp_cor_pulmonale', area: 'cm', ala: 'pneumo', dif: 3, tema: 'DPOC', 
   pista: 'Qual medida aumenta a sobrevida?',
   dx: ['DPOC com cor pulmonale', 'Insuficiência cardíaca esquerda', 'Cirrose hepática', 'Síndrome nefrótica'],
   edx: 'Hipoxemia crônica leva a vasoconstrição pulmonar, hipertensão pulmonar e insuficiência do ventrículo direito (cor pulmonale), com policitemia.',
-  cd: ['O₂ domiciliar mais de 15 h/dia', 'Oxigênio só durante o esforço', 'Flebotomias semanais pela policitemia', 'Betabloqueador em dose alta'],
+  cd: ['O₂ domiciliar por mais de 15 horas por dia', 'Oxigênio só durante os esforços e no sono', 'Flebotomias semanais pela policitemia e furosemida', 'Carvedilol em dose alta'],
   ecd: 'Indicação de O₂ domiciliar: PaO₂ ≤ 55 mmHg ou SpO₂ ≤ 88% em repouso; ou PaO₂ 56-59 com cor pulmonale ou policitemia. Uso mínimo de 15 horas por dia aumenta a sobrevida. Cessação do tabagismo e reabilitação também têm impacto.' });
 
 /* ---------- Asma ---------- */
@@ -212,7 +212,7 @@ CASO({ id: 'cp_asma_grave', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Asma', con
   pista: 'pCO₂ "normal" numa crise grave é sinal de cansaço.',
   dx: ['Crise de asma grave', 'Crise leve a moderada', 'Anafilaxia', 'Tromboembolismo pulmonar'],
   edx: 'Fala em frases curtas, uso de musculatura acessória, FC > 120, SpO₂ < 90-92%, PFE < 50%: crise grave. Na crise, a hiperventilação reduz a pCO₂; pCO₂ normal ou alta indica fadiga e risco de parada.',
-  cd: ['O₂, broncodilatadores, corticoide e magnésio', 'Só salbutamol e alta em 1 hora', 'Sedação com benzodiazepínico', 'Antibiótico de largo espectro'],
+  cd: ['O₂, salbutamol + ipratrópio, corticoide venoso e magnésio', 'Três nebulizações com salbutamol e alta com prednisona oral por 5 dias', 'Diazepam venoso para controlar a ansiedade', 'Ceftriaxona e azitromicina venosas'],
   ecd: 'Oxigênio para SpO₂ 93-95%, beta-2-agonista repetido com brometo de ipratrópio, corticoide sistêmico na primeira hora, sulfato de magnésio venoso nos graves. Considerar UTI e intubação se exaustão ou rebaixamento. Na alta: corticoide inalatório sempre (nunca só beta-2 de curta ação).' });
 
 CASO({ id: 'cp_asma_diagnostico', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Asma', cond: 'Asma no adulto ex-tabagista tratada como DPOC', tags: ['pneumo', 'img'],
@@ -226,7 +226,7 @@ CASO({ id: 'cp_asma_diagnostico', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Asma
   pista: 'Carga tabágica baixa, atopia, variabilidade e grande resposta ao broncodilatador.',
   dx: ['Asma', 'DPOC', 'Bronquiectasias', 'Insuficiência cardíaca'],
   edx: 'Distúrbio obstrutivo com aumento do VEF₁ ≥ 12% e ≥ 200 mL após broncodilatador, sintomas variáveis desde a infância, atopia e eosinofilia: asma. Na DPOC a obstrução persiste (VEF₁/CVF < 0,7 pós-BD), com exposição significativa.',
-  cd: ['Corticoide inalatório-formoterol', 'Manter só o tiotrópio', 'Associar salmeterol sem corticoide', 'Corticoide oral contínuo'],
+  cd: ['Budesonida-formoterol como manutenção e alívio', 'Manter o tiotrópio isolado e reavaliar em 3 meses', 'Associar salmeterol, sem corticoide inalatório', 'Prednisona 20 mg/dia contínua'],
   ecd: 'Na asma, broncodilatador de longa ação nunca deve ser usado sem corticoide inalatório (aumenta mortalidade). GINA: corticoide inalatório-formoterol como manutenção e alívio; tiotrópio pode ser acrescentado nas etapas 4-5. Plano de ação, técnica inalatória e retorno após a alta.' });
 
 /* ---------- Câncer de pulmão e outras ---------- */
@@ -241,7 +241,7 @@ CASO({ id: 'cp_pancoast', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Câncer de p
   pista: 'Tumor no ápice que invade o plexo braquial e a cadeia simpática.',
   dx: ['Tumor de Pancoast', 'Tuberculose apical', 'Hérnia de disco cervical', 'Síndrome do desfiladeiro torácico'],
   edx: 'Tumor do sulco superior (geralmente carcinoma não pequenas células) que invade plexo braquial (dor em ombro e braço, fraqueza na mão) e gânglio estrelado (síndrome de Horner: ptose, miose, anidrose).',
-  cd: ['TC, biópsia e estadiamento', 'Fisioterapia e anti-inflamatório', 'Ressonância cervical e cirurgia de coluna', 'Esquema RIPE empírico'],
+  cd: ['TC de tórax, biópsia e estadiamento com PET-CT', 'Fisioterapia e anti-inflamatório para a cervicobraquialgia', 'Ressonância cervical e descompressão de raiz C8', 'Esquema RIPE empírico pela lesão apical'],
   ecd: 'Investigação com tomografia, PET-CT e biópsia. Tumores ressecáveis: quimiorradioterapia de indução seguida de cirurgia. Pode associar-se a síndrome da veia cava superior se houver invasão mediastinal.' });
 
 CASO({ id: 'cp_svcs', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Câncer de pulmão', cond: 'Síndrome da veia cava superior por neoplasia pulmonar', tags: ['pneumo', 'img'],
@@ -255,7 +255,7 @@ CASO({ id: 'cp_svcs', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Câncer de pulm�
   pista: 'Obstrução do retorno venoso da cabeça e dos braços.',
   dx: ['Síndrome da veia cava superior por neoplasia', 'Insuficiência cardíaca direita', 'Angioedema hereditário', 'Trombose venosa profunda de membro superior isolada'],
   edx: 'Edema de face, pescoço e membros superiores, circulação colateral e turgência jugular por compressão ou invasão da veia cava superior. Causa mais comum: câncer de pulmão (principalmente pequenas células) e linfoma.',
-  cd: ['Biópsia para histologia e tratar o tumor', 'Corticoide e radioterapia antes de qualquer biópsia', 'Diurético e alta', 'Anticoagulação isolada'],
+  cd: ['Biópsia para histologia antes de tratar o tumor', 'Dexametasona e radioterapia antes de qualquer biópsia', 'Furosemida, cabeceira elevada e alta', 'Heparina plena isolada'],
   ecd: 'Sem estridor ou edema cerebral, há tempo para o diagnóstico histológico, que define o tratamento (quimioterapia em pequenas células e linfoma; radioterapia; stent endovascular para alívio rápido em casos graves). Elevar a cabeceira. Corticoide empírico pode atrapalhar o diagnóstico de linfoma.' });
 
 CASO({ id: 'cp_fpi', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Doenças pulmonares intersticiais', cond: 'Fibrose pulmonar idiopática', tags: ['pneumo', 'img'],
@@ -270,7 +270,7 @@ CASO({ id: 'cp_fpi', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Doenças pulmonar
   pista: 'Faveolamento subpleural basal sem causa identificada.',
   dx: ['Fibrose pulmonar idiopática', 'DPOC enfisematosa', 'Sarcoidose', 'Pneumonia de hipersensibilidade aguda'],
   edx: 'Doença intersticial em idoso ex-tabagista, com estertores em velcro, baqueteamento e tomografia com padrão de pneumonia intersticial usual (reticulado e faveolamento subpleural basal), sem causa secundária: fibrose pulmonar idiopática.',
-  cd: ['Antifibrótico e oxigênio', 'Corticoide em dose alta e azatioprina', 'Antibiótico prolongado por 3 meses', 'Broncodilatador como tratamento principal'],
+  cd: ['Nintedanibe ou pirfenidona e oxigênio', 'Prednisona em dose alta e azatioprina', 'Azitromicina contínua por 3 meses', 'Tiotrópio + formoterol como tratamento principal'],
   ecd: 'Antifibróticos reduzem a perda de função. Corticoide com imunossupressor aumenta a mortalidade na FPI. Oxigênio, reabilitação, vacinas e avaliação para transplante pulmonar.' });
 
 CASO({ id: 'cp_sdra_trali', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Doenças pulmonares intersticiais', cond: 'Lesão pulmonar aguda relacionada à transfusão (TRALI) com SDRA', tags: ['pneumo', 'hemato', 'img'],
@@ -285,5 +285,5 @@ CASO({ id: 'cp_sdra_trali', area: 'cm', ala: 'pneumo', dif: 3, tema: 'Doenças p
   pista: 'Até 6 horas após transfusão, sem sobrecarga de volume.',
   dx: ['TRALI com SDRA', 'Sobrecarga circulatória por transfusão (TACO)', 'Reação hemolítica aguda', 'Pneumonia aspirativa'],
   edx: 'Insuficiência respiratória com infiltrados bilaterais e hipoxemia grave até 6 horas após transfusão, sem evidência de sobrecarga de volume (BNP baixo, sem turgência): TRALI. Na TACO há congestão, hipertensão e BNP alto.',
-  cd: ['Parar a transfusão, suporte e notificar', 'Furosemida em dose alta', 'Corticoide em pulso e anti-histamínico', 'Transfundir mais plasma'],
+  cd: ['Suspender a transfusão, ventilação protetora e notificar', 'Furosemida 80 mg EV e manter a transfusão', 'Metilprednisolona em pulso e prometazina', 'Transfundir plasma fresco congelado para repor os fatores consumidos'],
   ecd: 'Suporte: oxigênio, ventilação protetora (volume corrente 6 mL/kg de peso predito, pressão de platô < 30) e notificação à hemovigilância (anticorpos do doador). Diurético não ajuda. A maioria melhora em 48 a 96 horas.' });

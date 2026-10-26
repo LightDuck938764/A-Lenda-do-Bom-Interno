@@ -19,7 +19,7 @@ CASO({ id: 'cs_fundoplicatura', area: 'cir', dif: 2, tema: 'Esôfago', cond: 'DR
   pista: 'Refluxo comprovado, regurgitação volumosa e motilidade normal.',
   dx: ['DRGE com hérnia hiatal', 'Acalasia idiopática tipo II', 'Esofagite eosinofílica', 'Pirose funcional'],
   edx: 'Indicações de cirurgia antirrefluxo: falha ou intolerância ao tratamento clínico, desejo de não usar IBP por longo prazo, regurgitação/sintomas atípicos persistentes, complicações (estenose, hérnia volumosa). Pré-requisitos: confirmar refluxo (EDA/pHmetria) e manometria (excluir acalasia e hipomotilidade grave).',
-  cd: ['Fundoplicatura de Nissen', 'IBP em dose tripla contínua', 'Miotomia de Heller', 'Gastrectomia parcial distal'],
+  cd: ['Hiatoplastia e fundoplicatura de Nissen laparoscópica', 'Omeprazol 40 mg de 8/8 h contínuo e reavaliação endoscópica anual', 'Miotomia de Heller laparoscópica com fundoplicatura de Dor', 'Gastrectomia parcial distal com reconstrução a Billroth II'],
   ecd: 'Hiatoplastia + fundoplicatura total (360°, Nissen) laparoscópica. Fundoplicaturas parciais (Toupet 270°, Dor) reduzem disfagia e são preferidas com hipomotilidade. Obesidade grave com DRGE: bypass gástrico em Y de Roux.' });
 
 CASO({ id: 'cs_drge_obeso', area: 'cir', dif: 3, tema: 'Esôfago', cond: 'DRGE refratária em paciente com obesidade grave', tags: ['img'],
@@ -33,7 +33,7 @@ CASO({ id: 'cs_drge_obeso', area: 'cir', dif: 3, tema: 'Esôfago', cond: 'DRGE r
   pista: 'Cirurgia que trata o refluxo e a obesidade com comorbidades.',
   dx: ['DRGE e obesidade', 'Acalasia tipo II', 'Esôfago de Barrett longo', 'Úlcera péptica refratária'],
   edx: 'Na obesidade (IMC ≥ 35), a fundoplicatura tem mais falhas e a gastrectomia vertical (sleeve) costuma piorar o refluxo. O bypass gástrico em Y de Roux é a melhor operação antirrefluxo nesse grupo e trata as comorbidades.',
-  cd: ['Bypass gástrico em Y de Roux', 'Gastrectomia vertical (sleeve)', 'Fundoplicatura de Nissen isolada', 'Banda gástrica ajustável'],
+  cd: ['Bypass gástrico em Y de Roux com hiatoplastia', 'Gastrectomia vertical (sleeve) com hiatoplastia posterior', 'Fundoplicatura de Nissen isolada, sem cirurgia bariátrica', 'Banda gástrica ajustável por videolaparoscopia'],
   ecd: 'Bypass gástrico em Y de Roux com hiatoplastia. Indicação bariátrica: IMC ≥ 40, ou ≥ 35 com comorbidades (DM2, HAS, apneia, DRGE, osteoartrite), após falha de tratamento clínico, com avaliação multiprofissional.' });
 
 CASO({ id: 'cs_barrett_displasia', area: 'cir', dif: 3, tema: 'Esôfago', cond: 'Esôfago de Barrett com displasia de alto grau', tags: ['img', 'onco'],
@@ -47,7 +47,7 @@ CASO({ id: 'cs_barrett_displasia', area: 'cir', dif: 3, tema: 'Esôfago', cond: 
   pista: 'Displasia de alto grau sem invasão profunda: tratamento endoscópico.',
   dx: ['Barrett com displasia', 'Barrett sem displasia', 'Adenocarcinoma avançado', 'Esofagite erosiva simples'],
   edx: 'Barrett: metaplasia intestinal do epitélio escamoso esofágico, precursora do adenocarcinoma. Sem displasia: IBP e vigilância (3-5 anos). Displasia de baixo grau confirmada: ablação ou vigilância curta. Alto grau ou adenocarcinoma intramucoso: ressecção endoscópica das lesões visíveis e ablação do Barrett residual.',
-  cd: ['Tratamento endoscópico', 'Esofagectomia de rotina', 'Só IBP e EDA em 3 anos', 'Quimiorradioterapia definitiva'],
+  cd: ['Ressecção endoscópica e ablação por radiofrequência', 'Esofagectomia transhiatal de rotina com linfadenectomia', 'Omeprazol 40 mg/dia e nova endoscopia em 3 anos', 'Quimiorradioterapia definitiva sem cirurgia'],
   ecd: 'Ressecção endoscópica (mucosectomia/dissecção submucosa) da área nodular, seguida de ablação por radiofrequência do segmento residual; IBP e vigilância. Esofagectomia se invasão profunda da submucosa ou falha do tratamento endoscópico.' });
 
 CASO({ id: 'cs_boerhaave', area: 'cir', dif: 3, tema: 'Esôfago', cond: 'Síndrome de Boerhaave (rotura espontânea do esôfago)', tags: ['resp', 'img', 'sepse', 'infec'],
@@ -61,7 +61,7 @@ CASO({ id: 'cs_boerhaave', area: 'cir', dif: 3, tema: 'Esôfago', cond: 'Síndro
   pista: 'Vômito forte + dor torácica + enfisema subcutâneo (tríade de Mackler).',
   dx: ['Síndrome de Boerhaave', 'Síndrome de Mallory-Weiss', 'Infarto agudo do miocárdio', 'Pancreatite aguda'],
   edx: 'Boerhaave: rotura transmural do esôfago distal (parede posterolateral esquerda) por aumento súbito de pressão no vômito. Mallory-Weiss é laceração mucosa com hematêmese, sem perfuração. Mortalidade alta, que aumenta muito após 24 h sem tratamento.',
-  cd: ['Cirurgia: rafia e drenagem', 'IBP e alta', 'Endoscopia diagnóstica com insuflação', 'Antiácido e observação'],
+  cd: ['Jejum, antibiótico e toracotomia esquerda com rafia', 'Omeprazol EV, antiácido e alta após 24 horas de observação', 'Endoscopia diagnóstica com insuflação vigorosa de ar', 'Antiácido, dieta líquida e radiografia de controle em 48 h'],
   ecd: 'Jejum, antibiótico de amplo espectro (cobrindo anaeróbios e fungos), IBP, suporte, e cirurgia precoce (< 24 h): toracotomia esquerda com rafia primária reforçada e drenagem amplas. Casos selecionados/tardios: stent endoscópico com drenagem, ou exclusão esofágica.' });
 
 CASO({ id: 'cs_megaesofago', area: 'cir', dif: 3, tema: 'Esôfago', cond: 'Megaesôfago chagásico avançado (grau IV)', tags: ['img', 'infec'],
@@ -75,7 +75,7 @@ CASO({ id: 'cs_megaesofago', area: 'cir', dif: 3, tema: 'Esôfago', cond: 'Megae
   pista: 'Esôfago maior que 10 cm e tortuoso.',
   dx: ['Megaesôfago grau IV', 'Megaesôfago grau II inicial', 'Câncer de esôfago', 'Estenose péptica'],
   edx: 'Classificação de Rezende (esofagograma): I até 4 cm; II 4-7 cm; III 7-10 cm; IV > 10 cm ou dolicomegaesôfago. Graus iniciais/intermediários: cardiomiotomia de Heller com fundoplicatura parcial (ou POEM). Grau IV: o esôfago não esvazia mesmo após miotomia. Megaesôfago chagásico aumenta o risco de carcinoma espinocelular.',
-  cd: ['Esofagectomia', 'Miotomia de Heller isolada', 'Dilatação pneumática anual', 'Toxina botulínica seriada'],
+  cd: ['Esofagectomia com reconstrução por tubo gástrico', 'Miotomia de Heller laparoscópica isolada com fundoplicatura', 'Dilatação pneumática anual da cárdia', 'Toxina botulínica endoscópica a cada 6 meses'],
   ecd: 'Recuperação nutricional (sonda/gastrostomia ou nutrição enteral) e esofagectomia (transmediastinal) com reconstrução por tubo gástrico, ou técnicas alternativas (Serra Dória/Thal-Hatafuku) em centros selecionados.' });
 
 CASO({ id: 'cs_ulcera_perfurada', area: 'cir', dif: 2, tema: 'Estômago', cond: 'Úlcera duodenal perfurada', tags: ['img', 'dor', 'infec'],
@@ -90,7 +90,7 @@ CASO({ id: 'cs_ulcera_perfurada', area: 'cir', dif: 2, tema: 'Estômago', cond: 
   pista: 'Dor súbita, abdome em tábua e ar livre.',
   dx: ['Úlcera péptica perfurada', 'Pancreatite aguda', 'Colecistite aguda', 'Infarto agudo do miocárdio'],
   edx: 'Perfuração péptica: dor súbita intensa, peritonite química, pneumoperitônio (RX em ortostase; TC mais sensível). Fatores: AINE, H. pylori, tabagismo. Amilase pode subir discretamente.',
-  cd: ['Rafia com epíploon', 'IBP e observação', 'Gastrectomia total', 'Colonoscopia urgente'],
+  cd: ['Ulcerorrafia com tampão de omento (Graham) e lavagem', 'Omeprazol EV, sonda nasogástrica e observação clínica', 'Gastrectomia total com reconstrução em Y de Roux', 'Colonoscopia de urgência para localizar a perfuração'],
   ecd: 'Ressuscitação, antibiótico, IBP venoso e cirurgia de urgência (laparoscópica ou aberta): ulcerorrafia com tampão de omento (Graham) e lavagem da cavidade. Biópsia se úlcera gástrica. Depois: pesquisar e erradicar H. pylori e suspender AINE. Conduta não operatória só em casos selecionados com perfuração bloqueada.' });
 
 CASO({ id: 'cs_ca_gastrico_antro', area: 'cir', dif: 3, tema: 'Estômago', cond: 'Adenocarcinoma gástrico distal ressecável', tags: ['onco', 'img'],
@@ -105,7 +105,7 @@ CASO({ id: 'cs_ca_gastrico_antro', area: 'cir', dif: 3, tema: 'Estômago', cond:
   pista: 'Tumor distal, sem metástase: qual ressecção e qual linfadenectomia?',
   dx: ['Adenocarcinoma gástrico', 'Linfoma MALT gástrico', 'GIST gástrico', 'Úlcera péptica benigna'],
   edx: 'Estadiamento: EDA com biópsias, TC, laparoscopia (T3/T4 ou N+ para excluir carcinomatose). Tumores localmente avançados (≥ T2 ou N+) recebem quimioterapia perioperatória (FLOT). Lauren: intestinal (associado a H. pylori/gastrite atrófica) e difuso (células em anel de sinete, CDH1).',
-  cd: ['FLOT e gastrectomia subtotal D2', 'Gastrectomia total D1 sem quimio', 'Só quimioterapia paliativa', 'Erradicar H. pylori e reavaliar'],
+  cd: ['FLOT perioperatório e gastrectomia subtotal D2', 'Gastrectomia total com linfadenectomia D1, sem quimioterapia', 'Quimioterapia paliativa exclusiva com FOLFOX', 'Erradicar o H. pylori e repetir a endoscopia em 3 meses'],
   ecd: 'Quimioterapia perioperatória (FLOT) e gastrectomia subtotal (distal) com linfadenectomia D2 e reconstrução em Y de Roux (ou Billroth II). Tumores proximais/difusos extensos: gastrectomia total. Precoces (mucosos pequenos): ressecção endoscópica. Gastrectomia total exige reposição de vitamina B12.' });
 
 CASO({ id: 'cs_hernia_interna', area: 'cir', dif: 3, tema: 'Estômago', cond: 'Hérnia interna após bypass gástrico', tags: ['img', 'dor'],
@@ -120,7 +120,7 @@ CASO({ id: 'cs_hernia_interna', area: 'cir', dif: 3, tema: 'Estômago', cond: 'H
   pista: 'Emagrecimento rápido abre os defeitos mesentéricos criados na cirurgia.',
   dx: ['Hérnia interna', 'Síndrome de dumping', 'Úlcera marginal', 'Colelitíase'],
   edx: 'Após bypass, hérnias internas ocorrem pelo espaço de Petersen, defeito do mesentério da enteroanastomose ou mesocólon, favorecidas pela perda de gordura mesentérica. Episódios recorrentes de dor em cólica; o sinal do redemoinho na TC é sugestivo. Risco de isquemia de alças.',
-  cd: ['Laparoscopia de urgência', 'Sonda e observar 72 h', 'Endoscopia com dilatação', 'Procinético e alta'],
+  cd: ['Laparoscopia de urgência e fechar os defeitos mesentéricos', 'Sonda nasogástrica e observação clínica por 72 horas', 'Endoscopia com dilatação da anastomose gastrojejunal', 'Procinético, dieta líquida e alta com retorno'],
   ecd: 'Exploração cirúrgica (laparoscópica) urgente, redução das alças e fechamento dos defeitos mesentéricos. Dor abdominal recorrente pós-bypass com TC sugestiva ou duvidosa justifica laparoscopia diagnóstica.' });
 
 /* ---------- Obstrução e pseudo-obstrução ---------- */
@@ -136,7 +136,7 @@ CASO({ id: 'cs_volvo_sigmoide', area: 'cir', dif: 2, tema: 'Obstrução intestin
   pista: 'Sem sinais de necrose: primeiro desfazer a torção por baixo.',
   dx: ['Volvo de sigmoide', 'Volvo de ceco', 'Obstrução por bridas', 'Pseudo-obstrução colônica'],
   edx: 'Volvo de sigmoide: torção do sigmoide redundante (dolicomegacólon, Chagas, idosos, constipados). RX: grão de café/U invertido; enema: bico de pássaro. Volvo de ceco: jovens, dilatação no quadrante superior esquerdo, tratamento sempre cirúrgico.',
-  cd: ['Descompressão endoscópica', 'Laparotomia de Hartmann já', 'Neostigmina venosa', 'Laxante oral e alta'],
+  cd: ['Descompressão endoscópica e sigmoidectomia eletiva', 'Laparotomia com cirurgia de Hartmann imediata', 'Neostigmina 2 mg EV e observação clínica por 48 horas', 'Laxante osmótico e alta com retorno'],
   ecd: 'Sem peritonite/isquemia: descompressão endoscópica (retossigmoidoscopia/colonoscopia) com sonda retal; como a recidiva é alta (> 50%), sigmoidectomia eletiva na mesma internação. Com necrose, perfuração ou falha: laparotomia com sigmoidectomia (Hartmann).' });
 
 CASO({ id: 'cs_ileo_biliar', area: 'cir', dif: 3, tema: 'Obstrução intestinal', cond: 'Íleo biliar', tags: ['img', 'vomito'],
@@ -150,7 +150,7 @@ CASO({ id: 'cs_ileo_biliar', area: 'cir', dif: 3, tema: 'Obstrução intestinal'
   pista: 'Tríade de Rigler em idosa sem cirurgia prévia.',
   dx: ['Íleo biliar', 'Obstrução por bridas', 'Colangite aguda', 'Volvo de ceco'],
   edx: 'Íleo biliar: cálculo grande passa por fístula colecistoentérica (geralmente colecistoduodenal) e impacta na válvula ileocecal. Tríade de Rigler: obstrução de delgado, pneumobilia e cálculo ectópico. Típico de idosas.',
-  cd: ['Enterolitotomia', 'Colecistectomia e rafia da fístula agora', 'CPRE para retirar o cálculo', 'Ácido ursodesoxicólico'],
+  cd: ['Enterolitotomia (incisão proximal ao cálculo)', 'Colecistectomia e correção da fístula colecistoduodenal no mesmo tempo', 'CPRE para retirar o cálculo impactado no íleo', 'Ácido ursodesoxicólico e sonda nasogástrica'],
   ecd: 'Ressuscitação e enterolitotomia (incisão proximal ao cálculo), revisando o restante do intestino. A correção da fístula e colecistectomia no mesmo tempo aumentam a morbidade; reservar para casos selecionados ou segundo tempo.' });
 
 CASO({ id: 'cs_ogilvie', area: 'cir', dif: 3, tema: 'Obstrução intestinal', cond: 'Pseudo-obstrução colônica aguda (síndrome de Ogilvie)', tags: ['img', 'cardio'],
@@ -165,7 +165,7 @@ CASO({ id: 'cs_ogilvie', area: 'cir', dif: 3, tema: 'Obstrução intestinal', co
   pista: 'Cólon todo dilatado sem obstáculo, em idoso operado e com eletrólitos baixos.',
   dx: ['Síndrome de Ogilvie', 'Volvo de sigmoide', 'Câncer de cólon obstrutivo', 'Megacólon tóxico'],
   edx: 'Síndrome de Ogilvie: dilatação colônica sem obstrução mecânica, por desequilíbrio autonômico, em pacientes graves, pós-operatórios, com opioides e distúrbios eletrolíticos. Ceco > 12 cm aumenta o risco de perfuração.',
-  cd: ['Neostigmina venosa', 'Colectomia total imediata', 'Laxante osmótico em dose alta', 'Enema baritado'],
+  cd: ['Neostigmina 2 mg EV com monitorização cardíaca', 'Colectomia total imediata com ileostomia terminal', 'Polietilenoglicol em dose alta e lactulose', 'Enema baritado diagnóstico e terapêutico'],
   ecd: 'Tratamento inicial: jejum, sonda gástrica e retal, corrigir potássio/magnésio, suspender opioides e anticolinérgicos, deambulação. Persistindo (24-48 h) ou ceco > 10-12 cm: neostigmina IV com monitorização cardíaca (atropina disponível; cuidado com bradicardia). Falha: descompressão colonoscópica; cirurgia se perfuração/isquemia.' });
 
 /* ---------- Hérnias da parede abdominal ---------- */
@@ -179,7 +179,7 @@ CASO({ id: 'cs_hernia_inguinal', area: 'cir', dif: 1, tema: 'Hérnias', cond: 'H
   pista: 'O saco desce pelo anel interno, lateral aos vasos epigástricos.',
   dx: ['Hérnia inguinal indireta', 'Hérnia inguinal direta', 'Hérnia femoral', 'Hidrocele comunicante do adulto'],
   edx: 'Indireta: através do anel inguinal interno, lateral aos vasos epigástricos inferiores (persistência do conduto peritoneovaginal); mais comum em todas as idades e sexos. Direta: pelo triângulo de Hesselbach (medial aos vasos), por fraqueza da parede posterior. Femoral: abaixo do ligamento inguinal, mais em mulheres, alto risco de estrangulamento.',
-  cd: ['Hernioplastia com tela', 'Funda e observação', 'Herniorrafia de urgência', 'Fisioterapia abdominal'],
+  cd: ['Hernioplastia com tela (Lichtenstein ou laparoscópica)', 'Funda herniária e observação clínica anual', 'Herniorrafia de urgência sem tela pela técnica de Bassini', 'Fisioterapia de fortalecimento da parede abdominal'],
   ecd: 'Hérnia sintomática: correção eletiva com tela — Lichtenstein (aberta, livre de tensão) ou laparoscópica (TEP/TAPP), esta preferível em bilaterais e recidivas após via anterior. Homens oligossintomáticos podem aguardar com vigilância.' });
 
 CASO({ id: 'cs_hernia_femoral', area: 'cir', dif: 2, tema: 'Hérnias', cond: 'Hérnia femoral encarcerada', tags: ['ef', 'vomito'],
@@ -193,7 +193,7 @@ CASO({ id: 'cs_hernia_femoral', area: 'cir', dif: 2, tema: 'Hérnias', cond: 'H�
   pista: 'Abaixo do ligamento inguinal, em idosa magra: o colo é estreito.',
   dx: ['Hérnia femoral encarcerada', 'Linfadenite inguinal', 'Hérnia inguinal direta', 'Aneurisma femoral'],
   edx: 'Hérnia femoral: pelo canal femoral, abaixo do ligamento inguinal, medial à veia femoral. Mais comum em mulheres idosas; colo estreito → alta taxa de encarceramento e estrangulamento (inclusive hérnia de Richter, com pinçamento parcial da alça).',
-  cd: ['Cirurgia de urgência', 'Redução manual forçada e alta', 'Analgesia e retorno ambulatorial', 'Compressas mornas'],
+  cd: ['Cirurgia de urgência, avaliando a viabilidade da alça', 'Redução manual forçada sob sedação e alta', 'Analgesia e encaminhamento para cirurgia eletiva', 'Compressas mornas e repouso em Trendelenburg'],
   ecd: 'Hérnia femoral encarcerada: cirurgia de urgência (via pré-peritoneal, inguinal ou laparoscópica) com avaliação da viabilidade intestinal e ressecção se necrose; tela quando não houver contaminação. Toda hérnia femoral deve ser operada, mesmo assintomática.' });
 
 CASO({ id: 'cs_hernia_umbilical', area: 'cir', dif: 2, tema: 'Hérnias', cond: 'Hérnia umbilical estrangulada', tags: ['ef', 'img', 'dor'],
@@ -208,7 +208,7 @@ CASO({ id: 'cs_hernia_umbilical', area: 'cir', dif: 2, tema: 'Hérnias', cond: '
   pista: 'Irredutível, com dor intensa, sinais inflamatórios na pele e lactato alto.',
   dx: ['Hérnia estrangulada', 'Onfalite', 'Hérnia umbilical redutível', 'Diástase dos retos'],
   edx: 'Encarcerada: irredutível, sem comprometimento vascular. Estrangulada: sofrimento vascular do conteúdo — dor intensa e contínua, hiperemia/edema da pele, febre, leucocitose, acidose, sinais de obstrução ou peritonite.',
-  cd: ['Herniotomia de urgência', 'Redução manual sob sedação', 'Antibiótico e reavaliar', 'Cinta abdominal'],
+  cd: ['Herniotomia de urgência com avaliação da alça', 'Redução manual sob sedação e cirurgia eletiva depois', 'Ceftriaxona e metronidazol e reavaliar em 12 horas', 'Cinta abdominal compressiva e analgesia'],
   ecd: 'Não tentar reduzir hérnia com sinais de estrangulamento (risco de devolver alça necrosada). Cirurgia de urgência, avaliação da viabilidade, enterectomia se necrose; tela conforme contaminação.' });
 
 /* ---------- Proctologia ---------- */
@@ -223,7 +223,7 @@ CASO({ id: 'cs_hemorroida_grau4', area: 'cir', dif: 1, tema: 'Proctologia', cond
   pista: 'Prolapso que não reduz nem manualmente.',
   dx: ['Hemorroidas grau IV', 'Hemorroidas internas grau II', 'Prolapso retal total', 'Plicoma isolado'],
   edx: 'Hemorroidas internas (acima da linha pectínea): grau I sangram sem prolapso; II prolapsam e reduzem sozinhas; III reduzem manualmente; IV irredutíveis. Prolapso retal: pregas concêntricas de toda a parede; hemorroidas: pregas radiais.',
-  cd: ['Hemorroidectomia', 'Ligadura elástica', 'Fibras e observar', 'Escleroterapia'],
+  cd: ['Hemorroidectomia (Milligan-Morgan)', 'Ligadura elástica dos três mamilos no consultório', 'Fibras, banhos de assento e observação', 'Escleroterapia com oleato de etanolamina'],
   ecd: 'Graus I-II: medidas dietéticas e, se sintomas persistentes, procedimentos ambulatoriais (ligadura elástica, escleroterapia, fotocoagulação); III: ligadura ou cirurgia; IV/mistas volumosas: hemorroidectomia excisional (Milligan-Morgan/Ferguson). Sempre excluir neoplasia (colonoscopia se ≥ 45-50 anos ou alarme).' });
 
 CASO({ id: 'cs_trombose_hemorroidaria', area: 'cir', dif: 1, tema: 'Proctologia', cond: 'Trombose hemorroidária externa aguda', tags: ['dor', 'ef'],
@@ -236,7 +236,7 @@ CASO({ id: 'cs_trombose_hemorroidaria', area: 'cir', dif: 1, tema: 'Proctologia'
   pista: 'Começou há menos de 72 horas.',
   dx: ['Hemorroida externa trombosada', 'Abscesso perianal', 'Fissura anal aguda', 'Hemorroida interna grau IV'],
   edx: 'Trombose de plexo hemorroidário externo (recoberto por anoderma/pele, muito sensível). Pico de dor em 48-72 h e resolução espontânea em 1-2 semanas.',
-  cd: ['Excisão do trombo', 'Ligadura elástica', 'Hemorroidectomia dos 3 mamilos', 'Antibiótico oral'],
+  cd: ['Excisão do trombo sob anestesia local', 'Ligadura elástica do mamilo trombosado', 'Hemorroidectomia dos três mamilos na urgência', 'Cefalexina VO por 7 dias e compressas'],
   ecd: 'Até 72 h do início: excisão do nódulo trombosado sob anestesia local (alívio rápido, menos recidiva). Após 72 h: tratamento clínico (banhos de assento, analgésicos, fibras, emolientes). Ligadura elástica é para hemorroidas internas.' });
 
 CASO({ id: 'cs_fissura_cronica', area: 'cir', dif: 2, tema: 'Proctologia', cond: 'Fissura anal crônica', tags: ['dor', 'ef'],
@@ -249,7 +249,7 @@ CASO({ id: 'cs_fissura_cronica', area: 'cir', dif: 2, tema: 'Proctologia', cond:
   pista: 'Mais de 6-8 semanas, plicoma sentinela, papila hipertrófica.',
   dx: ['Fissura anal crônica', 'Fístula perianal', 'Hemorroida trombosada', 'Câncer de canal anal'],
   edx: 'Fissura: laceração do anoderma, 90% na linha média posterior, mantida pela hipertonia do esfíncter interno e isquemia. Crônica: > 6-8 semanas, com tríade (fissura, plicoma sentinela, papila hipertrófica). Fissuras laterais/múltiplas: pensar em Crohn, HIV, sífilis, tuberculose, neoplasia.',
-  cd: ['Diltiazem ou nitrato tópico', 'Hemorroidectomia', 'Fistulotomia', 'Dilatação anal forçada'],
+  cd: ['Diltiazem 2% tópico, fibras e banho de assento', 'Hemorroidectomia associada à excisão da fissura', 'Fistulotomia com curetagem do trajeto', 'Dilatação anal forçada sob anestesia'],
   ecd: 'Fibras, banhos de assento e relaxamento químico do esfíncter (diltiazem ou nitrato tópico; toxina botulínica). Falha: esfincterotomia lateral interna (risco pequeno de incontinência). Dilatação forçada não é recomendada.' });
 
 CASO({ id: 'cs_abscesso_perianal', area: 'cir', dif: 1, tema: 'Proctologia', cond: 'Abscesso perianal', tags: ['dor', 'febre', 'infec'],
@@ -263,7 +263,7 @@ CASO({ id: 'cs_abscesso_perianal', area: 'cir', dif: 1, tema: 'Proctologia', con
   pista: 'Há pus coletado: o tratamento é retirar o pus.',
   dx: ['Abscesso perianal', 'Hemorroida trombosada', 'Cisto pilonidal', 'Gangrena de Fournier'],
   edx: 'Abscessos anorretais originam-se de infecção das glândulas criptoglandulares (teoria criptoglandular); classificados como perianal, isquiorretal, interesfincteriano e supraelevador. Cerca de 1/3 evoluem para fístula. Fournier: necrose de partes moles com crepitação e toxemia.',
-  cd: ['Drenagem cirúrgica', 'Antibiótico oral isolado', 'Compressa e observar', 'Fistulotomia imediata'],
+  cd: ['Drenagem cirúrgica do abscesso', 'Ciprofloxacino e metronidazol VO isolados', 'Compressas mornas e reavaliar em 72 horas', 'Fistulotomia imediata em um único tempo'],
   ecd: 'Drenagem (incisão próxima à borda anal) é o tratamento; antibiótico associado em imunossuprimidos, diabéticos, celulite extensa, próteses ou sepse. Não procurar ativamente fístula na fase aguda. Controlar a glicemia.' });
 
 CASO({ id: 'cs_pilonidal', area: 'cir', dif: 1, tema: 'Proctologia', cond: 'Doença pilonidal com abscesso agudo', tags: ['dor', 'infec'],
@@ -276,7 +276,7 @@ CASO({ id: 'cs_pilonidal', area: 'cir', dif: 1, tema: 'Proctologia', cond: 'Doen
   pista: 'Orifícios na linha média sacrococcígea com pelos.',
   dx: ['Abscesso pilonidal', 'Abscesso perianal', 'Hidradenite supurativa', 'Fístula anal'],
   edx: 'Doença pilonidal: inflamação crônica por pelos que penetram a pele do sulco interglúteo; homens jovens, hirsutos, sedentários/que ficam sentados.',
-  cd: ['Drenagem lateral à linha média', 'Antibiótico isolado', 'Exérese com fechamento primário já', 'Depilação e alta'],
+  cd: ['Drenagem com incisão lateral à linha média', 'Cefalexina VO isolada por 10 dias', 'Exérese com fechamento primário imediato na fase aguda', 'Depilação a laser e alta'],
   ecd: 'Fase aguda: drenagem (incisão lateral à linha média) e cuidados locais. Doença crônica: exérese com técnicas que evitem cicatriz na linha média (retalhos, como Karydakis/Limberg) ou cicatrização por segunda intenção; depilação e higiene reduzem recidiva.' });
 
 /* ---------- Pele ---------- */
@@ -291,7 +291,7 @@ CASO({ id: 'cs_marjolin', area: 'cir', dif: 2, tema: 'Pele e partes moles', cond
   pista: 'Ferida crônica em cicatriz antiga de queimadura.',
   dx: ['Úlcera de Marjolin', 'Úlcera venosa', 'Pioderma gangrenoso', 'Úlcera por pressão'],
   edx: 'Úlcera de Marjolin: carcinoma (geralmente espinocelular) que surge em cicatrizes crônicas — queimaduras, úlceras de longa data, osteomielite com fístula. Mais agressivo que o CEC habitual, com metástases linfonodais frequentes.',
-  cd: ['Biópsia e excisão ampla', 'Curativo e antibiótico', 'Enxerto de pele direto', 'Compressão elástica'],
+  cd: ['Biópsia das bordas e excisão com margens amplas', 'Curativo com sulfadiazina de prata e cefalexina', 'Enxerto de pele parcial direto sobre a úlcera, sem biópsia', 'Bota de Unna e compressão elástica'],
   ecd: 'Biópsias das bordas para confirmar; excisão com margens amplas (amputação se invasão óssea/articular extensa) e abordagem dos linfonodos regionais (esvaziamento se clinicamente positivos); reconstrução. Prevenção: enxertia precoce de queimaduras profundas.' });
 
 CASO({ id: 'cs_melanoma', area: 'cir', dif: 2, tema: 'Pele e partes moles', cond: 'Melanoma cutâneo: biópsia excisional e linfonodo sentinela', tags: ['onco', 'ef'],
@@ -305,7 +305,7 @@ CASO({ id: 'cs_melanoma', area: 'cir', dif: 2, tema: 'Pele e partes moles', cond
   pista: 'Espessura de Breslow > 0,8 mm e linfonodos clinicamente negativos.',
   dx: ['Melanoma', 'Nevo displásico', 'Ceratose seborreica', 'Carcinoma basocelular'],
   edx: 'ABCDE: assimetria, bordas irregulares, cores variadas, diâmetro > 6 mm, evolução. Biópsia excisional com margens estreitas é a preferida (permite Breslow). Breslow (espessura) é o principal fator prognóstico e define as margens: in situ 0,5-1 cm; ≤ 1 mm 1 cm; 1-2 mm 1-2 cm; > 2 mm 2 cm.',
-  cd: ['Ampliar margem e sentinela', 'Nada mais a fazer', 'Esvaziamento axilar e inguinal', 'Só radioterapia local'],
+  cd: ['Ampliar a margem para 1 cm e biópsia de linfonodo sentinela', 'Nenhum procedimento adicional, pois a biópsia excisional foi curativa', 'Esvaziamento axilar e inguinal profiláticos', 'Radioterapia local exclusiva do leito'],
   ecd: 'Ampliação de margem de 1-2 cm e biópsia do linfonodo sentinela (indicada a partir de Breslow > 0,8 mm ou ulceração). Linfonodo positivo: discutir terapia adjuvante (imunoterapia). Seguimento dermatológico e exame da pele dos familiares.' });
 
 /* ---------- Tórax ---------- */
@@ -320,5 +320,5 @@ CASO({ id: 'cs_pneumotorax_espontaneo', area: 'cir', dif: 2, tema: 'Tórax', con
   pista: 'Jovem, longilíneo, sem doença pulmonar, estável e com pneumotórax pequeno.',
   dx: ['Pneumotórax primário', 'Pneumotórax hipertensivo', 'Pneumotórax secundário', 'Embolia pulmonar'],
   edx: 'Primário: jovens longilíneos, tabagistas, sem doença pulmonar (rotura de blebs apicais). Secundário: com doença pulmonar (DPOC, fibrose cística, pneumocistose), mais grave. Hipertensivo: instabilidade, desvio de mediastino.',
-  cd: ['Observação com O2', 'Drenagem torácica de grosso calibre', 'Toracotomia', 'Pleurodese química imediata'],
+  cd: ['Observação com O₂ e radiografia de controle', 'Drenagem torácica com dreno de grosso calibre', 'Toracotomia com ressecção de blebs', 'Pleurodese química com talco imediata'],
   ecd: 'Pequeno e estável: observação (O2 acelera a reabsorção) e RX de controle; grande ou sintomático: aspiração por agulha ou dreno fino. Secundário: geralmente drenagem e internação. Recidiva, bilateral, fístula persistente ou profissões de risco: videotoracoscopia com ressecção de blebs e pleurodese. Parar de fumar.' });

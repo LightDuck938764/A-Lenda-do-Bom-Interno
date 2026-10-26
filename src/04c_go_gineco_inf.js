@@ -17,7 +17,7 @@ CASO({ id: 'gi_vaginose', area: 'go', local: 'gineco', dif: 1, tema: 'ISTs e vul
   pista: 'Critérios de Amsel: 3 de 4.',
   dx: ['Vaginose bacteriana', 'Candidíase vulvovaginal', 'Tricomoníase', 'Cervicite por clamídia'],
   edx: 'Desequilíbrio da flora (redução de lactobacilos, aumento de Gardnerella e anaeróbios). Amsel: corrimento homogêneo, pH > 4,5, teste das aminas positivo e clue cells. Não é considerada IST: parceiro não precisa ser tratado.',
-  cd: ['Metronidazol oral', 'Fluconazol 150 mg dose única', 'Tratar o parceiro obrigatoriamente', 'Ceftriaxona e azitromicina'],
+  cd: ['Metronidazol 500 mg VO de 12/12 h por 7 dias', 'Fluconazol 150 mg VO em dose única', 'Metronidazol para a paciente e para o parceiro obrigatoriamente', 'Ceftriaxona 500 mg IM e azitromicina 1 g VO'],
   ecd: 'Metronidazol 500 mg VO 12/12 h por 7 dias (ou gel vaginal por 5 dias); alternativa: clindamicina. Na gestação também pode usar metronidazol. Recorrente: metronidazol gel 2 vezes por semana por 4-6 meses. Evitar álcool durante o metronidazol.' });
 
 CASO({ id: 'gi_candida', area: 'go', local: 'gineco', dif: 2, tema: 'ISTs e vulvovaginites', cond: 'Candidíase vulvovaginal recorrente', tags: ['gineco', 'infecto', 'infec'],
@@ -31,7 +31,7 @@ CASO({ id: 'gi_candida', area: 'go', local: 'gineco', dif: 2, tema: 'ISTs e vulv
   pista: '4 ou mais episódios em 1 ano.',
   dx: ['Candidíase recorrente', 'Vaginose bacteriana', 'Tricomoníase', 'Vaginose citolítica'],
   edx: 'Candidíase: prurido, ardor, corrimento grumoso "leite coalhado", pH normal (< 4,5). Recorrente: 4 ou mais episódios sintomáticos em 12 meses; investigar diabetes, HIV, imunossupressão e espécies não albicans.',
-  cd: ['Fluconazol em indução e manutenção', 'Fluconazol dose única e nada mais', 'Metronidazol para a paciente e o parceiro', 'Ducha vaginal diária'],
+  cd: ['Fluconazol 150 mg nos dias 1, 4 e 7 e depois semanal', 'Fluconazol 150 mg em dose única, sem manutenção', 'Metronidazol 2 g em dose única para a paciente e para o parceiro', 'Ducha vaginal diária com bicarbonato de sódio'],
   ecd: 'Recorrente: indução (fluconazol 150 mg nos dias 1, 4 e 7) e manutenção semanal por 6 meses. Episódio isolado: fluconazol 150 mg dose única ou azólico tópico. Não é IST; parceiro só se sintomático. Gestação: apenas azólicos tópicos.' });
 
 CASO({ id: 'gi_tricomoniase', area: 'go', local: 'gineco', dif: 1, tema: 'ISTs e vulvovaginites', cond: 'Tricomoníase', tags: ['gineco', 'infecto', 'infec'],
@@ -45,7 +45,7 @@ CASO({ id: 'gi_tricomoniase', area: 'go', local: 'gineco', dif: 1, tema: 'ISTs e
   pista: 'Colo em morango e protozoário móvel ao microscópio.',
   dx: ['Tricomoníase', 'Vaginose bacteriana', 'Candidíase', 'Gonorreia'],
   edx: 'Trichomonas vaginalis: IST com corrimento amarelo-esverdeado bolhoso, pH > 4,5, colpite macular ("colo em framboesa"), protozoário móvel ao exame a fresco. Aumenta o risco de transmissão do HIV.',
-  cd: ['Metronidazol e tratar a parceria', 'Fluconazol 150 mg em dose única', 'Clindamicina creme vaginal', 'Apenas orientar higiene íntima'],
+  cd: ['Metronidazol 2 g em dose única e tratar a parceria', 'Fluconazol 150 mg em dose única para a paciente', 'Clindamicina creme vaginal por 7 dias, sem tratar o parceiro', 'Orientar higiene íntima e repetir o exame a fresco'],
   ecd: 'Metronidazol 400-500 mg 12/12 h por 7 dias (ou 2 g dose única); tratar parcerias sexuais e orientar abstinência até a cura. Oferecer testagem para HIV, sífilis e hepatites.' });
 
 CASO({ id: 'gi_cervicite', area: 'go', local: 'gineco', dif: 2, tema: 'ISTs e vulvovaginites', cond: 'Cervicite por gonococo e clamídia', tags: ['gineco', 'infecto', 'infec'],
@@ -59,7 +59,7 @@ CASO({ id: 'gi_cervicite', area: 'go', local: 'gineco', dif: 2, tema: 'ISTs e vu
   pista: 'Mucopus endocervical sem dor à mobilização do colo.',
   dx: ['Cervicite mucopurulenta', 'Doença inflamatória pélvica', 'Vaginose bacteriana', 'Câncer de colo uterino'],
   edx: 'Cervicite: secreção mucopurulenta e friabilidade do colo; causada principalmente por gonococo e clamídia, muitas vezes assintomáticas. Sem dor à mobilização do colo ou anexos (que indicaria DIP).',
-  cd: ['Ceftriaxona e azitromicina', 'Metronidazol oral isolado por 7 dias', 'Fluconazol', 'Cauterização química do colo'],
+  cd: ['Ceftriaxona 500 mg IM e azitromicina 1 g VO', 'Metronidazol 500 mg VO de 12/12 h por 7 dias', 'Fluconazol 150 mg VO e cauterização do colo', 'Cauterização química do colo com ácido tricloroacético'],
   ecd: 'Ceftriaxona 500 mg IM dose única + azitromicina 1 g VO dose única (cobrem gonococo e clamídia). Tratar parcerias, testagem para HIV, sífilis e hepatites, notificar. Rastreio anual de clamídia/gonococo em menores de 25 anos sexualmente ativas.' });
 
 CASO({ id: 'gi_dip', area: 'go', local: 'gineco', dif: 2, tema: 'ISTs e vulvovaginites', cond: 'Doença inflamatória pélvica leve (tratamento ambulatorial)', tags: ['gineco', 'infecto', 'infec'],
@@ -74,7 +74,7 @@ CASO({ id: 'gi_dip', area: 'go', local: 'gineco', dif: 2, tema: 'ISTs e vulvovag
   pista: 'Critérios mínimos: dor à mobilização do colo, anexos e hipogástrio.',
   dx: ['DIP', 'Gravidez ectópica íntegra', 'Apendicite aguda', 'Endometriose profunda'],
   edx: 'DIP: infecção ascendente (gonococo, clamídia, anaeróbios, micoplasma). O tratamento empírico deve ser iniciado com os critérios mínimos (dor em hipogástrio, à mobilização do colo e anexial), sem esperar confirmação. Complicações: abscesso tubo-ovariano, infertilidade, gravidez ectópica, dor crônica, Fitz-Hugh-Curtis.',
-  cd: ['Ceftriaxona + doxiciclina + metronidazol', 'Azitromicina 1 g em dose única isolada', 'Laparoscopia de urgência', 'Retirar o DIU e só observar'],
+  cd: ['Ceftriaxona IM, doxiciclina e metronidazol por 14 dias', 'Azitromicina 1 g VO em dose única isolada', 'Laparoscopia de urgência para lavagem pélvica e antibiótico venoso', 'Retirar o DIU e observar sem antibiótico'],
   ecd: 'Ambulatorial: ceftriaxona 500 mg IM dose única + doxiciclina 100 mg 12/12 h por 14 dias + metronidazol 500 mg 12/12 h por 14 dias; reavaliar em 72 h. Internar se: abscesso tubo-ovariano, gestação, peritonite, ausência de resposta em 72 h, intolerância oral, dúvida diagnóstica (esquema IV: ceftriaxona + doxiciclina + metronidazol). Tratar parcerias. DIU pode ser mantido.' });
 
 CASO({ id: 'gi_dip_ato', area: 'go', local: 'gineco', dif: 3, tema: 'ISTs e vulvovaginites', cond: 'DIP com abscesso tubo-ovariano (tratamento hospitalar)', tags: ['gineco', 'infecto', 'usg', 'sepse', 'infec'],
@@ -89,7 +89,7 @@ CASO({ id: 'gi_dip_ato', area: 'go', local: 'gineco', dif: 3, tema: 'ISTs e vulv
   pista: 'Falha do tratamento oral e abscesso: critérios de internação.',
   dx: ['Abscesso tubo-ovariano', 'Torção anexial', 'Endometrioma roto', 'Gravidez ectópica rota'],
   edx: 'Abscesso tubo-ovariano é complicação grave da DIP e critério de tratamento hospitalar, assim como falha do tratamento oral após 72 horas.',
-  cd: ['Internar e antibiótico IV', 'Manter o tratamento oral por mais uma semana', 'Histerectomia total imediata', 'Alta com analgésico'],
+  cd: ['Internar com ceftriaxona EV, doxiciclina e metronidazol', 'Manter ceftriaxona IM e doxiciclina VO por mais 1 semana', 'Histerectomia total com anexectomia bilateral imediata', 'Alta com analgésico e US de controle em 7 dias'],
   ecd: 'Ceftriaxona IV + doxiciclina VO + metronidazol IV (ou clindamicina + gentamicina). Abscessos > 7-8 cm, sem resposta em 48-72 h ou rotos: drenagem guiada por imagem ou laparoscópica; rotura com peritonite exige cirurgia de urgência.' });
 
 /* ---------- Úlceras genitais ---------- */
@@ -104,7 +104,7 @@ CASO({ id: 'gi_cancro_mole', area: 'go', local: 'gineco', dif: 2, tema: 'ISTs e 
   pista: 'Úlceras múltiplas, dolorosas, de fundo sujo, com bubão que flutua.',
   dx: ['Cancro mole', 'Sífilis primária', 'Herpes genital', 'Donovanose'],
   edx: 'Haemophilus ducreyi: úlceras múltiplas (autoinoculação), dolorosas, bordas irregulares e moles, fundo necrótico e purulento; bubão inguinal unilateral que pode fistulizar por orifício único. Sífilis primária: úlcera única, indolor, endurecida, fundo limpo.',
-  cd: ['Azitromicina 1 g', 'Penicilina benzatina isolada em dose única', 'Aciclovir oral por 7 dias', 'Excisão cirúrgica do linfonodo'],
+  cd: ['Azitromicina 1 g VO em dose única', 'Penicilina benzatina 2,4 milhões UI em dose única', 'Aciclovir 400 mg VO de 8/8 h por 7 dias', 'Excisão cirúrgica do linfonodo inguinal flutuante'],
   ecd: 'Azitromicina 1 g VO dose única (alternativa: ceftriaxona 250 mg IM ou ciprofloxacino). Pelo manejo sindrômico, úlcera sem vesículas com menos de 4 semanas: tratar sífilis e cancro mole juntos se não houver diagnóstico. Bubão flutuante: punção aspirativa (não incisão). Tratar parcerias.' });
 
 CASO({ id: 'gi_herpes', area: 'go', local: 'gineco', dif: 1, tema: 'ISTs e vulvovaginites', cond: 'Herpes genital primoinfecção', tags: ['gineco', 'infecto', 'infec'],
@@ -118,7 +118,7 @@ CASO({ id: 'gi_herpes', area: 'go', local: 'gineco', dif: 1, tema: 'ISTs e vulvo
   pista: 'Vesículas agrupadas que ulceram, muito dolorosas, com sintomas sistêmicos na primoinfecção.',
   dx: ['Herpes genital', 'Cancro mole', 'Sífilis primária', 'Doença de Behçet'],
   edx: 'HSV-2 (e cada vez mais HSV-1): vesículas sobre base eritematosa que se rompem formando úlceras rasas e dolorosas. Primoinfecção mais grave (febre, mialgia, disúria, retenção urinária), recorrências mais brandas.',
-  cd: ['Aciclovir oral', 'Penicilina benzatina', 'Azitromicina em dose única', 'Corticoide tópico de alta potência'],
+  cd: ['Aciclovir 400 mg VO de 8/8 h por 7 a 10 dias', 'Penicilina benzatina 2,4 milhões UI IM em dose única', 'Azitromicina 1 g VO em dose única', 'Clobetasol tópico nas úlceras por 7 dias'],
   ecd: 'Aciclovir 400 mg 8/8 h por 7-10 dias na primoinfecção (5 dias nas recorrências); valaciclovir é alternativa; analgesia. Supressão se 6 ou mais recorrências por ano. Testar sífilis, HIV e hepatites. Na gestação: supressão a partir de 36 semanas; lesão ativa no trabalho de parto indica cesárea.' });
 
 /* ---------- Sífilis ---------- */
@@ -133,7 +133,7 @@ CASO({ id: 'gi_sifilis_primaria', area: 'go', local: 'gineco', dif: 1, tema: 'S�
   pista: 'Cancro duro: única, indolor, endurecida, fundo limpo.',
   dx: ['Sífilis primária', 'Cancro mole', 'Herpes genital', 'Linfogranuloma venéreo'],
   edx: 'Cancro duro surge 10-90 dias (média 21) após o contato, com adenopatia regional indolor, e cicatriza espontaneamente em 2-6 semanas. Testes podem ainda estar não reagentes no início; teste rápido reagente autoriza tratar.',
-  cd: ['Benzatina dose única', 'Benzatina semanal por 3 semanas', 'Azitromicina 1 g em dose única', 'Aciclovir'],
+  cd: ['Penicilina benzatina 2,4 milhões UI IM em dose única', 'Penicilina benzatina 2,4 milhões UI IM semanal por 3 semanas', 'Azitromicina 1 g VO em dose única', 'Aciclovir 400 mg VO de 8/8 h por 7 dias'],
   ecd: 'Sífilis recente (primária, secundária, latente recente < 1 ano): benzatina 2,4 milhões UI IM dose única. Tratar parcerias, notificar, testar HIV e hepatites. Seguimento com VDRL trimestral: queda de 2 diluições em 6 meses (recente) indica resposta.' });
 
 CASO({ id: 'gi_sifilis_secundaria', area: 'go', local: 'gineco', dif: 2, tema: 'Sífilis', cond: 'Sífilis secundária', tags: ['gineco', 'infecto', 'ef', 'infec'],
@@ -147,7 +147,7 @@ CASO({ id: 'gi_sifilis_secundaria', area: 'go', local: 'gineco', dif: 2, tema: '
   pista: 'Exantema palmoplantar, condiloma plano e títulos altos.',
   dx: ['Sífilis secundária', 'Pitiríase rósea de Gibert', 'Farmacodermia', 'Exantema viral inespecífico'],
   edx: 'Fase de disseminação hematogênica (6 semanas a 6 meses após o cancro): lesões cutâneas não pruriginosas, palmoplantares, condiloma plano, alopecia, placas mucosas, sintomas gerais. Fase de maior transmissibilidade e títulos mais elevados.',
-  cd: ['Benzatina dose única', 'Benzatina em 3 doses semanais', 'Doxiciclina por 7 dias', 'Corticoide tópico'],
+  cd: ['Penicilina benzatina 2,4 milhões UI IM em dose única', 'Penicilina benzatina 2,4 milhões UI IM em 3 doses semanais', 'Doxiciclina 100 mg VO de 12/12 h por 7 dias', 'Corticoide tópico nas lesões palmoplantares'],
   ecd: 'Sífilis recente: benzatina 2,4 milhões UI dose única. Pode ocorrer reação de Jarisch-Herxheimer nas primeiras 24 h (febre, piora das lesões): tratamento sintomático, não é alergia. Alergia: doxiciclina 100 mg 12/12 h por 15 dias (fora da gestação).' });
 
 CASO({ id: 'gi_sifilis_latente_recente', area: 'go', local: 'gineco', dif: 2, tema: 'Sífilis', cond: 'Sífilis latente recente', tags: ['gineco', 'infecto', 'infec'],
@@ -161,7 +161,7 @@ CASO({ id: 'gi_sifilis_latente_recente', area: 'go', local: 'gineco', dif: 2, te
   pista: 'Soroconversão documentada há menos de 1 ano, sem sintomas.',
   dx: ['Sífilis latente recente', 'Sífilis latente tardia', 'Cicatriz sorológica', 'Falso-positivo'],
   edx: 'Latente: sem sinais ou sintomas. Recente: infecção com menos de 1 ano (soroconversão documentada, sintomas ou exposição no último ano). Tardia: mais de 1 ano ou duração ignorada.',
-  cd: ['Benzatina dose única', 'Benzatina semanal por 3 semanas', 'Punção lombar antes de tratar', 'Não tratar e repetir o VDRL'],
+  cd: ['Penicilina benzatina 2,4 milhões UI IM em dose única', 'Penicilina benzatina 2,4 milhões UI IM semanal por 3 semanas', 'Punção lombar antes de iniciar o tratamento', 'Não tratar e repetir o VDRL em 3 meses'],
   ecd: 'Latente recente tratada como sífilis recente: benzatina 2,4 milhões UI IM dose única. Notificação compulsória, tratamento de parcerias e seguimento com VDRL.' });
 
 CASO({ id: 'gi_sifilis_latente_tardia', area: 'go', local: 'gineco', dif: 2, tema: 'Sífilis', cond: 'Sífilis latente tardia', tags: ['gineco', 'infecto', 'infec'],
@@ -175,7 +175,7 @@ CASO({ id: 'gi_sifilis_latente_tardia', area: 'go', local: 'gineco', dif: 2, tem
   pista: 'Assintomática e sem data de infecção definida nos últimos 12 meses.',
   dx: ['Sífilis latente tardia', 'Sífilis primária', 'Sífilis latente recente', 'Neurossífilis'],
   edx: 'Sem sintomas e infecção com mais de 1 ano ou de duração ignorada: latente tardia. Pode durar décadas até manifestação terciária.',
-  cd: ['Benzatina 3 doses semanais', 'Benzatina em dose única', 'Azitromicina 2 g', 'Não tratar, apenas repetir o VDRL'],
+  cd: ['Penicilina benzatina 2,4 milhões UI IM semanal por 3 semanas', 'Penicilina benzatina 2,4 milhões UI IM em dose única', 'Penicilina benzatina 2,4 milhões UI IM em dose única e VDRL em 3 meses', 'Não tratar e repetir o VDRL em 6 meses'],
   ecd: 'Latente tardia ou de duração ignorada e terciária: benzatina 2,4 milhões UI IM semanal por 3 semanas (7,2 milhões). Intervalo maior que 14 dias entre doses fora da gestação (9 dias na gestação) exige reiniciar. Queda de 2 títulos em 12 meses indica resposta.' });
 
 CASO({ id: 'gi_sifilis_terciaria', area: 'go', local: 'gineco', dif: 3, tema: 'Sífilis', cond: 'Sífilis terciária (neurossífilis tardia)', tags: ['gineco', 'infecto', 'neuro', 'infec'],
@@ -189,7 +189,7 @@ CASO({ id: 'gi_sifilis_terciaria', area: 'go', local: 'gineco', dif: 3, tema: 'S
   pista: 'Tabes dorsalis e pupila de Argyll Robertson.',
   dx: ['Tabes dorsalis', 'Deficiência de vitamina B12', 'Esclerose múltipla', 'Neuropatia diabética'],
   edx: 'Terciária (anos a décadas): gomas cutâneo-mucosas e ósseas, sífilis cardiovascular (aortite, aneurisma) e neurológica (tabes dorsalis, paralisia geral, meningovascular). Neurossífilis pode ocorrer em qualquer fase.',
-  cd: ['Penicilina cristalina IV', 'Benzatina em dose única', 'Doxiciclina oral por 28 dias', 'Pulso de corticoide'],
+  cd: ['Penicilina cristalina EV por 14 dias', 'Penicilina benzatina 2,4 milhões UI IM em dose única', 'Doxiciclina 100 mg VO de 12/12 h por 28 dias', 'Metilprednisolona em pulso por 3 dias'],
   ecd: 'Neurossífilis: penicilina G cristalina 18-24 milhões UI/dia IV (3-4 milhões a cada 4 h) por 14 dias (alternativa: ceftriaxona 2 g/dia por 10-14 dias). Gomas e sífilis cardiovascular sem neurossífilis: benzatina 3 doses semanais. Seguimento do líquor a cada 6 meses.' });
 
 /* ---------- Violência sexual ---------- */
@@ -205,7 +205,7 @@ CASO({ id: 'gi_violencia', area: 'go', local: 'gineco', dif: 2, tema: 'Violênci
   pista: 'O relato da mulher basta; não há exigência de boletim de ocorrência ou ordem judicial.',
   dx: ['Gestação decorrente de estupro', 'Gestação de alto risco por doença materna', 'Gravidez ectópica', 'Abortamento retido'],
   edx: 'O Código Penal permite o aborto em gestação decorrente de estupro, por risco de vida materna e (ADPF 54) na anencefalia. Para estupro, basta o relato circunstanciado da mulher, com termo de consentimento e avaliação de compatibilidade da idade gestacional pela equipe; não se exige boletim de ocorrência, exame de corpo de delito ou autorização judicial.',
-  cd: ['Serviço de aborto legal', 'Exigir boletim de ocorrência antes', 'Exigir autorização judicial prévia', 'Negar, pois já passou de 72 horas'],
+  cd: ['Encaminhar ao serviço de aborto legal, sem exigir BO', 'Exigir boletim de ocorrência e exame do IML antes do procedimento', 'Exigir autorização judicial prévia', 'Negar, pois já se passaram mais de 72 horas'],
   ecd: 'Acolhimento multiprofissional, termos (relato circunstanciado, consentimento, parecer técnico, aprovação do procedimento), procedimento por aspiração ou medicamentoso conforme a idade gestacional, seguimento psicológico e sorológico. Notificação compulsória da violência. Objeção de consciência é individual e não pode impedir o acesso: o serviço deve garantir outro profissional. Nas primeiras 72 h após a violência: anticoncepção de emergência, PEP para HIV e profilaxia de ISTs.' });
 
 /* ---------- Sangramento uterino anormal ---------- */
@@ -221,7 +221,7 @@ CASO({ id: 'gi_mioma_submucoso', area: 'go', local: 'gineco', dif: 2, tema: 'San
   pista: 'SUA estrutural (L) por mioma submucoso.',
   dx: ['Mioma submucoso', 'Adenomiose', 'Pólipo endometrial', 'Hiperplasia endometrial'],
   edx: 'PALM-COEIN: estruturais (Pólipo, Adenomiose, Leiomioma, Malignidade) e não estruturais (Coagulopatia, Ovulatória, Endometrial, Iatrogênica, Não classificada). Miomas submucosos (FIGO 0, 1, 2) são os que mais causam sangramento.',
-  cd: ['Miomectomia histeroscópica', 'Histerectomia total', 'Apenas observação', 'Embolização de artéria uterina'],
+  cd: ['Miomectomia histeroscópica após corrigir a anemia', 'Histerectomia total abdominal após corrigir a anemia', 'Observação clínica e US anual', 'Embolização das artérias uterinas'],
   ecd: 'Corrigir anemia (ferro venoso se grave ou próximo à cirurgia). Miomas FIGO 0 e 1 até 4-5 cm: miomectomia histeroscópica, que preserva o útero. Clínico: ácido tranexâmico, AINE, DIU-LNG (se cavidade não distorcida), análogos de GnRH como ponte. Histerectomia se prole completa e falha.' });
 
 CASO({ id: 'gi_polipo', area: 'go', local: 'gineco', dif: 2, tema: 'Sangramento uterino anormal', cond: 'Pólipo endometrial', tags: ['gineco', 'usg'],
@@ -236,7 +236,7 @@ CASO({ id: 'gi_polipo', area: 'go', local: 'gineco', dif: 2, tema: 'Sangramento 
   pista: 'Lesão lisa intracavitária com pedículo vascular, sangramento intermenstrual.',
   dx: ['Pólipo endometrial', 'Mioma submucoso', 'Câncer de endométrio', 'Adenomiose'],
   edx: 'Pólipo: proliferação localizada do endométrio, causa sangramento intermenstrual e aumento do fluxo. A histeroscopia é padrão-ouro para diagnóstico e tratamento das lesões intracavitárias.',
-  cd: ['Polipectomia histeroscópica', 'Curetagem uterina às cegas', 'Histerectomia total', 'Anticoncepcional e observar'],
+  cd: ['Polipectomia histeroscópica com anatomopatológico', 'Curetagem uterina às cegas', 'Histerectomia total abdominal', 'Anticoncepcional oral combinado e US transvaginal em 6 meses'],
   ecd: 'Polipectomia histeroscópica com estudo anatomopatológico (risco de malignidade maior na pós-menopausa, sintomáticas, uso de tamoxifeno, pólipos grandes).' });
 
 CASO({ id: 'gi_adenomiose', area: 'go', local: 'gineco', dif: 2, tema: 'Sangramento uterino anormal', cond: 'Adenomiose', tags: ['gineco', 'usg'],
@@ -250,7 +250,7 @@ CASO({ id: 'gi_adenomiose', area: 'go', local: 'gineco', dif: 2, tema: 'Sangrame
   pista: 'Útero globoso e doloroso, sangramento e dismenorreia em multípara.',
   dx: ['Adenomiose', 'Mioma subseroso', 'Endometriose ovariana', 'Câncer de endométrio'],
   edx: 'Glândulas e estroma endometrial dentro do miométrio. Fatores: multiparidade, cirurgias uterinas, idade 40-50 anos. USG/RM: espessamento miometrial assimétrico, cistos, estrias, zona juncional espessada.',
-  cd: ['DIU de levonorgestrel', 'Miomectomia laparoscópica', 'Curetagem uterina', 'Antibiótico'],
+  cd: ['DIU de levonorgestrel 52 mg', 'Miomectomia laparoscópica', 'Curetagem uterina diagnóstica', 'Doxiciclina por 14 dias'],
   ecd: 'Clínico: DIU de levonorgestrel 52 mg (primeira linha), progestagênios, anticoncepcional contínuo, AINE, análogos de GnRH. Definitivo, com prole completa e falha clínica: histerectomia.' });
 
 CASO({ id: 'gi_endometriose', area: 'go', local: 'gineco', dif: 2, tema: 'Endometriose', cond: 'Endometriose com endometrioma ovariano', tags: ['gineco', 'usg'],
@@ -265,5 +265,5 @@ CASO({ id: 'gi_endometriose', area: 'go', local: 'gineco', dif: 2, tema: 'Endome
   pista: 'Os "D": dismenorreia, dispareunia, disquezia; cisto com conteúdo em vidro fosco.',
   dx: ['Endometrioma', 'Cisto folicular funcional', 'Teratoma maduro', 'Câncer de ovário'],
   edx: 'Endometriose: tecido endometrial fora do útero, estrogênio-dependente. Endometrioma ("cisto de chocolate"): cisto com conteúdo homogêneo em vidro fosco. CA-125 pode subir, mas não serve para diagnóstico. O diagnóstico pode ser clínico e por imagem (USG com preparo intestinal ou RM); laparoscopia com biópsia é o padrão-ouro histológico.',
-  cd: ['Progestagênio contínuo', 'Ooforectomia bilateral', 'Antibiótico por 14 dias', 'Apenas AINE e observar'],
+  cd: ['Dienogeste 2 mg/dia contínuo e AINE', 'Ooforectomia bilateral por videolaparoscopia', 'Doxiciclina e metronidazol por 14 dias', 'Apenas AINE nas crises e observar o cisto'],
   ecd: 'Primeira linha para dor: progestagênios (dienogeste, desogestrel, DIU-LNG) ou anticoncepcional combinado contínuo, com AINE. Cirurgia (laparoscopia conservadora) se falha clínica, endometrioma volumoso ou suspeito, obstrução intestinal ou ureteral, ou infertilidade associada.' });

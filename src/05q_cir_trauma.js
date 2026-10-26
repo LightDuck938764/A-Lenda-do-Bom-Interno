@@ -16,7 +16,7 @@ CASO({ id: 'tr_crico', area: 'cir', dif: 3, tema: 'Trauma: atendimento inicial',
   pista: 'Não intuba, não ventila, em adulto.',
   dx: ['Não intuba, não ventila', 'Pneumotórax hipertensivo bilateral', 'Choque hemorrágico classe IV', 'Lesão de laringe isolada'],
   edx: 'No trauma maxilofacial grave com falha de intubação e de ventilação, a via aérea cirúrgica é imediata. Em adultos: cricotireoidostomia cirúrgica. Em crianças < 12 anos: cricotireoidostomia por punção (com jato), pelo risco de estenose subglótica. Intubação nasotraqueal é contraindicada com suspeita de fratura de base de crânio/terço médio da face.',
-  cd: ['Cricotireoidostomia cirúrgica', 'Nova tentativa de intubação nasal', 'Máscara laríngea e aguardar', 'Traqueostomia eletiva amanhã'],
+  cd: ['Cricotireoidostomia cirúrgica', 'Nova tentativa de intubação nasotraqueal às cegas', 'Máscara laríngea e aguardar a anestesia', 'Traqueostomia eletiva no centro cirúrgico amanhã'],
   ecd: 'Incisão na membrana cricotireóidea, cânula de traqueostomia nº 5-6 ou tubo cortado, confirmar com capnografia. Manter restrição de movimento da coluna. Traqueostomia formal depois, no centro cirúrgico.' });
 
 CASO({ id: 'tr_respondedor_transitorio', area: 'cir', dif: 2, tema: 'Trauma: atendimento inicial', cond: 'Choque hemorrágico com resposta transitória', tags: ['choque', 'hidrat', 'usg'],
@@ -31,7 +31,7 @@ CASO({ id: 'tr_respondedor_transitorio', area: 'cir', dif: 2, tema: 'Trauma: ate
   pista: 'Melhorou e piorou: o sangramento continua.',
   dx: ['Resposta transitória', 'Resposta rápida ao volume', 'Choque neurogênico', 'Choque cardiogênico'],
   edx: 'Resposta à reposição inicial (ATLS): rápida (estabiliza, perda pequena), transitória (melhora e volta a deteriorar — sangramento ativo; precisa sangue e controle cirúrgico), mínima/ausente (sangramento maciço ou causa não hemorrágica). Classes de choque hemorrágico por perda volêmica e déficit de bases.',
-  cd: ['Transfusão e laparotomia', 'Mais 2 L de cristaloide', 'Tomografia de corpo inteiro', 'Noradrenalina e observar'],
+  cd: ['Transfusão maciça 1:1:1, ácido tranexâmico e laparotomia', 'Mais 2 L de cristaloide aquecido e reavaliar', 'TC de corpo inteiro antes de decidir a conduta, mantendo cristaloide', 'Noradrenalina para PAM de 65 e observação na UTI'],
   ecd: 'Ressuscitação hemostática (concentrado de hemácias, plasma e plaquetas em proporção ~1:1:1, ácido tranexâmico nas primeiras 3 h, evitar hipotermia, hipotensão permissiva sem TCE) e controle cirúrgico da hemorragia (laparotomia). Paciente instável não vai à tomografia.' });
 
 CASO({ id: 'tr_tce_grave', area: 'cir', dif: 3, tema: 'TCE', cond: 'TCE grave: prevenção da lesão secundária (lesão axonal difusa)', tags: ['neuro', 'resp', 'img'],
@@ -45,7 +45,7 @@ CASO({ id: 'tr_tce_grave', area: 'cir', dif: 3, tema: 'TCE', cond: 'TCE grave: p
   pista: 'Não há hematoma para drenar: o que mata agora é hipotensão, hipóxia e hiperventilação.',
   dx: ['Lesão axonal difusa', 'Hematoma extradural', 'Hematoma subdural agudo', 'Hemorragia subaracnóidea aneurismática'],
   edx: 'Lesão axonal difusa: coma desde o trauma desproporcional à TC (petéquias na substância branca, corpo caloso, tronco), por aceleração-desaceleração. Lesão secundária: hipotensão (PAS < 100-110), hipóxia, hiper/hipocapnia, hipertermia, hiper/hipoglicemia e convulsões pioram o prognóstico.',
-  cd: ['Evitar hipotensão e hipóxia', 'Hiperventilar para PaCO2 de 25', 'Corticoide em dose alta', 'Craniotomia descompressiva já'],
+  cd: ['Manter PAS ≥ 110, SpO₂ > 94% e PaCO₂ de 35-45 mmHg', 'Hiperventilação profilática para PaCO₂ de 25 mmHg', 'Metilprednisolona em dose alta nas primeiras 8 horas', 'Craniectomia descompressiva imediata'],
   ecd: 'Neuroproteção: cabeceira 30°, PAS ≥ 110 mmHg (ATLS, 15-49 anos e ≥ 70 anos; ≥ 100 entre 50-69), PaCO2 35-45, SpO2 > 94%, normotermia, glicemia controlada, sedoanalgesia, profilaxia de convulsão na primeira semana; monitorização de PIC se indicada. Hiperventilação só como ponte breve em herniação. Corticoide é contraindicado no TCE.' });
 
 /* ---------- Tórax ---------- */
@@ -59,7 +59,7 @@ CASO({ id: 'tr_pneumotorax_aberto', area: 'cir', dif: 2, tema: 'Trauma torácico
   pista: 'Ferida maior que 2/3 do diâmetro da traqueia: o ar entra pela parede.',
   dx: ['Pneumotórax aberto', 'Pneumotórax hipertensivo', 'Hemotórax maciço', 'Tórax instável'],
   edx: 'Quando o orifício na parede é maior que cerca de 2/3 do diâmetro da traqueia, o ar passa preferencialmente pela ferida, prejudicando a ventilação. Curativo oclusivo total (4 lados) sem dreno pode converter em pneumotórax hipertensivo.',
-  cd: ['Curativo de 3 pontas e dreno', 'Curativo fechado nos 4 lados', 'Sutura da ferida na sala', 'Intubação e observação'],
+  cd: ['Curativo oclusivo em 3 lados e dreno em local distante', 'Curativo oclusivo fixado nos 4 lados e observação com radiografia seriada', 'Sutura primária da ferida na sala de emergência', 'Intubação orotraqueal e observação sem drenagem'],
   ecd: 'Curativo oclusivo estéril fixado em 3 lados (válvula unidirecional) ou dispositivo valvulado, seguido de drenagem torácica em local distante da ferida (5º EIC entre linha axilar anterior e média). Fechamento cirúrgico da ferida depois.' });
 
 CASO({ id: 'tr_torax_instavel', area: 'cir', dif: 2, tema: 'Trauma torácico', cond: 'Tórax instável com contusão pulmonar', tags: ['resp', 'dor'],
@@ -74,7 +74,7 @@ CASO({ id: 'tr_torax_instavel', area: 'cir', dif: 2, tema: 'Trauma torácico', c
   pista: 'Dois ou mais arcos fraturados em dois pontos: o problema maior é o pulmão embaixo.',
   dx: ['Tórax instável', 'Pneumotórax hipertensivo', 'Hemotórax maciço', 'Rotura diafragmática'],
   edx: 'Tórax instável: ≥ 2 costelas adjacentes fraturadas em ≥ 2 pontos, com segmento de movimento paradoxal. A hipoxemia decorre principalmente da contusão pulmonar subjacente e da dor (hipoventilação), mais do que do segmento instável.',
-  cd: ['Analgesia e O2', 'Imobilizar com faixa compressiva', 'Drenagem torácica profilática', 'Hidratação vigorosa'],
+  cd: ['Analgesia (peridural ou bloqueio), O₂ e fisioterapia', 'Imobilizar o segmento instável com faixa compressiva no tórax', 'Drenagem torácica profilática bilateral', 'Cristaloide vigoroso pela contusão pulmonar'],
   ecd: 'Analgesia eficaz (bloqueio regional/peridural torácica, opioides), oxigênio, fisioterapia, evitar hiper-hidratação (piora a contusão), ventilação não invasiva/intubação se insuficiência respiratória. Fixação cirúrgica das costelas em casos selecionados. Idosos com múltiplas fraturas: UTI.' });
 
 CASO({ id: 'tr_aorta', area: 'cir', dif: 3, tema: 'Trauma torácico', cond: 'Lesão traumática da aorta torácica', tags: ['cardio', 'img', 'choque'],
@@ -88,7 +88,7 @@ CASO({ id: 'tr_aorta', area: 'cir', dif: 3, tema: 'Trauma torácico', cond: 'Les
   pista: 'Desaceleração + mediastino alargado.',
   dx: ['Lesão traumática da aorta torácica', 'Tamponamento cardíaco', 'Contusão miocárdica grave', 'Rotura de esôfago'],
   edx: 'Lesão contusa da aorta: desaceleração súbita, geralmente no istmo (logo após a subclávia esquerda, no ligamento arterioso). Sobreviventes à cena têm hematoma contido. RX sugere; angiotomografia confirma.',
-  cd: ['AngioTC e controle de FC/PA', 'Toracotomia na sala de emergência', 'Pericardiocentese', 'Alta após analgesia'],
+  cd: ['Angio-TC, esmolol (FC < 80) e reparo endovascular', 'Toracotomia de reanimação na sala de emergência', 'Pericardiocentese pelo alargamento do mediastino', 'Analgesia e alta com radiografia de tórax de controle em 24 horas'],
   ecd: 'Angiotomografia de tórax; controle de impulso (betabloqueador para FC < 80 e PAS 100-110, se sem outras hemorragias); reparo endovascular (TEVAR) preferencial, com timing conforme lesões associadas.' });
 
 CASO({ id: 'tr_hemotorax_retido', area: 'cir', dif: 2, tema: 'Trauma torácico', cond: 'Hemotórax retido infectado após drenagem', tags: ['resp', 'febre', 'infec', 'img'],
@@ -103,7 +103,7 @@ CASO({ id: 'tr_hemotorax_retido', area: 'cir', dif: 2, tema: 'Trauma torácico',
   pista: 'Sangue coagulado no espaço pleural, agora com febre.',
   dx: ['Hemotórax retido infectado', 'Pneumonia lobar simples', 'Pneumotórax recidivado', 'Tromboembolismo pulmonar agudo'],
   edx: 'Hemotórax retido (coagulado) não drena bem por novo dreno e evolui para empiema e fibrotórax. A videotoracoscopia precoce (idealmente em 3-5 dias) remove coágulos e reduz empiema e encarceramento pulmonar.',
-  cd: ['Videotoracoscopia (VATS)', 'Novo dreno fino e observar', 'Só antibiótico oral', 'Toracocentese de repetição'],
+  cd: ['Videotoracoscopia para evacuação e decorticação', 'Novo dreno fino e observação por 7 dias com antibiótico', 'Amoxicilina-clavulanato VO isolado', 'Toracocenteses de repetição a cada 48 h'],
   ecd: 'VATS para evacuação/decorticação, com antibiótico para empiema e cultura do material. Decorticação aberta se encarceramento tardio. Prevenção: drenagem adequada e controle radiológico antes da retirada do dreno.' });
 
 /* ---------- Abdome ---------- */
@@ -119,7 +119,7 @@ CASO({ id: 'tr_baco_embolizacao', area: 'cir', dif: 2, tema: 'Trauma abdominal',
   pista: 'Estável, mas a TC mostra sangramento arterial ativo.',
   dx: ['Lesão esplênica com blush', 'Lesão esplênica sem sangramento', 'Lesão de víscera oca', 'Hematoma retroperitoneal'],
   edx: 'Tratamento não operatório (TNO) de lesões esplênicas é padrão no paciente estável, sem peritonite, em centro com UTI e cirurgião disponível. Blush arterial aumenta o risco de falha: angioembolização. Instabilidade = esplenectomia.',
-  cd: ['Angioembolização', 'Esplenectomia imediata', 'Alta com analgesia', 'Repetir a TC em 7 dias'],
+  cd: ['Angioembolização seletiva e TNO em UTI', 'Esplenectomia imediata', 'Alta com analgesia e repouso', 'Repetir a TC em 7 dias, sem outra medida'],
   ecd: 'Angioembolização seletiva e TNO com monitorização em UTI, hemoglobina seriada e exame físico repetido. Falha (instabilidade, queda contínua de hemoglobina, peritonite): esplenectomia. Após esplenectomia/embolização extensa: vacinas para encapsulados.' });
 
 CASO({ id: 'tr_figado_nom', area: 'cir', dif: 2, tema: 'Trauma abdominal', cond: 'Lesão hepática contusa sem sangramento ativo', tags: ['img', 'usg'],
@@ -135,7 +135,7 @@ CASO({ id: 'tr_figado_nom', area: 'cir', dif: 2, tema: 'Trauma abdominal', cond:
   pista: 'Lesão parenquimatosa em paciente estável e sem blush.',
   dx: ['Lesão hepática estável', 'Lesão de víscera oca', 'Rotura de vesícula biliar', 'Hemoperitônio por lesão do baço'],
   edx: 'O fígado é o órgão mais lesado no trauma penetrante e, com o baço, nos contusos. Mais de 80% das lesões hepáticas contusas em pacientes estáveis são tratadas sem cirurgia, inclusive graus altos.',
-  cd: ['Tratamento não operatório', 'Laparotomia exploradora', 'Hepatectomia direita', 'Alta hospitalar imediata'],
+  cd: ['Tratamento não operatório com exames seriados em UTI', 'Laparotomia exploradora com hepatorrafia e drenagem da cavidade', 'Hepatectomia direita regrada', 'Alta hospitalar imediata com orientações'],
   ecd: 'Tratamento não operatório: internação com exame físico seriado, hemoglobina, repouso; angioembolização se blush; cirurgia se instabilidade ou peritonite. Complicações tardias: biloma, hemobilia, abscesso.' });
 
 CASO({ id: 'tr_cinto_chance', area: 'cir', dif: 3, tema: 'Trauma abdominal', cond: 'Sinal do cinto com fratura de Chance e líquido livre sem lesão de órgão sólido', tags: ['img', 'dor'],
@@ -150,7 +150,7 @@ CASO({ id: 'tr_cinto_chance', area: 'cir', dif: 3, tema: 'Trauma abdominal', con
   pista: 'Líquido livre sem órgão sólido lesado: a fonte pode ser intestino ou mesentério.',
   dx: ['Lesão de víscera oca', 'Lesão esplênica oculta', 'Lesão renal isolada', 'Contusão de parede apenas'],
   edx: 'Cinto abdominal + fratura de Chance (flexão-distração toracolombar) associa-se a lesões de intestino delgado, mesentério e pâncreas/duodeno. TC pode ser pouco sensível precocemente para víscera oca; líquido livre sem lesão de órgão sólido é suspeito.',
-  cd: ['Laparoscopia diagnóstica', 'Alta com analgésico', 'Só repetir a TC em 48 h', 'Arteriografia'],
+  cd: ['Laparoscopia diagnóstica para inventário das alças', 'Alta com analgésico e colete toracolombar, com retorno em 7 dias', 'Só repetir a TC de abdome em 48 horas', 'Arteriografia mesentérica seletiva'],
   ecd: 'Laparoscopia diagnóstica (ou laparotomia) para inventário de alças e mesentério; tratar lesões encontradas. Coluna: imobilização e avaliação da fratura pela ortopedia/neurocirurgia.' });
 
 CASO({ id: 'tr_toracoabdominal', area: 'cir', dif: 3, tema: 'Trauma abdominal', cond: 'Ferimento toracoabdominal esquerdo: lesão diafragmática', tags: ['resp', 'img'],
@@ -164,7 +164,7 @@ CASO({ id: 'tr_toracoabdominal', area: 'cir', dif: 3, tema: 'Trauma abdominal', 
   pista: 'Região toracoabdominal esquerda: o diafragma pode estar lesado mesmo com exame normal.',
   dx: ['Lesão diafragmática oculta', 'Ferimento superficial de parede', 'Tamponamento cardíaco', 'Pneumotórax oculto'],
   edx: 'Ferimentos entre o mamilo (4º EIC) e o rebordo costal, especialmente à esquerda, podem lesar o diafragma. Lesões pequenas passam despercebidas e evoluem anos depois com hérnia diafragmática e estrangulamento. À direita, o fígado protege.',
-  cd: ['Videolaparoscopia e rafia', 'Alta após curativo', 'Observar 24 h e liberar', 'Drenagem torácica isolada'],
+  cd: ['Videolaparoscopia diagnóstica e rafia do diafragma', 'Curativo da ferida e alta com retorno', 'Observação por 24 horas e alta se assintomático, sem exploração', 'Drenagem torácica isolada à esquerda'],
   ecd: 'Videolaparoscopia (ou toracoscopia) diagnóstica e terapêutica, com rafia do diafragma; inventário da cavidade. Instabilidade ou peritonite: laparotomia.' });
 
 CASO({ id: 'tr_compartimental_abd', area: 'cir', dif: 3, tema: 'Trauma abdominal', cond: 'Síndrome compartimental abdominal após ressuscitação', tags: ['choque', 'resp'],
@@ -178,7 +178,7 @@ CASO({ id: 'tr_compartimental_abd', area: 'cir', dif: 3, tema: 'Trauma abdominal
   pista: 'Pressão intra-abdominal > 20 mmHg com nova disfunção de órgão.',
   dx: ['Compartimental abdominal', 'Choque séptico por fístula', 'Lesão renal por contraste', 'Insuficiência cardíaca aguda'],
   edx: 'Hipertensão intra-abdominal: PIA ≥ 12 mmHg (graus I 12-15, II 16-20, III 21-25, IV > 25). Síndrome compartimental: PIA > 20 mmHg sustentada com nova disfunção orgânica (oligúria, aumento das pressões ventilatórias, queda do débito cardíaco). Medida pela pressão vesical.',
-  cd: ['Descompressão cirúrgica', 'Furosemida em bolus', 'Mais cristaloide', 'Aguardar 48 horas'],
+  cd: ['Laparotomia descompressiva com peritoneostomia', 'Furosemida 80 mg EV em bólus', 'Mais 2 L de cristaloide pela oligúria', 'Aguardar 48 horas com a pressão vesical seriada'],
   ecd: 'Medidas clínicas (sedação/curarização, sonda gástrica e retal, balanço negativo) e, na síndrome estabelecida, laparotomia descompressiva com abdome aberto (peritoneostomia/curativo a vácuo) e fechamento tardio.' });
 
 CASO({ id: 'tr_controle_danos', area: 'cir', dif: 3, tema: 'Trauma abdominal', cond: 'Cirurgia de controle de danos (tríade letal)', tags: ['choque', 'hidrat'],
@@ -192,7 +192,7 @@ CASO({ id: 'tr_controle_danos', area: 'cir', dif: 3, tema: 'Trauma abdominal', c
   pista: 'Hipotermia, acidose e coagulopatia juntas.',
   dx: ['Tríade letal', 'Choque séptico', 'Reação transfusional', 'CIVD por sepse'],
   edx: 'Tríade letal: hipotermia, acidose e coagulopatia — retroalimentam-se. Controle de danos: abreviar a cirurgia (controle de sangramento e contaminação), corrigir a fisiologia na UTI e reoperar para o tratamento definitivo em 24-48 h.',
-  cd: ['Controle de danos', 'Reconstrução definitiva agora', 'Anastomoses e fechar a parede', 'Mais cristaloide e seguir'],
+  cd: ['Empacotamento, ligadura das alças e abdome aberto', 'Reconstrução definitiva com anastomoses agora', 'Anastomoses primárias e fechamento da aponeurose', 'Mais cristaloide e completar a cirurgia definitiva'],
   ecd: 'Empacotamento hepático, ligadura/grampeamento das alças sem anastomose, abdome aberto temporário; na UTI: aquecimento ativo, transfusão balanceada (1:1:1), ácido tranexâmico, cálcio, correção da acidose; tratamento definitivo na reoperação planejada.' });
 
 /* ---------- Medula, extremidades, urologia, gestante ---------- */
@@ -206,7 +206,7 @@ CASO({ id: 'tr_choque_neurogenico', area: 'cir', dif: 3, tema: 'Trauma raquimedu
   pista: 'Hipotensão com bradicardia e pele quente: falta tônus simpático.',
   dx: ['Choque neurogênico', 'Choque hemorrágico', 'Choque medular isolado', 'Tamponamento cardíaco'],
   edx: 'Choque neurogênico: lesão medular acima de T6 interrompe a via simpática → vasodilatação e bradicardia (hipotensão sem taquicardia, extremidades quentes). Choque medular é a perda transitória de reflexos (arreflexia) abaixo da lesão, não um estado hemodinâmico. Sempre excluir hemorragia antes.',
-  cd: ['Noradrenalina', 'Mais 4 L de cristaloide', 'Laparotomia exploradora', 'Metilprednisolona em altas doses'],
+  cd: ['Noradrenalina para PAM de 85-90 mmHg', 'Mais 4 L de cristaloide até a PA normalizar', 'Laparotomia exploradora pela hipotensão', 'Metilprednisolona em dose alta (protocolo NASCIS)'],
   ecd: 'Após excluir sangramento: volume criterioso, vasopressor (noradrenalina) para PAM 85-90 mmHg nos primeiros dias, atropina para bradicardia sintomática; restrição de movimento da coluna, TC/RM e avaliação da coluna. Corticoide em altas doses não é recomendado.' });
 
 CASO({ id: 'tr_compartimental_perna', area: 'cir', dif: 2, tema: 'Trauma de extremidades', cond: 'Síndrome compartimental aguda da perna', tags: ['dor'],
@@ -220,7 +220,7 @@ CASO({ id: 'tr_compartimental_perna', area: 'cir', dif: 2, tema: 'Trauma de extr
   pista: 'Dor desproporcional e ao estiramento passivo; pulso presente não exclui.',
   dx: ['Síndrome compartimental aguda', 'Trombose venosa profunda', 'Lesão arterial', 'Dor esperada da fratura'],
   edx: 'Aumento da pressão no compartimento fascial compromete a perfusão muscular e nervosa. Sinais precoces: dor desproporcional, dor ao estiramento passivo, tensão, parestesia. Ausência de pulso é tardia. Delta (diastólica − pressão compartimental) < 30 mmHg confirma.',
-  cd: ['Fasciotomia de urgência', 'Elevar bem acima do coração', 'Aumentar a morfina', 'Doppler venoso amanhã'],
+  cd: ['Fasciotomia dos 4 compartimentos de urgência', 'Elevar o membro bem acima do nível do coração', 'Aumentar a morfina e reavaliar em 6 horas', 'Doppler venoso amanhã para afastar TVP'],
   ecd: 'Retirar gesso/curativos compressivos (bivalvar), manter o membro na altura do coração (não elevar), fasciotomia dos 4 compartimentos da perna. Monitorar rabdomiólise e função renal.' });
 
 CASO({ id: 'tr_lesao_vascular', area: 'cir', dif: 2, tema: 'Trauma de extremidades', cond: 'Lesão arterial com sinais maiores em membro', tags: ['choque'],
@@ -233,7 +233,7 @@ CASO({ id: 'tr_lesao_vascular', area: 'cir', dif: 2, tema: 'Trauma de extremidad
   pista: 'Sinais "duros" de lesão vascular dispensam exames.',
   dx: ['Lesão arterial femoral', 'Lesão venosa isolada', 'Síndrome compartimental', 'Fratura de fêmur isolada'],
   edx: 'Sinais maiores (duros): sangramento pulsátil, hematoma em expansão/pulsátil, frêmito ou sopro, ausência de pulsos distais, isquemia (6 Ps). Indicam exploração cirúrgica imediata. Sinais menores (hematoma estável, déficit neurológico, ITB < 0,9) indicam angiotomografia.',
-  cd: ['Exploração e reparo arterial', 'Angiotomografia antes de operar', 'Observar e repetir exame em 6 h', 'Amputação primária'],
+  cd: ['Exploração cirúrgica imediata e reparo arterial', 'Angio-TC antes de levar o paciente ao centro cirúrgico', 'Observação e reexame dos pulsos em 6 horas', 'Amputação primária do membro'],
   ecd: 'Controle da hemorragia (compressão/torniquete), ressuscitação, centro cirúrgico para reparo (sutura, enxerto venoso; shunt temporário se fratura instável), fasciotomia profilática se isquemia prolongada. Antibiótico e profilaxia do tétano.' });
 
 CASO({ id: 'tr_bexiga', area: 'cir', dif: 2, tema: 'Trauma urológico', cond: 'Rotura vesical intraperitoneal', tags: ['img', 'dor'],
@@ -248,7 +248,7 @@ CASO({ id: 'tr_bexiga', area: 'cir', dif: 2, tema: 'Trauma urológico', cond: 'R
   pista: 'Bexiga cheia no impacto: a cúpula rompe para o peritônio; ureia sobe pela reabsorção da urina.',
   dx: ['Rotura intraperitoneal', 'Rotura vesical extraperitoneal', 'Lesão de uretra posterior', 'Contusão renal'],
   edx: 'Intraperitoneal: trauma com bexiga distendida, rotura da cúpula; urina na cavidade, ascite urinosa, ureia/creatinina elevadas por reabsorção. Extraperitoneal: associada a fratura pélvica, contraste no espaço perivesical. Diagnóstico: cistografia retrógrada (convencional ou TC) com bexiga bem distendida.',
-  cd: ['Rafia da bexiga', 'Somente sonda por 14 dias', 'Nefrostomia bilateral', 'Uretrografia e alta'],
+  cd: ['Rafia cirúrgica da bexiga e sonda vesical', 'Só sonda vesical de demora por 14 dias e antibiótico', 'Nefrostomia percutânea bilateral', 'Uretrografia retrógrada e alta'],
   ecd: 'Intraperitoneal: reparo cirúrgico (laparotomia ou laparoscopia) e sondagem vesical. Extraperitoneal não complicada: sonda vesical por 10-14 dias; cirurgia se colo vesical acometido, fragmentos ósseos ou cirurgia pélvica concomitante.' });
 
 CASO({ id: 'tr_gestante', area: 'cir', dif: 2, tema: 'Trauma: atendimento inicial', cond: 'Trauma em gestante de terceiro trimestre', tags: ['obst', 'choque', 'usg'],
@@ -261,7 +261,7 @@ CASO({ id: 'tr_gestante', area: 'cir', dif: 2, tema: 'Trauma: atendimento inicia
   pista: 'Prancha reta e útero grande em cima da veia cava.',
   dx: ['Compressão aortocava', 'Choque hemorrágico confirmado', 'Descolamento de placenta', 'Eclâmpsia'],
   edx: 'Após 20 semanas, o útero comprime a veia cava inferior em decúbito dorsal, reduzindo o retorno venoso. A gestante pode perder até 30-35% da volemia antes de apresentar sinais, e o feto sofre primeiro. DPP pode surgir até horas depois do trauma.',
-  cd: ['Desviar o útero à esquerda', 'Cesárea imediata', 'Vasopressor e manter deitada', 'Alta após hidratar'],
+  cd: ['Deslocar o útero para a esquerda e ABCDE materno', 'Cesárea imediata na sala de emergência', 'Noradrenalina mantendo a gestante em decúbito dorsal', 'Hidratação venosa e alta após 2 horas'],
   ecd: 'Inclinar a prancha 15-30° para a esquerda ou deslocar o útero manualmente, mantendo a proteção da coluna; ABCDE materno (a melhor forma de salvar o feto é ressuscitar a mãe); CTG por pelo menos 4-6 h; imunoglobulina anti-D se Rh negativo (Kleihauer para dose); exames de imagem necessários não devem ser negados.' });
 
 /* ---------- Queimaduras ---------- */
@@ -276,7 +276,7 @@ CASO({ id: 'qm_inalacao', area: 'cir', dif: 2, tema: 'Queimaduras', cond: 'Lesã
   pista: 'Rouquidão e estridor em quem inalou fumaça: o edema da via aérea vai piorar.',
   dx: ['Lesão inalatória e CO', 'Crise de asma grave', 'Anafilaxia', 'Pneumotórax'],
   edx: 'Sinais de lesão inalatória: ambiente fechado, queimaduras de face, pelos chamuscados, fuligem, escarro carbonáceo, rouquidão, estridor. A oximetria de pulso é falsamente normal na intoxicação por CO (mede carboxi-Hb como oxi-Hb). Cianeto: considerar com acidose lática grave.',
-  cd: ['Intubação precoce e O2 a 100%', 'Observar e intubar se dessaturar', 'Nebulização e alta', 'Corticoide inalatório'],
+  cd: ['Intubação precoce com tubo ≥ 8,0 e O₂ a 100%', 'Observar e intubar só se a SpO₂ cair abaixo de 90%', 'Nebulização com adrenalina e alta', 'Budesonida inalatória e O₂ em cateter'],
   ecd: 'Intubar precocemente com tubo calibroso (≥ 8,0) antes que o edema impeça; O2 a 100% (reduz meia-vida da carboxi-Hb), considerar oxigênio hiperbárico em casos selecionados e hidroxocobalamina se suspeita de cianeto; ressuscitação volêmica e encaminhamento a centro de queimados.' });
 
 CASO({ id: 'qm_grande_queimado', area: 'cir', dif: 2, tema: 'Queimaduras', cond: 'Grande queimado: ressuscitação volêmica', tags: ['hidrat', 'choque'],
@@ -289,7 +289,7 @@ CASO({ id: 'qm_grande_queimado', area: 'cir', dif: 2, tema: 'Queimaduras', cond:
   pista: 'Mais de 20% de superfície queimada no adulto: reposição por fórmula guiada pela diurese.',
   dx: ['Grande queimado (40% SCQ)', 'Queimadura de 1º grau extensa', 'Lesão inalatória grave', 'Queimadura elétrica'],
   edx: 'Regra dos 9 (adulto): cabeça 9, cada membro superior 9, tronco anterior 18, posterior 18, cada membro inferior 18, períneo 1. Queimaduras de 1º grau não entram no cálculo. ATLS: 2 mL × kg × %SCQ de Ringer lactato nas 24 h (adulto, térmica), metade nas primeiras 8 h desde o trauma; criança 3 mL; elétrica 4 mL.',
-  cd: ['Ringer pela fórmula', 'Restringir líquidos e furosemida', 'Antibiótico sistêmico profilático', 'Soro glicosado 5% em bolus'],
+  cd: ['Ringer lactato 6.400 mL em 24 h (metade nas 8 primeiras)', 'Restringir líquidos e furosemida pelo edema generalizado e pela congestão', 'Cefazolina profilática sistêmica', 'Soro glicosado 5% em bólus'],
   ecd: 'Ringer lactato aquecido: 2 × 80 × 40 = 6.400 mL em 24 h (3.200 mL nas 8 primeiras horas), titulando para diurese de 0,5 mL/kg/h (30-50 mL/h no adulto). Sonda vesical, analgesia com opioide IV, cobrir com campos limpos e secos, aquecer, profilaxia do tétano; sem antibiótico profilático. Transferir para centro de queimados.' });
 
 CASO({ id: 'qm_escarotomia', area: 'cir', dif: 3, tema: 'Queimaduras', cond: 'Queimadura circunferencial de 3º grau com restrição respiratória', tags: ['resp'],
@@ -302,7 +302,7 @@ CASO({ id: 'qm_escarotomia', area: 'cir', dif: 3, tema: 'Queimaduras', cond: 'Qu
   pista: 'Escara inelástica circunferencial funciona como um torniquete.',
   dx: ['Escara circunferencial', 'Pneumotórax bilateral', 'Broncoespasmo grave', 'Tubo seletivo'],
   edx: 'Queimaduras de 3º grau (espessura total) formam escara inelástica; quando circunferenciais, restringem a expansão torácica e comprometem a perfusão dos membros com o edema da ressuscitação.',
-  cd: ['Escarotomia', 'Aumentar a pressão do ventilador', 'Broncodilatador', 'Reduzir a reposição volêmica'],
+  cd: ['Escarotomia torácica (incisões em couraça)', 'Aumentar a pressão de pico do ventilador e sedar profundamente', 'Salbutamol e ipratrópio inalatórios', 'Reduzir a reposição volêmica pela fórmula'],
   ecd: 'Escarotomia (incisão da escara até o subcutâneo) nas linhas axilares anteriores com incisão transversa — "couraça" — no tórax, e mediolateral nos membros. Fasciotomia se síndrome compartimental verdadeira (ex.: queimadura elétrica).' });
 
 CASO({ id: 'qm_eletrica', area: 'cir', dif: 3, tema: 'Queimaduras', cond: 'Queimadura elétrica de alta voltagem', tags: ['cardio', 'ecg', 'hidrat'],
@@ -316,5 +316,5 @@ CASO({ id: 'qm_eletrica', area: 'cir', dif: 3, tema: 'Queimaduras', cond: 'Queim
   pista: 'A pele mostra pouco; o estrago é profundo (músculo).',
   dx: ['Lesão elétrica profunda', 'Queimadura térmica pequena', 'Infarto agudo do miocárdio', 'Tétano generalizado'],
   edx: 'Na lesão elétrica de alta voltagem, a extensão cutânea subestima a lesão muscular profunda: rabdomiólise, mioglobinúria, hipercalemia, arritmias, síndrome compartimental e lesão renal. Fórmulas de queimadura subestimam a necessidade de volume.',
-  cd: ['Monitorização e volume', 'Alta após curativo', 'Reposição pela área queimada', 'Furosemida e restringir volume'],
+  cd: ['Monitorização cardíaca e cristaloide para diurese de 1 mL/kg/h', 'Curativo das lesões de entrada e saída e alta', 'Reposição pela fórmula de Parkland calculada só pela área queimada visível', 'Furosemida e restrição volêmica pela mioglobinúria'],
   ecd: 'Monitorização cardíaca contínua, cristaloide para diurese de 1-1,5 mL/kg/h (até clarear a urina), corrigir potássio, fasciotomia se síndrome compartimental, desbridamento seriado. Bicarbonato/manitol não são rotina.' });

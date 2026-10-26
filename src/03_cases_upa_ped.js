@@ -89,7 +89,7 @@ CASO({ id: 'upa_atest2', area: 'upa', dif: 2, cond: 'Busca por atestado', tags: 
   pista: 'O período em que a febre cede é o mais perigoso na dengue. Dor abdominal intensa, vômitos persistentes e hematócrito subindo são sinais de alarme.',
   dx: ['Dengue com sinais de alarme', 'Resfriado comum', 'Simulação para obter atestado', 'Influenza não complicada'],
   edx: 'Dengue com dor abdominal intensa e contínua, vômitos persistentes, hepatomegalia dolorosa e aumento do hematócrito com plaquetopenia: há sinais de alarme (grupo C).',
-  cd: ['Hidratação venosa conforme protocolo de dengue, com internação e reavaliações seriadas', 'Atestado de 3 dias e alta com analgésico, já que se trata de uma virose comum', 'AAS para dor e febre e hidratação oral, com retorno em 3 dias para hemograma', 'Anti-inflamatório para as dores e retorno em 3 dias, com atestado para repouso em casa'],
+  cd: ['Hidratação venosa (SF 0,9% 10 mL/kg na 1ª hora), internação e reavaliação do hematócrito', 'Atestado de 3 dias e alta com analgésico, já que se trata de uma virose comum', 'AAS para dor e febre e hidratação oral, com retorno em 3 dias para hemograma', 'Anti-inflamatório para as dores e retorno em 3 dias, com atestado para repouso em casa'],
   ecd: 'Dengue com sinais de alarme exige hidratação venosa imediata e reavaliação clínica e laboratorial frequente. AAS e anti-inflamatórios são contraindicados pelo risco de sangramento.' });
 
 /* ============================ PEDIATRIA — BEBÊS ============================ */
@@ -134,7 +134,7 @@ CASO({ id: 'ped_cardio2', area: 'ped', dif: 2, cond: 'Malformação cardíaca co
   pista: 'Sopro holossistólico em borda esternal esquerda + sinais de IC em lactente acianótico: shunt esquerda-direita.',
   dx: ['CIV com insuficiência cardíaca', 'Tetralogia de Fallot com crise hipoxêmica', 'Bronquiolite viral aguda com sibilância', 'Doença do refluxo gastroesofágico com baixo ganho de peso'],
   edx: 'CIV ampla com shunt esquerda-direita leva a hiperfluxo pulmonar, IC e baixo ganho ponderal por volta dos 2–3 meses, quando a resistência pulmonar cai.',
-  cd: ['Tratar a insuficiência cardíaca (diurético), otimizar a nutrição e encaminhar à cardiologia pediátrica para planejamento da correção', 'Antibiótico de amplo espectro por 10 dias, já que a taquipneia e a sudorese indicam pneumonia', 'Restringir o volume e a frequência das mamadas para reduzir o esforço cardíaco e a sudorese, aguardando o fechamento espontâneo do defeito', 'Prostaglandina E1 contínua para manter o canal arterial aberto até a cirurgia'],
+  cd: ['Furosemida, fórmula hipercalórica (ou leite materno fortificado) e encaminhar à cardiologia pediátrica para a correção', 'Antibiótico de amplo espectro por 10 dias, já que a taquipneia e a sudorese indicam pneumonia', 'Restringir o volume e a frequência das mamadas para reduzir o esforço cardíaco e a sudorese, aguardando o fechamento espontâneo do defeito', 'Prostaglandina E1 contínua para manter o canal arterial aberto até a cirurgia'],
   ecd: 'O manejo envolve diurético, suporte nutricional hipercalórico e correção cirúrgica conforme repercussão. Prostaglandina não se aplica (não é cardiopatia canal-dependente).' });
 
 /* ============================ PEDIATRIA — CRIANÇAS ============================ */
@@ -149,7 +149,7 @@ CASO({ id: 'ped_asma1', area: 'ped', dif: 1, cond: 'Asma', tags: ['ped', 'resp',
   pista: 'Crise moderada em asmático conhecido: broncodilatador repetido e corticoide sistêmico precoce.',
   dx: ['Crise de asma', 'Bronquiolite viral', 'Aspiração de corpo estranho', 'Pneumonia bacteriana'],
   edx: 'Criança asmática com sibilância difusa desencadeada por infecção viral: exacerbação de asma.',
-  cd: ['Beta-2 agonista inalatório de curta ação repetido, corticoide sistêmico e reavaliação após cada etapa', 'Antibiótico oral por 7 dias e xarope expectorante, com retorno se o chiado persistir por mais de uma semana', 'Radiografia de tórax e alta sem medicação, já que a saturação ainda está aceitável', 'Xarope para tosse com codeína e repouso, evitando o broncodilatador pela taquicardia'],
+  cd: ['Salbutamol spray com espaçador a cada 20 minutos na 1ª hora, prednisolona 1-2 mg/kg e reavaliação após cada etapa', 'Antibiótico oral por 7 dias e xarope expectorante, com retorno se o chiado persistir por mais de uma semana', 'Radiografia de tórax e alta sem medicação, já que a saturação ainda está aceitável', 'Xarope para tosse com codeína e repouso, evitando o broncodilatador pela taquicardia'],
   ecd: 'O tratamento da crise é broncodilatador de curta ação em doses repetidas, corticoide sistêmico precoce e oxigênio se necessário.' });
 
 CASO({ id: 'ped_asma2', area: 'ped', dif: 3, cond: 'Asma', tags: ['ped', 'resp', 'cortic', 'mon', 'sedacao'],
@@ -163,7 +163,7 @@ CASO({ id: 'ped_asma2', area: 'ped', dif: 3, cond: 'Asma', tags: ['ped', 'resp',
   pista: 'Tórax silencioso, sonolência e pCO₂ normal/alta em criança taquipneica = sinais de risco de vida. Sedar aqui seria perigoso.',
   dx: ['Crise de asma grave com risco de vida', 'Crise de asma leve a moderada', 'Anafilaxia com broncoespasmo', 'Pneumotórax espontâneo à esquerda'],
   edx: 'Alteração de consciência, tórax silencioso, hipoxemia e CO₂ normal/alto indicam crise grave com fadiga iminente.',
-  cd: ['Oxigênio, broncodilatador contínuo com ipratrópio, corticoide sistêmico, sulfato de magnésio IV e preparo para UTI', 'Aguardar a criança se acalmar antes de qualquer medicação, já que o choro piora o broncoespasmo', 'Sedativo leve para reduzir a ansiedade e o consumo de oxigênio, antes de iniciar o broncodilatador e o corticoide sistêmico', 'Alta com corticoide oral e salbutamol em casa, com retorno em 24 horas se não melhorar'],
+  cd: ['O₂, salbutamol contínuo com ipratrópio, metilprednisolona EV, sulfato de magnésio EV e preparo para UTI', 'Aguardar a criança se acalmar antes de qualquer medicação, já que o choro piora o broncoespasmo', 'Sedativo leve para reduzir a ansiedade e o consumo de oxigênio, antes de iniciar o broncodilatador e o corticoide sistêmico', 'Alta com corticoide oral e salbutamol em casa, com retorno em 24 horas se não melhorar'],
   ecd: 'Crise grave exige terapia escalonada máxima e preparo para UTI. Sedativos são contraindicados por deprimirem o drive respiratório.' });
 
 CASO({ id: 'ped_falci1', area: 'ped', dif: 2, cond: 'Anemia falciforme', tags: ['ped', 'febre', 'infec', 'sepse'],
@@ -177,7 +177,7 @@ CASO({ id: 'ped_falci1', area: 'ped', dif: 2, cond: 'Anemia falciforme', tags: [
   pista: 'Na anemia falciforme há asplenia funcional: febre é urgência pelo risco de infecção grave por germes encapsulados.',
   dx: ['Febre na anemia falciforme (risco de bacteremia)', 'Virose sem gravidade, apenas com febre isolada', 'Crise de sequestro esplênico agudo', 'Síndrome torácica aguda em fase inicial'],
   edx: 'Crianças com anemia falciforme têm asplenia funcional e risco alto de sepse por pneumococo. Sem baço palpável e sem achados pulmonares, sequestro e síndrome torácica ficam menos prováveis.',
-  cd: ['Hemocultura e antibiótico parenteral empírico imediato (ex.: ceftriaxona), com observação', 'Antitérmico e alta, com retorno se a febre durar mais de 3 dias', 'Aguardar 48 horas de febre antes de agir, para não mascarar o diagnóstico usando antibiótico precocemente', 'Transfusão imediata de concentrado de hemácias, mesmo sem queda da hemoglobina'],
+  cd: ['Hemocultura e ceftriaxona parenteral empírica imediata, com observação', 'Antitérmico e alta, com retorno se a febre durar mais de 3 dias', 'Aguardar 48 horas de febre antes de agir, para não mascarar o diagnóstico usando antibiótico precocemente', 'Transfusão imediata de concentrado de hemácias, mesmo sem queda da hemoglobina'],
   ecd: 'Febre ≥38,5 °C em criança com doença falciforme exige avaliação rápida, culturas e antibiótico parenteral empírico sem atraso.' });
 
 CASO({ id: 'ped_falci2', area: 'ped', dif: 3, cond: 'Anemia falciforme', tags: ['ped', 'resp', 'img', 'dor', 'infec'],
@@ -191,7 +191,7 @@ CASO({ id: 'ped_falci2', area: 'ped', dif: 3, cond: 'Anemia falciforme', tags: [
   pista: 'Novo infiltrado + sintomas respiratórios/febre em falciforme = síndrome torácica aguda, principal causa de morte nessas crianças.',
   dx: ['Síndrome torácica aguda', 'Pneumonia sem relação com a doença de base', 'Crise vaso-oclusiva simples', 'Tromboembolismo pulmonar'],
   edx: 'Novo infiltrado pulmonar com febre, dor torácica e hipoxemia em paciente falciforme define síndrome torácica aguda.',
-  cd: ['Oxigênio, analgesia, antibiótico incluindo cobertura para atípicos, espirometria de incentivo, hidratação cuidadosa e avaliar transfusão', 'Alta com antibiótico oral e analgésico, já que a saturação de 92% é aceitável na doença falciforme', 'Hidratação venosa vigorosa em volume muito acima da manutenção, para diluir as hemácias falcizadas, dispensando antibiótico e oxigênio suplementar', 'Anticoagulação plena isolada pela suspeita de embolia pulmonar, sem antibiótico nem oxigênio'],
+  cd: ['O₂, analgesia, ceftriaxona + azitromicina, espirometria de incentivo, hidratação cuidadosa e avaliar transfusão', 'Alta com antibiótico oral e analgésico, já que a saturação de 92% é aceitável na doença falciforme', 'Hidratação venosa vigorosa em volume muito acima da manutenção, para diluir as hemácias falcizadas, dispensando antibiótico e oxigênio suplementar', 'Anticoagulação plena isolada pela suspeita de embolia pulmonar, sem antibiótico nem oxigênio'],
   ecd: 'A síndrome torácica aguda é emergência: suporte ventilatório, antibiótico, analgesia, fisioterapia respiratória e transfusão conforme gravidade. Hiper-hidratação pode piorar o edema pulmonar.' });
 
 CASO({ id: 'ped_caxumba', area: 'ped', dif: 1, cond: 'Caxumba', tags: ['ped', 'febre', 'infec', 'ef'],
@@ -219,7 +219,7 @@ CASO({ id: 'ped_pediculose', area: 'ped', dif: 1, cond: 'Pediculose', tags: ['pe
   pista: 'Lêndeas firmemente aderidas ao fio (não saem como caspa) e piolhos vivos fecham o diagnóstico.',
   dx: ['Pediculose do couro cabeludo', 'Dermatite seborreica do couro cabeludo', 'Tinea capitis tricofítica', 'Escabiose com lesões no couro cabeludo'],
   edx: 'Prurido em couro cabeludo com lêndeas aderidas e piolhos vivos: pediculose.',
-  cd: ['Pediculicida tópico com reaplicação em 7 a 10 dias, pente fino e avaliação dos contatos', 'Raspar a cabeça obrigatoriamente e afastar a criança da escola por 30 dias', 'Antibiótico oral para as lesões de coçadura e xampu anticaspa diário, sem reaplicação nem pente fino', 'Corticoide tópico isolado para a coceira, sem tratar os contatos da família'],
+  cd: ['Permetrina 1% loção com reaplicação em 7 a 10 dias, pente fino e avaliação dos contatos', 'Raspar a cabeça obrigatoriamente e afastar a criança da escola por 30 dias', 'Antibiótico oral para as lesões de coçadura e xampu anticaspa diário, sem reaplicação nem pente fino', 'Corticoide tópico isolado para a coceira, sem tratar os contatos da família'],
   ecd: 'O tratamento é pediculicida tópico com reaplicação (as lêndeas sobrevivem à primeira aplicação), remoção mecânica e tratamento de contatos infestados.' });
 
 /* ============================ PEDIATRIA — ADOLESCENTES ============================ */
@@ -291,7 +291,7 @@ CASO({ id: 'ped_asma_adol', area: 'ped', dif: 2, cond: 'Asma', tags: ['ped', 're
   pista: 'Sintomas frequentes, despertares e limitação de atividade = asma não controlada. Resgate isolado não trata inflamação.',
   dx: ['Asma não controlada', 'Asma bem controlada', 'Doença do refluxo gastroesofágico', 'Disfunção de cordas vocais'],
   edx: 'Sintomas diurnos frequentes, despertares noturnos e limitação de atividade com uso frequente de resgate definem asma não controlada.',
-  cd: ['Iniciar manutenção com corticoide inalatório (associado a formoterol, conforme as diretrizes), revisar a técnica inalatória e entregar um plano de ação', 'Apenas aumentar o uso do salbutamol de resgate, já que as crises respondem bem ao broncodilatador e o corticoide inalatório atrapalha o crescimento final', 'Corticoide oral contínuo em dose baixa, que controla melhor a asma do adolescente do que o inalatório', 'Antibiótico a cada crise e xarope broncodilatador de manutenção, com espirometria só se houver piora'],
+  cd: ['Budesonida-formoterol como manutenção e alívio, revisão da técnica inalatória e plano de ação por escrito', 'Apenas aumentar o uso do salbutamol de resgate, já que as crises respondem bem ao broncodilatador e o corticoide inalatório atrapalha o crescimento final', 'Corticoide oral contínuo em dose baixa, que controla melhor a asma do adolescente do que o inalatório', 'Antibiótico a cada crise e xarope broncodilatador de manutenção, com espirometria só se houver piora'],
   ecd: 'Asma não controlada exige terapia de manutenção com corticoide inalatório. Técnica inalatória e adesão devem ser revisadas a cada consulta.' });
 
 CASO({ id: 'ped_tdah_adol', area: 'ped', dif: 2, cond: 'TDAH', tags: ['ped', 'neuro', 'intox'],

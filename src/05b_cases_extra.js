@@ -26,7 +26,7 @@ CASO({ id: 'upa_atest3', area: 'upa', dif: 2, cond: 'Busca por atestado', tags: 
   pista: 'Desconforto torácico desencadeado por esforço, com sudorese e fatores de risco: o "atestado" virou caso de síndrome coronariana até prova em contrário.',
   dx: ['Síndrome coronariana aguda provável', 'Doença do refluxo gastroesofágico', 'Simulação para obter atestado', 'Dor muscular'],
   edx: 'Dor torácica relacionada a esforço, sudorese, múltiplos fatores de risco e alteração isquêmica no ECG sugerem SCA sem supra.',
-  cd: ['Monitorização, AAS, troponinas seriadas e ECG repetido, com estratificação de risco', 'Atestado com omeprazol e alta, tratando como gastrite pelo estresse do trabalho', 'Teste ergométrico de esforço máximo agora, para confirmar a origem cardíaca da dor antes de qualquer medicação', 'Recusar atendimento: ele só queria atestado e a dor é desculpa para faltar'],
+  cd: ['Monitorização, AAS 300 mg mastigado, troponinas seriadas e ECG repetido, com estratificação de risco (HEART)', 'Atestado com omeprazol e alta, tratando como gastrite pelo estresse do trabalho', 'Teste ergométrico de esforço máximo agora, para confirmar a origem cardíaca da dor antes de qualquer medicação', 'Recusar atendimento: ele só queria atestado e a dor é desculpa para faltar'],
   ecd: 'Queixas "simples" podem esconder emergências. Dor torácica com características isquêmicas exige protocolo de dor torácica.' });
 
 CASO({ id: 'ped_sarampo2', area: 'ped', dif: 2, cond: 'Sarampo', tags: ['ped', 'febre', 'infec', 'resp', 'img'],
@@ -40,7 +40,7 @@ CASO({ id: 'ped_sarampo2', area: 'ped', dif: 2, cond: 'Sarampo', tags: ['ped', '
   pista: 'Febre que RETORNA após o exantema começar a melhorar sugere complicação: pneumonia é a principal causa de morte por sarampo.',
   dx: ['Sarampo complicado com pneumonia', 'Sarampo não complicado', 'Bronquiolite viral aguda', 'Rubéola com pneumonia viral'],
   edx: 'Recrudescência febril com desconforto respiratório, hipoxemia e consolidação em criança com sarampo: pneumonia como complicação.',
-  cd: ['Internação com isolamento para aerossóis, oxigênio, antibiótico para pneumonia bacteriana secundária, vitamina A e notificação', 'Alta com sintomáticos e retorno em 48 horas, sem necessidade de notificar', 'Corticoide sistêmico para a pneumonite e alta com nebulização em casa', 'Isolamento domiciliar sem tratamento específico, já que a pneumonia do sarampo é sempre viral e não melhora com antibiótico nem oxigênio'],
+  cd: ['Internação com isolamento para aerossóis, oxigênio, amoxicilina-clavulanato para a pneumonia secundária, vitamina A e notificação', 'Alta com sintomáticos e retorno em 48 horas, sem necessidade de notificar', 'Corticoide sistêmico para a pneumonite e alta com nebulização em casa', 'Isolamento domiciliar sem tratamento específico, já que a pneumonia do sarampo é sempre viral e não melhora com antibiótico nem oxigênio'],
   ecd: 'Pneumonia secundária no sarampo exige internação, suporte e antibiótico, mantendo isolamento e vitamina A.' });
 
 CASO({ id: 'ped_pediculose2', area: 'ped', dif: 2, cond: 'Pediculose', tags: ['ped', 'infec', 'ef'],
@@ -54,7 +54,7 @@ CASO({ id: 'ped_pediculose2', area: 'ped', dif: 2, cond: 'Pediculose', tags: ['p
   pista: 'Crostas cor de mel = impetigo, uma infecção bacteriana secundária à coçadura da pediculose.',
   dx: ['Pediculose com impetigo secundário', 'Dermatite seborreica infectada', 'Psoríase de couro cabeludo', 'Tinea capitis inflamatória (kerion)'],
   edx: 'Pediculose ativa com lesões melicéricas e linfadenopatia reacional: infecção bacteriana secundária.',
-  cd: ['Tratar a pediculose (pediculicida com reaplicação e pente fino) e o impetigo (antibiótico tópico, ou sistêmico se extenso) e examinar contactantes', 'Só tratar o impetigo com antibiótico oral por 14 dias, já que os piolhos desaparecem quando as lesões cicatrizam e não é preciso examinar os contatos', 'Raspar a cabeça e não tratar a infecção, porque o impetigo melhora sozinho sem os piolhos', 'Corticoide tópico no couro cabeludo para a coceira e as crostas, sem pediculicida nem antibiótico'],
+  cd: ['Permetrina 1% com reaplicação em 7 a 10 dias e pente fino, mupirocina no impetigo (cefalexina se extenso) e examinar os contatos', 'Só tratar o impetigo com antibiótico oral por 14 dias, já que os piolhos desaparecem quando as lesões cicatrizam e não é preciso examinar os contatos', 'Raspar a cabeça e não tratar a infecção, porque o impetigo melhora sozinho sem os piolhos', 'Corticoide tópico no couro cabeludo para a coceira e as crostas, sem pediculicida nem antibiótico'],
   ecd: 'É preciso tratar a causa (piolho) e a complicação (impetigo).' });
 
 CASO({ id: 'ped_depressao2', area: 'ped', dif: 2, cond: 'Depressão', tags: ['ped', 'neuro'],

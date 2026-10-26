@@ -19,7 +19,7 @@ CASO({ id: 'op_diag_gravidez', area: 'go', local: 'obst', dif: 2, tema: 'Diagnó
   pista: 'Sem DUM confiável, quem data a gestação é a primeira ultrassonografia.',
   dx: ['Gestação de 9 semanas', 'Gravidez ectópica íntegra', 'Mola hidatiforme parcial', 'Pseudociese (gravidez psicológica)'],
   edx: 'Presunção (maternos): atraso, náuseas, mastalgia, polaciúria. Probabilidade (útero e hCG): Hegar, Piskacek, Nobile-Budin, Osiander, Jacquemier, beta-hCG. Certeza (do feto): BCF (USG ~6 semanas; sonar Doppler ~10-12), movimentos fetais palpados pelo examinador, visualização do embrião. O comprimento cabeça-nádega (CCN) no 1º trimestre é o método mais preciso de datação (±5-7 dias).',
-  cd: ['Datar pela USG de 1º trimestre', 'Datar pela altura uterina', 'Repetir beta-hCG em 48 h', 'Datar por USG de 3º trimestre'],
+  cd: ['Datar pela USG de 1º trimestre (cabeça-nádega)', 'Datar pela altura uterina medida na primeira consulta', 'Repetir o beta-hCG quantitativo em 48 horas para datar', 'Datar pela USG de 3º trimestre, que é mais recente'],
   ecd: 'Com DUM incerta, a IG e a DPP são definidas pela USG do 1º trimestre (CCN) e não devem ser alteradas por exames posteriores. Com DUM confiável, Regra de Naegele (+7 dias, -3 meses). Altura uterina e USG tardia são imprecisas para datar.' });
 
 CASO({ id: 'op_inducao', area: 'go', local: 'obst', dif: 2, tema: 'Assistência ao parto', cond: 'Indução do parto com colo desfavorável', tags: ['obst', 'cardio'],
@@ -33,7 +33,7 @@ CASO({ id: 'op_inducao', area: 'go', local: 'obst', dif: 2, tema: 'Assistência 
   pista: 'Bishop baixo: primeiro preparar o colo.',
   dx: ['Indução com colo desfavorável', 'Trabalho de parto ativo', 'Contraindicação absoluta à via vaginal', 'Pós-datismo'],
   edx: 'Índice de Bishop (dilatação, apagamento, altura da apresentação, consistência e posição do colo) prediz o sucesso da indução: ≤ 6 desfavorável. CTG reativa, categoria I, tranquilizadora.',
-  cd: ['Misoprostol vaginal 25 µg', 'Ocitocina em dose alta agora', 'Cesárea por colo desfavorável', 'Amniotomia imediata'],
+  cd: ['Misoprostol 25 µg vaginal a cada 6 horas', 'Ocitocina em dose alta a partir de agora', 'Cesárea eletiva pelo colo desfavorável', 'Amniotomia imediata e ocitocina em 1 hora'],
   ecd: 'Colo desfavorável: maturação com misoprostol vaginal (25 µg a cada 4-6 h) ou método mecânico (sonda de Foley); ocitocina quando Bishop favorável. Misoprostol é contraindicado com cicatriz uterina prévia (preferir Foley). Indicações comuns: pós-datismo (41 semanas), DMG em insulina, pré-eclâmpsia, RPMO a termo, restrição de crescimento.' });
 
 CASO({ id: 'op_estatica', area: 'go', local: 'obst', dif: 2, tema: 'Assistência ao parto', cond: 'Estática fetal: occipitoposterior persistente', tags: ['obst', 'ef'],
@@ -46,7 +46,7 @@ CASO({ id: 'op_estatica', area: 'go', local: 'obst', dif: 2, tema: 'Assistência
   pista: 'O ponto de referência da apresentação fletida é o lambda; ele está posterior e à direita.',
   dx: ['Occípito-direita-posterior', 'Occípito-esquerda-anterior (OEA)', 'Apresentação de face (mento)', 'Situação transversa'],
   edx: 'Nomenclatura: apresentação (O = occipital/cefálica fletida), posição (lado do dorso: D ou E) e variedade de posição (A, T, P, ou púbica/sacra). Na ODP o occipital precisa rodar 135° (anti-horário) para occipitopúbica; 45° nas anteriores. Posteriores cursam com dor lombar e período expulsivo mais longo.',
-  cd: ['Mudar posição materna e aguardar', 'Cesárea imediata por variedade posterior', 'Fórcipe de rotação com 8 cm', 'Manobra de Kristeller'],
+  cd: ['Mudar de posição (quatro apoios), analgesia e aguardar', 'Cesárea imediata pela variedade occipitoposterior', 'Fórcipe de rotação (Kielland) com 8 cm de dilatação', 'Manobra de Kristeller para ajudar a rotação'],
   ecd: 'Variedades posteriores costumam rodar espontaneamente: liberdade de posição (quatro apoios, lateral), analgesia, hidratação. Persistindo no período expulsivo com parada: rotação manual ou instrumental por profissional habilitado, ou cesárea. Kristeller é proscrita.' });
 
 CASO({ id: 'op_desaceleracao_tardia', area: 'go', local: 'obst', dif: 3, tema: 'Assistência ao parto', cond: 'Desacelerações tardias intraparto (CTG categoria II)', tags: ['obst', 'cardio'],
@@ -60,7 +60,7 @@ CASO({ id: 'op_desaceleracao_tardia', area: 'go', local: 'obst', dif: 3, tema: '
   pista: 'O nadir da desaceleração vem depois do pico da contração; taquissistolia com ocitocina.',
   dx: ['CTG categoria II (desaceleração tardia)', 'CTG categoria I', 'Desacelerações precoces fisiológicas (cefálicas)', 'Bradicardia fetal terminal'],
   edx: 'Precoce: espelho da contração (compressão do polo cefálico), benigna. Tardia: nadir após o pico (insuficiência uteroplacentária). Variável: forma e momento variáveis (compressão do cordão). Categorias: I normal; II indeterminada; III anormal (ausência de variabilidade com desacelerações tardias/variáveis recorrentes ou bradicardia; padrão sinusoidal).',
-  cd: ['Suspender ocitocina e reanimar intraútero', 'Aumentar a infusão de ocitocina', 'Cesárea imediata sem medidas prévias', 'Manter conduta e repetir CTG em 6 h'],
+  cd: ['Suspender a ocitocina, decúbito lateral e hidratação', 'Aumentar a ocitocina para abreviar o trabalho de parto', 'Cesárea imediata, sem medidas de reanimação intraútero', 'Manter a conduta e repetir a cardiotocografia em 6 horas'],
   ecd: 'Ressuscitação intrauterina: suspender ocitocina, decúbito lateral esquerdo, hidratação, corrigir hipotensão, tocolítico (terbutalina) se taquissistolia; reavaliar. Persistência ou evolução para categoria III: resolução pela via mais rápida.' });
 
 CASO({ id: 'op_prolapso_cordao', area: 'go', local: 'obst', dif: 2, tema: 'Assistência ao parto', cond: 'Prolapso de cordão umbilical', tags: ['obst'],
@@ -73,7 +73,7 @@ CASO({ id: 'op_prolapso_cordao', area: 'go', local: 'obst', dif: 2, tema: 'Assis
   pista: 'Cordão à frente da apresentação após amniorrexe com apresentação alta.',
   dx: ['Prolapso de cordão', 'Descolamento prematuro de placenta', 'Vasa prévia', 'Rotura uterina'],
   edx: 'Fatores: apresentação alta ou anômala, polidrâmnio, multiparidade, prematuridade, amniotomia com cabeça alta. A compressão do cordão causa bradicardia e asfixia.',
-  cd: ['Elevar a apresentação e cesárea', 'Reposicionar o cordão dentro do útero', 'Ocitocina para acelerar o parto vaginal', 'Aguardar a dilatação total'],
+  cd: ['Elevar a apresentação no toque e cesárea imediata', 'Reposicionar o cordão dentro do útero e aguardar o parto', 'Ocitocina em dose alta para acelerar o parto vaginal', 'Aguardar a dilatação completa e fórcipe de alívio'],
   ecd: 'Emergência: manter a mão no toque elevando a apresentação (aliviar compressão), posição genupeitoral ou Trendelenburg, encher a bexiga se houver atraso, evitar manipular o cordão e cesárea de emergência (parto vaginal só se dilatação total e parto iminente).' });
 
 CASO({ id: 'op_distocia_ombro', area: 'go', local: 'obst', dif: 3, tema: 'Assistência ao parto', cond: 'Distocia de ombro', tags: ['obst'],
@@ -86,7 +86,7 @@ CASO({ id: 'op_distocia_ombro', area: 'go', local: 'obst', dif: 3, tema: 'Assist
   pista: 'Ombro anterior impactado na sínfise púbica.',
   dx: ['Distocia de ombro', 'Apresentação pélvica', 'Parada secundária da descida', 'Rotura uterina'],
   edx: 'Impactação do ombro anterior atrás da sínfise. Fatores: macrossomia, diabetes, obesidade, pós-datismo, período expulsivo prolongado, parto instrumental. Complicações: lesão de plexo braquial (Erb), fratura de clavícula, asfixia; HPP e lacerações maternas.',
-  cd: ['McRoberts com pressão suprapúbica', 'Pressão no fundo uterino', 'Tração forte da cabeça', 'Cesárea com a cabeça para fora'],
+  cd: ['Manobra de McRoberts com pressão suprapúbica', 'Pressão no fundo uterino (Kristeller)', 'Tração forte da cabeça fetal para baixo', 'Cesárea após reintroduzir a cabeça (Zavanelli) de imediato'],
   ecd: 'Pedir ajuda e seguir sequência (ALEERTA): McRoberts (hiperflexão das coxas) + pressão suprapúbica; episiotomia se necessária; manobras internas (Rubin II, Woods, parafuso reverso), retirada do braço posterior (Jacquemier), posição de quatro apoios (Gaskin); manobras de resgate (Zavanelli). Pressão no fundo uterino é proscrita.' });
 
 /* ---------- Distocias com partograma ---------- */
@@ -101,7 +101,7 @@ CASO({ id: 'op_fase_ativa_prolongada', area: 'go', local: 'obst', dif: 2, tema: 
   pista: 'A curva de dilatação cruzou a linha de alerta com progressão lenta e poucas contrações.',
   dx: ['Fase ativa prolongada', 'Parada secundária da descida', 'Parto precipitado', 'Período pélvico prolongado'],
   edx: 'Fase ativa prolongada: dilatação < 1 cm/h, curva ultrapassando a linha de alerta (e eventualmente a de ação). A causa mais comum é a distocia funcional por hipoatividade (contrações insuficientes), frequente após analgesia.',
-  cd: ['Ocitocina e reavaliar', 'Cesárea imediata', 'Fórcipe de alívio', 'Aguardar sem intervir por 6 h'],
+  cd: ['Ocitocina em bomba e reavaliar a progressão em 2 h', 'Cesárea imediata por falha de progressão', 'Fórcipe de alívio para abreviar o trabalho de parto', 'Aguardar 6 horas sem intervir e repetir o toque'],
   ecd: 'Corrigir a dinâmica: ocitocina (bolsa já rota), deambulação e posições verticais quando possível; reavaliar a progressão. Linha de ação atingida exige intervenção ativa e reavaliação médica. Persistência apesar de contrações adequadas: suspeitar de desproporção.' });
 
 CASO({ id: 'op_parada_dilatacao', area: 'go', local: 'obst', dif: 3, tema: 'Distocias', cond: 'Parada secundária da dilatação', tags: ['obst'],
@@ -115,7 +115,7 @@ CASO({ id: 'op_parada_dilatacao', area: 'go', local: 'obst', dif: 3, tema: 'Dist
   pista: 'Dilatação igual em dois ou mais toques com 2 h de intervalo, na fase ativa; contrações insuficientes; feto bem.',
   dx: ['Parada secundária da dilatação', 'Fase latente prolongada', 'Parada secundária da descida', 'Parto taquitócico'],
   edx: 'Parada secundária da dilatação: dilatação inalterada em dois toques sucessivos com 2 h de intervalo, na fase ativa. Com contrações adequadas, a causa típica é a desproporção cefalopélvica (cesárea); se a dinâmica é insuficiente, corrigir primeiro.',
-  cd: ['Ocitocina e reavaliar em 2 h', 'Cesárea por sofrimento fetal agudo', 'Fórcipe de alívio imediato', 'Tocolítico e repouso'],
+  cd: ['Ocitocina e reavaliar a dilatação em 2 horas', 'Cesárea de urgência por sofrimento fetal agudo', 'Fórcipe de alívio imediato com 5 cm de dilatação', 'Terbutalina e repouso no leito por 6 horas'],
   ecd: 'Com hipoatividade e vitalidade fetal preservada: ocitocina e reavaliação em 2 h. Sem progressão apesar de dinâmica efetiva, ou sinais de desproporção (bossa, cavalgamento, apresentação alta): cesárea.' });
 
 CASO({ id: 'op_parada_descida', area: 'go', local: 'obst', dif: 3, tema: 'Distocias', cond: 'Parada secundária da descida por desproporção cefalopélvica', tags: ['obst'],
@@ -129,7 +129,7 @@ CASO({ id: 'op_parada_descida', area: 'go', local: 'obst', dif: 3, tema: 'Distoc
   pista: 'Dilatação completa, altura da apresentação parada, contrações boas e sinais de desproporção.',
   dx: ['Parada secundária da descida', 'Período pélvico prolongado com descida', 'Fase ativa prolongada', 'Parto precipitado'],
   edx: 'Parada secundária da descida: dilatação completa e apresentação no mesmo plano em dois toques com 1 h de intervalo. Com apresentação alta (acima do plano 0) e sinais de desproporção, a causa é desproporção cefalopélvica.',
-  cd: ['Cesariana', 'Fórcipe de alívio no plano -1', 'Aumentar a ocitocina e aguardar', 'Manobra de Kristeller'],
+  cd: ['Cesariana', 'Fórcipe de alívio no plano -1 de De Lee', 'Aumentar a ocitocina e aguardar mais 2 horas', 'Manobra de Kristeller durante as contrações'],
   ecd: 'Desproporção com apresentação alta: cesárea. Fórcipe ou vácuo só com apresentação insinuada e baixa (plano +2 ou abaixo), variedade conhecida e sem desproporção.' });
 
 CASO({ id: 'op_periodo_pelvico', area: 'go', local: 'obst', dif: 3, tema: 'Distocias', cond: 'Período pélvico prolongado', tags: ['obst'],
@@ -143,7 +143,7 @@ CASO({ id: 'op_periodo_pelvico', area: 'go', local: 'obst', dif: 3, tema: 'Disto
   pista: 'Dilatação completa há 3 h; a cabeça desce, mas devagar, e já está baixa.',
   dx: ['Período pélvico prolongado', 'Parada secundária da descida', 'Fase ativa prolongada', 'Parada secundária da dilatação'],
   edx: 'No partograma, a dilatação ficou completa na 7ª hora, mas a cabeça levou 3 horas para descer do plano -1 ao +3: descida progressiva, porém lenta, é período pélvico prolongado. Difere da parada secundária da descida, em que a altura não muda em dois toques com 1 h de intervalo. A causa mais comum é a contratilidade deficiente, corrigida com ocitocina.',
-  cd: ['Fórcipe de alívio ou vácuo', 'Cesárea por desproporção cefalopélvica', 'Manobra de Kristeller', 'Suspender a ocitocina e aguardar'],
+  cd: ['Fórcipe de alívio ou vácuo-extrator', 'Cesárea por desproporção cefalopélvica', 'Manobra de Kristeller durante as contrações', 'Suspender a ocitocina e aguardar mais 1 hora'],
   ecd: 'Com a contratilidade já corrigida, cabeça baixa (+3) em variedade anterior, expulsivo prolongado e BCF começando a cair, abrevia-se o parto com fórcipe de alívio ou vácuo-extrator. Cesárea fica para apresentação alta ou sinais de desproporção. Kristeller é proscrita.' });
 
 CASO({ id: 'op_parto_precipitado', area: 'go', local: 'obst', dif: 2, tema: 'Distocias', cond: 'Parto precipitado com sangramento por laceração', tags: ['obst'],
@@ -157,7 +157,7 @@ CASO({ id: 'op_parto_precipitado', area: 'go', local: 'obst', dif: 2, tema: 'Dis
   pista: 'De 3 a 10 cm em cerca de 2 h, com contrações longas e frequentes; útero firme, mas sangra.',
   dx: ['Parto precipitado', 'Fase ativa prolongada', 'Período pélvico prolongado', 'Parada secundária da descida'],
   edx: 'Parto precipitado (taquitócico): dilatação, descida e expulsão em 4 h ou menos. No partograma, a dilatação vai de 3 a 10 cm em cerca de 2 h, bem à esquerda da linha de alerta, com 4 a 5 contrações de mais de 40 s em 10 min. É mais comum em multíparas. Riscos: lacerações do canal de parto, atonia uterina e hipóxia fetal.',
-  cd: ['Revisão do canal de parto', 'Massagem uterina e ocitocina', 'Curetagem uterina', 'Observar por 1 hora'],
+  cd: ['Revisão do canal de parto e sutura da laceração', 'Massagem uterina bimanual e ocitocina em bomba', 'Curetagem uterina para retirar restos placentários', 'Observar o sangramento por 1 hora antes de agir'],
   ecd: 'Sangramento com útero contraído após parto precipitado sugere laceração: revisar colo, vagina e períneo com boa exposição e suturar. Manter vigilância de atonia (o útero pode relaxar depois da taquissistolia) e examinar o recém-nascido, pelo risco de trauma e hipóxia.' });
 
 /* ---------- Vitalidade fetal e situações especiais ---------- */
@@ -172,7 +172,7 @@ CASO({ id: 'op_taquicardia_fetal', area: 'go', local: 'obst', dif: 3, tema: 'Vit
   pista: 'Linha de base acima de 160 bpm: qual a principal causa a procurar em bolsa rota há 18 horas?',
   dx: ['Taquicardia fetal: infecção?', 'Traçado normal com acelerações', 'Padrão sinusoidal por anemia fetal', 'Bradicardia fetal prolongada'],
   edx: 'Linha de base normal: 110-160 bpm. Taquicardia fetal: febre/infecção materna (corioamnionite é a principal em bolsa rota prolongada), hipóxia inicial, drogas beta-agonistas, hipertireoidismo, anemia fetal, arritmias. Rotura de membranas ≥ 18 h e prematuridade indicam profilaxia para estreptococo do grupo B quando a cultura é desconhecida.',
-  cd: ['Investigar corioamnionite', 'Cesárea pela taquicardia isolada', 'Terbutalina subcutânea', 'Seguir sem reavaliar a mãe'],
+  cd: ['Medir a temperatura materna e investigar corioamnionite', 'Cesárea imediata pela taquicardia fetal isolada, sem outras medidas', 'Terbutalina subcutânea para reduzir a FC fetal', 'Manter a ocitocina e repetir a CTG em 4 horas'],
   ecd: 'Além da ressuscitação intrauterina: avaliar temperatura e FC materna, tônus/dor uterina e aspecto do líquido. Se corioamnionite: antibiótico de amplo espectro e resolução do parto (via obstétrica). Sem infecção, mas com GBS desconhecido e fatores de risco: penicilina cristalina ou ampicilina intraparto.' });
 
 CASO({ id: 'op_oligodramnio', area: 'go', local: 'obst', dif: 3, tema: 'Vitalidade fetal', cond: 'Oligoâmnio no perfil biofísico fetal a termo', tags: ['obst', 'usg', 'cardio'],
@@ -187,7 +187,7 @@ CASO({ id: 'op_oligodramnio', area: 'go', local: 'obst', dif: 3, tema: 'Vitalida
   pista: 'Perfil biofísico 8/10, mas o ponto perdido é o líquido.',
   dx: ['PBF 8/10 com oligoâmnio', 'Perfil biofísico normal 10/10', 'Centralização fetal', 'Restrição de crescimento grave'],
   edx: 'Perfil biofísico: CTG, movimentos respiratórios, movimentos corporais, tônus e líquido amniótico (2 pontos cada). Líquido reflete hipóxia crônica (redistribuição do fluxo renal). PBF 8/10 com oligoâmnio (maior bolsão < 2 cm) a termo indica resolução. Doppler normal afasta centralização.',
-  cd: ['Indução do parto', 'Repetir USG em 1 semana', 'Cesárea eletiva', 'Reavaliar em 24 horas'],
+  cd: ['Indução do parto com monitorização fetal', 'Repetir a USG com perfil biofísico em 1 semana', 'Cesárea eletiva pelo oligoâmnio', 'Hidratação materna e reavaliar em 24 horas'],
   ecd: 'A termo, oligoâmnio é indicação de resolução; com vitalidade preservada, a via pode ser vaginal (indução com monitorização). Antes do termo, individualizar com Doppler e vitalidade seriada.' });
 
 CASO({ id: 'op_pos_datismo', area: 'go', local: 'obst', dif: 1, tema: 'Assistência ao parto', cond: 'Gestação de 41 semanas: vigilância e indução', tags: ['obst', 'usg'],
@@ -200,7 +200,7 @@ CASO({ id: 'op_pos_datismo', area: 'go', local: 'obst', dif: 1, tema: 'Assistên
   pista: 'Depois de 42 semanas a morbimortalidade perinatal sobe.',
   dx: ['Gestação de 41 semanas', 'Pós-termo (42 semanas ou mais)', 'Oligoâmnio grave', 'Erro de datação provável'],
   edx: 'A termo precoce 37-38s6d, completo 39-40s6d, tardio 41-41s6d, pós-termo ≥ 42 semanas. A partir de 41 semanas aumentam oligoâmnio, mecônio, macrossomia e óbito fetal.',
-  cd: ['Vigilância e indução até 41s6d', 'Aguardar 42 semanas sem exames', 'Cesárea eletiva por pós-datismo', 'Amnioscopia e decidir pelo mecônio'],
+  cd: ['CTG e líquido 2-3 vezes/semana e indução até 41s6d', 'Aguardar até 42 semanas, sem exames de vitalidade no intervalo', 'Cesárea eletiva pelo pós-datismo', 'Amnioscopia e decidir a via pela cor do líquido'],
   ecd: 'Oferecer indução a partir de 41 semanas (até 41s6d), com avaliação de vitalidade (CTG e líquido amniótico) 2 a 3 vezes por semana enquanto aguarda. Colo desfavorável: maturação cervical antes da ocitocina.' });
 
 CASO({ id: 'op_forcipe', area: 'go', local: 'obst', dif: 3, tema: 'Assistência ao parto', cond: 'Parto instrumental por bradicardia no período expulsivo', tags: ['obst'],
@@ -213,7 +213,7 @@ CASO({ id: 'op_forcipe', area: 'go', local: 'obst', dif: 3, tema: 'Assistência 
   pista: 'Cabeça baixa, variedade anterior, pelve adequada e hipóxia fetal.',
   dx: ['Hipóxia fetal no expulsivo', 'Desproporção cefalopélvica com bossa', 'Parada secundária da dilatação', 'Distocia de ombro'],
   edx: 'Pré-requisitos para fórcipe ou vácuo: dilatação total, bolsa rota, apresentação insinuada (plano ≥ +2 idealmente), variedade conhecida, pelve adequada, bexiga vazia, analgesia e operador experiente. Classificação: de alívio (couro cabeludo visível, rotação ≤ 45°), baixo (≥ +2), médio (0 a +2, evitado).',
-  cd: ['Fórcipe de alívio', 'Cesárea de urgência', 'Manobra de Kristeller', 'Aguardar mais 1 hora'],
+  cd: ['Fórcipe de alívio', 'Cesárea de urgência', 'Manobra de Kristeller', 'Aguardar mais 1 hora de período expulsivo'],
   ecd: 'Com a cabeça profundamente insinuada e variedade anterior, o parto instrumental é mais rápido e seguro que a cesárea (extração difícil de cabeça encravada). Fórcipe (Simpson) ou vácuo-extrator; o vácuo é contraindicado em prematuros < 34 semanas.' });
 
 CASO({ id: 'op_fase_latente', area: 'go', local: 'obst', dif: 2, tema: 'Assistência ao parto', cond: 'Fase latente do trabalho de parto', tags: ['obst'],
@@ -226,7 +226,7 @@ CASO({ id: 'op_fase_latente', area: 'go', local: 'obst', dif: 2, tema: 'Assistê
   pista: 'A fase ativa começa a partir de 5 cm (diretriz nacional).',
   dx: ['Fase latente', 'Parada secundária da dilatação', 'Fase ativa prolongada', 'Desproporção cefalopélvica'],
   edx: 'Fase latente: até 5 cm, com duração variável (longa em nulíparas). Parada secundária da dilatação e fase ativa prolongada só se diagnosticam na fase ativa (≥ 5-6 cm).',
-  cd: ['Aguardar a evolução', 'Amniotomia de rotina', 'Ocitocina já', 'Cesárea por parada'],
+  cd: ['Hidratação, deambulação, alívio da dor e aguardar', 'Amniotomia de rotina para acelerar a fase ativa', 'Ocitocina em bomba a partir de agora', 'Cesárea por parada da dilatação em 3 cm'],
   ecd: 'Na fase latente, com boa vitalidade: hidratação, alimentação leve, deambulação, apoio emocional e alívio da dor; evitar amniotomia e ocitocina de rotina. Pode aguardar em casa se a gestante desejar e morar perto.' });
 
 CASO({ id: 'op_situacao_transversa', area: 'go', local: 'obst', dif: 2, tema: 'Assistência ao parto', cond: 'Situação transversa com bolsa rota a termo', tags: ['obst', 'usg'],
@@ -240,7 +240,7 @@ CASO({ id: 'op_situacao_transversa', area: 'go', local: 'obst', dif: 2, tema: 'A
   pista: 'Não existe parto vaginal de feto vivo a termo em situação transversa.',
   dx: ['Situação transversa (córmica)', 'Apresentação pélvica completa', 'Apresentação de face', 'Occípito-sacra'],
   edx: 'Situação transversa: eixo fetal perpendicular ao materno; apresentação córmica (ombro). Fatores: multiparidade, placenta prévia, polidrâmnio, malformações uterinas, prematuridade. Com bolsa rota há risco de prolapso de cordão e de braço.',
-  cd: ['Cesariana', 'Versão cefálica externa', 'Indução com misoprostol', 'Aguardar a versão espontânea'],
+  cd: ['Cesariana', 'Versão cefálica externa sob tocólise', 'Indução com misoprostol vaginal', 'Aguardar a versão espontânea'],
   ecd: 'Bolsa rota a termo com situação transversa: cesárea. Com bolsa íntegra, a partir de 36-37 semanas, pode-se tentar versão cefálica externa (contraindicada com bolsa rota, placenta prévia, sofrimento fetal).' });
 
 CASO({ id: 'op_vbac', area: 'go', local: 'obst', dif: 2, tema: 'Assistência ao parto', cond: 'Trabalho de parto após cesárea anterior', tags: ['obst'],
@@ -253,7 +253,7 @@ CASO({ id: 'op_vbac', area: 'go', local: 'obst', dif: 2, tema: 'Assistência ao 
   pista: 'Uma cesárea segmentar prévia, sem a causa original repetida.',
   dx: ['Trabalho de parto com uma cesárea prévia', 'Iminência de rotura uterina', 'Contraindicação ao parto vaginal', 'Desproporção cefalopélvica'],
   edx: 'Uma cesárea segmentar transversa prévia permite prova de trabalho de parto (sucesso ~60-80%; rotura < 1%). Contraindicações: cicatriz corporal/clássica ou em T, rotura uterina prévia, miomectomia com entrada na cavidade. Misoprostol é contraindicado para indução com cicatriz uterina.',
-  cd: ['Prova de trabalho de parto', 'Cesárea de repetição obrigatória', 'Misoprostol para acelerar', 'Fórcipe profilático'],
+  cd: ['Prova de trabalho de parto com monitorização contínua', 'Cesárea de repetição obrigatória pela cicatriz anterior', 'Misoprostol vaginal para acelerar a dilatação', 'Fórcipe profilático para evitar a rotura uterina'],
   ecd: 'Permitir o parto vaginal com monitorização fetal contínua e equipe pronta para cesárea. Sinais de rotura: dor contínua, perda da altura da apresentação, alteração da FCF, sangramento, choque. Se indução necessária: sonda de Foley ou ocitocina com cautela.' });
 
 CASO({ id: 'op_obito_fetal', area: 'go', local: 'obst', dif: 2, tema: 'Assistência ao parto', cond: 'Óbito fetal no terceiro trimestre: indução', tags: ['obst', 'usg'],
@@ -268,5 +268,5 @@ CASO({ id: 'op_obito_fetal', area: 'go', local: 'obst', dif: 2, tema: 'Assistên
   pista: 'Sem cicatriz uterina e colo desfavorável.',
   dx: ['Óbito fetal', 'Descolamento prematuro de placenta', 'Restrição de crescimento', 'Gestação normal'],
   edx: 'Óbito fetal a partir de 20-22 semanas (ou 500 g). Investigar causa (sorologias, TOTG/glicemia, anticorpos antifosfolípide, Kleihauer, necropsia, placenta). Retenção prolongada (> 4 semanas) aumenta risco de coagulopatia.',
-  cd: ['Misoprostol vaginal', 'Cesárea imediata a pedido', 'Expectante por até 4 semanas', 'Ocitocina em dose alta já'],
+  cd: ['Misoprostol vaginal (dose conforme a idade gestacional)', 'Cesárea imediata a pedido da gestante', 'Conduta expectante por até 4 semanas', 'Ocitocina em dose alta já, mesmo com o colo uterino desfavorável'],
   ecd: 'A via preferencial é vaginal: misoprostol (dose conforme a IG) com reavaliação. Com cicatriz uterina prévia, preferir maturação mecânica (balão de Foley) e ocitocina. Cesárea só por indicação materna. Oferecer apoio psicológico, ver/segurar o bebê se desejar, inibir lactação (cabergolina).' });

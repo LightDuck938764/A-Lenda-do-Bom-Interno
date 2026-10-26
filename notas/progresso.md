@@ -96,3 +96,9 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 - Saves separados: SAVE_KEY (internato) e SAVE_KEY_VEST; S.modo = 'internato' | 'vest'. Tela inicial com um cartão por modo (Continuar/Novo). Pausa: "Tela inicial (trocar de modo)" e "Recomeçar este modo".
 - Nuvem (Firebase saves/{uid}): d agora é {v: 2, i: save internato, e: save vestibulando}; registros antigos (um save só) viram Modo Internato. Limite de 500 mil caracteres mantido.
 - O usuário escreveu "modo residência" uma vez no pedido; tratado como o Modo Vestibulando.
+
+## Condutas no estilo de prova de residência (2026-10-26)
+- Pedido do usuário: condutas sem frases genéricas, iguais às alternativas de prova de residência (jogo para médicos). Reescritas as 4 opções de conduta (e o ecd quando precisou) de quase todos os arquivos: CM inteira (05d–05n por especialidade, 05, 05b), cirurgia (05p–05t), UPA (05o, 03), GO (04b–04g), pediatria (03r, 03w, 03x, 03y). Revisados e mantidos por já serem específicos: 03p, 03q, 03s, 03t, 03u, 03v, 05c (UBS).
+- Padrão: droga + dose/via/tempo, procedimento nomeado, distratores plausíveis (erro de dose, de droga, de momento ou de indicação). Ferramentas em scratchpad/scripts: dumpcd.js, showcd.py, applycd.py, lens.py, setc.py (correções em scratchpad/cdfix/*.json).
+- Valida.js depois da reescrita: conduta correta mais longa em 5% dos casos e mais curta em 18%.
+- Modo Vestibulando: refillSpots (11_world.js) garante ao menos um caso ativo em cada ala da Clínica Médica (cardio, pneumo, endócrino, gastro, hepato, hemato, infecto, nefro, neuro, psiq, reumato), para o jogador escolher a especialidade que quer treinar.

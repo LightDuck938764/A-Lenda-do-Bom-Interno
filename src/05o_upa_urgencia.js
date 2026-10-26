@@ -19,7 +19,7 @@ CASO({ id: 'ue_tsv', area: 'upa', dif: 1, tema: 'Arritmias', cond: 'Taquicardia 
   pista: 'QRS estreito, RR regular, paciente estável e manobra vagal já tentada.',
   dx: ['TSV paroxística', 'Fibrilação atrial de alta resposta', 'Taquicardia ventricular', 'Taquicardia sinusal'],
   edx: 'Taquicardia de QRS estreito, regular, sem ondas P visíveis, início e fim súbitos: taquicardia por reentrada nodal (a mais comum) ou por via acessória.',
-  cd: ['Adenosina 6 mg IV em bolus', 'Amiodarona oral e alta com retorno', 'Cardioversão elétrica sem sedação', 'Verapamil e atenolol associados'],
+  cd: ['Valsalva modificada e, se falhar, adenosina 6 mg EV', 'Amiodarona 200 mg VO de 8/8 h e alta com retorno em 7 dias', 'Cardioversão elétrica sincronizada sem sedação', 'Verapamil EV associado a metoprolol EV'],
   ecd: 'Estável: manobras vagais (Valsalva modificada) e, se falharem, adenosina 6 mg em bolus rápido seguido de flush; se não reverter, 12 mg. Alternativas: verapamil ou diltiazem, betabloqueador. Instável: cardioversão elétrica sincronizada. Recorrências: ablação por cateter.' });
 
 CASO({ id: 'ue_flutter', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'Flutter atrial com insuficiência cardíaca aguda', tags: ['cardio', 'ecg'],
@@ -33,7 +33,7 @@ CASO({ id: 'ue_flutter', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'Flutter 
   pista: 'Ondas em dente de serra nas derivações inferiores, com congestão pulmonar.',
   dx: ['Flutter atrial', 'Taquicardia sinusal reflexa', 'Taquicardia ventricular', 'Fibrilação ventricular'],
   edx: 'Ondas F em dente de serra (cerca de 300/min) em DII, DIII e aVF, com condução variável. A taquiarritmia causa edema pulmonar: critério de instabilidade.',
-  cd: ['Cardioversão sincronizada', 'Adenosina para reverter o ritmo', 'Manobra vagal e alta', 'Betabloqueador oral e reavaliar amanhã'],
+  cd: ['Cardioversão elétrica sincronizada sob sedação', 'Adenosina 6 mg EV em bólus rápido para reverter o ritmo', 'Manobra vagal e alta com retorno', 'Metoprolol VO e reavaliar o ritmo amanhã'],
   ecd: 'Instabilidade (hipotensão, alteração de consciência, dor isquêmica, choque ou congestão pulmonar) atribuída à taquiarritmia: cardioversão elétrica sincronizada sob sedação. O flutter costuma reverter com energias baixas. Anticoagular conforme CHA₂DS₂-VASc, como na fibrilação atrial. Ablação do istmo cavotricuspídeo é curativa.' });
 
 CASO({ id: 'ue_tv_instavel', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'Taquicardia ventricular com instabilidade hemodinâmica', tags: ['cardio', 'ecg', 'choque'],
@@ -47,7 +47,7 @@ CASO({ id: 'ue_tv_instavel', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'Taqu
   pista: 'QRS largo regular em cardiopata isquêmico, com choque.',
   dx: ['TV instável', 'TSV com aberrância de condução', 'Fibrilação ventricular', 'Flutter atrial com condução 2:1'],
   edx: 'Taquicardia de QRS largo e regular em paciente com infarto prévio deve ser tratada como taquicardia ventricular até prova em contrário (cicatriz é o substrato). Hipotensão e má perfusão definem instabilidade.',
-  cd: ['Cardioversão sincronizada', 'Metoprolol IV em bolus', 'Alteplase IV', 'Sulfato de magnésio isolado'],
+  cd: ['Cardioversão elétrica sincronizada imediata', 'Metoprolol 5 mg EV em bólus', 'Amiodarona 150 mg EV em 10 minutos e aguardar', 'Sulfato de magnésio 2 g EV isolado'],
   ecd: 'Com pulso e instável: cardioversão sincronizada imediata (sedação se possível). Sem pulso: desfibrilação. Depois, amiodarona, investigar isquemia e distúrbios eletrolíticos e avaliar cardiodesfibrilador implantável.' });
 
 CASO({ id: 'ue_tv_estavel', area: 'upa', dif: 3, tema: 'Arritmias', cond: 'Taquicardia ventricular monomórfica estável', tags: ['cardio', 'ecg'],
@@ -62,7 +62,7 @@ CASO({ id: 'ue_tv_estavel', area: 'upa', dif: 3, tema: 'Arritmias', cond: 'Taqui
   pista: 'QRS largo monomórfico, cardiopatia estrutural, hemodinâmica preservada.',
   dx: ['TV monomórfica estável', 'Taquicardia sinusal com bloqueio de ramo', 'Fibrilação atrial pré-excitada', 'Torsades de pointes'],
   edx: 'Taquicardia regular de QRS largo e morfologia uniforme em cardiopata (Chagas é causa frequente de TV no Brasil). Sem hipotensão, alteração de consciência, dor isquêmica ou congestão: estável.',
-  cd: ['Amiodarona IV', 'Adenosina em doses repetidas', 'Verapamil IV em bolus', 'Alta com betabloqueador oral'],
+  cd: ['Amiodarona 150 mg EV em 10 minutos', 'Adenosina 6 mg e 12 mg EV em doses repetidas', 'Verapamil 5 mg EV em bólus', 'Alta com metoprolol oral e Holter'],
   ecd: 'TV estável: antiarrítmico IV (amiodarona 150 mg em 10 min; procainamida é alternativa) ou cardioversão sincronizada eletiva sob sedação. Verapamil pode causar colapso em TV. Investigação e cardiodesfibrilador implantável conforme o risco.' });
 
 CASO({ id: 'ue_torsades', area: 'upa', dif: 3, tema: 'Arritmias', cond: 'Torsades de pointes por QT longo adquirido', tags: ['cardio', 'ecg', 'intox'],
@@ -77,7 +77,7 @@ CASO({ id: 'ue_torsades', area: 'upa', dif: 3, tema: 'Arritmias', cond: 'Torsade
   pista: 'QRS largo polimórfico "girando" ao redor da linha de base com QT longo.',
   dx: ['Torsades de pointes por QT longo', 'TV monomórfica sustentada', 'FA com aberrância', 'Artefato de monitor'],
   edx: 'TV polimórfica com amplitude oscilante, em QT longo adquirido: drogas (macrolídeos, antieméticos, antiarrítmicos classe III, antipsicóticos), hipocalemia e hipomagnesemia.',
-  cd: ['Sulfato de magnésio IV', 'Amiodarona IV em bolus', 'Procainamida IV', 'Manter a azitromicina e observar'],
+  cd: ['Sulfato de magnésio 2 g EV e suspender a azitromicina', 'Amiodarona 300 mg EV em bólus e manter a azitromicina', 'Procainamida EV em infusão', 'Manter a azitromicina e observar no monitor cardíaco por 24 horas'],
   ecd: 'Sulfato de magnésio 2 g IV, corrigir potássio, suspender drogas que prolongam o QT. Sem pulso ou instável sustentada: desfibrilação (não sincronizada). Recorrente: aumentar a FC (isoproterenol ou marca-passo de overdrive). Amiodarona e procainamida pioram.' });
 
 CASO({ id: 'ue_fa_wpw', area: 'upa', dif: 3, tema: 'Arritmias', cond: 'Fibrilação atrial pré-excitada (Wolff-Parkinson-White)', tags: ['cardio', 'ecg'],
@@ -92,7 +92,7 @@ CASO({ id: 'ue_fa_wpw', area: 'upa', dif: 3, tema: 'Arritmias', cond: 'Fibrilaç
   pista: 'Taquicardia irregular de QRS largo e muito rápida em jovem com pré-excitação.',
   dx: ['FA pré-excitada por via acessória', 'TV monomórfica', 'Taquicardia sinusal', 'Flutter atrial 2:1'],
   edx: 'Na FA com via acessória, os estímulos descem pela via (QRS largos, irregulares, muito rápidos). Bloquear o nó AV (adenosina, verapamil, diltiazem, betabloqueador, digoxina, amiodarona IV) favorece a condução pela via e pode levar à fibrilação ventricular.',
-  cd: ['Procainamida IV', 'Verapamil IV em bolus', 'Adenosina 6 mg', 'Digoxina IV'],
+  cd: ['Procainamida EV', 'Verapamil 5 mg EV em bólus', 'Adenosina 6 mg EV em bólus rápido', 'Digoxina 0,5 mg EV'],
   ecd: 'Estável: procainamida (ou ibutilida); instável: cardioversão sincronizada. Evitar bloqueadores do nó AV. Tratamento definitivo: ablação da via acessória.' });
 
 /* ---------- PCR do adulto ---------- */
@@ -107,7 +107,7 @@ CASO({ id: 'ue_pcr_chocavel', area: 'upa', dif: 2, tema: 'Parada cardiorrespirat
   pista: 'Sem pulso com ritmo de QRS largo e rápido.',
   dx: ['PCR em TV sem pulso', 'Assistolia', 'AESP', 'Taquicardia supraventricular'],
   edx: 'Ritmos chocáveis: fibrilação ventricular e taquicardia ventricular sem pulso. Prognóstico depende de RCP de qualidade e desfibrilação precoce.',
-  cd: ['Desfibrilar e retomar RCP', 'Cardioversão sincronizada a 50 J', 'Adrenalina antes do primeiro choque', 'Checar pulso por 1 minuto'],
+  cd: ['Desfibrilação de 200 J e RCP imediata por 2 minutos', 'Cardioversão sincronizada a 50 J', 'Adrenalina 1 mg antes do primeiro choque', 'Checar o pulso por 1 minuto logo após o choque, antes de retomar a RCP'],
   ecd: 'Choque não sincronizado (bifásico 120-200 J; monofásico 360 J) e retomar compressões por 2 minutos sem checar pulso. Adrenalina 1 mg a cada 3-5 min após o 2º choque; amiodarona 300 mg após o 3º choque (depois 150 mg) ou lidocaína. Compressões de 100-120/min, 5-6 cm, retorno completo do tórax, mínimas interrupções.' });
 
 CASO({ id: 'ue_pcr_aesp', area: 'upa', dif: 3, tema: 'Parada cardiorrespiratória', cond: 'PCR em AESP por hipercalemia', tags: ['cardio', 'ecg', 'nefro'],
@@ -122,7 +122,7 @@ CASO({ id: 'ue_pcr_aesp', area: 'upa', dif: 3, tema: 'Parada cardiorrespiratóri
   pista: 'Atividade elétrica organizada sem pulso: pensar nos 5H e 5T.',
   dx: ['AESP por hipercalemia', 'Fibrilação ventricular fina', 'Assistolia', 'Bradicardia sinusal com pulso'],
   edx: 'Atividade elétrica sem pulso: ritmo não chocável. Causas reversíveis (5H: hipovolemia, hipóxia, H⁺ acidose, hipo/hipercalemia, hipotermia; 5T: tensão no tórax, tamponamento, toxinas, trombose coronária e pulmonar). Aqui, hipercalemia em paciente dialítico.',
-  cd: ['RCP, adrenalina e cálcio IV', 'Desfibrilação imediata', 'Atropina 3 mg IV', 'Aguardar a diálise de urgência'],
+  cd: ['RCP, adrenalina 1 mg e gluconato de cálcio EV', 'Desfibrilação imediata com 200 J bifásico e RCP', 'Atropina 3 mg EV em bólus único', 'RCP e aguardar a hemodiálise de urgência'],
   ecd: 'Ritmo não chocável: RCP e adrenalina 1 mg o quanto antes, repetida a cada 3-5 min, tratando a causa: cálcio IV (estabiliza a membrana), bicarbonato e insulina com glicose; após retorno da circulação, diálise de urgência. Atropina não é mais recomendada na PCR.' });
 
 /* ---------- Bradiarritmias ---------- */
@@ -137,7 +137,7 @@ CASO({ id: 'ue_bradi_instavel', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'B
   pista: 'Bradicardia com sinais de baixo débito.',
   dx: ['Bradicardia instável', 'Bloqueio AV total com escape', 'Síncope vasovagal', 'AVC de tronco encefálico'],
   edx: 'Bradicardia com instabilidade (hipotensão, alteração de consciência, choque, dor isquêmica, insuficiência cardíaca). O betabloqueador tópico tem absorção sistêmica.',
-  cd: ['Atropina 1 mg IV', 'Marca-passo definitivo hoje', 'Adenosina IV', 'Observar sem intervenção'],
+  cd: ['Atropina 1 mg EV, repetir até 3 mg', 'Implante de marca-passo definitivo hoje', 'Adenosina 6 mg EV', 'Observação sem intervenção'],
   ecd: 'Atropina 1 mg IV a cada 3-5 min (máximo 3 mg). Sem resposta: marca-passo transcutâneo ou infusão de dopamina ou adrenalina, preparando marca-passo transvenoso. Suspender drogas bradicardizantes; atropina é pouco eficaz em BAV de alto grau infranodal e em transplantados.' });
 
 CASO({ id: 'ue_mobitz2', area: 'upa', dif: 3, tema: 'Arritmias', cond: 'BAV de 2º grau Mobitz II sintomático', tags: ['cardio', 'ecg'],
@@ -151,7 +151,7 @@ CASO({ id: 'ue_mobitz2', area: 'upa', dif: 3, tema: 'Arritmias', cond: 'BAV de 2
   pista: 'O PR não aumenta antes da onda P bloqueada.',
   dx: ['BAV de 2º grau Mobitz II', 'BAV de 2º grau Mobitz I (Wenckebach)', 'Fibrilação atrial de baixa resposta', 'Bradicardia sinusal'],
   edx: 'Mobitz II: ondas P bloqueadas subitamente, com PR constante nos batimentos conduzidos. Doença infra-hissiana, com risco de progressão para BAV total. No Mobitz I, o PR aumenta progressivamente até o bloqueio (geralmente nodal, benigno).',
-  cd: ['Marca-passo definitivo', 'Suspender o carvedilol e reavaliar em 6 meses', 'Atropina e Holter ambulatorial', 'Propafenona e anticoagulante'],
+  cd: ['Marca-passo definitivo', 'Suspender o carvedilol e reavaliar em 6 meses', 'Atropina VO e Holter ambulatorial', 'Propafenona e anticoagulação oral'],
   ecd: 'Mobitz II e BAV total sintomáticos (ou Mobitz II mesmo assintomático, por risco de progressão) têm indicação de marca-passo definitivo, sem esperar retirar drogas quando a doença do sistema de condução é a causa. Até lá, monitorização e marca-passo transcutâneo disponível.' });
 
 CASO({ id: 'ue_bavt_chagas', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'BAV total chagásico com síncope', tags: ['cardio', 'infecto', 'infec', 'ecg'],
@@ -166,7 +166,7 @@ CASO({ id: 'ue_bavt_chagas', area: 'upa', dif: 2, tema: 'Arritmias', cond: 'BAV 
   pista: 'Dissociação atrioventricular com escape ventricular.',
   dx: ['BAV total com escape ventricular', 'BAV de 1º grau', 'BAV 2º grau Mobitz I', 'Bradicardia sinusal'],
   edx: 'BAV de 3º grau: nenhuma onda P é conduzida, átrios e ventrículos batem de forma independente; escape de QRS largo indica bloqueio infra-hissiano. Chagas causa BRD + BDAS e evolui para bloqueios.',
-  cd: ['Marca-passo', 'Atropina e alta hospitalar', 'Amiodarona IV', 'Benznidazol isolado'],
+  cd: ['Marca-passo provisório e depois definitivo', 'Atropina 1 mg EV e alta hospitalar com Holter ambulatorial', 'Amiodarona 150 mg EV', 'Benznidazol isolado por 60 dias'],
   ecd: 'Síncope por BAV total: monitorização, marca-passo provisório (transcutâneo ou transvenoso) se instável e implante de marca-passo definitivo. Atropina raramente funciona em escape ventricular. Na cardiopatia chagásica crônica, avaliar também TV e cardiodesfibrilador.' });
 
 /* ---------- Crise hipertensiva ---------- */
@@ -182,7 +182,7 @@ CASO({ id: 'ue_urgencia_has', area: 'upa', dif: 1, tema: 'Crise hipertensiva', c
   pista: 'PA alta sem lesão aguda de órgão-alvo.',
   dx: ['Urgência hipertensiva', 'Emergência hipertensiva', 'Encefalopatia hipertensiva', 'Hipertensão maligna'],
   edx: 'PA ≥ 180 x 110 mmHg sem lesão aguda e progressiva de órgão-alvo: urgência hipertensiva (muitas vezes "pseudocrise" por dor, ansiedade ou má adesão). Emergência exige lesão aguda (AVC, SCA, EAP, dissecção, eclâmpsia, encefalopatia, LRA).',
-  cd: ['Anti-hipertensivo oral e redução gradual', 'Nitroprussiato em UTI', 'Nifedipina sublingual', 'Reduzir a PA para 120 x 80 em 1 hora'],
+  cd: ['Captopril VO e redução gradual da PA em 24-48 horas', 'Nitroprussiato de sódio EV em UTI com PA invasiva', 'Nifedipino sublingual 10 mg', 'Reduzir a PA para 120 x 80 mmHg em 1 hora com clonidina'],
   ecd: 'Repouso, analgesia, retomar/ajustar o tratamento oral (por exemplo, captopril, com pico de ação em 60-90 min) e reavaliar; redução gradual em 24-48 horas com seguimento ambulatorial precoce. Queda abrupta pode causar isquemia cerebral ou coronariana; nifedipina sublingual é contraindicada.' });
 
 CASO({ id: 'ue_eap_hipertensivo', area: 'upa', dif: 2, tema: 'Crise hipertensiva', cond: 'Edema agudo de pulmão hipertensivo', tags: ['cardio', 'resp'],
@@ -196,7 +196,7 @@ CASO({ id: 'ue_eap_hipertensivo', area: 'upa', dif: 2, tema: 'Crise hipertensiva
   pista: 'Emergência hipertensiva com órgão-alvo pulmão: reduzir pós-carga.',
   dx: ['EAP hipertensivo', 'Pneumonia grave bilateral', 'Exacerbação de DPOC', 'Tromboembolismo pulmonar maciço'],
   edx: 'Emergência hipertensiva com insuficiência cardíaca aguda: aumento súbito de pós-carga com redistribuição de volume para o pulmão (pacientes "quentes e úmidos", muitas vezes sem grande retenção hídrica).',
-  cd: ['VNI e nitrato IV', 'Hidratação venosa vigorosa', 'Betabloqueador IV em bolus', 'Morfina e observar'],
+  cd: ['VNI, nitroglicerina EV em dose alta e furosemida', 'SF 0,9% 500 mL em bólus pela hipoperfusão periférica', 'Metoprolol 5 mg EV em bólus repetidos', 'Morfina 10 mg EV e observação'],
   ecd: 'Sentar, VNI (CPAP/BiPAP) e vasodilatador IV (nitroglicerina em doses altas ou nitroprussiato), diurético de alça. Reduzir a PA em até 25% na primeira hora. Morfina não é rotina (associada a pior desfecho). Investigar isquemia.' });
 
 CASO({ id: 'ue_disseccao_aorta', area: 'upa', dif: 3, tema: 'Crise hipertensiva', cond: 'Dissecção aguda de aorta tipo A', tags: ['cardio', 'choque'],
@@ -210,7 +210,7 @@ CASO({ id: 'ue_disseccao_aorta', area: 'upa', dif: 3, tema: 'Crise hipertensiva'
   pista: 'Dor lancinante para o dorso, assimetria de pulsos, mediastino alargado.',
   dx: ['Dissecção de aorta tipo A', 'IAM com supra de ST inferior', 'Tromboembolismo pulmonar', 'Pericardite aguda'],
   edx: 'Classificação de Stanford: tipo A acomete a aorta ascendente (cirúrgica); tipo B, apenas a descendente (tratamento clínico ou endovascular se complicada). Complicações: insuficiência aórtica, tamponamento, IAM (coronária direita), AVC, isquemia de membros.',
-  cd: ['Betabloqueador IV e cirurgia', 'Trombólise imediata com alteplase', 'AAS e clopidogrel', 'Nitroprussiato sem betabloqueador'],
+  cd: ['Esmolol EV (FC < 60) e cirurgia de emergência', 'Trombólise imediata com alteplase pela dor torácica', 'AAS 300 mg e clopidogrel 600 mg', 'Nitroprussiato isolado, sem betabloqueador'],
   ecd: 'Controle da FC (< 60 bpm) com betabloqueador IV (esmolol, metoprolol) antes de vasodilatador, meta de PAS 100-120 mmHg, analgesia com opioide e cirurgia de emergência no tipo A. Antiagregantes e trombolíticos são contraindicados.' });
 
 CASO({ id: 'ue_encefalopatia_has', area: 'upa', dif: 3, tema: 'Crise hipertensiva', cond: 'Encefalopatia hipertensiva', tags: ['cardio', 'neuro'],
@@ -225,7 +225,7 @@ CASO({ id: 'ue_encefalopatia_has', area: 'upa', dif: 3, tema: 'Crise hipertensiv
   pista: 'Rebaixamento global e papiledema por PA muito alta, sem lesão focal.',
   dx: ['Encefalopatia hipertensiva', 'AVC isquêmico agudo', 'Meningite bacteriana', 'Urgência hipertensiva'],
   edx: 'Falha da autorregulação cerebral com edema (geralmente posterior, PRES): cefaleia, alteração de consciência, convulsões, alterações visuais, papiledema. Com retinopatia grau III/IV e lesão renal, configura hipertensão maligna.',
-  cd: ['Nitroprussiato IV', 'Normalizar a PA em 15 minutos', 'Captopril oral e alta', 'Manitol isolado'],
+  cd: ['Nitroprussiato EV, reduzindo até 25% na 1ª hora', 'Normalizar a PA em 15 minutos com nitroprussiato', 'Captopril 25 mg VO e alta com retorno', 'Manitol 1 g/kg isolado'],
   ecd: 'Emergência hipertensiva: UTI, anti-hipertensivo IV titulável (nitroprussiato, clevidipino, labetalol), queda de até 20-25% da PA média na primeira hora, depois 160 x 100 em 2-6 h e normalização em 24-48 h. Exceções com metas próprias: AVC, dissecção de aorta, eclâmpsia.' });
 
 /* ---------- Doença arterial coronariana ---------- */
@@ -241,7 +241,7 @@ CASO({ id: 'ue_angina_estavel', area: 'upa', dif: 1, tema: 'Doença arterial cor
   pista: 'Padrão estável há meses, desencadeado por esforço e aliviado com repouso.',
   dx: ['Angina estável', 'Angina instável', 'IAM sem supra de ST', 'Dor osteomuscular da parede torácica'],
   edx: 'Angina típica: desconforto retroesternal, desencadeado por esforço ou estresse e aliviado por repouso ou nitrato. Estável quando o padrão não mudou. Instável: em repouso, de início recente intenso ou em crescendo.',
-  cd: ['AAS, estatina, betabloqueador e teste funcional', 'Cateterismo de emergência', 'Trombólise', 'Alta sem medicação e sem retorno'],
+  cd: ['AAS, estatina, betabloqueador e teste funcional', 'Cateterismo cardíaco de emergência na mesma noite', 'Trombólise com tenecteplase', 'Alta sem medicação e sem retorno'],
   ecd: 'Doença coronariana crônica: AAS, estatina de alta potência, betabloqueador (ou bloqueador de canal de cálcio) para sintomas, nitrato sublingual para crises, controle de fatores de risco. Estratificação com teste funcional (ergométrico, cintilografia, eco de estresse) ou angiotomografia; cateterismo se alto risco ou sintomas refratários.' });
 
 CASO({ id: 'ue_angina_instavel', area: 'upa', dif: 2, tema: 'Doença arterial coronariana', cond: 'Angina instável com alterações dinâmicas do ECG', tags: ['cardio', 'ecg'],
@@ -256,7 +256,7 @@ CASO({ id: 'ue_angina_instavel', area: 'upa', dif: 2, tema: 'Doença arterial co
   pista: 'Troponina normal não exclui SCA: o ECG mudou com a dor.',
   dx: ['Angina instável', 'Angina estável', 'IAM com supra de ST', 'Dor torácica não cardíaca'],
   edx: 'SCA sem supra de ST com troponinas negativas: angina instável. Alterações dinâmicas de ST-T e dor em repouso indicam alto risco.',
-  cd: ['DAPT, anticoagular e cateterismo', 'Alta com nitrato e retorno ambulatorial', 'Teste ergométrico imediato', 'Observar 6 horas e liberar'],
+  cd: ['AAS, ticagrelor, enoxaparina e cateterismo em 24 h', 'Alta com isossorbida sublingual e retorno ambulatorial em 7 dias', 'Teste ergométrico imediato', 'Observar 6 horas e liberar se a dor passar'],
   ecd: 'SCASEST de alto risco: AAS, inibidor P2Y12, anticoagulação (enoxaparina ou fondaparinux), estatina de alta potência, betabloqueador se sem contraindicação, e estratificação invasiva precoce (< 24 h). Teste de esforço é contraindicado na SCA de alto risco.' });
 
 CASO({ id: 'ue_wellens', area: 'upa', dif: 3, tema: 'Doença arterial coronariana', cond: 'Padrão de Wellens (suboclusão da descendente anterior)', tags: ['cardio', 'ecg'],
@@ -271,7 +271,7 @@ CASO({ id: 'ue_wellens', area: 'upa', dif: 3, tema: 'Doença arterial coronarian
   pista: 'Ondas T bifásicas em V2-V3 fora da dor.',
   dx: ['Padrão de Wellens', 'Repolarização precoce benigna', 'Pericardite aguda', 'Hipercalemia moderada'],
   edx: 'Wellens: ondas T bifásicas (tipo A) ou profundamente invertidas (tipo B) em V2-V3, no período sem dor, sem ondas Q e com pouco ou nenhum supra: suboclusão crítica proximal da descendente anterior, com alto risco de IAM anterior extenso.',
-  cd: ['Cateterismo precoce', 'Teste ergométrico para estratificar o risco', 'Angiotomografia ambulatorial', 'Alta com AAS'],
+  cd: ['Dupla antiagregação, anticoagulação e cateterismo precoce', 'Teste ergométrico para estratificar o risco antes de internar', 'Angiotomografia de coronárias ambulatorial', 'Alta com AAS e retorno em 30 dias'],
   ecd: 'Tratar como SCASEST de alto risco: antiagregação, anticoagulação e cateterismo precoce. Teste de esforço é perigoso (pode precipitar oclusão). Na DRC, hidratação e menor volume de contraste, sem atrasar o procedimento.' });
 
 CASO({ id: 'ue_scasest_muito_alto', area: 'upa', dif: 3, tema: 'Doença arterial coronariana', cond: 'IAM sem supra de ST de muito alto risco', tags: ['cardio', 'ecg'],
@@ -300,7 +300,7 @@ CASO({ id: 'ue_iamcsst_icp', area: 'upa', dif: 2, tema: 'Doença arterial corona
   pista: 'Supra de ST em parede anterior extensa.',
   dx: ['IAMCSST anterior', 'Pericardite aguda', 'Angina instável', 'Repolarização precoce benigna'],
   edx: 'IAMCSST: supra de ST novo no ponto J em 2 ou mais derivações contíguas (≥ 1 mm; em V2-V3 ≥ 2 mm em homens ≥ 40 anos, ≥ 2,5 mm < 40 anos, ≥ 1,5 mm em mulheres) ou BRE novo com clínica.',
-  cd: ['Antiagregação dupla e angioplastia primária', 'Aguardar o resultado da troponina', 'Trombólise e alta', 'O₂ para todos e nitrato IV'],
+  cd: ['AAS, ticagrelor e angioplastia primária', 'Aguardar a troponina para confirmar o IAM antes de agir', 'Trombólise e alta após 24 horas', 'O₂ para todos e nitroglicerina EV'],
   ecd: 'Angioplastia primária com tempo porta-balão < 90 minutos (preferida se realizável em até 120 min do diagnóstico). Antes: AAS 300 mg mastigado, P2Y12 (ticagrelor 180 mg, prasugrel ou clopidogrel 600 mg), anticoagulação. O₂ só se SpO₂ < 90%. Reduzem mortalidade: reperfusão, AAS, betabloqueador, IECA, estatina.' });
 
 CASO({ id: 'ue_iamcsst_trombolise', area: 'upa', dif: 2, tema: 'Doença arterial coronariana', cond: 'IAM com supra de ST sem acesso à angioplastia em tempo hábil', tags: ['cardio', 'ecg'],
@@ -314,7 +314,7 @@ CASO({ id: 'ue_iamcsst_trombolise', area: 'upa', dif: 2, tema: 'Doença arterial
   pista: 'Supra de ST de V1 a V4 e angioplastia indisponível em até 120 minutos.',
   dx: ['IAMCSST anterosseptal', 'Angina instável', 'Pericardite aguda', 'Dissecção aguda de aorta'],
   edx: 'Supra de ST de V1 a V4: IAM anterosseptal (descendente anterior). Quando a angioplastia não pode ser feita em até 120 minutos do diagnóstico, a fibrinólise deve ser feita em até 30 minutos da chegada (porta-agulha), idealmente nas primeiras 12 horas de sintomas.',
-  cd: ['Fibrinolítico com AAS, clopidogrel e enoxaparina', 'Transferir sem trombolisar', 'Solicitar troponina e esperar', 'Só AAS e nitrato'],
+  cd: ['Tenecteplase com AAS, clopidogrel 300 mg e enoxaparina', 'Transferir para angioplastia sem trombolisar, mesmo com atraso de 3 h', 'Solicitar troponina e aguardar o resultado', 'Só AAS e nitrato sublingual'],
   ecd: 'Fibrinólise (tenecteplase, alteplase ou estreptoquinase) com AAS, clopidogrel 300 mg (75 mg sem ataque acima de 75 anos) e enoxaparina. Depois, transferência para cateterismo em 2-24 h (estratégia fármaco-invasiva) ou de resgate se não houver critérios de reperfusão em 60-90 min.' });
 
 CASO({ id: 'ue_iam_idoso', area: 'upa', dif: 3, tema: 'Doença arterial coronariana', cond: 'IAM anterior em fase hiperaguda no idoso: fibrinólise ajustada', tags: ['cardio', 'ecg'],
@@ -328,7 +328,7 @@ CASO({ id: 'ue_iam_idoso', area: 'upa', dif: 3, tema: 'Doença arterial coronari
   pista: 'Ondas T gigantes e supra em V3-V4: as primeiras horas do IAM.',
   dx: ['IAM anterior hiperagudo', 'Hipercalemia', 'Pericardite aguda', 'Repolarização precoce'],
   edx: 'Ondas T hiperagudas (amplas, de base larga, simétricas) com supra de ST em derivações anteriores são a fase mais precoce do IAM com supra. Diferem da hipercalemia (T apiculadas de base estreita, difusas).',
-  cd: ['Fibrinólise com doses para > 75 anos', 'Esperar 2 horas e meia pela hemodinâmica', 'Clopidogrel 600 mg e alteplase', 'Apenas AAS e observação'],
+  cd: ['Tenecteplase em meia dose, clopidogrel 75 mg e enoxaparina', 'Aguardar 2 horas e meia pela hemodinâmica', 'Clopidogrel 600 mg, enoxaparina com bólus e alteplase em dose plena', 'Apenas AAS e observação'],
   ecd: 'Acima de 75 anos: clopidogrel 75 mg sem dose de ataque, enoxaparina sem bolus e 0,75 mg/kg de 12/12 h, tenecteplase em meia dose; atraso previsto acima de 120 minutos favorece a fibrinólise. Depois, transferência para estratégia fármaco-invasiva.' });
 
 CASO({ id: 'ue_iam_vd', area: 'upa', dif: 3, tema: 'Doença arterial coronariana', cond: 'IAM inferior com acometimento do ventrículo direito', tags: ['cardio', 'ecg', 'choque'],
@@ -343,7 +343,7 @@ CASO({ id: 'ue_iam_vd', area: 'upa', dif: 3, tema: 'Doença arterial coronariana
   pista: 'IAM inferior, hipotensão, jugular túrgida e pulmão limpo.',
   dx: ['IAM inferior com infarto de VD', 'Cólica biliar', 'Tamponamento cardíaco', 'Tromboembolismo pulmonar'],
   edx: 'Supra em DII, DIII e aVF (coronária direita) com supra em V4R: infarto de VD. Tríade: hipotensão, turgência jugular e pulmões limpos. Bradicardia e BAV são comuns na coronária direita.',
-  cd: ['Volume e reperfusão', 'Furosemida IV em bolus', 'Nitroglicerina IV contínua', 'Morfina e alta precoce'],
+  cd: ['SF 0,9% e reperfusão, sem nitrato', 'Furosemida 40 mg EV em bólus', 'Nitroglicerina EV em infusão contínua', 'Morfina EV e alta precoce'],
   ecd: 'O VD isquêmico depende de pré-carga: cristaloide, evitar nitratos, diuréticos e morfina; inotrópico se necessário; atropina ou marca-passo para bradicardia; reperfusão imediata.' });
 
 CASO({ id: 'ue_iam_atipico', area: 'upa', dif: 2, tema: 'Doença arterial coronariana', cond: 'IAM inferior com apresentação atípica em diabético', tags: ['cardio', 'ecg', 'nefro'],
@@ -357,7 +357,7 @@ CASO({ id: 'ue_iam_atipico', area: 'upa', dif: 2, tema: 'Doença arterial corona
   pista: 'Equivalente anginoso: o ECG faz o diagnóstico.',
   dx: ['IAMCSST inferior', 'Hipercalemia', 'Bloqueio de ramo esquerdo', 'Gastrite aguda'],
   edx: 'Diabéticos, idosos, mulheres e renais crônicos frequentemente têm SCA sem dor típica (náuseas, dispneia, mal-estar, sudorese). Supra de ST em DII, DIII e aVF com infra recíproco em aVL: IAM inferior.',
-  cd: ['Angioplastia primária', 'Adiar o cateterismo pela DRC', 'Antiemético e alta', 'Troponina seriada antes de agir'],
+  cd: ['Angioplastia primária com hidratação', 'Adiar o cateterismo pela doença renal', 'Ondansetrona e alta com retorno', 'Troponina seriada antes de decidir'],
   ecd: 'Reperfusão imediata (angioplastia primária se disponível em tempo). A DRC não contraindica angioplastia no IAMCSST: hidratação e menor volume de contraste. Não esperar troponina quando o ECG é diagnóstico. Fazer V3R/V4R para avaliar o VD.' });
 
 /* ---------- Pericárdio ---------- */
@@ -374,7 +374,7 @@ CASO({ id: 'ue_pericardite', area: 'upa', dif: 2, tema: 'Doenças do pericárdio
   pista: 'Dor pleurítica e postural, atrito, supra difuso com infra de PR.',
   dx: ['Pericardite aguda', 'IAM com supra de ST', 'Tromboembolismo pulmonar', 'Dissecção de aorta'],
   edx: 'Dois de quatro: dor típica, atrito, supra de ST difuso côncavo (com infra de PR) e derrame pericárdico. Sem respeitar território coronariano e sem imagem em espelho (exceto aVR).',
-  cd: ['AINE e colchicina', 'Prednisona 1 mg/kg por 3 meses', 'Anticoagulação plena com heparina', 'Angioplastia primária'],
+  cd: ['Ibuprofeno 600 mg de 8/8 h e colchicina por 3 meses', 'Prednisona 1 mg/kg/dia por 3 meses com retirada lenta', 'Heparina não fracionada em dose plena', 'Angioplastia primária pelo supra de ST difuso'],
   ecd: 'Ibuprofeno ou AAS em dose anti-inflamatória com proteção gástrica e colchicina por 3 meses (reduz recorrência). Corticoide só se contraindicação ou causas específicas (aumenta recorrência). Restringir atividade física. Sinais de mau prognóstico (febre > 38 °C, derrame volumoso, tamponamento, falha em 1 semana) indicam internação.' });
 
 CASO({ id: 'ue_tamponamento', area: 'upa', dif: 3, tema: 'Doenças do pericárdio', cond: 'Tamponamento cardíaco neoplásico', tags: ['cardio', 'choque', 'usg', 'ecg'],
@@ -389,7 +389,7 @@ CASO({ id: 'ue_tamponamento', area: 'upa', dif: 3, tema: 'Doenças do pericárdi
   pista: 'Tríade de Beck com pulso paradoxal.',
   dx: ['Tamponamento cardíaco', 'Insuficiência cardíaca descompensada', 'Pneumotórax hipertensivo', 'Infarto de VD'],
   edx: 'Tríade de Beck (hipotensão, turgência jugular, bulhas abafadas), pulso paradoxal (queda > 10 mmHg da PAS na inspiração), baixa voltagem e alternância elétrica. Eco: colapso diastólico de câmaras direitas. Neoplasia é causa frequente de derrame volumoso.',
-  cd: ['Pericardiocentese', 'Furosemida IV em bolus', 'Nitroglicerina IV contínua', 'Intubar com PEEP alta'],
+  cd: ['Pericardiocentese de urgência guiada por eco', 'Furosemida 40 mg EV em bólus', 'Nitroglicerina EV em infusão contínua e furosemida', 'Intubação com PEEP alta'],
   ecd: 'Pericardiocentese de urgência (subxifóidea, guiada por eco) ou drenagem cirúrgica (janela pericárdica, especialmente em recidivas neoplásicas). Enquanto isso, volume. Evitar diuréticos, vasodilatadores e, se possível, ventilação com pressão positiva (reduzem o retorno venoso). Analisar o líquido (citologia).' });
 
 /* ---------- AVC ---------- */
@@ -404,7 +404,7 @@ CASO({ id: 'ue_avc_trombolise', area: 'upa', dif: 2, tema: 'AVC isquêmico', con
   pista: 'Dentro de 4,5 horas, mas a PA está acima do limite para trombólise.',
   dx: ['AVC isquêmico na janela', 'AVC hemorrágico', 'Crise convulsiva com paralisia de Todd', 'Hipoglicemia'],
   edx: 'Déficit súbito focal com TC sem sangramento em até 4,5 horas: candidata a trombólise. PA > 185 x 110 mmHg é contraindicação até ser controlada.',
-  cd: ['Baixar a PA e trombolisar', 'Alteplase já, sem tratar a PA', 'Nifedipina sublingual e alta', 'AAS e esperar 24 horas'],
+  cd: ['Labetalol até PA < 185 x 110 e alteplase 0,9 mg/kg', 'Alteplase 0,9 mg/kg já, sem tratar a PA de 210 x 120', 'Nifedipino sublingual e alta', 'AAS 300 mg e aguardar 24 horas'],
   ecd: 'Reduzir a PA para < 185 x 110 (labetalol, nicardipina) e iniciar alteplase 0,9 mg/kg (10% em bolus, restante em 1 h) ou tenecteplase, sem esperar exames laboratoriais se não houver suspeita de coagulopatia. Após a trombólise, manter < 180 x 105 por 24 h e não usar antitrombóticos nesse período. Pesquisar oclusão de grande vaso para trombectomia.' });
 
 CASO({ id: 'ue_avc_trombectomia', area: 'upa', dif: 3, tema: 'AVC isquêmico', cond: 'AVC ao despertar com oclusão de grande vaso', tags: ['neuro', 'img', 'cardio'],
@@ -418,7 +418,7 @@ CASO({ id: 'ue_avc_trombectomia', area: 'upa', dif: 3, tema: 'AVC isquêmico', c
   pista: 'Horário de início desconhecido e artéria cerebral média hiperdensa.',
   dx: ['Oclusão da ACM esquerda', 'Hemorragia intraparenquimatosa', 'Tumor cerebral', 'Paralisia de Todd pós-crise'],
   edx: 'Sinal da artéria cerebral média hiperdensa: trombo na ACM. Fibrilação atrial é a principal causa de AVC cardioembólico. No AVC ao despertar, o tempo conta a partir do último momento visto bem.',
-  cd: ['Angio-TC e perfusão para trombectomia', 'Trombólise sem imagem adicional', 'Anticoagulação plena imediata', 'Apenas AAS e alta'],
+  cd: ['Angio-TC com perfusão e trombectomia mecânica', 'Alteplase 0,9 mg/kg sem imagem vascular adicional', 'Heparina plena imediata', 'AAS 300 mg e alta'],
   ecd: 'Oclusão proximal de grande vaso: trombectomia mecânica até 6 h e, com seleção por imagem (perfusão com penumbra ou RM com mismatch), até 24 h. Trombólise em horário desconhecido só com mismatch DWI-FLAIR. Anticoagulação para a FA é iniciada dias depois, conforme o tamanho do infarto.' });
 
 CASO({ id: 'ue_ait_dapt', area: 'upa', dif: 2, tema: 'AVC isquêmico', cond: 'AVC isquêmico menor: dupla antiagregação', tags: ['neuro'],
@@ -432,7 +432,7 @@ CASO({ id: 'ue_ait_dapt', area: 'upa', dif: 2, tema: 'AVC isquêmico', cond: 'AV
   pista: 'AVC leve e não incapacitante.',
   dx: ['AVC isquêmico menor', 'AVC hemorrágico', 'Paralisia de Bell', 'Enxaqueca hemiplégica'],
   edx: 'AVC menor (NIHSS ≤ 3) não incapacitante ou AIT de alto risco (ABCD² ≥ 4): alto risco de recorrência precoce.',
-  cd: ['AAS e clopidogrel por 21 dias', 'Anticoagulação plena com heparina', 'Alteplase obrigatória', 'Nenhum antitrombótico'],
+  cd: ['AAS e clopidogrel por 21 dias', 'Heparina não fracionada em dose plena', 'Alteplase 0,9 mg/kg obrigatória', 'Nenhum antitrombótico por 14 dias'],
   ecd: 'Dupla antiagregação (AAS + clopidogrel) por 21 dias, depois monoterapia, reduz recorrência (CHANCE, POINT). Trombólise pode ser considerada se o déficit for incapacitante. Investigar carótidas, ritmo cardíaco e controlar fatores de risco; estatina de alta potência.' });
 
 CASO({ id: 'ue_avc_negligencia', area: 'upa', dif: 3, tema: 'AVC isquêmico', cond: 'AVC hemisférico direito fora da janela com heminegligência', tags: ['neuro', 'img'],
@@ -446,7 +446,7 @@ CASO({ id: 'ue_avc_negligencia', area: 'upa', dif: 3, tema: 'AVC isquêmico', co
   pista: 'Negligência e anosognosia: lobo parietal direito, com 2 dias de evolução.',
   dx: ['AVC parietal direito', 'Delirium por infecção urinária', 'Demência frontotemporal', 'Encefalopatia hipertensiva'],
   edx: 'Heminegligência esquerda, extinção sensitiva e anosognosia localizam no córtex parietal direito (hemisfério não dominante). Pode ser confundido com confusão mental. Fora da janela de reperfusão.',
-  cd: ['AAS e unidade de AVC', 'Alteplase agora', 'Trombectomia de urgência', 'Haloperidol e alta'],
+  cd: ['AAS 300 mg e internação em unidade de AVC', 'Alteplase 0,9 mg/kg agora, mesmo fora da janela', 'Trombectomia mecânica de urgência', 'Haloperidol para a agitação e alta'],
   ecd: 'Fora da janela: AAS nas primeiras 48 h, não reduzir a PA agudamente a menos que > 220 x 120 mmHg, unidade de AVC (deglutição, prevenção de TVP, reabilitação precoce), investigação (ECG/Holter, carótidas, eco) e estatina.' });
 
 CASO({ id: 'ue_hematoma_cerebelar', area: 'upa', dif: 3, tema: 'AVC hemorrágico', cond: 'Hematoma cerebelar com compressão do tronco e hidrocefalia', tags: ['neuro', 'img'],
@@ -461,5 +461,5 @@ CASO({ id: 'ue_hematoma_cerebelar', area: 'upa', dif: 3, tema: 'AVC hemorrágico
   pista: 'Hematoma cerebelar > 3 cm com piora neurológica e hidrocefalia.',
   dx: ['Hemorragia cerebelar', 'Vertigem posicional paroxística benigna', 'Neurite vestibular', 'AVC isquêmico de artéria cerebral média'],
   edx: 'A hemorragia intraparenquimatosa hipertensiva ocorre nos núcleos da base, tálamo, ponte e cerebelo. No cerebelo, hematoma ≥ 3 cm, deterioração neurológica, compressão do tronco ou hidrocefalia indicam cirurgia.',
-  cd: ['Cirurgia descompressiva suboccipital', 'Trombólise com alteplase', 'Manitol e alta', 'RM em 1 semana'],
+  cd: ['Craniectomia suboccipital com drenagem do hematoma', 'Trombólise com alteplase', 'Manitol e alta com retorno', 'Ressonância de crânio em 1 semana e controle pressórico'],
   ecd: 'Evacuação cirúrgica do hematoma cerebelar (a derivação ventricular isolada não basta). Controle da PA (meta de PAS em torno de 140 mmHg), cabeceira elevada, proteção de via aérea, reversão de coagulopatia se houver. Anticonvulsivante profilático não é indicado.' });

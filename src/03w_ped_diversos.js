@@ -19,7 +19,7 @@ CASO({ id: 'pm_shu', area: 'ped', dif: 2, tema: 'Nefropediatria', cond: 'Síndro
   pista: 'Tríade após diarreia sanguinolenta.',
   dx: ['Síndrome hemolítico-urêmica', 'Púrpura trombocitopênica imune', 'Glomerulonefrite pós-estreptocócica', 'Leucemia linfoide aguda'],
   edx: 'Anemia hemolítica microangiopática (esquizócitos, DHL alta, Coombs negativo), plaquetopenia e lesão renal aguda após diarreia sanguinolenta: SHU típica, causada pela toxina Shiga (E. coli O157:H7 e outras STEC). É a principal causa de lesão renal aguda em crianças pequenas.',
-  cd: ['UTI, suporte hídrico e diálise se necessário', 'Antibiótico para eliminar a E. coli e loperamida para a diarreia', 'Plasmaférese de urgência e pulsoterapia com corticoide', 'Transfusão de plaquetas para prevenir sangramento'],
+  cd: ['UTI, hidratação criteriosa, hemácias se Hb < 7 e diálise se preciso', 'Ciprofloxacino para eliminar a E. coli e loperamida para a diarreia sanguinolenta', 'Plasmaférese de urgência e pulsoterapia com metilprednisolona por 3 dias', 'Transfusão de plaquetas para prevenir sangramento'],
   ecd: 'O tratamento é de suporte: balanço hídrico rigoroso, controle da hipertensão e dos eletrólitos, transfusão de hemácias se hemoglobina muito baixa e diálise quando indicada. Transfusão de plaquetas só com sangramento ou procedimento. Antibióticos e antimotílicos aumentam o risco de SHU na infecção por STEC.' });
 
 CASO({ id: 'pm_stec_sem_shu', area: 'ped', dif: 2, tema: 'Nefropediatria', cond: 'Diarreia sanguinolenta por E. coli produtora de toxina Shiga (risco de SHU)', tags: ['nefro', 'hidrat'],
@@ -47,7 +47,7 @@ CASO({ id: 'pm_itu_menor_2m', area: 'ped', dif: 2, tema: 'Nefropediatria', cond:
   pista: 'A idade define o local e a via do tratamento.',
   dx: ['Pielonefrite em menor de 2 meses', 'Bacteriúria assintomática', 'Cistite afebril', 'Febre sem sinais de localização viral'],
   edx: 'Febre, leucocitúria e nitrito positivo em urina por sondagem: infecção urinária febril (pielonefrite). Em menores de 2 a 3 meses, há maior risco de bacteremia e meningite associada.',
-  cd: ['Internar e iniciar antibiótico venoso', 'Cefalexina oral e retorno em 48 horas', 'Aguardar o resultado da urocultura antes de tratar', 'Nitrofurantoína oral por 7 dias'],
+  cd: ['Internar, urocultura por sondagem e ampicilina + gentamicina', 'Cefalexina VO por 10 dias e retorno em 48 horas com o resultado', 'Aguardar o resultado da urocultura antes de tratar', 'Nitrofurantoína VO por 7 dias e urocultura de controle'],
   ecd: 'Lactentes pequenos com ITU febril são internados para antibiótico parenteral (por exemplo, cefalosporina de 3ª geração, ou ampicilina com gentamicina no período neonatal), com hemocultura e avaliação de líquor conforme o quadro. Ultrassom de rins e vias urinárias após a primeira ITU febril.' });
 
 CASO({ id: 'pm_itu_saco_coletor', area: 'ped', dif: 1, tema: 'Nefropediatria', cond: 'Urina positiva colhida por saco coletor', tags: ['nefro'],
@@ -185,7 +185,7 @@ CASO({ id: 'pm_eisenmenger', area: 'ped', dif: 3, tema: 'Sopros e cardiopatias c
   pista: 'O sopro desapareceu e a cianose apareceu.',
   dx: ['Síndrome de Eisenmenger', 'Fechamento espontâneo da CIV', 'Tetralogia de Fallot', 'Transposição das grandes artérias'],
   edx: 'Grande shunt esquerda-direita não corrigido leva à doença vascular pulmonar. Quando a pressão pulmonar supera a sistêmica, o shunt se inverte (direita-esquerda), surge cianose e o sopro diminui ou desaparece: síndrome de Eisenmenger.',
-  cd: ['Cardiopediatra: avaliar terapia para hipertensão pulmonar', 'Fechar a CIV cirurgicamente com urgência para reverter a cianose', 'Sangria rotineira semanal para manter o hematócrito abaixo de 45%', 'Oxigênio domiciliar e alta, sem seguimento'],
+  cd: ['Cardiopediatra: sildenafila ou bosentana para a hipertensão pulmonar', 'Fechar a CIV cirurgicamente com urgência para reverter a cianose diferencial', 'Sangria rotineira semanal para manter o hematócrito abaixo de 45%', 'Oxigênio domiciliar e alta, sem seguimento'],
   ecd: 'Com Eisenmenger estabelecido, fechar o defeito é contraindicado (o shunt funciona como válvula de escape do ventrículo direito). Por isso as CIVs grandes devem ser corrigidas nos primeiros meses de vida, antes da doença vascular pulmonar irreversível.' });
 
 CASO({ id: 'pm_fallot_crise', area: 'ped', dif: 3, tema: 'Sopros e cardiopatias congênitas', cond: 'Crise de hipóxia na tetralogia de Fallot', tags: ['cardio'],
@@ -293,7 +293,7 @@ CASO({ id: 'pm_hac_perdedora_sal', area: 'ped', dif: 3, tema: 'Triagem neonatal'
   pista: 'Hiponatremia + hipercalemia + desidratação na 2ª semana de vida.',
   dx: ['Hiperplasia adrenal com perda de sal', 'Estenose hipertrófica do piloro', 'Sepse com insuficiência renal aguda', 'Gastroenterite viral com desidratação grave'],
   edx: 'Deficiência de 21-hidroxilase: falta cortisol e aldosterona, com acúmulo de 17-OH-progesterona. Nos meninos (genitália normal), o diagnóstico costuma ser feito pela crise de perda de sal na 2ª ou 3ª semana; nas meninas, pela virilização da genitália ao nascer.',
-  cd: ['Soro fisiológico, glicose e hidrocortisona', 'Furosemida venosa para baixar o potássio', 'Reidratação oral e alta com retorno', 'Restringir sódio e oferecer soro sem eletrólitos'],
+  cd: ['SF 0,9% 20 mL/kg, glicose e hidrocortisona EV', 'Furosemida venosa e poliestirenossulfonato para baixar o potássio', 'Reidratação oral e alta com retorno', 'Restringir sódio e oferecer soro sem eletrólitos'],
   ecd: 'Tratamento da crise: expansão com soro fisiológico, correção da hipoglicemia e hidrocortisona em dose de estresse (que também ajuda a corrigir a hipercalemia). Manutenção: hidrocortisona, fludrocortisona e sal. A triagem neonatal por 17-OH-progesterona permite tratar antes da crise. Na estenose do piloro, o distúrbio é alcalose hipoclorêmica com hipocalemia.' });
 
 /* ---------- Maus-tratos ---------- */

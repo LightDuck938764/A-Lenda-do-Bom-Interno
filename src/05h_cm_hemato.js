@@ -18,7 +18,7 @@ CASO({ id: 'ch_ferropriva_hda', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemia
   pista: 'Em homem adulto, anemia ferropriva é perda de sangue até prova em contrário.',
   dx: ['Anemia ferropriva', 'Anemia de doença crônica', 'Talassemia minor', 'Anemia sideroblástica'],
   edx: 'Microcitose, hipocromia, RDW alto, trombocitose reativa, ferritina e saturação baixas: anemia ferropriva. Ferritina é o melhor marcador das reservas.',
-  cd: ['Ferro oral, endoscopia e colonoscopia', 'Só ferro oral, sem investigação adicional', 'Transfusão de 2 bolsas e alta', 'Vitamina B12 intramuscular semanal'],
+  cd: ['Sulfato ferroso, endoscopia digestiva alta e colonoscopia', 'Sulfato ferroso 40 mg de ferro elementar por 3 meses, sem investigação', 'Transfusão de 2 concentrados de hemácias e alta', 'Cianocobalamina 1.000 µg IM semanal'],
   ecd: 'Em homens e mulheres pós-menopausa, investigar o trato digestivo (endoscopia e colonoscopia): úlcera por AINE, neoplasia colorretal, angiodisplasia. Também pesquisar doença celíaca. Ferro oral (dias alternados melhora a absorção); ferro venoso se intolerância, má absorção ou perdas maiores que a reposição.' });
 
 CASO({ id: 'ch_doenca_cronica', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemias', cond: 'Anemia de doença crônica', tags: ['hemato', 'reumato'],
@@ -32,7 +32,7 @@ CASO({ id: 'ch_doenca_cronica', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemia
   pista: 'Ferro sérico baixo, mas ferritina alta.',
   dx: ['Anemia de doença crônica', 'Anemia ferropriva refratária', 'Talassemia minor', 'Anemia megaloblástica'],
   edx: 'Inflamação aumenta a hepcidina, que bloqueia a absorção e a liberação de ferro dos macrófagos: ferro sérico e capacidade de ligação baixos, ferritina normal ou alta. Geralmente normocítica.',
-  cd: ['Controlar a artrite', 'Dobrar a dose de ferro oral por 6 meses', 'Esplenectomia', 'Ácido fólico em dose alta'],
+  cd: ['Controlar a atividade da artrite reumatoide', 'Dobrar a dose de sulfato ferroso por 6 meses', 'Eritropoetina e ferro oral em dose alta', 'Ácido fólico 5 mg/dia e vitamina B12 IM'],
   ecd: 'O tratamento é o da doença de base. Ferro venoso pode ajudar se houver deficiência associada (ferritina < 100 com saturação < 20% na inflamação). Eritropoetina em situações específicas (DRC, quimioterapia).' });
 
 CASO({ id: 'ch_b12', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemias', cond: 'Anemia megaloblástica por deficiência de B12 (anemia perniciosa)', tags: ['hemato', 'neuro'],
@@ -46,7 +46,7 @@ CASO({ id: 'ch_b12', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemias', cond: '
   pista: 'Macrocitose com alterações neurológicas de cordão posterior.',
   dx: ['Deficiência de B12', 'Deficiência isolada de folato', 'Síndrome mielodisplásica com macrocitose', 'Anemia hemolítica autoimune'],
   edx: 'Anemia macrocítica com pancitopenia, hemólise intramedular (DHL e bilirrubina altas), neutrófilos hipersegmentados e degeneração combinada subaguda da medula (cordões posteriores): deficiência de B12. Anticorpo antifator intrínseco indica anemia perniciosa (autoimune). Ácido metilmalônico alto diferencia de folato.',
-  cd: ['B12 intramuscular', 'Ácido fólico isolado em dose alta', 'Transfusão e alta sem reposição', 'B12 oral uma vez por semana'],
+  cd: ['Cianocobalamina 1.000 µg IM', 'Ácido fólico 5 mg/dia isolado', 'Transfusão de hemácias e alta, sem reposição', 'Cianocobalamina oral 1.000 µg uma vez por semana'],
   ecd: 'Na anemia perniciosa, B12 parenteral (ou oral em doses muito altas) por toda a vida. Ácido fólico isolado pode corrigir a anemia e piorar o quadro neurológico. Na reposição, monitorar o potássio (hipocalemia pela produção intensa de hemácias). Rastrear câncer gástrico.' });
 
 CASO({ id: 'ch_talassemia', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemias', cond: 'Talassemia beta minor confundida com ferropenia', tags: ['hemato'],
@@ -60,7 +60,7 @@ CASO({ id: 'ch_talassemia', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemias', 
   pista: 'Microcitose acentuada com muitas hemácias e ferritina normal.',
   dx: ['Talassemia beta minor', 'Anemia ferropriva', 'Anemia de doença crônica', 'Esferocitose hereditária'],
   edx: 'Microcitose desproporcional à anemia, hemácias aumentadas, RDW normal, índice de Mentzer < 13, ferritina normal e Hb A2 elevada: traço beta-talassêmico.',
-  cd: ['Suspender o ferro e aconselhamento genético', 'Ferro venoso pela falha do oral', 'Esplenectomia', 'Transfusões periódicas'],
+  cd: ['Suspender o ferro e aconselhamento genético', 'Ferro venoso (sacarato) pela falha do oral', 'Esplenectomia eletiva com vacinação prévia', 'Transfusões a cada 4 semanas e quelante de ferro'],
   ecd: 'Não precisa de tratamento; ferro desnecessário causa sobrecarga. Aconselhamento genético: se o parceiro também for portador, há 25% de chance de talassemia major no filho. Na alfa-talassemia minor, a Hb A2 é normal (diagnóstico molecular).' });
 
 CASO({ id: 'ch_esferocitose', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemias', cond: 'Esferocitose hereditária', tags: ['hemato', 'gastro'],
@@ -74,7 +74,7 @@ CASO({ id: 'ch_esferocitose', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemias'
   pista: 'Hemólise extravascular hereditária com CHCM alto e Coombs negativo.',
   dx: ['Esferocitose hereditária', 'Anemia hemolítica autoimune', 'Deficiência de G6PD', 'Talassemia beta major'],
   edx: 'Defeito de proteínas da membrana (espectrina, anquirina): hemácias esféricas destruídas no baço. Anemia, icterícia, esplenomegalia, litíase biliar pigmentar, CHCM alto, Coombs negativo, teste de fragilidade osmótica ou EMA alterados.',
-  cd: ['Ácido fólico e avaliar esplenectomia', 'Prednisona em dose alta', 'Suspender medicamentos oxidantes', 'Ferro oral contínuo'],
+  cd: ['Ácido fólico e esplenectomia após vacinação', 'Prednisona 1 mg/kg/dia por 4 semanas e reavaliar', 'Evitar sulfas, primaquina e fava', 'Sulfato ferroso contínuo pela anemia'],
   ecd: 'Esplenectomia nas formas moderadas a graves (preferencialmente após 6 anos, com vacinação prévia contra pneumococo, meningococo e Haemophilus). Na litíase sintomática, colecistectomia (pode ser no mesmo ato). Crises aplásicas por parvovírus B19.' });
 
 CASO({ id: 'ch_g6pd', area: 'cm', ala: 'hemato', dif: 3, tema: 'Anemias', cond: 'Crise hemolítica por deficiência de G6PD', tags: ['hemato'],
@@ -88,7 +88,7 @@ CASO({ id: 'ch_g6pd', area: 'cm', ala: 'hemato', dif: 3, tema: 'Anemias', cond: 
   pista: 'Herança ligada ao X, droga oxidante e corpúsculos de Heinz.',
   dx: ['Hemólise por deficiência de G6PD', 'Malária grave com hemólise', 'Anemia hemolítica autoimune', 'Esferocitose hereditária'],
   edx: 'Deficiência de G6PD (ligada ao X): hemólise intravascular aguda após estresse oxidativo (primaquina, sulfas, dapsona, nitrofurantoína, fava, infecções). Corpúsculos de Heinz e "bite cells".',
-  cd: ['Suspender a primaquina e suporte', 'Prednisona em dose alta por 2 semanas', 'Manter a primaquina e transfundir', 'Esplenectomia'],
+  cd: ['Suspender a primaquina, hidratar e transfundir se preciso', 'Prednisona 1 mg/kg por 2 semanas', 'Manter a primaquina até o fim e transfundir concentrado de hemácias', 'Esplenectomia para reduzir a hemólise'],
   ecd: 'Suspender o agente, hidratar (proteção renal da hemoglobinúria) e transfundir se necessário. A dosagem de G6PD logo após a crise pode ser falsamente normal (reticulócitos têm mais enzima): repetir após 2-3 meses. No Brasil, recomenda-se testar G6PD antes da primaquina.' });
 
 CASO({ id: 'ch_aha_quente', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemias', cond: 'Anemia hemolítica autoimune por anticorpos quentes', tags: ['hemato', 'reumato'],
@@ -102,7 +102,7 @@ CASO({ id: 'ch_aha_quente', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemias', 
   pista: 'Coombs direto positivo com IgG.',
   dx: ['Anemia hemolítica autoimune a quente', 'Esferocitose hereditária', 'Deficiência de G6PD', 'Doença das aglutininas a frio'],
   edx: 'Hemólise extravascular com Coombs direto positivo (IgG): anemia hemolítica autoimune a quente, aqui provavelmente secundária a lúpus (FAN, artralgias, fotossensibilidade). Na doença das aglutininas a frio, o Coombs é positivo para C3 e há acrocianose.',
-  cd: ['Prednisona 1 mg/kg e ácido fólico', 'Esplenectomia imediata', 'Suspender todos os medicamentos e observar', 'Plasmaférese como primeira linha'],
+  cd: ['Prednisona 1 mg/kg/dia e ácido fólico', 'Esplenectomia imediata', 'Suspender todos os medicamentos e observar', 'Plasmaférese diária como primeira linha'],
   ecd: 'Corticoide é a primeira linha; rituximabe nos refratários; esplenectomia como opção. Transfusão, se necessária, não deve ser negada (com bolsas mais compatíveis possível). Investigar causas secundárias: lúpus, linfoma, leucemia linfocítica crônica, drogas.' });
 
 CASO({ id: 'ch_falciforme_crise', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anemias', cond: 'Crise vaso-oclusiva na anemia falciforme e indicação de hidroxiureia', tags: ['hemato'],
@@ -117,7 +117,7 @@ CASO({ id: 'ch_falciforme_crise', area: 'cm', ala: 'hemato', dif: 2, tema: 'Anem
   pista: 'Analgesia rápida agora; e para prevenir novas crises?',
   dx: ['Crise álgica vaso-oclusiva', 'Síndrome torácica aguda', 'Crise aplástica', 'Sequestro esplênico'],
   edx: 'Dor óssea intensa sem outra causa, hemoglobina próxima do basal e reticulócitos altos, sem sintomas respiratórios: crise vaso-oclusiva.',
-  cd: ['Opioide, hidratação e hidroxiureia', 'Transfusão de troca imediata', 'Só dipirona e alta', 'Antibiótico de amplo espectro'],
+  cd: ['Morfina, hidratação e iniciar hidroxiureia', 'Transfusão de troca imediata, antes da analgesia', 'Dipirona VO e alta', 'Ceftriaxona e azitromicina venosas'],
   ecd: 'Analgesia escalonada rápida (opioides quando necessário), hidratação, espirometria de incentivo (prevenir síndrome torácica aguda). Hidroxiureia aumenta a hemoglobina fetal e reduz crises, síndrome torácica e mortalidade. Vacinação e, em crianças, penicilina profilática.' });
 
 CASO({ id: 'ch_crise_aplastica', area: 'cm', ala: 'hemato', dif: 3, tema: 'Anemias', cond: 'Crise aplástica por parvovírus B19 na doença falciforme', tags: ['hemato', 'infecto', 'infec'],
@@ -131,7 +131,7 @@ CASO({ id: 'ch_crise_aplastica', area: 'cm', ala: 'hemato', dif: 3, tema: 'Anemi
   pista: 'Anemia grave com reticulócitos quase zero.',
   dx: ['Crise aplástica', 'Sequestro esplênico', 'Crise hemolítica', 'Crise vaso-oclusiva'],
   edx: 'Queda importante da hemoglobina com reticulocitopenia (sem hemólise aumentada): parada transitória da eritropoese pelo parvovírus B19, que infecta precursores eritroides. No sequestro esplênico, o baço cresce rapidamente e os reticulócitos ficam altos.',
-  cd: ['Transfusão de hemácias', 'Esplenectomia de urgência', 'Hidroxiureia em dose alta', 'Eritropoetina isolada'],
+  cd: ['Transfusão de concentrado de hemácias', 'Esplenectomia de urgência', 'Aumentar a hidroxiureia para 35 mg/kg/dia', 'Eritropoetina 10.000 UI 3 vezes por semana'],
   ecd: 'Transfusão conforme a gravidade; a recuperação ocorre em 7 a 10 dias. Isolamento de gestantes e imunodeprimidos (o parvovírus é transmissível nessa fase). Irmãos com doença hemolítica devem ser monitorados.' });
 
 /* ---------- Leucemias ---------- */
@@ -146,7 +146,7 @@ CASO({ id: 'ch_lmc', area: 'cm', ala: 'hemato', dif: 2, tema: 'Leucemias', cond:
   pista: 'Leucocitose com desvio escalonado e basofilia, esplenomegalia volumosa.',
   dx: ['Leucemia mieloide crônica', 'Reação leucemoide', 'Leucemia mieloide aguda', 'Mielofibrose primária'],
   edx: 'Neoplasia mieloproliferativa com cromossomo Philadelphia, t(9;22), gene BCR-ABL1. Leucocitose com todas as fases de maturação, basofilia e esplenomegalia. Na reação leucemoide, a fosfatase alcalina leucocitária é alta e não há basofilia.',
-  cd: ['Imatinibe', 'Observar, pois é doença indolente', 'Esplenectomia', 'Indução como na LMA'],
+  cd: ['Imatinibe 400 mg/dia', 'Observar, pois a doença é indolente', 'Hidroxiureia isolada por tempo indeterminado', 'Indução com citarabina e daunorrubicina (7+3)'],
   ecd: 'Imatinibe (ou outros inibidores de tirosina-quinase) transformou a LMC em doença crônica controlada, com monitoramento molecular do BCR-ABL. Sem tratamento, progride para fase acelerada e crise blástica.' });
 
 CASO({ id: 'ch_llc', area: 'cm', ala: 'hemato', dif: 2, tema: 'Leucemias', cond: 'Leucemia linfocítica crônica em estágio inicial', tags: ['hemato'],
@@ -160,7 +160,7 @@ CASO({ id: 'ch_llc', area: 'cm', ala: 'hemato', dif: 2, tema: 'Leucemias', cond:
   pista: 'Idoso, linfocitose de células maduras, sem citopenias nem sintomas.',
   dx: ['LLC em estágio inicial', 'Leucemia linfoide aguda', 'Mononucleose infecciosa', 'Linfoma de Hodgkin'],
   edx: 'Linfocitose B monoclonal ≥ 5.000/mm³ com fenótipo CD5+ e CD23+ e células esmagadas no esfregaço: LLC, a leucemia mais comum em idosos no Ocidente.',
-  cd: ['Observação', 'Quimioterapia agressiva imediata', 'Transplante de medula óssea', 'Esplenectomia'],
+  cd: ['Observação clínica e hemograma periódico', 'Fludarabina, ciclofosfamida e rituximabe imediatos', 'Transplante alogênico de medula óssea', 'Esplenectomia e prednisona'],
   ecd: 'Doença inicial e assintomática: observar ("watch and wait"). Tratar se sintomas B, citopenias progressivas (estágios avançados), linfonodos ou baço volumosos ou duplicação rápida dos linfócitos. Complicações: infecções, anemia hemolítica autoimune, transformação (Richter).' });
 
 CASO({ id: 'ch_neutropenia_febril', area: 'cm', ala: 'hemato', dif: 3, tema: 'Leucemias', cond: 'Neutropenia febril após quimioterapia', tags: ['hemato', 'sepse', 'infec'],
@@ -174,7 +174,7 @@ CASO({ id: 'ch_neutropenia_febril', area: 'cm', ala: 'hemato', dif: 3, tema: 'Le
   pista: 'Emergência oncológica: o tempo até o antibiótico importa.',
   dx: ['Neutropenia febril de alto risco', 'Febre tumoral sem infecção', 'Reação transfusional', 'Febre de origem indeterminada ambulatorial'],
   edx: 'Febre (≥ 38,3 °C uma vez ou ≥ 38 °C por 1 hora) com neutrófilos < 500/mm³: neutropenia febril. Leucemia aguda em quimioterapia e neutropenia prolongada são de alto risco.',
-  cd: ['Hemoculturas e cefepime', 'Aguardar o resultado das culturas', 'Antibiótico oral e alta', 'Antitérmico e reavaliar em 24 horas'],
+  cd: ['Hemoculturas e cefepime em até 1 hora', 'Aguardar as culturas para iniciar o antibiótico', 'Amoxicilina-clavulanato VO e alta', 'Dipirona e reavaliar em 24 horas'],
   ecd: 'Antibiótico betalactâmico antipseudomonas (cefepime, piperacilina-tazobactam ou meropeném) em até 1 hora. Vancomicina se infecção de cateter, pele, pneumonia ou instabilidade. Antifúngico empírico se febre persistente após 4 a 7 dias.' });
 
 CASO({ id: 'ch_lise_tumoral', area: 'cm', ala: 'hemato', dif: 3, tema: 'Leucemias', cond: 'Síndrome de lise tumoral', tags: ['hemato', 'nefro'],
@@ -188,7 +188,7 @@ CASO({ id: 'ch_lise_tumoral', area: 'cm', ala: 'hemato', dif: 3, tema: 'Leucemia
   pista: 'Destruição maciça de células tumorais.',
   dx: ['Síndrome de lise tumoral', 'Hipoparatireoidismo primário', 'Rabdomiólise por esforço', 'Hiperaldosteronismo'],
   edx: 'Hipercalemia, hiperfosfatemia, hipocalcemia (o fósforo precipita com o cálcio) e hiperuricemia com lesão renal, após quimioterapia de tumor de alta proliferação (Burkitt, leucemias agudas com leucocitose alta).',
-  cd: ['Hidratar, rasburicase e tratar o potássio', 'Cálcio venoso de rotina para a hipocalcemia assintomática', 'Alopurinol isolado e restrição hídrica', 'Suspender a hidratação venosa'],
+  cd: ['SF 0,9% vigoroso, rasburicase e tratar a hipercalemia', 'Gluconato de cálcio de rotina pela hipocalcemia assintomática', 'Alopurinol isolado e restrição hídrica', 'Suspender a hidratação e alcalinizar a urina'],
   ecd: 'Prevenção: hidratação e alopurinol (ou rasburicase em alto risco). Tratamento: hidratação, rasburicase (degrada o ácido úrico), manejo da hipercalemia, diálise precoce se refratário. Cálcio venoso só se hipocalcemia sintomática (risco de precipitar fosfato de cálcio).' });
 
 /* ---------- Linfomas e mieloma ---------- */
@@ -203,7 +203,7 @@ CASO({ id: 'ch_hodgkin', area: 'cm', ala: 'hemato', dif: 2, tema: 'Linfomas', co
   pista: 'Adulto jovem, linfonodo cervical, mediastino, células de Reed-Sternberg.',
   dx: ['Linfoma de Hodgkin', 'Linfoma não Hodgkin difuso de grandes células B', 'Tuberculose ganglionar', 'Mononucleose infecciosa'],
   edx: 'Distribuição bimodal (jovens e idosos), disseminação contígua entre cadeias, mediastino frequente, sintomas B, prurido e dor com álcool. Diagnóstico por biópsia excisional (a punção não mostra a arquitetura).',
-  cd: ['PET-CT e ABVD', 'Antibiótico por 14 dias', 'Só observação', 'Esquema RIPE para tuberculose'],
+  cd: ['PET-CT para estadiamento e ABVD', 'Amoxicilina-clavulanato por 14 dias', 'Observação e nova biópsia em 3 meses', 'RIPE empírico pela febre e sudorese'],
   ecd: 'Estadiamento de Ann Arbor/Lugano com PET-CT. ABVD (ou esquemas modernos) com ou sem radioterapia, conforme estágio. Alta taxa de cura. Seguimento de efeitos tardios (tireoide, coração, pulmão pela bleomicina, segundos tumores).' });
 
 CASO({ id: 'ch_lnh', area: 'cm', ala: 'hemato', dif: 2, tema: 'Linfomas', cond: 'Linfoma não Hodgkin difuso de grandes células B', tags: ['hemato'],
@@ -218,7 +218,7 @@ CASO({ id: 'ch_lnh', area: 'cm', ala: 'hemato', dif: 2, tema: 'Linfomas', cond: 
   pista: 'Idoso, doença disseminada e agressiva.',
   dx: ['Linfoma difuso de grandes células B', 'Linfoma de Hodgkin', 'Leucemia linfocítica crônica', 'Sarcoidose'],
   edx: 'O linfoma não Hodgkin mais comum: agressivo, em idosos, com crescimento rápido, disseminação não contígua, extranodal frequente e DHL elevada (pior prognóstico).',
-  cd: ['Estadiar e R-CHOP', 'Radioterapia isolada', 'Observação semestral', 'Antibiótico empírico'],
+  cd: ['Estadiamento com PET-CT e R-CHOP', 'Radioterapia isolada da massa', 'Observação com TC semestral', 'Rituximabe isolado em monoterapia'],
   ecd: 'R-CHOP (rituximabe com ciclofosfamida, doxorrubicina, vincristina e prednisona) cura grande parte dos casos. Profilaxia de lise tumoral e de reativação de hepatite B (rituximabe).' });
 
 CASO({ id: 'ch_mieloma', area: 'cm', ala: 'hemato', dif: 3, tema: 'Mieloma múltiplo', cond: 'Mieloma múltiplo (CRAB)', tags: ['hemato', 'nefro', 'img'],
@@ -234,7 +234,7 @@ CASO({ id: 'ch_mieloma', area: 'cm', ala: 'hemato', dif: 3, tema: 'Mieloma múlt
   pista: 'Hipercalcemia, insuficiência renal, anemia e lesões ósseas.',
   dx: ['Mieloma múltiplo', 'Metástases ósseas de próstata', 'Hiperparatireoidismo primário', 'Gamopatia monoclonal de significado indeterminado'],
   edx: 'Proliferação de plasmócitos clonais com pico monoclonal e lesão de órgão-alvo (CRAB: hipercalcemia, insuficiência renal, anemia, lesões ósseas). Gap proteico (proteínas totais altas), VHS alta, rouleaux.',
-  cd: ['Imunofixação, cadeias leves e mielograma', 'Cintilografia óssea e hormonioterapia', 'Paratireoidectomia', 'Observar, pois é gamopatia de significado indeterminado'],
+  cd: ['Imunofixação, cadeias leves livres e mielograma', 'Cintilografia óssea e hormonioterapia', 'Paratireoidectomia pelo cálcio elevado', 'Observar como gamopatia de significado indeterminado'],
   ecd: 'Confirmação: imunofixação sérica e urinária, cadeias leves livres, plasmócitos clonais ≥ 10% na medula. Tratamento com esquemas (por exemplo, bortezomibe, lenalidomida e dexametasona), bisfosfonato e transplante autólogo nos elegíveis. Cintilografia óssea subestima lesões líticas (pouca atividade osteoblástica). Na GMSI, não há lesão de órgão-alvo.' });
 
 /* ---------- Hemostasia ---------- */
@@ -249,7 +249,7 @@ CASO({ id: 'ch_pti', area: 'cm', ala: 'hemato', dif: 2, tema: 'Distúrbios da he
   pista: 'Plaquetopenia isolada com o resto do hemograma normal.',
   dx: ['Púrpura trombocitopênica imune', 'Púrpura trombocitopênica trombótica', 'Leucemia aguda', 'Coagulação intravascular disseminada'],
   edx: 'Trombocitopenia isolada por anticorpos antiplaquetários, sem outras alterações no hemograma e no esfregaço (exceto plaquetas grandes), diagnóstico de exclusão. Testar HIV, hepatite C e H. pylori.',
-  cd: ['Corticoide e imunoglobulina se sangrar', 'Transfusão de plaquetas de rotina', 'Esplenectomia imediata', 'Plasmaférese'],
+  cd: ['Prednisona 1 mg/kg (imunoglobulina EV se sangrar)', 'Transfusão profilática de plaquetas até > 50 mil', 'Esplenectomia imediata', 'Plasmaférese diária'],
   ecd: 'Tratar com plaquetas < 20-30 mil ou sangramento: corticoide; imunoglobulina venosa se sangramento importante ou necessidade de subida rápida. Transfusão de plaquetas só em sangramento grave. Refratários: agonistas do receptor de trombopoetina, rituximabe, esplenectomia.' });
 
 CASO({ id: 'ch_ptt', area: 'cm', ala: 'hemato', dif: 3, tema: 'Distúrbios da hemostasia', cond: 'Púrpura trombocitopênica trombótica', tags: ['hemato', 'neuro', 'nefro'],
@@ -263,7 +263,7 @@ CASO({ id: 'ch_ptt', area: 'cm', ala: 'hemato', dif: 3, tema: 'Distúrbios da he
   pista: 'Microangiopatia trombótica com coagulação normal e sintomas neurológicos.',
   dx: ['Púrpura trombocitopênica trombótica', 'Púrpura trombocitopênica imune', 'Coagulação intravascular disseminada', 'Síndrome hemolítico-urêmica típica'],
   edx: 'Anemia hemolítica microangiopática (esquizócitos, DHL alta, Coombs negativo), plaquetopenia, alterações neurológicas, febre e lesão renal, com coagulograma normal (diferencia da CIVD) e ADAMTS13 < 10% (anticorpo contra a enzima que cliva o fator de von Willebrand).',
-  cd: ['Plasmaférese e corticoide', 'Transfusão de plaquetas', 'Imunoglobulina isolada e alta', 'Heparina plena'],
+  cd: ['Plasmaférese e metilprednisolona', 'Transfusão de plaquetas', 'Imunoglobulina EV isolada e alta', 'Heparina não fracionada em dose plena'],
   ecd: 'Emergência: plasmaférese (repõe ADAMTS13 e remove o anticorpo) com corticoide; caplacizumabe e rituximabe como associados. Sem tratamento, mortalidade de cerca de 90%. Transfusão de plaquetas pode piorar a trombose e só é feita em sangramento grave.' });
 
 CASO({ id: 'ch_hemofilia', area: 'cm', ala: 'hemato', dif: 2, tema: 'Distúrbios da hemostasia', cond: 'Hemofilia A (deficiência de fator VIII)', tags: ['hemato'],
@@ -277,7 +277,7 @@ CASO({ id: 'ch_hemofilia', area: 'cm', ala: 'hemato', dif: 2, tema: 'Distúrbios
   pista: 'Via intrínseca, herança ligada ao X, hemartrose.',
   dx: ['Hemofilia A', 'Doença de von Willebrand', 'Deficiência de vitamina K', 'Púrpura trombocitopênica imune'],
   edx: 'TTPa prolongado que corrige com plasma normal (deficiência de fator, não inibidor), TP normal, plaquetas normais e fator VIII baixo, em menino com hemartrose e herança materna: hemofilia A (moderada: 1 a 5%).',
-  cd: ['Repor concentrado de fator VIII', 'Punção articular de alívio sem reposição', 'AINE para a dor', 'Plasma fresco como primeira escolha'],
+  cd: ['Concentrado de fator VIII', 'Artrocentese de alívio sem reposição', 'Ibuprofeno para a dor', 'Plasma fresco congelado como 1ª escolha'],
   ecd: 'Reposição de fator VIII o mais cedo possível em sangramentos; profilaxia contínua nas formas graves (ou emicizumabe). Evitar AINE e injeções intramusculares. Hemofilia B: fator IX. Inibidores (anticorpos) mudam o tratamento.' });
 
 CASO({ id: 'ch_von_willebrand', area: 'cm', ala: 'hemato', dif: 2, tema: 'Distúrbios da hemostasia', cond: 'Doença de von Willebrand', tags: ['hemato'],
@@ -291,7 +291,7 @@ CASO({ id: 'ch_von_willebrand', area: 'cm', ala: 'hemato', dif: 2, tema: 'Distú
   pista: 'Sangramento mucocutâneo, herança autossômica.',
   dx: ['Doença de von Willebrand', 'Hemofilia A', 'Púrpura trombocitopênica imune', 'Deficiência de fator VII'],
   edx: 'Distúrbio hemorrágico hereditário mais comum: sangramento mucocutâneo (menorragia, epistaxe, gengival, pós-extração), herança autossômica dominante (tipo 1). O fator de von Willebrand carrega o fator VIII, que pode estar baixo.',
-  cd: ['Desmopressina', 'Transfusão de plaquetas', 'Vitamina K', 'Corticoide'],
+  cd: ['Desmopressina (DDAVP)', 'Transfusão de plaquetas', 'Vitamina K EV', 'Prednisona 1 mg/kg'],
   ecd: 'Desmopressina (libera fator de von Willebrand dos estoques) no tipo 1; concentrado de fator VIII com fator de von Willebrand nos tipos graves ou sem resposta. Ácido tranexâmico e anticoncepcional hormonal ajudam na menorragia. Evitar AAS e AINE.' });
 
 CASO({ id: 'ch_civd', area: 'cm', ala: 'hemato', dif: 3, tema: 'Distúrbios da hemostasia', cond: 'Coagulação intravascular disseminada na sepse', tags: ['hemato', 'sepse', 'infec'],
@@ -305,7 +305,7 @@ CASO({ id: 'ch_civd', area: 'cm', ala: 'hemato', dif: 3, tema: 'Distúrbios da h
   pista: 'Consumo de fatores e de plaquetas ao mesmo tempo.',
   dx: ['CIVD', 'Púrpura trombocitopênica trombótica', 'Hepatopatia isolada', 'Intoxicação por varfarina'],
   edx: 'Ativação sistêmica da coagulação (sepse, trauma, neoplasias, leucemia promielocítica, complicações obstétricas) com consumo de plaquetas e fatores: plaquetopenia, TP e TTPa prolongados, fibrinogênio baixo, D-dímero alto.',
-  cd: ['Tratar a causa e repor hemocomponentes', 'Heparina plena para todos', 'Ácido tranexâmico como base do tratamento', 'Plasmaférese'],
+  cd: ['Drenar a via biliar, antibiótico e repor hemocomponentes', 'Heparina não fracionada em dose plena para todos os pacientes', 'Ácido tranexâmico como base do tratamento', 'Plasmaférese diária'],
   ecd: 'O fundamental é tratar a causa (drenagem da via biliar e antibiótico). Com sangramento: plaquetas se < 50 mil, plasma para TP/TTPa prolongados, crioprecipitado se fibrinogênio < 150. Heparina em profilaxia (ou plena se trombose predominante).' });
 
 CASO({ id: 'ch_varfarina', area: 'cm', ala: 'hemato', dif: 2, tema: 'Distúrbios da hemostasia', cond: 'INR elevado com sangramento em uso de varfarina', tags: ['hemato'],
@@ -319,7 +319,7 @@ CASO({ id: 'ch_varfarina', area: 'cm', ala: 'hemato', dif: 2, tema: 'Distúrbios
   pista: 'Sangramento grave com INR alto.',
   dx: ['Anticoagulação excessiva com sangramento', 'Hemofilia adquirida', 'CIVD', 'Hepatopatia aguda'],
   edx: 'Sulfametoxazol-trimetoprima inibe o metabolismo da varfarina e eleva o INR. Sangramento grave exige reversão imediata.',
-  cd: ['Vitamina K IV e complexo protrombínico', 'Só suspender a varfarina e observar', 'Vitamina K oral e alta', 'Protamina IV'],
+  cd: ['Vitamina K EV e complexo protrombínico', 'Suspender a varfarina e observar o INR diário', 'Vitamina K VO e alta', 'Sulfato de protamina EV'],
   ecd: 'Sangramento grave: suspender varfarina, vitamina K venosa e complexo protrombínico (ou plasma, se indisponível). INR alto sem sangramento: suspender doses e vitamina K oral se muito alto. Protamina reverte heparina; idarucizumabe reverte dabigatrana; andexanet, os anti-Xa.' });
 
 CASO({ id: 'ch_dech', area: 'cm', ala: 'hemato', dif: 3, tema: 'Distúrbios da hemostasia', cond: 'Doença do enxerto contra o hospedeiro aguda após transplante de células-tronco', tags: ['hemato', 'gastro'],
@@ -333,5 +333,5 @@ CASO({ id: 'ch_dech', area: 'cm', ala: 'hemato', dif: 3, tema: 'Distúrbios da h
   pista: 'Células do doador atacando pele, intestino e fígado.',
   dx: ['DECH aguda', 'Reação alérgica a antibiótico', 'Hepatite viral', 'Recidiva da leucemia'],
   edx: 'No transplante alogênico, linfócitos T do doador reconhecem tecidos do receptor: pele (exantema, começando nas palmas), trato gastrointestinal (diarreia) e fígado (colestase), geralmente nos primeiros 100 dias.',
-  cd: ['Corticoide sistêmico', 'Suspender toda a imunossupressão', 'Antibiótico para a diarreia', 'Novo transplante imediato'],
+  cd: ['Metilprednisolona 2 mg/kg/dia', 'Suspender toda a imunossupressão', 'Ciprofloxacino e metronidazol pela diarreia', 'Novo transplante de células-tronco'],
   ecd: 'Metilprednisolona ou prednisona 1-2 mg/kg é a primeira linha; ruxolitinibe nos refratários. Biópsia de pele ou intestino confirma. Diferenciais: infecções (CMV, C. difficile), toxicidade de drogas.' });
