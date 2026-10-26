@@ -148,7 +148,8 @@ function refillSpots(area) {
 }
 function pickCase(area, spot) {
   const step = areaStepIdx(area), done = !!S.completed[area];
-  const maxDif = done ? 3 : step < 3 ? 1 : step < 6 ? 2 : 3;
+  // campanha: a dificuldade acompanha as missões do estágio; Modo Vestibulando: acompanha o nível
+  const maxDif = isVest() ? (level() < 4 ? 1 : level() < 8 ? 2 : 3) : done ? 3 : step < 3 ? 1 : step < 6 ? 2 : 3;
   let pool = CASES.filter(c => c.area === area);
   // GO: 'obst' = centro obstétrico, observação e alojamento; 'gineco' = consultório, USG e quartos
   if (area === 'go') { const loc = spot.obj.local === 'quarto' ? 'gineco' : spot.obj.local === 'ps' ? 'obst' : spot.obj.local; const g = pool.filter(c => goLocal(c) === loc); if (g.length) pool = g; }
@@ -241,8 +242,8 @@ function updateWorld(dt) {
   for (const q of S.side) { const stp = q.steps[q.i]; if (stp && stp.k === 'escort' && stp.map === M.id) { const f = G.followers.find(x => x.qid === q.id); if (f && Math.hypot(f.x - stp.x, f.y - stp.y) < 2.2) { G.followers = G.followers.filter(x => x !== f); toast('Paciente entregue no destino!', 'good'); advanceSide(q); } } }
   // reposição de pacientes
   if (Math.floor(G.t) % 5 === 0 && G.t % 5 < dt) { const a = mapArea(M.id); if (a) refillSpots(a); }
-  // missões espontâneas e eventos
-  const ctx = M.id !== 'rua' && M.id !== 'bar';
+  // missões espontâneas e eventos (o Modo Vestibulando só tem casos de pacientes e emergências)
+  const ctx = M.id !== 'rua' && M.id !== 'bar' && !isVest();
   G.sideTimer -= dt; G.eventTimer -= dt; checkSideHave(); updatePsySpawn(dt);
   if (G.sideTimer <= 0) { G.sideTimer = U.rnd(...BAL.sideInterval); if (ctx && S.side.length < BAL.maxSideActive) spawnSideQuest(); }
   if (G.eventTimer <= 0) { G.eventTimer = U.rnd(...BAL.eventInterval); if (ctx) triggerRandomEvent(); }

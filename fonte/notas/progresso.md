@@ -89,3 +89,10 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 - Domínios ainda bloqueados (403): phil.cdc.gov, openi.nlm.nih.gov, ebi.ac.uk/europepmc, zenodo, openverse, radiopaedia, dermnet, arca.fiocruz.br; bvsms.saude.gov.br dá 503. upload.wikimedia.org responde 429 (limite) na maior parte das vezes.
 - Partogramas de período pélvico prolongado e parto precipitado: enviados pelo usuário (manual do MS "Parto, aborto e puerpério"); casos op_periodo_pelvico e op_parto_precipitado criados. O formulário em branco do MS que ele mandou antes foi descartado a pedido dele.
 - ECG de FA com resposta controlada (enviado pelo usuário, Aprenda ECG) no caso cc_fa_anticoag. Não serve para ue_fa_wpw (QRS estreito, sem pré-excitação); WPW segue sem imagem.
+
+## Modos de jogo (2026-10-25)
+- Modo Internato = campanha individual de sempre (ordem dos estágios, missões, chefes, missões espontâneas, eventos). Não conecta ao multiplayer: não envia presença e não vê ninguém (chip "Modo Internato · jogo individual").
+- Modo Vestibulando = mapa aberto: isVest() faz currentArea() = null e areaUnlocked() = true; sem missões principais, sem missões espontâneas e sem eventos aleatórios; ficam os casos dos leitos, as emergências/crises, os NPCs com as falas, a loja, o bar e os procedimentos simulados. Dificuldade dos casos pelo nível (Nv < 4: dif 1; < 8: até 2; depois 3). Só esse modo aparece no multiplayer (presença, duelos no bar, Melhor Interno pela reputação).
+- Saves separados: SAVE_KEY (internato) e SAVE_KEY_VEST; S.modo = 'internato' | 'vest'. Tela inicial com um cartão por modo (Continuar/Novo). Pausa: "Tela inicial (trocar de modo)" e "Recomeçar este modo".
+- Nuvem (Firebase saves/{uid}): d agora é {v: 2, i: save internato, e: save vestibulando}; registros antigos (um save só) viram Modo Internato. Limite de 500 mil caracteres mantido.
+- O usuário escreveu "modo residência" uma vez no pedido; tratado como o Modo Vestibulando.

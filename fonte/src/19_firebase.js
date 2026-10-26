@@ -161,36 +161,57 @@ function cloudQueue() {
   FB.upTimer = setTimeout(cloudUpload, Date.now() - FB.lastUp > 20000 ? 2000 : 8000);
 }
 function cloudFlush() { if (FB.upTimer) { clearTimeout(FB.upTimer); FB.upTimer = null; cloudUpload(); } }
+// Os dois modos ficam no mesmo registro da conta: d = {v: 2, i: save do Modo Internato, e: save do Modo Vestibulando}.
+// Registros antigos (d = um save só) são tratados como Modo Internato.
+function cloudPack() {
+  const raw = m => { let r = null; try { r = localStorage.getItem(saveKeyFor(m)); } catch (e) { r = null; } if (!r && S && S.modo === m) r = JSON.stringify(S); return r; };
+  return JSON.stringify({ v: 2, i: raw('internato'), e: raw('vest') });
+}
+function cloudUnpack(str) {
+  let o; try { o = JSON.parse(str); } catch (e) { return {}; }
+  const mig = (r, m) => { if (typeof r !== 'string') return null; try { const d = migrateSave(JSON.parse(r)); if (d) d.modo = m; return d; } catch (e) { return null; } };
+  if (o && o.v === 2) return { internato: mig(o.i, 'internato'), vest: mig(o.e, 'vest') };
+  if (o && o.player) return { internato: mig(str, 'internato'), vest: null };
+  return {};
+}
 function cloudUpload() {
   const u = cloudUser(); if (!u || FB.syncing) return;
-  let raw; try { raw = localStorage.getItem(SAVE_KEY); } catch (e) { raw = null; }
-  if (!raw && S) raw = JSON.stringify(S);
-  if (!raw) return;
+  const raw = cloudPack();
   if (raw.length >= 500000) return;
   FB.lastUp = Date.now(); FB.cloud = 'salvando';
   FB.db.ref('saves/' + u.uid).set({ d: raw, t: firebase.database.ServerValue.TIMESTAMP }).then(() => { FB.cloud = 'on'; acctRender(); }).catch(e => { console.warn('nuvem', e); FB.cloud = 'erro'; acctRender(); });
 }
-function saveSummary(d) { if (!d || !d.player) return '—'; const L = (() => { let L = 1; while (L < BAL.maxLevel && (d.xpTotal || 0) >= BAL.xpForLevel(L + 1)) L++; return L; })(); const h = Math.floor((d.playTime || 0) / 3600), m = Math.floor(((d.playTime || 0) % 3600) / 60); return `<b>${U.esc(d.player.name || 'Interno(a)')}</b> · Nv ${L} · ${Object.keys(d.completed || {}).length}/5 estágios · ${h}h${String(m).padStart(2, '0')} de jogo`; }
+function saveSummary(d) { return saveSummaryOf(d); }
 async function cloudSync() {
   const u = cloudUser(); if (!u || FB.syncing) return;
   FB.syncing = true; acctRender();
-  let cloud = null;
-  try { const s = await FB.db.ref('saves/' + u.uid).once('value'); const v = s.val(); if (v && typeof v.d === 'string') cloud = migrateSave(JSON.parse(v.d)); } catch (e) { console.warn('nuvem', e); FB.syncing = false; FB.cloud = 'erro'; acctRender(); return; }
-  const local = loadGame();
-  const useCloud = () => { try { localStorage.setItem(SAVE_KEY, JSON.stringify(cloud)); } catch (e) {} if (G.mode === 'title') showTitle(); toast('Save carregado da sua conta Google.', 'good'); };
-  const useLocal = () => { FB.syncing = false; cloudUpload(); acctRender(); toast('Seu progresso agora está salvo na sua conta Google.', 'good'); };
-  if (!cloud && !local) { FB.syncing = false; acctRender(); return; }
-  if (cloud && !local) { useCloud(); FB.syncing = false; acctRender(); return; }
-  if (!cloud && local) return useLocal();
-  // os dois existem: mesmo personagem → fica o que tem mais tempo de jogo; personagens diferentes → pergunta
-  if (cloud.created === local.created) { if ((cloud.playTime || 0) >= (local.playTime || 0)) { if ((cloud.playTime || 0) > (local.playTime || 0)) useCloud(); FB.syncing = false; acctRender(); } else useLocal(); return; }
-  if (G.mode !== 'title') { FB.syncing = false; return; }       // decide na próxima vez que estiver na tela inicial
-  const box = U.el('div', 'confirm', `<div class="panel small"><h3>Qual personagem você quer usar?</h3><p>Encontramos um save na sua conta e outro neste aparelho.</p>
-    <div class="menu-col"><button class="btn" id="svNuvem">☁ Da conta Google: ${saveSummary(cloud)}</button><button class="btn ghost" id="svLocal">💻 Deste aparelho: ${saveSummary(local)}</button></div>
-    <p class="hint">O que você não escolher será substituído.</p></div>`);
-  OV().appendChild(box);
-  box.querySelector('#svNuvem').onclick = () => { box.remove(); useCloud(); FB.syncing = false; acctRender(); };
-  box.querySelector('#svLocal').onclick = () => { box.remove(); useLocal(); acctRender(); };
+  let cloud = {};
+  try { const s = await FB.db.ref('saves/' + u.uid).once('value'); const v = s.val(); if (v && typeof v.d === 'string') cloud = cloudUnpack(v.d); } catch (e) { console.warn('nuvem', e); FB.syncing = false; FB.cloud = 'erro'; acctRender(); return; }
+  let mudou = false, subir = false;
+  const usar = (m, d) => { try { localStorage.setItem(saveKeyFor(m), JSON.stringify(d)); mudou = true; } catch (e) {} };
+  // pergunta qual personagem manter quando aparelho e conta têm personagens diferentes no mesmo modo
+  const perguntar = (m, c, l) => new Promise(res => {
+    const box = U.el('div', 'confirm', `<div class="panel small"><h3>${modoNome(m)}: qual personagem você quer usar?</h3><p>Encontramos um save deste modo na sua conta e outro neste aparelho.</p>
+      <div class="menu-col"><button class="btn" id="svNuvem">☁ Da conta Google: ${saveSummary(c)}</button><button class="btn ghost" id="svLocal">💻 Deste aparelho: ${saveSummary(l)}</button></div>
+      <p class="hint">O que você não escolher será substituído.</p></div>`);
+    OV().appendChild(box);
+    box.querySelector('#svNuvem').onclick = () => { box.remove(); res('nuvem'); };
+    box.querySelector('#svLocal').onclick = () => { box.remove(); res('local'); };
+  });
+  for (const m of ['internato', 'vest']) {
+    const c = cloud[m] || null, l = loadGame(m);
+    if (!c && !l) continue;
+    if (c && !l) { usar(m, c); continue; }
+    if (!c && l) { subir = true; continue; }
+    // os dois existem: mesmo personagem → fica o que tem mais tempo de jogo; personagens diferentes → pergunta
+    if (c.created === l.created) { if ((c.playTime || 0) > (l.playTime || 0)) usar(m, c); else if ((c.playTime || 0) < (l.playTime || 0)) subir = true; continue; }
+    if (G.mode !== 'title') continue;           // decide na próxima vez que estiver na tela inicial
+    if (await perguntar(m, c, l) === 'nuvem') usar(m, c); else subir = true;
+  }
+  FB.syncing = false;
+  if (subir) { cloudUpload(); toast('Seu progresso agora está salvo na sua conta Google.', 'good'); }
+  if (mudou) { if (G.mode === 'title') showTitle(); toast('Save carregado da sua conta Google.', 'good'); }
+  acctRender();
 }
 
 // ---------- caixa da conta na tela inicial ----------

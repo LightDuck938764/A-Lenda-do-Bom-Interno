@@ -7,7 +7,8 @@ const GAME_TITLE = 'A Lenda do Bom Interno';
 const HOSPITAL_NOME = 'Hospital Escola Santa Esperança';
 const MOEDA = 'Moedas de Plantão';
 const MOEDA_CURTA = 'MP';
-const SAVE_KEY = 'lendaBomInterno_save_v1';
+const SAVE_KEY = 'lendaBomInterno_save_v1';            // Modo Internato (campanha)
+const SAVE_KEY_VEST = 'lendaBomInterno_save_vest_v1';  // Modo Vestibulando (mapa aberto e online)
 const SAVE_VERSION = 1;
 const TS = 32;            // tamanho do tile em pixels (arte em densidade 32 bits)
 const VW = 640, VH = 360; // resolução interna do canvas

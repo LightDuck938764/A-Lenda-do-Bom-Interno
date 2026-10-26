@@ -12,29 +12,44 @@ function setOverlay(html, cls = '') { const o = OV(); o.className = cls; o.inner
 function closeOverlay(mode = 'explore') { if (G.panelName && String(G.panelName).startsWith('mp_') && typeof mpOnClose === 'function') { const pn = G.panelName; G.panelName = null; mpOnClose(pn); } setOverlay(''); G.mode = mode; G.keys = {}; SFX.play('ui'); }
 
 /* ---------------- Tela inicial ---------------- */
+let NEWMODE = 'internato';
+const MODOS_INFO = {
+  internato: { tag: 'Campanha · jogo individual', novo: 'Novo internato', feat: [`${N_ESTAGIOS_TXT[0].toUpperCase() + N_ESTAGIOS_TXT.slice(1)} estágios na ordem que você escolher`, 'Missões, preceptores-chefes e missões espontâneas', 'Só você no hospital, sem outros jogadores'] },
+  vest: { tag: 'Mapa aberto · online', novo: 'Novo personagem', feat: ['Todos os setores abertos desde o início', 'Só casos de pacientes e emergências, sem missões', 'Outros jogadores no mapa, duelos no bar e o título de Melhor Interno'] },
+};
 function showTitle() {
   G.mode = 'title';
-  const save = hasSave();
+  const tl = document.getElementById('toasts'); if (tl) tl.innerHTML = '';   // avisos do jogo não ficam na tela inicial
+  const saves = { internato: hasSave('internato') ? loadGame('internato') : null, vest: hasSave('vest') ? loadGame('vest') : null };
+  const card = m => { const I = MODOS_INFO[m], d = saves[m]; return `<section class="mode-card m-${m}">
+      <p class="eyebrow">${I.tag}</p><h2>${modoNome(m)}</h2>
+      <ul class="mode-feat">${I.feat.map(f => `<li>${f}</li>`).join('')}</ul>
+      ${d ? `<p class="mode-save">${saveSummaryOf(d)}</p>` : ''}
+      <div class="menu-col">${d ? `<button class="btn" data-cont="${m}">Continuar</button>` : ''}<button class="btn ${d ? 'ghost' : ''}" data-novo="${m}">${I.novo}</button></div>
+    </section>`; };
   const o = setOverlay(`
     <div class="title-screen">
       <div class="title-sky"><canvas id="titleScene" width="640" height="232" class="pix"></canvas></div>
       <div class="title-box">
         <p class="eyebrow">RPG de internato médico · pixel art</p>
         <h1 class="logo">${GAME_TITLE}</h1>
-        <p class="sub">Cinco estágios. Cinco preceptores. Um jaleco ainda sem mancha de café.</p>
+        <p class="sub">${N_ESTAGIOS_TXT[0].toUpperCase() + N_ESTAGIOS_TXT.slice(1)} estágios. ${N_ESTAGIOS_TXT[0].toUpperCase() + N_ESTAGIOS_TXT.slice(1)} preceptores. Um jaleco ainda sem mancha de café.</p>
         <div id="acctBox" class="acct" hidden></div>
-        <div class="menu-col">
-          ${save ? '<button class="btn big" id="bCont">Continuar</button>' : ''}
-          <button class="btn big ${save ? 'ghost' : ''}" id="bNovo">Novo jogo</button>
-          <button class="btn ghost" id="bImp">Importar save</button>
-          <button class="btn ghost" id="bSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button>
-        </div>
+        <div class="mode-cards">${card('internato')}${card('vest')}</div>
+        <div class="row center"><button class="btn ghost" id="bImp">Importar save</button><button class="btn ghost" id="bSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button></div>
         <p class="disclaimer">Jogo educacional e ficcional. O conteúdo clínico não substitui protocolos institucionais, supervisão nem orientação médica real.</p>
       </div>
     </div>`, 'full');
   drawTitleScene();
-  $('#bNovo').onclick = () => { SFX.init(); if (save) confirmBox('Começar um novo internato apaga o progresso salvo. Continuar?', () => { deleteSave(); showCreate(); }); else showCreate(); };
-  if (save) $('#bCont').onclick = () => { SFX.init(); const d = loadGame(); if (!d) { toast('Não foi possível carregar o save (dados incompatíveis).', 'bad'); return; } S = d; startExplore(true); };
+  OV().querySelectorAll('[data-novo]').forEach(b => b.onclick = () => {
+    SFX.init(); const m = b.dataset.novo;
+    const go = () => { NEWMODE = m; ORD = []; showCreate(); };
+    if (saves[m]) confirmBox(`Começar de novo no ${modoNome(m)} apaga o progresso salvo deste modo (o outro modo não muda). Continuar?`, () => { deleteSave(m); go(); }); else go();
+  });
+  OV().querySelectorAll('[data-cont]').forEach(b => b.onclick = () => {
+    SFX.init(); const d = loadGame(b.dataset.cont); if (!d) { toast('Não foi possível carregar o save (dados incompatíveis).', 'bad'); return; }
+    S = d; startExplore(true);
+  });
   $('#bImp').onclick = () => importBox();
   $('#bSom').onclick = () => { SFX.on = !SFX.on; showTitle(); };
   if (typeof acctRender === 'function') acctRender();
@@ -87,7 +102,7 @@ function showCreate() {
   const chips = (opts, key, sel) => opts.map(o => `<button class="chip ${sel === o.id ? 'on' : ''}" data-k="${key}" data-v="${o.id}">${o.c ? `<i style="--c:${o.c}"></i>` : ''}${o.nome}</button>`).join('');
   setOverlay(`
     <div class="screen create">
-      <header class="scr-head"><p class="eyebrow">Etapa 1 de 2</p><h2>Crie seu interno</h2></header>
+      <header class="scr-head"><p class="eyebrow">${NEWMODE === 'vest' ? 'Modo Vestibulando' : 'Etapa 1 de 2'}</p><h2>Crie seu interno</h2></header>
       <div class="create-grid">
         <div class="preview-col">
           <div class="preview-frame"><canvas id="crPrev" width="176" height="232" class="pix"></canvas></div>
@@ -106,7 +121,7 @@ function showCreate() {
           <div class="fld"><span>Óculos</span><div class="chips">${chips([{ id: 'nao', nome: 'Sem óculos' }, { id: 'sim', nome: 'Com óculos' }], 'glasses', CR.glasses ? 'sim' : 'nao')}</div></div>
         </div>
       </div>
-      <footer class="scr-foot"><button class="btn ghost" id="crBack">Voltar</button><button class="btn" id="crOk">Confirmar e escolher estágios</button></footer>
+      <footer class="scr-foot"><button class="btn ghost" id="crBack">Voltar</button><button class="btn" id="crOk">${NEWMODE === 'vest' ? 'Confirmar e entrar no hospital' : 'Confirmar e escolher estágios'}</button></footer>
     </div>`, 'full');
   const prev = $('#crPrev'); let dir = 0, fr = 0;
   const draw = () => { SPR.portrait(prev, previewLook(), { dir, frame: fr, pose: 'walk', scale: 7 }); };
@@ -114,8 +129,15 @@ function showCreate() {
   OV().querySelectorAll('[data-k]').forEach(b => b.onclick = () => { const k = b.dataset.k; let v = b.dataset.v; if (k === 'glasses') v = v === 'sim'; CR[k] = v; SFX.play('ui'); showCreate(); });
   $('#crName').oninput = e => { CR.name = e.target.value; $('#crBadge').textContent = CR.name || 'Seu nome'; };
   $('#crBack').onclick = () => showTitle();
-  $('#crOk').onclick = () => { CR.name = (CR.name || '').trim() || (CR.pres === 'm' ? 'Lucas' : CR.pres === 'a' ? 'Alex' : 'Ana'); showOrder(); };
+  $('#crOk').onclick = () => {
+    CR.name = (CR.name || '').trim() || (CR.pres === 'm' ? 'Lucas' : CR.pres === 'a' ? 'Alex' : 'Ana');
+    if (NEWMODE !== 'vest') return showOrder();
+    // Modo Vestibulando: sem ordem de estágios, todos os setores abertos
+    S = newState(crPlayer(), 'vest'); S.order = AREA_IDS.slice(); invAdd('cafe', 2); invAdd('pao_queijo', 1);
+    showIntroVest();
+  };
 }
+function crPlayer() { return { name: CR.name, look: { pres: CR.pres, skin: CR.skin, hair: CR.hair, hairC: CR.hairC, shirt: CR.shirt, pants: CR.pants, shoes: CR.shoes, glasses: CR.glasses } }; }
 function previewLook() {
   const sh = SHIRT_OPTIONS.find(x => x.id === CR.shirt), pa = PANTS_OPTIONS.find(x => x.id === CR.pants), so = SHOE_OPTIONS.find(x => x.id === CR.shoes);
   return { skin: CR.skin, hair: CR.hair, hairC: CR.hairC, top: sh.top, topC: sh.c, bottomC: pa.c, skirt: !!pa.skirt, shoes: so.c, coat: 'jaleco', badge: true, build: CR.pres === 'm' ? 'normal' : 'magro', mouth: CR.pres === 'f' ? 'lips' : 'normal', glasses: CR.glasses ? 'preta' : null };
@@ -146,7 +168,7 @@ function showOrder() {
   $('#oBack').onclick = () => showCreate();
   $('#oOk').onclick = () => {
     if (ORD.length !== AREA_IDS.length) return;
-    S = newState({ name: CR.name, look: { pres: CR.pres, skin: CR.skin, hair: CR.hair, hairC: CR.hairC, shirt: CR.shirt, pants: CR.pants, shoes: CR.shoes, glasses: CR.glasses } });
+    S = newState(crPlayer(), 'internato');
     S.order = ORD.slice(); invAdd('cafe', 2); invAdd('pao_queijo', 1);
     showIntro();
   };
@@ -161,6 +183,15 @@ function showIntro() {
     <button class="btn big" id="inGo">Começar o plantão</button></div></div>`, 'full');
   $('#inGo').onclick = () => startExplore(false);
 }
+function showIntroVest() {
+  setOverlay(`<div class="screen intro"><div class="panel story">
+    <p class="eyebrow">Modo Vestibulando</p><h2>${U.esc(S.player.name)}, bem-vindo(a) ao ${HOSPITAL_NOME}</h2>
+    <p>Aqui não há estágios em sequência nem missões: todas as portas estão abertas. UPA, Pediatria, GO, Clínica Médica, Cirurgia e UBS têm pacientes esperando atendimento nos leitos, e emergências podem surgir a qualquer momento. Os preceptores, residentes e o Rodolfo continuam por aí, com as mesmas histórias de sempre.</p>
+    <p>Os outros jogadores do Modo Vestibulando aparecem no mapa com o nome sobre a cabeça. No bar do Rodolfo, chegue perto de alguém e aperte <kbd>E</kbd> para um duelo de perguntas. Quem tiver mais pontos de reputação entre os jogadores online ganha a placa dourada de <b>Melhor Interno</b>.</p>
+    <ul class="keys"><li><kbd>WASD</kbd>/<kbd>setas</kbd> andar</li><li><kbd>E</kbd> interagir</li><li><kbd>M</kbd> mapa</li><li><kbd>I</kbd> inventário</li><li><kbd>J</kbd> diário</li><li><kbd>K</kbd> habilidades</li><li><kbd>C</kbd> ficha</li><li><kbd>N</kbd> caderno de erros</li><li><kbd>Esc</kbd> pausa</li></ul>
+    <button class="btn big" id="inGo">Entrar no hospital</button></div></div>`, 'full');
+  $('#inGo').onclick = () => startExplore(false);
+}
 function startExplore(loaded) {
   setOverlay(''); G.mode = 'explore';
   G.player = null; enterMap(S.map.id, S.map.x, S.map.y, S.map.dir);
@@ -168,9 +199,10 @@ function startExplore(loaded) {
   $('#hud').hidden = false;
   const a = currentArea(); const st = a && chainStep(a);
   if (st && st.tipo === 'find') setupMainFind(st);
-  if (!loaded) setTimeout(() => toast(`<b>Missão:</b> ${st.titulo}<br><small>${st.desc}</small>`, 'quest'), 600);
+  if (!loaded && isVest()) setTimeout(() => toast('<b>Modo Vestibulando</b><br><small>Todos os setores estão abertos. Procure os leitos com paciente e aperte E para atender.</small>', 'quest'), 600);
+  else if (!loaded && st) setTimeout(() => toast(`<b>Missão:</b> ${st.titulo}<br><small>${st.desc}</small>`, 'quest'), 600);
   else toast(`Bem-vindo(a) de volta, ${U.esc(S.player.name)}!`);
-  if (loaded && S.flags.novoEstagio && AREAS[S.flags.novoEstagio]) { const A = AREAS[S.flags.novoEstagio]; delete S.flags.novoEstagio; setTimeout(() => toast(`<b>Novo estágio no internato:</b> ${A.nome} (${A.local})<br><small>Ele entrou como o ${S.order.indexOf(A.id) + 1}º estágio da sua sequência. A UBS fica do outro lado da avenida, ao lado do bar.</small>`, 'quest'), 1400); }
+  if (loaded && !isVest() && S.flags.novoEstagio && AREAS[S.flags.novoEstagio]) { const A = AREAS[S.flags.novoEstagio]; delete S.flags.novoEstagio; setTimeout(() => toast(`<b>Novo estágio no internato:</b> ${A.nome} (${A.local})<br><small>Ele entrou como o ${S.order.indexOf(A.id) + 1}º estágio da sua sequência. A UBS fica do outro lado da avenida, ao lado do bar.</small>`, 'quest'), 1400); }
   saveGame();
 }
 
@@ -194,7 +226,8 @@ function updateHUD() {
   const obj = document.getElementById('hObj');
   if (obj) {
     let h = '';
-    if (!a) h = '<b>Internato concluído!</b>';
+    if (isVest()) h = `<span class="tag" style="--ac:#ffcf3a">VEST</span> <b>Mapa aberto</b> (${S.stats.cases} caso${S.stats.cases === 1 ? '' : 's'})<small>Todos os setores liberados</small>`;
+    else if (!a) h = '<b>Internato concluído!</b>';
     else if (stp) { const p = prog(a); const extra = stp.tipo === 'cases' ? ` (${p.cases}/${stp.n})` : stp.tipo === 'side' ? ` (${p.side}/${stp.n})` : stp.tipo === 'duvidas' ? ` (${p.duv || 0}/${stp.n})` : stp.tipo === 'open' ? ` (${stp.alvo.filter(k => p.opened[k]).length}/${stp.alvo.length})` : ''; h = `<span class="tag" style="--ac:${AREAS[a].cor}">${AREAS[a].curto}</span> <b>${U.esc(stp.titulo)}</b>${extra}<small>${U.esc(stp.local)}</small>`; }
     if (obj.dataset.h !== h) { obj.innerHTML = h; obj.dataset.h = h; }
   }
@@ -397,14 +430,22 @@ function drawWorldMap() {
     c.fillStyle = 'rgba(255,255,255,0.35)'; c.fillRect(n.x - 27, n.y - 23, 54, 6);
     c.fillStyle = '#1b1622'; c.font = '22px monospace'; c.fillText(locked ? '🔒' : n.ico, n.x, n.y + 8);
     c.font = '12px "Silkscreen", monospace'; c.fillStyle = '#1b1622'; c.fillRect(n.x - 52, n.y + 30, 104, 18); c.fillStyle = '#f7f1d8'; c.fillText(n.nome, n.x, n.y + 43);
-    if (n.a) { const idx = S.order.indexOf(n.a) + 1; c.fillStyle = '#ffcf3a'; c.beginPath(); c.arc(n.x + 26, n.y - 24, 11, 0, 7); c.fill(); c.fillStyle = '#1b1622'; c.fillText(idx, n.x + 26, n.y - 20); if (done) { c.fillStyle = '#ffcf3a'; c.font = '20px monospace'; c.fillText('★', n.x - 26, n.y - 16); c.font = '12px "Silkscreen", monospace'; } }
+    if (n.a && !isVest()) { const idx = S.order.indexOf(n.a) + 1; c.fillStyle = '#ffcf3a'; c.beginPath(); c.arc(n.x + 26, n.y - 24, 11, 0, 7); c.fill(); c.fillStyle = '#1b1622'; c.fillText(idx, n.x + 26, n.y - 20); if (done) { c.fillStyle = '#ffcf3a'; c.font = '20px monospace'; c.fillText('★', n.x - 26, n.y - 16); c.font = '12px "Silkscreen", monospace'; } }
   }
   const here = G.map.id; const hn = nodes[here] || nodes.rua; const b = Math.sin(G.t * 6) * 3;
   const sp = SPR.char(playerLook(), 0, 0, 'idle'); c.drawImage(sp, hn.x - SW / 2, hn.y - 70 + b);
 }
 
 /* ---------- Diário ---------- */
+function openJournalVest() {
+  const s = S.stats;
+  const setores = AREA_IDS.map(a => { const tot = CASES.filter(c => c.area === a).length, vistos = CASES.filter(c => c.area === a && S.seen.includes(c.id)).length; return `<li class="done" style="--ac:${AREAS[a].cor}"><span class="n">${AREAS[a].icone}</span><b>${AREAS[a].nome}</b><small>Aberto · ${vistos} de ${tot} casos já atendidos</small></li>`; }).join('');
+  const body = `<div class="journal"><section><h3>Modo Vestibulando</h3><p class="hint">Sem campanha e sem missões: atenda os pacientes de qualquer setor, responda às emergências e desafie outros jogadores no bar do Rodolfo. A reputação decide quem leva a placa de Melhor Interno entre os jogadores online.</p><h3>Setores</h3><ol class="camp">${setores}</ol></section>
+    <section><h3>Estatísticas</h3><dl class="stat-grid"><dt>Casos atendidos</dt><dd>${s.cases}</dd><dt>Diagnósticos corretos</dt><dd>${s.dxOk}</dd><dt>Condutas corretas</dt><dd>${s.cdOk}</dd><dt>Procedimentos</dt><dd>${s.procs}</dd><dt>Melhor sequência</dt><dd>${s.best}</dd><dt>Reputação</dt><dd>${S.rep > 0 ? '+' : ''}${S.rep} (${repClass()})</dd><dt>Duelos vencidos</dt><dd>${(S.duelos && S.duelos.vitorias) || 0}</dd><dt>Tempo de jogo</dt><dd>${U.fmtHM(S.playTime)}</dd></dl></section></div>`;
+  openPanel('journal', 'Diário do Vestibulando', body, { cls: 'wide' });
+}
 function openJournal() {
+  if (isVest()) return openJournalVest();
   const cur = currentArea();
   const camp = S.order.map((a, i) => { const st = S.completed[a] ? 'done' : a === cur ? 'cur' : 'lock'; return `<li class="${st}" style="--ac:${AREAS[a].cor}"><span class="n">${i + 1}</span><b>${AREAS[a].nome}</b><small>${st === 'done' ? 'Concluído ★' : st === 'cur' ? 'Estágio atual' : 'Trancado'} · Chefe: ${BOSSES[AREAS[a].chefe].nome}${S.completed[a] ? ' (derrotado)' : ''}</small></li>`; }).join('');
   let steps = '';
@@ -437,7 +478,7 @@ function openStatus() {
 
 /* ---------- Pausa ---------- */
 function openPause() {
-  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button><button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzN">Novo jogo</button>
+  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button><button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzT">Tela inicial (trocar de modo)</button><button class="btn ghost" id="pzN">Recomeçar este modo</button>
     <div class="help"><h3>Controles</h3><p><kbd>WASD</kbd>/<kbd>setas</kbd> andar · <kbd>E</kbd> interagir · <kbd>M</kbd> mapa · <kbd>I</kbd> inventário · <kbd>J</kbd> diário · <kbd>K</kbd> habilidades · <kbd>C</kbd> ficha · <kbd>Esc</kbd> pausa${hasSkill('int18') ? ' · <kbd>Shift</kbd> correr' : ''}</p><p class="disclaimer">O progresso é salvo automaticamente neste navegador. Use "Exportar save" para guardar uma cópia. Conteúdo educacional: não substitui protocolos, supervisão ou orientação médica real.</p></div></div>`;
   openPanel('pause', 'Pausa', body, { cls: 'small' });
   $('#pzC').onclick = () => closeOverlay();
@@ -446,7 +487,9 @@ function openPause() {
   $('#pzSom').onclick = () => { SFX.on = !SFX.on; reopen(openPause); };
   $('#pzE').onclick = () => { const code = exportSave(); const box = U.el('div', 'confirm', `<div class="panel small"><h3>Exportar save</h3><p>Guarde este código para restaurar o progresso.</p><textarea rows="6" readonly>${code}</textarea><div class="row"><button class="btn" id="exCp">Copiar</button><button class="btn ghost" id="exX">Fechar</button></div></div>`); OV().appendChild(box); const ta = box.querySelector('textarea'); box.querySelector('#exCp').onclick = () => { try { navigator.clipboard.writeText(code).then(() => toast('Copiado!'), () => { ta.select(); }); } catch (e) { ta.select(); } }; box.querySelector('#exX').onclick = () => box.remove(); };
   $('#pzI').onclick = () => importBox();
-  $('#pzN').onclick = () => confirmBox('Iniciar um novo internato? O progresso atual será apagado.', () => { deleteSave(); S = null; G.map = null; $('#hud').hidden = true; CR = null; ORD = []; showTitle(); });
+  const sair = () => { S = null; G.map = null; G.npcs = []; G.followers = []; G.psy = null; G.player = null; $('#hud').hidden = true; CR = null; ORD = []; showTitle(); };
+  $('#pzT').onclick = () => { saveGame(); if (typeof cloudFlush === 'function') cloudFlush(); sair(); };
+  $('#pzN').onclick = () => { const m = S.modo; confirmBox(`Recomeçar o ${modoNome(m)}? O progresso deste modo será apagado (o outro modo não muda).`, () => { deleteSave(m); sair(); }); };
 }
 
 /* ---------- Loja do Rodolfo ---------- */

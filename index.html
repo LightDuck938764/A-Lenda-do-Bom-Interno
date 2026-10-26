@@ -144,6 +144,17 @@ body.has-ov .toast { font-size: 12px; padding: .4rem .6rem; }
 .logo { font-family: var(--f-display); font-size: clamp(2rem, 6vw, 3.6rem); color: var(--gold); text-shadow: 4px 4px 0 #6b2a1a, 0 0 0 #000; margin: 0; line-height: 1.05; }
 .title-box .sub { color: var(--muted); max-width: 46ch; margin: 0 0 .6rem; }
 .title-box .menu-col { width: min(300px, 100%); }
+.mode-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.2rem; width: min(760px, 100%); padding-inline: 16px; }
+.mode-card { --mc: var(--accent); display: grid; gap: .5rem; align-content: start; text-align: left; background: var(--panel); box-shadow: 0 0 0 2px var(--mc), 5px 5px 0 2px #000; padding: 1rem 1.1rem 1.1rem; }
+.mode-card.m-vest { --mc: var(--gold); }
+.mode-card h2 { margin: 0; font-size: 1.45rem; color: var(--mc); }
+.mode-card .eyebrow { color: var(--muted); margin: 0; }
+.mode-feat { margin: 0; padding-left: 1.1rem; display: grid; gap: .2rem; font-size: 14px; }
+.mode-feat li::marker { color: var(--mc); }
+.mode-save { margin: .2rem 0 0; font-size: 13px; color: var(--muted); background: var(--bg2); padding: .45rem .6rem; box-shadow: inset 0 0 0 1px #2c3b47; }
+.mode-card .menu-col { margin-top: .3rem; }
+.mode-card.m-vest .btn:not(.ghost) { --b: var(--gold); color: #2a1d00; }
+.row.center { justify-content: center; }
 /* ---------- Criação ---------- */
 .screen { max-width: 1100px; width: 100%; margin: 0 auto; padding-block: 1rem; display: grid; gap: 1rem; align-content: start; }
 .scr-head .lede { color: var(--muted); max-width: 70ch; }
@@ -473,7 +484,8 @@ const GAME_TITLE = 'A Lenda do Bom Interno';
 const HOSPITAL_NOME = 'Hospital Escola Santa Esperança';
 const MOEDA = 'Moedas de Plantão';
 const MOEDA_CURTA = 'MP';
-const SAVE_KEY = 'lendaBomInterno_save_v1';
+const SAVE_KEY = 'lendaBomInterno_save_v1';            // Modo Internato (campanha)
+const SAVE_KEY_VEST = 'lendaBomInterno_save_vest_v1';  // Modo Vestibulando (mapa aberto e online)
 const SAVE_VERSION = 1;
 const TS = 32;            // tamanho do tile em pixels (arte em densidade 32 bits)
 const VW = 640, VH = 360; // resolução interna do canvas
@@ -16813,9 +16825,16 @@ const G = {            // estado de execução (não salvo)
 };
 const INV_SIZE = 60;
 
-function newState(p) {
+/* Dois modos, cada um com o seu save:
+   - 'internato': a campanha individual (estágios em sequência, missões, chefes)
+   - 'vest' (Modo Vestibulando): todos os setores abertos, só casos de pacientes,
+     outros jogadores no mapa, duelos no bar e o título de Melhor Interno */
+function isVest() { return !!(S && S.modo === 'vest'); }
+function modoNome(m) { return m === 'vest' ? 'Modo Vestibulando' : 'Modo Internato'; }
+function saveKeyFor(m) { return m === 'vest' ? SAVE_KEY_VEST : SAVE_KEY; }
+function newState(p, modo) {
   return {
-    v: SAVE_VERSION, created: Date.now(), playTime: 0,
+    v: SAVE_VERSION, created: Date.now(), playTime: 0, modo: modo === 'vest' ? 'vest' : 'internato',
     player: p, ligaColor: 'Vermelho',
     xpTotal: 0, xpAvail: 0, vida: 80, energia: 60, coins: 60, rep: 0, repMin: 0, repMax: 0,
     inv: Array(INV_SIZE).fill(null), equip: { mao: null, cabeca: null, corpo: 'jaleco_padrao', amuleto: null },
@@ -16960,8 +16979,9 @@ function learnSkill(id) {
 
 /* ---------------- Campanha ---------------- */
 function currentAreaIdx() { return S.order.findIndex(a => !S.completed[a]); }
-function currentArea() { const i = currentAreaIdx(); return i < 0 ? null : S.order[i]; }
-function areaUnlocked(a) { return !!S.completed[a] || currentArea() === a; }
+// no Modo Vestibulando não há campanha: nenhum estágio "atual" e todos os setores abertos
+function currentArea() { if (isVest()) return null; const i = currentAreaIdx(); return i < 0 ? null : S.order[i]; }
+function areaUnlocked(a) { return isVest() || !!S.completed[a] || currentArea() === a; }
 function areaStepIdx(a) { return S.areaStep[a] || 0; }
 function chainStep(a) { return CHAINS[a] && CHAINS[a][areaStepIdx(a)]; }
 function prog(a) { if (!S.prog[a]) S.prog[a] = { cases: 0, side: 0, opened: {}, learned: 0 }; return S.prog[a]; }
@@ -17034,16 +17054,17 @@ function checkAch() {
 function saveGame() {
   if (!S || G.mode === 'title' || G.mode === 'create' || G.mode === 'order') return;
   if (G.player && G.map) { S.map = { id: G.map.id, x: G.player.x, y: G.player.y, dir: G.player.dir }; }
-  try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) { /* armazenamento indisponível */ }
+  try { localStorage.setItem(saveKeyFor(S.modo), JSON.stringify(S)); } catch (e) { /* armazenamento indisponível */ }
   if (typeof cloudQueue === 'function') cloudQueue();   // site: copia também para a conta Google
 }
-function loadGame() {
-  try { const raw = localStorage.getItem(SAVE_KEY); if (!raw) return null; return migrateSave(JSON.parse(raw)); } catch (e) { return null; }
+function loadGame(modo) {
+  try { const raw = localStorage.getItem(saveKeyFor(modo)); if (!raw) return null; const d = migrateSave(JSON.parse(raw)); if (d) d.modo = modo === 'vest' ? 'vest' : 'internato'; return d; } catch (e) { return null; }
 }
 function migrateSave(d) {
   if (!d || typeof d !== 'object' || !d.player) return null;
-  const base = newState(d.player);
+  const base = newState(d.player, d.modo);
   const out = Object.assign(base, d);
+  out.modo = d.modo === 'vest' ? 'vest' : 'internato';
   out.stats = Object.assign(newState(d.player).stats, d.stats || {});
   out.equip = Object.assign({ mao: null, cabeca: null, corpo: 'jaleco_padrao', amuleto: null }, d.equip || {});
   if (!Array.isArray(out.inv)) out.inv = Array(INV_SIZE).fill(null);
@@ -17067,8 +17088,16 @@ function migrateSave(d) {
 }
 function exportSave() { saveGame(); try { return btoa(unescape(encodeURIComponent(JSON.stringify(S)))); } catch (e) { return ''; } }
 function importSave(code) { try { const d = migrateSave(JSON.parse(decodeURIComponent(escape(atob(code.trim()))))); return d; } catch (e) { return null; } }
-function hasSave() { try { return !!localStorage.getItem(SAVE_KEY); } catch (e) { return false; } }
-function deleteSave() { try { localStorage.removeItem(SAVE_KEY); } catch (e) { } }
+function hasSave(modo) { try { return !!localStorage.getItem(saveKeyFor(modo)); } catch (e) { return false; } }
+function deleteSave(modo) { try { localStorage.removeItem(saveKeyFor(modo)); } catch (e) { } }
+// resumo de um save para a tela inicial e para a escolha entre aparelho e nuvem
+function saveSummaryOf(d) {
+  if (!d || !d.player) return '—';
+  let L = 1; while (L < BAL.maxLevel && (d.xpTotal || 0) >= BAL.xpForLevel(L + 1)) L++;
+  const h = Math.floor((d.playTime || 0) / 3600), m = Math.floor(((d.playTime || 0) % 3600) / 60);
+  const meio = d.modo === 'vest' ? `${(d.stats && d.stats.cases) || 0} casos` : `${Object.keys(d.completed || {}).length}/${AREA_IDS.length} estágios`;
+  return `<b>${U.esc(d.player.name || 'Interno(a)')}</b> · Nv ${L} · ${meio} · ${h}h${String(m).padStart(2, '0')} de jogo`;
+}
 
 /* =====================================================================
    MUNDO: carregamento de mapas, entidades, movimento, colisão, NPCs,
@@ -17220,7 +17249,8 @@ function refillSpots(area) {
 }
 function pickCase(area, spot) {
   const step = areaStepIdx(area), done = !!S.completed[area];
-  const maxDif = done ? 3 : step < 3 ? 1 : step < 6 ? 2 : 3;
+  // campanha: a dificuldade acompanha as missões do estágio; Modo Vestibulando: acompanha o nível
+  const maxDif = isVest() ? (level() < 4 ? 1 : level() < 8 ? 2 : 3) : done ? 3 : step < 3 ? 1 : step < 6 ? 2 : 3;
   let pool = CASES.filter(c => c.area === area);
   // GO: 'obst' = centro obstétrico, observação e alojamento; 'gineco' = consultório, USG e quartos
   if (area === 'go') { const loc = spot.obj.local === 'quarto' ? 'gineco' : spot.obj.local === 'ps' ? 'obst' : spot.obj.local; const g = pool.filter(c => goLocal(c) === loc); if (g.length) pool = g; }
@@ -17313,8 +17343,8 @@ function updateWorld(dt) {
   for (const q of S.side) { const stp = q.steps[q.i]; if (stp && stp.k === 'escort' && stp.map === M.id) { const f = G.followers.find(x => x.qid === q.id); if (f && Math.hypot(f.x - stp.x, f.y - stp.y) < 2.2) { G.followers = G.followers.filter(x => x !== f); toast('Paciente entregue no destino!', 'good'); advanceSide(q); } } }
   // reposição de pacientes
   if (Math.floor(G.t) % 5 === 0 && G.t % 5 < dt) { const a = mapArea(M.id); if (a) refillSpots(a); }
-  // missões espontâneas e eventos
-  const ctx = M.id !== 'rua' && M.id !== 'bar';
+  // missões espontâneas e eventos (o Modo Vestibulando só tem casos de pacientes e emergências)
+  const ctx = M.id !== 'rua' && M.id !== 'bar' && !isVest();
   G.sideTimer -= dt; G.eventTimer -= dt; checkSideHave(); updatePsySpawn(dt);
   if (G.sideTimer <= 0) { G.sideTimer = U.rnd(...BAL.sideInterval); if (ctx && S.side.length < BAL.maxSideActive) spawnSideQuest(); }
   if (G.eventTimer <= 0) { G.eventTimer = U.rnd(...BAL.eventInterval); if (ctx) triggerRandomEvent(); }
@@ -18099,29 +18129,44 @@ function setOverlay(html, cls = '') { const o = OV(); o.className = cls; o.inner
 function closeOverlay(mode = 'explore') { if (G.panelName && String(G.panelName).startsWith('mp_') && typeof mpOnClose === 'function') { const pn = G.panelName; G.panelName = null; mpOnClose(pn); } setOverlay(''); G.mode = mode; G.keys = {}; SFX.play('ui'); }
 
 /* ---------------- Tela inicial ---------------- */
+let NEWMODE = 'internato';
+const MODOS_INFO = {
+  internato: { tag: 'Campanha · jogo individual', novo: 'Novo internato', feat: [`${N_ESTAGIOS_TXT[0].toUpperCase() + N_ESTAGIOS_TXT.slice(1)} estágios na ordem que você escolher`, 'Missões, preceptores-chefes e missões espontâneas', 'Só você no hospital, sem outros jogadores'] },
+  vest: { tag: 'Mapa aberto · online', novo: 'Novo personagem', feat: ['Todos os setores abertos desde o início', 'Só casos de pacientes e emergências, sem missões', 'Outros jogadores no mapa, duelos no bar e o título de Melhor Interno'] },
+};
 function showTitle() {
   G.mode = 'title';
-  const save = hasSave();
+  const tl = document.getElementById('toasts'); if (tl) tl.innerHTML = '';   // avisos do jogo não ficam na tela inicial
+  const saves = { internato: hasSave('internato') ? loadGame('internato') : null, vest: hasSave('vest') ? loadGame('vest') : null };
+  const card = m => { const I = MODOS_INFO[m], d = saves[m]; return `<section class="mode-card m-${m}">
+      <p class="eyebrow">${I.tag}</p><h2>${modoNome(m)}</h2>
+      <ul class="mode-feat">${I.feat.map(f => `<li>${f}</li>`).join('')}</ul>
+      ${d ? `<p class="mode-save">${saveSummaryOf(d)}</p>` : ''}
+      <div class="menu-col">${d ? `<button class="btn" data-cont="${m}">Continuar</button>` : ''}<button class="btn ${d ? 'ghost' : ''}" data-novo="${m}">${I.novo}</button></div>
+    </section>`; };
   const o = setOverlay(`
     <div class="title-screen">
       <div class="title-sky"><canvas id="titleScene" width="640" height="232" class="pix"></canvas></div>
       <div class="title-box">
         <p class="eyebrow">RPG de internato médico · pixel art</p>
         <h1 class="logo">${GAME_TITLE}</h1>
-        <p class="sub">Cinco estágios. Cinco preceptores. Um jaleco ainda sem mancha de café.</p>
+        <p class="sub">${N_ESTAGIOS_TXT[0].toUpperCase() + N_ESTAGIOS_TXT.slice(1)} estágios. ${N_ESTAGIOS_TXT[0].toUpperCase() + N_ESTAGIOS_TXT.slice(1)} preceptores. Um jaleco ainda sem mancha de café.</p>
         <div id="acctBox" class="acct" hidden></div>
-        <div class="menu-col">
-          ${save ? '<button class="btn big" id="bCont">Continuar</button>' : ''}
-          <button class="btn big ${save ? 'ghost' : ''}" id="bNovo">Novo jogo</button>
-          <button class="btn ghost" id="bImp">Importar save</button>
-          <button class="btn ghost" id="bSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button>
-        </div>
+        <div class="mode-cards">${card('internato')}${card('vest')}</div>
+        <div class="row center"><button class="btn ghost" id="bImp">Importar save</button><button class="btn ghost" id="bSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button></div>
         <p class="disclaimer">Jogo educacional e ficcional. O conteúdo clínico não substitui protocolos institucionais, supervisão nem orientação médica real.</p>
       </div>
     </div>`, 'full');
   drawTitleScene();
-  $('#bNovo').onclick = () => { SFX.init(); if (save) confirmBox('Começar um novo internato apaga o progresso salvo. Continuar?', () => { deleteSave(); showCreate(); }); else showCreate(); };
-  if (save) $('#bCont').onclick = () => { SFX.init(); const d = loadGame(); if (!d) { toast('Não foi possível carregar o save (dados incompatíveis).', 'bad'); return; } S = d; startExplore(true); };
+  OV().querySelectorAll('[data-novo]').forEach(b => b.onclick = () => {
+    SFX.init(); const m = b.dataset.novo;
+    const go = () => { NEWMODE = m; ORD = []; showCreate(); };
+    if (saves[m]) confirmBox(`Começar de novo no ${modoNome(m)} apaga o progresso salvo deste modo (o outro modo não muda). Continuar?`, () => { deleteSave(m); go(); }); else go();
+  });
+  OV().querySelectorAll('[data-cont]').forEach(b => b.onclick = () => {
+    SFX.init(); const d = loadGame(b.dataset.cont); if (!d) { toast('Não foi possível carregar o save (dados incompatíveis).', 'bad'); return; }
+    S = d; startExplore(true);
+  });
   $('#bImp').onclick = () => importBox();
   $('#bSom').onclick = () => { SFX.on = !SFX.on; showTitle(); };
   if (typeof acctRender === 'function') acctRender();
@@ -18174,7 +18219,7 @@ function showCreate() {
   const chips = (opts, key, sel) => opts.map(o => `<button class="chip ${sel === o.id ? 'on' : ''}" data-k="${key}" data-v="${o.id}">${o.c ? `<i style="--c:${o.c}"></i>` : ''}${o.nome}</button>`).join('');
   setOverlay(`
     <div class="screen create">
-      <header class="scr-head"><p class="eyebrow">Etapa 1 de 2</p><h2>Crie seu interno</h2></header>
+      <header class="scr-head"><p class="eyebrow">${NEWMODE === 'vest' ? 'Modo Vestibulando' : 'Etapa 1 de 2'}</p><h2>Crie seu interno</h2></header>
       <div class="create-grid">
         <div class="preview-col">
           <div class="preview-frame"><canvas id="crPrev" width="176" height="232" class="pix"></canvas></div>
@@ -18193,7 +18238,7 @@ function showCreate() {
           <div class="fld"><span>Óculos</span><div class="chips">${chips([{ id: 'nao', nome: 'Sem óculos' }, { id: 'sim', nome: 'Com óculos' }], 'glasses', CR.glasses ? 'sim' : 'nao')}</div></div>
         </div>
       </div>
-      <footer class="scr-foot"><button class="btn ghost" id="crBack">Voltar</button><button class="btn" id="crOk">Confirmar e escolher estágios</button></footer>
+      <footer class="scr-foot"><button class="btn ghost" id="crBack">Voltar</button><button class="btn" id="crOk">${NEWMODE === 'vest' ? 'Confirmar e entrar no hospital' : 'Confirmar e escolher estágios'}</button></footer>
     </div>`, 'full');
   const prev = $('#crPrev'); let dir = 0, fr = 0;
   const draw = () => { SPR.portrait(prev, previewLook(), { dir, frame: fr, pose: 'walk', scale: 7 }); };
@@ -18201,8 +18246,15 @@ function showCreate() {
   OV().querySelectorAll('[data-k]').forEach(b => b.onclick = () => { const k = b.dataset.k; let v = b.dataset.v; if (k === 'glasses') v = v === 'sim'; CR[k] = v; SFX.play('ui'); showCreate(); });
   $('#crName').oninput = e => { CR.name = e.target.value; $('#crBadge').textContent = CR.name || 'Seu nome'; };
   $('#crBack').onclick = () => showTitle();
-  $('#crOk').onclick = () => { CR.name = (CR.name || '').trim() || (CR.pres === 'm' ? 'Lucas' : CR.pres === 'a' ? 'Alex' : 'Ana'); showOrder(); };
+  $('#crOk').onclick = () => {
+    CR.name = (CR.name || '').trim() || (CR.pres === 'm' ? 'Lucas' : CR.pres === 'a' ? 'Alex' : 'Ana');
+    if (NEWMODE !== 'vest') return showOrder();
+    // Modo Vestibulando: sem ordem de estágios, todos os setores abertos
+    S = newState(crPlayer(), 'vest'); S.order = AREA_IDS.slice(); invAdd('cafe', 2); invAdd('pao_queijo', 1);
+    showIntroVest();
+  };
 }
+function crPlayer() { return { name: CR.name, look: { pres: CR.pres, skin: CR.skin, hair: CR.hair, hairC: CR.hairC, shirt: CR.shirt, pants: CR.pants, shoes: CR.shoes, glasses: CR.glasses } }; }
 function previewLook() {
   const sh = SHIRT_OPTIONS.find(x => x.id === CR.shirt), pa = PANTS_OPTIONS.find(x => x.id === CR.pants), so = SHOE_OPTIONS.find(x => x.id === CR.shoes);
   return { skin: CR.skin, hair: CR.hair, hairC: CR.hairC, top: sh.top, topC: sh.c, bottomC: pa.c, skirt: !!pa.skirt, shoes: so.c, coat: 'jaleco', badge: true, build: CR.pres === 'm' ? 'normal' : 'magro', mouth: CR.pres === 'f' ? 'lips' : 'normal', glasses: CR.glasses ? 'preta' : null };
@@ -18233,7 +18285,7 @@ function showOrder() {
   $('#oBack').onclick = () => showCreate();
   $('#oOk').onclick = () => {
     if (ORD.length !== AREA_IDS.length) return;
-    S = newState({ name: CR.name, look: { pres: CR.pres, skin: CR.skin, hair: CR.hair, hairC: CR.hairC, shirt: CR.shirt, pants: CR.pants, shoes: CR.shoes, glasses: CR.glasses } });
+    S = newState(crPlayer(), 'internato');
     S.order = ORD.slice(); invAdd('cafe', 2); invAdd('pao_queijo', 1);
     showIntro();
   };
@@ -18248,6 +18300,15 @@ function showIntro() {
     <button class="btn big" id="inGo">Começar o plantão</button></div></div>`, 'full');
   $('#inGo').onclick = () => startExplore(false);
 }
+function showIntroVest() {
+  setOverlay(`<div class="screen intro"><div class="panel story">
+    <p class="eyebrow">Modo Vestibulando</p><h2>${U.esc(S.player.name)}, bem-vindo(a) ao ${HOSPITAL_NOME}</h2>
+    <p>Aqui não há estágios em sequência nem missões: todas as portas estão abertas. UPA, Pediatria, GO, Clínica Médica, Cirurgia e UBS têm pacientes esperando atendimento nos leitos, e emergências podem surgir a qualquer momento. Os preceptores, residentes e o Rodolfo continuam por aí, com as mesmas histórias de sempre.</p>
+    <p>Os outros jogadores do Modo Vestibulando aparecem no mapa com o nome sobre a cabeça. No bar do Rodolfo, chegue perto de alguém e aperte <kbd>E</kbd> para um duelo de perguntas. Quem tiver mais pontos de reputação entre os jogadores online ganha a placa dourada de <b>Melhor Interno</b>.</p>
+    <ul class="keys"><li><kbd>WASD</kbd>/<kbd>setas</kbd> andar</li><li><kbd>E</kbd> interagir</li><li><kbd>M</kbd> mapa</li><li><kbd>I</kbd> inventário</li><li><kbd>J</kbd> diário</li><li><kbd>K</kbd> habilidades</li><li><kbd>C</kbd> ficha</li><li><kbd>N</kbd> caderno de erros</li><li><kbd>Esc</kbd> pausa</li></ul>
+    <button class="btn big" id="inGo">Entrar no hospital</button></div></div>`, 'full');
+  $('#inGo').onclick = () => startExplore(false);
+}
 function startExplore(loaded) {
   setOverlay(''); G.mode = 'explore';
   G.player = null; enterMap(S.map.id, S.map.x, S.map.y, S.map.dir);
@@ -18255,9 +18316,10 @@ function startExplore(loaded) {
   $('#hud').hidden = false;
   const a = currentArea(); const st = a && chainStep(a);
   if (st && st.tipo === 'find') setupMainFind(st);
-  if (!loaded) setTimeout(() => toast(`<b>Missão:</b> ${st.titulo}<br><small>${st.desc}</small>`, 'quest'), 600);
+  if (!loaded && isVest()) setTimeout(() => toast('<b>Modo Vestibulando</b><br><small>Todos os setores estão abertos. Procure os leitos com paciente e aperte E para atender.</small>', 'quest'), 600);
+  else if (!loaded && st) setTimeout(() => toast(`<b>Missão:</b> ${st.titulo}<br><small>${st.desc}</small>`, 'quest'), 600);
   else toast(`Bem-vindo(a) de volta, ${U.esc(S.player.name)}!`);
-  if (loaded && S.flags.novoEstagio && AREAS[S.flags.novoEstagio]) { const A = AREAS[S.flags.novoEstagio]; delete S.flags.novoEstagio; setTimeout(() => toast(`<b>Novo estágio no internato:</b> ${A.nome} (${A.local})<br><small>Ele entrou como o ${S.order.indexOf(A.id) + 1}º estágio da sua sequência. A UBS fica do outro lado da avenida, ao lado do bar.</small>`, 'quest'), 1400); }
+  if (loaded && !isVest() && S.flags.novoEstagio && AREAS[S.flags.novoEstagio]) { const A = AREAS[S.flags.novoEstagio]; delete S.flags.novoEstagio; setTimeout(() => toast(`<b>Novo estágio no internato:</b> ${A.nome} (${A.local})<br><small>Ele entrou como o ${S.order.indexOf(A.id) + 1}º estágio da sua sequência. A UBS fica do outro lado da avenida, ao lado do bar.</small>`, 'quest'), 1400); }
   saveGame();
 }
 
@@ -18281,7 +18343,8 @@ function updateHUD() {
   const obj = document.getElementById('hObj');
   if (obj) {
     let h = '';
-    if (!a) h = '<b>Internato concluído!</b>';
+    if (isVest()) h = `<span class="tag" style="--ac:#ffcf3a">VEST</span> <b>Mapa aberto</b> (${S.stats.cases} caso${S.stats.cases === 1 ? '' : 's'})<small>Todos os setores liberados</small>`;
+    else if (!a) h = '<b>Internato concluído!</b>';
     else if (stp) { const p = prog(a); const extra = stp.tipo === 'cases' ? ` (${p.cases}/${stp.n})` : stp.tipo === 'side' ? ` (${p.side}/${stp.n})` : stp.tipo === 'duvidas' ? ` (${p.duv || 0}/${stp.n})` : stp.tipo === 'open' ? ` (${stp.alvo.filter(k => p.opened[k]).length}/${stp.alvo.length})` : ''; h = `<span class="tag" style="--ac:${AREAS[a].cor}">${AREAS[a].curto}</span> <b>${U.esc(stp.titulo)}</b>${extra}<small>${U.esc(stp.local)}</small>`; }
     if (obj.dataset.h !== h) { obj.innerHTML = h; obj.dataset.h = h; }
   }
@@ -18484,14 +18547,22 @@ function drawWorldMap() {
     c.fillStyle = 'rgba(255,255,255,0.35)'; c.fillRect(n.x - 27, n.y - 23, 54, 6);
     c.fillStyle = '#1b1622'; c.font = '22px monospace'; c.fillText(locked ? '🔒' : n.ico, n.x, n.y + 8);
     c.font = '12px "Silkscreen", monospace'; c.fillStyle = '#1b1622'; c.fillRect(n.x - 52, n.y + 30, 104, 18); c.fillStyle = '#f7f1d8'; c.fillText(n.nome, n.x, n.y + 43);
-    if (n.a) { const idx = S.order.indexOf(n.a) + 1; c.fillStyle = '#ffcf3a'; c.beginPath(); c.arc(n.x + 26, n.y - 24, 11, 0, 7); c.fill(); c.fillStyle = '#1b1622'; c.fillText(idx, n.x + 26, n.y - 20); if (done) { c.fillStyle = '#ffcf3a'; c.font = '20px monospace'; c.fillText('★', n.x - 26, n.y - 16); c.font = '12px "Silkscreen", monospace'; } }
+    if (n.a && !isVest()) { const idx = S.order.indexOf(n.a) + 1; c.fillStyle = '#ffcf3a'; c.beginPath(); c.arc(n.x + 26, n.y - 24, 11, 0, 7); c.fill(); c.fillStyle = '#1b1622'; c.fillText(idx, n.x + 26, n.y - 20); if (done) { c.fillStyle = '#ffcf3a'; c.font = '20px monospace'; c.fillText('★', n.x - 26, n.y - 16); c.font = '12px "Silkscreen", monospace'; } }
   }
   const here = G.map.id; const hn = nodes[here] || nodes.rua; const b = Math.sin(G.t * 6) * 3;
   const sp = SPR.char(playerLook(), 0, 0, 'idle'); c.drawImage(sp, hn.x - SW / 2, hn.y - 70 + b);
 }
 
 /* ---------- Diário ---------- */
+function openJournalVest() {
+  const s = S.stats;
+  const setores = AREA_IDS.map(a => { const tot = CASES.filter(c => c.area === a).length, vistos = CASES.filter(c => c.area === a && S.seen.includes(c.id)).length; return `<li class="done" style="--ac:${AREAS[a].cor}"><span class="n">${AREAS[a].icone}</span><b>${AREAS[a].nome}</b><small>Aberto · ${vistos} de ${tot} casos já atendidos</small></li>`; }).join('');
+  const body = `<div class="journal"><section><h3>Modo Vestibulando</h3><p class="hint">Sem campanha e sem missões: atenda os pacientes de qualquer setor, responda às emergências e desafie outros jogadores no bar do Rodolfo. A reputação decide quem leva a placa de Melhor Interno entre os jogadores online.</p><h3>Setores</h3><ol class="camp">${setores}</ol></section>
+    <section><h3>Estatísticas</h3><dl class="stat-grid"><dt>Casos atendidos</dt><dd>${s.cases}</dd><dt>Diagnósticos corretos</dt><dd>${s.dxOk}</dd><dt>Condutas corretas</dt><dd>${s.cdOk}</dd><dt>Procedimentos</dt><dd>${s.procs}</dd><dt>Melhor sequência</dt><dd>${s.best}</dd><dt>Reputação</dt><dd>${S.rep > 0 ? '+' : ''}${S.rep} (${repClass()})</dd><dt>Duelos vencidos</dt><dd>${(S.duelos && S.duelos.vitorias) || 0}</dd><dt>Tempo de jogo</dt><dd>${U.fmtHM(S.playTime)}</dd></dl></section></div>`;
+  openPanel('journal', 'Diário do Vestibulando', body, { cls: 'wide' });
+}
 function openJournal() {
+  if (isVest()) return openJournalVest();
   const cur = currentArea();
   const camp = S.order.map((a, i) => { const st = S.completed[a] ? 'done' : a === cur ? 'cur' : 'lock'; return `<li class="${st}" style="--ac:${AREAS[a].cor}"><span class="n">${i + 1}</span><b>${AREAS[a].nome}</b><small>${st === 'done' ? 'Concluído ★' : st === 'cur' ? 'Estágio atual' : 'Trancado'} · Chefe: ${BOSSES[AREAS[a].chefe].nome}${S.completed[a] ? ' (derrotado)' : ''}</small></li>`; }).join('');
   let steps = '';
@@ -18524,7 +18595,7 @@ function openStatus() {
 
 /* ---------- Pausa ---------- */
 function openPause() {
-  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button><button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzN">Novo jogo</button>
+  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button><button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzT">Tela inicial (trocar de modo)</button><button class="btn ghost" id="pzN">Recomeçar este modo</button>
     <div class="help"><h3>Controles</h3><p><kbd>WASD</kbd>/<kbd>setas</kbd> andar · <kbd>E</kbd> interagir · <kbd>M</kbd> mapa · <kbd>I</kbd> inventário · <kbd>J</kbd> diário · <kbd>K</kbd> habilidades · <kbd>C</kbd> ficha · <kbd>Esc</kbd> pausa${hasSkill('int18') ? ' · <kbd>Shift</kbd> correr' : ''}</p><p class="disclaimer">O progresso é salvo automaticamente neste navegador. Use "Exportar save" para guardar uma cópia. Conteúdo educacional: não substitui protocolos, supervisão ou orientação médica real.</p></div></div>`;
   openPanel('pause', 'Pausa', body, { cls: 'small' });
   $('#pzC').onclick = () => closeOverlay();
@@ -18533,7 +18604,9 @@ function openPause() {
   $('#pzSom').onclick = () => { SFX.on = !SFX.on; reopen(openPause); };
   $('#pzE').onclick = () => { const code = exportSave(); const box = U.el('div', 'confirm', `<div class="panel small"><h3>Exportar save</h3><p>Guarde este código para restaurar o progresso.</p><textarea rows="6" readonly>${code}</textarea><div class="row"><button class="btn" id="exCp">Copiar</button><button class="btn ghost" id="exX">Fechar</button></div></div>`); OV().appendChild(box); const ta = box.querySelector('textarea'); box.querySelector('#exCp').onclick = () => { try { navigator.clipboard.writeText(code).then(() => toast('Copiado!'), () => { ta.select(); }); } catch (e) { ta.select(); } }; box.querySelector('#exX').onclick = () => box.remove(); };
   $('#pzI').onclick = () => importBox();
-  $('#pzN').onclick = () => confirmBox('Iniciar um novo internato? O progresso atual será apagado.', () => { deleteSave(); S = null; G.map = null; $('#hud').hidden = true; CR = null; ORD = []; showTitle(); });
+  const sair = () => { S = null; G.map = null; G.npcs = []; G.followers = []; G.psy = null; G.player = null; $('#hud').hidden = true; CR = null; ORD = []; showTitle(); };
+  $('#pzT').onclick = () => { saveGame(); if (typeof cloudFlush === 'function') cloudFlush(); sair(); };
+  $('#pzN').onclick = () => { const m = S.modo; confirmBox(`Recomeçar o ${modoNome(m)}? O progresso deste modo será apagado (o outro modo não muda).`, () => { deleteSave(m); sair(); }); };
 }
 
 /* ---------- Loja do Rodolfo ---------- */
@@ -19555,10 +19628,11 @@ function boot() {
 window.addEventListener('DOMContentLoaded', boot);
 
 /* =====================================================================
-   MULTIPLAYER (opcional, por cima da campanha individual)
-   - Cada jogador continua com o próprio save e a própria campanha.
-   - Quem está com o jogo aberto ao mesmo tempo aparece no mapa para os
-     outros (posição, direção, roupa e nome do personagem).
+   MULTIPLAYER (só no Modo Vestibulando)
+   - O Modo Internato é individual: quem está nele não aparece para
+     ninguém e não vê ninguém.
+   - No Modo Vestibulando, quem está com o jogo aberto ao mesmo tempo
+     aparece no mapa para os outros (posição, direção, roupa e nome).
    - No Bar do Rodolfo dá para desafiar outro interno para um Duelo de
      Pergunta Relâmpago (melhor de 5, perguntas de residência).
    Sem conexão (jogo aberto sozinho, arquivo salvo, link público), nada
@@ -19637,12 +19711,12 @@ function mpTick(dt) {
   const now = performance.now();
   if (now - MP.sentAt > 100) {
     let pres;
-    if (S && G.map && G.player) {
+    if (S && G.map && G.player && isVest()) {
       const st = MP.duel ? 'duelo' : (G.mode === 'explore' ? 'livre' : 'ocupado');
       pres = { v: 1, nm: mpName(S.player.name), lv: level(), rp: Math.round(S.rep || 0), map: G.map.id, x: Math.round(G.player.x * 20) / 20, y: Math.round(G.player.y * 20) / 20, d: G.player.dir, mv: !!G.player.moving, st };
     } else pres = { v: 1, map: null };
     const key = JSON.stringify(pres);
-    const lk = S && G.player ? JSON.stringify(playerLook()) : '';
+    const lk = S && G.player && isVest() ? JSON.stringify(playerLook()) : '';
     if (key !== MP.lastPres || lk !== MP.lastLook) {
       const patch = Object.assign({}, pres);
       if (lk !== MP.lastLook) { patch.lk = lk ? JSON.parse(lk) : null; MP.lastLook = lk; }
@@ -19657,20 +19731,20 @@ function mpTick(dt) {
     g.moving = g.mv || d > 0.06;
     if (g.moving) { g.animT += dt * 9; g.frame = Math.floor(g.animT) % 4; } else { g.animT = 0; g.frame = 0; }
   }
-  if (S && G.map && G.map.id === 'bar' && !MP.barHint && [...MP.ghosts.values()].some(g => g.map === 'bar')) {
+  if (S && isVest() && G.map && G.map.id === 'bar' && !MP.barHint && [...MP.ghosts.values()].some(g => g.map === 'bar')) {
     MP.barHint = true; toast('<b>Outros internos estão no bar!</b><br><small>Chegue perto de alguém e aperte E para desafiar para um Duelo de Pergunta Relâmpago.</small>', 'quest');
   }
   mpDuelTick(now);
   if (MP.duel && G.panelName === 'mp_duelo') mpScene(now);
 }
-function mpGhostsHere() { if (!MP.room || !G.map) return []; const id = G.map.id; return [...MP.ghosts.values()].filter(g => g.map === id); }
+function mpGhostsHere() { if (!MP.room || !G.map || !isVest()) return []; const id = G.map.id; return [...MP.ghosts.values()].filter(g => g.map === id); }
 function mpDrawGhost(c, g, cx, cy) {
   try { return drawEnt(c, g, cx, cy); } catch (e) { if (!g.bad) { g.bad = true; g.look = MP_FALLBACK_LOOK; } return null; }
 }
 // "Melhor Interno": quem tem mais pontos de reputação entre todos os internos online agora
 // (empate: maior nível; depois um critério fixo, para todos verem a mesma pessoa)
 function mpBest() {
-  if (!MP.room || !MP.ok || !S || !MP.roster.size) return null;
+  if (!MP.room || !MP.ok || !S || !isVest() || !MP.roster.size) return null;
   const me = mpMyPeer(); if (!me) return null;
   const all = [...MP.roster.values()].map(g => ({ peer: g.peer, rp: g.rp || 0, lv: g.lv || 1 }));
   all.push({ peer: me, rp: Math.round(S.rep || 0), lv: level() });
@@ -19708,7 +19782,7 @@ function mpNameTags(c, cx, cy) {
 }
 // interno online mais próximo, à frente do jogador, no bar
 function mpNearbyPeer() {
-  if (!MP.room || !G.map || G.map.id !== 'bar') return null;
+  if (!MP.room || !G.map || G.map.id !== 'bar' || !isVest()) return null;
   const [fx, fy] = frontPoint(0.8), P = G.player; let best = null, bd = 9;
   for (const g of mpGhostsHere()) { const d = Math.hypot(g.x - fx, g.y - fy), d2 = Math.hypot(g.x - P.x, g.y - P.y); if ((d < 0.9 || d2 < 1.1) && d2 < 1.6 && d < bd) { bd = d; best = g; } }
   return best;
@@ -19719,6 +19793,7 @@ function mpChip() {
   const show = !!(S && G.map && !document.getElementById('hud').hidden);
   if (!el) { if (!show) return; el = document.createElement('div'); el.id = 'mpChip'; document.getElementById('stage').appendChild(el); }
   el.hidden = !show; if (!show) return;
+  if (!isVest()) { const t = '🔒 Modo Internato · jogo individual'; el.className = 'mp-off'; if (el.textContent !== t) el.textContent = t; return; }
   const inBar = [...MP.roster.values()].filter(g => g.map === 'bar').length;
   // estado da conexão sempre visível, para cada jogador saber se está no modo online
   const txt = MP.status === 'on' ? (n ? `🟢 Online · ${n} interno${n > 1 ? 's' : ''}${inBar ? ` · ${inBar} no bar` : ''}` : '🟢 Online · só você por aqui')
@@ -19746,7 +19821,7 @@ function mpMsg(msg) {
   const D = MP.duel;
   switch (m.t) {
     case 'convite': {
-      const busy = !S || !G.map || G.map.id !== 'bar' || G.mode !== 'explore' || MP.duel || MP.inv || MP.out;
+      const busy = !S || !isVest() || !G.map || G.map.id !== 'bar' || G.mode !== 'explore' || MP.duel || MP.inv || MP.out;
       if (busy) return mpEmit({ t: 'resposta', id: m.id, to: msg.peer, ok: false, motivo: 'ocupado' });
       MP.inv = { id: m.id, from: msg.peer, nm: mpName(m.nm), lv: Math.max(1, Math.min(99, m.lv | 0)), t: performance.now() };
       mpShowInvite(); SFX.play('quest');
@@ -20405,36 +20480,57 @@ function cloudQueue() {
   FB.upTimer = setTimeout(cloudUpload, Date.now() - FB.lastUp > 20000 ? 2000 : 8000);
 }
 function cloudFlush() { if (FB.upTimer) { clearTimeout(FB.upTimer); FB.upTimer = null; cloudUpload(); } }
+// Os dois modos ficam no mesmo registro da conta: d = {v: 2, i: save do Modo Internato, e: save do Modo Vestibulando}.
+// Registros antigos (d = um save só) são tratados como Modo Internato.
+function cloudPack() {
+  const raw = m => { let r = null; try { r = localStorage.getItem(saveKeyFor(m)); } catch (e) { r = null; } if (!r && S && S.modo === m) r = JSON.stringify(S); return r; };
+  return JSON.stringify({ v: 2, i: raw('internato'), e: raw('vest') });
+}
+function cloudUnpack(str) {
+  let o; try { o = JSON.parse(str); } catch (e) { return {}; }
+  const mig = (r, m) => { if (typeof r !== 'string') return null; try { const d = migrateSave(JSON.parse(r)); if (d) d.modo = m; return d; } catch (e) { return null; } };
+  if (o && o.v === 2) return { internato: mig(o.i, 'internato'), vest: mig(o.e, 'vest') };
+  if (o && o.player) return { internato: mig(str, 'internato'), vest: null };
+  return {};
+}
 function cloudUpload() {
   const u = cloudUser(); if (!u || FB.syncing) return;
-  let raw; try { raw = localStorage.getItem(SAVE_KEY); } catch (e) { raw = null; }
-  if (!raw && S) raw = JSON.stringify(S);
-  if (!raw) return;
+  const raw = cloudPack();
   if (raw.length >= 500000) return;
   FB.lastUp = Date.now(); FB.cloud = 'salvando';
   FB.db.ref('saves/' + u.uid).set({ d: raw, t: firebase.database.ServerValue.TIMESTAMP }).then(() => { FB.cloud = 'on'; acctRender(); }).catch(e => { console.warn('nuvem', e); FB.cloud = 'erro'; acctRender(); });
 }
-function saveSummary(d) { if (!d || !d.player) return '—'; const L = (() => { let L = 1; while (L < BAL.maxLevel && (d.xpTotal || 0) >= BAL.xpForLevel(L + 1)) L++; return L; })(); const h = Math.floor((d.playTime || 0) / 3600), m = Math.floor(((d.playTime || 0) % 3600) / 60); return `<b>${U.esc(d.player.name || 'Interno(a)')}</b> · Nv ${L} · ${Object.keys(d.completed || {}).length}/5 estágios · ${h}h${String(m).padStart(2, '0')} de jogo`; }
+function saveSummary(d) { return saveSummaryOf(d); }
 async function cloudSync() {
   const u = cloudUser(); if (!u || FB.syncing) return;
   FB.syncing = true; acctRender();
-  let cloud = null;
-  try { const s = await FB.db.ref('saves/' + u.uid).once('value'); const v = s.val(); if (v && typeof v.d === 'string') cloud = migrateSave(JSON.parse(v.d)); } catch (e) { console.warn('nuvem', e); FB.syncing = false; FB.cloud = 'erro'; acctRender(); return; }
-  const local = loadGame();
-  const useCloud = () => { try { localStorage.setItem(SAVE_KEY, JSON.stringify(cloud)); } catch (e) {} if (G.mode === 'title') showTitle(); toast('Save carregado da sua conta Google.', 'good'); };
-  const useLocal = () => { FB.syncing = false; cloudUpload(); acctRender(); toast('Seu progresso agora está salvo na sua conta Google.', 'good'); };
-  if (!cloud && !local) { FB.syncing = false; acctRender(); return; }
-  if (cloud && !local) { useCloud(); FB.syncing = false; acctRender(); return; }
-  if (!cloud && local) return useLocal();
-  // os dois existem: mesmo personagem → fica o que tem mais tempo de jogo; personagens diferentes → pergunta
-  if (cloud.created === local.created) { if ((cloud.playTime || 0) >= (local.playTime || 0)) { if ((cloud.playTime || 0) > (local.playTime || 0)) useCloud(); FB.syncing = false; acctRender(); } else useLocal(); return; }
-  if (G.mode !== 'title') { FB.syncing = false; return; }       // decide na próxima vez que estiver na tela inicial
-  const box = U.el('div', 'confirm', `<div class="panel small"><h3>Qual personagem você quer usar?</h3><p>Encontramos um save na sua conta e outro neste aparelho.</p>
-    <div class="menu-col"><button class="btn" id="svNuvem">☁ Da conta Google: ${saveSummary(cloud)}</button><button class="btn ghost" id="svLocal">💻 Deste aparelho: ${saveSummary(local)}</button></div>
-    <p class="hint">O que você não escolher será substituído.</p></div>`);
-  OV().appendChild(box);
-  box.querySelector('#svNuvem').onclick = () => { box.remove(); useCloud(); FB.syncing = false; acctRender(); };
-  box.querySelector('#svLocal').onclick = () => { box.remove(); useLocal(); acctRender(); };
+  let cloud = {};
+  try { const s = await FB.db.ref('saves/' + u.uid).once('value'); const v = s.val(); if (v && typeof v.d === 'string') cloud = cloudUnpack(v.d); } catch (e) { console.warn('nuvem', e); FB.syncing = false; FB.cloud = 'erro'; acctRender(); return; }
+  let mudou = false, subir = false;
+  const usar = (m, d) => { try { localStorage.setItem(saveKeyFor(m), JSON.stringify(d)); mudou = true; } catch (e) {} };
+  // pergunta qual personagem manter quando aparelho e conta têm personagens diferentes no mesmo modo
+  const perguntar = (m, c, l) => new Promise(res => {
+    const box = U.el('div', 'confirm', `<div class="panel small"><h3>${modoNome(m)}: qual personagem você quer usar?</h3><p>Encontramos um save deste modo na sua conta e outro neste aparelho.</p>
+      <div class="menu-col"><button class="btn" id="svNuvem">☁ Da conta Google: ${saveSummary(c)}</button><button class="btn ghost" id="svLocal">💻 Deste aparelho: ${saveSummary(l)}</button></div>
+      <p class="hint">O que você não escolher será substituído.</p></div>`);
+    OV().appendChild(box);
+    box.querySelector('#svNuvem').onclick = () => { box.remove(); res('nuvem'); };
+    box.querySelector('#svLocal').onclick = () => { box.remove(); res('local'); };
+  });
+  for (const m of ['internato', 'vest']) {
+    const c = cloud[m] || null, l = loadGame(m);
+    if (!c && !l) continue;
+    if (c && !l) { usar(m, c); continue; }
+    if (!c && l) { subir = true; continue; }
+    // os dois existem: mesmo personagem → fica o que tem mais tempo de jogo; personagens diferentes → pergunta
+    if (c.created === l.created) { if ((c.playTime || 0) > (l.playTime || 0)) usar(m, c); else if ((c.playTime || 0) < (l.playTime || 0)) subir = true; continue; }
+    if (G.mode !== 'title') continue;           // decide na próxima vez que estiver na tela inicial
+    if (await perguntar(m, c, l) === 'nuvem') usar(m, c); else subir = true;
+  }
+  FB.syncing = false;
+  if (subir) { cloudUpload(); toast('Seu progresso agora está salvo na sua conta Google.', 'good'); }
+  if (mudou) { if (G.mode === 'title') showTitle(); toast('Save carregado da sua conta Google.', 'good'); }
+  acctRender();
 }
 
 // ---------- caixa da conta na tela inicial ----------
