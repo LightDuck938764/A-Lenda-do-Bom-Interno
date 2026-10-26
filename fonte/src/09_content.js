@@ -164,7 +164,7 @@ const CHAINS = {
     { id: 'upa_intro', titulo: 'Bem-vindo à UPA', tipo: 'talk', alvo: 'leozao', local: 'Corredor da UPA', desc: 'Encontre o preceptor Leão Figura no corredor da UPA e se apresente.' },
     { id: 'upa_mapa', titulo: 'Onde fica cada coisa?', tipo: 'open', alvo: ['map', 'journal'], local: 'Qualquer lugar', desc: 'Abra o mapa (M) e o diário de missões (J) para se orientar.' },
     { id: 'upa_res', titulo: 'Conheça os residentes', tipo: 'talk', alvo: 'res_bruno', local: 'Sala dos Residentes', desc: 'O R1 Bruno está na Sala dos Residentes. Ele explica como funcionam os pedidos da equipe.' },
-    { id: 'upa_casos1', titulo: 'Primeiros atendimentos', tipo: 'cases', n: 2, local: 'Consultórios e Observação', desc: 'Atenda 2 pacientes marcados com "!" (aproxime-se e aperte E).' },
+    { id: 'upa_casos1', titulo: 'Primeiros atendimentos', tipo: 'cases', n: 2, local: 'Consultórios e Observação', desc: 'Atenda 2 pacientes marcados com "!" (aproxime-se e aperte E ou AGIR).' },
     { id: 'upa_skill', titulo: 'Treinamento', tipo: 'learn', n: 1, local: 'Árvore de habilidades (K)', desc: 'Abra a árvore de habilidades (K) e aprenda sua primeira habilidade com o XP disponível.' },
     { id: 'upa_proc', titulo: 'Gasometria supervisionada', tipo: 'proc', proc: 'gaso', local: 'Sala de Procedimentos', desc: 'Vá até a maca da Sala de Procedimentos e realize a coleta simulada de gasometria.' },
     { id: 'upa_side', titulo: 'Trabalho em equipe', tipo: 'side', n: 1, local: 'UPA', desc: 'Conclua 1 pedido da equipe (missão secundária) dentro do prazo.' },

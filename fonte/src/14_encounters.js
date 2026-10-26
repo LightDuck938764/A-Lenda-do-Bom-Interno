@@ -58,7 +58,7 @@ function bindCaseImgs(host) {
 }
 function openLightbox(src, t) {
   const lb = document.createElement('div'); lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-label', t || 'Exame');
-  lb.innerHTML = `<figure><div class="lb-scroll"><img src="${U.esc(src)}" alt="${U.esc(t || 'Exame')}"></div><figcaption>${U.esc(t || '')} <small>Clique na imagem para aproximar · Esc para fechar</small></figcaption></figure><button class="lb-x" aria-label="Fechar">✕</button>`;
+  lb.innerHTML = `<figure><div class="lb-scroll"><img src="${U.esc(src)}" alt="${U.esc(t || 'Exame')}"></div><figcaption>${U.esc(t || '')} <small>${IS_TOUCH ? 'Toque na imagem para aproximar · ✕ para fechar' : 'Clique na imagem para aproximar · Esc para fechar'}</small></figcaption></figure><button class="lb-x" aria-label="Fechar">✕</button>`;
   const close = () => { lb.remove(); document.removeEventListener('keydown', key, true); };
   const key = e => { if (e.key === 'Escape') { e.stopPropagation(); e.preventDefault(); close(); } };
   lb.onclick = e => { if (e.target === lb || e.target.classList.contains('lb-x')) close(); };

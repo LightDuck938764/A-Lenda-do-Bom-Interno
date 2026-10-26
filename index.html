@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0f1418">
 <meta name="description" content="A Lenda do Bom Interno: RPG 2D em pixel art sobre o internato médico, com perguntas de residência.">
 <style>html,body{margin:0;padding:0;background:#0f1418}</style>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
@@ -35,9 +39,10 @@
   --px: 0 0 0 2px var(--line), 0 0 0 4px var(--shadow), 6px 6px 0 4px rgba(0,0,0,.45);
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; } /* o overlay vazio cobria a tela e bloqueava os toques */
 html, body { height: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 var(--f-body); overflow: hidden; }
-button { font: inherit; color: inherit; }
+button { font: inherit; color: inherit; touch-action: manipulation; }
 button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 kbd { font-family: var(--f-label); font-size: .75em; background: var(--panel2); border: 1px solid var(--line); border-bottom-width: 3px; padding: 0 .35em; border-radius: 3px; }
 .pix, canvas { image-rendering: pixelated; image-rendering: crisp-edges; }
@@ -313,12 +318,34 @@ body.has-ov .toast { font-size: 12px; padding: .4rem .6rem; }
 .dip-port { background: #e6dcc0; box-shadow: inset 0 0 0 2px #8a6a3a; }
 
 /* ---------- Controles de toque ---------- */
-#touch { position: absolute; inset: auto 0 0 0; display: none; justify-content: space-between; align-items: end; padding: 10px; pointer-events: none; z-index: 15; }
-#touch > div { pointer-events: auto; }
-.dpad { display: grid; grid-template-columns: repeat(3, 46px); grid-template-rows: repeat(3, 46px); gap: 4px; } .dpad button, .tbtns button { background: rgba(14,19,23,.75); border: 0; box-shadow: 0 0 0 2px var(--line); color: var(--ink); font-family: var(--f-label); font-size: 13px; touch-action: none; }
-.dpad [data-d=up] { grid-area: 1/2; } .dpad [data-d=left] { grid-area: 2/1; } .dpad [data-d=right] { grid-area: 2/3; } .dpad [data-d=down] { grid-area: 3/2; }
-.tbtns { display: grid; grid-template-columns: repeat(3, 46px); gap: 4px; } .tbtns .e { grid-column: span 3; height: 54px; background: var(--accent); color: var(--accent-ink); } .tbtns button { height: 40px; }
-@media (pointer: coarse) { #touch { display: flex; } .hud-btns { display: none; } #sideq { bottom: 170px; } #prompt { bottom: 175px; } .hud-loc { display: none; } }
+/* joystick à esquerda (aparece onde o polegar encosta), menus pequenos e AGIR à direita */
+#touch { position: absolute; inset: 0; display: none; pointer-events: none; z-index: 15; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+#touch button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+#joyZone { position: absolute; left: 0; bottom: 0; width: 46%; height: 62%; pointer-events: auto; touch-action: none; }
+.joy-base { position: absolute; left: calc(18px + env(safe-area-inset-left, 0px)); bottom: 16px; width: 104px; height: 104px; border-radius: 50%; background: radial-gradient(circle, rgba(14,19,23,.30) 0 55%, rgba(14,19,23,.55) 56%); box-shadow: 0 0 0 2px rgba(233,226,207,.55), inset 0 0 0 2px rgba(0,0,0,.4); opacity: .55; transition: opacity .15s; pointer-events: none; }
+.joy-base.on { opacity: 1; transition: none; }
+.joy-knob { position: absolute; left: 50%; top: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #f4f1e8, #b9b3a2 70%); box-shadow: 0 0 0 2px var(--shadow), 0 3px 0 2px rgba(0,0,0,.35); }
+.tmenu { position: absolute; right: calc(10px + env(safe-area-inset-right, 0px)); bottom: 96px; display: grid; grid-template-columns: repeat(4, 46px); gap: 9px 9px; pointer-events: auto; }
+.tmenu button, .tact button { background: rgba(14,19,23,.72); border: 0; box-shadow: 0 0 0 2px rgba(233,226,207,.75); color: var(--ink); font-family: var(--f-label); font-size: 8.5px; letter-spacing: .02em; padding: 0; height: 30px; cursor: pointer; }
+.tmenu button[data-k=pause] { font-size: 14px; }
+.tmenu button:active, .tact button:active { background: rgba(95,212,160,.35); }
+.tact { position: absolute; right: calc(12px + env(safe-area-inset-right, 0px)); bottom: 12px; display: flex; gap: 14px; align-items: center; pointer-events: auto; }
+.tact .e { width: 70px; height: 70px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: 12px; box-shadow: 0 0 0 2px var(--shadow), inset 0 -4px 0 rgba(0,0,0,.25); }
+.tact [data-run] { width: 54px; height: 54px; border-radius: 50%; font-size: 8.5px; }
+.tact .e:active { background: #8ae6bd; }
+#girar { display: none; }
+@media (pointer: coarse) {
+  #touch { display: block; } .hud-btns { display: none; } .hud-loc { display: none; }
+  body.has-ov #touch { display: none; }
+}
+@media (pointer: coarse) and (orientation: portrait) {
+  #girar { position: fixed; inset: 0; z-index: 100000; display: grid; place-items: center; background: var(--bg); text-align: center; padding: 24px; }
+  #girar b { font-family: var(--f-display); font-size: 1.5rem; color: var(--gold); display: block; margin-top: 1rem; }
+  #girar p { color: var(--muted); max-width: 30ch; margin: .5rem auto 0; }
+  .girar-tel { display: block; margin: 0 auto; width: 46px; height: 80px; border-radius: 8px; box-shadow: 0 0 0 4px var(--line); position: relative; animation: girar 2.2s ease-in-out infinite; }
+  .girar-tel::after { content: ""; position: absolute; left: 50%; bottom: 6px; width: 12px; height: 4px; margin-left: -6px; background: var(--line); }
+}
+@keyframes girar { 0%, 25% { transform: rotate(0); } 55%, 85% { transform: rotate(-90deg); } 100% { transform: rotate(0); } }
 
 /* ---------- Telas estreitas ---------- */
 @media (max-width: 900px) {
@@ -440,6 +467,114 @@ table.lab tr.lab-sub td { font-weight: 700; color: #2f6fd6; padding-top: .45rem;
 .lightbox.zoom img { max-width: none; max-height: none; width: 220%; cursor: zoom-out; }
 .lightbox figcaption { color: #eef1f4; font-size: 15px; } .lightbox figcaption small { color: #9aa3ad; margin-left: .5rem; }
 .lb-x { position: fixed; top: 10px; right: 12px; width: 44px; height: 44px; border: 0; background: #e05050; color: #fff; font-size: 20px; cursor: pointer; box-shadow: 0 0 0 2px #000; }
+
+/* ---------- Celular deitado (paisagem, pouca altura) ---------- */
+@media (max-height: 540px) and (orientation: landscape) {
+  body { font-size: 14px; }
+  /* HUD compacto nos cantos, deixando o centro e a base livres para o jogo e os controles */
+  #hud { font-size: 11px; }
+  .hud-me { left: calc(6px + env(safe-area-inset-left, 0px)); top: 6px; width: 172px; padding: .3rem .45rem .35rem; }
+  .hud-me .nm { font-size: 10px; }
+  .bar { height: 9px; margin-top: 3px; } .bar span { font-size: 7.5px; line-height: 9px; }
+  .coins { font-size: 9.5px; margin-top: 3px; }
+  .hud-rep { left: 50%; right: auto; top: 6px; transform: translateX(-50%); width: 160px; padding: .2rem .4rem .3rem; }
+  .hud-rep b { font-size: 7.5px; } .repbar { height: 7px; margin: 2px 0; } #hRepT { font-size: 9px; }
+  .hud-obj { top: 6px; bottom: auto; right: calc(6px + env(safe-area-inset-right, 0px)); width: min(220px, 29vw); padding: .3rem .5rem; }
+  .hud-obj b { font-size: 11px; } .hud-obj small { font-size: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  #mpChip { left: calc(6px + env(safe-area-inset-left, 0px)); top: 88px; font-size: 10px; padding: .15rem .45rem; max-width: 172px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #sideq { left: calc(6px + env(safe-area-inset-left, 0px)); top: 88px; bottom: auto; width: 172px; gap: 4px; }
+  .sq { font-size: 10.5px; padding: .25rem .45rem .35rem; }
+  #toasts { top: 60px; width: min(360px, 50vw); }
+  .toast { font-size: 11.5px; padding: .35rem .55rem; }
+  body.has-ov #toasts { bottom: 8px; right: 8px; width: min(280px, 42vw); }
+  #prompt { bottom: 10px; font-size: 11px; padding: .3rem .6rem; white-space: normal; max-width: 34vw; text-align: center; }
+  .dialog { bottom: 6px; width: min(720px, 96vw); grid-template-columns: 58px 1fr; gap: .6rem; padding: .45rem .65rem; }
+  .dlg-port { width: 56px; height: 56px; } .dlg-port canvas { width: 56px !important; height: 56px !important; }
+  .dlg-name { font-size: .9rem; } .dlg-text { font-size: 13.5px; min-height: 2.2em; margin: .1rem 0; }
+  .dlg-ch .btn { font-size: 11px; padding: .45em .8em; }
+
+  /* janelas: ocupam a tela toda com margens finas */
+  #overlay { padding: 6px calc(8px + env(safe-area-inset-right, 0px)) 6px calc(8px + env(safe-area-inset-left, 0px)); }
+  .panel, .enc { max-height: calc(100vh - 12px); max-height: calc(100dvh - 12px); }
+  .p-head { padding: .3rem .7rem; gap: .6rem; } .p-head h2 { font-size: 1.05rem; }
+  .x { font-size: 20px; padding: 2px 8px; }
+  .p-body { padding: .55rem .75rem; }
+  .enc { padding: .55rem .75rem; }
+  .tab { font-size: 9.5px; padding: .4em .6em; }
+  .btn { font-size: 12px; } .btn.big { font-size: 13px; padding: .6em 1.1em; }
+  h2 { font-size: 1.2rem; } h3 { font-size: 1rem; }
+  .eyebrow { font-size: 9.5px; }
+
+  /* tela inicial, criação, ordem, introdução */
+  .title-sky canvas { max-height: 32vh; }
+  .title-box { padding-block: .6rem; gap: .35rem; }
+  .logo { font-size: 2rem; } .title-box .sub { font-size: 13px; margin-bottom: .3rem; }
+  .mode-cards { grid-template-columns: 1fr 1fr; gap: .9rem; }
+  .mode-card { padding: .65rem .8rem .8rem; gap: .35rem; } .mode-card h2 { font-size: 1.15rem; } .mode-feat { font-size: 12.5px; }
+  .screen { padding-block: .4rem; gap: .6rem; }
+  .scr-head h2 { margin: 0; } .scr-head .lede { font-size: 13px; margin: .2rem 0 0; }
+  .create-grid { grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; }
+  #crPrev { width: 120px; height: auto; } .badge-card { width: 150px; }
+  .scr-foot { padding-block: .45rem; }
+  .order-grid { grid-template-columns: minmax(0, 1fr) 230px; gap: .8rem; }
+  .cards { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .55rem; }
+  .area-card { padding: .6rem .6rem .6rem; font-size: 13px; }
+  .story { padding: .9rem 1.1rem; } .story p { margin: .4rem 0; font-size: 14px; }
+  .keys { font-size: 12px; margin: .5rem 0; }
+
+  /* caso clínico: cabeçalho numa linha, prontuário + ferramentas lado a lado, alternativas em 2 colunas */
+  .case-head { grid-template-columns: 52px minmax(0, 1fr) 170px; gap: .6rem; }
+  .ch-port { width: 52px; height: 52px; } .ch-port canvas { width: 52px !important; height: 52px !important; }
+  .ch-id h2 { font-size: 1.1rem; } .ch-id p { font-size: 12px; } .case-head .eyebrow { font-size: 8.5px; margin: 0; }
+  .ch-timer { grid-column: auto; text-align: right; } .ch-timer b { font-size: 16px; } .ch-timer small { font-size: 9.5px; }
+  .phases { margin: .35rem 0; } .phases li { font-size: 8.5px; }
+  .case-body { grid-template-columns: minmax(0, 1fr) 170px; gap: .6rem; }
+  .chart dl { gap: .3rem; } .fld-c { padding: .3rem .55rem; } .fld-c dd { font-size: 13.5px; line-height: 1.4; }
+  .tools { font-size: 12px; }
+  .case-foot { margin-top: .5rem; padding-top: .5rem; }
+  .q { font-size: .95rem; margin: .2rem 0 .45rem; }
+  .opts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; } .opts.many { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .opt { font-size: 13px; padding: .45rem .55rem; }
+  .res-row { padding: .45rem .6rem; } .res-row p, .res-row span { font-size: 13px; }
+  .triage .tr-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; } .tr-card { font-size: 13px; padding: .45rem .55rem; }
+  .mat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .mat { font-size: 13px; padding: .4rem; }
+  .cimg { width: min(100%, 240px); } .cimg img { max-height: 150px; }
+  .psy-top .ch-port { flex: none; }
+
+  /* painéis */
+  .journal, .status, .caderno { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: .9rem; }
+  .inv { grid-template-columns: 150px minmax(0, 1fr) 210px; gap: .6rem; }
+  .inv-eq { grid-template-columns: 1fr; } .inv-char { grid-row: auto; }
+  .grid { grid-template-columns: repeat(7, 1fr); }
+  .item-card { padding: .55rem; }
+  .shop { grid-template-columns: 120px minmax(0, 1fr) 220px; gap: .6rem; }
+  .sn-port canvas { width: 84px !important; height: 84px !important; } .shop-npc .hint { font-size: 11px; } .quote { font-size: 13px; }
+  .shop-list { max-height: calc(100dvh - 90px); }
+  .sk-wrap { grid-template-columns: minmax(0, 1fr) 220px; gap: .6rem; }
+  .sk-board { max-height: calc(100dvh - 120px); }
+  .sk-det { padding: .6rem; }
+  .mapview canvas { max-height: calc(100dvh - 110px); width: auto; }
+  .pause { grid-template-columns: 1fr 1fr; gap: .45rem; } .pause #pzC, .pause .help { grid-column: 1 / -1; }
+  .cad-sum b { font-size: 16px; }
+
+  /* batalhas */
+  .battle { gap: .45rem; }
+  .arena { padding: .5rem .7rem; gap: .3rem; }
+  .foe-spr canvas { width: 84px !important; height: auto !important; }
+  .me-spr canvas { width: 56px !important; height: auto !important; }
+  .foe-info h2 { font-size: 1.15rem; } .phase { font-size: 12px; } .intent { font-size: 12px; }
+  .blog { font-size: 12.5px; }
+  .actions .item-btn { max-width: 240px; }
+  .duel-cv { width: min(100%, calc(40vh * 16 / 9)); }
+  .duel-bottom { grid-template-columns: 1fr 1.15fr; } .duel-msg { min-height: 0; font-size: 13px; }
+  .duel-cmd button { min-height: 44px; font-size: 12px; }
+}
+/* celulares muito baixos (≤ 380 px de altura): joystick e botões um pouco menores */
+@media (pointer: coarse) and (max-height: 380px) and (orientation: landscape) {
+  .joy-base { width: 96px; height: 96px; bottom: 12px; } .joy-knob { width: 42px; height: 42px; margin: -21px 0 0 -21px; }
+  .tmenu { grid-template-columns: repeat(4, 44px); gap: 8px; bottom: 88px; } .tmenu button { height: 28px; }
+  .tact .e { width: 64px; height: 64px; } .tact [data-run] { width: 50px; height: 50px; }
+}
 </style>
 <div id="app">
   <div id="stage">
@@ -469,9 +604,11 @@ table.lab tr.lab-sub td { font-weight: 700; color: #2f6fd6; padding-top: .45rem;
     <div id="prompt" hidden></div>
     <div id="toasts" aria-live="polite"></div>
     <div id="touch">
-      <div class="dpad"><button data-d="up" aria-label="Cima">▲</button><button data-d="left" aria-label="Esquerda">◀</button><button data-d="right" aria-label="Direita">▶</button><button data-d="down" aria-label="Baixo">▼</button></div>
-      <div class="tbtns"><button data-k="map">M</button><button data-k="inv">I</button><button data-k="journal">J</button><button data-k="skills">K</button><button data-k="status">C</button><button data-k="caderno" aria-label="Caderno de erros">N</button><button data-k="pause">☰</button><button data-run hidden>CORRER</button><button class="e" data-k="E">E · AGIR</button></div>
+      <div id="joyZone" aria-label="Joystick: arraste para andar"><div class="joy-base"><div class="joy-knob"></div></div></div>
+      <div class="tmenu"><button data-k="map" aria-label="Mapa">MAPA</button><button data-k="inv" aria-label="Inventário">ITENS</button><button data-k="journal" aria-label="Diário">DIÁRIO</button><button data-k="pause" aria-label="Pausa">☰</button><button data-k="skills" aria-label="Habilidades">HABIL.</button><button data-k="status" aria-label="Ficha">FICHA</button><button data-k="caderno" aria-label="Caderno de erros">ERROS</button></div>
+      <div class="tact"><button data-run hidden aria-label="Correr">CORRER</button><button class="e" data-k="E" aria-label="Agir">AGIR</button></div>
     </div>
+    <div id="girar" aria-live="polite"><div><i class="girar-tel"></i><b>Gire o celular</b><p>A Lenda do Bom Interno é jogada com o celular deitado (modo paisagem).</p></div></div>
   </div>
   <div id="overlay" hidden></div>
 </div>
@@ -16635,7 +16772,7 @@ const CHAINS = {
     { id: 'upa_intro', titulo: 'Bem-vindo à UPA', tipo: 'talk', alvo: 'leozao', local: 'Corredor da UPA', desc: 'Encontre o preceptor Leão Figura no corredor da UPA e se apresente.' },
     { id: 'upa_mapa', titulo: 'Onde fica cada coisa?', tipo: 'open', alvo: ['map', 'journal'], local: 'Qualquer lugar', desc: 'Abra o mapa (M) e o diário de missões (J) para se orientar.' },
     { id: 'upa_res', titulo: 'Conheça os residentes', tipo: 'talk', alvo: 'res_bruno', local: 'Sala dos Residentes', desc: 'O R1 Bruno está na Sala dos Residentes. Ele explica como funcionam os pedidos da equipe.' },
-    { id: 'upa_casos1', titulo: 'Primeiros atendimentos', tipo: 'cases', n: 2, local: 'Consultórios e Observação', desc: 'Atenda 2 pacientes marcados com "!" (aproxime-se e aperte E).' },
+    { id: 'upa_casos1', titulo: 'Primeiros atendimentos', tipo: 'cases', n: 2, local: 'Consultórios e Observação', desc: 'Atenda 2 pacientes marcados com "!" (aproxime-se e aperte E ou AGIR).' },
     { id: 'upa_skill', titulo: 'Treinamento', tipo: 'learn', n: 1, local: 'Árvore de habilidades (K)', desc: 'Abra a árvore de habilidades (K) e aprenda sua primeira habilidade com o XP disponível.' },
     { id: 'upa_proc', titulo: 'Gasometria supervisionada', tipo: 'proc', proc: 'gaso', local: 'Sala de Procedimentos', desc: 'Vá até a maca da Sala de Procedimentos e realize a coleta simulada de gasometria.' },
     { id: 'upa_side', titulo: 'Trabalho em equipe', tipo: 'side', n: 1, local: 'UPA', desc: 'Conclua 1 pedido da equipe (missão secundária) dentro do prazo.' },
@@ -17309,6 +17446,7 @@ function updateWorld(dt) {
   if (G.followers.length && hasSkill('int13')) spd *= 1.2;
   const sprint = hasSkill('int18') && (G.keys.ShiftLeft || G.keys.ShiftRight || G.touchSprint) && S.energia > 1;
   if (sprint && (dx || dy)) { spd *= 1.7; S.energia = Math.max(0, S.energia - dt * 1.5); }
+  if (G.touchDir && G.touchMag) spd *= Math.max(0.45, Math.min(1, G.touchMag * 1.15)); // joystick analógico
   if (dx || dy) {
     const len = Math.hypot(dx, dy); dx /= len; dy /= len;
     P.dir = Math.abs(dx) > Math.abs(dy) ? (dx < 0 ? 2 : 3) : (dy < 0 ? 1 : 0);
@@ -17469,7 +17607,7 @@ function updateInteractPrompt() {
   const it = findInteractable();
   if (!it) { el.hidden = true; return; }
   el.hidden = false;
-  el.innerHTML = it.kind === 'peer' ? `<kbd>E</kbd> ${it.g.st === 'livre' ? 'Desafiar ' + U.esc(it.g.nm) + ' para um duelo' : U.esc(it.g.nm) + (it.g.st === 'duelo' ? ' está em um duelo' : ' está ocupado(a)')}` : `<kbd>E</kbd> ${it.kind === 'npc' ? (it.n.psy ? '⚠ Atender ' + U.esc(it.n.nome) + ' (crise)' : it.n.emerg && G.psy ? '⚠ Atender emergência: ' + U.esc(G.psy.E.titulo) : 'Falar com ' + U.esc(it.n.nome)) : U.esc(interactLabel(it.o))}`;
+  el.innerHTML = it.kind === 'peer' ? `<kbd>${TECLA_E()}</kbd> ${it.g.st === 'livre' ? 'Desafiar ' + U.esc(it.g.nm) + ' para um duelo' : U.esc(it.g.nm) + (it.g.st === 'duelo' ? ' está em um duelo' : ' está ocupado(a)')}` : `<kbd>${TECLA_E()}</kbd> ${it.kind === 'npc' ? (it.n.psy ? '⚠ Atender ' + U.esc(it.n.nome) + ' (crise)' : it.n.emerg && G.psy ? '⚠ Atender emergência: ' + U.esc(G.psy.E.titulo) : 'Falar com ' + U.esc(it.n.nome)) : U.esc(interactLabel(it.o))}`;
 }
 function interact() {
   if (G.mode !== 'explore') return;
@@ -18134,8 +18272,14 @@ function rarTag(r) { return `<span class="rar" style="--rc:${RARIDADES[r].cor}">
 function statsLine(st) { return Object.entries(st || {}).map(([k, v]) => `<span class="${v >= 0 ? 'pos' : 'neg'}">${v >= 0 ? '+' : ''}${v} ${STAT_NOME[k] || k}</span>`).join(' '); }
 function portraitCanvas(look, w = 96, h = 96, opts = {}) { const cv = document.createElement('canvas'); cv.width = w; cv.height = h; cv.className = 'pix'; SPR.portrait(cv, look, opts); return cv; }
 
-function setOverlay(html, cls = '') { const o = OV(); o.className = cls; o.innerHTML = html; o.hidden = !html; document.body.classList.toggle('has-ov', !!html); return o; }
+function setOverlay(html, cls = '') { const o = OV(); o.className = cls; o.innerHTML = html; o.scrollTop = 0; o.hidden = !html; document.body.classList.toggle('has-ov', !!html); return o; }
 function closeOverlay(mode = 'explore') { if (G.panelName && String(G.panelName).startsWith('mp_') && typeof mpOnClose === 'function') { const pn = G.panelName; G.panelName = null; mpOnClose(pn); } setOverlay(''); G.mode = mode; G.keys = {}; SFX.play('ui'); }
+
+/* Ajuda de controles: teclado no computador, toque no celular */
+function controlesHTML() {
+  if (IS_TOUCH) return '<ul class="keys"><li><b>Andar:</b> encoste o polegar no lado esquerdo da tela e arraste (joystick)</li><li><b>AGIR:</b> falar, atender, abrir portas</li><li>Botões à direita: mapa, itens, diário, habilidades, ficha, erros e pausa</li></ul>';
+  return '<ul class="keys"><li><kbd>WASD</kbd>/<kbd>setas</kbd> andar</li><li><kbd>E</kbd> interagir</li><li><kbd>M</kbd> mapa</li><li><kbd>I</kbd> inventário</li><li><kbd>J</kbd> diário</li><li><kbd>K</kbd> habilidades</li><li><kbd>C</kbd> ficha</li><li><kbd>N</kbd> caderno de erros</li><li><kbd>Esc</kbd> pausa</li></ul>';
+}
 
 /* ---------------- Tela inicial ---------------- */
 let NEWMODE = 'internato';
@@ -18305,7 +18449,7 @@ function showIntro() {
     <p class="eyebrow">Primeiro dia</p><h2>${U.esc(S.player.name)}, interno(a) do ${HOSPITAL_NOME}</h2>
     <p>Você chega com o jaleco passado, o crachá torto e um café na mão. Do outro lado da avenida, o Rodolfo já abriu o bar e grita "bom dia, doutor(a)!" para qualquer pessoa de branco.</p>
     <p>Seu primeiro estágio é <b style="color:${first.cor}">${first.nome}</b> (${first.local}). ${S.order[0] === 'upa' ? 'A UPA fica à esquerda na avenida.' : S.order[0] === 'ubs' ? 'A UBS Maria das Dores fica do outro lado da avenida, à direita do bar do Rodolfo.' : 'Entre no hospital pela porta principal e siga as placas do saguão.'}</p>
-    <ul class="keys"><li><kbd>WASD</kbd>/<kbd>setas</kbd> andar</li><li><kbd>E</kbd> interagir</li><li><kbd>M</kbd> mapa</li><li><kbd>I</kbd> inventário</li><li><kbd>J</kbd> diário</li><li><kbd>K</kbd> habilidades</li><li><kbd>C</kbd> ficha</li><li><kbd>N</kbd> caderno de erros</li><li><kbd>Esc</kbd> pausa</li></ul>
+    ${controlesHTML()}
     <button class="btn big" id="inGo">Começar o plantão</button></div></div>`, 'full');
   $('#inGo').onclick = () => startExplore(false);
 }
@@ -18313,19 +18457,20 @@ function showIntroVest() {
   setOverlay(`<div class="screen intro"><div class="panel story">
     <p class="eyebrow">Modo Vestibulando</p><h2>${U.esc(S.player.name)}, bem-vindo(a) ao ${HOSPITAL_NOME}</h2>
     <p>Aqui não há estágios em sequência nem missões: todas as portas estão abertas. UPA, Pediatria, GO, Clínica Médica, Cirurgia e UBS têm pacientes esperando atendimento nos leitos, e emergências podem surgir a qualquer momento. Os preceptores, residentes e o Rodolfo continuam por aí, com as mesmas histórias de sempre.</p>
-    <p>Os outros jogadores do Modo Vestibulando aparecem no mapa com o nome sobre a cabeça. No bar do Rodolfo, chegue perto de alguém e aperte <kbd>E</kbd> para um duelo de perguntas. Quem tiver mais pontos de reputação entre os jogadores online ganha a placa dourada de <b>Melhor Interno</b>.</p>
-    <ul class="keys"><li><kbd>WASD</kbd>/<kbd>setas</kbd> andar</li><li><kbd>E</kbd> interagir</li><li><kbd>M</kbd> mapa</li><li><kbd>I</kbd> inventário</li><li><kbd>J</kbd> diário</li><li><kbd>K</kbd> habilidades</li><li><kbd>C</kbd> ficha</li><li><kbd>N</kbd> caderno de erros</li><li><kbd>Esc</kbd> pausa</li></ul>
+    <p>Os outros jogadores do Modo Vestibulando aparecem no mapa com o nome sobre a cabeça. No bar do Rodolfo, chegue perto de alguém e aperte <kbd>${TECLA_E()}</kbd> para um duelo de perguntas. Quem tiver mais pontos de reputação entre os jogadores online ganha a placa dourada de <b>Melhor Interno</b>.</p>
+    ${controlesHTML()}
     <button class="btn big" id="inGo">Entrar no hospital</button></div></div>`, 'full');
   $('#inGo').onclick = () => startExplore(false);
 }
 function startExplore(loaded) {
+  telaCheia();
   setOverlay(''); G.mode = 'explore';
   G.player = null; enterMap(S.map.id, S.map.x, S.map.y, S.map.dir);
   clampVitals(); if (!loaded) { S.vida = stats().vidaMax; S.energia = stats().energiaMax; }
   $('#hud').hidden = false;
   const a = currentArea(); const st = a && chainStep(a);
   if (st && st.tipo === 'find') setupMainFind(st);
-  if (!loaded && isVest()) setTimeout(() => toast('<b>Modo Vestibulando</b><br><small>Todos os setores estão abertos. Procure os leitos com paciente e aperte E para atender.</small>', 'quest'), 600);
+  if (!loaded && isVest()) setTimeout(() => toast('<b>Modo Vestibulando</b><br><small>Todos os setores estão abertos. Procure os leitos com paciente e aperte ' + TECLA_E() + ' para atender.</small>', 'quest'), 600);
   else if (!loaded && st) setTimeout(() => toast(`<b>Missão:</b> ${st.titulo}<br><small>${st.desc}</small>`, 'quest'), 600);
   else toast(`Bem-vindo(a) de volta, ${U.esc(S.player.name)}!`);
   if (loaded && !isVest() && S.flags.novoEstagio && AREAS[S.flags.novoEstagio]) { const A = AREAS[S.flags.novoEstagio]; delete S.flags.novoEstagio; setTimeout(() => toast(`<b>Novo estágio no internato:</b> ${A.nome} (${A.local})<br><small>Ele entrou como o ${S.order.indexOf(A.id) + 1}º estágio da sua sequência. A UBS fica do outro lado da avenida, ao lado do bar.</small>`, 'quest'), 1400); }
@@ -18376,7 +18521,7 @@ function startDialog(npcId, falas, onEnd, choices, npcObj) {
   const prevMode = G.mode; G.mode = 'dialog';
   let i = 0, typing = null;
   const box = U.el('div', 'dialog');
-  box.innerHTML = `<div class="dlg-port"></div><div class="dlg-body"><b class="dlg-name">${U.esc(nome)}</b><p class="dlg-text"></p><div class="dlg-ch"></div><span class="dlg-next">E / Espaço ▸</span></div>`;
+  box.innerHTML = `<div class="dlg-port"></div><div class="dlg-body"><b class="dlg-name">${U.esc(nome)}</b><p class="dlg-text"></p><div class="dlg-ch"></div><span class="dlg-next">${IS_TOUCH ? 'toque para continuar ▸' : 'E / Espaço ▸'}</span></div>`;
   box.querySelector('.dlg-port').appendChild(portraitCanvas(look, 92, 92, { crop: true, scale: 5 }));
   document.getElementById('stage').appendChild(box);
   const tEl = box.querySelector('.dlg-text');
@@ -18604,13 +18749,14 @@ function openStatus() {
 
 /* ---------- Pausa ---------- */
 function openPause() {
-  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button><button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzT">Tela inicial (trocar de modo)</button><button class="btn ghost" id="pzN">Recomeçar este modo</button>
-    <div class="help"><h3>Controles</h3><p><kbd>WASD</kbd>/<kbd>setas</kbd> andar · <kbd>E</kbd> interagir · <kbd>M</kbd> mapa · <kbd>I</kbd> inventário · <kbd>J</kbd> diário · <kbd>K</kbd> habilidades · <kbd>C</kbd> ficha · <kbd>Esc</kbd> pausa${hasSkill('int18') ? ' · <kbd>Shift</kbd> correr' : ''}</p><p class="disclaimer">O progresso é salvo automaticamente neste navegador. Use "Exportar save" para guardar uma cópia. Conteúdo educacional: não substitui protocolos, supervisão ou orientação médica real.</p></div></div>`;
+  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button>${IS_TOUCH ? `<button class="btn ghost" id="pzFS">${document.fullscreenElement || document.webkitFullscreenElement ? 'Sair da tela cheia' : 'Tela cheia'}</button>` : ''}<button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzT">Tela inicial (trocar de modo)</button><button class="btn ghost" id="pzN">Recomeçar este modo</button>
+    <div class="help"><h3>Controles</h3>${IS_TOUCH ? controlesHTML() : `<p><kbd>WASD</kbd>/<kbd>setas</kbd> andar · <kbd>E</kbd> interagir · <kbd>M</kbd> mapa · <kbd>I</kbd> inventário · <kbd>J</kbd> diário · <kbd>K</kbd> habilidades · <kbd>C</kbd> ficha · <kbd>Esc</kbd> pausa${hasSkill('int18') ? ' · <kbd>Shift</kbd> correr' : ''}</p>`}<p class="disclaimer">O progresso é salvo automaticamente neste navegador. Use "Exportar save" para guardar uma cópia. Conteúdo educacional: não substitui protocolos, supervisão ou orientação médica real.</p></div></div>`;
   openPanel('pause', 'Pausa', body, { cls: 'small' });
   $('#pzC').onclick = () => closeOverlay();
   $('#pzF').onclick = () => { closeOverlay(); openStatus(); };
   $('#pzS').onclick = () => { saveGame(); toast('Jogo salvo.'); };
   $('#pzSom').onclick = () => { SFX.on = !SFX.on; reopen(openPause); };
+  if ($('#pzFS')) $('#pzFS').onclick = () => { const on = document.fullscreenElement || document.webkitFullscreenElement; telaCheia(on ? 'sair' : true); setTimeout(() => { if (G.panelName === 'pause') reopen(openPause); }, 400); };
   $('#pzE').onclick = () => { const code = exportSave(); const box = U.el('div', 'confirm', `<div class="panel small"><h3>Exportar save</h3><p>Guarde este código para restaurar o progresso.</p><textarea rows="6" readonly>${code}</textarea><div class="row"><button class="btn" id="exCp">Copiar</button><button class="btn ghost" id="exX">Fechar</button></div></div>`); OV().appendChild(box); const ta = box.querySelector('textarea'); box.querySelector('#exCp').onclick = () => { try { navigator.clipboard.writeText(code).then(() => toast('Copiado!'), () => { ta.select(); }); } catch (e) { ta.select(); } }; box.querySelector('#exX').onclick = () => box.remove(); };
   $('#pzI').onclick = () => importBox();
   const sair = () => { S = null; G.map = null; G.npcs = []; G.followers = []; G.psy = null; G.player = null; $('#hud').hidden = true; CR = null; ORD = []; showTitle(); };
@@ -18811,7 +18957,7 @@ function bindCaseImgs(host) {
 }
 function openLightbox(src, t) {
   const lb = document.createElement('div'); lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-label', t || 'Exame');
-  lb.innerHTML = `<figure><div class="lb-scroll"><img src="${U.esc(src)}" alt="${U.esc(t || 'Exame')}"></div><figcaption>${U.esc(t || '')} <small>Clique na imagem para aproximar · Esc para fechar</small></figcaption></figure><button class="lb-x" aria-label="Fechar">✕</button>`;
+  lb.innerHTML = `<figure><div class="lb-scroll"><img src="${U.esc(src)}" alt="${U.esc(t || 'Exame')}"></div><figcaption>${U.esc(t || '')} <small>${IS_TOUCH ? 'Toque na imagem para aproximar · ✕ para fechar' : 'Clique na imagem para aproximar · Esc para fechar'}</small></figcaption></figure><button class="lb-x" aria-label="Fechar">✕</button>`;
   const close = () => { lb.remove(); document.removeEventListener('keydown', key, true); };
   const key = e => { if (e.key === 'Escape') { e.stopPropagation(); e.preventDefault(); close(); } };
   lb.onclick = e => { if (e.target === lb || e.target.classList.contains('lb-x')) close(); };
@@ -19548,7 +19694,7 @@ const MOVE_KEYS = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'KeyW', 'K
 function fitCanvas() {
   const st = document.getElementById('stage'); if (!st || !CV) return;
   const w = st.clientWidth, h = st.clientHeight;
-  let s = Math.min(w / VW, h / VH); if (s >= 1) { const f = Math.floor(s); if (f / s >= 0.8) s = f; }
+  let s = Math.min(w / VW, h / VH); if (s >= 1 && !IS_TOUCH) { const f = Math.floor(s); if (f / s >= 0.8) s = f; }
   CV.style.width = Math.floor(VW * s) + 'px'; CV.style.height = Math.floor(VH * s) + 'px';
 }
 function isTyping(e) { const t = e.target; return t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT'); }
@@ -19581,21 +19727,63 @@ function onKeyDown(e) {
 }
 function onKeyUp(e) { G.keys[e.code] = false; }
 
+/* Joystick analógico de toque: o dedo encosta em qualquer ponto do lado esquerdo,
+   a base aparece ali e o pino segue o dedo. Quanto mais longe do centro, mais rápido anda. */
+const JOY = { id: null, cx: 0, cy: 0, R: 46 };
+let joyReset = () => { G.touchDir = null; G.touchMag = 0; };
+const IS_TOUCH = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+function TECLA_E() { return IS_TOUCH ? 'AGIR' : 'E'; }
+function telaCheia(forcar) {
+  const el = document.documentElement, fs = document.fullscreenElement || document.webkitFullscreenElement;
+  if (fs) { if (forcar === 'sair') (document.exitFullscreen || document.webkitExitFullscreen || (() => { })).call(document); return; }
+  if (!IS_TOUCH && !forcar) return;
+  const req = el.requestFullscreen || el.webkitRequestFullscreen; if (!req) return;
+  try {
+    const p = req.call(el, { navigationUI: 'hide' });
+    const lock = () => { try { const o = screen.orientation; if (o && o.lock) o.lock('landscape').catch(() => { }); } catch (e) { } };
+    if (p && p.then) p.then(lock).catch(() => { }); else lock();
+  } catch (e) { }
+}
 function setupTouch() {
   const t = document.getElementById('touch'); if (!t) return;
-  const dirs = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] };
-  t.querySelectorAll('[data-d]').forEach(b => {
-    const d = dirs[b.dataset.d];
-    const on = e => { e.preventDefault(); SFX.init(); G.touchDir = d; }, off = e => { e.preventDefault(); if (G.touchDir === d) G.touchDir = null; };
-    b.addEventListener('pointerdown', on); b.addEventListener('pointerup', off); b.addEventListener('pointerleave', off); b.addEventListener('pointercancel', off);
-  });
-  t.querySelectorAll('[data-k]').forEach(b => b.addEventListener('click', e => {
+  const zone = document.getElementById('joyZone');
+  if (zone) {
+    const base = zone.querySelector('.joy-base'), knob = zone.querySelector('.joy-knob');
+    joyReset = () => { JOY.id = null; base.removeAttribute('style'); base.classList.remove('on'); knob.style.transform = ''; G.touchDir = null; G.touchMag = 0; };
+    const move = (x, y) => {
+      let dx = x - JOY.cx, dy = y - JOY.cy; const d = Math.hypot(dx, dy), R = JOY.R;
+      if (d > R) { dx = dx / d * R; dy = dy / d * R; }
+      knob.style.transform = `translate(${dx.toFixed(1)}px, ${dy.toFixed(1)}px)`;
+      const mag = Math.min(1, d / R);
+      if (mag < 0.2) { G.touchDir = null; G.touchMag = 0; } else { G.touchDir = [dx / Math.hypot(dx, dy), dy / Math.hypot(dx, dy)]; G.touchMag = mag; }
+    };
+    zone.addEventListener('pointerdown', e => {
+      if (JOY.id !== null) return;
+      e.preventDefault(); SFX.init();
+      const zr = zone.getBoundingClientRect(); JOY.R = (base.offsetWidth || 92) / 2;
+      JOY.id = e.pointerId; try { zone.setPointerCapture(e.pointerId); } catch (_) { }
+      const m = JOY.R + 4;
+      JOY.cx = Math.max(zr.left + m, Math.min(zr.right - m, e.clientX)); JOY.cy = Math.max(zr.top + m, Math.min(zr.bottom - m, e.clientY));
+      base.style.left = (JOY.cx - zr.left - JOY.R) + 'px'; base.style.top = (JOY.cy - zr.top - JOY.R) + 'px'; base.style.bottom = 'auto';
+      base.classList.add('on'); move(e.clientX, e.clientY);
+    });
+    zone.addEventListener('pointermove', e => { if (e.pointerId === JOY.id) { e.preventDefault(); move(e.clientX, e.clientY); } });
+    const end = e => { if (e.pointerId === JOY.id) joyReset(); };
+    ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(ev => zone.addEventListener(ev, end));
+    zone.addEventListener('contextmenu', e => e.preventDefault());
+  }
+  t.addEventListener('contextmenu', e => e.preventDefault());
+  // pointerdown (e não click): o celular não gera "click" para o segundo dedo, e o jogador
+  // precisa apertar AGIR ou abrir um menu enquanto segura o joystick
+  t.querySelectorAll('[data-k]').forEach(b => b.addEventListener('pointerdown', e => {
+    if (e.button > 0) return;
     e.preventDefault(); SFX.init(); const k = b.dataset.k;
+    if (navigator.vibrate) try { navigator.vibrate(8); } catch (_) { }
     if (G.mode === 'dialog') { G.dialog && G.dialog.next(); return; }
     if (k === 'E') { if (G.mode === 'explore') interact(); else if (G.mode === 'proc' && G.execPress) G.execPress(); }
     else if (G.mode === 'explore' || G.mode === 'panel') togglePanel(k);
   }));
-  const run = t.querySelector('[data-run]'); if (run) { run.addEventListener('pointerdown', () => G.touchSprint = true); run.addEventListener('pointerup', () => G.touchSprint = false); run.addEventListener('pointerleave', () => G.touchSprint = false); }
+  const run = t.querySelector('[data-run]'); if (run) { run.addEventListener('pointerdown', e => { e.preventDefault(); G.touchSprint = true; }); ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(ev => run.addEventListener(ev, () => G.touchSprint = false)); }
 }
 
 function loop(now) {
@@ -19620,7 +19808,8 @@ function boot() {
   try { buildMaps(); } catch (e) { console.error(e); }
   fitCanvas(); window.addEventListener('resize', fitCanvas);
   window.addEventListener('keydown', onKeyDown); window.addEventListener('keyup', onKeyUp);
-  window.addEventListener('blur', () => { G.keys = {}; G.touchDir = null; });
+  window.addEventListener('blur', () => { G.keys = {}; joyReset(); });
+  document.body.classList.toggle('is-touch', IS_TOUCH);
   document.addEventListener('visibilitychange', () => { if (document.hidden) saveGame(); });
   window.addEventListener('beforeunload', saveGame);
   setupTouch();
@@ -19741,7 +19930,7 @@ function mpTick(dt) {
     if (g.moving) { g.animT += dt * 9; g.frame = Math.floor(g.animT) % 4; } else { g.animT = 0; g.frame = 0; }
   }
   if (S && isVest() && G.map && G.map.id === 'bar' && !MP.barHint && [...MP.ghosts.values()].some(g => g.map === 'bar')) {
-    MP.barHint = true; toast('<b>Outros internos estão no bar!</b><br><small>Chegue perto de alguém e aperte E para desafiar para um Duelo de Pergunta Relâmpago.</small>', 'quest');
+    MP.barHint = true; toast('<b>Outros internos estão no bar!</b><br><small>Chegue perto de alguém e aperte ' + TECLA_E() + ' para desafiar para um Duelo de Pergunta Relâmpago.</small>', 'quest');
   }
   mpDuelTick(now);
   if (MP.duel && G.panelName === 'mp_duelo') mpScene(now);

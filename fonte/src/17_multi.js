@@ -103,7 +103,7 @@ function mpTick(dt) {
     if (g.moving) { g.animT += dt * 9; g.frame = Math.floor(g.animT) % 4; } else { g.animT = 0; g.frame = 0; }
   }
   if (S && isVest() && G.map && G.map.id === 'bar' && !MP.barHint && [...MP.ghosts.values()].some(g => g.map === 'bar')) {
-    MP.barHint = true; toast('<b>Outros internos estão no bar!</b><br><small>Chegue perto de alguém e aperte E para desafiar para um Duelo de Pergunta Relâmpago.</small>', 'quest');
+    MP.barHint = true; toast('<b>Outros internos estão no bar!</b><br><small>Chegue perto de alguém e aperte ' + TECLA_E() + ' para desafiar para um Duelo de Pergunta Relâmpago.</small>', 'quest');
   }
   mpDuelTick(now);
   if (MP.duel && G.panelName === 'mp_duelo') mpScene(now);

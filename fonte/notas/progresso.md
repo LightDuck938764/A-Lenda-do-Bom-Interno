@@ -102,3 +102,12 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 - Padrão: droga + dose/via/tempo, procedimento nomeado, distratores plausíveis (erro de dose, de droga, de momento ou de indicação). Ferramentas em scratchpad/scripts: dumpcd.js, showcd.py, applycd.py, lens.py, setc.py (correções em scratchpad/cdfix/*.json).
 - Valida.js depois da reescrita: conduta correta mais longa em 5% dos casos e mais curta em 18%.
 - Modo Vestibulando: refillSpots (11_world.js) garante ao menos um caso ativo em cada ala da Clínica Médica (cardio, pneumo, endócrino, gastro, hepato, hemato, infecto, nefro, neuro, psiq, reumato), para o jogador escolher a especialidade que quer treinar.
+
+## Celular (2026-10-26)
+- Causa de "os controles não funcionam": o #overlay vazio tinha `hidden`, mas o CSS `#overlay { display: grid }` vencia o atributo; a camada invisível (z-index 20) cobria a tela inteira e engolia os toques (também os botões do HUD no computador). Corrigido com `[hidden] { display: none !important; }`.
+- Setas trocadas por joystick analógico flutuante (#joyZone: 46% esquerdos × 62% de baixo da tela). A base aparece onde o polegar encosta; zona morta 20%; velocidade proporcional à inclinação (mínimo 45%). G.touchDir + G.touchMag; updateWorld multiplica a velocidade.
+- Botões de toque com pointerdown (não click): o navegador não gera click para o segundo dedo, então AGIR/menus funcionam segurando o joystick. Menus com nome (MAPA, ITENS, DIÁRIO, ☰, HABIL., FICHA, ERROS) 46×30 com 9 px de espaço; AGIR redondo 70 px; CORRER 54 px. Somem quando há janela aberta (body.has-ov).
+- Só paisagem: em retrato (pointer: coarse) aparece a tela "Gire o celular". Tela cheia + trava de orientação ao entrar no jogo (Android/Chrome; iPhone não permite, mas "Adicionar à Tela de Início" abre sem barra, meta apple-mobile-web-app-capable). Botão "Tela cheia" na pausa.
+- @media (max-height: 540px) and (orientation: landscape): HUD compacto nos cantos, janelas ocupando a tela, caso clínico com cabeçalho em uma linha e prontuário + ferramentas lado a lado, painéis em 2 colunas, batalhas compactas. Canvas sem arredondar escala no toque (ocupa mais a tela).
+- Textos de ajuda trocam teclas por toque (controlesHTML, TECLA_E(): "AGIR" no celular). setOverlay zera o scroll (a criação de personagem abria rolada depois de rolar a tela inicial).
+- Testes: scratchpad/tests/mob.py (toque real via CDP), mobscreens.py (todas as telas em W H), mobextra.py (retrato, tablet, desktop, multitoque).
