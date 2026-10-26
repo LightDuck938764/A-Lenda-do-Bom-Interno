@@ -75,7 +75,7 @@ function fbMakeRoom() {
   }
   function sendPos(force) {
     if (!R.uid) return;
-    const now = Date.now(); if (!force && now - R.posAt < 250) { if (!R.posTimer) R.posTimer = setTimeout(() => { R.posTimer = null; sendPos(true); }, 260); return; }
+    const now = Date.now(); if (!force && now - R.posAt < 90) { if (!R.posTimer) R.posTimer = setTimeout(() => { R.posTimer = null; sendPos(true); }, 100); return; }
     const cur = pick(R.mine, POS), diff = {};
     for (const k of POS) { const a = JSON.stringify(cur[k] ?? null), b = JSON.stringify(R.sentPos[k] ?? null); if (a !== b) diff[k] = cur[k] ?? null; }
     if (!Object.keys(diff).length) return;

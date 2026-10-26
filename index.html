@@ -19914,7 +19914,19 @@ function mpPeers(ch) {
     const tx = +pr.x, ty = +pr.y;
     if (!isFinite(tx) || !isFinite(ty)) { MP.ghosts.delete(p.peer); continue; }   // está em outro mapa
     if (!g) { g = { peer: p.peer, x: tx, y: ty, animT: 0, frame: 0, look: MP_FALLBACK_LOOK, mp: true }; MP.ghosts.set(p.peer, g); }
-    if (g.map !== pr.map) { g.x = tx; g.y = ty; }
+    if (g.map !== pr.map) { g.x = tx; g.y = ty; g.vx = g.vy = 0; g.rt = 0; }
+    // velocidade estimada entre duas posições recebidas: o boneco do outro segue andando
+    // na mesma direção enquanto a próxima posição não chega (esconde o atraso da internet)
+    const agora = performance.now();
+    if (g.map === pr.map && (tx !== g.tx || ty !== g.ty)) {
+      const el = (agora - (g.rt || 0)) / 1000;
+      if (g.rt && el > 0.04 && el < 1) {
+        const lim = 12, nvx = Math.max(-lim, Math.min(lim, (tx - g.tx) / el)), nvy = Math.max(-lim, Math.min(lim, (ty - g.ty) / el));
+        g.vx = (g.vx || 0) * 0.35 + nvx * 0.65; g.vy = (g.vy || 0) * 0.35 + nvy * 0.65;
+      }
+      g.rt = agora;
+    }
+    if (!pr.mv) { g.vx = g.vy = 0; }
     g.map = pr.map; g.tx = tx; g.ty = ty; g.dir = [0, 1, 2, 3].includes(pr.d) ? pr.d : 0; g.mv = !!pr.mv;
     g.nm = mpName(pr.nm); g.lv = Math.max(1, Math.min(99, pr.lv | 0)); g.rp = Math.max(-1000, Math.min(1000, Math.round(+pr.rp || 0))); g.st = ['livre', 'ocupado', 'duelo'].includes(pr.st) ? pr.st : 'ocupado';
     if (pr.lk && pr.lk !== g.lkRaw) { g.lkRaw = pr.lk; g.look = mpLook(pr.lk) || MP_FALLBACK_LOOK; g.bad = false; }
@@ -19930,9 +19942,9 @@ function mpPeers(ch) {
 function mpTick(dt) {
   mpChip();
   const r = MP.room; if (!r) return;
-  // presença (até ~10x por segundo, só quando muda)
+  // presença (até ~12x por segundo, só quando muda)
   const now = performance.now();
-  if (now - MP.sentAt > 100) {
+  if (now - MP.sentAt > 80) {
     let pres;
     if (S && G.map && G.player && isVest()) {
       const st = MP.duel ? 'duelo' : (G.mode === 'explore' ? 'livre' : 'ocupado');
@@ -19949,8 +19961,16 @@ function mpTick(dt) {
   }
   // movimento suave dos outros internos
   for (const g of MP.ghosts.values()) {
-    const dx = g.tx - g.x, dy = g.ty - g.y, d = Math.hypot(dx, dy);
-    if (d > 3) { g.x = g.tx; g.y = g.ty; } else { const k = Math.min(1, dt * 10); g.x += dx * k; g.y += dy * k; }
+    // alvo = última posição recebida + o quanto andou desde então (no máximo 0,3 s, sem atravessar parede)
+    let ax = g.tx, ay = g.ty;
+    if ((g.vx || g.vy) && g.rt) {
+      const age = Math.min(0.3, (now - g.rt) / 1000), M = G.map;
+      const px = g.tx + g.vx * age, py = g.ty + g.vy * age;
+      const livre = (x, y) => !M || (M.in(Math.floor(x), Math.floor(y - 0.1)) && !M.solid[Math.floor(y - 0.1)][Math.floor(x)]);
+      if (livre(px, py)) { ax = px; ay = py; } else if (livre(px, g.ty)) ax = px; else if (livre(g.tx, py)) ay = py;
+    }
+    const dx = ax - g.x, dy = ay - g.y, d = Math.hypot(dx, dy);
+    if (d > 3) { g.x = ax; g.y = ay; } else { const k = Math.min(1, dt * 16); g.x += dx * k; g.y += dy * k; }
     g.moving = g.mv || d > 0.06;
     if (g.moving) { g.animT += dt * 9; g.frame = Math.floor(g.animT) % 4; } else { g.animT = 0; g.frame = 0; }
   }
@@ -20625,7 +20645,7 @@ function fbMakeRoom() {
   }
   function sendPos(force) {
     if (!R.uid) return;
-    const now = Date.now(); if (!force && now - R.posAt < 250) { if (!R.posTimer) R.posTimer = setTimeout(() => { R.posTimer = null; sendPos(true); }, 260); return; }
+    const now = Date.now(); if (!force && now - R.posAt < 90) { if (!R.posTimer) R.posTimer = setTimeout(() => { R.posTimer = null; sendPos(true); }, 100); return; }
     const cur = pick(R.mine, POS), diff = {};
     for (const k of POS) { const a = JSON.stringify(cur[k] ?? null), b = JSON.stringify(R.sentPos[k] ?? null); if (a !== b) diff[k] = cur[k] ?? null; }
     if (!Object.keys(diff).length) return;
