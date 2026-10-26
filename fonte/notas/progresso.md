@@ -111,3 +111,8 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 - @media (max-height: 540px) and (orientation: landscape): HUD compacto nos cantos, janelas ocupando a tela, caso clínico com cabeçalho em uma linha e prontuário + ferramentas lado a lado, painéis em 2 colunas, batalhas compactas. Canvas sem arredondar escala no toque (ocupa mais a tela).
 - Textos de ajuda trocam teclas por toque (controlesHTML, TECLA_E(): "AGIR" no celular). setOverlay zera o scroll (a criação de personagem abria rolada depois de rolar a tela inicial).
 - Testes: scratchpad/tests/mob.py (toque real via CDP), mobscreens.py (todas as telas em W H), mobextra.py (retrato, tablet, desktop, multitoque).
+
+## Modo online: "não nos encontramos" (2026-10-26)
+- Simulação local do Firebase (scratchpad/fbsim: server.py + mockfb.js, dois navegadores em two.py) com o código do site: os dois jogadores se veem na rua e depois em setores diferentes. O código de conexão está correto; a falha real deve ser do lado do Firebase (regras/login anônimo/rede) ou dos jogadores em modos/setores diferentes.
+- Diagnóstico no jogo: o chip mostra onde está o outro interno ("Caio está em: Saguão") ou o motivo de estar offline (servidor recusou por permissão; login anônimo falhou + código; rede bloqueou o servidor). MAPA: outros internos em azul-claro no mapa do setor, nomes no mapa Mundo e lista "Internos online agora" com o setor de cada um.
+- Lembrar: só o Modo Vestibulando é online; personagem antigo (save de antes dos modos) virou Modo Internato.

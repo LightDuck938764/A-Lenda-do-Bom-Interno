@@ -391,7 +391,7 @@ function openSkills() {
 let MAPTAB = 'local';
 function openMap() {
   const tabs = `<nav class="tabs"><button class="tab ${MAPTAB === 'local' ? 'on' : ''}" data-m="local">${U.esc(G.map.nome)}</button><button class="tab ${MAPTAB === 'mundo' ? 'on' : ''}" data-m="mundo">Mundo</button></nav>`;
-  const body = `<div class="mapview"><canvas id="mapCv" class="pix"></canvas><div class="map-legend"><span><i class="lg me"></i>Você</span><span><i class="lg main"></i>Missão principal</span><span><i class="lg side"></i>Missão secundária</span><span><i class="lg pac"></i>Paciente aguardando</span><span><i class="lg lock"></i>Estágio trancado</span></div></div>`;
+  const body = `<div class="mapview"><canvas id="mapCv" class="pix"></canvas><div class="map-legend"><span><i class="lg me"></i>Você</span><span><i class="lg main"></i>Missão principal</span><span><i class="lg side"></i>Missão secundária</span><span><i class="lg pac"></i>Paciente aguardando</span><span><i class="lg lock"></i>Estágio trancado</span>${isVest() ? '<span><i class="lg mp"></i>Outros internos</span>' : ''}</div>${mpListaHTML()}</div>`;
   openPanel('map', 'Mapa', body, { cls: 'wide', tabs });
   OV().querySelectorAll('[data-m]').forEach(b => b.onclick = () => { MAPTAB = b.dataset.m; reopen(openMap); });
   if (MAPTAB === 'local') drawLocalMap(); else drawWorldMap();
@@ -410,7 +410,19 @@ function drawLocalMap() {
   for (const w of M.warps) { const nm = w.to === 'rua' ? 'Saída' : MAPS[w.to].nome; c.fillStyle = '#ffe68a'; c.fillText((AREAS[w.to] && !areaUnlocked(w.to) ? '🔒 ' : '') + nm, (w.x + w.w / 2) * s, (w.y + (w.y < 2 ? 3.2 : -0.6)) * s); }
   for (const sp of G.spots) if (sp.s.active && sp.obj.spot === 'caso') { c.fillStyle = '#ff5a5a'; c.fillRect((sp.obj.x + 0.25) * s, (sp.obj.y + 0.25) * s, s / 2, s / 2); }
   for (const t of questTargetsInMap()) { c.fillStyle = t.k === 'main' ? '#ffcf3a' : '#7af0ff'; c.beginPath(); c.arc(t.x * s, (t.y + 1.2) * s, s * 0.6, 0, 7); c.fill(); }
+  if (typeof mpGhostsHere === 'function') for (const g of mpGhostsHere()) {
+    c.fillStyle = '#10131a'; c.beginPath(); c.arc(g.x * s, (g.y - 0.3) * s, s * 0.75, 0, 7); c.fill(); c.fillStyle = '#7af0ff'; c.beginPath(); c.arc(g.x * s, (g.y - 0.3) * s, s * 0.5, 0, 7); c.fill();
+    c.fillStyle = '#7af0ff'; c.fillText(g.nm, g.x * s, (g.y - 1.4) * s);
+  }
   const P = G.player; c.fillStyle = '#ffffff'; c.beginPath(); c.arc(P.x * s, (P.y - 0.3) * s, s * 0.7, 0, 7); c.fill(); c.fillStyle = '#e0453a'; c.beginPath(); c.arc(P.x * s, (P.y - 0.3) * s, s * 0.4, 0, 7); c.fill();
+}
+// Modo Vestibulando: quem está online e em que setor (aparece embaixo do mapa)
+function mpListaHTML() {
+  if (!isVest() || typeof MP === 'undefined') return '';
+  if (MP.status !== 'on') return `<p class="mp-lista hint">Modo online: ${MP.status === 'negado' ? 'o servidor recusou a conexão' : MP.status === 'off' ? 'indisponível (' + U.esc(mpMotivoOff()) + ')' : 'conectando…'}</p>`;
+  const rs = [...MP.roster.values()].sort((a, b) => b.rp - a.rp);
+  if (!rs.length) return '<p class="mp-lista hint">Ninguém mais online agora. Quem entrar no Modo Vestibulando aparece aqui, com o setor onde está.</p>';
+  return `<div class="mp-lista"><b>Internos online agora</b><ul>${rs.map(r => `<li><span>${U.esc(r.nm)} <small>Nv ${r.lv}</small></span><span class="${r.map === G.map.id ? 'aqui' : ''}">${r.map === G.map.id ? 'aqui com você' : U.esc(mpLugar(r.map))}</span></li>`).join('')}</ul></div>`;
 }
 function drawWorldMap() {
   const cv = $('#mapCv'); cv.width = 760; cv.height = 440; const c = cv.getContext('2d'); c.imageSmoothingEnabled = false;
@@ -438,6 +450,12 @@ function drawWorldMap() {
     c.fillStyle = '#1b1622'; c.font = '22px monospace'; c.fillText(locked ? '🔒' : n.ico, n.x, n.y + 8);
     c.font = '12px "Silkscreen", monospace'; c.fillStyle = '#1b1622'; c.fillRect(n.x - 52, n.y + 30, 104, 18); c.fillStyle = '#f7f1d8'; c.fillText(n.nome, n.x, n.y + 43);
     if (n.a && !isVest()) { const idx = S.order.indexOf(n.a) + 1; c.fillStyle = '#ffcf3a'; c.beginPath(); c.arc(n.x + 26, n.y - 24, 11, 0, 7); c.fill(); c.fillStyle = '#1b1622'; c.fillText(idx, n.x + 26, n.y - 20); if (done) { c.fillStyle = '#ffcf3a'; c.font = '20px monospace'; c.fillText('★', n.x - 26, n.y - 16); c.font = '12px "Silkscreen", monospace'; } }
+  }
+  if (isVest() && typeof MP !== 'undefined') {
+    const porLugar = {}; for (const r of MP.roster.values()) (porLugar[r.map] = porLugar[r.map] || []).push(r.nm);
+    c.font = '11px "Silkscreen", monospace';
+    for (const [m, nms] of Object.entries(porLugar)) { const n = nodes[m]; if (!n) continue; const t = nms.length > 2 ? nms.length + ' internos' : nms.join(', '); const w = c.measureText(t).width + 10; c.fillStyle = '#10131a'; c.fillRect(n.x - w / 2, n.y + 50, w, 16); c.fillStyle = '#7af0ff'; c.fillText(t, n.x, n.y + 62); }
+    c.font = '12px "Silkscreen", monospace';
   }
   const here = G.map.id; const hn = nodes[here] || nodes.rua; const b = Math.sin(G.t * 6) * 3;
   const sp = SPR.char(playerLook(), 0, 0, 'idle'); c.drawImage(sp, hn.x - SW / 2, hn.y - 70 + b);

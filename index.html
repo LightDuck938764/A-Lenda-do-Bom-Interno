@@ -224,7 +224,7 @@ body.has-ov .toast { font-size: 12px; padding: .4rem .6rem; }
 /* ---------- Mapa ---------- */
 .mapview { display: grid; gap: .6rem; justify-items: center; } .mapview canvas { max-width: 100%; height: auto; box-shadow: var(--px); }
 .map-legend { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: 12px; color: var(--muted); } .lg { display: inline-block; width: 10px; height: 10px; margin-right: 4px; vertical-align: -1px; }
-.lg.me { background: #e0453a; border-radius: 50%; box-shadow: 0 0 0 2px #fff; } .lg.main { background: #ffcf3a; } .lg.side { background: #7af0ff; } .lg.pac { background: #ff5a5a; } .lg.lock { background: #e0453a; }
+.lg.mp { background: #7af0ff; border-radius: 50%; } .lg.me { background: #e0453a; border-radius: 50%; box-shadow: 0 0 0 2px #fff; } .lg.main { background: #ffcf3a; } .lg.side { background: #7af0ff; } .lg.pac { background: #ff5a5a; } .lg.lock { background: #e0453a; }
 /* ---------- Diário / ficha ---------- */
 .journal, .status { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 1.5rem; }
 .camp, .steps, .sides { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; gap: .4rem; }
@@ -481,7 +481,7 @@ table.lab tr.lab-sub td { font-weight: 700; color: #2f6fd6; padding-top: .45rem;
   .hud-rep b { font-size: 7.5px; } .repbar { height: 7px; margin: 2px 0; } #hRepT { font-size: 9px; }
   .hud-obj { top: 6px; bottom: auto; right: calc(6px + env(safe-area-inset-right, 0px)); width: min(220px, 29vw); padding: .3rem .5rem; }
   .hud-obj b { font-size: 11px; } .hud-obj small { font-size: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  #mpChip { left: calc(6px + env(safe-area-inset-left, 0px)); top: 88px; font-size: 10px; padding: .15rem .45rem; max-width: 172px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #mpChip { left: calc(6px + env(safe-area-inset-left, 0px)); top: 88px; font-size: 10px; padding: .15rem .45rem; max-width: 230px; line-height: 1.35; }
   #sideq { left: calc(6px + env(safe-area-inset-left, 0px)); top: 88px; bottom: auto; width: 172px; gap: 4px; }
   .sq { font-size: 10.5px; padding: .25rem .45rem .35rem; }
   #toasts { top: 60px; width: min(360px, 50vw); }
@@ -575,6 +575,13 @@ table.lab tr.lab-sub td { font-weight: 700; color: #2f6fd6; padding-top: .45rem;
   .tmenu { grid-template-columns: repeat(4, 44px); gap: 8px; bottom: 88px; } .tmenu button { height: 28px; }
   .tact .e { width: 64px; height: 64px; } .tact [data-run] { width: 50px; height: 50px; }
 }
+
+/* lista de internos online embaixo do mapa (Modo Vestibulando) */
+.mp-lista { width: min(560px, 100%); font-size: 13px; margin: 0; }
+.mp-lista b { font-family: var(--f-label); font-size: 11px; color: #7af0ff; }
+.mp-lista ul { list-style: none; padding: 0; margin: .3rem 0 0; display: grid; gap: .25rem; }
+.mp-lista li { display: flex; justify-content: space-between; gap: .6rem; background: var(--panel2); padding: .3rem .55rem; box-shadow: inset 3px 0 0 #7af0ff; }
+.mp-lista small { color: var(--muted); } .mp-lista .aqui { color: #7fd8a8; }
 </style>
 <div id="app">
   <div id="stage">
@@ -18655,7 +18662,7 @@ function openSkills() {
 let MAPTAB = 'local';
 function openMap() {
   const tabs = `<nav class="tabs"><button class="tab ${MAPTAB === 'local' ? 'on' : ''}" data-m="local">${U.esc(G.map.nome)}</button><button class="tab ${MAPTAB === 'mundo' ? 'on' : ''}" data-m="mundo">Mundo</button></nav>`;
-  const body = `<div class="mapview"><canvas id="mapCv" class="pix"></canvas><div class="map-legend"><span><i class="lg me"></i>Você</span><span><i class="lg main"></i>Missão principal</span><span><i class="lg side"></i>Missão secundária</span><span><i class="lg pac"></i>Paciente aguardando</span><span><i class="lg lock"></i>Estágio trancado</span></div></div>`;
+  const body = `<div class="mapview"><canvas id="mapCv" class="pix"></canvas><div class="map-legend"><span><i class="lg me"></i>Você</span><span><i class="lg main"></i>Missão principal</span><span><i class="lg side"></i>Missão secundária</span><span><i class="lg pac"></i>Paciente aguardando</span><span><i class="lg lock"></i>Estágio trancado</span>${isVest() ? '<span><i class="lg mp"></i>Outros internos</span>' : ''}</div>${mpListaHTML()}</div>`;
   openPanel('map', 'Mapa', body, { cls: 'wide', tabs });
   OV().querySelectorAll('[data-m]').forEach(b => b.onclick = () => { MAPTAB = b.dataset.m; reopen(openMap); });
   if (MAPTAB === 'local') drawLocalMap(); else drawWorldMap();
@@ -18674,7 +18681,19 @@ function drawLocalMap() {
   for (const w of M.warps) { const nm = w.to === 'rua' ? 'Saída' : MAPS[w.to].nome; c.fillStyle = '#ffe68a'; c.fillText((AREAS[w.to] && !areaUnlocked(w.to) ? '🔒 ' : '') + nm, (w.x + w.w / 2) * s, (w.y + (w.y < 2 ? 3.2 : -0.6)) * s); }
   for (const sp of G.spots) if (sp.s.active && sp.obj.spot === 'caso') { c.fillStyle = '#ff5a5a'; c.fillRect((sp.obj.x + 0.25) * s, (sp.obj.y + 0.25) * s, s / 2, s / 2); }
   for (const t of questTargetsInMap()) { c.fillStyle = t.k === 'main' ? '#ffcf3a' : '#7af0ff'; c.beginPath(); c.arc(t.x * s, (t.y + 1.2) * s, s * 0.6, 0, 7); c.fill(); }
+  if (typeof mpGhostsHere === 'function') for (const g of mpGhostsHere()) {
+    c.fillStyle = '#10131a'; c.beginPath(); c.arc(g.x * s, (g.y - 0.3) * s, s * 0.75, 0, 7); c.fill(); c.fillStyle = '#7af0ff'; c.beginPath(); c.arc(g.x * s, (g.y - 0.3) * s, s * 0.5, 0, 7); c.fill();
+    c.fillStyle = '#7af0ff'; c.fillText(g.nm, g.x * s, (g.y - 1.4) * s);
+  }
   const P = G.player; c.fillStyle = '#ffffff'; c.beginPath(); c.arc(P.x * s, (P.y - 0.3) * s, s * 0.7, 0, 7); c.fill(); c.fillStyle = '#e0453a'; c.beginPath(); c.arc(P.x * s, (P.y - 0.3) * s, s * 0.4, 0, 7); c.fill();
+}
+// Modo Vestibulando: quem está online e em que setor (aparece embaixo do mapa)
+function mpListaHTML() {
+  if (!isVest() || typeof MP === 'undefined') return '';
+  if (MP.status !== 'on') return `<p class="mp-lista hint">Modo online: ${MP.status === 'negado' ? 'o servidor recusou a conexão' : MP.status === 'off' ? 'indisponível (' + U.esc(mpMotivoOff()) + ')' : 'conectando…'}</p>`;
+  const rs = [...MP.roster.values()].sort((a, b) => b.rp - a.rp);
+  if (!rs.length) return '<p class="mp-lista hint">Ninguém mais online agora. Quem entrar no Modo Vestibulando aparece aqui, com o setor onde está.</p>';
+  return `<div class="mp-lista"><b>Internos online agora</b><ul>${rs.map(r => `<li><span>${U.esc(r.nm)} <small>Nv ${r.lv}</small></span><span class="${r.map === G.map.id ? 'aqui' : ''}">${r.map === G.map.id ? 'aqui com você' : U.esc(mpLugar(r.map))}</span></li>`).join('')}</ul></div>`;
 }
 function drawWorldMap() {
   const cv = $('#mapCv'); cv.width = 760; cv.height = 440; const c = cv.getContext('2d'); c.imageSmoothingEnabled = false;
@@ -18702,6 +18721,12 @@ function drawWorldMap() {
     c.fillStyle = '#1b1622'; c.font = '22px monospace'; c.fillText(locked ? '🔒' : n.ico, n.x, n.y + 8);
     c.font = '12px "Silkscreen", monospace'; c.fillStyle = '#1b1622'; c.fillRect(n.x - 52, n.y + 30, 104, 18); c.fillStyle = '#f7f1d8'; c.fillText(n.nome, n.x, n.y + 43);
     if (n.a && !isVest()) { const idx = S.order.indexOf(n.a) + 1; c.fillStyle = '#ffcf3a'; c.beginPath(); c.arc(n.x + 26, n.y - 24, 11, 0, 7); c.fill(); c.fillStyle = '#1b1622'; c.fillText(idx, n.x + 26, n.y - 20); if (done) { c.fillStyle = '#ffcf3a'; c.font = '20px monospace'; c.fillText('★', n.x - 26, n.y - 16); c.font = '12px "Silkscreen", monospace'; } }
+  }
+  if (isVest() && typeof MP !== 'undefined') {
+    const porLugar = {}; for (const r of MP.roster.values()) (porLugar[r.map] = porLugar[r.map] || []).push(r.nm);
+    c.font = '11px "Silkscreen", monospace';
+    for (const [m, nms] of Object.entries(porLugar)) { const n = nodes[m]; if (!n) continue; const t = nms.length > 2 ? nms.length + ' internos' : nms.join(', '); const w = c.measureText(t).width + 10; c.fillStyle = '#10131a'; c.fillRect(n.x - w / 2, n.y + 50, w, 16); c.fillStyle = '#7af0ff'; c.fillText(t, n.x, n.y + 62); }
+    c.font = '12px "Silkscreen", monospace';
   }
   const here = G.map.id; const hn = nodes[here] || nodes.rua; const b = Math.sin(G.t * 6) * 3;
   const sp = SPR.char(playerLook(), 0, 0, 'idle'); c.drawImage(sp, hn.x - SW / 2, hn.y - 70 + b);
@@ -19853,7 +19878,7 @@ const MP_ROUNDS = 5, MP_WIN = 3, MP_QTIME = 20, MP_REWARD_CAP = 5;
     else { MP.status = 'off'; return; }
     if (!room) { MP.status = 'off'; return; }
     MP.room = room; MP.status = 'conectando';
-    const fail = e => { MP.ok = false; MP.ghosts.clear(); MP.roster.clear(); MP.status = e && (e.code === 'not_granted' || e.code === 'revoked') ? 'negado' : 'off'; };
+    const fail = e => { MP.ok = false; MP.ghosts.clear(); MP.roster.clear(); MP.err = (e && (e.message || e.code)) || ''; MP.status = e && (e.code === 'not_granted' || e.code === 'revoked') ? 'negado' : 'off'; console.warn('multiplayer', e); };
     room.onConnection(c => { MP.ok = !!c; if (MP.status !== 'negado' && MP.status !== 'off') MP.status = c ? 'on' : 'conectando'; }, fail);
     room.onPeers(ch => mpPeers(ch), fail);
     room.on('duelo', msg => { try { mpMsg(msg); } catch (e) { console.warn('duelo', e); } });
@@ -19985,6 +20010,14 @@ function mpNearbyPeer() {
   for (const g of mpGhostsHere()) { const d = Math.hypot(g.x - fx, g.y - fy), d2 = Math.hypot(g.x - P.x, g.y - P.y); if ((d < 0.9 || d2 < 1.1) && d2 < 1.6 && d < bd) { bd = d; best = g; } }
   return best;
 }
+// nome curto de cada lugar, para dizer onde o outro interno está
+const MP_LUGAR = { rua: 'Avenida', lobby: 'Saguão', upa: 'UPA', ped: 'Pediatria', go: 'GO', cm: 'Clínica Médica', cir: 'Cirurgia', bar: 'Bar do Rodolfo', ubs: 'UBS' };
+function mpLugar(id) { return MP_LUGAR[id] || (MAPS[id] && MAPS[id].nome) || 'outro setor'; }
+function mpMotivoOff() {
+  if (window.FIREBASE_CONFIG && !window.firebase) return 'a rede bloqueou o servidor do jogo';
+  if (typeof FB !== 'undefined' && FB.err) return 'login anônimo falhou: ' + String(FB.err).replace('auth/', '');
+  return 'sem conexão';
+}
 function mpChip() {
   let el = document.getElementById('mpChip');
   const n = MP.ok ? MP.roster.size : 0;
@@ -19992,11 +20025,11 @@ function mpChip() {
   if (!el) { if (!show) return; el = document.createElement('div'); el.id = 'mpChip'; document.getElementById('stage').appendChild(el); }
   el.hidden = !show; if (!show) return;
   if (!isVest()) { const t = '🔒 Modo Internato · jogo individual'; el.className = 'mp-off'; if (el.textContent !== t) el.textContent = t; return; }
-  const inBar = [...MP.roster.values()].filter(g => g.map === 'bar').length;
-  // estado da conexão sempre visível, para cada jogador saber se está no modo online
-  const txt = MP.status === 'on' ? (n ? `🟢 Online · ${n} interno${n > 1 ? 's' : ''}${inBar ? ` · ${inBar} no bar` : ''}` : '🟢 Online · só você por aqui')
-    : MP.status === 'conectando' || MP.status === 'carregando' ? '🟡 Conectando ao multiplayer…'
-    : MP.status === 'negado' ? (window.FIREBASE_CONFIG ? '🔴 Multiplayer recusou a conexão (recarregue a página)' : '🔴 Multiplayer: esta conta não tem acesso (peça um convite)') : '⚪ Modo solo (multiplayer indisponível neste acesso)';
+  const outros = [...MP.roster.values()], aqui = outros.filter(g => g.map === G.map.id).length;
+  // estado da conexão sempre visível, e onde os outros estão (para conseguirem se encontrar)
+  const txt = MP.status === 'on' ? (n === 1 ? `🟢 Online · ${outros[0].nm} ${outros[0].map === G.map.id ? 'está aqui' : 'está em: ' + mpLugar(outros[0].map)}` : n ? `🟢 Online · ${n} internos · ${aqui ? aqui + ' aqui' : 'nenhum aqui (veja o MAPA)'}` : '🟢 Online · só você por aqui')
+    : MP.status === 'conectando' || MP.status === 'carregando' ? '🟡 Conectando ao modo online…'
+    : MP.status === 'negado' ? (window.FIREBASE_CONFIG ? '🔴 O servidor recusou a conexão (permissão do banco de dados)' : '🔴 Multiplayer: esta conta não tem acesso (peça um convite)') : `⚪ Modo solo (${mpMotivoOff()})`;
   el.className = 'mp-' + MP.status;
   if (el.textContent !== txt) el.textContent = txt;
 }
