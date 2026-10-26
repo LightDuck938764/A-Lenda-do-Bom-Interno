@@ -18,7 +18,7 @@ CASO({ id: 'nr_enxaqueca', area: 'cm', ala: 'neuro', dif: 2, tema: 'Cefaleias', 
   pista: 'Crises frequentes e incapacitantes, com aura visual.',
   dx: ['Enxaqueca com aura', 'Cefaleia do tipo tensional', 'Cefaleia em salvas', 'Hemorragia subaracnóidea'],
   edx: 'Crises de 4 a 72 horas, unilaterais, pulsáteis, moderadas a fortes, piora com atividade, náuseas ou foto e fonofobia: enxaqueca. Aura visual reversível precedendo a dor: enxaqueca com aura.',
-  cd: ['Profilaxia e método sem estrógeno', 'Analgésico comum sempre que doer, sem limite de dias', 'Opioide para abortar as crises', 'Tomografia de crânio de urgência'],
+  cd: ['Propranolol profilático e trocar o ACO combinado por DIU', 'Dipirona sempre que doer, sem limite de dias por mês, e manter o ACO', 'Tramadol 50 mg VO para abortar as crises', 'TC de crânio de urgência e manter o ACO combinado'],
   ecd: 'Profilaxia indicada com 4 ou mais crises por mês ou crises incapacitantes; anticorpos anti-CGRP em refratários. Crise: AINE ou triptano no início. Uso de analgésico ≥ 10-15 dias por mês leva à cefaleia por uso excessivo de medicação. Enxaqueca com aura aumenta o risco de AVC com estrógeno: preferir método sem estrógeno.' });
 
 CASO({ id: 'nr_salvas', area: 'cm', ala: 'neuro', dif: 2, tema: 'Cefaleias', cond: 'Cefaleia em salvas', tags: ['neuro'],
@@ -31,7 +31,7 @@ CASO({ id: 'nr_salvas', area: 'cm', ala: 'neuro', dif: 2, tema: 'Cefaleias', con
   pista: 'Homem, periorbital, curta duração, sinais autonômicos, inquietação.',
   dx: ['Cefaleia em salvas', 'Enxaqueca', 'Neuralgia do trigêmeo', 'Glaucoma agudo'],
   edx: 'Cefaleia trigêmino-autonômica: dor unilateral orbitária ou temporal, intensa, de 15 a 180 minutos, com sinais autonômicos ipsilaterais e agitação, em períodos (salvas). Mais comum em homens tabagistas.',
-  cd: ['O₂ a 100%, sumatriptana SC e verapamil', 'Propranolol e repouso em quarto escuro', 'Opioide intramuscular nas crises', 'Carbamazepina como primeira escolha'],
+  cd: ['O₂ a 100% 12 L/min, sumatriptana SC e verapamil', 'Propranolol 40 mg de 12/12 h e repouso em quarto escuro', 'Meperidina IM nas crises e amitriptilina à noite', 'Carbamazepina 200 mg de 8/8 h como primeira escolha'],
   ecd: 'Crise: oxigênio a 100% (12-15 L/min por máscara não reinalante) ou sumatriptana subcutânea. Profilaxia: verapamil (com ECG); corticoide como ponte. Na neuralgia do trigêmeo (dor em choque de segundos), a carbamazepina é a escolha.' });
 
 CASO({ id: 'nr_hii', area: 'cm', ala: 'neuro', dif: 3, tema: 'Cefaleias', cond: 'Hipertensão intracraniana idiopática', tags: ['neuro'],
@@ -46,7 +46,7 @@ CASO({ id: 'nr_hii', area: 'cm', ala: 'neuro', dif: 3, tema: 'Cefaleias', cond: 
   pista: 'Mulher obesa, papiledema e pressão alta com líquor normal e imagem sem lesão.',
   dx: ['Pseudotumor cerebral', 'Tumor cerebral de fossa posterior', 'Trombose venosa cerebral', 'Enxaqueca crônica'],
   edx: 'Pseudotumor cerebral: hipertensão intracraniana com líquor normal, sem lesão estrutural ou trombose. Fatores: mulher jovem obesa, ganho de peso, tetraciclinas, retinoides. O principal risco é a perda visual.',
-  cd: ['Acetazolamida e perda de peso', 'Corticoide em dose alta por tempo prolongado', 'Craniotomia descompressiva', 'Triptano diário como profilaxia'],
+  cd: ['Acetazolamida e perda de peso', 'Prednisona 1 mg/kg/dia por 3 meses', 'Craniotomia descompressiva bilateral', 'Sumatriptana diária como profilaxia'],
   ecd: 'Suspender o fator desencadeante, perda de peso (inclusive com agonistas de GLP-1 ou cirurgia bariátrica) e acetazolamida. Campimetria seriada. Perda visual progressiva: fenestração da bainha do nervo óptico, derivação liquórica ou stent de seio venoso.' });
 
 /* ---------- Crises e epilepsia ---------- */
@@ -60,7 +60,7 @@ CASO({ id: 'nr_estado_mal', area: 'cm', ala: 'neuro', dif: 3, tema: 'Crise convu
   pista: 'Benzodiazepínico já foi feito: próximo degrau.',
   dx: ['Estado de mal epiléptico estabelecido', 'Crise psicogênica não epiléptica', 'Síncope convulsiva', 'Crise isolada autolimitada'],
   edx: 'Crise contínua por mais de 5 minutos ou crises repetidas sem recuperação da consciência: estado de mal. Após falha do benzodiazepínico (fase estabelecida), usa-se droga de segunda linha.',
-  cd: ['Fenitoína 20 mg/kg IV, até 50 mg/min', 'Repetir diazepam a cada 5 minutos', 'Haloperidol IV para sedação', 'Aguardar a crise cessar espontaneamente'],
+  cd: ['Fenitoína 20 mg/kg EV, até 50 mg/min', 'Diazepam 10 mg EV a cada 5 minutos até cessar', 'Haloperidol 5 mg EV para sedação', 'Aguardar a crise cessar espontaneamente'],
   ecd: 'ABC, glicemia, tiamina antes da glicose em etilistas. 1ª linha: benzodiazepínico (diazepam IV, midazolam IM ou intranasal, lorazepam), repetível uma vez. 2ª linha: fenitoína ou fosfenitoína, levetiracetam ou valproato. Refratário: intubação e anestésicos (midazolam, propofol, tiopental) com EEG contínuo.' });
 
 CASO({ id: 'nr_primeira_crise', area: 'cm', ala: 'neuro', dif: 2, tema: 'Crise convulsiva e epilepsia', cond: 'Primeira crise não provocada no adulto', tags: ['neuro'],
@@ -75,7 +75,7 @@ CASO({ id: 'nr_primeira_crise', area: 'cm', ala: 'neuro', dif: 2, tema: 'Crise c
   pista: 'Uma única crise, sem causa e com exames normais, não é epilepsia.',
   dx: ['Primeira crise epiléptica não provocada', 'Epilepsia estabelecida', 'Síncope vasovagal', 'Crise provocada por distúrbio metabólico'],
   edx: 'Epilepsia: duas crises não provocadas com mais de 24 horas de intervalo, ou uma crise com alto risco de recorrência (lesão estrutural, EEG epileptiforme), ou síndrome epiléptica. Aqui, crise única com exames normais.',
-  cd: ['Não iniciar anticrise; orientar', 'Iniciar fenitoína e manter por toda a vida', 'Internar para EEG contínuo de 30 dias', 'Benzodiazepínico diário'],
+  cd: ['Não iniciar fármaco anticrise; EEG, RM e orientações', 'Fenitoína 300 mg/dia por toda a vida', 'Internar para vídeo-EEG contínuo por 30 dias antes de decidir', 'Clonazepam 2 mg/dia de uso contínuo'],
   ecd: 'O risco de recorrência é de cerca de 40% em 2 anos; o tratamento após a primeira crise reduz recorrência precoce, mas não muda o prognóstico a longo prazo, sendo decisão compartilhada. Orientar segurança (altura, natação, direção conforme legislação).' });
 
 CASO({ id: 'nr_jme', area: 'cm', ala: 'neuro', dif: 3, tema: 'Crise convulsiva e epilepsia', cond: 'Epilepsia mioclônica juvenil em mulher em idade fértil', tags: ['neuro'],
@@ -89,7 +89,7 @@ CASO({ id: 'nr_jme', area: 'cm', ala: 'neuro', dif: 3, tema: 'Crise convulsiva e
   pista: 'Mioclonias matinais, crise após privação de sono, adolescente.',
   dx: ['Epilepsia mioclônica juvenil', 'Epilepsia focal do lobo temporal', 'Crises psicogênicas', 'Epilepsia ausência infantil'],
   edx: 'Síndrome epiléptica generalizada genética: mioclonias ao despertar, crises tônico-clônicas (privação de sono, álcool), às vezes ausências, EEG com poliespícula-onda. Exige tratamento por toda a vida.',
-  cd: ['Levetiracetam ou lamotrigina', 'Carbamazepina em dose progressiva', 'Valproato como primeira escolha nela', 'Sem tratamento, apenas higiene do sono'],
+  cd: ['Levetiracetam (ou lamotrigina)', 'Carbamazepina em dose progressiva até 1.200 mg/dia', 'Valproato de sódio como primeira escolha', 'Sem fármaco, só higiene do sono'],
   ecd: 'O valproato é muito eficaz, mas é evitado em mulheres em idade fértil (teratogenicidade e efeitos no neurodesenvolvimento). Carbamazepina, oxcarbazepina e fenitoína podem piorar mioclonias e ausências. Ácido fólico e planejamento da gestação.' });
 
 CASO({ id: 'nr_crise_febril', area: 'ped', dif: 3, tema: 'Crise convulsiva e epilepsia', cond: 'Crise febril complexa em lactente com vacinação incompleta', tags: ['neuro', 'sepse', 'infec'],
@@ -103,7 +103,7 @@ CASO({ id: 'nr_crise_febril', area: 'ped', dif: 3, tema: 'Crise convulsiva e epi
   pista: 'Focal, prolongada, abaixo de 1 ano, sem vacinas e com antibiótico prévio.',
   dx: ['Crise febril complexa', 'Crise febril simples', 'Epilepsia ausência', 'Síncope febril'],
   edx: 'Crise febril complexa: focal, mais de 15 minutos ou recorrente em 24 horas. Aqui há ainda fontanela abaulada, vacinação incompleta e antibiótico prévio (que pode mascarar meningite), o que obriga a excluir infecção do SNC.',
-  cd: ['Punção lombar e antibiótico empírico', 'Alta com antitérmico', 'Fenobarbital profilático contínuo', 'Somente EEG ambulatorial'],
+  cd: ['Punção lombar e ceftriaxona empírica', 'Alta com dipirona e orientações', 'Fenobarbital profilático contínuo', 'Só EEG ambulatorial em 2 semanas e dipirona'],
   ecd: 'Punção lombar indicada se sinais meníngeos, suspeita de infecção do SNC, lactentes de 6 a 12 meses sem Hib/pneumocócica completas ou em uso de antibiótico. Com déficit focal ou suspeita de hipertensão intracraniana, neuroimagem antes da punção, sem atrasar ceftriaxona. EEG e imagem não são rotina na crise febril simples.' });
 
 /* ---------- Demência e parkinsonismo ---------- */
@@ -118,7 +118,7 @@ CASO({ id: 'nr_hpn', area: 'cm', ala: 'neuro', dif: 2, tema: 'Demência e parkin
   pista: 'Tríade: marcha, cognição, urina.',
   dx: ['Hidrocefalia de pressão normal', 'Doença de Alzheimer', 'Doença de Parkinson', 'Demência vascular isolada'],
   edx: 'Tríade de Hakim-Adams (distúrbio de marcha, declínio cognitivo e incontinência urinária) com ventriculomegalia e melhora após retirada de líquor: causa potencialmente reversível de demência.',
-  cd: ['Derivação ventriculoperitoneal', 'Donepezila isolada', 'Levodopa com carbidopa', 'Oxibutinina e fisioterapia'],
+  cd: ['Derivação ventriculoperitoneal (após tap test)', 'Donepezila 10 mg/dia isolada pelo déficit cognitivo', 'Levodopa com carbidopa 250/25 mg de 8/8 h', 'Oxibutinina 5 mg/dia e fisioterapia motora'],
   ecd: 'A derivação ventriculoperitoneal melhora principalmente a marcha, sobretudo quando feita cedo. Outras causas reversíveis de demência a investigar: hipotireoidismo, deficiência de B12, depressão, drogas, hematoma subdural crônico, sífilis.' });
 
 CASO({ id: 'nr_dft', area: 'cm', ala: 'neuro', dif: 3, tema: 'Demência e parkinsonismo', cond: 'Demência frontotemporal variante comportamental', tags: ['neuro', 'psiq'],
@@ -132,7 +132,7 @@ CASO({ id: 'nr_dft', area: 'cm', ala: 'neuro', dif: 3, tema: 'Demência e parkin
   pista: 'Comportamento e personalidade antes da memória, em idade mais jovem.',
   dx: ['Demência frontotemporal', 'Doença de Alzheimer', 'Transtorno bipolar', 'Demência com corpos de Lewy'],
   edx: 'Variante comportamental da DFT: início antes dos 65 anos, desinibição, apatia, perda de empatia, comportamentos compulsivos e hiperoralidade, com atrofia frontotemporal. Memória e orientação espacial relativamente preservadas no início (ao contrário do Alzheimer).',
-  cd: ['Suporte familiar e ISRS', 'Donepezila em dose alta contínua', 'Lítio para estabilizar o humor', 'Levodopa com carbidopa'],
+  cd: ['Sertralina (ou trazodona) e suporte à família', 'Donepezila 10 mg/dia em uso contínuo e memantina', 'Carbonato de lítio 900 mg/dia', 'Levodopa com carbidopa'],
   ecd: 'Não há tratamento que modifique a doença. ISRS ou trazodona para sintomas comportamentais; inibidores da colinesterase não ajudam e podem piorar. Apoio à família, planejamento legal e financeiro.' });
 
 CASO({ id: 'nr_lewy', area: 'cm', ala: 'neuro', dif: 3, tema: 'Demência e parkinsonismo', cond: 'Demência com corpos de Lewy', tags: ['neuro', 'psiq'],
@@ -145,7 +145,7 @@ CASO({ id: 'nr_lewy', area: 'cm', ala: 'neuro', dif: 3, tema: 'Demência e parki
   pista: 'Flutuação, alucinações visuais, parkinsonismo e sensibilidade a antipsicóticos.',
   dx: ['Demência com corpos de Lewy', 'Doença de Alzheimer', 'Doença de Parkinson sem demência', 'Delirium por infecção'],
   edx: 'Critérios centrais: flutuação cognitiva, alucinações visuais recorrentes, parkinsonismo e transtorno comportamental do sono REM. Sensibilidade grave a antipsicóticos típicos. A demência aparece antes ou até 1 ano após o parkinsonismo (se depois, demência da doença de Parkinson).',
-  cd: ['Rivastigmina; evitar haloperidol', 'Aumentar a dose de haloperidol à noite', 'Levodopa em dose alta para a rigidez', 'Benzodiazepínico para dormir e acalmar'],
+  cd: ['Rivastigmina e suspender o haloperidol', 'Aumentar a dose noturna do haloperidol', 'Levodopa em dose alta para a rigidez', 'Clonazepam à noite para dormir e acalmar'],
   ecd: 'Inibidores da colinesterase (rivastigmina, donepezila) melhoram cognição e alucinações. Se antipsicótico for imprescindível: quetiapina ou clozapina em dose baixa. Levodopa pode piorar as alucinações. Tratar a hipotensão ortostática.' });
 
 CASO({ id: 'nr_parkinson', area: 'cm', ala: 'neuro', dif: 2, tema: 'Demência e parkinsonismo', cond: 'Doença de Parkinson', tags: ['neuro'],
@@ -158,7 +158,7 @@ CASO({ id: 'nr_parkinson', area: 'cm', ala: 'neuro', dif: 2, tema: 'Demência e 
   pista: 'Assimétrico, de repouso, com bradicinesia.',
   dx: ['Doença de Parkinson', 'Tremor essencial', 'Parkinsonismo induzido por droga', 'Paralisia supranuclear progressiva'],
   edx: 'Síndrome parkinsoniana (bradicinesia com tremor de repouso e/ou rigidez), assimétrica, com sintomas não motores (hiposmia, constipação) e sem sinais de alerta. Tremor essencial é de ação/postural, simétrico, melhora com álcool.',
-  cd: ['Levodopa com carbidopa e fisioterapia', 'Haloperidol em dose baixa', 'Propranolol isolado', 'Observar sem tratar'],
+  cd: ['Levodopa com carbidopa e fisioterapia', 'Haloperidol 1 mg/dia para o tremor', 'Propranolol 40 mg de 12/12 h isolado', 'Observação sem tratamento farmacológico'],
   ecd: 'Levodopa é a droga mais eficaz e a preferida em idosos; agonistas dopaminérgicos (pramipexol) em jovens, com risco de compulsões. Flutuações motoras ("wearing off"): fracionar levodopa, associar entacapona, IMAO-B ou agonista. Exercício físico e fisioterapia. Boa resposta à levodopa reforça o diagnóstico.' });
 
 /* ---------- Doenças desmielinizantes e neuromusculares ---------- */
@@ -174,7 +174,7 @@ CASO({ id: 'nr_esclerose_multipla', area: 'cm', ala: 'neuro', dif: 3, tema: 'Esc
   pista: 'Disseminação no tempo e no espaço em mulher jovem.',
   dx: ['Esclerose múltipla', 'Neuromielite óptica', 'Neurossífilis', 'AVC isquêmico lacunar'],
   edx: 'Surtos neurológicos separados no tempo e no espaço (neurite óptica e mielite), lesões típicas na RM e bandas oligoclonais: esclerose múltipla. Na neuromielite óptica (anti-aquaporina-4), as lesões medulares são longitudinalmente extensas.',
-  cd: ['Pulso de metilprednisolona', 'Apenas fisioterapia motora e observação', 'Plasmaférese como primeira linha em todo surto', 'Antibiótico de amplo espectro empírico'],
+  cd: ['Metilprednisolona 1 g/dia EV por 3 a 5 dias', 'Só fisioterapia motora e observação do surto', 'Plasmaférese como 1ª linha em todo surto', 'Ceftriaxona e aciclovir empíricos'],
   ecd: 'Surto incapacitante: metilprednisolona 1 g/dia por 3 a 5 dias (plasmaférese se refratário). Terapias modificadoras reduzem surtos e progressão (interferon, glatirâmer, teriflunomida, fumarato; alta eficácia: natalizumabe, ocrelizumabe, fingolimode). Vitamina D, atividade física, cessar tabagismo.' });
 
 CASO({ id: 'nr_guillain_barre', area: 'cm', ala: 'neuro', dif: 2, tema: 'Síndrome de Guillain-Barré', cond: 'Síndrome de Guillain-Barré', tags: ['neuro', 'resp'],
@@ -188,7 +188,7 @@ CASO({ id: 'nr_guillain_barre', area: 'cm', ala: 'neuro', dif: 2, tema: 'Síndro
   pista: 'Paralisia ascendente arrefléxica e dissociação albuminocitológica.',
   dx: ['Guillain-Barré', 'Mielite transversa aguda', 'Miastenia gravis', 'Paralisia periódica hipocalêmica'],
   edx: 'Polirradiculoneuropatia aguda autoimune pós-infecciosa (Campylobacter jejuni, CMV, zika): fraqueza ascendente simétrica, arreflexia, disautonomia, dissociação albuminocitológica no líquor.',
-  cd: ['UTI e imunoglobulina IV', 'Pulso de corticoide isolado', 'Observar na enfermaria comum', 'Piridostigmina oral'],
+  cd: ['UTI e imunoglobulina EV 0,4 g/kg/dia por 5 dias', 'Metilprednisolona em pulso isolada', 'Observar na enfermaria comum com fisioterapia', 'Piridostigmina 60 mg VO de 6/6 h'],
   ecd: 'Capacidade vital < 20 mL/kg, PImáx fraca, disfagia ou disautonomia importante indicam UTI e intubação eletiva. Imunoglobulina venosa ou plasmaférese (igualmente eficazes) aceleram a recuperação; corticoide não ajuda. Profilaxia de TVP e manejo da dor.' });
 
 CASO({ id: 'nr_miastenia', area: 'cm', ala: 'neuro', dif: 2, tema: 'Miastenia gravis', cond: 'Miastenia gravis generalizada com timoma', tags: ['neuro'],
@@ -203,7 +203,7 @@ CASO({ id: 'nr_miastenia', area: 'cm', ala: 'neuro', dif: 2, tema: 'Miastenia gr
   pista: 'Fraqueza flutuante e fatigável, sem alteração sensitiva ou de reflexos.',
   dx: ['Miastenia gravis', 'Síndrome de Lambert-Eaton', 'Esclerose múltipla', 'Botulismo'],
   edx: 'Doença autoimune da junção neuromuscular (anticorpos contra receptor de acetilcolina): fraqueza flutuante e fatigável de músculos oculares, bulbares e proximais. Associação com timoma. Em Lambert-Eaton, a força melhora com o uso e há disautonomia.',
-  cd: ['Piridostigmina, imunossupressão e timectomia', 'Gentamicina para a infecção associada', 'Apenas observar a evolução', 'Betabloqueador em dose alta'],
+  cd: ['Piridostigmina, prednisona e timectomia', 'Gentamicina para a infecção associada', 'Observar a evolução sem tratamento', 'Propranolol em dose alta e observação clínica'],
   ecd: 'Sintomático: piridostigmina. Imunossupressão: prednisona, azatioprina e outras. Timectomia (sempre com timoma e benéfica em generalizada com anticorpo positivo). Crise miastênica (insuficiência respiratória): UTI, imunoglobulina ou plasmaférese. Evitar aminoglicosídeos, quinolonas, magnésio, betabloqueadores.' });
 
 CASO({ id: 'nr_ela', area: 'cm', ala: 'neuro', dif: 3, tema: 'Esclerose lateral amiotrófica', cond: 'Esclerose lateral amiotrófica', tags: ['neuro'],
@@ -217,7 +217,7 @@ CASO({ id: 'nr_ela', area: 'cm', ala: 'neuro', dif: 3, tema: 'Esclerose lateral 
   pista: 'Sinais de primeiro e segundo neurônio motor juntos, sem alteração sensitiva.',
   dx: ['Esclerose lateral amiotrófica', 'Mielopatia cervical espondilótica', 'Miastenia gravis', 'Polineuropatia desmielinizante crônica'],
   edx: 'Degeneração do primeiro neurônio (hiperreflexia, Babinski, espasticidade) e do segundo (atrofia, fasciculações, fraqueza) em várias regiões, sem alterações sensitivas, oculares ou esfincterianas.',
-  cd: ['Riluzol e VNI', 'Cirurgia descompressiva da coluna cervical', 'Pulso de corticoide mensal', 'Imunoglobulina IV mensal de manutenção'],
+  cd: ['Riluzol e VNI', 'Descompressão cirúrgica da coluna cervical', 'Metilprednisolona em pulso mensal', 'Imunoglobulina EV mensal de manutenção'],
   ecd: 'Riluzol aumenta discretamente a sobrevida (edaravona em casos selecionados). VNI melhora sobrevida e qualidade de vida na insuficiência respiratória; gastrostomia precoce na disfagia. Planejamento antecipado de cuidados e cuidados paliativos.' });
 
 CASO({ id: 'nr_paralisia_cerebral', area: 'ped', dif: 2, tema: 'Paralisia cerebral', cond: 'Paralisia cerebral espástica (diplegia) do prematuro', tags: ['neuro'],
@@ -231,7 +231,7 @@ CASO({ id: 'nr_paralisia_cerebral', area: 'ped', dif: 2, tema: 'Paralisia cerebr
   pista: 'Lesão não progressiva do cérebro imaturo, pernas mais afetadas.',
   dx: ['Paralisia cerebral espástica', 'Atrofia muscular espinhal tipo 2', 'Distrofia muscular de Duchenne', 'Mielomeningocele lombossacra'],
   edx: 'Paralisia cerebral: distúrbio permanente, não progressivo, do movimento e da postura por lesão do cérebro em desenvolvimento. Diplegia espástica (pernas mais que braços) está associada à prematuridade e leucomalácia periventricular. Classificação funcional pelo GMFCS.',
-  cd: ['Reabilitação multiprofissional', 'Aguardar, pois tende a melhorar sozinha com a idade', 'Pulso de corticoide', 'Cirurgia de coluna imediata'],
+  cd: ['Reabilitação multiprofissional e toxina botulínica', 'Aguardar, pois a espasticidade tende a melhorar com a idade', 'Metilprednisolona em pulso mensal', 'Artrodese de coluna imediata'],
   ecd: 'Fisioterapia, terapia ocupacional, fonoaudiologia, órteses; espasticidade com toxina botulínica, baclofeno, cirurgias ortopédicas e rizotomia em casos selecionados. Acompanhar quadril (luxação), epilepsia, deglutição, nutrição e visão.' });
 
 CASO({ id: 'nr_morte_encefalica', area: 'cm', ala: 'neuro', dif: 3, tema: 'Protocolo de morte encefálica', cond: 'Pré-requisitos do protocolo de morte encefálica', tags: ['neuro'],
@@ -244,5 +244,5 @@ CASO({ id: 'nr_morte_encefalica', area: 'cm', ala: 'neuro', dif: 3, tema: 'Proto
   pista: 'Antes de iniciar o protocolo, todos os pré-requisitos precisam estar presentes.',
   dx: ['Protocolo ainda não pode iniciar', 'Morte encefálica já confirmada pela TC', 'Estado vegetativo persistente', 'Síndrome do encarceramento (locked-in)'],
   edx: 'Pela Resolução CFM 2.173/2017, pré-requisitos: lesão encefálica conhecida e irreversível, ausência de fatores confundidores, observação mínima de 6 horas (24 horas na encefalopatia hipóxico-isquêmica), temperatura > 35 °C, SpO₂ > 94% e PAS ≥ 100 mmHg ou PAM ≥ 65 mmHg em adultos.',
-  cd: ['Aquecer acima de 35 °C antes de iniciar', 'Iniciar os exames clínicos já', 'Declarar o óbito pela TC de crânio', 'Desligar o ventilador após um exame'],
+  cd: ['Aquecer até temperatura > 35 °C antes de iniciar o protocolo', 'Iniciar já os dois exames clínicos com o paciente hipotérmico', 'Declarar o óbito com base na TC de crânio', 'Desligar o ventilador após o primeiro exame clínico'],
   ecd: 'Depois dos pré-requisitos: dois exames clínicos por médicos diferentes capacitados (intervalo mínimo de 1 hora em adultos), um teste de apneia e um exame complementar (EEG, Doppler transcraniano, arteriografia ou cintilografia). Notificação obrigatória à Central de Transplantes, independentemente da doação. A família é informada durante todo o processo.' });

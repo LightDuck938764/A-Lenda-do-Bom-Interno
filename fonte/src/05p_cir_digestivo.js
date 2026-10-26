@@ -20,7 +20,7 @@ CASO({ id: 'cx_apendicite', area: 'cir', dif: 1, tema: 'Apendicite aguda', cond:
   pista: 'Migração da dor, anorexia, sinais de irritação na FID e leucocitose: Alvarado alto.',
   dx: ['Apendicite aguda', 'Gastroenterite aguda viral', 'Litíase ureteral direita', 'Adenite mesentérica'],
   edx: 'Escore de Alvarado: migração da dor, anorexia, náuseas/vômitos, dor na FID, descompressão dolorosa, febre, leucocitose e desvio à esquerda. Escore ≥ 7 em homem jovem permite indicar cirurgia; casos duvidosos, mulheres e crianças se beneficiam de imagem (US ou TC).',
-  cd: ['Apendicectomia', 'Alta com antiespasmódico e retorno', 'Colonoscopia ambulatorial', 'Observação por 48 horas'],
+  cd: ['Apendicectomia laparoscópica com antibioticoprofilaxia', 'Ciprofloxacino e metronidazol VO e alta com retorno em 48 h', 'TC de abdome e colonoscopia ambulatorial em 6 semanas', 'Observação com jejum e exame abdominal seriado por 48 horas'],
   ecd: 'Apendicectomia (preferencialmente laparoscópica) com antibioticoprofilaxia; na apendicite não complicada, sem antibiótico pós-operatório. Tratamento só com antibiótico é opção em casos selecionados sem apendicolito, com recorrência de cerca de 30%.' });
 
 CASO({ id: 'cx_apendicite_abscesso', area: 'cir', dif: 2, tema: 'Apendicite aguda', cond: 'Apendicite complicada com abscesso (plastrão)', tags: ['dor', 'img', 'sepse', 'infec'],
@@ -35,7 +35,7 @@ CASO({ id: 'cx_apendicite_abscesso', area: 'cir', dif: 2, tema: 'Apendicite agud
   pista: 'Evolução longa, massa e abscesso bem bloqueado, paciente estável.',
   dx: ['Abscesso periapendicular', 'Diverticulite de ceco', 'Doença de Crohn ileal', 'Abscesso tubo-ovariano direito'],
   edx: 'Apendicite tardia (> 5 dias) pode formar plastrão ou abscesso bloqueado. A cirurgia imediata, nesse cenário, é tecnicamente difícil e com maior chance de ressecção ampliada.',
-  cd: ['Antibiótico e drenagem percutânea', 'Apendicectomia aberta imediata', 'Alta com antibiótico oral', 'Colectomia direita de urgência'],
+  cd: ['Antibiótico EV e drenagem percutânea guiada por TC', 'Apendicectomia aberta imediata com drenagem da cavidade', 'Amoxicilina-clavulanato VO e alta com retorno em 7 dias', 'Colectomia direita de urgência com anastomose primária'],
   ecd: 'Abscesso > 3-4 cm em paciente estável: antibiótico venoso e drenagem percutânea guiada por TC/US. Depois, colonoscopia acima de 40 anos (excluir neoplasia) e apendicectomia de intervalo opcional. Peritonite difusa ou sepse sem controle: cirurgia.' });
 
 CASO({ id: 'cx_apendicite_gestante', area: 'cir', dif: 3, tema: 'Apendicite aguda', cond: 'Apendicite aguda na gestação', tags: ['dor', 'obst', 'usg'],
@@ -50,7 +50,7 @@ CASO({ id: 'cx_apendicite_gestante', area: 'cir', dif: 3, tema: 'Apendicite agud
   pista: 'Na gestação, o apêndice é deslocado para cima e a imagem de escolha evita radiação.',
   dx: ['Apendicite na gestação', 'Pielonefrite aguda direita', 'Descolamento prematuro de placenta', 'Colecistite aguda'],
   edx: 'Apendicite é a urgência cirúrgica não obstétrica mais comum na gestação. Com o útero crescendo, a dor se desloca para o flanco e o hipocôndrio direito. Investigação: US e, se inconclusiva, RM sem contraste.',
-  cd: ['Apendicectomia já', 'Aguardar o parto para operar', 'Antibiótico oral e alta', 'Cesárea e apendicectomia juntas'],
+  cd: ['Apendicectomia imediata (laparoscópica ou aberta)', 'Ceftriaxona e metronidazol e operar só após o parto', 'Amoxicilina-clavulanato VO e observação domiciliar', 'Cesárea seguida de apendicectomia no mesmo tempo'],
   ecd: 'A cirurgia não deve ser adiada em nenhum trimestre: a perfuração aumenta muito o risco de perda fetal. Videolaparoscopia é segura com técnica adaptada (acesso aberto, pressão de pneumoperitônio menor, decúbito lateral esquerdo). Monitorização fetal e tocólise conforme a idade gestacional.' });
 
 /* ---------- Doença diverticular ---------- */
@@ -66,7 +66,7 @@ CASO({ id: 'cx_diverticulite_simples', area: 'cir', dif: 1, tema: 'Doença diver
   pista: '"Apendicite do lado esquerdo" sem complicações na TC.',
   dx: ['Diverticulite não complicada', 'Câncer de sigmoide perfurado', 'Colite pseudomembranosa', 'Doença de Crohn colônica'],
   edx: 'Diverticulite: inflamação de divertículo (sigmoide no Ocidente), com dor em FIE, febre e leucocitose. A TC confirma e define complicações (abscesso, perfuração, fístula, obstrução). Classificação de Hinchey nas complicadas.',
-  cd: ['Tratamento ambulatorial', 'Cirurgia de Hartmann de urgência', 'Colonoscopia na fase aguda', 'Internação em UTI'],
+  cd: ['Tratamento ambulatorial com analgesia e dieta líquida', 'Sigmoidectomia a Hartmann de urgência', 'Colonoscopia na fase aguda para afastar neoplasia', 'Internação com meropeném venoso e jejum absoluto por 7 dias'],
   ecd: 'Não complicada em imunocompetente sem comorbidade grave: tratamento ambulatorial, analgesia, dieta conforme tolerância; antibiótico pode ser omitido em casos selecionados. Colonoscopia 6-8 semanas após (excluir neoplasia), principalmente se não houver colonoscopia recente. Colonoscopia na fase aguda é contraindicada.' });
 
 CASO({ id: 'cx_diverticulite_abscesso', area: 'cir', dif: 2, tema: 'Doença diverticular', cond: 'Diverticulite complicada com abscesso pélvico (Hinchey II)', tags: ['dor', 'img', 'sepse', 'infec'],
@@ -81,7 +81,7 @@ CASO({ id: 'cx_diverticulite_abscesso', area: 'cir', dif: 2, tema: 'Doença dive
   pista: 'Abscesso distante do cólon, paciente estável.',
   dx: ['Hinchey II', 'Diverticulite não complicada', 'Peritonite fecal (Hinchey IV)', 'Câncer de bexiga invasivo'],
   edx: 'Hinchey: I abscesso pericólico; II abscesso pélvico ou distante; III peritonite purulenta; IV peritonite fecal.',
-  cd: ['Antibiótico IV e drenagem guiada', 'Antibiótico oral e alta hospitalar', 'Colectomia total de urgência', 'Apenas analgesia e dieta zero'],
+  cd: ['Ceftriaxona + metronidazol EV e drenagem percutânea guiada', 'Ciprofloxacino VO e alta com colonoscopia de controle em 6 semanas', 'Colectomia total de urgência com ileostomia terminal', 'Jejum, analgesia e observação, sem antibiótico'],
   ecd: 'Abscesso pequeno (< 3-4 cm): antibiótico venoso; maior: drenagem percutânea guiada. Após a resolução, colonoscopia e considerar sigmoidectomia eletiva, individualizada. Sem melhora ou com peritonite: cirurgia.' });
 
 CASO({ id: 'cx_diverticulite_peritonite', area: 'cir', dif: 3, tema: 'Doença diverticular', cond: 'Diverticulite perfurada com peritonite fecal (Hinchey IV)', tags: ['dor', 'choque', 'sepse', 'infec'],
@@ -96,7 +96,7 @@ CASO({ id: 'cx_diverticulite_peritonite', area: 'cir', dif: 3, tema: 'Doença di
   pista: 'Peritonite fecal em idoso imunossuprimido e em choque.',
   dx: ['Hinchey IV', 'Diverticulite Hinchey I', 'Isquemia mesentérica aguda', 'Pancreatite aguda grave'],
   edx: 'Perfuração livre de divertículo com contaminação fecal da cavidade (Hinchey IV) e choque séptico. Corticoide mascara sinais e aumenta o risco de complicação.',
-  cd: ['Ressuscitação e Hartmann', 'Drenagem percutânea isolada', 'Colonoscopia descompressiva', 'Antibiótico oral domiciliar'],
+  cd: ['Ressuscitação, piperacilina-tazobactam e cirurgia de Hartmann', 'Drenagem percutânea isolada guiada por tomografia', 'Colonoscopia descompressiva e antibiótico venoso', 'Lavagem peritoneal laparoscópica sem ressecção e alta precoce'],
   ecd: 'Choque séptico: fluidos, antibiótico de amplo espectro, vasopressor e controle do foco imediato. Hinchey IV ou paciente instável e imunossuprimido: sigmoidectomia com colostomia terminal (Hartmann); anastomose primária com ileostomia de proteção em pacientes selecionados estáveis. Corticoide de estresse.' });
 
 CASO({ id: 'cx_sangramento_diverticular', area: 'cir', dif: 2, tema: 'Doença diverticular', cond: 'Hemorragia digestiva baixa diverticular', tags: ['choque'],
@@ -110,7 +110,7 @@ CASO({ id: 'cx_sangramento_diverticular', area: 'cir', dif: 2, tema: 'Doença di
   pista: 'Sangramento volumoso, indolor, idosa, AINE: causa mais comum de HDB.',
   dx: ['Hemorragia diverticular', 'Hemorroidas internas sangrantes', 'Colite isquêmica', 'Fissura anal aguda'],
   edx: 'Divertículos são a principal causa de hemorragia digestiva baixa volumosa em idosos: indolor, súbita, frequentemente autolimitada. Fatores: AINE, AAS, anticoagulantes. HDA volumosa pode simular HDB (ureia elevada, instabilidade).',
-  cd: ['Estabilizar e colonoscopia', 'Laparotomia exploradora imediata', 'Hemorroidectomia de urgência', 'Alta sem investigação'],
+  cd: ['Estabilizar, transfusão restritiva e colonoscopia em 24 h', 'Laparotomia exploradora imediata com colectomia total às cegas', 'Hemorroidectomia de urgência pelo sangue vivo', 'Arteriografia mesentérica antes de qualquer exame'],
   ecd: 'Ressuscitação, transfusão com metas restritivas, suspender AINE; excluir HDA (EDA se instável). Colonoscopia em 24 h após preparo rápido, com terapêutica endoscópica. Sangramento ativo e instável: angiotomografia e embolização. Cirurgia (colectomia segmentar) se refratário.' });
 
 /* ---------- Pólipos e câncer colorretal ---------- */
@@ -125,7 +125,7 @@ CASO({ id: 'cx_polipo_adenoma', area: 'cir', dif: 2, tema: 'Pólipos e câncer c
   pista: 'Adenoma ≥ 10 mm com componente viloso: avançado.',
   dx: ['Adenoma avançado', 'Pólipo hiperplásico', 'Adenocarcinoma invasivo', 'Polipose adenomatosa familiar'],
   edx: 'Adenomas são precursores do câncer colorretal (sequência adenoma-carcinoma). Avançado: ≥ 10 mm, componente viloso ou displasia de alto grau. Risco aumenta com tamanho, vilosidade e displasia.',
-  cd: ['Colonoscopia em 3 anos', 'Colectomia segmentar oncológica', 'Quimioterapia adjuvante', 'Não repetir a colonoscopia nunca mais'],
+  cd: ['Nova colonoscopia em 3 anos', 'Colectomia segmentar oncológica', 'Quimioterapia adjuvante com capecitabina', 'Nova colonoscopia em 10 anos, como na população geral'],
   ecd: 'Pólipo ressecado por completo: vigilância. Adenoma avançado ou 3-10 adenomas: colonoscopia em 3 anos; 1-2 adenomas < 10 mm: 7-10 anos. Ressecção fragmentada de lesão grande: revisão em 6 meses. Rastreamento populacional a partir dos 45-50 anos.' });
 
 CASO({ id: 'cx_paf', area: 'cir', dif: 3, tema: 'Pólipos e câncer colorretal', cond: 'Polipose adenomatosa familiar', tags: ['onco'],
@@ -140,7 +140,7 @@ CASO({ id: 'cx_paf', area: 'cir', dif: 3, tema: 'Pólipos e câncer colorretal',
   pista: 'Mais de 100 adenomas, jovem, herança autossômica dominante.',
   dx: ['Polipose adenomatosa familiar', 'Síndrome de Lynch', 'Síndrome de Peutz-Jeghers', 'Polipose juvenil'],
   edx: 'PAF: mutação do APC, centenas a milhares de adenomas a partir da adolescência, risco de câncer próximo de 100% até os 40 anos. Variantes: Gardner (osteomas, desmoides, cistos), Turcot (tumores do SNC). Pólipos também no duodeno (ampola).',
-  cd: ['Colectomia profilática', 'Polipectomias endoscópicas anuais', 'Vigilância a cada 5 anos', 'Quimioterapia preventiva'],
+  cd: ['Proctocolectomia total com bolsa ileal', 'Polipectomias endoscópicas anuais', 'Colonoscopia a cada 5 anos', 'Celecoxibe contínuo para prevenir os pólipos'],
   ecd: 'Colectomia profilática (proctocolectomia total com bolsa ileal ou colectomia total com ileorretoanastomose se reto poupado), em geral no fim da adolescência ou ao diagnóstico. Endoscopia alta para adenomas duodenais. Aconselhamento genético e colonoscopia dos familiares a partir de 10-12 anos.' });
 
 CASO({ id: 'cx_lynch', area: 'cir', dif: 3, tema: 'Pólipos e câncer colorretal', cond: 'Síndrome de Lynch (câncer colorretal hereditário sem polipose)', tags: ['onco'],
@@ -154,7 +154,7 @@ CASO({ id: 'cx_lynch', area: 'cir', dif: 3, tema: 'Pólipos e câncer colorretal
   pista: 'Três familiares, duas gerações, um antes dos 50: critérios de Amsterdam.',
   dx: ['Síndrome de Lynch', 'Polipose adenomatosa familiar', 'Câncer colorretal esporádico', 'Síndrome de Peutz-Jeghers'],
   edx: 'Lynch: mutação germinativa de genes de reparo (MLH1, MSH2, MSH6, PMS2), tumores com instabilidade de microssatélites, predomínio no cólon direito, idade precoce, poucos pólipos; associação com endométrio, ovário, estômago, vias urinárias. Critérios de Amsterdam II ("3-2-1") e de Bethesda.',
-  cd: ['Colonoscopia a cada 1-2 anos', 'Nenhuma vigilância especial na família', 'Colectomia profilática em todos os parentes', 'Rastreio só a partir dos 60 anos'],
+  cd: ['Colonoscopia a cada 1-2 anos a partir dos 20-25 anos', 'Mesmo rastreio da população geral a partir dos 45 anos', 'Colectomia profilática em todos os parentes de 1º grau', 'Pesquisa de sangue oculto anual a partir dos 50 anos'],
   ecd: 'Aconselhamento genético; nos portadores: colonoscopia a cada 1-2 anos a partir dos 20-25 anos, vigilância ginecológica e histerectomia com salpingo-ooforectomia após a prole, considerar AAS. Tumores MSI-H respondem bem à imunoterapia.' });
 
 CASO({ id: 'cx_ccr_direito', area: 'cir', dif: 2, tema: 'Pólipos e câncer colorretal', cond: 'Adenocarcinoma de cólon direito com anemia ferropriva', tags: ['onco', 'hemato'],
@@ -169,7 +169,7 @@ CASO({ id: 'cx_ccr_direito', area: 'cir', dif: 2, tema: 'Pólipos e câncer colo
   pista: 'Homem idoso com anemia ferropriva: investigar o tubo digestivo.',
   dx: ['Adenocarcinoma de ceco', 'Anemia de doença crônica', 'Doença de Crohn ileocecal', 'Linfoma intestinal'],
   edx: 'Tumores de cólon direito costumam causar anemia ferropriva por sangramento oculto e massa palpável; os do esquerdo, alteração do hábito, fezes afiladas e obstrução; os de reto, hematoquezia, tenesmo. CEA é útil no prognóstico e seguimento, não no rastreio.',
-  cd: ['Colectomia direita oncológica', 'Quimioterapia isolada sem cirurgia', 'Polipectomia endoscópica', 'Só reposição de ferro oral'],
+  cd: ['Colectomia direita oncológica (≥ 12 linfonodos)', 'Quimioterapia com FOLFOX isolada, sem cirurgia', 'Polipectomia endoscópica e colonoscopia em 1 ano', 'Sulfato ferroso e nova colonoscopia em 6 meses'],
   ecd: 'Estadiamento (TC de tórax e abdome, CEA) e colectomia direita oncológica com ressecção linfonodal (≥ 12 linfonodos). Quimioterapia adjuvante no estádio III e no II de alto risco. Reposição de ferro venoso pré-operatória.' });
 
 CASO({ id: 'cx_ccr_obstrutivo', area: 'cir', dif: 3, tema: 'Pólipos e câncer colorretal', cond: 'Câncer de sigmoide com obstrução intestinal', tags: ['onco', 'img', 'dor'],
@@ -183,7 +183,7 @@ CASO({ id: 'cx_ccr_obstrutivo', area: 'cir', dif: 3, tema: 'Pólipos e câncer c
   pista: 'Obstrução em alça fechada: ceco grande com válvula competente.',
   dx: ['Câncer obstrutivo de sigmoide', 'Volvo de sigmoide', 'Pseudo-obstrução colônica (Ogilvie)', 'Obstrução por bridas'],
   edx: 'Neoplasia é a principal causa de obstrução de intestino grosso no adulto. Com válvula ileocecal competente forma-se alça fechada, com risco de perfuração do ceco (diâmetro > 10-12 cm).',
-  cd: ['Cirurgia de urgência', 'Colonoscopia com biópsia e alta', 'Neostigmina intravenosa', 'Laxantes e enema'],
+  cd: ['Ressecção de urgência (Hartmann) ou prótese como ponte', 'Colonoscopia com biópsia e alta para tratamento eletivo', 'Neostigmina EV para tratar a pseudo-obstrução colônica', 'Enema glicerinado e lactulose até eliminar flatos'],
   ecd: 'Ressecção com colostomia (Hartmann) ou anastomose primária em casos selecionados; prótese endoscópica (stent) como ponte para cirurgia eletiva em centros com experiência ou como paliação. Sonda nasogástrica, hidratação e correção eletrolítica. Neostigmina é para Ogilvie, sem obstrução mecânica.' });
 
 CASO({ id: 'cx_ca_reto', area: 'cir', dif: 3, tema: 'Pólipos e câncer colorretal', cond: 'Adenocarcinoma de reto localmente avançado', tags: ['onco', 'img'],
@@ -197,7 +197,7 @@ CASO({ id: 'cx_ca_reto', area: 'cir', dif: 3, tema: 'Pólipos e câncer colorret
   pista: 'Reto médio, T3N1: tratamento multimodal.',
   dx: ['Câncer de reto', 'Doença hemorroidária', 'Proctite actínica', 'Retocolite ulcerativa distal'],
   edx: 'O estadiamento local do câncer de reto é feito por RM de pelve (profundidade, linfonodos, margem circunferencial). T3-T4 ou N+ indicam tratamento neoadjuvante.',
-  cd: ['Neoadjuvância e cirurgia', 'Ressecção endoscópica da lesão', 'Hemorroidectomia', 'Quimioterapia paliativa exclusiva'],
+  cd: ['Radioquimioterapia neoadjuvante e excisão total do mesorreto', 'Ressecção endoscópica da lesão e vigilância', 'Ressecção anterior do reto imediata, sem neoadjuvância, com ileostomia', 'Quimioterapia paliativa exclusiva com FOLFOX'],
   ecd: 'Radioquimioterapia (ou terapia neoadjuvante total) seguida de ressecção anterior do reto com excisão total do mesorreto; amputação abdominoperineal se tumor muito baixo invadindo esfíncteres. Resposta clínica completa: estratégia "watch and wait" em centros selecionados.' });
 
 /* ---------- Doença inflamatória intestinal ---------- */
@@ -213,7 +213,7 @@ CASO({ id: 'cx_rcu_leve', area: 'cir', dif: 1, tema: 'Retocolite ulcerativa', co
   pista: 'Contínua a partir do reto, restrita à mucosa.',
   dx: ['Retocolite ulcerativa', 'Doença de Crohn colônica', 'Colite infecciosa', 'Síndrome do intestino irritável'],
   edx: 'RCU: inflamação contínua e ascendente a partir do reto, restrita à mucosa e submucosa, abscessos de cripta. Proctite e proctossigmoidite são as formas distais.',
-  cd: ['Mesalazina tópica', 'Corticoide venoso em dose alta', 'Colectomia total eletiva', 'Antibiótico por 6 semanas'],
+  cd: ['Mesalazina tópica (supositório ou enema)', 'Hidrocortisona 100 mg EV de 8/8 h', 'Colectomia total eletiva com bolsa ileal', 'Ciprofloxacino e metronidazol por 6 semanas'],
   ecd: 'Doença leve a moderada distal: mesalazina tópica (mais eficaz que a oral isolada nessa extensão), podendo associar mesalazina oral. Extensa: mesalazina oral em dose alta. Moderada-grave: corticoide e terapia avançada (biológicos, pequenas moléculas).' });
 
 CASO({ id: 'cx_rcu_grave', area: 'cir', dif: 3, tema: 'Retocolite ulcerativa', cond: 'Colite aguda grave na RCU refratária ao corticoide', tags: ['gastro', 'img'],
@@ -229,7 +229,7 @@ CASO({ id: 'cx_rcu_grave', area: 'cir', dif: 3, tema: 'Retocolite ulcerativa', c
   pista: 'Critérios de Truelove-Witts e falha do corticoide no 3º dia.',
   dx: ['Colite grave refratária', 'Colite pseudomembranosa', 'Doença de Crohn perfurada', 'Colite isquêmica'],
   edx: 'Truelove-Witts: ≥ 6 evacuações sanguinolentas por dia com taquicardia, febre, anemia ou VHS elevado. Sem resposta ao corticoide IV em 3 dias: terapia de resgate ou cirurgia. Megacólon tóxico: cólon > 6 cm com toxemia.',
-  cd: ['Infliximabe ou ciclosporina', 'Aumentar a mesalazina oral', 'Loperamida e opioide', 'Alta com corticoide oral'],
+  cd: ['Infliximabe (ou ciclosporina) como resgate', 'Aumentar a mesalazina oral para 4,8 g/dia', 'Loperamida e codeína para reduzir as evacuações', 'Alta com prednisona 40 mg/dia oral'],
   ecd: 'Resgate com infliximabe ou ciclosporina; sem resposta em 5-7 dias, megacólon, perfuração ou hemorragia maciça: colectomia subtotal com ileostomia terminal (depois, proctectomia e bolsa ileal). Profilaxia de TEV, evitar antidiarreicos, opioides e anticolinérgicos. Excluir C. difficile e CMV.' });
 
 CASO({ id: 'cx_crohn_ileite', area: 'cir', dif: 2, tema: 'Doença de Crohn', cond: 'Doença de Crohn ileocecal', tags: ['gastro'],
@@ -244,7 +244,7 @@ CASO({ id: 'cx_crohn_ileite', area: 'cir', dif: 2, tema: 'Doença de Crohn', con
   pista: 'Transmural, salteada, íleo terminal, granulomas, doença perianal.',
   dx: ['Doença de Crohn ileocecal', 'Retocolite ulcerativa', 'Tuberculose intestinal', 'Síndrome do intestino irritável'],
   edx: 'Crohn: acomete qualquer segmento (mais íleo terminal), de forma descontínua e transmural (fístulas, estenoses, abscessos), granulomas não caseosos, doença perianal, má absorção de B12 e sais biliares. Tabagismo piora o Crohn (e é protetor na RCU). No Brasil, excluir tuberculose intestinal.',
-  cd: ['Corticoide e biológico', 'Mesalazina oral isolada em dose alta', 'Colectomia total', 'Antibiótico contínuo'],
+  cd: ['Budesonida (ou prednisona) e anti-TNF precoce', 'Mesalazina oral 4 g/dia isolada', 'Colectomia total com ileostomia', 'Ciprofloxacino e metronidazol contínuos por 6 meses'],
   ecd: 'Doença moderada-grave ileocecal: indução com budesonida ou corticoide e estratégia precoce com biológico (anti-TNF, vedolizumabe, ustequinumabe) ± imunomodulador. Mesalazina tem pouco efeito no Crohn. Cessar tabagismo. Rastrear TB latente e hepatite B antes do biológico.' });
 
 CASO({ id: 'cx_crohn_abscesso', area: 'cir', dif: 3, tema: 'Doença de Crohn', cond: 'Abscesso intra-abdominal na doença de Crohn', tags: ['gastro', 'img', 'sepse', 'infec'],
@@ -258,7 +258,7 @@ CASO({ id: 'cx_crohn_abscesso', area: 'cir', dif: 3, tema: 'Doença de Crohn', c
   pista: 'Abscesso bem definido e paciente estável.',
   dx: ['Abscesso no Crohn', 'Apendicite aguda', 'Gravidez ectópica rota', 'Linfoma intestinal'],
   edx: 'Crohn penetrante pode formar fístulas e abscessos. Antes de intensificar a imunossupressão, é obrigatório drenar coleções.',
-  cd: ['Antibiótico e drenagem percutânea', 'Iniciar anti-TNF imediatamente', 'Pulso de corticoide', 'Laparotomia imediata'],
+  cd: ['Antibiótico EV e drenagem percutânea guiada', 'Iniciar infliximabe imediatamente', 'Metilprednisolona em pulso', 'Laparotomia imediata com ressecção ileocecal'],
   ecd: 'Antibiótico venoso e drenagem percutânea guiada; suspender imunossupressor durante a infecção. Depois, ressecção ileocecal eletiva se houver estenose ou fístula persistente. Biológico após controle da infecção. Na estenose curta sem perfuração, a estricturoplastia preserva intestino.' });
 
 CASO({ id: 'cx_crohn_perianal', area: 'cir', dif: 3, tema: 'Doença de Crohn', cond: 'Fístula perianal complexa na doença de Crohn', tags: ['gastro'],
@@ -272,7 +272,7 @@ CASO({ id: 'cx_crohn_perianal', area: 'cir', dif: 3, tema: 'Doença de Crohn', c
   pista: 'Fístula complexa com abscesso.',
   dx: ['Crohn perianal fistulizante', 'Doença hemorroidária', 'Fissura anal crônica', 'Carcinoma anal'],
   edx: 'Doença perianal (fístulas, abscessos, fissuras atípicas, plicomas) é característica do Crohn. Fístulas complexas são altas, com múltiplos trajetos ou abscesso.',
-  cd: ['Sedenho e anti-TNF', 'Fistulotomia ampla em um tempo', 'Mesalazina oral', 'Apenas banho de assento'],
+  cd: ['Drenagem, sedenho frouxo e infliximabe', 'Fistulotomia ampla em um único tempo', 'Mesalazina oral 4 g/dia', 'Banho de assento e metronidazol VO por 14 dias, sem drenagem'],
   ecd: 'Exame sob anestesia, drenagem do abscesso e colocação de sedenho (seton) frouxo, antibiótico (metronidazol ou ciprofloxacino) e anti-TNF (infliximabe) com imunomodulador. Fistulotomia em fístula complexa arrisca incontinência. Aminossalicilatos não têm eficácia na doença perianal.' });
 
 /* ---------- Outras colites e distúrbios funcionais ---------- */
@@ -288,7 +288,7 @@ CASO({ id: 'cx_c_difficile', area: 'cir', dif: 2, tema: 'Colite pseudomembranosa
   pista: 'Antibiótico, hospitalização, idade, IBP e diarreia: pesquisar C. difficile.',
   dx: ['Colite por C. difficile', 'Diarreia osmótica pelo antibiótico', 'Retocolite ulcerativa', 'Colite isquêmica'],
   edx: 'Diarreia ≥ 3 evacuações não formadas em 24 h com teste positivo para toxina. Grave: leucócitos > 15.000 ou creatinina > 1,5. Fulminante: hipotensão, choque, íleo ou megacólon. Clindamicina, cefalosporinas e quinolonas são os maiores fatores de risco.',
-  cd: ['Vancomicina oral', 'Metronidazol oral como primeira linha', 'Loperamida', 'Vancomicina intravenosa'],
+  cd: ['Vancomicina 125 mg VO de 6/6 h por 10 dias', 'Metronidazol 500 mg VO de 8/8 h por 10 dias', 'Loperamida e manter o antibiótico atual', 'Vancomicina 1 g EV de 12/12 h por 10 dias'],
   ecd: 'Suspender o antibiótico desencadeante se possível, isolamento de contato e higiene das mãos com água e sabão (álcool não mata esporos). Vancomicina oral 125 mg 6/6 h ou fidaxomicina por 10 dias. Fulminante: vancomicina oral em dose alta + metronidazol IV ± colectomia. Recorrência: fidaxomicina, bezlotoxumabe, transplante de microbiota. Vancomicina IV não chega ao cólon.' });
 
 CASO({ id: 'cx_sii', area: 'cir', dif: 1, tema: 'Síndrome do intestino irritável', cond: 'Síndrome do intestino irritável com predomínio de constipação', tags: ['gastro'],
@@ -302,7 +302,7 @@ CASO({ id: 'cx_sii', area: 'cir', dif: 1, tema: 'Síndrome do intestino irritáv
   pista: 'Critérios de Roma IV sem sinais de alarme.',
   dx: ['Intestino irritável', 'Doença de Crohn ileal', 'Câncer colorretal inicial', 'Doença celíaca do adulto'],
   edx: 'Roma IV: dor abdominal recorrente, em média 1 dia por semana nos últimos 3 meses, associada a 2 ou mais: relação com a evacuação, mudança na frequência, mudança na forma das fezes; início há pelo menos 6 meses. Sinais de alarme (idade > 45-50, sangramento, anemia, emagrecimento, sintomas noturnos, história familiar) exigem investigação.',
-  cd: ['Orientação e fibra solúvel', 'Colonoscopia e TC de abdome', 'Corticoide oral por 2 semanas', 'Antibiótico empírico'],
+  cd: ['Orientação, psyllium e atividade física', 'Colonoscopia e TC de abdome antes de qualquer orientação', 'Prednisona 40 mg/dia por 2 semanas', 'Rifaximina empírica por 14 dias'],
   ecd: 'Relação médico-paciente, explicação do eixo intestino-cérebro, dieta (fibra solúvel como psyllium; dieta pobre em FODMAP em casos selecionados), atividade física. Dor: antiespasmódicos, antidepressivos em dose baixa (tricíclicos), terapia cognitivo-comportamental. Constipação: laxantes osmóticos, linaclotida.' });
 
 CASO({ id: 'cx_carcinoide_sindrome', area: 'cir', dif: 3, tema: 'Tumor carcinoide', cond: 'Síndrome carcinoide por tumor neuroendócrino de íleo com metástases hepáticas', tags: ['onco', 'cardio'],
@@ -317,7 +317,7 @@ CASO({ id: 'cx_carcinoide_sindrome', area: 'cir', dif: 3, tema: 'Tumor carcinoid
   pista: 'Rubor, diarreia, broncoespasmo e valvopatia direita: serotonina chegando à circulação sistêmica.',
   dx: ['Síndrome carcinoide', 'Feocromocitoma', 'Mastocitose sistêmica', 'Hipertireoidismo'],
   edx: 'Tumores neuroendócrinos do intestino médio (íleo) produzem serotonina, inativada pelo fígado; a síndrome carcinoide surge quando há metástases hepáticas (ou tumores com drenagem sistêmica). Diagnóstico: 5-HIAA urinário, cromogranina A, imagem funcional. Fibrose do coração direito (tricúspide e pulmonar).',
-  cd: ['Octreotida', 'Betabloqueador para o rubor', 'Quimioterapia citotóxica isolada', 'Apenas antidiarreico'],
+  cd: ['Octreotida (análogo de somatostatina)', 'Propranolol para o rubor facial', 'Quimioterapia com cisplatina e etoposídeo', 'Loperamida isolada para a diarreia'],
   ecd: 'Análogos de somatostatina (octreotida, lanreotida) controlam sintomas e o crescimento tumoral; cirurgia do primário e das metástases quando possível; terapia com radionuclídeo (lutécio-177), everolimo e terapias hepáticas. Crise carcinoide (anestesia, manipulação): octreotida IV profilática.' });
 
 CASO({ id: 'cx_carcinoide_apendice', area: 'cir', dif: 2, tema: 'Tumor carcinoide', cond: 'Tumor neuroendócrino de apêndice achado após apendicectomia', tags: ['onco'],
@@ -331,7 +331,7 @@ CASO({ id: 'cx_carcinoide_apendice', area: 'cir', dif: 2, tema: 'Tumor carcinoid
   pista: 'Menor que 1-2 cm, na ponta, sem fatores de risco.',
   dx: ['TNE de apêndice de baixo risco', 'Adenocarcinoma de apêndice', 'Mucocele de apêndice', 'Linfoma de apêndice'],
   edx: 'O apêndice é sede frequente de tumores neuroendócrinos, geralmente achados incidentais na ponta do órgão. Até 2 cm, sem invasão do mesoapêndice ou angiolinfática, a apendicectomia é curativa.',
-  cd: ['Apenas seguimento', 'Colectomia direita', 'Quimioterapia adjuvante', 'Octreotida por toda a vida'],
+  cd: ['Apenas seguimento clínico (tumor < 1 cm na ponta)', 'Colectomia direita oncológica', 'Quimioterapia adjuvante com capecitabina por 6 meses', 'Octreotida LAR por toda a vida'],
   ecd: 'Tumores < 1 cm: apendicectomia basta. 1-2 cm: apendicectomia, avaliando fatores de risco (base, mesoapêndice, invasão vascular, alto índice Ki-67). > 2 cm ou fatores de risco: hemicolectomia direita.' });
 
 /* ---------- Pancreatite aguda ---------- */
@@ -347,7 +347,7 @@ CASO({ id: 'cx_pancreatite_biliar', area: 'cir', dif: 2, tema: 'Pancreatite agud
   pista: 'Dois de três critérios, colelitíase e TGP alta, sem disfunção orgânica.',
   dx: ['Pancreatite biliar leve', 'Colecistite aguda', 'Úlcera péptica perfurada', 'IAM de parede inferior'],
   edx: 'Diagnóstico (2 de 3): dor típica, amilase/lipase > 3x o normal, imagem compatível. TGP > 150 sugere origem biliar. Leve: sem disfunção orgânica nem complicações locais.',
-  cd: ['Suporte e colecistectomia na internação', 'Antibiótico profilático', 'CPRE de rotina', 'Jejum por 2 semanas'],
+  cd: ['Ringer lactato, dieta precoce e colecistectomia na internação', 'Imipeném profilático por 14 dias', 'CPRE de rotina nas primeiras 24 horas', 'Jejum por 2 semanas, nutrição parenteral total e imipeném'],
   ecd: 'Hidratação com Ringer lactato moderada e guiada por metas (evitar excesso), analgesia (inclusive opioides), dieta oral precoce conforme tolerância. Antibiótico profilático não é indicado. CPRE só com colangite ou obstrução biliar persistente. Colecistectomia na mesma internação na pancreatite biliar leve (reduz recorrência).' });
 
 CASO({ id: 'cx_pancreatite_grave', area: 'cir', dif: 3, tema: 'Pancreatite aguda', cond: 'Pancreatite aguda alcoólica grave com necrose infectada', tags: ['dor', 'img', 'sepse', 'choque', 'infec'],
@@ -362,7 +362,7 @@ CASO({ id: 'cx_pancreatite_grave', area: 'cir', dif: 3, tema: 'Pancreatite aguda
   pista: 'Gás dentro da necrose após a 3ª-4ª semana.',
   dx: ['Necrose infectada', 'Pseudocisto não complicado', 'Pancreatite crônica agudizada', 'Colangite aguda'],
   edx: 'Atlanta revisada: grave = falência orgânica persistente (> 48 h). Complicações locais: coleção fluida aguda, pseudocisto (> 4 semanas, sem necrose), necrose aguda e necrose encapsulada (> 4 semanas). Gás na necrose indica infecção.',
-  cd: ['Carbapenêmico e step-up', 'Necrosectomia aberta no 1º dia', 'Corticoide venoso', 'Suspender a nutrição enteral'],
+  cd: ['Meropeném e abordagem step-up (drenagem antes da necrosectomia)', 'Necrosectomia aberta no primeiro dia de internação', 'Hidrocortisona venosa e jejum prolongado', 'Suspender a nutrição enteral e iniciar a parenteral total exclusiva'],
   ecd: 'Antibiótico com boa penetração (carbapenêmico, quinolona + metronidazol) e abordagem em etapas ("step-up"): drenagem percutânea ou endoscópica transmural, depois necrosectomia endoscópica ou videoassistida se necessário, de preferência após 4 semanas (necrose encapsulada). Nutrição enteral é preferível à parenteral.' });
 
 CASO({ id: 'cx_pancreatite_tg', area: 'cir', dif: 3, tema: 'Pancreatite aguda', cond: 'Pancreatite aguda por hipertrigliceridemia', tags: ['dor', 'endocrino'],
@@ -376,7 +376,7 @@ CASO({ id: 'cx_pancreatite_tg', area: 'cir', dif: 3, tema: 'Pancreatite aguda', 
   pista: 'Soro lipêmico, xantomas e triglicerídeos acima de 1.000.',
   dx: ['Pancreatite por hipertrigliceridemia', 'Pancreatite biliar', 'Cetoacidose diabética isolada', 'Infarto mesentérico'],
   edx: 'Triglicerídeos > 1.000 mg/dL causam pancreatite (terceira causa). A lipemia pode interferir na dosagem de amilase e sódio. Associa-se a diabetes descompensado, álcool, gestação, estrógenos e dislipidemias genéticas.',
-  cd: ['Insulina IV e depois fibrato', 'Colecistectomia', 'Estatina isolada', 'Heparina em bolus e alta'],
+  cd: ['Insulina EV com glicose e depois fenofibrato', 'Colecistectomia videolaparoscópica na mesma internação', 'Sinvastatina 40 mg isolada', 'Heparina em bólus e alta'],
   ecd: 'Tratamento da pancreatite e redução rápida dos triglicerídeos: insulina venosa (ativa a lipase lipoproteica) com glicose se necessário, plasmaférese em casos graves selecionados. Depois, fibrato, dieta muito pobre em gordura, controle do diabetes, abstinência alcoólica.' });
 
 CASO({ id: 'cx_pancreatite_hipercalcemia', area: 'cir', dif: 3, tema: 'Pancreatite aguda', cond: 'Pancreatite aguda por hipercalcemia (hiperparatireoidismo primário)', tags: ['dor', 'endocrino'],
@@ -391,7 +391,7 @@ CASO({ id: 'cx_pancreatite_hipercalcemia', area: 'cir', dif: 3, tema: 'Pancreati
   pista: 'Pancreatite recorrente sem álcool ou cálculos, com cálcio e PTH altos.',
   dx: ['Pancreatite por hiperparatireoidismo', 'Pancreatite biliar recorrente', 'Pancreatite autoimune', 'Hipercalcemia da malignidade'],
   edx: 'Hipercalcemia ativa o tripsinogênio intrapancreático. Hiperparatireoidismo primário (adenoma) é a causa mais comum de hipercalcemia ambulatorial: PTH elevado ou inapropriadamente normal com cálcio alto.',
-  cd: ['Paratireoidectomia', 'Colecistectomia videolaparoscópica', 'Suplementar cálcio e vitamina D', 'CPRE com papilotomia'],
+  cd: ['Paratireoidectomia (após localizar o adenoma)', 'Colecistectomia videolaparoscópica na mesma internação', 'Carbonato de cálcio e vitamina D', 'CPRE com papilotomia'],
   ecd: 'Suporte da pancreatite e hidratação (que ajuda a reduzir o cálcio). Hiperparatireoidismo sintomático (pancreatite, nefrolitíase, osteoporose): paratireoidectomia do adenoma. Outras causas a lembrar: drogas (azatioprina, valproato, didanosina, estrógenos), pós-CPRE, pós-operatória, autoimune.' });
 
 CASO({ id: 'cx_pancreatite_droga', area: 'cir', dif: 2, tema: 'Pancreatite aguda', cond: 'Pancreatite aguda induzida por azatioprina', tags: ['dor', 'gastro'],
@@ -406,7 +406,7 @@ CASO({ id: 'cx_pancreatite_droga', area: 'cir', dif: 2, tema: 'Pancreatite aguda
   pista: 'Medicação recém-iniciada e causas comuns excluídas.',
   dx: ['Pancreatite por droga', 'Pancreatite biliar', 'Úlcera perfurada', 'Pancreatite por hipertrigliceridemia'],
   edx: 'Pancreatite por drogas costuma ocorrer nas primeiras semanas: azatioprina/6-mercaptopurina, valproato, didanosina, estrógenos, furosemida, tiazídicos, mesalazina, inibidores de DPP-4/GLP-1 (associação discutida).',
-  cd: ['Suspender a azatioprina', 'Manter a azatioprina e reavaliar', 'Colecistectomia', 'Antibiótico profilático'],
+  cd: ['Suspender a azatioprina definitivamente', 'Manter a azatioprina em dose menor', 'Colecistectomia na mesma internação', 'Imipeném profilático por 7 dias e manter a azatioprina'],
   ecd: 'Suspender definitivamente a droga (a reexposição causa recidiva) e tratamento de suporte. Para o Crohn, optar por outra estratégia (por exemplo, biológico).' });
 
 CASO({ id: 'cx_pancreatite_cronica', area: 'cir', dif: 2, tema: 'Pancreatite crônica', cond: 'Pancreatite crônica alcoólica com insuficiência exócrina e endócrina', tags: ['dor', 'endocrino', 'img'],
@@ -421,7 +421,7 @@ CASO({ id: 'cx_pancreatite_cronica', area: 'cir', dif: 2, tema: 'Pancreatite cr�
   pista: 'Tríade: calcificações, esteatorreia e diabetes.',
   dx: ['Pancreatite crônica', 'Câncer de pâncreas', 'Doença celíaca', 'Pancreatite aguda recorrente'],
   edx: 'Pancreatite crônica: dano irreversível com fibrose. Álcool e tabaco são as principais causas. Dor, insuficiência exócrina (esteatorreia, déficit de vitaminas lipossolúveis) e endócrina (diabetes pancreatogênico). Calcificações na TC. Lipase pode ser normal.',
-  cd: ['Abstinência e enzimas pancreáticas', 'Pancreatectomia total imediata', 'Corticoide', 'Dieta sem glúten'],
+  cd: ['Abstinência alcoólica e enzimas pancreáticas', 'Pancreatectomia total imediata', 'Prednisona 40 mg/dia', 'Dieta sem glúten e sem lactose'],
   ecd: 'Cessar álcool e tabaco, reposição de enzimas pancreáticas com as refeições, vitaminas lipossolúveis, analgesia escalonada, controle do diabetes (risco de hipoglicemia). Ducto dilatado com dor refratária: tratamento endoscópico ou cirúrgico (Frey, Puestow). Risco aumentado de adenocarcinoma.' });
 
 /* ---------- Câncer de pâncreas ---------- */
@@ -437,7 +437,7 @@ CASO({ id: 'cx_ca_pancreas', area: 'cir', dif: 2, tema: 'Câncer de pâncreas', 
   pista: 'Icterícia obstrutiva indolor com vesícula palpável.',
   dx: ['Câncer de cabeça de pâncreas', 'Coledocolitíase', 'Hepatite viral aguda', 'Colangite esclerosante primária'],
   edx: 'Icterícia obstrutiva progressiva e indolor, emagrecimento, vesícula palpável e indolor (Courvoisier) sugerem neoplasia periampular. Diabetes de início recente pode ser manifestação. CA 19-9 é útil no seguimento, não no rastreio.',
-  cd: ['Cirurgia de Whipple', 'Colecistectomia', 'Quimioterapia paliativa exclusiva', 'Hepatectomia direita'],
+  cd: ['Duodenopancreatectomia (Whipple) e quimioterapia adjuvante', 'Derivação biliodigestiva paliativa isolada e quimioterapia com gencitabina', 'Quimioterapia paliativa exclusiva com gemcitabina', 'Prótese biliar endoscópica e cuidados paliativos'],
   ecd: 'Doença ressecável (sem contato arterial importante e sem metástases): duodenopancreatectomia cefálica, seguida de quimioterapia adjuvante (FOLFIRINOX modificado); neoadjuvância em limítrofes. Drenagem biliar pré-operatória só se colangite, prurido intenso ou atraso cirúrgico. Irressecável: prótese biliar e quimioterapia paliativa.' });
 
 /* ---------- Vias biliares ---------- */
@@ -453,7 +453,7 @@ CASO({ id: 'cx_colelitiase', area: 'cir', dif: 1, tema: 'Doenças das vias bilia
   pista: 'Cólica biliar típica, sem inflamação ou complicação.',
   dx: ['Colelitíase sintomática', 'Colecistite aguda alitiásica', 'Coledocolitíase', 'Úlcera duodenal'],
   edx: 'Cólica biliar: dor por obstrução transitória do ducto cístico, de minutos a poucas horas, sem febre, sem Murphy e sem leucocitose. Fatores: sexo feminino, idade, obesidade, gestações, perda rápida de peso.',
-  cd: ['Colecistectomia eletiva', 'Ursodesoxicólico por toda a vida', 'Observar até a terceira crise', 'CPRE'],
+  cd: ['Colecistectomia videolaparoscópica eletiva', 'Ácido ursodesoxicólico 10 mg/kg/dia por toda a vida', 'Observar até a terceira crise de dor', 'CPRE com papilotomia'],
   ecd: 'Colelitíase sintomática: colecistectomia videolaparoscópica eletiva. Assintomática: em geral, observação; considerar cirurgia em vesícula em porcelana, cálculo > 2,5-3 cm, pólipo > 1 cm, anemia hemolítica (falciforme), candidatos a transplante. O nódulo com cicatriz central sugere hiperplasia nodular focal (benigno, sem tratamento).' });
 
 CASO({ id: 'cx_colecistite', area: 'cir', dif: 2, tema: 'Doenças das vias biliares', cond: 'Colecistite aguda calculosa', tags: ['dor', 'usg', 'sepse', 'infec'],
@@ -468,7 +468,7 @@ CASO({ id: 'cx_colecistite', area: 'cir', dif: 2, tema: 'Doenças das vias bilia
   pista: 'Dor > 6 h, Murphy, febre, leucocitose e espessamento da parede.',
   dx: ['Colecistite aguda', 'Cólica biliar simples', 'Colangite aguda', 'Pancreatite aguda'],
   edx: 'Tóquio 2018: sinais locais (Murphy, dor/massa em HD) + sistêmicos (febre, PCR, leucocitose) + imagem. Grau II: leucócitos > 18.000, massa palpável, > 72 h ou inflamação local acentuada; grau III: disfunção orgânica. Bilirrubina normal fala contra coledocolitíase.',
-  cd: ['Colecistectomia precoce', 'Alta com analgésico', 'CPRE', 'Colecistectomia só após 3 meses'],
+  cd: ['Antibiótico e colecistectomia laparoscópica em até 72 h', 'Alta com escopolamina e dipirona', 'CPRE de urgência com papilotomia', 'Antibiótico venoso e colecistectomia eletiva só após 3 meses'],
   ecd: 'Hidratação, analgesia, antibiótico e colecistectomia videolaparoscópica precoce (idealmente em até 72 horas, aceitável até 7-10 dias). Paciente de alto risco cirúrgico ou grau III sem condições: colecistostomia percutânea. Colecistite alitiásica: pacientes críticos.' });
 
 CASO({ id: 'cx_colecistostomia', area: 'cir', dif: 3, tema: 'Doenças das vias biliares', cond: 'Colecistite aguda grave em idoso de alto risco', tags: ['dor', 'choque', 'sepse', 'infec'],
@@ -483,7 +483,7 @@ CASO({ id: 'cx_colecistostomia', area: 'cir', dif: 3, tema: 'Doenças das vias b
   pista: 'Grau III com risco cirúrgico proibitivo.',
   dx: ['Colecistite grau III', 'Colangite aguda', 'Pancreatite grave', 'Pneumonia com sepse'],
   edx: 'Grau III de Tóquio: disfunção cardiovascular, neurológica, respiratória, renal, hepática ou hematológica. Em paciente com comorbidades graves, a cirurgia imediata tem alta mortalidade.',
-  cd: ['Colecistostomia percutânea', 'Colecistectomia aberta imediata', 'Só antibiótico oral', 'CPRE'],
+  cd: ['Antibiótico EV e colecistostomia percutânea', 'Colecistectomia aberta imediata sob anestesia geral', 'Ciprofloxacino VO isolado', 'CPRE com papilotomia'],
   ecd: 'Suporte, antibiótico de amplo espectro e drenagem da vesícula (colecistostomia percutânea ou drenagem endoscópica). Colecistectomia em centros experientes apenas se o paciente tolerar; senão, depois da recuperação ou nunca.' });
 
 CASO({ id: 'cx_coledocolitiase', area: 'cir', dif: 2, tema: 'Doenças das vias biliares', cond: 'Coledocolitíase de alto risco', tags: ['dor', 'usg', 'hepato'],
@@ -498,7 +498,7 @@ CASO({ id: 'cx_coledocolitiase', area: 'cir', dif: 2, tema: 'Doenças das vias b
   pista: 'Cálculo visto no colédoco: alto risco.',
   dx: ['Coledocolitíase', 'Colecistite aguda', 'Câncer de cabeça de pâncreas', 'Hepatite aguda'],
   edx: 'ASGE 2019: alto risco = cálculo no colédoco na imagem, colangite, ou bilirrubina > 4 com colédoco dilatado. Intermediário: alterações laboratoriais, colédoco > 6 mm ou idade > 55 → colangio-RM ou ecoendoscopia.',
-  cd: ['CPRE e colecistectomia', 'Colangio-RM antes de qualquer decisão', 'Ácido ursodesoxicólico', 'Colecistectomia sem tratar o colédoco'],
+  cd: ['CPRE com extração e colecistectomia na mesma internação', 'Colangio-RM antes de qualquer decisão e colecistectomia eletiva', 'Ácido ursodesoxicólico e observação', 'Colecistectomia sem abordar o colédoco'],
   ecd: 'Alto risco: CPRE com extração dos cálculos (ou exploração laparoscópica do colédoco no mesmo tempo da colecistectomia, em centros com experiência), seguida de colecistectomia na mesma internação.' });
 
 CASO({ id: 'cx_colangite', area: 'cir', dif: 3, tema: 'Doenças das vias biliares', cond: 'Colangite aguda grave (pêntade de Reynolds)', tags: ['dor', 'sepse', 'choque', 'hepato', 'infec'],
@@ -513,7 +513,7 @@ CASO({ id: 'cx_colangite', area: 'cir', dif: 3, tema: 'Doenças das vias biliare
   pista: 'Tríade de Charcot + hipotensão + confusão.',
   dx: ['Colangite aguda grave', 'Colecistite aguda', 'Hepatite alcoólica', 'Abscesso hepático amebiano'],
   edx: 'Colangite: infecção da via biliar obstruída. Tríade de Charcot (febre, icterícia, dor em HD); pêntade de Reynolds (com choque e confusão) indica forma grave.',
-  cd: ['Antibiótico e CPRE urgente', 'Colecistectomia imediata', 'Antibiótico oral e alta', 'Aguardar 7 dias de antibiótico'],
+  cd: ['Antibiótico EV e CPRE de urgência (< 24 h)', 'Colecistectomia videolaparoscópica imediata', 'Ciprofloxacino VO e alta', 'Antibiótico por 7 dias e CPRE eletiva depois'],
   ecd: 'Ressuscitação, antibiótico de amplo espectro (cobertura de Gram-negativos e anaeróbios) e drenagem biliar o quanto antes (CPRE nas graves em até 24 h; percutânea se CPRE inviável). Colecistectomia depois, na recuperação.' });
 
 CASO({ id: 'cx_cep', area: 'cir', dif: 3, tema: 'Doenças das vias biliares', cond: 'Colangite esclerosante primária associada à RCU', tags: ['hepato', 'gastro', 'img'],
@@ -528,7 +528,7 @@ CASO({ id: 'cx_cep', area: 'cir', dif: 3, tema: 'Doenças das vias biliares', co
   pista: 'Homem jovem com RCU e colestase.',
   dx: ['Colangite esclerosante primária', 'Colangite biliar primária', 'Coledocolitíase', 'Hepatite autoimune'],
   edx: 'CEP: inflamação e fibrose das vias biliares intra e extra-hepáticas, associada à RCU em até 70%. Colangio-RM com estenoses e dilatações. A colangite biliar primária acomete mulheres, ductos intra-hepáticos microscópicos, com antimitocôndria positivo.',
-  cd: ['Vigilância de câncer', 'Ácido ursodesoxicólico, que cura a doença', 'Colecistectomia', 'Corticoide em dose alta'],
+  cd: ['Colonoscopia anual e vigilância de colangiocarcinoma', 'Ácido ursodesoxicólico em dose alta, que cura a doença', 'Colecistectomia videolaparoscópica', 'Prednisona 40 mg/dia e azatioprina'],
   ecd: 'Não há tratamento que altere a história natural (o ursodesoxicólico melhora exames, sem benefício comprovado de sobrevida). Tratar estenoses dominantes por CPRE, prurido, osteoporose. Risco de colangiocarcinoma (vigilância por imagem e CA 19-9), câncer de vesícula e câncer colorretal (colonoscopia anual). Transplante na doença avançada.' });
 
 CASO({ id: 'cx_klatskin', area: 'cir', dif: 3, tema: 'Doenças das vias biliares', cond: 'Colangiocarcinoma hilar (tumor de Klatskin)', tags: ['onco', 'hepato', 'img'],
@@ -543,7 +543,7 @@ CASO({ id: 'cx_klatskin', area: 'cir', dif: 3, tema: 'Doenças das vias biliares
   pista: 'Vias intra-hepáticas dilatadas, colédoco e vesícula normais.',
   dx: ['Colangiocarcinoma hilar', 'Câncer de cabeça de pâncreas', 'Coledocolitíase', 'Síndrome de Mirizzi'],
   edx: 'Tumor de Klatskin: colangiocarcinoma na confluência dos ductos hepáticos (classificação de Bismuth-Corlette). Obstrução alta: vesícula colapsada e não palpável, diferentemente da obstrução distal (Courvoisier). Fatores: CEP, cistos de colédoco, parasitas hepáticos.',
-  cd: ['Ressecção com hepatectomia', 'Colecistectomia simples', 'Antibiótico', 'Duodenopancreatectomia'],
+  cd: ['Hepatectomia com ressecção da via biliar e linfadenectomia', 'Colecistectomia simples com colangiografia', 'Ciprofloxacino e drenagem biliar externa definitiva como tratamento', 'Duodenopancreatectomia (cirurgia de Whipple)'],
   ecd: 'Ressecção da via biliar com hepatectomia e linfadenectomia quando ressecável (avaliar volume hepático remanescente); transplante em casos selecionados. Irressecável: drenagem biliar (endoscópica ou percutânea) e quimioterapia paliativa.' });
 
 /* ---------- Tumores hepáticos ---------- */
@@ -560,7 +560,7 @@ CASO({ id: 'cx_hemangioma', area: 'cir', dif: 1, tema: 'Tumores hepáticos', con
   pista: 'Realce globular periférico com enchimento centrípeto.',
   dx: ['Hemangioma hepático', 'Hepatocarcinoma', 'Metástase hepática', 'Adenoma hepático'],
   edx: 'Hemangioma: tumor benigno mais comum do fígado, mais em mulheres. Imagem típica: realce periférico nodular descontínuo com preenchimento centrípeto na fase tardia; na RM, muito hiperintenso em T2.',
-  cd: ['Nenhum tratamento', 'Biópsia percutânea', 'Ressecção cirúrgica', 'Quimioembolização'],
+  cd: ['Nenhum tratamento nem seguimento', 'Biópsia percutânea guiada por ultrassom', 'Ressecção cirúrgica pelo tamanho', 'Quimioembolização transarterial'],
   ecd: 'Hemangiomas assintomáticos não exigem tratamento nem seguimento, independentemente do tamanho. Biópsia é contraindicada (sangramento). Cirurgia apenas se sintomas importantes, crescimento rápido, síndrome de Kasabach-Merritt ou dúvida diagnóstica.' });
 
 CASO({ id: 'cx_hnf', area: 'cir', dif: 2, tema: 'Tumores hepáticos', cond: 'Hiperplasia nodular focal', tags: ['hepato', 'img'],
@@ -575,7 +575,7 @@ CASO({ id: 'cx_hnf', area: 'cir', dif: 2, tema: 'Tumores hepáticos', cond: 'Hip
   pista: 'Cicatriz central e captação do contraste hepatoespecífico (contém hepatócitos funcionantes).',
   dx: ['Hiperplasia nodular focal', 'Adenoma hepatocelular', 'Hepatocarcinoma fibrolamelar', 'Hemangioma'],
   edx: 'HNF: resposta hiperplásica a malformação arterial, sem potencial maligno, sem risco relevante de sangramento. Cicatriz central e retenção na fase hepatobiliar (adenoma geralmente não retém). Hepatocarcinoma fibrolamelar também tem cicatriz, mas em jovens com lesão maior, calcificada.',
-  cd: ['Conduta expectante', 'Ressecção cirúrgica', 'Suspender o anticoncepcional obrigatoriamente', 'Biópsia de rotina'],
+  cd: ['Conduta expectante, sem seguimento', 'Ressecção cirúrgica laparoscópica', 'Suspender o anticoncepcional obrigatoriamente', 'Biópsia percutânea de rotina'],
   ecd: 'HNF típica não exige tratamento, seguimento ou suspensão do anticoncepcional. O adenoma, ao contrário, associa-se a estrogênio e anabolizantes: suspender e ressecar se > 5 cm, em homens ou com mutação de beta-catenina.' });
 
 CASO({ id: 'cx_metastase_hepatica', area: 'cir', dif: 3, tema: 'Tumores hepáticos', cond: 'Metástases hepáticas ressecáveis de câncer colorretal', tags: ['onco', 'hepato', 'img'],
@@ -590,5 +590,5 @@ CASO({ id: 'cx_metastase_hepatica', area: 'cir', dif: 3, tema: 'Tumores hepátic
   pista: 'Metástases hepáticas isoladas de câncer colorretal podem ser curadas.',
   dx: ['Metástases de câncer colorretal', 'Hepatocarcinoma multifocal', 'Abscessos hepáticos', 'Hemangiomas múltiplos'],
   edx: 'O fígado é o principal sítio de metástase do câncer colorretal (drenagem portal). Metástases são os tumores malignos mais comuns do fígado.',
-  cd: ['Quimioterapia e hepatectomia', 'Cuidados paliativos exclusivos', 'Transplante hepático', 'Radioterapia isolada'],
+  cd: ['Quimioterapia perioperatória e hepatectomia', 'Cuidados paliativos exclusivos pela doença metastática', 'Transplante hepático', 'Radioterapia hepática isolada'],
   ecd: 'Metástases colorretais ressecáveis (com margens livres e fígado remanescente suficiente): hepatectomia, geralmente com quimioterapia perioperatória, com sobrevida em 5 anos de 40-50%. Ablação por radiofrequência para lesões pequenas. Inicialmente irressecáveis: quimioterapia de conversão.' });

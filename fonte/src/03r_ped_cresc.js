@@ -111,7 +111,7 @@ CASO({ id: 'pc_tdah', area: 'ped', dif: 2, tema: 'TDAH na criança', cond: 'Tran
   pista: 'Sintomas antes dos 12 anos, em mais de um ambiente, com prejuízo.',
   dx: ['TDAH, apresentação combinada', 'Transtorno opositor desafiador', 'Comportamento normal para a idade', 'Deficiência intelectual leve'],
   edx: 'Desatenção e hiperatividade/impulsividade presentes há mais de 6 meses, antes dos 12 anos, em casa e na escola, com prejuízo funcional e sem outra causa (sono, audição, visão), preenchem critérios de TDAH combinado.',
-  cd: ['Psicoeducação, apoio escolar e considerar metilfenidato', 'Retirar açúcar e corantes da dieta', 'Afastar a criança da escola', 'Benzodiazepínico à noite para reduzir a agitação diurna'],
+  cd: ['Psicoeducação, intervenção escolar e metilfenidato', 'Retirar açúcar e corantes artificiais da dieta por 3 meses', 'Afastar a criança da escola', 'Benzodiazepínico à noite para reduzir a agitação diurna'],
   ecd: 'O tratamento combina psicoeducação, intervenções comportamentais (pais e escola) e, a partir dos 6 anos, estimulantes como o metilfenidato, que têm boa evidência. Antes de medicar, avalia-se pressão arterial, frequência cardíaca, peso e história cardiovascular.' });
 
 /* ---------- Crescimento e estatura ---------- */
@@ -293,7 +293,7 @@ CASO({ id: 'pc_pp_central_menino', area: 'ped', dif: 3, tema: 'Puberdade e puber
   pista: 'Testículos aumentados significam ativação do eixo central.',
   dx: ['Puberdade precoce central', 'Tumor adrenal', 'Adrenarca precoce', 'Hiperplasia adrenal congênita não clássica'],
   edx: 'Sinais puberais antes dos 9 anos no menino, com aceleração do crescimento, avanço da idade óssea, testículos aumentados e LH elevado, indicam puberdade precoce central (dependente de gonadotrofinas).',
-  cd: ['Ressonância de crânio e análogo de GnRH', 'Observação semestral, pois é variante normal em meninos', 'Tomografia de adrenais e cortisol livre', 'Testosterona para fechar as epífises'],
+  cd: ['RM de crânio e leuprorrelina (análogo de GnRH)', 'Observação semestral, pois é variante normal em meninos', 'Tomografia de adrenais e cortisol livre', 'Testosterona para fechar as epífises'],
   ecd: 'Em meninos, a puberdade precoce central tem causa orgânica com mais frequência que em meninas (por exemplo, hamartoma hipotalâmico, tumores), por isso a ressonância é obrigatória. O análogo de GnRH bloqueia o eixo e preserva a estatura final.' });
 
 CASO({ id: 'pc_telarca_isolada', area: 'ped', dif: 2, tema: 'Puberdade e puberdade precoce', cond: 'Telarca precoce isolada', tags: [],
@@ -336,5 +336,5 @@ CASO({ id: 'pc_mccune_albright', area: 'ped', dif: 3, tema: 'Puberdade e puberda
   pista: 'Estrogênio alto com gonadotrofinas suprimidas.',
   dx: ['Síndrome de McCune-Albright', 'Puberdade precoce central', 'Telarca precoce isolada', 'Neurofibromatose tipo 1'],
   edx: 'Puberdade com estradiol alto e LH e FSH suprimidos é periférica (independente de gonadotrofinas). Cistos ovarianos autônomos, manchas café com leite de bordas irregulares e displasia fibrosa óssea formam a tríade de McCune-Albright.',
-  cd: ['Inibidor de aromatase e seguimento especializado', 'Análogo de GnRH mensal', 'Ooforectomia bilateral imediata', 'Observar: o sangramento foi isolado e sem importância clínica'],
+  cd: ['Letrozol (inibidor de aromatase) e seguimento especializado', 'Análogo de GnRH mensal', 'Ooforectomia bilateral imediata', 'Observar: o sangramento foi isolado e sem importância clínica'],
   ecd: 'Na puberdade periférica o análogo de GnRH não funciona, porque o eixo hipotálamo-hipófise não está ativado. Investigar outras endocrinopatias associadas (tireoide, GH, cortisol, fosfato).' });

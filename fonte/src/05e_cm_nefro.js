@@ -19,7 +19,7 @@ CASO({ id: 'cn_hipercalemia', area: 'cm', ala: 'nefro', dif: 3, tema: 'Distúrbi
   pista: 'Ondas T apiculadas: primeiro proteja o coração.',
   dx: ['Hipercalemia grave', 'Pseudo-hipercalemia por hemólise na coleta', 'Hipocalemia com onda U', 'Hipercalcemia'],
   edx: 'Potássio acima de 6,5 ou com alterações no ECG (T apiculada, PR longo, perda da onda P, QRS largo, ritmo sinusoidal) é emergência. Causas: DRC, iECA/BRA, espironolactona, dieta rica em potássio, acidose.',
-  cd: ['Cálcio IV, insulina com glicose e salbutamol', 'Furosemida isolada e repetir o potássio amanhã cedo', 'Resina de troca como única medida', 'Bicarbonato isolado em bolus'],
+  cd: ['Gluconato de cálcio 10%, insulina regular com glicose e salbutamol', 'Furosemida 40 mg EV isolada e repetir o potássio amanhã cedo pela manhã', 'Poliestirenossulfonato de cálcio VO como única medida terapêutica', 'Bicarbonato de sódio 8,4% em bólus isolado, sem outras medidas'],
   ecd: 'Sequência: 1) estabilizar a membrana (gluconato de cálcio 10%, repetível; não reduz o potássio); 2) deslocar para dentro das células (insulina regular 10 UI com glicose, beta-2-agonista inalatório, bicarbonato se acidose); 3) remover do corpo (diurético de alça, resinas como patiromer ou ciclossilicato de zircônio, hemodiálise se refratária). Suspender iECA e espironolactona.' });
 
 CASO({ id: 'cn_hipocalemia_mg', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbios hidroeletrolíticos', cond: 'Hipocalemia refratária por hipomagnesemia', tags: ['nefro', 'cardio'],
@@ -34,7 +34,7 @@ CASO({ id: 'cn_hipocalemia_mg', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúr
   pista: 'Qual eletrólito impede a correção do potássio?',
   dx: ['Hipocalemia por hipomagnesemia', 'Hiperaldosteronismo primário', 'Paralisia periódica hipocalêmica', 'Acidose tubular renal proximal'],
   edx: 'Sem magnésio, o rim continua perdendo potássio (o canal ROMK fica desinibido) e a reposição falha. Também causa hipocalcemia (PTH reduzido). Causas: diarreia, álcool, diuréticos, inibidores de bomba de prótons.',
-  cd: ['Repor magnésio junto com o potássio', 'Aumentar só o KCl venoso para 40 mEq/h', 'Espironolactona e suspender a reposição', 'Bicarbonato venoso'],
+  cd: ['Sulfato de magnésio EV junto com a reposição de KCl', 'Aumentar só o KCl venoso para 40 mEq/h em veia periférica', 'Espironolactona 50 mg/dia e suspender a reposição venosa de potássio', 'Bicarbonato de sódio venoso e manter o omeprazol'],
   ecd: 'Sulfato de magnésio IV e depois oral. Reposição de potássio periférica até cerca de 10 mEq/h (risco de flebite e arritmia acima disso; acesso central e monitor para taxas maiores). Rever omeprazol e diurético.' });
 
 /* ---------- Sódio ---------- */
@@ -49,7 +49,7 @@ CASO({ id: 'cn_hiponatremia_grave', area: 'cm', ala: 'nefro', dif: 3, tema: 'Dis
   pista: 'Sintomas graves: o tratamento é imediato, mas com limite.',
   dx: ['Hiponatremia hipotônica grave sintomática', 'Pseudo-hiponatremia', 'Hiponatremia hipertônica por hiperglicemia', 'Hiponatremia leve assintomática'],
   edx: 'Sódio de 108 com osmolalidade baixa (hipotônica) e sintomas graves (vômitos, convulsão, torpor): edema cerebral. Tiazídico e ISRS são causas comuns em idosos.',
-  cd: ['NaCl 3% em bolus, sem passar de 10 mEq/L em 24 h', 'Soro fisiológico em infusão rápida até normalizar', 'Restrição hídrica isolada', 'Corrigir até 135 mEq/L nas primeiras 6 horas'],
+  cd: ['NaCl 3% 100-150 mL em bólus, até 10 mEq/L em 24 h', 'SF 0,9% em infusão rápida até normalizar o sódio sérico', 'Restrição hídrica de 800 mL/dia isolada, sem salina hipertônica', 'NaCl 3% contínuo até atingir 135 mEq/L nas primeiras 6 horas'],
   ecd: 'NaCl 3% em bolus (100 a 150 mL em 10-20 minutos, repetível até melhora ou subir 4-6 mEq/L). Limite de correção: 8 a 10 mEq/L nas primeiras 24 horas (menos se alto risco: etilismo, desnutrição, hipocalemia). Correção rápida causa desmielinização osmótica (mielinólise pontina). Suspender tiazídico e ISRS.' });
 
 CASO({ id: 'cn_siadh', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbios hidroeletrolíticos', cond: 'Síndrome da secreção inapropriada de ADH (paraneoplásica)', tags: ['nefro', 'pneumo'],
@@ -63,7 +63,7 @@ CASO({ id: 'cn_siadh', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbios hidr
   pista: 'Euvolemia, urina concentrada, sódio urinário alto.',
   dx: ['SIADH', 'Hiponatremia hipovolêmica', 'Insuficiência adrenal', 'Polidipsia primária'],
   edx: 'Hiponatremia hipotônica euvolêmica, com urina inapropriadamente concentrada (> 100 mOsm/kg) e sódio urinário > 30, função tireoidiana e adrenal normais: SIADH. O carcinoma de pequenas células produz ADH ectópico.',
-  cd: ['Restrição hídrica e tratar a neoplasia', 'Soro fisiológico 0,9% em grande volume', 'NaCl 3% em bolus repetidos até 140', 'Hidroclorotiazida'],
+  cd: ['Restrição hídrica de 800 mL/dia e tratar a neoplasia', 'SF 0,9% 2.000 mL/dia para repor o sódio perdido na urina', 'NaCl 3% em bólus repetidos até o sódio chegar a 140 mEq/L', 'Hidroclorotiazida 25 mg/dia e dieta hipossódica'],
   ecd: 'Restrição hídrica (800 mL/dia) é a base; se falhar, comprimidos de sal com diurético de alça, ureia oral ou vaptanos. Soro fisiológico pode piorar o sódio na SIADH (o sal é excretado e a água retida). Outras causas: pneumonia, meningite, drogas (carbamazepina, ISRS), pós-operatório.' });
 
 CASO({ id: 'cn_hipernatremia', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbios hidroeletrolíticos', cond: 'Hipernatremia em idoso acamado', tags: ['nefro', 'hidrat'],
@@ -77,7 +77,7 @@ CASO({ id: 'cn_hipernatremia', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrb
   pista: 'Sem acesso à água e com perdas aumentadas.',
   dx: ['Hipernatremia por falta de água', 'Diabetes insípido central pós-traumático', 'Hiperaldosteronismo primário', 'Intoxicação por sal'],
   edx: 'Hipernatremia em idosos acamados é causada principalmente por baixa ingestão de água (sede reduzida, dependência) com perdas aumentadas (febre, infecção).',
-  cd: ['Repor água livre devagar', 'Corrigir o sódio para 140 em 2 horas', 'NaCl 3% em bolus', 'Furosemida em bolus para eliminar o sódio'],
+  cd: ['Água livre (SG 5% ou por sonda), queda ≤ 10 mEq/L em 24 h', 'Soro glicosado 5% rápido para corrigir o sódio para 140 em 2 horas', 'NaCl 3% em bólus para expandir a volemia do paciente idoso', 'Furosemida 40 mg EV em bólus para eliminar o excesso de sódio'],
   ecd: 'Se houver instabilidade, primeiro SF 0,9% para a volemia; depois água livre (soro glicosado 5%, água pela sonda) calculando o déficit, com queda máxima de 10 mEq/L em 24 h (correção rápida causa edema cerebral). Tratar a infecção e garantir oferta regular de água.' });
 
 /* ---------- Cálcio ---------- */
@@ -93,7 +93,7 @@ CASO({ id: 'cn_hipercalcemia_maligna', area: 'cm', ala: 'nefro', dif: 3, tema: '
   pista: 'Cálcio muito alto, PTH suprimido.',
   dx: ['Hipercalcemia da malignidade', 'Hiperparatireoidismo primário', 'Hipercalcemia hipocalciúrica familiar', 'Intoxicação por vitamina D'],
   edx: 'Cálcio acima de 14 com sintomas e PTH suprimido: hipercalcemia não mediada por PTH, causada por metástases osteolíticas ou PTHrP. O ECG típico é o QT curto.',
-  cd: ['SF vigoroso, zoledronato e calcitonina', 'Furosemida em dose alta antes de hidratar', 'Restrição hídrica e cálcio oral', 'Tiazídico para eliminar cálcio'],
+  cd: ['SF 0,9% vigoroso, calcitonina e ácido zoledrônico', 'Furosemida 80 mg EV antes de hidratar o paciente desidratado', 'Restrição hídrica e carbonato de cálcio oral para estabilizar o PTH', 'Hidroclorotiazida 25 mg/dia para aumentar a excreção de cálcio'],
   ecd: 'Hidratação vigorosa com SF 0,9% (a hipercalcemia causa poliúria e desidratação), calcitonina (ação rápida e curta) e bisfosfonato venoso (zoledronato, efeito em 2-4 dias) ou denosumabe. Furosemida só após corrigir a volemia, se houver congestão. Corticoide em linfomas e mieloma. Tiazídico aumenta o cálcio.' });
 
 CASO({ id: 'cn_hipocalcemia', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbios hidroeletrolíticos', cond: 'Hipocalcemia aguda após tireoidectomia', tags: ['nefro', 'neuro'],
@@ -108,7 +108,7 @@ CASO({ id: 'cn_hipocalcemia', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbi
   pista: 'As paratireoides foram lesadas na cirurgia.',
   dx: ['Hipoparatireoidismo pós-operatório', 'Hipomagnesemia isolada', 'Crise de ansiedade com hiperventilação', 'Tetania por alcalose metabólica'],
   edx: 'Hipocalcemia sintomática com PTH baixo após tireoidectomia total: hipoparatireoidismo pós-cirúrgico (lesão, desvascularização ou retirada das paratireoides).',
-  cd: ['Gluconato de cálcio IV e calcitriol', 'Apenas cálcio oral e alta para casa', 'Furosemida para aumentar a calciúria', 'Reabordagem cirúrgica imediata'],
+  cd: ['Gluconato de cálcio 10% EV lento, cálcio oral e calcitriol', 'Carbonato de cálcio oral isolado e alta hospitalar no mesmo dia', 'Furosemida para aumentar a calciúria e prevenir nefrocalcinose', 'Reabordagem cirúrgica imediata para reimplante das paratireoides'],
   ecd: 'Sintomática ou cálcio muito baixo: gluconato de cálcio 10% IV lento, seguido de infusão contínua. Manutenção: carbonato de cálcio oral e calcitriol (vitamina D ativa, pois sem PTH não há ativação renal). Corrigir magnésio se baixo.' });
 
 CASO({ id: 'cn_rabdomiolise', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbios hidroeletrolíticos', cond: 'Rabdomiólise com risco de lesão renal', tags: ['nefro'],
@@ -122,7 +122,7 @@ CASO({ id: 'cn_rabdomiolise', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbi
   pista: 'Fita reagente positiva para sangue sem hemácias no sedimento.',
   dx: ['Rabdomiólise por esforço', 'Glomerulonefrite aguda', 'Hemólise intravascular', 'Miosite autoimune'],
   edx: 'CK muito elevada, mioglobinúria (fita positiva para sangue sem hemácias), dor muscular e lesão renal após esforço extenuante.',
-  cd: ['Hidratação vigorosa e monitorar K', 'Restrição hídrica pelo risco de congestão', 'Diurético de alça sem hidratar', 'Anti-inflamatório para a dor muscular'],
+  cd: ['Cristaloide vigoroso (diurese 200-300 mL/h) e monitorar o K', 'Restrição hídrica pelo risco de congestão pulmonar e edema', 'Furosemida 80 mg EV sem hidratação prévia para forçar a diurese', 'Diclofenaco 75 mg IM para a dor muscular e alta'],
   ecd: 'Cristaloide em grande volume visando diurese de 200 a 300 mL/h, monitorando potássio, cálcio, fósforo e síndrome compartimental. AINE piora a lesão renal. Bicarbonato não mostrou benefício consistente. Diálise se hipercalemia refratária, acidose ou oligúria.' });
 
 /* ---------- Ácido-base ---------- */
@@ -137,7 +137,7 @@ CASO({ id: 'cn_acidose_lactica', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distú
   pista: 'Calcule o ânion gap e a pCO₂ esperada (Winter).',
   dx: ['Acidose de ânion gap alto compensada', 'Acidose mista metabólica e respiratória', 'Alcalose respiratória primária', 'Acidose metabólica hiperclorêmica'],
   edx: 'Ânion gap = 138 − (102 + 13) = 23 (alto). PCO₂ esperada = 1,5 × 13 + 8 = 27,5 ± 2: a pCO₂ de 29 está na faixa, então a compensação respiratória é adequada. Causa: lactato elevado por hipoperfusão (choque séptico).',
-  cd: ['Antibiótico, cristaloide e vasopressor', 'Bicarbonato de sódio para pH acima de 7,35', 'Intubar para hiperventilar', 'Restringir líquidos'],
+  cd: ['Antibiótico na 1ª hora, cristaloide 30 mL/kg e noradrenalina', 'Bicarbonato de sódio EV até pH acima de 7,35, antes do antibiótico', 'Intubação orotraqueal para hiperventilar e compensar a acidose', 'Restrição de líquidos e furosemida pelo risco de congestão'],
   ecd: 'Tratar a causa: pacote da sepse (culturas, antibiótico na 1ª hora, 30 mL/kg de cristaloide, noradrenalina para PAM ≥ 65). Bicarbonato não melhora desfechos na acidose lática com pH > 7,15-7,20 (exceção possível: pH < 7,2 com lesão renal aguda).' });
 
 CASO({ id: 'cn_metanol', area: 'cm', ala: 'nefro', dif: 3, tema: 'Distúrbios ácido-básicos', cond: 'Intoxicação por metanol', tags: ['nefro', 'gaso', 'intox', 'neuro'],
@@ -151,7 +151,7 @@ CASO({ id: 'cn_metanol', area: 'cm', ala: 'nefro', dif: 3, tema: 'Distúrbios á
   pista: 'Ânion gap e gap osmolar aumentados juntos, com alteração visual.',
   dx: ['Intoxicação por metanol', 'Cetoacidose alcoólica', 'Intoxicação por salicilato', 'Acidose lática por convulsão'],
   edx: 'Acidose metabólica grave com ânion gap e gap osmolar elevados e toxicidade ocular: metanol (metabolizado a ácido fórmico pela álcool desidrogenase). Etilenoglicol causa quadro semelhante com lesão renal e cristais de oxalato.',
-  cd: ['Fomepizol ou etanol e hemodiálise', 'Carvão ativado e alta após observação', 'Lavagem gástrica tardia como única medida', 'Diurético e hidratação'],
+  cd: ['Fomepizol (ou etanol), bicarbonato e hemodiálise', 'Carvão ativado 1 g/kg e alta após 6 horas de observação', 'Lavagem gástrica tardia como única medida de descontaminação', 'Furosemida e hidratação vigorosa para eliminar o metanol pela urina'],
   ecd: 'Bloquear a álcool desidrogenase (fomepizol ou etanol), corrigir a acidose com bicarbonato e hemodiálise (remove metanol e formato) em acidose grave, alteração visual ou níveis altos. Ácido fólico ajuda a metabolizar o formato. Carvão ativado não adsorve alcoóis. Notificar (surto).' });
 
 CASO({ id: 'cn_alcalose_vomitos', area: 'cm', ala: 'nefro', dif: 2, tema: 'Distúrbios ácido-básicos', cond: 'Alcalose metabólica por vômitos (responsiva a cloro)', tags: ['nefro', 'gaso', 'hidrat'],
@@ -165,7 +165,7 @@ CASO({ id: 'cn_alcalose_vomitos', area: 'cm', ala: 'nefro', dif: 2, tema: 'Dist�
   pista: 'Cloro urinário baixo.',
   dx: ['Alcalose responsiva a cloro', 'Hiperaldosteronismo primário', 'Síndrome de Bartter', 'Alcalose respiratória'],
   edx: 'Perda de HCl pelos vômitos (provável estenose pilórica por úlcera) com contração de volume e hipocalemia. Cloro urinário < 20 indica alcalose responsiva a cloro (salina). No hiperaldosteronismo e no Bartter, o cloro urinário é alto.',
-  cd: ['SF 0,9% com KCl', 'Acetazolamida como primeira medida', 'Bicarbonato de sódio', 'Restrição hídrica'],
+  cd: ['SF 0,9% com KCl', 'Acetazolamida 250 mg como primeira medida', 'Bicarbonato de sódio EV para repor perdas', 'Restrição hídrica e espironolactona'],
   ecd: 'Reposição de volume com soro fisiológico e potássio permite ao rim eliminar o bicarbonato. Endoscopia para estenose pilórica (úlcera ou neoplasia). Sonda nasogástrica e IBP.' });
 
 CASO({ id: 'cn_atr_distal', area: 'cm', ala: 'nefro', dif: 3, tema: 'Distúrbios ácido-básicos', cond: 'Acidose tubular renal distal (tipo 1) na síndrome de Sjögren', tags: ['nefro', 'gaso', 'reumato'],
@@ -180,7 +180,7 @@ CASO({ id: 'cn_atr_distal', area: 'cm', ala: 'nefro', dif: 3, tema: 'Distúrbios
   pista: 'Acidose hiperclorêmica com urina que não acidifica.',
   dx: ['ATR distal (tipo 1)', 'Acidose tubular proximal (tipo 2)', 'Acidose tubular tipo 4 por hipoaldosteronismo', 'Diarreia crônica oculta'],
   edx: 'Acidose metabólica com ânion gap normal (hiperclorêmica), hipocalemia, pH urinário > 5,5 apesar da acidose e ânion gap urinário positivo (pouca excreção de amônio): defeito de secreção de H⁺ no túbulo distal, com nefrocalcinose. Na diarreia, o ânion gap urinário é negativo.',
-  cd: ['Citrato de potássio oral', 'Bicarbonato venoso em bolus', 'Espironolactona', 'Restrição de potássio na dieta'],
+  cd: ['Citrato de potássio oral', 'Bicarbonato de sódio EV em bólus', 'Espironolactona 25 mg/dia', 'Dieta pobre em potássio e furosemida'],
   ecd: 'Citrato de potássio corrige a acidose, repõe potássio e reduz litíase. Causas: Sjögren, lúpus, anfotericina, lítio, hereditárias. Tipo 4 (hipoaldosteronismo): hipercalemia, típica do diabético e de iECA/espironolactona.' });
 
 /* ---------- Lesão renal aguda e DRC ---------- */
@@ -195,7 +195,7 @@ CASO({ id: 'cn_lra_prerrenal', area: 'cm', ala: 'nefro', dif: 2, tema: 'Insufici
   pista: 'Rim concentrando e retendo sódio.',
   dx: ['LRA pré-renal', 'Necrose tubular aguda', 'Nefrite intersticial aguda por AINE', 'Obstrução urinária'],
   edx: 'FENa < 1%, sódio urinário < 20, osmolalidade urinária > 500 e sedimento sem alterações: o rim está íntegro, respondendo à hipoperfusão (desidratação + diurético + BRA + AINE: "tríplice ameaça").',
-  cd: ['Volume e suspender diurético, BRA e AINE', 'Hemodiálise de urgência', 'Furosemida em dose alta', 'Corticoide pela suspeita de nefrite intersticial'],
+  cd: ['SF 0,9% e suspender furosemida, losartana e AINE', 'Hemodiálise de urgência pela creatinina elevada', 'Furosemida 80 mg EV para converter em LRA não oligúrica', 'Prednisona 1 mg/kg pela suspeita de nefrite intersticial'],
   ecd: 'A pré-renal reverte rapidamente com a correção da perfusão; se mantida, evolui para necrose tubular aguda. Em uso de diuréticos, a FENa perde acurácia: usar a fração de excreção de ureia (< 35% sugere pré-renal).' });
 
 CASO({ id: 'cn_nta', area: 'cm', ala: 'nefro', dif: 2, tema: 'Insuficiência renal aguda', cond: 'Necrose tubular aguda isquêmica', tags: ['nefro', 'sepse', 'infec'],
@@ -209,7 +209,7 @@ CASO({ id: 'cn_nta', area: 'cm', ala: 'nefro', dif: 2, tema: 'Insuficiência ren
   pista: 'O rim perdeu a capacidade de concentrar e reter sódio.',
   dx: ['Necrose tubular aguda', 'Lesão renal pré-renal', 'Glomerulonefrite rapidamente progressiva', 'Obstrução ureteral bilateral'],
   edx: 'FENa > 2%, urina isostenúrica e cilindros granulosos pigmentados indicam lesão tubular estabelecida, após isquemia prolongada e nefrotóxicos.',
-  cd: ['Suporte, evitar nefrotóxicos e ajustar doses', 'Volume em grande quantidade para forçar diurese', 'Furosemida em dose alta para reverter a NTA', 'Biópsia renal imediata'],
+  cd: ['Suporte e ajustar a vancomicina pelo nível sérico', 'SF 0,9% 3 L em 2 horas para forçar a diurese e reverter a NTA', 'Furosemida em infusão contínua de alta dose para reverter a NTA', 'Biópsia renal imediata para confirmar a necrose tubular aguda'],
   ecd: 'Tratamento de suporte: balanço hídrico, evitar nefrotóxicos (ajustar vancomicina por nível sérico), monitorar eletrólitos. Diálise se indicação (hipercalemia, acidose ou congestão refratárias, uremia sintomática, intoxicação dialisável). A recuperação costuma ocorrer em 1 a 3 semanas, com fase poliúrica.' });
 
 CASO({ id: 'cn_dialise_urgencia', area: 'cm', ala: 'nefro', dif: 3, tema: 'Insuficiência renal aguda', cond: 'Indicação de diálise de urgência: pericardite e encefalopatia urêmicas', tags: ['nefro', 'cardio', 'neuro'],
@@ -223,7 +223,7 @@ CASO({ id: 'cn_dialise_urgencia', area: 'cm', ala: 'nefro', dif: 3, tema: 'Insuf
   pista: 'Sintomas urêmicos graves.',
   dx: ['Uremia sintomática', 'Infarto agudo do miocárdio', 'AVC isquêmico', 'Encefalopatia hepática'],
   edx: 'Pericardite urêmica (atrito, dor pleurítica), encefalopatia (sonolência, asterixis), soluços e náuseas em DRC terminal: uremia sintomática.',
-  cd: ['Hemodiálise de urgência', 'Anti-inflamatório e colchicina, sem diálise', 'Restrição proteica isolada', 'Furosemida em dose alta'],
+  cd: ['Hemodiálise de urgência', 'Indometacina e colchicina, sem diálise, pela pericardite', 'Dieta hipoproteica de 0,3 g/kg/dia isolada', 'Furosemida 200 mg EV para tentar evitar a diálise'],
   ecd: 'Indicações de diálise de urgência (AEIOU): acidose grave refratária, eletrólitos (hipercalemia refratária), intoxicações dialisáveis, sobrecarga de volume refratária (overload) e uremia sintomática (pericardite, encefalopatia, sangramento). Na pericardite urêmica, evita-se anticoagulação na diálise. Creatinina isolada não indica diálise.' });
 
 CASO({ id: 'cn_drc_complicacoes', area: 'cm', ala: 'nefro', dif: 2, tema: 'Insuficiência renal crônica', cond: 'Complicações da doença renal crônica estágio 4', tags: ['nefro', 'hemato'],
@@ -237,7 +237,7 @@ CASO({ id: 'cn_drc_complicacoes', area: 'cm', ala: 'nefro', dif: 2, tema: 'Insuf
   pista: 'Anemia: o que corrigir antes da eritropoetina?',
   dx: ['Complicações da DRC estágio 4', 'Anemia por mieloma múltiplo', 'Hiperparatireoidismo primário', 'Insuficiência cardíaca isolada'],
   edx: 'Na DRC avançada: anemia (deficiência de eritropoetina e de ferro), hiperfosfatemia, hipocalcemia e hiperparatireoidismo secundário, acidose metabólica.',
-  cd: ['Ferro, depois eritropoetina; quelante e álcali', 'Eritropoetina já, sem avaliar os estoques de ferro', 'Transfusão mensal programada', 'Suspender a losartana'],
+  cd: ['Ferro até sat. > 20%, depois eritropoetina; sevelâmer e bicarbonato', 'Eritropoetina já, sem avaliar os estoques de ferro, até Hb de 13 g/dL', 'Transfusão de concentrado de hemácias mensal programada', 'Suspender a losartana e iniciar calcitriol isolado'],
   ecd: 'Repor ferro (preferencialmente venoso) até ferritina > 100-200 e saturação > 20%; então agente estimulador da eritropoese, com meta de hemoglobina 10-11,5 g/dL. Restrição de fósforo e quelantes, vitamina D, bicarbonato oral. Encaminhar ao nefrologista (TFG < 30) e preparar terapia renal substitutiva e acesso vascular.' });
 
 CASO({ id: 'cn_lra_posrenal', area: 'cm', ala: 'nefro', dif: 1, tema: 'Insuficiência renal aguda', cond: 'Lesão renal aguda pós-renal por retenção urinária', tags: ['nefro', 'usg'],
@@ -252,7 +252,7 @@ CASO({ id: 'cn_lra_posrenal', area: 'cm', ala: 'nefro', dif: 1, tema: 'Insufici�
   pista: 'Obstrução infravesical.',
   dx: ['Lesão renal aguda pós-renal', 'Necrose tubular aguda', 'Nefrite intersticial por amitriptilina', 'Glomerulonefrite aguda'],
   edx: 'Retenção urinária por HPB, precipitada por anticolinérgico (amitriptilina), causando hidronefrose bilateral e lesão renal pós-renal.',
-  cd: ['Sondagem vesical', 'Furosemida para aumentar a diurese', 'Hemodiálise de urgência', 'Hidratação vigorosa'],
+  cd: ['Sondagem vesical de demora', 'Furosemida 40 mg EV para aumentar a diurese', 'Hemodiálise de urgência pela creatinina', 'SF 0,9% vigoroso para recuperar a função renal'],
   ecd: 'A desobstrução costuma recuperar a função renal. Após a sondagem, pode haver diurese pós-obstrutiva intensa (monitorar volume e eletrólitos). Depois, alfabloqueador e avaliação urológica.' });
 
 /* ---------- Glomerulopatias ---------- */
@@ -267,7 +267,7 @@ CASO({ id: 'cn_gnpe', area: 'cm', ala: 'nefro', dif: 2, tema: 'Glomerulopatias',
   pista: 'Latência de 1 a 3 semanas após faringite e C3 baixo.',
   dx: ['Glomerulonefrite pós-estreptocócica', 'Nefropatia por IgA sinfaringítica', 'Síndrome nefrótica por lesão mínima', 'Nefrite lúpica'],
   edx: 'Síndrome nefrítica (hematúria glomerular, edema, hipertensão, oligúria) 1 a 3 semanas após faringite (ou 3 a 6 após impetigo), com C3 baixo e ASLO alto. Na IgA, a hematúria surge junto com a infecção e o complemento é normal.',
-  cd: ['Restrição de sal e água e diurético', 'Pulsoterapia com metilprednisolona', 'Ciclofosfamida venosa', 'Biópsia renal imediata'],
+  cd: ['Restrição de sal e água e furosemida', 'Pulsoterapia com metilprednisolona por 3 dias', 'Ciclofosfamida venosa mensal por 6 meses', 'Biópsia renal imediata antes de qualquer tratamento'],
   ecd: 'Tratamento de suporte (diurético de alça para edema e hipertensão); antibiótico para erradicar o estreptococo, mas não altera a evolução renal. O C3 normaliza em até 8 semanas: se continuar baixo ou houver piora progressiva, biópsia (pensar em glomerulonefrite membranoproliferativa ou lúpus).' });
 
 CASO({ id: 'cn_iga', area: 'cm', ala: 'nefro', dif: 2, tema: 'Glomerulopatias', cond: 'Nefropatia por IgA (doença de Berger)', tags: ['nefro'],
@@ -281,7 +281,7 @@ CASO({ id: 'cn_iga', area: 'cm', ala: 'nefro', dif: 2, tema: 'Glomerulopatias', 
   pista: 'Hematúria junto com a infecção (sinfaringítica) e complemento normal.',
   dx: ['Nefropatia por IgA', 'Glomerulonefrite pós-estreptocócica', 'Cálculo renal', 'Síndrome de Alport'],
   edx: 'Glomerulopatia primária mais comum no mundo. Hematúria macroscópica recorrente concomitante a infecções de vias aéreas, complemento normal. Biópsia: depósitos mesangiais de IgA.',
-  cd: ['iECA ou BRA e acompanhar', 'Antibiótico profilático contínuo', 'Ciclofosfamida imediata', 'Amigdalectomia como tratamento padrão'],
+  cd: ['Losartana em dose máxima tolerada e seguimento', 'Penicilina benzatina profilática a cada 21 dias', 'Ciclofosfamida EV imediata associada a prednisona', 'Amigdalectomia como tratamento padrão da nefropatia'],
   ecd: 'Proteinúria acima de 0,5-1 g/dia: bloqueio do sistema renina-angiotensina (e iSGLT2), controle pressórico. Imunossupressão para casos de maior risco. Sinais de pior prognóstico: proteinúria persistente, hipertensão e redução da filtração. A vasculite por IgA (Henoch-Schönlein) é a forma sistêmica.' });
 
 CASO({ id: 'cn_goodpasture', area: 'cm', ala: 'nefro', dif: 3, tema: 'Glomerulopatias', cond: 'Doença antimembrana basal glomerular (Goodpasture)', tags: ['nefro', 'pneumo'],
@@ -296,7 +296,7 @@ CASO({ id: 'cn_goodpasture', area: 'cm', ala: 'nefro', dif: 3, tema: 'Glomerulop
   pista: 'Síndrome pulmão-rim com imunofluorescência linear.',
   dx: ['Doença anti-MBG (Goodpasture)', 'Granulomatose com poliangiite', 'Nefrite lúpica', 'Glomerulonefrite pós-estreptocócica'],
   edx: 'Glomerulonefrite rapidamente progressiva (perda de função em dias a semanas, crescentes) com hemorragia alveolar e anticorpo antimembrana basal: síndrome de Goodpasture. Imunofluorescência linear (tipo I). Tipo II: granular (imunocomplexos); tipo III: pauci-imune (ANCA).',
-  cd: ['Plasmaférese, pulso e ciclofosfamida', 'Antibiótico de largo espectro e observar', 'iECA e diurético apenas', 'Corticoide oral isolado'],
+  cd: ['Plasmaférese, pulso de metilprednisolona e ciclofosfamida', 'Antibiótico de largo espectro e aguardar a biópsia renal', 'Enalapril e furosemida, aguardando o resultado do anti-MBG', 'Prednisona oral 1 mg/kg isolada, sem plasmaférese'],
   ecd: 'Emergência: plasmaférese (remove o anticorpo) com metilprednisolona em pulso e ciclofosfamida. Iniciar mesmo antes da biópsia se a suspeita for forte. Cessar tabagismo.' });
 
 CASO({ id: 'cn_lesao_minima', area: 'cm', ala: 'nefro', dif: 2, tema: 'Glomerulopatias', cond: 'Síndrome nefrótica por doença de lesão mínima', tags: ['nefro'],
@@ -311,7 +311,7 @@ CASO({ id: 'cn_lesao_minima', area: 'cm', ala: 'nefro', dif: 2, tema: 'Glomerulo
   pista: 'Microscopia óptica normal.',
   dx: ['Doença de lesão mínima', 'Glomeruloesclerose segmentar e focal', 'Nefropatia membranosa', 'Glomerulonefrite membranoproliferativa'],
   edx: 'Síndrome nefrótica pura (proteinúria > 3,5 g, hipoalbuminemia, edema, dislipidemia), sem hematúria ou hipertensão, com microscopia óptica normal e fusão podocitária: lesão mínima. É a causa mais comum em crianças; em adultos associa-se a AINE e linfoma de Hodgkin.',
-  cd: ['Prednisona e suspender o AINE', 'Ciclofosfamida como primeira escolha', 'Apenas restrição proteica', 'Plasmaférese'],
+  cd: ['Prednisona 1 mg/kg/dia e suspender o AINE', 'Ciclofosfamida oral como primeira escolha de tratamento', 'Dieta hipoproteica isolada e diurético de alça', 'Plasmaférese diária por 5 dias e rituximabe'],
   ecd: 'Responde muito bem a corticoide (resposta mais lenta em adultos). Complicações da síndrome nefrótica: tromboses (sobretudo na membranosa), infecções (pneumococo, peritonite espontânea), dislipidemia, lesão renal.' });
 
 CASO({ id: 'cn_gesf_hiv', area: 'cm', ala: 'nefro', dif: 3, tema: 'Glomerulopatias', cond: 'Glomeruloesclerose segmentar e focal colapsante associada ao HIV', tags: ['nefro', 'infecto', 'infec'],
@@ -326,7 +326,7 @@ CASO({ id: 'cn_gesf_hiv', area: 'cm', ala: 'nefro', dif: 3, tema: 'Glomerulopati
   pista: 'HIV não tratado, rins grandes, proteinúria maciça.',
   dx: ['GESF colapsante pelo HIV', 'Nefropatia membranosa', 'Nefropatia por IgA', 'Lesão mínima'],
   edx: 'A nefropatia associada ao HIV (GESF colapsante) é mais comum em negros (variantes do gene APOL1), com proteinúria maciça, perda rápida da função e rins grandes. GESF secundária também ocorre em obesidade, uso de heroína e redução de massa renal.',
-  cd: ['TARV e iECA ou BRA', 'Corticoide em dose alta isolado', 'Suspender qualquer tratamento do HIV', 'Ciclofosfamida venosa'],
+  cd: ['Iniciar TARV e losartana', 'Prednisona 1 mg/kg isolada, sem antirretrovirais', 'Suspender o tratamento do HIV até a função renal melhorar', 'Ciclofosfamida venosa mensal com prednisona'],
   ecd: 'A TARV é o tratamento principal e pode estabilizar a função renal, com bloqueio do sistema renina-angiotensina para a proteinúria. Ajustar doses de antirretrovirais (evitar tenofovir em disfunção renal importante).' });
 
 CASO({ id: 'cn_membranosa', area: 'cm', ala: 'nefro', dif: 3, tema: 'Glomerulopatias', cond: 'Nefropatia membranosa primária (anti-PLA2R)', tags: ['nefro'],
@@ -341,7 +341,7 @@ CASO({ id: 'cn_membranosa', area: 'cm', ala: 'nefro', dif: 3, tema: 'Glomerulopa
   pista: 'Adulto mais velho, nefrótico, anticorpo anti-PLA2R e trombose.',
   dx: ['Nefropatia membranosa primária', 'Doença de lesão mínima', 'Nefropatia por IgA', 'Carcinoma renal'],
   edx: 'Causa mais comum de síndrome nefrótica primária em adultos mais velhos (não diabéticos). Anti-PLA2R positivo indica forma primária. É a glomerulopatia com maior risco de trombose (veia renal, TVP, TEP), sobretudo com albumina < 2,5 g/dL.',
-  cd: ['Anticoagular, iECA e rituximabe', 'Só observar por 2 anos', 'Nefrectomia esquerda', 'AAS isolado'],
+  cd: ['Enoxaparina, losartana e rituximabe', 'Observar sem tratamento específico por 2 anos', 'Prednisona isolada 1 mg/kg por 6 meses', 'AAS 100 mg/dia isolado para prevenir trombose'],
   ecd: 'A forma secundária deve ser afastada (neoplasias sólidas, hepatite B, lúpus classe V, ouro, AINE). Cerca de um terço tem remissão espontânea; imunossupressão (rituximabe, ou corticoide com ciclofosfamida, ou inibidor de calcineurina) conforme risco de progressão.' });
 
 CASO({ id: 'cn_gnmp_hcv', area: 'cm', ala: 'nefro', dif: 3, tema: 'Glomerulopatias', cond: 'Glomerulonefrite membranoproliferativa por crioglobulinemia (hepatite C)', tags: ['nefro', 'hepato'],
@@ -355,5 +355,5 @@ CASO({ id: 'cn_gnmp_hcv', area: 'cm', ala: 'nefro', dif: 3, tema: 'Glomerulopati
   pista: 'Púrpura + artralgia + fraqueza + C4 baixo + hepatite C.',
   dx: ['GNMP crioglobulinêmica', 'Vasculite por IgA', 'Nefrite lúpica', 'Poliarterite nodosa'],
   edx: 'Crioglobulinemia mista (tipo II) secundária à hepatite C: púrpura, artralgias, fraqueza, fator reumatoide positivo, C4 muito baixo e glomerulonefrite membranoproliferativa (padrão nefrítico-nefrótico).',
-  cd: ['Antiviral contra o HCV', 'Interferon com ribavirina', 'Só corticoide oral', 'Transplante renal'],
+  cd: ['Sofosbuvir com outro antiviral de ação direta', 'Interferon peguilado com ribavirina por 48 semanas', 'Prednisona oral isolada em dose de 1 mg/kg/dia', 'Inclusão em lista para transplante renal'],
   ecd: 'Tratar a causa: antivirais de ação direta (sofosbuvir e associados). Em formas graves (glomerulonefrite rapidamente progressiva, vasculite grave), associar rituximabe e, às vezes, plasmaférese.' });

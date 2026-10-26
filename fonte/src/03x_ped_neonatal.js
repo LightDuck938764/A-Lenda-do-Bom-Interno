@@ -20,7 +20,7 @@ CASO({ id: 'pn_dmh', area: 'ped', dif: 2, tema: 'Distúrbios respiratórios do r
   pista: 'Prematuro, sem corticoide, piora nas primeiras horas, pulmões pequenos.',
   dx: ['Síndrome do desconforto respiratório', 'Taquipneia transitória do recém-nascido', 'Síndrome de aspiração de mecônio', 'Pneumotórax hipertensivo'],
   edx: 'Deficiência de surfactante no prematuro: atelectasias difusas, pulmão de baixo volume com padrão reticulogranular e broncogramas. Fatores de risco: prematuridade, ausência de corticoide antenatal, diabetes materno, sexo masculino, asfixia.',
-  cd: ['CPAP precoce e surfactante se FiO₂ alta', 'Furosemida e restrição hídrica', 'Antibiótico isolado e O₂ em capacete a 100%', 'Ventilação de alta frequência sem surfactante'],
+  cd: ['CPAP precoce e surfactante se FiO₂ > 30%', 'Furosemida e restrição hídrica', 'Ampicilina e gentamicina isoladas e O₂ em capacete a 100%', 'Ventilação de alta frequência sem surfactante'],
   ecd: 'CPAP desde a sala de parto; surfactante se a necessidade de O₂ persistir alta (por exemplo, FiO₂ acima de 30%), por técnica minimamente invasiva ou intubação e extubação rápida. Prevenção: corticoide antenatal entre 24 e 34 semanas. A sepse precoce por estreptococo do grupo B pode ter o mesmo quadro radiológico.' });
 
 CASO({ id: 'pn_ttrn', area: 'ped', dif: 1, tema: 'Distúrbios respiratórios do recém-nascido', cond: 'Taquipneia transitória do recém-nascido', tags: ['neo', 'resp', 'img'],
@@ -49,7 +49,7 @@ CASO({ id: 'pn_sam', area: 'ped', dif: 3, tema: 'Distúrbios respiratórios do r
   pista: 'Diferença entre saturação pré e pós-ductal.',
   dx: ['Aspiração de mecônio com hipertensão pulmonar', 'Taquipneia transitória do RN pós-termo', 'Doença da membrana hialina', 'Coarctação crítica da aorta'],
   edx: 'O mecônio causa obstrução (mecanismo valvular com hiperinsuflação e risco de pneumotórax), pneumonite química e inativação do surfactante. Diferença de saturação pré e pós-ductal acima de 5-10% indica shunt direita-esquerda pelo canal arterial: hipertensão pulmonar persistente.',
-  cd: ['Ventilação, surfactante e óxido nítrico', 'Aspiração traqueal repetida e alta para o alojamento', 'Prostaglandina E1 para manter o canal arterial aberto', 'Restrição hídrica e diurético de alça'],
+  cd: ['Ventilação mecânica, surfactante e óxido nítrico inalatório', 'Aspiração traqueal repetida e alta para o alojamento', 'Prostaglandina E1 para manter o canal arterial aberto', 'Restrição hídrica, furosemida e O₂ em capacete até a resolução do quadro'],
   ecd: 'Manejo em UTI: oxigenação adequada evitando hiperóxia, ventilação gentil, surfactante (inativado pelo mecônio), sedação, suporte hemodinâmico e óxido nítrico inalado na hipertensão pulmonar. ECMO nos refratários.' });
 
 CASO({ id: 'pn_sepse_precoce', area: 'ped', dif: 2, tema: 'Sepse neonatal', cond: 'Sepse neonatal precoce', tags: ['neo', 'sepse', 'infec'],
@@ -77,7 +77,7 @@ CASO({ id: 'pn_sepse_tardia', area: 'ped', dif: 3, tema: 'Sepse neonatal', cond:
   pista: 'Após 72 horas, ambiente hospitalar, cateter central.',
   dx: ['Sepse tardia', 'Sepse precoce por estreptococo do grupo B', 'Enterocolite necrosante isolada', 'Apneia da prematuridade'],
   edx: 'Sepse tardia (após 72 horas) em prematuro com cateter: agentes hospitalares, principalmente estafilococo coagulase-negativo, S. aureus, gram-negativos e fungos. Hiperglicemia, plaquetopenia e apneias são sinais frequentes.',
-  cd: ['Culturas e esquema para germes hospitalares', 'Ampicilina e gentamicina, como na sepse precoce', 'Apenas cafeína para as apneias', 'Retirar a dieta e observar'],
+  cd: ['Culturas, vancomicina + cefepime e retirar o cateter', 'Ampicilina e gentamicina, como na sepse precoce, mantendo o cateter', 'Apenas cafeína para as apneias e manter o cateter central', 'Retirar a dieta e observar'],
   ecd: 'O esquema empírico segue o perfil microbiológico da unidade. Considerar retirar o cateter e investigar enterocolite e meningite. A prevenção depende de higiene das mãos e cuidados com cateteres.' });
 
 /* ---------- Icterícia ---------- */
@@ -230,7 +230,7 @@ CASO({ id: 'pn_mastite', area: 'ped', dif: 2, tema: 'Aleitamento materno', cond:
   pista: 'Unilateral, febre alta, sem flutuação.',
   dx: ['Mastite lactacional', 'Ingurgitamento mamário', 'Abscesso mamário', 'Carcinoma inflamatório'],
   edx: 'Processo inflamatório unilateral, em cunha, com febre e mal-estar, geralmente após fissura e estase de leite. S. aureus é o principal agente.',
-  cd: ['Manter a amamentação e cefalexina', 'Suspender a amamentação na mama afetada até curar', 'Drenagem cirúrgica imediata da mama', 'Inibir a lactação com cabergolina'],
+  cd: ['Manter a amamentação e cefalexina por 10-14 dias', 'Suspender a amamentação na mama afetada até a cura completa', 'Drenagem cirúrgica imediata da mama', 'Inibir a lactação com cabergolina'],
   ecd: 'O esvaziamento é parte essencial do tratamento: a mãe continua amamentando nas duas mamas. Antibiótico antiestafilocócico (cefalexina, dicloxacilina) por 10 a 14 dias, analgesia e repouso. Flutuação sugere abscesso: ultrassom e drenagem (punção ou incisão), mantendo o aleitamento se possível.' });
 
 CASO({ id: 'pn_am_tuberculose', area: 'ped', dif: 3, tema: 'Aleitamento materno', cond: 'Aleitamento com mãe com tuberculose pulmonar bacilífera', tags: ['inf', 'resp'],
@@ -243,7 +243,7 @@ CASO({ id: 'pn_am_tuberculose', area: 'ped', dif: 3, tema: 'Aleitamento materno'
   pista: 'Tuberculose não se transmite pelo leite.',
   dx: ['RN exposto à tuberculose bacilífera', 'Tuberculose congênita', 'Contraindicação absoluta ao aleitamento materno', 'Infecção latente confirmada'],
   edx: 'A transmissão é respiratória, não pelo leite. A mãe pode amamentar usando máscara cirúrgica. O RN exposto a bacilífero recebe quimioprofilaxia primária.',
-  cd: ['Amamentar com máscara e isoniazida para o RN', 'Suspender o aleitamento e afastar o RN da mãe por 2 meses', 'BCG imediata no RN, sem profilaxia', 'Esquema RIPE completo para o RN'],
+  cd: ['Amamentar com máscara, isoniazida para o RN e adiar a BCG', 'Suspender o aleitamento e afastar o RN da mãe por 2 meses de tratamento', 'BCG imediata no RN, sem profilaxia', 'Esquema RIPE completo para o RN'],
   ecd: 'Quimioprofilaxia primária: isoniazida (ou rifampicina) por 3 meses, depois prova tuberculínica. Se não reatora, suspende-se a profilaxia e aplica-se a BCG; se reatora, completa-se o tratamento da infecção latente. Contraindicações reais ao aleitamento no Brasil: HIV, HTLV 1 e 2, galactosemia clássica, algumas drogas e medicamentos.' });
 
 CASO({ id: 'pn_am_hiv', area: 'ped', dif: 2, tema: 'Aleitamento materno', cond: 'Contraindicação ao aleitamento: mãe vivendo com HIV', tags: ['inf'],

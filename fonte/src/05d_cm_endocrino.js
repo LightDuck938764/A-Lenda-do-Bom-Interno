@@ -18,7 +18,7 @@ CASO({ id: 'ce_dm_totg_1h', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Diabete
   pista: 'Desde 2024, a SBD aceita o valor de 1 hora no TOTG.',
   dx: ['Diabetes mellitus tipo 2', 'Pré-diabetes (intolerância à glicose)', 'Glicemia normal', 'Diabetes tipo 1 de início tardio'],
   edx: 'Pela SBD, glicemia de 1 hora no TOTG ≥ 209 mg/dL é critério diagnóstico de diabetes (155 a 208 mg/dL indica risco aumentado). Os demais valores estão na faixa de pré-diabetes, mas o diagnóstico é dado pelo critério atingido; em assintomáticos, confirma-se com um segundo exame alterado (que pode ser da mesma amostra, como a glicada).',
-  cd: ['Estilo de vida e metformina', 'Insulina NPH ao deitar, pela glicemia de 1 hora', 'Repetir o TOTG em 1 ano antes de qualquer tratamento', 'Só dieta, sem acompanhamento'],
+  cd: ['Mudança do estilo de vida e metformina 500 mg com titulação', 'Insulina NPH 10 UI ao deitar, guiada pela glicemia de 1 hora do TOTG', 'Repetir o TOTG em 1 ano antes de iniciar tratamento', 'Gliclazida 30 mg/dia e dieta, sem metformina'],
   ecd: 'Critérios de diabetes: glicemia de jejum ≥ 126, glicada ≥ 6,5%, TOTG 2 h ≥ 200, TOTG 1 h ≥ 209 ou glicemia ao acaso ≥ 200 com sintomas. Metformina é a primeira escolha na ausência de doença cardiovascular ou renal estabelecida.' });
 
 CASO({ id: 'ce_dm2_dcv', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabetes mellitus', cond: 'DM2 internado por insuficiência cardíaca: ajuste dos antidiabéticos', tags: ['endocrino', 'cardio'],
@@ -32,7 +32,7 @@ CASO({ id: 'ce_dm2_dcv', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabetes m
   pista: 'Uma das drogas que ele usa piora a IC; outra classe reduz internação por IC.',
   dx: ['DM2 com ICFEr', 'DM2 controlado sem lesão de órgão', 'Cardiomiopatia hipertrófica', 'Diabetes tipo 1 tardio'],
   edx: 'Diabetes com insuficiência cardíaca de fração de ejeção reduzida. Pioglitazona causa retenção hídrica e é contraindicada na IC; sulfonilureia não traz benefício cardiovascular e causa hipoglicemia.',
-  cd: ['Suspender pioglitazona e iniciar iSGLT2', 'Aumentar a pioglitazona', 'Trocar tudo por insulina NPH', 'Manter o esquema e dar alta'],
+  cd: ['Suspender a pioglitazona e iniciar dapagliflozina 10 mg/dia', 'Aumentar a pioglitazona para 45 mg/dia', 'Trocar todos os antidiabéticos orais por insulina NPH em duas doses', 'Associar saxagliptina e manter a pioglitazona'],
   ecd: 'Inibidores de SGLT2 (dapagliflozina, empagliflozina) reduzem internação e morte cardiovascular na IC, com ou sem diabetes, e protegem o rim. Suspender a pioglitazona (e evitar saxagliptina); reduzir ou suspender a sulfonilureia. Otimizar a terapia quádrupla da ICFEr.' });
 
 CASO({ id: 'ce_dm2_drc', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabetes mellitus', cond: 'Doença renal do diabetes: nefroproteção', tags: ['endocrino', 'nefro'],
@@ -46,7 +46,7 @@ CASO({ id: 'ce_dm2_drc', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabetes m
   pista: 'Três classes reduzem a progressão da doença renal no diabético.',
   dx: ['Doença renal do diabetes', 'Glomerulonefrite rapidamente progressiva', 'Nefropatia hipertensiva isolada sem relação com diabetes', 'Lesão renal aguda pré-renal'],
   edx: 'Albuminúria acentuada (≥ 300 mg/g) e TFG reduzida, com retinopatia, em diabético de longa data: doença renal do diabetes (G3b A3).',
-  cd: ['iECA ou BRA, iSGLT2 e reduzir a metformina', 'Suspender todos os anti-hipertensivos para preservar a filtração', 'Trocar o anlodipino por furosemida isolada em dose alta', 'Manter a metformina na dose plena'],
+  cd: ['Losartana em dose máxima, dapagliflozina e metade da metformina', 'Suspender a losartana para preservar a filtração glomerular residual', 'Trocar o anlodipino por furosemida 80 mg/dia', 'Manter a metformina 2 g/dia e associar gliclazida'],
   ecd: 'Nefroproteção: bloqueio do sistema renina-angiotensina em dose máxima tolerada, inibidor de SGLT2 (iniciar com TFG ≥ 20) e, se persistir albuminúria, finerenona. Metformina: reduzir à metade com TFG entre 30 e 45 e suspender abaixo de 30. Monitorar potássio e creatinina.' });
 
 CASO({ id: 'ce_insulinizacao', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Diabetes mellitus', cond: 'Indicação de insulinização no DM2 com catabolismo', tags: ['endocrino'],
@@ -60,7 +60,7 @@ CASO({ id: 'ce_insulinizacao', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Diab
   pista: 'Sintomas catabólicos e glicada muito alta.',
   dx: ['DM2 com sintomas catabólicos', 'Cetoacidose diabética', 'Estado hiperosmolar', 'DM2 controlado'],
   edx: 'Perda de peso, poliúria e polidipsia com glicada acima de 10% indicam deficiência insulínica relativa importante (glicotoxicidade), sem crise hiperglicêmica.',
-  cd: ['Iniciar insulina e manter a metformina', 'Associar um terceiro antidiabético oral e reavaliar em 6 meses', 'Aumentar só a gliclazida para 240 mg', 'Internar em UTI para insulina venosa contínua'],
+  cd: ['Insulina NPH 10 UI ao deitar e manter a metformina', 'Associar sitagliptina como 3º oral e reavaliar em 6 meses', 'Aumentar a gliclazida para 240 mg/dia', 'Insulina regular venosa contínua em UTI'],
   ecd: 'Sintomas catabólicos ou glicada acima de 9-10% (ou glicemia ≥ 300) indicam insulina. Opções: insulina basal (NPH ao deitar ou análogo, 10 UI ou 0,1-0,2 UI/kg, titulando pela glicemia de jejum) ou esquema basal-bolus. Metformina é mantida; a sulfonilureia pode ser reduzida ou suspensa quando há insulina prandial.' });
 
 CASO({ id: 'ce_cad_hipocalemia', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabetes mellitus', cond: 'Cetoacidose diabética com hipocalemia', tags: ['endocrino', 'ecg', 'gaso', 'hidrat'],
@@ -75,7 +75,7 @@ CASO({ id: 'ce_cad_hipocalemia', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Di
   pista: 'Qual eletrólito precisa ser corrigido antes da insulina?',
   dx: ['Cetoacidose com hipocalemia', 'Estado hiperglicêmico hiperosmolar', 'Acidose lática por sepse de foco urinário', 'Cetoacidose alcoólica'],
   edx: 'Glicemia > 250, pH < 7,3, bicarbonato < 18 e cetonemia: cetoacidose diabética, provável abertura de DM1. O ECG mostra ondas T achatadas e ondas U, compatível com o potássio baixo. Mesmo com potássio total do corpo depletado, a insulina vai jogar potássio para dentro das células.',
-  cd: ['Soro fisiológico e KCl antes da insulina', 'Insulina em bomba de infusão imediatamente, sem esperar exames', 'Bicarbonato de sódio em bolus pela acidose', 'Adenosina em bolus pela taquicardia sinusal'],
+  cd: ['SF 0,9% e KCl; adiar a insulina até K ≥ 3,3 mEq/L', 'Insulina regular 0,1 UI/kg/h imediatamente, sem esperar o K', 'Bicarbonato de sódio 100 mEq em bólus pela acidose', 'SF 0,9% e insulina em bólus de 0,15 UI/kg com KCl'],
   ecd: 'CAD: expansão com SF 0,9% (15 a 20 mL/kg na 1ª hora); potássio < 3,3 → repor e adiar a insulina; 3,3 a 5,2 → repor junto com a insulina; > 5,2 → insulina sem potássio, repetindo a dosagem. Insulina regular 0,1 UI/kg/h; associar glicose quando a glicemia chegar a 200-250 mg/dL. Bicarbonato apenas se pH < 6,9.' });
 
 CASO({ id: 'ce_cad_euglicemica', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabetes mellitus', cond: 'Cetoacidose euglicêmica por inibidor de SGLT2', tags: ['endocrino', 'gaso'],
@@ -89,7 +89,7 @@ CASO({ id: 'ce_cad_euglicemica', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Di
   pista: 'A glicemia não muito alta não afasta cetoacidose.',
   dx: ['Cetoacidose euglicêmica', 'Acidose lática por metformina', 'Estado hiperosmolar hiperglicêmico', 'Cetose de jejum simples'],
   edx: 'Acidose metabólica com ânion gap aumentado e cetonemia elevada, com glicemia abaixo de 250 mg/dL, em uso de inibidor de SGLT2 e jejum: cetoacidose euglicêmica. Lactato normal afasta acidose lática.',
-  cd: ['Suspender o iSGLT2 e insulina com glicose', 'Só hidratar, pois a glicemia já está quase normal', 'Aumentar a empagliflozina para controlar a glicemia', 'Bicarbonato isolado em bolus'],
+  cd: ['Suspender o iSGLT2 e insulina venosa com soro glicosado', 'Só hidratar, pois a glicemia já está quase normal', 'Aumentar a empagliflozina para 25 mg/dia', 'Bicarbonato de sódio em bólus e alta após a correção do pH sérico'],
   ecd: 'O tratamento segue o da CAD, mas a glicose é associada precocemente para permitir a insulina, que é o que corrige a cetose. Orientar suspender iSGLT2 em doenças agudas, jejum e 3 dias antes de cirurgias.' });
 
 CASO({ id: 'ce_ehh', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabetes mellitus', cond: 'Estado hiperglicêmico hiperosmolar', tags: ['endocrino', 'neuro', 'hidrat'],
@@ -103,7 +103,7 @@ CASO({ id: 'ce_ehh', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabetes melli
   pista: 'Glicemia altíssima, osmolalidade alta, sem acidose importante.',
   dx: ['Estado hiperglicêmico hiperosmolar', 'Cetoacidose diabética', 'AVC isquêmico', 'Hipernatremia isolada por diabetes insípido'],
   edx: 'Glicemia > 600, osmolalidade efetiva > 320, pH > 7,30 e bicarbonato > 18, com cetose mínima e rebaixamento: estado hiperglicêmico hiperosmolar, típico do idoso com DM2 e fator precipitante (infecção, desidratação).',
-  cd: ['Hidratação vigorosa e depois insulina', 'Insulina em bolus antes de qualquer hidratação venosa', 'Restringir líquidos pelo risco de edema cerebral', 'Bicarbonato e alta após melhora da glicemia capilar'],
+  cd: ['SF 0,9% vigoroso e insulina após a reposição inicial', 'Insulina regular em bólus antes de qualquer hidratação', 'Restringir líquidos pelo risco de edema cerebral', 'Soro glicosado 5% desde o início e insulina subcutânea'],
   ecd: 'O déficit de água é maior que na CAD: SF 0,9% inicialmente, depois solução hipotônica conforme o sódio corrigido, com queda gradual da osmolalidade (risco de edema cerebral). Insulina após a reposição inicial de volume e potássio. Hiperviscosidade aumenta o risco de trombose. Mortalidade maior que a da CAD.' });
 
 CASO({ id: 'ce_hipoglicemia_sulfo', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Diabetes mellitus', cond: 'Hipoglicemia prolongada por sulfonilureia em idoso', tags: ['endocrino', 'neuro'],
@@ -117,7 +117,7 @@ CASO({ id: 'ce_hipoglicemia_sulfo', area: 'cm', ala: 'endocrino', dif: 2, tema: 
   pista: 'Meia-vida longa e rim que não elimina.',
   dx: ['Hipoglicemia por glibenclamida', 'AVC isquêmico de circulação posterior', 'Insulinoma', 'Hipoglicemia por metformina'],
   edx: 'Glibenclamida tem ação prolongada e eliminação renal: em idosos com DRC e baixa ingestão, causa hipoglicemias graves e recorrentes. Metformina isolada não causa hipoglicemia.',
-  cd: ['Internar com glicose contínua', 'Glicose em bolus e alta logo que acordar', 'Manter a glibenclamida em dose menor', 'Glucagon isolado e liberação para casa'],
+  cd: ['Internar com soro glicosado contínuo por 24 a 72 horas', 'Glicose 50% em bólus e alta assim que acordar', 'Manter a glibenclamida em dose menor e orientar', 'Glucagon 1 mg IM e liberar para casa acompanhado de um familiar'],
   ecd: 'Observação prolongada (24 a 72 horas) com infusão de glicose; octreotida em casos refratários. Na alta: suspender sulfonilureia, ajustar a metformina à função renal e preferir drogas sem risco de hipoglicemia (por exemplo, iDPP-4 como linagliptina, que dispensa ajuste renal). Metas glicêmicas menos rígidas no idoso frágil (glicada 7,5 a 8,5%).' });
 
 CASO({ id: 'ce_neuropatia', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Diabetes mellitus', cond: 'Neuropatia diabética dolorosa', tags: ['endocrino', 'neuro'],
@@ -130,7 +130,7 @@ CASO({ id: 'ce_neuropatia', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Diabete
   pista: 'Polineuropatia simétrica distal. Qual remédio evitar nela?',
   dx: ['Polineuropatia diabética dolorosa', 'Doença arterial obstrutiva periférica', 'Síndrome do túnel do tarso bilateral', 'Gota poliarticular'],
   edx: 'Dor neuropática simétrica distal, em bota, com alodinia e perda de reflexos: polineuropatia diabética.',
-  cd: ['Suspender AINE e duloxetina ou gabapentinoide', 'Amitriptilina em dose alta à noite', 'Manter o ibuprofeno diariamente', 'Opioide forte como primeira escolha'],
+  cd: ['Suspender o ibuprofeno e iniciar duloxetina 30-60 mg/dia', 'Amitriptilina 75 mg à noite, apesar do glaucoma de ângulo fechado', 'Manter o ibuprofeno 600 mg de 8/8 h', 'Morfina de liberação prolongada como 1ª linha'],
   ecd: 'Primeira linha: duloxetina, pregabalina ou gabapentina (ajustar à função renal); tricíclicos são opção, mas evitados em idosos e no glaucoma de ângulo fechado. AINE crônico prejudica o rim. Controle glicêmico, cuidado com os pés e calçados adequados.' });
 
 CASO({ id: 'ce_pe_diabetico', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabetes mellitus', cond: 'Pé diabético infectado com osteomielite', tags: ['endocrino', 'sepse', 'infec'],
@@ -145,7 +145,7 @@ CASO({ id: 'ce_pe_diabetico', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Diabe
   pista: 'Teste do estilete positivo.',
   dx: ['Pé diabético com osteomielite', 'Úlcera neuropática não infectada', 'Pé de Charcot agudo', 'Gota tofácea ulcerada'],
   edx: 'Úlcera neuropática com sinais de infecção moderada a grave (celulite > 2 cm, sinais sistêmicos), contato com o osso e erosão radiológica: osteomielite.',
-  cd: ['Internar, antibiótico e desbridamento', 'Pomada antibiótica e curativo diário em casa com retorno', 'Amputação transfemoral imediata', 'Antibiótico oral por 5 dias e alta com orientação'],
+  cd: ['Internar, cultura do osso, antibiótico venoso e desbridamento', 'Pomada de neomicina e curativo diário em casa', 'Amputação transfemoral imediata', 'Cefalexina 500 mg VO de 6/6 h por 5 dias e retorno ambulatorial'],
   ecd: 'Internação, controle glicêmico, antibiótico de amplo espectro após cultura de fragmento ósseo ou tecido profundo, desbridamento cirúrgico e avaliação vascular (índice tornozelo-braquial, Doppler), pois isquemia piora o prognóstico. Descarga do pé. Prevenção: exame anual dos pés com monofilamento.' });
 
 /* ---------- Tireoide ---------- */
@@ -161,7 +161,7 @@ CASO({ id: 'ce_graves', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Doenças da
   pista: 'Bócio difuso, oftalmopatia e TRAb.',
   dx: ['Doença de Graves', 'Bócio multinodular tóxico', 'Tireoidite subaguda', 'Tireotoxicose factícia'],
   edx: 'Hipertireoidismo com bócio difuso, oftalmopatia e anticorpo antirreceptor de TSH positivo: doença de Graves, causa mais comum de hipertireoidismo.',
-  cd: ['Metimazol, betabloqueador e parar de fumar', 'Iodo radioativo imediato com a oftalmopatia ativa', 'Levotiroxina para frear a tireoide', 'Só propranolol, sem antitireoidiano'],
+  cd: ['Metimazol 20-30 mg/dia, propranolol e cessar o tabagismo', 'Iodo radioativo imediato, mesmo com a oftalmopatia em fase ativa', 'Levotiroxina para frear a tireoide', 'Propranolol isolado, sem antitireoidiano'],
   ecd: 'Metimazol é o antitireoidiano de escolha (propiltiouracil no 1º trimestre da gestação e na crise tireotóxica). Efeitos graves: agranulocitose (orientar febre e dor de garganta) e hepatotoxicidade. Iodo radioativo pode piorar a oftalmopatia ativa, sobretudo em tabagistas; tireoidectomia é alternativa.' });
 
 CASO({ id: 'ce_crise_tireotoxica', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doenças da tireoide', cond: 'Crise tireotóxica', tags: ['endocrino', 'cardio', 'choque'],
@@ -175,7 +175,7 @@ CASO({ id: 'ce_crise_tireotoxica', area: 'cm', ala: 'endocrino', dif: 3, tema: '
   pista: 'Febre, disfunção do sistema nervoso central, taquiarritmia e fator desencadeante.',
   dx: ['Crise tireotóxica', 'Sepse grave isolada', 'Síndrome serotoninérgica', 'Feocromocitoma'],
   edx: 'Tireotoxicose descompensada com febre alta, alteração neurológica, taquicardia/fibrilação atrial, insuficiência cardíaca, sintomas gastrointestinais e disfunção hepática, desencadeada por infecção e suspensão do tratamento: crise tireotóxica (escore de Burch-Wartofsky elevado).',
-  cd: ['PTU, iodo 1 h depois, propranolol e corticoide', 'Iodo antes do PTU para bloquear logo a liberação hormonal', 'AAS para a febre e levotiroxina', 'Iodo radioativo de urgência'],
+  cd: ['PTU, iodo 1 hora depois, propranolol e hidrocortisona', 'Lugol antes do PTU, para bloquear logo a liberação dos hormônios', 'AAS para a febre e metimazol em dose baixa', 'Iodo radioativo de urgência e propranolol'],
   ecd: 'Ordem importa: propiltiouracil (bloqueia síntese e conversão de T4 em T3) e, 1 hora depois, iodo (bloqueia liberação). Betabloqueador, hidrocortisona, resfriamento, tratar a infecção. AAS desloca hormônio da proteína carreadora e é evitado.' });
 
 CASO({ id: 'ce_hipotireoidismo', area: 'cm', ala: 'endocrino', dif: 1, tema: 'Doenças da tireoide', cond: 'Hipotireoidismo primário (tireoidite de Hashimoto)', tags: ['endocrino', 'img'],
@@ -190,7 +190,7 @@ CASO({ id: 'ce_hipotireoidismo', area: 'cm', ala: 'endocrino', dif: 1, tema: 'Do
   pista: 'Edema periorbital e perda do terço lateral das sobrancelhas.',
   dx: ['Hipotireoidismo por Hashimoto', 'Hipotireoidismo central hipofisário', 'Síndrome nefrótica', 'Depressão maior isolada'],
   edx: 'TSH elevado com T4 livre baixo e anti-TPO positivo: hipotireoidismo primário por tireoidite de Hashimoto, mais comum em mulheres e associado a outras doenças autoimunes (como celíaca). Mixedema facial, perda do terço lateral das sobrancelhas, bradicardia e síndrome do túnel do carpo são achados clássicos.',
-  cd: ['Levotiroxina em jejum e TSH em 6 a 8 semanas', 'Liotironina (T3) em dose alta', 'Estatina e reavaliar a tireoide em 1 ano, se persistir', 'Iodo oral diário'],
+  cd: ['Levotiroxina 1,6 µg/kg/dia em jejum e TSH em 6-8 semanas', 'Liotironina (T3) 25 µg de 8/8 h', 'Sinvastatina 20 mg/dia e reavaliar a função tireoidiana em 1 ano', 'Iodeto de potássio oral diário'],
   ecd: 'Dose plena estimada de 1,6 µg/kg/dia em adultos jovens; em idosos ou coronariopatas, iniciar com 12,5 a 25 µg e aumentar devagar. Tomar em jejum, longe de cálcio, ferro e inibidores de bomba. Na doença celíaca, a absorção pode estar reduzida.' });
 
 CASO({ id: 'ce_hipo_subclinico', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Doenças da tireoide', cond: 'Hipotireoidismo subclínico', tags: ['endocrino'],
@@ -204,7 +204,7 @@ CASO({ id: 'ce_hipo_subclinico', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Do
   pista: 'TSH discretamente alto, T4 normal, idosa sem sintomas.',
   dx: ['Hipotireoidismo subclínico', 'Hipotireoidismo clínico', 'Hipertireoidismo subclínico', 'Função tireoidiana normal'],
   edx: 'TSH elevado com T4 livre normal: hipotireoidismo subclínico. Em idosos, o TSH normal é um pouco mais alto.',
-  cd: ['Observar e repetir o TSH', 'Levotiroxina em dose plena de 1,6 µg/kg', 'Cintilografia de tireoide com iodo', 'Punção aspirativa da tireoide'],
+  cd: ['Repetir TSH e T4 livre em 2 a 3 meses, sem tratar', 'Levotiroxina em dose plena de 1,6 µg/kg/dia', 'Cintilografia de tireoide com iodo-131', 'Punção aspirativa por agulha fina da tireoide'],
   ecd: 'Tratar geralmente quando TSH ≥ 10, em gestantes ou mulheres que planejam engravidar, e considerar com TSH entre 4,5 e 10 em jovens sintomáticos, com anti-TPO positivo, bócio ou alto risco cardiovascular. Em idosos com TSH < 10, a conduta é observar.' });
 
 CASO({ id: 'ce_mixedema', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doenças da tireoide', cond: 'Coma mixedematoso', tags: ['endocrino', 'neuro'],
@@ -218,7 +218,7 @@ CASO({ id: 'ce_mixedema', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doenças 
   pista: 'Hipotermia, bradicardia, hiponatremia, hipoventilação.',
   dx: ['Coma mixedematoso', 'AVC de tronco', 'Intoxicação por benzodiazepínico', 'Hipotermia ambiental isolada'],
   edx: 'Forma extrema do hipotireoidismo, desencadeada por infecção, frio ou sedativos, com rebaixamento, hipotermia, bradicardia, hipotensão, hipoventilação, hiponatremia e hipoglicemia.',
-  cd: ['Hidrocortisona e levotiroxina venosa', 'Aquecimento ativo rápido e alta em 24 horas', 'Levotiroxina oral 25 µg e observar a resposta', 'Soro hipotônico para corrigir o sódio'],
+  cd: ['Hidrocortisona 100 mg EV e levotiroxina venosa em ataque', 'Aquecimento ativo rápido com manta térmica e alta em 24 h', 'Levotiroxina VO 25 µg/dia e observar a resposta', 'Soro hipotônico para corrigir a hiponatremia'],
   ecd: 'Hidrocortisona antes ou junto com a levotiroxina (pode haver insuficiência adrenal associada). Levotiroxina em dose de ataque intravenosa, suporte ventilatório, aquecimento passivo, correção da hiponatremia e da hipoglicemia, tratar o fator precipitante. Mortalidade alta.' });
 
 CASO({ id: 'ce_tireoidite_subaguda', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Doenças da tireoide', cond: 'Tireoidite subaguda granulomatosa (de Quervain)', tags: ['endocrino'],
@@ -232,7 +232,7 @@ CASO({ id: 'ce_tireoidite_subaguda', area: 'cm', ala: 'endocrino', dif: 2, tema:
   pista: 'Tireoide dolorosa, VHS alta, captação baixa.',
   dx: ['Tireoidite subaguda', 'Doença de Graves', 'Tireoidite aguda bacteriana', 'Hemorragia em nódulo tireoidiano'],
   edx: 'Pós-viral: inflamação destrói folículos e libera hormônio pré-formado (tireotoxicose com captação baixa), com dor intensa e VHS elevada. Evolui com fase de hipotireoidismo e, em geral, recupera.',
-  cd: ['AINE ou corticoide e betabloqueador', 'Metimazol por 18 meses', 'Iodo radioativo em dose ablativa', 'Tireoidectomia de urgência'],
+  cd: ['Prednisona 40 mg/dia (ou AINE) e propranolol', 'Metimazol 30 mg/dia por 12 a 18 meses e propranolol', 'Iodo radioativo em dose ablativa', 'Tireoidectomia total de urgência'],
   ecd: 'O antitireoidiano não age, pois não há aumento de síntese. AINE nos casos leves, prednisona nos intensos, betabloqueador para sintomas adrenérgicos. Na fase hipotireoidea, levotiroxina temporária se sintomática.' });
 
 CASO({ id: 'ce_nodulo_tireoide', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Doenças da tireoide', cond: 'Nódulo de tireoide suspeito: carcinoma papilífero', tags: ['endocrino', 'usg'],
@@ -247,7 +247,7 @@ CASO({ id: 'ce_nodulo_tireoide', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Do
   pista: 'Tipo histológico mais comum de câncer de tireoide.',
   dx: ['Carcinoma papilífero', 'Carcinoma folicular', 'Carcinoma medular', 'Bócio coloide benigno'],
   edx: 'Carcinoma papilífero: o mais comum (cerca de 80%), associado à radiação cervical na infância, com disseminação linfática e bom prognóstico. Achados ultrassonográficos suspeitos: hipoecogenicidade, microcalcificações, margens irregulares, mais alto que largo.',
-  cd: ['Tireoidectomia total', 'Iodo radioativo antes da cirurgia', 'Observar e repetir o ultrassom em 1 ano', 'Levotiroxina para reduzir o nódulo'],
+  cd: ['Tireoidectomia total', 'Iodo radioativo antes da cirurgia', 'Ultrassom de controle em 12 meses', 'Levotiroxina em dose supressiva para reduzir o nódulo'],
   ecd: 'Nódulo com TSH normal ou alto → ultrassom e punção conforme tamanho e classificação. TSH baixo → cintilografia (nódulo quente raramente é maligno). Após a cirurgia, iodo radioativo conforme o risco e levotiroxina, com seguimento por tireoglobulina.' });
 
 CASO({ id: 'ce_carcinoma_medular', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doenças da tireoide', cond: 'Carcinoma medular de tireoide (NEM 2A)', tags: ['endocrino', 'cardio'],
@@ -261,7 +261,7 @@ CASO({ id: 'ce_carcinoma_medular', area: 'cm', ala: 'endocrino', dif: 3, tema: '
   pista: 'Calcitonina alta e crises adrenérgicas: o que operar primeiro?',
   dx: ['NEM 2A', 'Carcinoma papilífero isolado de tireoide', 'Neoplasia endócrina múltipla tipo 1', 'Bócio multinodular tóxico'],
   edx: 'Carcinoma medular (células C, calcitonina e CEA elevados) com feocromocitoma e hiperparatireoidismo: neoplasia endócrina múltipla tipo 2A, por mutação do proto-oncogene RET.',
-  cd: ['Tratar o feocromocitoma antes da tireoide', 'Tireoidectomia imediata antes de outros exames', 'Iodo radioativo para o carcinoma medular', 'Betabloqueador isolado e cirurgia da tireoide'],
+  cd: ['Doxazosina e adrenalectomia antes da tireoidectomia total', 'Tireoidectomia total imediata, antes de completar os demais exames', 'Iodo radioativo após a tireoidectomia total', 'Propranolol isolado e tireoidectomia no mesmo tempo'],
   ecd: 'Antes de qualquer cirurgia, afasta-se feocromocitoma (risco de crise hipertensiva fatal na anestesia): alfabloqueio, depois adrenalectomia, depois tireoidectomia total com esvaziamento. Iodo radioativo não funciona no medular. Pesquisar RET nos familiares (tireoidectomia profilática nos portadores).' });
 
 /* ---------- Paratireoide e suprarrenal ---------- */
@@ -276,7 +276,7 @@ CASO({ id: 'ce_hiperpara', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Hiperpar
   pista: 'Cálcio alto com PTH alto (inapropriado).',
   dx: ['Hiperparatireoidismo primário', 'Hipercalcemia da malignidade', 'Hipercalcemia hipocalciúrica familiar', 'Hiperparatireoidismo secundário à deficiência de vitamina D'],
   edx: 'Cálcio elevado com PTH elevado ou inapropriadamente normal: hiperparatireoidismo primário, geralmente por adenoma único. Calciúria alta afasta hipercalcemia hipocalciúrica familiar.',
-  cd: ['Paratireoidectomia', 'Observação, pois é assintomático', 'Tiazídico para reduzir a calciúria', 'Bisfosfonato isolado sem cirurgia'],
+  cd: ['Paratireoidectomia (sestamibi para localizar o adenoma)', 'Observação com cálcio sérico anual', 'Hidroclorotiazida para reduzir a calciúria', 'Alendronato 70 mg/semana e cinacalcete, sem indicação cirúrgica'],
   ecd: 'Indicações de cirurgia: sintomas (litíase, osteoporose, fraturas), cálcio > 1 mg/dL acima do limite, idade < 50 anos, TFG < 60, calciúria > 400 mg ou risco de cálculo. Ultrassom e cintilografia com sestamibi localizam o adenoma, mas não fazem o diagnóstico (que é laboratorial).' });
 
 CASO({ id: 'ce_hiperaldo', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doenças da suprarrenal', cond: 'Hiperaldosteronismo primário', tags: ['endocrino', 'cardio'],
@@ -291,7 +291,7 @@ CASO({ id: 'ce_hiperaldo', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doenças
   pista: 'Hipertensão resistente com hipocalemia e renina suprimida.',
   dx: ['Hiperaldosteronismo primário', 'Hipertensão renovascular', 'Síndrome de Cushing', 'Feocromocitoma'],
   edx: 'Hipertensão resistente, hipocalemia, alcalose metabólica, aldosterona alta e renina suprimida (relação aumentada): hiperaldosteronismo primário, a causa endócrina mais comum de hipertensão secundária. Na renovascular, a renina está alta.',
-  cd: ['Confirmar e cateterizar as veias adrenais', 'Adrenalectomia esquerda direta, guiada só pela imagem', 'Aumentar a hidroclorotiazida para dose máxima', 'Iniciar só betabloqueador'],
+  cd: ['Teste confirmatório e cateterismo das veias adrenais', 'Adrenalectomia esquerda laparoscópica guiada só pela tomografia', 'Hidroclorotiazida em dose máxima', 'Atenolol 50 mg/dia e reavaliar em 3 meses'],
   ecd: 'Após confirmar (teste de supressão), o cateterismo das veias adrenais define se a produção é unilateral (adenoma → adrenalectomia laparoscópica) ou bilateral (hiperplasia → espironolactona ou eplerenona), porque incidentalomas não funcionantes são comuns.' });
 
 CASO({ id: 'ce_cushing', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doenças da suprarrenal', cond: 'Doença de Cushing (adenoma hipofisário produtor de ACTH)', tags: ['endocrino'],
@@ -306,7 +306,7 @@ CASO({ id: 'ce_cushing', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doenças d
   pista: 'Hipercortisolismo ACTH-dependente.',
   dx: ['Doença de Cushing', 'Adenoma adrenal produtor de cortisol', 'Obesidade simples', 'Cushing exógeno'],
   edx: 'Hipercortisolismo confirmado por dois testes (cortisol salivar noturno, supressão com dexametasona, cortisol livre urinário) com ACTH normal-alto ou alto: ACTH-dependente. Com adenoma hipofisário (e teste de alta dose ou cateterismo de seio petroso confirmando a origem central), é doença de Cushing.',
-  cd: ['Cirurgia transesfenoidal', 'Adrenalectomia bilateral como primeira opção', 'Dexametasona diária', 'Dieta e exercício isolados'],
+  cd: ['Cirurgia transesfenoidal do adenoma', 'Adrenalectomia bilateral como 1ª opção', 'Dexametasona 1 mg/dia', 'Cetoconazol como tratamento definitivo'],
   ecd: 'A causa mais comum de Cushing é exógena (corticoide). Entre as endógenas, a doença de Cushing é a principal. ACTH baixo indica causa adrenal; ACTH muito alto sugere secreção ectópica (por exemplo, carcinoma de pequenas células).' });
 
 CASO({ id: 'ce_crise_adrenal', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doenças da suprarrenal', cond: 'Crise adrenal na insuficiência adrenal primária (Addison)', tags: ['endocrino', 'choque', 'hidrat'],
@@ -320,7 +320,7 @@ CASO({ id: 'ce_crise_adrenal', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doen
   pista: 'Hiperpigmentação, hiponatremia, hipercalemia e choque.',
   dx: ['Crise adrenal (Addison)', 'Choque séptico', 'Insuficiência adrenal secundária', 'Gastroenterite com desidratação isolada'],
   edx: 'Insuficiência adrenal primária (autoimune, associada a outras doenças autoimunes): falta cortisol e aldosterona. ACTH elevado causa hiperpigmentação. Hiponatremia, hipercalemia, hipoglicemia e hipotensão. Na secundária (hipofisária), não há hiperpigmentação nem hipercalemia.',
-  cd: ['Hidrocortisona IV e soro já', 'Esperar o resultado do cortisol antes de tratar', 'Noradrenalina isolada para a hipotensão', 'Fludrocortisona oral e alta'],
+  cd: ['Hidrocortisona 100 mg EV e SF 0,9% com glicose, já', 'Colher cortisol e ACTH e aguardar o resultado para iniciar o corticoide', 'Noradrenalina isolada para a hipotensão', 'Fludrocortisona 0,1 mg VO e alta'],
   ecd: 'Não se espera resultado: colhe-se cortisol e ACTH e trata-se imediatamente com hidrocortisona 100 mg IV (depois 50 mg a cada 6 horas), SF 0,9% com glicose. Na manutenção: hidrocortisona e fludrocortisona, com orientação de dobrar a dose em doenças (regra do dia de doença) e cartão de identificação.' });
 
 CASO({ id: 'ce_feocromocitoma', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doenças da suprarrenal', cond: 'Feocromocitoma', tags: ['endocrino', 'cardio'],
@@ -335,7 +335,7 @@ CASO({ id: 'ce_feocromocitoma', area: 'cm', ala: 'endocrino', dif: 3, tema: 'Doe
   pista: 'Tríade: cefaleia, sudorese e palpitação.',
   dx: ['Feocromocitoma', 'Transtorno de pânico', 'Hipertireoidismo', 'Carcinoide'],
   edx: 'Crises paroxísticas com a tríade cefaleia, sudorese e taquicardia e hipertensão, com metanefrinas muito elevadas e massa adrenal: feocromocitoma.',
-  cd: ['Alfabloqueio e depois adrenalectomia', 'Betabloqueador isolado e cirurgia imediata', 'Adrenalectomia sem preparo farmacológico', 'Diurético de alça e alta'],
+  cd: ['Doxazosina, hidratação e sal; depois adrenalectomia', 'Propranolol isolado e adrenalectomia laparoscópica imediata', 'Adrenalectomia sem preparo farmacológico', 'Furosemida e anlodipino, sem cirurgia'],
   ecd: 'Preparo: alfabloqueador (doxazosina ou fenoxibenzamina) com hidratação e sal; betabloqueador só depois do alfa (o beta isolado deixa o efeito alfa sem oposição e pode causar crise hipertensiva). Pesquisar síndromes genéticas (NEM 2, von Hippel-Lindau, NF1, paraganglioma familiar).' });
 
 CASO({ id: 'ce_incidentaloma', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Doenças da suprarrenal', cond: 'Incidentaloma adrenal', tags: ['endocrino'],
@@ -349,7 +349,7 @@ CASO({ id: 'ce_incidentaloma', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Doen
   pista: 'Baixa densidade sugere adenoma benigno. Ainda falta saber se ele produz hormônio.',
   dx: ['Incidentaloma com aspecto de adenoma', 'Carcinoma adrenal', 'Metástase adrenal', 'Feocromocitoma confirmado pela imagem'],
   edx: 'Nódulo < 4 cm, homogêneo, com densidade < 10 UH: aspecto de adenoma rico em lipídios (benigno). Todo incidentaloma deve ser avaliado quanto à função hormonal.',
-  cd: ['Investigar função hormonal do nódulo', 'Adrenalectomia imediata pelo tamanho', 'Biópsia percutânea guiada por tomografia', 'Alta sem investigação'],
+  cd: ['Dexametasona 1 mg (supressão) e metanefrinas plasmáticas', 'Adrenalectomia laparoscópica imediata pelo risco de malignidade', 'Biópsia percutânea guiada por tomografia', 'Alta sem investigação adicional'],
   ecd: 'Investigação funcional: hipercortisolismo (dexametasona 1 mg), feocromocitoma (metanefrinas) e, se hipertenso ou hipocalêmico, hiperaldosteronismo. Cirurgia se funcionante, > 4 cm ou aspecto suspeito. Biópsia raramente é indicada e nunca antes de afastar feocromocitoma.' });
 
 CASO({ id: 'ce_hac_nao_classica', area: 'cm', ala: 'endocrino', dif: 2, tema: 'Doenças da suprarrenal', cond: 'Hiperplasia adrenal congênita não clássica na mulher adulta', tags: ['endocrino'],
@@ -363,5 +363,5 @@ CASO({ id: 'ce_hac_nao_classica', area: 'cm', ala: 'endocrino', dif: 2, tema: 'D
   pista: 'Diferencial importante da síndrome dos ovários policísticos.',
   dx: ['HAC não clássica', 'Síndrome dos ovários policísticos', 'Tumor ovariano produtor de androgênio', 'Síndrome de Cushing'],
   edx: 'Deficiência parcial de 21-hidroxilase: 17-OH-progesterona elevada, especialmente após estímulo com ACTH. Clínica semelhante à SOP (hirsutismo, acne, irregularidade menstrual), por isso a 17-OH-progesterona faz parte da investigação do hiperandrogenismo.',
-  cd: ['Anticoncepcional ou glicocorticoide', 'Ooforectomia bilateral', 'Espironolactona durante a gestação', 'Sem tratamento e sem aconselhamento genético'],
+  cd: ['Anticoncepcional oral (ou prednisona em dose baixa)', 'Ooforectomia bilateral', 'Espironolactona durante a gestação', 'Nenhum tratamento e nenhuma orientação sobre aconselhamento genético'],
   ecd: 'Tratamento sintomático do hiperandrogenismo (anticoncepcional, antiandrogênico fora da gestação); glicocorticoide em dose baixa melhora a ovulação. Aconselhamento genético (herança autossômica recessiva; risco de forma clássica nos filhos se o parceiro for portador).' });

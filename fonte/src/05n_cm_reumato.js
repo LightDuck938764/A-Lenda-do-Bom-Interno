@@ -19,7 +19,7 @@ CASO({ id: 'rm_gota_aguda', area: 'cm', ala: 'reumato', dif: 1, tema: 'Gota', co
   pista: 'Podagra; o ácido úrico normal na crise não exclui gota.',
   dx: ['Gota aguda (podagra)', 'Artrite séptica', 'Pseudogota (pirofosfato de cálcio)', 'Celulite'],
   edx: 'Padrão-ouro: cristais de monourato de sódio (agulhas, birrefringência negativa) no líquido sinovial. Na crise, o ácido úrico pode estar normal. Pseudogota: cristais romboides com birrefringência positiva, mais em joelho e punho de idosos. Tiazídicos e álcool precipitam.',
-  cd: ['Colchicina nas primeiras 24 h ou AINE; trocar o tiazídico por losartana', 'Iniciar alopurinol em dose alta durante a crise e suspender a colchicina', 'Antibiótico venoso de amplo espectro', 'Aspirina em dose analgésica'],
+  cd: ['Colchicina em até 24 h (ou AINE) e trocar o tiazídico por losartana', 'Iniciar alopurinol 300 mg/dia durante a crise e suspender a colchicina', 'Artrocentese, oxacilina e ceftriaxona venosas pela monoartrite febril', 'AAS 3 g/dia como analgésico e anti-inflamatório'],
   ecd: 'Crise: colchicina (melhor se iniciada em até 12-24 horas), AINE ou corticoide (oral ou intra-articular). Não suspender o hipouricemiante se já em uso. Losartana tem efeito uricosúrico. Aspirina em dose baixa eleva o ácido úrico.' });
 
 CASO({ id: 'rm_gota_tofacea', area: 'cm', ala: 'reumato', dif: 2, tema: 'Gota', cond: 'Gota tofácea crônica: terapia hipouricemiante', tags: ['reumato', 'nefro'],
@@ -34,7 +34,7 @@ CASO({ id: 'rm_gota_tofacea', area: 'cm', ala: 'reumato', dif: 2, tema: 'Gota', 
   pista: 'Tofos, crises frequentes e litíase: indicação de baixar o ácido úrico.',
   dx: ['Gota tofácea crônica', 'Artrite reumatoide nodular', 'Osteoartrite erosiva', 'Artrite psoriásica'],
   edx: 'Gota crônica com tofos e erosões em saca-bocado com margem pendente ("em gancho"). Indicação de hipouricemiante: 2 ou mais crises por ano, tofos, artropatia com dano radiográfico, litíase ou doença renal.',
-  cd: ['Alopurinol e colchicina', 'Só AINE nas crises de dor', 'Probenecida em dose alta', 'Febuxostate por apenas 1 mês'],
+  cd: ['Alopurinol em dose crescente (alvo < 5 mg/dL) com colchicina', 'Só naproxeno nas crises, sem hipouricemiante contínuo', 'Probenecida em dose alta apesar da litíase e da TFG baixa', 'Febuxostate por 1 mês e suspender após normalizar o ácido úrico'],
   ecd: 'Alopurinol iniciado em dose baixa (ajustada à função renal) e aumentado até ácido úrico < 6 mg/dL (< 5 com tofos). Profilaxia com colchicina em dose baixa nos primeiros 3 a 6 meses. Uricosúricos são evitados com litíase e DRC. Alelo HLA-B*5801: risco de hipersensibilidade grave ao alopurinol.' });
 
 /* ---------- Artrite reumatoide ---------- */
@@ -50,7 +50,7 @@ CASO({ id: 'rm_ar_inicial', area: 'cm', ala: 'reumato', dif: 2, tema: 'Artrite r
   pista: 'Poliartrite simétrica de pequenas articulações há mais de 6 semanas, anti-CCP positivo.',
   dx: ['Artrite reumatoide', 'Osteoartrite de mãos', 'Lúpus eritematoso sistêmico', 'Artrite psoriásica'],
   edx: 'Critérios ACR/EULAR 2010: número e tipo de articulações, sorologia (FR, anti-CCP), provas inflamatórias e duração ≥ 6 semanas. Anti-CCP é o mais específico e indica pior prognóstico (erosões). Osteoartrite acomete IFD e não tem rigidez prolongada.',
-  cd: ['Metotrexato com ácido fólico', 'Corticoide em dose alta por tempo indefinido', 'Somente AINE até surgirem erosões', 'Anti-TNF como primeira droga'],
+  cd: ['Metotrexato 15 mg/semana com ácido fólico', 'Prednisona 40 mg/dia por tempo indefinido', 'Naproxeno isolado até surgirem erosões na radiografia', 'Adalimumabe como primeira droga modificadora'],
   ecd: 'Pelo PCDT do Ministério da Saúde, o metotrexato (com ácido fólico) é a droga modificadora de primeira linha, iniciada precocemente (janela de oportunidade). Corticoide em dose baixa e por curto prazo como ponte. Sem meta atingida: combinar sintéticos ou associar biológico. Rastrear TB latente e hepatites antes de imunossupressores.' });
 
 CASO({ id: 'rm_ar_biologico', area: 'cm', ala: 'reumato', dif: 3, tema: 'Artrite reumatoide', cond: 'Artrite reumatoide refratária: preparo para anti-TNF', tags: ['reumato', 'infecto', 'infec'],
@@ -64,7 +64,7 @@ CASO({ id: 'rm_ar_biologico', area: 'cm', ala: 'reumato', dif: 3, tema: 'Artrite
   pista: 'Antes do anti-TNF, sempre rastrear infecções latentes.',
   dx: ['AR refratária e ILTB', 'Tuberculose pulmonar ativa', 'Osteoartrite secundária', 'Lúpus induzido por drogas'],
   edx: 'Falha a pelo menos dois esquemas de DMARD sintético indica biológico. A PT ≥ 5 mm em imunossuprimido, com radiografia normal e sem sintomas, define infecção latente pela tuberculose. Anti-TNF reativa TB e hepatite B.',
-  cd: ['Tratar a ILTB antes do anti-TNF', 'Iniciar adalimumabe hoje', 'RIPE completo por 6 meses antes', 'Contraindicar biológico para sempre'],
+  cd: ['Tratar a ILTB (isoniazida ou 3HP) antes do anti-TNF', 'Iniciar adalimumabe hoje e repetir a prova em 6 meses', 'RIPE completo por 6 meses antes do biológico', 'Contraindicar biológicos de forma definitiva'],
   ecd: 'Rastreio obrigatório antes de biológicos: tuberculose latente (PT ou IGRA, radiografia), hepatites B e C, HIV, vacinas atualizadas. ILTB: isoniazida 6-9 meses, rifapentina com isoniazida ou rifampicina 4 meses; iniciar o anti-TNF após pelo menos 1 mês de tratamento. Hepatite B: profilaxia antiviral.' });
 
 CASO({ id: 'rm_mtx_toxico', area: 'cm', ala: 'reumato', dif: 3, tema: 'Artrite reumatoide', cond: 'Pancitopenia por metotrexato', tags: ['reumato', 'hemato', 'nefro'],
@@ -78,7 +78,7 @@ CASO({ id: 'rm_mtx_toxico', area: 'cm', ala: 'reumato', dif: 3, tema: 'Artrite r
   pista: 'Dose diária em vez de semanal, idade, função renal e interação com sulfa.',
   dx: ['Toxicidade por metotrexato', 'Leucemia aguda', 'Síndrome de Felty', 'Anemia aplástica idiopática'],
   edx: 'O metotrexato é antagonista do folato, eliminado pelos rins. Erro de dose (diário em vez de semanal), insuficiência renal, idade e drogas antifolato (sulfametoxazol-trimetoprima) causam mielotoxicidade e mucosite.',
-  cd: ['Suspender o MTX e ácido folínico', 'Manter o MTX e associar ácido fólico', 'Transfusão de plaquetas e alta hospitalar', 'Aumentar a dose do corticoide'],
+  cd: ['Suspender o MTX e a sulfa e iniciar ácido folínico', 'Manter o MTX e aumentar o ácido fólico para 10 mg/dia', 'Transfundir plaquetas e alta com MTX na metade da dose', 'Aumentar a prednisona para controlar a artrite e manter o MTX'],
   ecd: 'Suspender o metotrexato e o sulfametoxazol-trimetoprima, resgate com ácido folínico (leucovorina), hidratação, tratar a neutropenia febril com antibiótico de amplo espectro e considerar G-CSF. Prevenção: ácido fólico semanal, orientação clara da dose semanal e ajuste renal.' });
 
 /* ---------- Espondiloartrites ---------- */
@@ -94,7 +94,7 @@ CASO({ id: 'rm_espondilite', area: 'cm', ala: 'reumato', dif: 2, tema: 'Espondil
   pista: 'Lombalgia inflamatória em homem jovem e uveíte anterior.',
   dx: ['Espondilite anquilosante', 'Hérnia de disco lombar', 'Artrite reumatoide', 'Lombalgia mecânica'],
   edx: 'Lombalgia inflamatória (início antes dos 40 anos, insidiosa, melhora com exercício e não com repouso, dor noturna), sacroileíte bilateral, HLA-B27. Progressão ascendente da coluna. A uveíte anterior aguda é a manifestação extra-articular mais comum das espondiloartrites.',
-  cd: ['AINE, fisioterapia e oftalmologia hoje', 'Metotrexato como primeira escolha para a coluna', 'Repouso absoluto no leito', 'Corticoide sistêmico prolongado'],
+  cd: ['Naproxeno em dose plena, exercícios e oftalmologista hoje', 'Metotrexato 15 mg/semana como primeira escolha para a coluna', 'Repouso absoluto no leito até a dor lombar melhorar', 'Prednisona 20 mg/dia prolongada para a doença axial'],
   ecd: 'Primeira linha: AINE em dose plena e exercícios. Sem resposta: anti-TNF ou anti-IL-17. Metotrexato e sulfassalazina não agem na doença axial (só periférica). Uveíte: colírio de corticoide e cicloplégico com oftalmologista.' });
 
 CASO({ id: 'rm_artrite_reativa', area: 'cm', ala: 'reumato', dif: 2, tema: 'Espondiloartrites', cond: 'Artrite reativa pós-uretrite', tags: ['reumato', 'infecto', 'infec'],
@@ -108,7 +108,7 @@ CASO({ id: 'rm_artrite_reativa', area: 'cm', ala: 'reumato', dif: 2, tema: 'Espo
   pista: 'Artrite estéril semanas após infecção urogenital ou intestinal.',
   dx: ['Artrite reativa', 'Artrite gonocócica', 'Gota', 'Artrite reumatoide'],
   edx: 'Espondiloartrite desencadeada por infecção a distância (Chlamydia trachomatis; Salmonella, Shigella, Campylobacter, Yersinia), 1 a 4 semanas antes: oligoartrite assimétrica de membros inferiores, entesite, dactilite, conjuntivite ou uveíte, lesões mucocutâneas. Líquido sinovial estéril.',
-  cd: ['AINE e tratar a clamídia', 'Antibiótico por 3 meses para a artrite', 'Drenagem cirúrgica do joelho', 'Alopurinol e colchicina'],
+  cd: ['AINE e azitromicina 1 g para a uretrite por clamídia', 'Doxiciclina por 3 meses para tratar a artrite e a uretrite', 'Artrotomia e drenagem cirúrgica do joelho', 'Alopurinol e colchicina pela monoartrite do joelho'],
   ecd: 'AINE é a base; corticoide intra-articular nas articulações muito inflamadas; sulfassalazina se crônica. Tratar a uretrite por clamídia (doxiciclina ou azitromicina) e a parceria sexual; antibiótico prolongado não muda o curso da artrite. Na artrite gonocócica há tenossinovite, lesões pustulosas e o líquido pode ser purulento.' });
 
 CASO({ id: 'rm_psoriasica', area: 'cm', ala: 'reumato', dif: 2, tema: 'Espondiloartrites', cond: 'Artrite psoriásica', tags: ['reumato', 'ef'],
@@ -123,7 +123,7 @@ CASO({ id: 'rm_psoriasica', area: 'cm', ala: 'reumato', dif: 2, tema: 'Espondilo
   pista: 'Psoríase, unhas, IFD e dactilite, com FR negativo.',
   dx: ['Artrite psoriásica', 'Osteoartrite erosiva', 'Artrite reumatoide', 'Gota tofácea'],
   edx: 'Espondiloartrite associada à psoríase: acometimento de IFD, dactilite, entesite, alterações ungueais, padrão assimétrico, FR negativo. Imagem em lápis na xícara e artrite mutilante nos casos graves.',
-  cd: ['Metotrexato', 'Corticoide sistêmico prolongado', 'Somente hidratante para a pele', 'Hidroxicloroquina'],
+  cd: ['Metotrexato semanal', 'Prednisona 20 mg/dia prolongada', 'Só hidratante para a pele e AINE nas crises', 'Hidroxicloroquina 400 mg/dia'],
   ecd: 'Periférica: metotrexato (trata pele e articulações), leflunomida, sulfassalazina; refratários: anti-TNF, anti-IL-17, anti-IL-12/23. Evitar corticoide sistêmico (rebote da psoríase ao retirar). Hidroxicloroquina pode piorar a psoríase.' });
 
 CASO({ id: 'rm_aij_oligo', area: 'ped', dif: 2, tema: 'Artrite idiopática juvenil', cond: 'AIJ oligoarticular com FAN positivo e risco de uveíte', tags: ['reumato'],
@@ -137,7 +137,7 @@ CASO({ id: 'rm_aij_oligo', area: 'ped', dif: 2, tema: 'Artrite idiopática juven
   pista: 'Menina pequena, até 4 articulações, mais de 6 semanas, FAN positivo.',
   dx: ['AIJ oligoarticular', 'Artrite séptica de joelho', 'Leucemia linfoide aguda', 'Febre reumática'],
   edx: 'AIJ: artrite com início antes dos 16 anos, por 6 semanas ou mais, sem outra causa. Oligoarticular: até 4 articulações nos 6 primeiros meses, mais em meninas de 1 a 5 anos. FAN positivo indica alto risco de uveíte anterior crônica, assintomática.',
-  cd: ['Infiltração e rastreio de uveíte', 'Antibiótico venoso por 4 semanas', 'Só observar a evolução', 'Penicilina benzatina mensal'],
+  cd: ['Infiltração com triancinolona e oftalmologia a cada 3 meses', 'Oxacilina venosa por 4 semanas pela monoartrite do joelho', 'Observar a evolução, sem rastreio oftalmológico', 'Penicilina benzatina mensal como profilaxia de febre reumática'],
   ecd: 'AINE e infiltração intra-articular com triancinolona; metotrexato se persistente ou poliarticular; biológicos nos refratários. A uveíte é silenciosa e pode levar à cegueira: rastreio oftalmológico periódico. Excluir LLA (dor noturna, citopenias, DHL alto) antes de corticoide sistêmico.' });
 
 CASO({ id: 'rm_aij_sistemica', area: 'ped', dif: 3, tema: 'Artrite idiopática juvenil', cond: 'AIJ sistêmica com síndrome de ativação macrofágica', tags: ['reumato', 'hemato'],
@@ -151,7 +151,7 @@ CASO({ id: 'rm_aij_sistemica', area: 'ped', dif: 3, tema: 'Artrite idiopática j
   pista: 'Febre cotidiana, rash e artrite; queda paradoxal de plaquetas, VHS e fibrinogênio com ferritina altíssima.',
   dx: ['Ativação macrofágica', 'Sepse bacteriana grave', 'Leucemia aguda', 'Doença de Kawasaki'],
   edx: 'AIJ sistêmica (doença de Still): febre cotidiana por 2 semanas ou mais, artrite, exantema evanescente, serosite, visceromegalias. A síndrome de ativação macrofágica (linfo-histiocitose secundária) é complicação grave: ferritina muito alta, citopenias, queda de VHS e fibrinogênio, hipertrigliceridemia, disfunção hepática.',
-  cd: ['Pulso de corticoide e anakinra', 'Somente AINE em dose alta', 'Antibiótico de amplo espectro isolado', 'Imunoglobulina e aspirina'],
+  cd: ['Pulso de metilprednisolona e anakinra (anti-IL-1)', 'Naproxeno em dose alta isolado até a febre ceder', 'Meropeném e vancomicina isolados pela febre persistente', 'Imunoglobulina EV e AAS em dose anti-inflamatória'],
   ecd: 'Emergência: pulsoterapia com metilprednisolona, ciclosporina e/ou anakinra (anti-IL-1); tocilizumabe e canakinumabe na AIJ sistêmica. Suporte intensivo e correção da coagulopatia.' });
 
 /* ---------- Vasculites de grandes vasos ---------- */
@@ -166,7 +166,7 @@ CASO({ id: 'rm_arterite_temporal', area: 'cm', ala: 'reumato', dif: 2, tema: 'Va
   pista: 'Idoso, cefaleia nova, claudicação mandibular, VHS alto, sintomas visuais.',
   dx: ['Arterite de células gigantes', 'Enxaqueca de início tardio', 'Neuralgia do trigêmeo', 'Arterite de Takayasu'],
   edx: 'Vasculite de grandes vasos acima de 50 anos: cefaleia nova, hipersensibilidade do couro cabeludo, claudicação mandibular, alterações da artéria temporal, VHS muito elevado; associa-se à polimialgia reumática. Risco de cegueira irreversível por neuropatia óptica isquêmica.',
-  cd: ['Corticoide já', 'Aguardar a biópsia para tratar', 'Triptano e analgésico comum', 'Aspirina isolada'],
+  cd: ['Metilprednisolona EV já, sem esperar a biópsia', 'Aguardar a biópsia da artéria temporal para iniciar corticoide', 'Sumatriptana e dipirona para a cefaleia temporal', 'AAS 100 mg/dia isolado para prevenir a amaurose'],
   ecd: 'Sintomas visuais: metilprednisolona IV, depois prednisona 1 mg/kg; sem sintomas visuais, prednisona 40-60 mg. A biópsia de artéria temporal (ou ultrassom com sinal do halo) pode ser feita até 2 semanas após o início do corticoide. Tocilizumabe poupa corticoide. Proteção óssea.' });
 
 CASO({ id: 'rm_takayasu', area: 'cm', ala: 'reumato', dif: 3, tema: 'Vasculites', cond: 'Arterite de Takayasu', tags: ['reumato', 'cardio'],
@@ -181,7 +181,7 @@ CASO({ id: 'rm_takayasu', area: 'cm', ala: 'reumato', dif: 3, tema: 'Vasculites'
   pista: 'Mulher jovem, "doença sem pulso", diferença de PA entre os braços.',
   dx: ['Arterite de Takayasu', 'Arterite de células gigantes', 'Aterosclerose de subclávia', 'Síndrome do desfiladeiro torácico'],
   edx: 'Vasculite granulomatosa de grandes vasos (aorta e ramos) em mulheres antes dos 40 anos: fase sistêmica inflamatória e depois fase oclusiva, com claudicação de membros, pulsos diminuídos, sopros, diferença de PA > 10 mmHg entre os braços, hipertensão renovascular.',
-  cd: ['Corticoide e metotrexato', 'Angioplastia imediata em fase ativa', 'Anticoagulação plena isolada', 'Somente anti-hipertensivo'],
+  cd: ['Prednisona em dose alta e metotrexato', 'Angioplastia das subclávias imediata em fase ativa', 'Anticoagulação plena com varfarina isolada', 'Só anti-hipertensivo e acompanhamento anual'],
   ecd: 'Corticoide em dose alta com poupador (metotrexato, azatioprina, leflunomida) ou biológico (anti-TNF, tocilizumabe). Revascularização só em estenoses críticas e fora da fase ativa. Aferir a PA no membro menos acometido.' });
 
 /* ---------- Vasculites de médios vasos ---------- */
@@ -197,7 +197,7 @@ CASO({ id: 'rm_pan', area: 'cm', ala: 'reumato', dif: 3, tema: 'Vasculites', con
   pista: 'Mononeurite múltipla, orquite, hipertensão, ANCA negativo, sem glomerulonefrite e pulmão poupado.',
   dx: ['Poliarterite nodosa', 'Poliangiite microscópica', 'Granulomatose com poliangiite', 'Crioglobulinemia'],
   edx: 'Vasculite necrosante de médios vasos, ANCA negativo, sem glomerulonefrite (isquemia renal com hipertensão) e sem acometimento pulmonar. Associação com hepatite B. Manifestações: mononeurite múltipla, isquemia mesentérica, orquite, nódulos e livedo, microaneurismas.',
-  cd: ['Antiviral e corticoide curto', 'Ciclofosfamida isolada por 1 ano', 'Somente analgésico', 'Rituximabe sem antiviral'],
+  cd: ['Tenofovir, corticoide por curto prazo e plasmaférese', 'Ciclofosfamida EV mensal isolada por 12 meses, sem antiviral', 'Só analgésico e repouso', 'Rituximabe sem antiviral associado'],
   ecd: 'Na PAN por hepatite B, a base é o antiviral (tenofovir, entecavir), com corticoide por curto período e plasmaférese para controlar a inflamação sem aumentar a replicação viral. PAN idiopática grave: corticoide e ciclofosfamida.' });
 
 /* ---------- Vasculites de pequenos vasos ---------- */
@@ -213,7 +213,7 @@ CASO({ id: 'rm_gpa', area: 'cm', ala: 'reumato', dif: 3, tema: 'Vasculites', con
   pista: 'Vias aéreas superiores, pulmão e rim, c-ANCA.',
   dx: ['Granulomatose com poliangiite', 'Poliangiite microscópica', 'Tuberculose pulmonar cavitária', 'Síndrome de Goodpasture'],
   edx: 'Vasculite granulomatosa de pequenos vasos: vias aéreas superiores (sinusite, nariz em sela, otite), pulmões (nódulos escavados, hemorragia) e rins (glomerulonefrite rapidamente progressiva pauci-imune). ANCA anti-PR3 (c-ANCA). Poliangiite microscópica: sem granulomas, sem vias aéreas superiores, p-ANCA anti-MPO.',
-  cd: ['Corticoide e rituximabe', 'Antibiótico para sinusite por 3 meses', 'Lobectomia pulmonar', 'Esquema RIPE'],
+  cd: ['Pulso de metilprednisolona e rituximabe', 'Amoxicilina-clavulanato por 3 meses para a sinusite', 'Lobectomia pulmonar dos nódulos cavitados', 'Esquema RIPE pelas cavitações pulmonares'],
   ecd: 'Indução: corticoide (pulso de metilprednisolona) com rituximabe ou ciclofosfamida; plasmaférese em hemorragia alveolar grave ou rim muito comprometido em casos selecionados. Manutenção: rituximabe ou azatioprina. Profilaxia de Pneumocystis com sulfametoxazol-trimetoprima.' });
 
 CASO({ id: 'rm_pam', area: 'cm', ala: 'reumato', dif: 3, tema: 'Vasculites', cond: 'Poliangiite microscópica com síndrome pulmão-rim', tags: ['reumato', 'resp', 'nefro'],
@@ -228,7 +228,7 @@ CASO({ id: 'rm_pam', area: 'cm', ala: 'reumato', dif: 3, tema: 'Vasculites', con
   pista: 'Pulmão-rim, p-ANCA, sem granulomas e sem vias aéreas superiores.',
   dx: ['Poliangiite microscópica', 'Granulomatose com poliangiite', 'Síndrome de Goodpasture', 'Nefrite lúpica'],
   edx: 'Vasculite necrosante de pequenos vasos, não granulomatosa, ANCA anti-MPO, com glomerulonefrite rapidamente progressiva pauci-imune e capilarite pulmonar. Goodpasture: anti-MBG com depósitos lineares na imunofluorescência.',
-  cd: ['Pulso de corticoide e rituximabe', 'Antibiótico venoso e furosemida em bolus', 'Hemodiálise isolada', 'Anticoagulação plena'],
+  cd: ['Pulso de metilprednisolona e rituximabe', 'Ceftriaxona venosa e furosemida em bólus pela congestão', 'Hemodiálise isolada, sem imunossupressão', 'Heparina plena pela hemoptise e hematúria'],
   ecd: 'Emergência: pulso de metilprednisolona, ciclofosfamida ou rituximabe; plasmaférese considerada na hemorragia alveolar grave ou na creatinina muito elevada; diálise se necessário.' });
 
 CASO({ id: 'rm_egpa', area: 'cm', ala: 'reumato', dif: 3, tema: 'Vasculites', cond: 'Granulomatose eosinofílica com poliangiite (Churg-Strauss)', tags: ['reumato', 'resp', 'neuro'],
@@ -242,7 +242,7 @@ CASO({ id: 'rm_egpa', area: 'cm', ala: 'reumato', dif: 3, tema: 'Vasculites', co
   pista: 'Asma, eosinofilia e mononeurite múltipla.',
   dx: ['Churg-Strauss', 'Aspergilose broncopulmonar alérgica', 'Poliarterite nodosa', 'Síndrome hipereosinofílica'],
   edx: 'Vasculite de pequenos vasos com asma, eosinofilia > 10%, mononeurite múltipla, infiltrados pulmonares migratórios, sinusopatia e púrpura; ANCA positivo em cerca de 40% (p-ANCA). O acometimento cardíaco (miocardite) é a principal causa de morte.',
-  cd: ['Corticoide e ciclofosfamida', 'Somente broncodilatador', 'Antifúngico venoso', 'Antiparasitário isolado'],
+  cd: ['Corticoide em dose alta e ciclofosfamida', 'Só budesonida-formoterol pela asma', 'Voriconazol venoso pela suspeita de aspergilose', 'Ivermectina isolada pela eosinofilia'],
   ecd: 'Doença grave (cardíaca, neurológica, renal, digestiva): corticoide em dose alta e ciclofosfamida ou rituximabe. Formas não graves: corticoide; mepolizumabe (anti-IL-5) poupa corticoide. Excluir estrongiloidíase antes de imunossupressão (ivermectina empírica em área endêmica).' });
 
 CASO({ id: 'rm_iga_vasc', area: 'ped', dif: 2, tema: 'Vasculites', cond: 'Vasculite por IgA (púrpura de Henoch-Schönlein)', tags: ['reumato', 'nefro'],
@@ -256,7 +256,7 @@ CASO({ id: 'rm_iga_vasc', area: 'ped', dif: 2, tema: 'Vasculites', cond: 'Vascul
   pista: 'Púrpura palpável com plaquetas normais, artrite, dor abdominal e rim.',
   dx: ['Vasculite por IgA', 'Púrpura trombocitopênica imune', 'Meningococcemia', 'Leucemia linfoide aguda'],
   edx: 'Vasculite de pequenos vasos mais comum da infância, com depósitos de IgA: púrpura palpável (plaquetas normais) predominante em membros inferiores e nádegas, artrite ou artralgia, dor abdominal (risco de intussuscepção) e nefrite. Frequentemente após infecção de vias aéreas superiores.',
-  cd: ['Sintomáticos e seguimento', 'Transfusão de plaquetas', 'Ceftriaxona e isolamento respiratório', 'Imunoglobulina IV'],
+  cd: ['Analgesia, hidratação e seguir urina e PA', 'Transfusão de plaquetas pela púrpura', 'Ceftriaxona e isolamento por gotículas', 'Imunoglobulina EV 2 g/kg e AAS em dose alta'],
   ecd: 'Autolimitada na maioria. Analgesia (paracetamol; AINE com cautela se nefrite), hidratação. Corticoide para dor abdominal intensa ou orquite. Seguir urina e PA por 6 a 12 meses (nefrite pode surgir tardiamente); nefrite grave: biópsia e imunossupressão. Atenção a intussuscepção.' });
 
 CASO({ id: 'rm_crioglobulinemia', area: 'cm', ala: 'reumato', dif: 3, tema: 'Vasculites', cond: 'Vasculite crioglobulinêmica com úlceras e neuropatia', tags: ['reumato', 'hepato', 'neuro'],
@@ -270,7 +270,7 @@ CASO({ id: 'rm_crioglobulinemia', area: 'cm', ala: 'reumato', dif: 3, tema: 'Vas
   pista: 'Tríade púrpura, artralgia e fraqueza, com C4 baixo e FR positivo.',
   dx: ['Vasculite crioglobulinêmica', 'Vasculite por IgA', 'Poliarterite nodosa', 'Lúpus eritematoso sistêmico'],
   edx: 'Crioglobulinemia mista (tipos II e III) associada principalmente à hepatite C: tríade de Meltzer (púrpura, artralgia, fraqueza), neuropatia periférica, úlceras, glomerulonefrite membranoproliferativa; FR positivo e consumo de C4.',
-  cd: ['Antiviral de ação direta e rituximabe', 'Corticoide isolado indefinidamente', 'Interferon com ribavirina', 'Apenas meias de compressão'],
+  cd: ['Sofosbuvir + velpatasvir e rituximabe', 'Prednisona isolada por tempo indefinido', 'Interferon peguilado com ribavirina', 'Só meias de compressão e curativos'],
   ecd: 'Tratar o HCV com antivirais de ação direta (resposta virológica sustentada > 95%). Manifestações graves (úlceras, neuropatia, glomerulonefrite): rituximabe; plasmaférese nas formas que ameaçam a vida. Evitar frio.' });
 
 /* ---------- Colagenoses e outras ---------- */
@@ -286,7 +286,7 @@ CASO({ id: 'rm_les_nefrite', area: 'cm', ala: 'reumato', dif: 3, tema: 'Lúpus e
   pista: 'Mulher jovem multissistêmica com anti-DNA, complemento baixo e glomerulonefrite.',
   dx: ['Lúpus com nefrite proliferativa', 'Glomerulonefrite pós-estreptocócica', 'Nefropatia por IgA', 'Púrpura trombocitopênica trombótica'],
   edx: 'LES: FAN como triagem (sensível, pouco específico); anti-DNA e anti-Sm são específicos; anti-DNA e queda de C3/C4 acompanham atividade, sobretudo renal. Nefrite classe III ou IV exige imunossupressão de indução.',
-  cd: ['Corticoide e micofenolato', 'Somente hidroxicloroquina', 'AINE e retorno em 6 meses', 'Hemodiálise imediata'],
+  cd: ['Pulso de metilprednisolona e micofenolato', 'Só hidroxicloroquina 400 mg/dia e retorno em 3 meses', 'Naproxeno e prednisona 5 mg/dia com retorno em 6 meses', 'Hemodiálise imediata, sem imunossupressão'],
   ecd: 'Indução: pulso de metilprednisolona seguido de prednisona, com micofenolato ou ciclofosfamida (belimumabe ou voclosporina em associação). Hidroxicloroquina para todos os pacientes com LES. IECA ou BRA para proteinúria, controle pressórico, fotoproteção, evitar estrógenos se antifosfolípides positivos.' });
 
 CASO({ id: 'rm_esclerose_sistemica', area: 'cm', ala: 'reumato', dif: 3, tema: 'Esclerose sistêmica', cond: 'Crise renal esclerodérmica', tags: ['reumato', 'nefro', 'cardio'],
@@ -300,7 +300,7 @@ CASO({ id: 'rm_esclerose_sistemica', area: 'cm', ala: 'reumato', dif: 3, tema: '
   pista: 'Esclerose sistêmica difusa, corticoide em dose alta, hipertensão maligna e insuficiência renal.',
   dx: ['Crise renal esclerodérmica', 'Púrpura trombocitopênica trombótica', 'Nefrite lúpica', 'Hipertensão essencial'],
   edx: 'Complicação da forma difusa recente (anti-Scl-70, anti-RNA polimerase III), precipitada por prednisona > 15 mg/dia: hipertensão maligna, insuficiência renal aguda, anemia hemolítica microangiopática. O pulmão (doença intersticial) é hoje a principal causa de morte na esclerose sistêmica.',
-  cd: ['IECA (captopril) em dose crescente', 'Nitroprussiato e betabloqueador, evitando IECA', 'Pulso de corticoide', 'Plasmaférese como primeira linha'],
+  cd: ['Captopril em dose crescente, mesmo com piora da creatinina', 'Nitroprussiato de sódio e metoprolol, evitando iECA pela creatinina', 'Pulso de metilprednisolona por 3 dias', 'Plasmaférese como primeira linha'],
   ecd: 'IECA de ação curta (captopril) titulado até controlar a PA, mesmo com piora da creatinina, inclusive se houver necessidade de diálise (muitos recuperam função). Evitar corticoide em dose alta na esclerose sistêmica difusa. Raynaud: bloqueador de canal de cálcio.' });
 
 CASO({ id: 'rm_osteoartrite', area: 'cm', ala: 'reumato', dif: 1, tema: 'Osteoartrite', cond: 'Osteoartrite de joelhos e mãos', tags: ['reumato', 'ef'],
@@ -315,7 +315,7 @@ CASO({ id: 'rm_osteoartrite', area: 'cm', ala: 'reumato', dif: 1, tema: 'Osteoar
   pista: 'Dor mecânica, rigidez curta, IFD, provas inflamatórias normais.',
   dx: ['Osteoartrite', 'Artrite reumatoide', 'Gota', 'Artrite psoriásica'],
   edx: 'Doença articular degenerativa: dor que piora com uso, rigidez matinal < 30 minutos, crepitação, nódulos de Heberden (IFD) e Bouchard (IFP); radiografia com redução assimétrica do espaço, osteófitos, esclerose e cistos subcondrais.',
-  cd: ['Perda de peso e exercício', 'Corticoide oral contínuo', 'Metotrexato semanal', 'Artroplastia total imediata'],
+  cd: ['Perda de peso, fortalecimento muscular e AINE tópico', 'Prednisona 5 mg/dia contínua para a dor', 'Metotrexato 15 mg/semana pela artrite das mãos', 'Artroplastia total bilateral dos joelhos imediata'],
   ecd: 'Base: educação, perda de peso, fortalecimento muscular e exercício aeróbico. Analgesia: AINE tópico, paracetamol, AINE oral por curto período, duloxetina; infiltração com corticoide nas crises. Artroplastia para dor refratária com limitação importante.' });
 
 CASO({ id: 'rm_artrite_septica', area: 'cm', ala: 'reumato', dif: 2, tema: 'Artrites infecciosas', cond: 'Síndrome artrite-dermatite gonocócica', tags: ['reumato', 'infecto', 'infec'],
@@ -329,5 +329,5 @@ CASO({ id: 'rm_artrite_septica', area: 'cm', ala: 'reumato', dif: 2, tema: 'Artr
   pista: 'Jovem sexualmente ativo, tenossinovite, lesões pustulosas e poliartralgia migratória.',
   dx: ['Gonococcemia disseminada', 'Artrite reativa', 'Artrite reumatoide', 'Gota poliarticular'],
   edx: 'A gonococcemia disseminada causa a tríade tenossinovite, dermatite (pústulas) e poliartralgia migratória, ou artrite purulenta monoarticular. O líquido sinovial frequentemente tem cultura negativa; PCR em urina, uretra, orofaringe e reto ajuda no diagnóstico.',
-  cd: ['Ceftriaxona IV', 'AINE isolado', 'Corticoide intra-articular', 'Alopurinol e colchicina'],
+  cd: ['Ceftriaxona 1 g EV/dia e azitromicina para clamídia', 'Naproxeno isolado e repouso articular', 'Infiltração com triancinolona no punho e no tornozelo', 'Alopurinol e colchicina pela poliartrite migratória'],
   ecd: 'Ceftriaxona 1 g IV/dia até melhora e completar 7 dias (com drenagem se derrame purulento); associar tratamento para clamídia (doxiciclina ou azitromicina), testar HIV e sífilis e tratar as parcerias. Artrite séptica não gonocócica (S. aureus): drenagem e antibiótico venoso.' });

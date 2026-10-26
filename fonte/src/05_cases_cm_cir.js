@@ -39,7 +39,7 @@ CASO({ id: 'cm_chagas1', area: 'cm', ala: 'cardio', dif: 2, cond: 'Doença de Ch
   pista: 'BRD + BDAS + aneurisma apical + epidemiologia + sorologia positiva: cardiomiopatia chagásica.',
   dx: ['Cardiomiopatia chagásica crônica', 'Cardiopatia isquêmica com disfunção ventricular', 'Cardiopatia hipertensiva', 'Miocardite viral aguda'],
   edx: 'Epidemiologia, sorologia positiva e achados típicos (BRD + BDAS, aneurisma apical, arritmias): forma cardíaca crônica da doença de Chagas.',
-  cd: ['Tratar a IC com fração reduzida (bloqueio neuro-hormonal), investigar arritmias e prevenir tromboembolismo conforme o risco', 'Benznidazol como tratamento curativo da cardiopatia chagásica crônica avançada, dispensando o tratamento da insuficiência cardíaca', 'Cirurgia de revascularização miocárdica, já que a disfunção ventricular é isquêmica', 'Alta sem seguimento, já que a doença de Chagas crônica não tem tratamento eficaz nessa fase'],
+  cd: ['Carvedilol, enalapril, espironolactona e dapagliflozina, Holter de 24 h e anticoagulação conforme o risco embólico', 'Benznidazol como tratamento curativo da cardiopatia chagásica crônica avançada, dispensando o tratamento da insuficiência cardíaca', 'Cirurgia de revascularização miocárdica, já que a disfunção ventricular é isquêmica', 'Alta sem seguimento, já que a doença de Chagas crônica não tem tratamento eficaz nessa fase'],
   ecd: 'Na cardiopatia chagásica estabelecida, o benefício do antiparasitário é limitado. O foco é tratar a IC, arritmias e prevenir embolias.' });
 
 CASO({ id: 'cm_chagas2', area: 'cm', ala: 'cardio', dif: 2, cond: 'Doença de Chagas', tags: ['img'],
@@ -67,7 +67,7 @@ CASO({ id: 'cm_alzheimer', area: 'cm', ala: 'neuro', dif: 2, cond: 'Doença de A
   pista: 'Início insidioso, progressivo, com memória recente como primeiro domínio afetado e exames de causas reversíveis normais.',
   dx: ['Doença de Alzheimer', 'Demência com corpos de Lewy', 'Depressão com queixa cognitiva', 'Hipotireoidismo'],
   edx: 'Declínio cognitivo progressivo, com predomínio de memória, prejuízo funcional, exames de causas reversíveis normais e atrofia hipocampal: doença de Alzheimer.',
-  cd: ['Inibidor de colinesterase (ex.: donepezila), orientação e suporte à família, medidas de segurança e planejamento de cuidados', 'Antipsicótico contínuo em dose plena para controlar os esquecimentos e a desorientação', 'Benzodiazepínico toda noite para dormir e reduzir a ansiedade, como tratamento principal da demência, sem orientar a família cuidadora', 'Nenhuma conduta, porque esquecer é "da idade" e não há tratamento nem orientação útil'],
+  cd: ['Donepezila 5 mg/dia (titular para 10 mg), orientação e suporte à família, segurança domiciliar e planejamento de cuidados', 'Antipsicótico contínuo em dose plena para controlar os esquecimentos e a desorientação', 'Benzodiazepínico toda noite para dormir e reduzir a ansiedade, como tratamento principal da demência, sem orientar a família cuidadora', 'Nenhuma conduta, porque esquecer é "da idade" e não há tratamento nem orientação útil'],
   ecd: 'Inibidores de colinesterase são tratamento sintomático na demência leve a moderada. O cuidado ao cuidador e a segurança são parte central.' });
 
 CASO({ id: 'cm_hernia', area: 'cm', ala: 'neuro', dif: 1, cond: 'Hérnia de disco', tags: ['neuro', 'dor', 'ef'],
@@ -81,7 +81,7 @@ CASO({ id: 'cm_hernia', area: 'cm', ala: 'neuro', dif: 1, cond: 'Hérnia de disc
   pista: 'Radiculopatia L5 SEM sinais de alarme (sem déficit motor progressivo, sem alteração de esfíncteres, sem febre ou câncer).',
   dx: ['Hérnia de disco lombar com radiculopatia', 'Síndrome da cauda equina incompleta', 'Estenose do canal lombar degenerativa', 'Espondilodiscite infecciosa'],
   edx: 'Dor radicular aguda em dermátomo de L5 com Lasègue positivo, sem sinais de alarme: hérnia discal lombar.',
-  cd: ['Tratamento conservador (analgesia, manter-se ativo, fisioterapia) e reavaliação; imagem se sinais de alarme ou falha após cerca de 6 semanas', 'Cirurgia imediata para todos os casos de hérnia de disco com dor ciática, mesmo sem déficit', 'Repouso absoluto no leito por 3 semanas e corticoide em dose alta, evitando qualquer atividade física', 'Ressonância de urgência e afastamento definitivo do trabalho, já que a hérnia de disco não melhora sem cirurgia e piora com qualquer movimento ou fisioterapia ativa'],
+  cd: ['Analgesia (AINE por curto prazo), manter-se ativo e fisioterapia; ressonância só se sinais de alarme ou falha após 6 semanas', 'Cirurgia imediata para todos os casos de hérnia de disco com dor ciática, mesmo sem déficit', 'Repouso absoluto no leito por 3 semanas e corticoide em dose alta, evitando qualquer atividade física', 'Ressonância de urgência e afastamento definitivo do trabalho, já que a hérnia de disco não melhora sem cirurgia e piora com qualquer movimento ou fisioterapia ativa'],
   ecd: 'A maioria das hérnias discais melhora com tratamento conservador. Repouso prolongado não é recomendado. Cirurgia é para déficit progressivo, cauda equina ou dor refratária.' });
 
 CASO({ id: 'cm_lma', area: 'cm', ala: 'hemato', dif: 3, cond: 'Leucemia mieloide aguda', tags: ['infec', 'febre'],
@@ -95,7 +95,7 @@ CASO({ id: 'cm_lma', area: 'cm', ala: 'hemato', dif: 3, cond: 'Leucemia mieloide
   pista: 'Bastonetes de Auer e mieloperoxidase positiva são marcadores da linhagem MIELOIDE.',
   dx: ['Leucemia mieloide aguda', 'Leucemia linfoide aguda', 'Leucemia mieloide crônica', 'Linfoma de Hodgkin'],
   edx: 'Pancitopenia funcional com blastos >20%, bastonetes de Auer e mieloperoxidase positiva: leucemia mieloide aguda.',
-  cd: ['Internar com a hematologia, mielograma com imunofenotipagem e citogenética, suporte transfusional, prevenção de lise tumoral e tratamento da febre', 'Seguimento ambulatorial em 3 meses com novo hemograma, já que a febre pode ser viral e os blastos, reacionais', 'Inibidor de tirosina quinase como única conduta, sem mielograma nem suporte transfusional, pela semelhança com a leucemia mieloide crônica em fase acelerada', 'Corticoide em dose alta e alta hospitalar, com retorno em uma semana para avaliar a resposta da medula'],
+  cd: ['Internar com a hematologia, mielograma com imunofenotipagem e citogenética, hemocomponentes, alopurinol e hidratação, e cefepime para a febre', 'Seguimento ambulatorial em 3 meses com novo hemograma, já que a febre pode ser viral e os blastos, reacionais', 'Inibidor de tirosina quinase como única conduta, sem mielograma nem suporte transfusional, pela semelhança com a leucemia mieloide crônica em fase acelerada', 'Corticoide em dose alta e alta hospitalar, com retorno em uma semana para avaliar a resposta da medula'],
   ecd: 'Leucemia aguda é urgência hematológica: confirmar o diagnóstico e o subtipo, dar suporte (transfusão, antibiótico na neutropenia febril, prevenção de lise) e iniciar quimioterapia.' });
 
 CASO({ id: 'cm_lla', area: 'cm', ala: 'hemato', dif: 2, cond: 'Leucemia linfoide aguda', tags: ['infec', 'img', 'dor'],
@@ -109,7 +109,7 @@ CASO({ id: 'cm_lla', area: 'cm', ala: 'hemato', dif: 2, cond: 'Leucemia linfoide
   pista: 'TdT positivo e marcadores B (CD19), com MPO negativa: linhagem LINFOIDE.',
   dx: ['Leucemia linfoide aguda', 'Leucemia mieloide aguda', 'Mononucleose infecciosa', 'Linfoma de Hodgkin'],
   edx: 'Blastos com TdT e CD19 positivos, mieloperoxidase negativa, com linfonodomegalia e dor óssea: leucemia linfoide aguda.',
-  cd: ['Internar com a hematologia, completar o estadiamento (inclusive do sistema nervoso central), suporte transfusional, prevenção de lise tumoral e iniciar quimioterapia', 'Antibiótico oral para a febre e retorno em 1 semana com novo hemograma, já que linfocitose sugere infecção viral', 'Biópsia de linfonodo eletiva em 2 meses, mantendo o acompanhamento ambulatorial e a escola normalmente', 'Corticoide isolado em dose alta e alta hospitalar, já que a redução dos gânglios confirma a boa resposta e dispensa o mielograma e a quimioterapia de indução por ora'],
+  cd: ['Internar com a hematologia, mielograma e líquor (estadiamento do SNC), hemocomponentes, hidratação com alopurinol e iniciar a indução', 'Antibiótico oral para a febre e retorno em 1 semana com novo hemograma, já que linfocitose sugere infecção viral', 'Biópsia de linfonodo eletiva em 2 meses, mantendo o acompanhamento ambulatorial e a escola normalmente', 'Corticoide isolado em dose alta e alta hospitalar, já que a redução dos gânglios confirma a boa resposta e dispensa o mielograma e a quimioterapia de indução por ora'],
   ecd: 'A LLA exige tratamento hematológico imediato. Massa mediastinal impõe cuidado com via aérea e veia cava superior.' });
 
 CASO({ id: 'cm_colest2', area: 'cm', ala: 'cardio', dif: 2, cond: 'Hipercolesterolemia', tags: ['cardio', 'sca'],
@@ -123,7 +123,7 @@ CASO({ id: 'cm_colest2', area: 'cm', ala: 'cardio', dif: 2, cond: 'Hipercolester
   pista: 'Paciente de muito alto risco (pós-IAM): a meta de LDL é bem mais baixa. Já está na estatina máxima.',
   dx: ['Dislipidemia em prevenção secundária fora da meta', 'Hipercolesterolemia familiar homozigótica', 'Hipotireoidismo', 'Dislipidemia controlada'],
   edx: 'Pós-IAM é de muito alto risco cardiovascular, com meta de LDL bem abaixo de 70 mg/dl (em geral <50–55 mg/dl).',
-  cd: ['Associar ezetimiba à estatina de alta potência e reavaliar o LDL', 'Reduzir a dose da estatina para evitar efeitos adversos e repetir o LDL', 'Trocar a estatina por fibrato, mais potente para reduzir o LDL', 'Manter sem mudanças, já que o LDL caiu em relação ao início'],
+  cd: ['Associar ezetimiba 10 mg à rosuvastatina 40 mg e reavaliar o LDL em 4 a 12 semanas', 'Reduzir a dose da estatina para evitar efeitos adversos e repetir o LDL', 'Trocar a estatina por fibrato, mais potente para reduzir o LDL', 'Manter sem mudanças, já que o LDL caiu em relação ao início'],
   ecd: 'Se a meta não é atingida com estatina máxima tolerada, associa-se ezetimiba; persistindo fora da meta, inibidores de PCSK9 podem ser considerados.' });
 
 /* ============================ CIRURGIA ============================

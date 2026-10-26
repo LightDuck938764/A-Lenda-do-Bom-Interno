@@ -144,6 +144,15 @@ function refillSpots(area) {
   const want = Math.min(casos.length, area === 'cm' ? 9 : area === 'cir' ? 5 : 4);
   const cand = U.shuffle(casos.filter(sp => !sp.s.active && (sp.s.cd || 0) <= S.playTime));
   for (let k = 0; k < want - active && k < cand.length; k++) activateSpot(cand[k], area);
+  // Modo Vestibulando: cada ala da Clínica Médica (cardio, psiquiatria, reumato...) sempre tem pelo menos um paciente esperando
+  if (area === 'cm' && isVest()) {
+    for (const ala of new Set(casos.map(sp => sp.obj.ala).filter(Boolean))) {
+      const leitos = casos.filter(sp => sp.obj.ala === ala);
+      if (leitos.some(sp => sp.s.active)) continue;
+      const livres = leitos.filter(sp => (sp.s.cd || 0) <= S.playTime);
+      activateSpot(U.pick(livres.length ? livres : leitos), area);
+    }
+  }
   for (const sp of casos) if (!sp.s.look) sp.s.look = randomCivilLook(sp.s.seed, sp.obj.bebe ? 'bebe' : U.pick(['adulto', 'idoso']));
 }
 function pickCase(area, spot) {

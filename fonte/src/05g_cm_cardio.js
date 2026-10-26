@@ -20,7 +20,7 @@ CASO({ id: 'cc_icfer', area: 'cm', ala: 'cardio', dif: 2, tema: 'Insuficiência 
   pista: 'Os quatro pilares do tratamento.',
   dx: ['ICFEr compensada', 'IC com fração de ejeção preservada', 'Cardiomiopatia hipertrófica', 'Pericardite constritiva'],
   edx: 'FE ≤ 40% caracteriza insuficiência cardíaca com fração de ejeção reduzida.',
-  cd: ['Os quatro pilares: INRA, BB, ARM e iSGLT2', 'Manter só enalapril e furosemida, que já compensaram o quadro', 'Digoxina e anlodipino', 'Diltiazem para controlar a frequência'],
+  cd: ['Sacubitril-valsartana, carvedilol, espironolactona e dapagliflozina', 'Manter enalapril e furosemida, que já compensaram o quadro', 'Associar digoxina e anlodipino ao enalapril', 'Trocar o carvedilol por diltiazem para controlar a frequência cardíaca'],
   ecd: 'Quatro classes reduzem mortalidade na ICFEr: inibidor da neprilisina e do receptor de angiotensina (ou iECA/BRA), betabloqueador (carvedilol, bisoprolol, succinato de metoprolol), antagonista mineralocorticoide e inibidor de SGLT2. Diurético é para congestão (sintoma). Diltiazem e verapamil são contraindicados na ICFEr. Trocar enalapril por sacubitril-valsartana exige 36 horas de intervalo.' });
 
 CASO({ id: 'cc_ic_perfil_c', area: 'cm', ala: 'cardio', dif: 3, tema: 'Insuficiência cardíaca', cond: 'IC descompensada perfil C (fria e úmida)', tags: ['cardio', 'choque'],
@@ -34,7 +34,7 @@ CASO({ id: 'cc_ic_perfil_c', area: 'cm', ala: 'cardio', dif: 3, tema: 'Insufici�
   pista: 'Perfusão ruim e congestão ao mesmo tempo.',
   dx: ['IC descompensada perfil C', 'IC perfil B (quente e úmido)', 'IC perfil L (frio e seco)', 'Choque hipovolêmico'],
   edx: 'Pela classificação clínico-hemodinâmica: congestão (úmido) e má perfusão (frio: extremidades frias, hipotensão, lactato alto, lesão renal, sonolência) = perfil C, de pior prognóstico.',
-  cd: ['Dobutamina e diurético venoso', 'Nitroprussiato em dose alta isolado', 'Expansão volêmica de 2 litros', 'Aumentar a dose do betabloqueador'],
+  cd: ['Dobutamina e furosemida venosas', 'Nitroprussiato de sódio em dose alta isolado', 'Soro fisiológico 2.000 mL em bólus', 'Dobrar a dose do carvedilol e restringir sódio'],
   ecd: 'Perfil B: diurético e vasodilatador. Perfil C: inotrópico para melhorar a perfusão e diurético para a congestão (vasodilatador só se PA permitir). Perfil L: volume com cautela. Betabloqueador é reduzido ou suspenso temporariamente no choque.' });
 
 CASO({ id: 'cc_icfep', area: 'cm', ala: 'cardio', dif: 2, tema: 'Insuficiência cardíaca', cond: 'Insuficiência cardíaca com fração de ejeção preservada', tags: ['cardio'],
@@ -48,7 +48,7 @@ CASO({ id: 'cc_icfep', area: 'cm', ala: 'cardio', dif: 2, tema: 'Insuficiência 
   pista: 'Sintomas de IC com FE normal e cardiopatia estrutural.',
   dx: ['IC com fração de ejeção preservada', 'IC com fração de ejeção reduzida', 'Insuficiência venosa crônica isolada', 'Doença pulmonar obstrutiva'],
   edx: 'Sintomas e sinais de IC, FE ≥ 50%, peptídeo natriurético elevado e alteração estrutural (hipertrofia, átrio aumentado, disfunção diastólica): ICFEp, típica de idosas hipertensas, obesas e diabéticas.',
-  cd: ['iSGLT2, diurético e controle da PA', 'Sacubitril-valsartana como única droga com benefício comprovado', 'Digoxina e amiodarona', 'Restrição hídrica isolada'],
+  cd: ['Dapagliflozina, diurético de alça e controle da PA', 'Sacubitril-valsartana como droga única de benefício comprovado', 'Digoxina 0,125 mg/dia e amiodarona', 'Restrição hídrica de 800 mL/dia isolada'],
   ecd: 'Inibidores de SGLT2 reduzem internações na ICFEp. Diurético para congestão, controle rigoroso da hipertensão, da FA (e anticoagulação), do diabetes e da obesidade (agonistas de GLP-1 melhoram sintomas em obesos).' });
 
 /* ---------- Valvopatias ---------- */
@@ -63,7 +63,7 @@ CASO({ id: 'cc_estenose_aortica', area: 'cm', ala: 'cardio', dif: 2, tema: 'Valv
   pista: 'Angina, síncope e dispneia: a tríade dos sintomas.',
   dx: ['Estenose aórtica grave', 'Insuficiência aórtica crônica', 'Cardiomiopatia hipertrófica obstrutiva', 'Estenose mitral'],
   edx: 'Estenose aórtica grave: área < 1 cm², gradiente médio ≥ 40 mmHg. Causa mais comum no idoso: degenerativa calcífica. O surgimento de sintomas (angina, síncope, dispneia) reduz muito a sobrevida.',
-  cd: ['Troca valvar (cirúrgica ou TAVI)', 'Vasodilatador e acompanhamento anual', 'Valvoplastia por balão definitiva', 'Betabloqueador em dose alta'],
+  cd: ['Troca valvar aórtica (cirúrgica ou TAVI)', 'Nitrato e hidralazina com eco anual', 'Valvoplastia aórtica por balão como tratamento definitivo', 'Atenolol 100 mg/dia e reavaliar em 6 meses'],
   ecd: 'Estenose aórtica grave sintomática indica intervenção: troca valvar cirúrgica ou implante transcateter (TAVI), decidido pelo heart team conforme idade e risco. Vasodilatadores podem causar hipotensão grave.' });
 
 CASO({ id: 'cc_insuf_aortica', area: 'cm', ala: 'cardio', dif: 2, tema: 'Valvopatias', cond: 'Insuficiência aórtica crônica grave', tags: ['cardio', 'usg'],
@@ -77,7 +77,7 @@ CASO({ id: 'cc_insuf_aortica', area: 'cm', ala: 'cardio', dif: 2, tema: 'Valvopa
   pista: 'Pressão de pulso alargada e sopro diastólico.',
   dx: ['Insuficiência aórtica crônica grave', 'Estenose aórtica', 'Estenose mitral', 'Persistência do canal arterial'],
   edx: 'Grande volume regurgitado causa hipertrofia excêntrica, pressão de pulso alargada e sinais periféricos (Corrigan, Musset, Müller, Quincke, Duroziez). Sopro diastólico aspirativo em foco aórtico acessório.',
-  cd: ['Troca valvar aórtica', 'Só observar, pois a FE ainda é razoável', 'Valvoplastia por balão', 'Betabloqueador em dose alta'],
+  cd: ['Troca valvar aórtica cirúrgica', 'Nifedipino e eco a cada 12 meses', 'Valvoplastia aórtica por balão', 'Metoprolol em dose alta para reduzir a regurgitação'],
   ecd: 'Indicações de cirurgia na insuficiência aórtica grave: sintomas, FE ≤ 55% (ou ≤ 50%), diâmetro sistólico do VE > 50 mm. Betabloqueador prolonga a diástole e aumenta a regurgitação; vasodilatadores ajudam no controle da PA.' });
 
 CASO({ id: 'cc_estenose_mitral', area: 'cm', ala: 'cardio', dif: 3, tema: 'Valvopatias', cond: 'Estenose mitral reumática com fibrilação atrial', tags: ['cardio', 'usg'],
@@ -91,7 +91,7 @@ CASO({ id: 'cc_estenose_mitral', area: 'cm', ala: 'cardio', dif: 3, tema: 'Valvo
   pista: 'Qual anticoagulante e qual intervenção?',
   dx: ['Estenose mitral reumática com FA', 'Insuficiência mitral por prolapso', 'Mixoma de átrio esquerdo', 'Estenose aórtica'],
   edx: 'Estenose mitral (sequela reumática) com área ≤ 1,5 cm² (grave), fibrilação atrial e sintomas. Anatomia favorável (Wilkins ≤ 8, sem trombo e sem insuficiência importante).',
-  cd: ['Varfarina e valvoplastia por balão', 'Rivaroxabana e observar', 'AAS isolado em dose baixa', 'Troca valvar cirúrgica de urgência sem anticoagular'],
+  cd: ['Varfarina e valvoplastia mitral percutânea por balão', 'Rivaroxabana 20 mg/dia e eco em 1 ano', 'AAS 100 mg/dia e controle da frequência com diltiazem', 'Troca valvar mitral de urgência sem anticoagulação prévia'],
   ecd: 'Na FA com estenose mitral moderada a grave, o anticoagulante é a varfarina (os anticoagulantes diretos não são indicados). Betabloqueador prolonga a diástole. Valvoplastia mitral percutânea por balão é o tratamento de escolha com anatomia favorável; cirurgia se desfavorável.' });
 
 /* ---------- Endocardite ---------- */
@@ -107,7 +107,7 @@ CASO({ id: 'cc_endocardite', area: 'cm', ala: 'cardio', dif: 2, tema: 'Endocardi
   pista: 'Dois critérios maiores de Duke.',
   dx: ['Endocardite infecciosa subaguda', 'Febre reumática aguda', 'Lúpus eritematoso sistêmico', 'Linfoma não Hodgkin'],
   edx: 'Critérios maiores: hemoculturas persistentemente positivas com germe típico e evidência de vegetação. Menores: predisposição, febre, fenômenos vasculares (Janeway) e imunológicos (Osler, Roth, glomerulonefrite). Dois maiores fecham o diagnóstico.',
-  cd: ['Penicilina ou ceftriaxona por 4 semanas', 'Antibiótico oral por 7 dias e retorno', 'Corticoide e anticoagulação plena', 'Aguardar a febre baixar antes de tratar'],
+  cd: ['Penicilina cristalina ou ceftriaxona por 4 semanas', 'Amoxicilina 1 g VO de 8/8 h por 14 dias', 'Vancomicina e gentamicina por 7 dias e alta', 'Troca valvar de urgência antes de iniciar o antibiótico'],
   ecd: 'Estreptococos do grupo viridans sensíveis: penicilina cristalina ou ceftriaxona por 4 semanas (2 semanas em casos selecionados com aminoglicosídeo). O eco transesofágico detecta vegetações pequenas e complicações (abscesso). Na EI aguda, pensar em S. aureus.' });
 
 CASO({ id: 'cc_endocardite_abscesso', area: 'cm', ala: 'cardio', dif: 3, tema: 'Endocardite infecciosa', cond: 'Endocardite com abscesso perivalvar e bloqueio AV total', tags: ['cardio', 'infecto', 'ecg', 'infec'],
@@ -121,7 +121,7 @@ CASO({ id: 'cc_endocardite_abscesso', area: 'cm', ala: 'cardio', dif: 3, tema: '
   pista: 'Ondas P e complexos QRS sem relação entre si.',
   dx: ['BAV total por abscesso perivalvar', 'Intoxicação digitálica', 'Bradicardia sinusal por vancomicina', 'Hipercalemia'],
   edx: 'O ECG mostra dissociação atrioventricular (bloqueio AV total). Novo distúrbio de condução na endocardite sugere extensão perivalvar (abscesso), uma indicação cirúrgica.',
-  cd: ['Marca-passo temporário e cirurgia', 'Trocar o antibiótico e observar na enfermaria', 'Atropina e alta da UTI', 'Suspender o antibiótico'],
+  cd: ['Marca-passo provisório e cirurgia valvar na fase ativa', 'Trocar o antibiótico e completar 6 semanas na enfermaria', 'Atropina e isoproterenol até o ritmo voltar', 'Implante de marca-passo definitivo e manter o antibiótico'],
   ecd: 'Indicações cirúrgicas na fase ativa: insuficiência cardíaca por disfunção valvar, infecção não controlada (abscesso, bloqueios, fístulas, febre persistente, germes difíceis como fungos), prevenção de embolia (vegetações > 10 mm com embolia ou > 15-30 mm).' });
 
 CASO({ id: 'cc_endocardite_tricuspide', area: 'cm', ala: 'cardio', dif: 2, tema: 'Endocardite infecciosa', cond: 'Endocardite tricúspide em usuário de drogas injetáveis', tags: ['cardio', 'infecto', 'pneumo', 'infec'],
@@ -136,7 +136,7 @@ CASO({ id: 'cc_endocardite_tricuspide', area: 'cm', ala: 'cardio', dif: 2, tema:
   pista: 'Lado direito, êmbolos para o pulmão.',
   dx: ['Endocardite tricúspide', 'Tuberculose pulmonar', 'Pneumonia comunitária comum', 'Granulomatose com poliangiite'],
   edx: 'Em usuários de drogas injetáveis, a endocardite costuma acometer a tricúspide, por S. aureus, com embolia séptica pulmonar (nódulos escavados).',
-  cd: ['Oxacilina venosa prolongada', 'Cirurgia valvar imediata em todos os casos', 'Amoxicilina oral por 7 dias', 'Anticoagulação plena'],
+  cd: ['Oxacilina venosa por 4 a 6 semanas', 'Troca da valva tricúspide de imediato', 'Cefalexina VO por 14 dias e alta', 'Heparina plena pelos êmbolos pulmonares sépticos'],
   ecd: 'Antibiótico venoso prolongado (oxacilina para MSSA). Cirurgia em casos selecionados (vegetação > 20 mm persistente, insuficiência cardíaca direita refratária, infecção não controlada). Abordar o uso de drogas.' });
 
 CASO({ id: 'cc_profilaxia_ei', area: 'cm', ala: 'cardio', dif: 1, tema: 'Endocardite infecciosa', cond: 'Profilaxia de endocardite antes de procedimento odontológico', tags: ['cardio'],
@@ -149,7 +149,7 @@ CASO({ id: 'cc_profilaxia_ei', area: 'cm', ala: 'cardio', dif: 1, tema: 'Endocar
   pista: 'Prótese valvar é condição de alto risco.',
   dx: ['Paciente de alto risco para endocardite', 'Paciente de baixo risco, sem indicação', 'Contraindicação ao procedimento dentário', 'Endocardite ativa'],
   edx: 'Alto risco: prótese valvar ou material protético de reparo, endocardite prévia, cardiopatia congênita cianótica não corrigida ou com shunt residual, transplante cardíaco com valvopatia. Procedimentos de risco: dentários com manipulação gengival ou periapical, ou perfuração da mucosa.',
-  cd: ['Amoxicilina 2 g VO 30 a 60 min antes', 'Antibiótico por 7 dias após a extração', 'Não precisa de profilaxia', 'Suspender a extração definitivamente'],
+  cd: ['Amoxicilina 2 g VO, 30 a 60 minutos antes', 'Amoxicilina 500 mg de 8/8 h por 7 dias após a extração', 'Não há indicação de profilaxia', 'Clindamicina 600 mg VO após a extração'],
   ecd: 'Dose única antes do procedimento (alérgicos: azitromicina ou claritromicina, doxiciclina). Prolapso mitral sem prótese, sopro inocente e marca-passo não têm indicação. Boa higiene oral é a principal prevenção.' });
 
 /* ---------- Febre reumática ---------- */
@@ -165,7 +165,7 @@ CASO({ id: 'cc_febre_reumatica', area: 'cm', ala: 'cardio', dif: 2, tema: 'Febre
   pista: 'Critérios de Jones e prova de estreptococo recente.',
   dx: ['Febre reumática com cardite', 'Artrite reativa', 'Artrite idiopática juvenil', 'Endocardite infecciosa'],
   edx: 'Critérios maiores: poliartrite migratória e cardite (sopro mitral novo); menores: febre, provas inflamatórias, PR longo. Com evidência de infecção estreptocócica (ASLO), dois maiores fecham o diagnóstico.',
-  cd: ['Benzatina, anti-inflamatório e prednisona', 'Antibiótico oral por 3 dias', 'Só AINE, sem penicilina', 'Cirurgia mitral imediata'],
+  cd: ['Penicilina benzatina, AAS e prednisona 1-2 mg/kg/dia', 'Amoxicilina por 10 dias e naproxeno, sem corticoide', 'Naproxeno isolado, sem penicilina, até a VHS normalizar', 'Plastia mitral na fase aguda'],
   ecd: 'Erradicar o estreptococo (penicilina benzatina), AAS ou naproxeno para a artrite e prednisona na cardite moderada a grave. Profilaxia secundária com benzatina a cada 21 dias: sem cardite até 21 anos ou 5 anos após o surto; cardite curada até 25 anos ou 10 anos; lesão residual até 40 anos ou por toda a vida.' });
 
 CASO({ id: 'cc_coreia_sydenham', area: 'ped', dif: 2, tema: 'Febre reumática', cond: 'Coreia de Sydenham', tags: ['neuro', 'reumato'],
@@ -179,7 +179,7 @@ CASO({ id: 'cc_coreia_sydenham', area: 'ped', dif: 2, tema: 'Febre reumática', 
   pista: 'Manifestação tardia, que basta sozinha para o diagnóstico.',
   dx: ['Coreia de Sydenham', 'Transtorno de tique', 'Doença de Wilson', 'Lúpus com coreia'],
   edx: 'A coreia é manifestação tardia (meses após a faringite), quando as provas inflamatórias e a ASLO podem estar normais. Isoladamente, é suficiente para o diagnóstico de febre reumática, após afastar outras causas.',
-  cd: ['Sintomático e profilaxia com benzatina', 'Antibiótico por 10 dias apenas', 'Corticoide em pulso', 'Só observar, sem profilaxia'],
+  cd: ['Haloperidol e penicilina benzatina a cada 21 dias', 'Amoxicilina por 10 dias, sem profilaxia secundária', 'Metilprednisolona 1 g/dia por 3 dias', 'Observar, pois a coreia é autolimitada'],
   ecd: 'Tratamento sintomático (valproato, carbamazepina ou haloperidol) e profilaxia secundária com penicilina benzatina, pois o risco de cardite futura é alto. Ecocardiograma para cardite subclínica.' });
 
 /* ---------- Hipertensão arterial ---------- */
@@ -194,7 +194,7 @@ CASO({ id: 'cc_has_diagnostico', area: 'cm', ala: 'cardio', dif: 1, tema: 'Hiper
   pista: 'Estágio 1, baixo risco: confirmar fora do consultório.',
   dx: ['Suspeita de hipertensão estágio 1', 'Hipertensão estágio 3', 'Emergência hipertensiva', 'Pressão normal'],
   edx: 'PA 140-159 x 90-99 no consultório: estágio 1. Recomenda-se confirmar com medidas fora do consultório (MAPA ou MRPA), que também identificam hipertensão do avental branco e mascarada.',
-  cd: ['MAPA ou MRPA e estilo de vida', 'Três anti-hipertensivos já em dose plena', 'Internar para investigar causa secundária', 'Repetir a medida só em 5 anos'],
+  cd: ['MAPA ou MRPA e mudanças no estilo de vida', 'Losartana, anlodipino e clortalidona já em dose plena', 'Internar para rastrear hipertensão secundária', 'Repetir a medida no consultório em 5 anos'],
   ecd: 'Mudanças de estilo de vida: perda de peso, dieta DASH, menos sódio, mais potássio (com cuidado em renais), atividade física, menos álcool. Pela Diretriz Brasileira de 2025, a meta para a maioria dos hipertensos é < 130 x 80 mmHg. Exames iniciais incluem albuminúria.' });
 
 CASO({ id: 'cc_has_combinacao', area: 'cm', ala: 'cardio', dif: 2, tema: 'Hipertensão arterial', cond: 'Hipertensão em diabético: terapia combinada inicial', tags: ['cardio', 'endocrino'],
@@ -208,7 +208,7 @@ CASO({ id: 'cc_has_combinacao', area: 'cm', ala: 'cardio', dif: 2, tema: 'Hipert
   pista: 'Alto risco (diabetes com albuminúria) e PA acima de 150/90.',
   dx: ['Hipertensão estágio 1 de alto risco', 'Hipertensão secundária a feocromocitoma', 'Pressão normal-alta', 'Hipertensão do avental branco'],
   edx: 'Diabética com albuminúria (lesão de órgão-alvo) e PA elevada: alto risco cardiovascular.',
-  cd: ['iECA com anlodipino em dose baixa', 'Monoterapia com hidroclorotiazida e reavaliar em 1 ano', 'Betabloqueador como primeira escolha', 'Só dieta por 6 meses'],
+  cd: ['Enalapril e anlodipino em dose baixa', 'Hidroclorotiazida 25 mg isolada e reavaliar em 1 ano', 'Atenolol 50 mg/dia como primeira escolha', 'Dieta DASH por 6 meses antes de medicar'],
   ecd: 'A maioria dos hipertensos deve iniciar com combinação de duas classes, preferencialmente em comprimido único (iECA ou BRA com bloqueador de canal de cálcio ou tiazídico). Em diabéticos com albuminúria, o bloqueio do sistema renina-angiotensina é obrigatório. Nunca associar iECA com BRA.' });
 
 CASO({ id: 'cc_has_resistente', area: 'cm', ala: 'cardio', dif: 3, tema: 'Hipertensão arterial', cond: 'Hipertensão resistente: quarta droga', tags: ['cardio'],
@@ -222,7 +222,7 @@ CASO({ id: 'cc_has_resistente', area: 'cm', ala: 'cardio', dif: 3, tema: 'Hipert
   pista: 'Três drogas em dose plena, incluindo diurético, com adesão confirmada.',
   dx: ['Hipertensão resistente', 'Pseudo-resistência por má adesão', 'Hipertensão do avental branco', 'Hipertensão controlada'],
   edx: 'PA fora da meta com três classes em doses ótimas, incluindo diurético, com adesão e técnica confirmadas e MAPA: hipertensão resistente. Investigar causas secundárias (apneia do sono, hiperaldosteronismo, doença renal) e drogas (AINE, descongestionantes).',
-  cd: ['Associar espironolactona', 'Trocar todas as drogas por betabloqueador', 'Associar enalapril à losartana para duplo bloqueio', 'Suspender o diurético'],
+  cd: ['Associar espironolactona 25 mg/dia', 'Trocar todas as drogas por atenolol em dose plena', 'Associar enalapril à losartana (duplo bloqueio)', 'Suspender a clortalidona e associar metildopa'],
   ecd: 'A quarta droga de escolha é a espironolactona (estudo PATHWAY-2). Em seguida, betabloqueador, alfabloqueador ou simpatolíticos centrais. Polissonografia e CPAP na apneia obstrutiva do sono.' });
 
 CASO({ id: 'cc_tosse_ieca', area: 'cm', ala: 'cardio', dif: 1, tema: 'Hipertensão arterial', cond: 'Tosse seca por inibidor da ECA', tags: ['cardio', 'pneumo'],
@@ -235,7 +235,7 @@ CASO({ id: 'cc_tosse_ieca', area: 'cm', ala: 'cardio', dif: 1, tema: 'Hipertens�
   pista: 'Relação temporal com o medicamento.',
   dx: ['Tosse pelo enalapril', 'Asma variante tosse', 'Doença do refluxo gastroesofágico', 'Tuberculose pulmonar'],
   edx: 'A tosse seca ocorre em cerca de 10% dos usuários de iECA, pelo acúmulo de bradicinina.',
-  cd: ['Trocar por losartana', 'Codeína e manter o enalapril', 'Corticoide inalatório em dose alta', 'Omeprazol em dose dobrada'],
+  cd: ['Trocar o enalapril por losartana', 'Codeína e manter o enalapril', 'Budesonida inalatória em dose alta', 'Omeprazol 40 mg/dia e manter o enalapril'],
   ecd: 'Os BRA não aumentam a bradicinina e raramente causam tosse. A tosse desaparece em 1 a 4 semanas (às vezes até 3 meses) após suspender o iECA. Angioedema também é efeito da bradicinina e contraindica o iECA.' });
 
 /* ---------- Fibrilação atrial (ambulatorial) ---------- */
@@ -251,5 +251,5 @@ CASO({ id: 'cc_fa_anticoag', area: 'cm', ala: 'cardio', dif: 2, tema: 'Arritmias
   pista: 'Calcule o escore: idade, hipertensão, diabetes.',
   dx: ['FA com alto risco embólico', 'FA de baixo risco embólico', 'Flutter atrial com bloqueio variável', 'Taquicardia atrial multifocal'],
   edx: 'CHA₂DS₂-VASc: IC (1), hipertensão (1), idade ≥ 75 (2), diabetes (1), AVC/AIT (2), doença vascular (1), idade 65-74 (1), sexo feminino (1). Aqui: hipertensão 1 + idade 2 + diabetes 1 = 4.',
-  cd: ['Anticoagulante oral direto', 'AAS 100 mg ao dia', 'Nenhuma profilaxia antitrombótica', 'Clopidogrel associado ao AAS'],
+  cd: ['Apixabana 5 mg de 12/12 h', 'AAS 100 mg ao dia', 'Nenhuma profilaxia antitrombótica', 'Clopidogrel 75 mg associado ao AAS'],
   ecd: 'Anticoagular homens com escore ≥ 2 e mulheres com ≥ 3 (considerar com 1 e 2, respectivamente). Anticoagulantes diretos (apixabana, rivaroxabana, dabigatrana, edoxabana) são preferidos à varfarina, exceto em estenose mitral moderada/grave e prótese mecânica. AAS não é alternativa. Avaliar risco de sangramento (HAS-BLED) para corrigir fatores, não para negar anticoagulação.' });

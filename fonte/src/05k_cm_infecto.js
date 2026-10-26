@@ -21,7 +21,7 @@ CASO({ id: 'ci_meningite_pneumo', area: 'cm', ala: 'infecto', dif: 2, tema: 'Men
   pista: 'Líquor bacteriano e foco otológico.',
   dx: ['Meningite pneumocócica', 'Meningite viral', 'Meningite tuberculosa', 'Hemorragia subaracnóidea'],
   edx: 'Líquor com pleocitose neutrofílica, proteína alta e glicose muito baixa: meningite bacteriana. Diplococos gram-positivos e foco otológico: pneumococo, principal agente em adultos.',
-  cd: ['Dexametasona e ceftriaxona', 'Aciclovir isolado em dose plena', 'Aguardar a cultura para iniciar o antibiótico', 'Penicilina benzatina IM'],
+  cd: ['Dexametasona 10 mg EV antes da ceftriaxona 2 g de 12/12 h', 'Aciclovir 10 mg/kg EV de 8/8 h isolado até o resultado da PCR', 'Aguardar o resultado da cultura do líquor para iniciar o antibiótico', 'Penicilina benzatina 2,4 milhões UI IM em dose única'],
   ecd: 'Dexametasona 10 mg de 6/6 horas por 4 dias, iniciada antes ou junto com a primeira dose do antibiótico, reduz mortalidade e sequelas (principalmente surdez) na pneumocócica. Vancomicina associada onde há pneumococo resistente. Notificação compulsória.' });
 
 CASO({ id: 'ci_meningite_idoso', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meningite bacteriana', cond: 'Suspeita de meningite em idoso com sinal focal (antibiótico antes da tomografia)', tags: ['infecto', 'neuro', 'infec'],
@@ -34,7 +34,7 @@ CASO({ id: 'ci_meningite_idoso', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meni
   pista: 'Crise convulsiva e déficit focal: TC antes da punção. E o antibiótico?',
   dx: ['Meningite: TC antes da punção', 'AVC isquêmico isolado', 'Encefalopatia urêmica', 'Delirium por infecção urinária'],
   edx: 'Indicações de TC antes da punção: déficit focal, convulsão recente, papiledema, rebaixamento importante, imunossupressão, lesão prévia do SNC. Acima de 50 anos, imunossuprimidos e etilistas têm risco de Listeria monocytogenes.',
-  cd: ['Antibiótico com ampicilina antes da TC', 'TC primeiro e antibiótico só após o resultado da punção lombar', 'Punção lombar imediata sem imagem', 'Só antibiótico oral'],
+  cd: ['Hemoculturas, ceftriaxona + ampicilina e depois TC', 'TC de crânio primeiro e antibiótico só após a punção lombar', 'Punção lombar imediata, sem imagem e sem antibiótico prévio', 'Ceftriaxona isolada após a TC de crânio e o líquor'],
   ecd: 'O antibiótico não pode esperar a tomografia: colhem-se hemoculturas e inicia-se o tratamento empírico. Acima de 50 anos ou imunossuprimidos: ceftriaxona com ampicilina (Listeria), com ou sem vancomicina.' });
 
 CASO({ id: 'ci_meningococcemia', area: 'cm', ala: 'infecto', dif: 2, tema: 'Meningite bacteriana', cond: 'Doença meningocócica (meningococcemia)', tags: ['infecto', 'sepse', 'choque', 'infec'],
@@ -47,7 +47,7 @@ CASO({ id: 'ci_meningococcemia', area: 'cm', ala: 'infecto', dif: 2, tema: 'Meni
   pista: 'Púrpura de evolução rápida e choque.',
   dx: ['Meningococcemia com choque', 'Dengue grave', 'Púrpura trombocitopênica imune', 'Vasculite por IgA'],
   edx: 'Febre e púrpura de progressão rápida com choque em jovem: doença meningocócica (Neisseria meningitidis), com ou sem meningite. Pode evoluir para púrpura fulminans e insuficiência adrenal (Waterhouse-Friderichsen).',
-  cd: ['Ceftriaxona já e profilaxia dos contatos', 'Punção lombar antes de qualquer antibiótico', 'Antitérmico e observação', 'Corticoide isolado'],
+  cd: ['Ceftriaxona já e rifampicina para os contatos íntimos', 'Punção lombar antes de qualquer dose de antibiótico, para não negativar a cultura', 'Dipirona, hidratação e observação por 6 horas', 'Hidrocortisona isolada para a púrpura fulminante'],
   ecd: 'Antibiótico na primeira hora, mesmo antes de exames. Precaução por gotículas nas primeiras 24 horas. Notificação imediata. Quimioprofilaxia dos contatos íntimos (domiciliares, república, beijo) com rifampicina (ou ciprofloxacino dose única, ou ceftriaxona IM).' });
 
 CASO({ id: 'ci_meningite_tb', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meningite bacteriana', cond: 'Meningite tuberculosa', tags: ['infecto', 'neuro', 'infec'],
@@ -62,7 +62,7 @@ CASO({ id: 'ci_meningite_tb', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meningi
   pista: 'Subagudo, nervos cranianos, líquor linfocítico com glicose baixa.',
   dx: ['Meningite tuberculosa', 'Meningite viral', 'Meningite pneumocócica', 'Meningite criptocócica'],
   edx: 'Curso subagudo, acometimento de nervos cranianos (meningite basal), hidrocefalia, hiponatremia e líquor com linfócitos, proteína muito alta e glicose baixa.',
-  cd: ['RIPE por 12 meses e corticoide', 'Ceftriaxona por 10 dias', 'Aciclovir venoso', 'RIPE por 6 meses sem corticoide'],
+  cd: ['RIPE por 2 meses + RI por 10 meses e dexametasona', 'Ceftriaxona 2 g de 12/12 h por 10 a 14 dias', 'Aciclovir venoso por 21 dias pela linfocitose', 'RIPE por 6 meses sem corticoide, como na forma pulmonar'],
   ecd: 'Esquema: 2 meses de RIPE e 10 meses de rifampicina com isoniazida, associado a corticoide (dexametasona ou prednisona) por 4 a 8 semanas, que reduz mortalidade. Avaliar derivação se hidrocefalia sintomática. Na coinfecção com HIV, a TARV é iniciada após 4 a 8 semanas.' });
 
 CASO({ id: 'ci_encefalite_herpetica', area: 'cm', ala: 'infecto', dif: 3, tema: 'Meningite bacteriana', cond: 'Encefalite herpética', tags: ['infecto', 'neuro', 'infec'],
@@ -77,7 +77,7 @@ CASO({ id: 'ci_encefalite_herpetica', area: 'cm', ala: 'infecto', dif: 3, tema: 
   pista: 'Lobo temporal, comportamento e convulsões.',
   dx: ['Encefalite por herpes simples', 'Meningite bacteriana', 'Delirium alcoólico', 'Esquizofrenia de início tardio'],
   edx: 'Encefalite (febre, alteração do comportamento e da consciência, convulsões, déficit focal) com predileção pelos lobos temporais e líquor linfocítico com hemácias: HSV-1, principal causa de encefalite esporádica.',
-  cd: ['Aciclovir IV já', 'Esperar o resultado da PCR para tratar', 'Ceftriaxona isolada', 'Haloperidol e alta'],
+  cd: ['Aciclovir 10 mg/kg EV de 8/8 h já', 'Aguardar a PCR do líquor para iniciar o antiviral', 'Ceftriaxona 2 g de 12/12 h isolada', 'Haloperidol para a agitação e alta com retorno'],
   ecd: 'Iniciar aciclovir na suspeita (mortalidade de 70% sem tratamento), por 14 a 21 dias. Controle das crises. Sequelas cognitivas são comuns; encefalite autoimune anti-NMDA pode ocorrer depois.' });
 
 /* ---------- HIV/aids ---------- */
@@ -92,7 +92,7 @@ CASO({ id: 'ci_hiv_inicio', area: 'cm', ala: 'infecto', dif: 2, tema: 'HIV/aids'
   pista: 'Quando começar? Com qual esquema?',
   dx: ['HIV assintomático', 'Aids com imunossupressão grave', 'Falso-positivo do teste rápido', 'Infecção aguda pelo HIV'],
   edx: 'Dois testes rápidos reagentes confirmam o diagnóstico. CD4 > 350 e assintomático: infecção crônica pelo HIV sem imunossupressão importante.',
-  cd: ['TARV já (TDF, 3TC e DTG)', 'Esperar o CD4 cair abaixo de 200', 'Só profilaxias, sem TARV', 'Monoterapia com dolutegravir'],
+  cd: ['TARV já com tenofovir, lamivudina e dolutegravir', 'Esperar o CD4 cair abaixo de 200 para iniciar a TARV', 'Só profilaxia com sulfametoxazol-trimetoprima, sem TARV', 'Dolutegravir em monoterapia para reduzir efeitos adversos'],
   ecd: 'O PCDT recomenda TARV imediata para todas as pessoas vivendo com HIV, independentemente do CD4 (benefício individual e indetectável = intransmissível). Esquema preferencial: TDF + 3TC + DTG. Rastrear TB, hepatites, sífilis e vacinar.' });
 
 CASO({ id: 'ci_neurotoxo', area: 'cm', ala: 'infecto', dif: 3, tema: 'HIV/aids', cond: 'Neurotoxoplasmose na aids', tags: ['infecto', 'neuro', 'infec'],
@@ -107,7 +107,7 @@ CASO({ id: 'ci_neurotoxo', area: 'cm', ala: 'infecto', dif: 3, tema: 'HIV/aids',
   pista: 'CD4 < 100, IgG positivo e lesões com realce em anel.',
   dx: ['Neurotoxoplasmose', 'Linfoma primário do SNC', 'Meningite criptocócica', 'Leucoencefalopatia multifocal progressiva'],
   edx: 'Lesão expansiva mais comum na aids: múltiplas lesões com realce anelar e edema, em núcleos da base, com CD4 < 100 e IgG positivo. Diagnóstico pela resposta ao tratamento empírico em 10 a 14 dias.',
-  cd: ['Sulfadiazina, pirimetamina e folínico', 'Biópsia cerebral antes de qualquer tratamento', 'Anfotericina B', 'Radioterapia de crânio'],
+  cd: ['Sulfadiazina, pirimetamina e ácido folínico por 6 semanas', 'Biópsia cerebral estereotáxica antes de qualquer tratamento', 'Anfotericina B lipossomal e fluconazol', 'Radioterapia de crânio total e dexametasona'],
   ecd: 'Tratamento por 6 semanas, depois profilaxia secundária até CD4 > 200 por 6 meses com TARV. Sem melhora clínico-radiológica em 2 semanas: pensar em linfoma primário do SNC (lesão única, periventricular, EBV no líquor) e considerar biópsia. Profilaxia primária com sulfametoxazol-trimetoprima se CD4 < 100 e IgG positivo.' });
 
 CASO({ id: 'ci_criptococose', area: 'cm', ala: 'infecto', dif: 3, tema: 'HIV/aids', cond: 'Meningite criptocócica na aids', tags: ['infecto', 'neuro', 'infec'],
@@ -121,7 +121,7 @@ CASO({ id: 'ci_criptococose', area: 'cm', ala: 'infecto', dif: 3, tema: 'HIV/aid
   pista: 'Pressão de abertura muito alta e tinta da China positiva.',
   dx: ['Meningite criptocócica', 'Neurotoxoplasmose', 'Meningite tuberculosa', 'Meningite viral'],
   edx: 'Infecção oportunista com CD4 < 100: cefaleia subaguda, hipertensão intracraniana e pouca inflamação no líquor. Tinta da China e antígeno criptocócico confirmam.',
-  cd: ['Anfotericina e flucitosina, punções de alívio', 'TARV imediata no mesmo dia', 'Acetazolamida e manitol para a pressão', 'Fluconazol oral em baixa dose e alta'],
+  cd: ['Anfotericina B + flucitosina e punções lombares de alívio', 'TARV no mesmo dia e fluconazol oral', 'Acetazolamida e manitol para controlar a pressão intracraniana', 'Fluconazol 200 mg/dia VO e alta com retorno'],
   ecd: 'Indução com anfotericina B (preferencialmente lipossomal) e flucitosina por 1-2 semanas, depois fluconazol. Punções lombares de alívio diárias até pressão < 20 cmH₂O (acetazolamida, manitol e corticoide não ajudam). TARV precoce aumenta mortalidade: iniciar após 4 a 6 semanas.' });
 
 CASO({ id: 'ci_pep', area: 'cm', ala: 'infecto', dif: 1, tema: 'HIV/aids', cond: 'Profilaxia pós-exposição ao HIV', tags: ['infecto', 'infec'],
@@ -135,7 +135,7 @@ CASO({ id: 'ci_pep', area: 'cm', ala: 'infecto', dif: 1, tema: 'HIV/aids', cond:
   pista: 'Dentro de 72 horas.',
   dx: ['Exposição de risco ao HIV', 'Infecção aguda pelo HIV', 'Sem risco de transmissão', 'Infecção crônica pelo HIV'],
   edx: 'Exposição sexual desprotegida com pessoa de status desconhecido, com teste do exposto não reagente: indicação de PEP.',
-  cd: ['PEP por 28 dias', 'Esperar 3 meses para testar', 'Dose única de antirretroviral', 'Só vacinar contra hepatite B'],
+  cd: ['Tenofovir, lamivudina e dolutegravir por 28 dias', 'Esperar 3 meses e testar antes de qualquer medicação', 'Dose única de tenofovir com lamivudina', 'Só vacinar contra hepatite B e testar em 30 dias'],
   ecd: 'PEP deve ser iniciada o quanto antes (idealmente nas primeiras 2 horas e no máximo até 72 horas), com tenofovir, lamivudina e dolutegravir por 28 dias. Testagem para HIV em 30 e 90 dias, avaliação de IST, contracepção de emergência quando aplicável, vacinação para hepatite B. Encaminhar para PrEP.' });
 
 /* ---------- Arboviroses e febres hemorrágicas ---------- */
@@ -150,7 +150,7 @@ CASO({ id: 'ci_dengue_hepatite', area: 'cm', ala: 'infecto', dif: 3, tema: 'Deng
   pista: 'Sem choque, mas com disfunção grave de órgão: também é dengue grave.',
   dx: ['Dengue grave com hepatite', 'Dengue com sinais de alarme', 'Hepatite A aguda', 'Leptospirose (síndrome de Weil)'],
   edx: 'Dengue grave inclui: choque ou extravasamento grave, sangramento grave, ou comprometimento grave de órgão (TGO ou TGP ≥ 1.000, alteração de consciência, miocardite, insuficiência renal). O paracetamol em dose alta soma hepatotoxicidade.',
-  cd: ['UTI e suspender o paracetamol', 'Corticoide em pulso venoso', 'Transfusão profilática de plaquetas', 'Alta com hidratação oral'],
+  cd: ['UTI, reposição guiada e suspender o paracetamol', 'Metilprednisolona 1 g/dia em pulso venoso', 'Transfusão profilática de plaquetas e vitamina K venosa', 'Alta com hidratação oral e retorno em 24 h'],
   ecd: 'Grupo D: leito de terapia intensiva, reposição volêmica guiada, correção de hipoglicemia e coagulopatia, vigilância de encefalopatia. Paracetamol limitado a 3 g/dia (evitar na hepatite grave); N-acetilcisteína é usada na lesão hepática grave. Plaquetas só com sangramento ativo. Notificação imediata.' });
 
 CASO({ id: 'ci_dengue_c', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', cond: 'Dengue com sinais de alarme (grupo C)', tags: ['infecto', 'hidrat', 'infec'],
@@ -165,7 +165,7 @@ CASO({ id: 'ci_dengue_c', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', co
   pista: 'Sem melhora após a primeira expansão, mas ainda sem choque.',
   dx: ['Grupo C sem melhora', 'Dengue grupo B', 'Dengue grave com choque', 'Apendicite aguda'],
   edx: 'Sinais de alarme: dor abdominal intensa e contínua, vômitos persistentes, acúmulo de líquidos, hipotensão postural, hepatomegalia > 2 cm, sangramento de mucosa, letargia, aumento progressivo do hematócrito.',
-  cd: ['Repetir SF 10 mL/kg', 'Trocar por hidratação oral', 'Transfusão de plaquetas', 'Corticoide venoso em pulso'],
+  cd: ['Repetir SF 10 mL/kg em 1 h e reavaliar o hematócrito', 'Trocar para hidratação oral de 60 mL/kg/dia e alta com retorno', 'Transfusão de plaquetas pela plaquetopenia', 'Metilprednisolona em pulso venoso'],
   ecd: 'Grupo C: cristaloide 10 mL/kg na primeira hora, reavaliando sinais vitais, diurese e hematócrito após cada etapa; sem melhora, repetir até 3 vezes. Com melhora, manutenção (25 mL/kg em 6 h, depois 25 mL/kg em 8 h). Se não houver resposta após 3 etapas ou surgir choque, conduzir como grupo D. Plaquetopenia isolada sem sangramento importante não indica transfusão.' });
 
 CASO({ id: 'ci_dengue_d', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', cond: 'Dengue grave com choque (grupo D)', tags: ['infecto', 'choque', 'hidrat', 'infec'],
@@ -179,7 +179,7 @@ CASO({ id: 'ci_dengue_d', area: 'cm', ala: 'infecto', dif: 3, tema: 'Dengue', co
   pista: 'Pressão de pulso ≤ 20 mmHg e má perfusão.',
   dx: ['Dengue grave com choque', 'Dengue com sinais de alarme', 'Choque séptico bacteriano', 'Choque cardiogênico'],
   edx: 'Choque por extravasamento plasmático: pressão convergente (diferencial ≤ 20 mmHg), taquicardia, má perfusão, hematócrito muito elevado.',
-  cd: ['SF 20 mL/kg em 20 min, até 3 vezes, e UTI', 'Restrição hídrica e diurético', 'Transfusão de plaquetas como primeira medida', 'Hidratação oral supervisionada'],
+  cd: ['SF 20 mL/kg em 20 min, até 3 vezes, e UTI', 'Restrição hídrica e furosemida pelo derrame pleural', 'Transfusão de plaquetas como primeira medida', 'Hidratação oral supervisionada de 80 mL/kg/dia'],
   ecd: 'Expansão rápida com cristaloide 20 mL/kg em até 20 minutos, repetida até 3 vezes; sem melhora, considerar albumina, hemorragia oculta (hematócrito caindo) e drogas vasoativas. Após estabilizar, reduzir o volume (risco de sobrecarga na fase de reabsorção).' });
 
 CASO({ id: 'ci_chikungunya', area: 'cm', ala: 'infecto', dif: 3, tema: 'Arboviroses', cond: 'Chikungunya atípica grave com encefalite em idosa', tags: ['infecto', 'neuro', 'nefro', 'infec'],
@@ -193,7 +193,7 @@ CASO({ id: 'ci_chikungunya', area: 'cm', ala: 'infecto', dif: 3, tema: 'Arboviro
   pista: 'Idosa com comorbidades e manifestação neurológica: forma atípica, internação.',
   dx: ['Chikungunya atípica', 'Dengue com sinais de alarme', 'Meningite bacteriana', 'Artrite séptica poliarticular'],
   edx: 'Formas atípicas e graves da chikungunya (encefalite, miocardite, nefrite, descompensação de doenças de base) predominam em idosos, pessoas com comorbidades e neonatos expostos no parto. Grupos de risco devem ser internados.',
-  cd: ['Internar e suspender IECA e diurético', 'Corticoide em pulso', 'AINE em dose plena para a artrite', 'Aciclovir e alta precoce'],
+  cd: ['Internar e suspender o enalapril e a hidroclorotiazida', 'Metilprednisolona 1 g/dia em pulso por 3 dias', 'Ibuprofeno 600 mg de 8/8 h para a artrite e alta para casa', 'Aciclovir EV e alta precoce para o domicílio'],
   ecd: 'Não há antiviral: suporte com hidratação ajustada à cardiopatia, controle glicêmico, ajuste ou suspensão de nefrotóxicos e anti-hipertensivos, analgesia com dipirona ou paracetamol (AINE contraindicado na fase aguda, na lesão renal e até excluir dengue). Notificação. Fases subaguda e crônica: AINE, corticoide, hidroxicloroquina, metotrexato.' });
 
 CASO({ id: 'ci_zika', area: 'cm', ala: 'infecto', dif: 3, tema: 'Arboviroses', cond: 'Síndrome congênita do zika suspeita no pré-natal', tags: ['infecto', 'obst', 'usg', 'infec'],
@@ -208,7 +208,7 @@ CASO({ id: 'ci_zika', area: 'cm', ala: 'infecto', dif: 3, tema: 'Arboviroses', c
   pista: 'Exantema no primeiro trimestre e microcefalia com calcificações subcorticais.',
   dx: ['Síndrome congênita do zika', 'Toxoplasmose congênita', 'Citomegalovirose congênita', 'Microcefalia familiar benigna'],
   edx: 'A infecção pelo zika no primeiro trimestre causa microcefalia grave, calcificações subcorticais, ventriculomegalia, alterações oculares e artrogripose. Na CMV as calcificações são periventriculares; na toxoplasmose, difusas, com hidrocefalia.',
-  cd: ['Pré-natal de alto risco e notificar', 'Interromper a gestação na mesma semana', 'Antiviral específico para o feto', 'Cesárea imediata às 28 semanas'],
+  cd: ['Pré-natal de alto risco, medicina fetal e notificação', 'Interrupção da gestação na mesma semana', 'Antiviral específico por via materna para tratar o feto infectado', 'Cesárea eletiva imediata com 28 semanas'],
   ecd: 'Notificação, acompanhamento em medicina fetal, apoio psicológico, via de parto por indicação obstétrica em hospital com neonatologia. O RN deve ter medida do perímetro cefálico, exames de imagem, fundo de olho, avaliação auditiva e estimulação precoce. Prevenção: repelente, telas, preservativo na gestação.' });
 
 CASO({ id: 'ci_febre_amarela', area: 'cm', ala: 'infecto', dif: 3, tema: 'Febre amarela', cond: 'Febre amarela grave', tags: ['infecto', 'hepato', 'nefro', 'infec'],
@@ -222,7 +222,7 @@ CASO({ id: 'ci_febre_amarela', area: 'cm', ala: 'infecto', dif: 3, tema: 'Febre 
   pista: 'Fase de intoxicação após o período de remissão.',
   dx: ['Febre amarela grave', 'Leptospirose', 'Hepatite A fulminante', 'Malária grave'],
   edx: 'Febre amarela silvestre: fase de infecção, remissão e fase de intoxicação (icterícia, hemorragias, insuficiência renal). Sinal de Faget, transaminases muito altas com TGO > TGP. Notificação imediata.',
-  cd: ['Suporte em UTI e notificação', 'Penicilina cristalina', 'Vacina contra febre amarela agora', 'AAS para a febre'],
+  cd: ['Suporte em UTI e notificação imediata', 'Penicilina cristalina 4 milhões UI de 4/4 h', 'Vacina contra febre amarela agora', 'AAS 500 mg para a febre e hidratação oral'],
   ecd: 'Não há antiviral eficaz: suporte intensivo (diálise, hemocomponentes, controle de encefalopatia), avaliação para transplante em casos selecionados. Evitar AAS e AINE. Prevenção pela vacina (dose única para a maioria; 9 meses e reforço aos 4 anos na infância).' });
 
 CASO({ id: 'ci_leptospirose', area: 'cm', ala: 'infecto', dif: 3, tema: 'Leptospirose', cond: 'Leptospirose grave (síndrome de Weil)', tags: ['infecto', 'nefro', 'pneumo', 'infec'],
@@ -237,7 +237,7 @@ CASO({ id: 'ci_leptospirose', area: 'cm', ala: 'infecto', dif: 3, tema: 'Leptosp
   pista: 'Enchente, mialgia de panturrilha, icterícia com transaminases pouco elevadas e lesão renal com hipocalemia.',
   dx: ['Leptospirose grave', 'Febre amarela', 'Hepatite viral aguda', 'Dengue grave'],
   edx: 'Síndrome de Weil: icterícia rubínica, lesão renal aguda não oligúrica com hipocalemia (característica), plaquetopenia e hemorragia pulmonar (principal causa de morte). Transaminases pouco elevadas e CPK alta diferenciam de hepatites e febre amarela.',
-  cd: ['Penicilina ou ceftriaxona e diálise', 'Doxiciclina oral e alta', 'Aguardar sorologia para tratar', 'Corticoide isolado'],
+  cd: ['Penicilina cristalina ou ceftriaxona e diálise precoce', 'Doxiciclina 100 mg VO de 12/12 h e alta', 'Aguardar a sorologia para iniciar o antibiótico', 'Metilprednisolona isolada pela hemorragia pulmonar, sem antibiótico'],
   ecd: 'Antibiótico em qualquer fase (formas graves: penicilina cristalina, ceftriaxona ou ampicilina; leves: doxiciclina ou amoxicilina). Diálise precoce, ventilação protetora na hemorragia pulmonar. Notificação compulsória. Quimioprofilaxia com doxiciclina pode ser feita após exposição de alto risco.' });
 
 CASO({ id: 'ci_leish_visceral', area: 'cm', ala: 'infecto', dif: 3, tema: 'Leishmaniose', cond: 'Leishmaniose visceral (calazar)', tags: ['infecto', 'hemato', 'infec'],
@@ -251,7 +251,7 @@ CASO({ id: 'ci_leish_visceral', area: 'cm', ala: 'infecto', dif: 3, tema: 'Leish
   pista: 'Febre prolongada, baço enorme, pancitopenia e hipergamaglobulinemia.',
   dx: ['Leishmaniose visceral', 'Leucemia mieloide crônica', 'Esquistossomose hepatoesplênica', 'Malária crônica'],
   edx: 'Leishmania infantum chagasi transmitida por flebotomíneo (cão é o reservatório urbano): febre prolongada, hepatoesplenomegalia volumosa, pancitopenia, inversão albumina/globulina. Diagnóstico por pesquisa do parasita (medula) ou teste rápido rK39.',
-  cd: ['Anfotericina B lipossomal', 'Esplenectomia', 'Cloroquina', 'Ivermectina'],
+  cd: ['Anfotericina B lipossomal', 'Esplenectomia pela esplenomegalia volumosa', 'Cloroquina por 3 dias', 'Ivermectina em dose única'],
   ecd: 'Anfotericina B lipossomal é a primeira escolha no Brasil em situações de maior risco (idade > 50 anos, insuficiência renal, cardíaca ou hepática, HIV, gravidade, gestantes); antimoniato de meglumina nos demais. Tratar infecções associadas (principal causa de morte), notificação, controle do vetor e dos cães.' });
 
 CASO({ id: 'ci_malaria_falciparum', area: 'cm', ala: 'infecto', dif: 3, tema: 'Malária', cond: 'Malária grave por Plasmodium falciparum', tags: ['infecto', 'neuro', 'hemato', 'infec'],
@@ -265,7 +265,7 @@ CASO({ id: 'ci_malaria_falciparum', area: 'cm', ala: 'infecto', dif: 3, tema: 'M
   pista: 'Falciparum com rebaixamento, hipoglicemia, lesão renal e parasitemia alta.',
   dx: ['Malária grave por P. falciparum', 'Malária não complicada por P. vivax', 'Meningite bacteriana', 'Febre tifoide'],
   edx: 'Malária grave: falciparum com prostração ou alteração da consciência, convulsões, hipoglicemia, anemia grave, insuficiência renal, icterícia, hiperparasitemia, acidose, edema pulmonar ou choque.',
-  cd: ['Artesunato venoso, glicose e UTI', 'Cloroquina oral e alta', 'Primaquina isolada', 'Aguardar a sorologia'],
+  cd: ['Artesunato EV, correção da glicemia e UTI', 'Cloroquina VO por 3 dias e primaquina por 7 dias', 'Primaquina isolada por 7 dias', 'Aguardar a sorologia para tratar'],
   ecd: 'Artesunato venoso (ou artemeter IM) por pelo menos 24 horas, depois derivado de artemisinina oral (artemeter-lumefantrina). Corrigir hipoglicemia, suporte renal. Malária não complicada por falciparum: ACT oral. P. vivax: cloroquina com primaquina (para os hipnozoítos), após checar G6PD.' });
 
 CASO({ id: 'ci_febre_maculosa', area: 'cm', ala: 'infecto', dif: 3, tema: 'Febre maculosa', cond: 'Febre maculosa brasileira', tags: ['infecto', 'sepse', 'infec'],
@@ -279,7 +279,7 @@ CASO({ id: 'ci_febre_maculosa', area: 'cm', ala: 'infecto', dif: 3, tema: 'Febre
   pista: 'Carrapato, capivara e exantema centrípeto que atinge palmas e plantas.',
   dx: ['Febre maculosa', 'Dengue', 'Meningococcemia', 'Sarampo'],
   edx: 'Rickettsia rickettsii transmitida pelo carrapato-estrela (Amblyomma; capivaras e cavalos): febre, cefaleia, mialgia e exantema que começa nas extremidades (punhos, tornozelos) e atinge palmas e plantas, com evolução para petéquias. Letalidade alta sem tratamento precoce.',
-  cd: ['Doxiciclina imediata', 'Penicilina cristalina', 'Aguardar a sorologia pareada', 'Só sintomáticos'],
+  cd: ['Doxiciclina 100 mg de 12/12 h imediata', 'Penicilina cristalina 4 milhões UI de 4/4 h', 'Aguardar a sorologia pareada (RIFI) para tratar', 'Dipirona e hidratação, sem antibiótico'],
   ecd: 'Doxiciclina é a droga de escolha em qualquer idade, iniciada na suspeita (o atraso aumenta muito a mortalidade); cloranfenicol é alternativa. Diagnóstico confirmado depois por sorologia pareada (RIFI). Notificação compulsória.' });
 
 CASO({ id: 'ci_estrongiloidiase', area: 'cm', ala: 'infecto', dif: 3, tema: 'Parasitoses intestinais', cond: 'Hiperinfecção por Strongyloides em usuário de corticoide', tags: ['infecto', 'gastro', 'sepse', 'infec'],
@@ -293,7 +293,7 @@ CASO({ id: 'ci_estrongiloidiase', area: 'cm', ala: 'infecto', dif: 3, tema: 'Par
   pista: 'O corticoide destravou uma infecção antiga.',
   dx: ['Hiperinfecção por Strongyloides', 'Tuberculose pulmonar', 'Exacerbação simples de DPOC', 'Ascaridíase'],
   edx: 'O Strongyloides faz autoinfecção e pode permanecer décadas. A imunossupressão (sobretudo corticoide e HTLV-1) causa hiperinfecção: larvas atravessam a parede intestinal levando bactérias entéricas (sepse por gram-negativos), com acometimento pulmonar. A eosinofilia pode estar ausente.',
-  cd: ['Ivermectina e antibiótico', 'Albendazol em dose única', 'Aumentar o corticoide pela DPOC', 'Praziquantel'],
+  cd: ['Ivermectina diária e antibiótico para a bacteremia', 'Albendazol 400 mg em dose única e manter a prednisona', 'Aumentar a prednisona pela exacerbação da DPOC', 'Praziquantel 40 mg/kg em dose única'],
   ecd: 'Ivermectina diária até negativação (formas graves podem exigir via parenteral), antibiótico para a bacteremia e redução da imunossupressão. Prevenção: tratar empiricamente com ivermectina ou rastrear antes de corticoide em dose alta ou imunossupressores em pessoas de áreas endêmicas.' });
 
 /* ---------- Animais peçonhentos e mordedura ---------- */
@@ -308,7 +308,7 @@ CASO({ id: 'ci_botropico', area: 'cm', ala: 'infecto', dif: 2, tema: 'Acidentes 
   pista: 'Ação proteolítica (local), coagulante e hemorrágica.',
   dx: ['Acidente botrópico moderado', 'Acidente crotálico', 'Acidente elapídico (coral)', 'Picada de serpente não peçonhenta'],
   edx: 'Bothrops (jararaca): dor e edema locais importantes, equimose, sangramentos, tempo de coagulação alterado. Classificação: leve (edema local), moderado (edema em 2-3 segmentos, sangramento sem gravidade), grave (edema extenso, sangramento grave, choque, insuficiência renal).',
-  cd: ['Soro antibotrópico e retirar o garrote', 'Garrote apertado e incisão no local', 'Só analgesia e observação', 'Soro anticrotálico'],
+  cd: ['Soro antibotrópico (4 a 8 ampolas) e retirar o garrote', 'Manter o garrote, incisão e sucção do local da picada', 'Analgesia, gelo local e observação por 6 horas', 'Soro anticrotálico 10 ampolas EV e manter o membro elevado'],
   ecd: 'Soroterapia o mais rápido possível (número de ampolas pela gravidade; leve 2-4, moderado 4-8, grave 12), com observação para reações. Não usar garrote, incisões ou sucção. Hidratação (risco de lesão renal), analgesia, antitetânica, avaliar síndrome compartimental e abscesso.' });
 
 CASO({ id: 'ci_crotalico', area: 'cm', ala: 'infecto', dif: 3, tema: 'Acidentes por animais peçonhentos', cond: 'Acidente crotálico', tags: ['infecto', 'nefro', 'neuro', 'infec'],
@@ -322,7 +322,7 @@ CASO({ id: 'ci_crotalico', area: 'cm', ala: 'infecto', dif: 3, tema: 'Acidentes 
   pista: 'Pouca reação local, efeitos neurotóxicos e miotóxicos.',
   dx: ['Acidente crotálico', 'Acidente botrópico', 'Botulismo', 'Miastenia gravis'],
   edx: 'Crotalus (cascavel): veneno neurotóxico (fácies miastênica, ptose, diplopia), miotóxico (rabdomiólise, mioglobinúria) e coagulante, com pouca alteração local. Principal complicação: lesão renal aguda.',
-  cd: ['Soro anticrotálico e hidratação', 'Soro antibotrópico', 'Garrote e anticolinesterásico', 'Apenas observar 24 horas'],
+  cd: ['Soro anticrotálico e hidratação para diurese elevada', 'Soro antibotrópico 4 ampolas EV', 'Garrote e neostigmina EV para a ptose palpebral e a diplopia', 'Observar por 24 horas sem soroterapia'],
   ecd: 'Soro anticrotálico (ou antibotrópico-crotálico) conforme a gravidade, hidratação para diurese alta (prevenção da lesão renal por mioglobina), monitorar função renal. Não fazer garrote ou incisões.' });
 
 CASO({ id: 'ci_escorpiao', area: 'ped', dif: 3, tema: 'Acidentes por animais peçonhentos', cond: 'Escorpionismo grave em criança', tags: ['infecto', 'cardio', 'infec'],
@@ -335,7 +335,7 @@ CASO({ id: 'ci_escorpiao', area: 'ped', dif: 3, tema: 'Acidentes por animais pe�
   pista: 'Vômitos repetidos em criança picada por escorpião são sinal de gravidade.',
   dx: ['Escorpionismo grave', 'Escorpionismo leve', 'Acidente por aranha-armadeira', 'Anafilaxia'],
   edx: 'Tityus serrulatus: dor local intensa; a descarga autonômica (vômitos, sudorese, sialorreia, agitação, taquicardia, hipertensão) indica gravidade, podendo evoluir para edema pulmonar e choque cardiogênico. Crianças são mais vulneráveis.',
-  cd: ['Soro antiescorpiônico', 'Só anestésico local e alta', 'Corticoide e anti-histamínico', 'Garrote e gelo'],
+  cd: ['Soro antiescorpiônico e monitorização em UTI', 'Lidocaína 2% infiltrada no local e alta para casa', 'Hidrocortisona e prometazina EV', 'Garrote e compressa de gelo no local'],
   ecd: 'Casos moderados e graves (sobretudo crianças até 7-10 anos): soro antiescorpiônico (2-3 ampolas moderado, 4-6 grave), monitorização, tratar edema pulmonar e choque. Casos leves (só dor): analgesia e bloqueio anestésico local, observação.' });
 
 CASO({ id: 'ci_loxosceles', area: 'cm', ala: 'infecto', dif: 3, tema: 'Acidentes por animais peçonhentos', cond: 'Loxoscelismo cutâneo-hemolítico (aranha-marrom)', tags: ['infecto', 'hemato', 'nefro', 'infec'],
@@ -349,7 +349,7 @@ CASO({ id: 'ci_loxosceles', area: 'cm', ala: 'infecto', dif: 3, tema: 'Acidentes
   pista: 'Picada quase indolor, placa marmórea e hemólise.',
   dx: ['Loxoscelismo cutâneo-hemolítico', 'Celulite estreptocócica', 'Acidente por aranha-armadeira', 'Pioderma gangrenoso'],
   edx: 'Loxosceles (aranha-marrom, comum no Sul, dentro de roupas e móveis): picada pouco dolorosa, lesão que evolui com placa marmórea e necrose; a forma cutâneo-visceral causa hemólise intravascular e lesão renal.',
-  cd: ['Soro antiloxoscélico e corticoide', 'Desbridamento cirúrgico imediato da lesão', 'Só antibiótico', 'Anestesia local e alta'],
+  cd: ['Soro antiloxoscélico e prednisona por 5 dias', 'Desbridamento cirúrgico imediato de toda a área de necrose', 'Cefalexina isolada por 7 dias', 'Anestesia local e alta para casa'],
   ecd: 'Soro antiloxoscélico (ou antiaracnídico) nas formas moderada/grave e cutâneo-hemolítica; prednisona por 5 dias; hidratação e monitorização renal. Desbridamento só depois da delimitação da necrose. Antibiótico se infecção secundária.' });
 
 CASO({ id: 'ci_anafilaxia_abelha', area: 'cm', ala: 'infecto', dif: 2, tema: 'Acidentes por animais peçonhentos', cond: 'Anafilaxia após picada de abelha', tags: ['infecto', 'choque', 'resp', 'infec'],
@@ -362,7 +362,7 @@ CASO({ id: 'ci_anafilaxia_abelha', area: 'cm', ala: 'infecto', dif: 2, tema: 'Ac
   pista: 'Reação sistêmica imediata com hipotensão e via aérea.',
   dx: ['Anafilaxia por himenóptero', 'Envenenamento por múltiplas picadas', 'Crise de asma isolada', 'Urticária aguda simples'],
   edx: 'Anafilaxia: início súbito com acometimento de pele/mucosas e respiratório e/ou hipotensão após exposição a alérgeno (veneno de himenóptero). Diferente do envenenamento por múltiplas picadas (centenas), em que há hemólise, rabdomiólise e lesão renal.',
-  cd: ['Adrenalina IM na coxa', 'Anti-histamínico oral e observar', 'Corticoide venoso como primeira medida', 'Retirar o ferrão com pinça e liberar'],
+  cd: ['Adrenalina 0,5 mg IM no vasto lateral da coxa', 'Loratadina VO e observação por 1 hora', 'Hidrocortisona 500 mg EV como primeira medida', 'Retirar o ferrão com pinça e liberar para casa'],
   ecd: 'Adrenalina intramuscular (0,01 mg/kg, máximo 0,5 mg) no vasto lateral, repetível a cada 5-15 minutos; deitar com pernas elevadas, oxigênio, cristaloide. Anti-histamínico e corticoide são adjuvantes. Retirar o ferrão raspando. Prescrever adrenalina autoinjetável e encaminhar para imunoterapia com veneno.' });
 
 CASO({ id: 'ci_raiva_profilaxia', area: 'cm', ala: 'infecto', dif: 2, tema: 'Acidentes por animais peçonhentos', cond: 'Profilaxia da raiva após mordedura grave de cão', tags: ['infecto', 'infec'],
@@ -375,5 +375,5 @@ CASO({ id: 'ci_raiva_profilaxia', area: 'cm', ala: 'infecto', dif: 2, tema: 'Aci
   pista: 'Acidente grave (mão, profundo) com animal não observável.',
   dx: ['Exposição grave ao vírus da raiva', 'Exposição leve sem indicação de profilaxia', 'Raiva humana já instalada', 'Tétano'],
   edx: 'Acidentes graves: mucosas, cabeça, face, pescoço, mãos, pés, ferimentos profundos ou múltiplos, lambedura de mucosa. Cão não observável (desaparecido) exige profilaxia completa.',
-  cd: ['Lavar, soro antirrábico e vacina', 'Só lavar e observar o animal', 'Antibiótico e alta, sem vacina', 'Vacinar apenas se surgirem sintomas'],
+  cd: ['Lavar, soro antirrábico nas lesões e vacina em 4 doses', 'Só lavar a ferida e observar o cão por 10 dias, sem soro nem vacina', 'Amoxicilina-clavulanato e alta, sem vacina', 'Vacinar apenas se surgirem sintomas no paciente'],
   ecd: 'Lavagem abundante com água e sabão é essencial. Acidente grave com animal não observável: soro ou imunoglobulina antirrábica infiltrada nas lesões e vacina em 4 doses (0, 3, 7, 14). Se o cão pudesse ser observado por 10 dias, conduta conforme a observação. Reforço antitetânico e considerar amoxicilina-clavulanato profilático em mordedura de mão.' });

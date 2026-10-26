@@ -16,7 +16,7 @@ CASO({ id: 'po_stent_recente', area: 'cir', dif: 2, tema: 'Pré-operatório', co
   pista: 'Interromper a dupla antiagregação logo após um stent farmacológico arrisca trombose do stent.',
   dx: ['Stent recente em DAPT', 'Risco cirúrgico baixo', 'Colecistite aguda', 'Coledocolitíase'],
   edx: 'Cirurgia não cardíaca eletiva deve ser adiada até completar o período mínimo de dupla antiagregação: idealmente 6 meses após stent farmacológico (mínimo 3 meses em situações de maior urgência) e 1 mês após stent convencional/angioplastia com balão. Suspender a DAPT precocemente aumenta muito o risco de trombose do stent e IAM.',
-  cd: ['Adiar a cirurgia eletiva', 'Suspender os dois antiagregantes', 'Operar sem nenhum ajuste', 'Trocar por heparina e operar'],
+  cd: ['Adiar a cirurgia eletiva e manter a dupla antiagregação', 'Suspender AAS e clopidogrel 7 dias antes e operar na data marcada', 'Operar sem nenhum ajuste na medicação', 'Trocar os antiagregantes por enoxaparina e operar'],
   ecd: 'Adiar a colecistectomia (manter dieta e analgesia; operar antes só se complicação). No momento da cirurgia: manter AAS e suspender o inibidor de P2Y12 (ticagrelor 3-5 dias, clopidogrel 5 dias, prasugrel 7 dias) em decisão conjunta com o cardiologista. Heparina não protege contra trombose de stent.' });
 
 CASO({ id: 'po_ponte_heparina', area: 'cir', dif: 3, tema: 'Pré-operatório', cond: 'Anticoagulação perioperatória em prótese valvar mecânica', tags: ['anticoag', 'cardio'],
@@ -30,7 +30,7 @@ CASO({ id: 'po_ponte_heparina', area: 'cir', dif: 3, tema: 'Pré-operatório', c
   pista: 'Prótese mecânica mitral + FA + AVC prévio = altíssimo risco trombótico.',
   dx: ['Alto risco trombótico', 'Baixo risco: suspender sem ponte', 'Contraindicação à cirurgia', 'Manter varfarina com INR de 3'],
   edx: 'Ponte com heparina é indicada para alto risco trombótico (prótese mecânica mitral, prótese aórtica antiga ou com fatores de risco, AVC/AIT recente, TEV nos últimos 3 meses, trombofilia grave). Na maioria das FA sem prótese, a ponte aumenta sangramento sem reduzir eventos. DOACs não precisam de ponte (suspender 24-72 h conforme risco e função renal).',
-  cd: ['Ponte com heparina', 'Suspender sem ponte', 'Manter varfarina e operar', 'Trocar por rivaroxabana'],
+  cd: ['Suspender a varfarina 5 dias antes e ponte com enoxaparina', 'Suspender a varfarina 5 dias antes, sem ponte', 'Manter a varfarina e operar com INR de 3, com plasma à disposição na sala', 'Trocar a varfarina por rivaroxabana no perioperatório'],
   ecd: 'Suspender varfarina 5 dias antes; iniciar enoxaparina terapêutica (ou HNF) quando INR < 2; última dose de enoxaparina 24 h antes (meia dose); INR < 1,5 no dia; reiniciar varfarina 12-24 h após e heparina 48-72 h depois quando hemostasia segura, até INR terapêutico. DOAC é contraindicado em prótese mecânica.' });
 
 CASO({ id: 'po_profilaxia_colon', area: 'cir', dif: 1, tema: 'Pré-operatório', cond: 'Antibioticoprofilaxia em colectomia eletiva', tags: ['infec'],
@@ -43,7 +43,7 @@ CASO({ id: 'po_profilaxia_colon', area: 'cir', dif: 1, tema: 'Pré-operatório',
   pista: 'Cirurgia potencialmente contaminada do cólon: cobrir Gram-negativos e anaeróbios.',
   dx: ['Potencialmente contaminada', 'Cirurgia limpa', 'Cirurgia infectada', 'Contaminada por peritonite fecal'],
   edx: 'Classificação: limpa (sem penetrar tratos), potencialmente contaminada (penetra trato digestivo/respiratório/geniturinário de forma controlada), contaminada (inflamação aguda sem pus, quebra de técnica, trauma recente), infectada/suja (pus, víscera perfurada, trauma antigo). Profilaxia: dose 30-60 min antes da incisão, repetir em cirurgias longas, não prolongar além de 24 h.',
-  cd: ['Cefazolina + metronidazol', 'Ceftriaxona por 7 dias', 'Vancomicina isolada', 'Sem profilaxia antibiótica'],
+  cd: ['Cefazolina 2 g + metronidazol 500 mg EV antes da incisão', 'Ceftriaxona 1 g/dia EV por 7 dias a partir do pós-operatório', 'Vancomicina 1 g EV isolada', 'Nenhuma antibioticoprofilaxia'],
   ecd: 'Cefazolina 2 g (3 g se > 120 kg) + metronidazol 500 mg IV, 30-60 min antes da incisão (cefoxitina é alternativa); repetir cefazolina a cada 4 h de cirurgia ou sangramento > 1.500 mL. Preparo mecânico com antibiótico oral é opção. Manter > 24 h só aumenta resistência e C. difficile.' });
 
 /* ---------- Anestesia ---------- */
@@ -58,7 +58,7 @@ CASO({ id: 'po_hipertermia_maligna', area: 'cir', dif: 3, tema: 'Anestesia', con
   pista: 'Halogenado/succinilcolina + hipercapnia que não cede + rigidez + história familiar.',
   dx: ['Hipertermia maligna', 'Síndrome neuroléptica maligna', 'Sepse intraoperatória', 'Tireotoxicose'],
   edx: 'Hipertermia maligna: doença farmacogenética (RYR1) com liberação descontrolada de cálcio no músculo esquelético desencadeada por halogenados e succinilcolina. Sinal mais precoce: aumento inexplicado do EtCO2; depois taquicardia, rigidez, acidose, hipercalemia, rabdomiólise e hipertermia (tardia).',
-  cd: ['Dantroleno', 'Paracetamol e compressas frias', 'Aumentar o sevoflurano', 'Bromocriptina oral'],
+  cd: ['Suspender o halogenado e dantroleno 2,5 mg/kg EV', 'Paracetamol EV e compressas frias', 'Aumentar o sevoflurano para aprofundar a anestesia', 'Bromocriptina pela sonda nasogástrica'],
   ecd: 'Suspender o halogenado e a succinilcolina, chamar ajuda, hiperventilar com O2 100% e alto fluxo, dantroleno 2,5 mg/kg IV (repetir até controle), resfriamento ativo, tratar hipercalemia e arritmias (sem bloqueador de canal de cálcio), diurese e monitorizar rabdomiólise. Família: aconselhamento e teste.' });
 
 CASO({ id: 'po_toxicidade_anestesico', area: 'cir', dif: 3, tema: 'Anestesia', cond: 'Intoxicação sistêmica por anestésico local', tags: ['cardio', 'convul', 'intox'],
@@ -71,7 +71,7 @@ CASO({ id: 'po_toxicidade_anestesico', area: 'cir', dif: 3, tema: 'Anestesia', c
   pista: 'Sintomas neurológicos seguidos de colapso cardiovascular após dose alta de anestésico local.',
   dx: ['Toxicidade sistêmica', 'Reação anafilática', 'Reação vasovagal', 'Hipoglicemia'],
   edx: 'Toxicidade sistêmica (LAST): SNC (gosto metálico, zumbido, parestesia perioral, agitação, convulsão, coma) e cardiovascular (bradicardia, alargamento do QRS, arritmias, colapso — a bupivacaína é a mais cardiotóxica). Doses máximas: lidocaína 4,5 mg/kg (7 mg/kg com adrenalina); bupivacaína 2,5 mg/kg.',
-  cd: ['Emulsão lipídica a 20%', 'Adrenalina 1 mg a cada 3 min', 'Flumazenil', 'Anti-histamínico venoso'],
+  cd: ['Emulsão lipídica 20% 1,5 mL/kg em bólus', 'Adrenalina 1 mg EV a cada 3 minutos e vasopressina', 'Flumazenil 0,2 mg EV', 'Difenidramina EV'],
   ecd: 'Parar a injeção, pedir ajuda, via aérea e O2 (evitar hipóxia/acidose), benzodiazepínico para convulsão, emulsão lipídica 20% (bolus 1,5 mL/kg e infusão). Em PCR: RCP prolongada com doses reduzidas de adrenalina (≤ 1 mcg/kg), evitar vasopressina, bloqueadores de canal de cálcio, betabloqueadores e outros anestésicos locais.' });
 
 /* ---------- Pós-operatório ---------- */
@@ -86,7 +86,7 @@ CASO({ id: 'po_febre_precoce', area: 'cir', dif: 1, tema: 'Pós-operatório', co
   pista: 'Primeiras 48 horas: a resposta inflamatória e o pulmão pouco expandido são as causas comuns.',
   dx: ['Febre pós-operatória precoce', 'Infecção do sítio cirúrgico', 'Deiscência de anastomose', 'Embolia pulmonar maciça e choque'],
   edx: 'Febre pós-operatória por tempo ("5 Ws"): 24-48 h — resposta inflamatória ao trauma cirúrgico, atelectasia (wind); 3-5 dias — pneumonia, ITU (water), flebite; 5-7 dias — infecção de ferida (wound), deiscência/abscesso; > 7 dias — TVP/TEP (walking), medicamentos (wonder drugs). Febre muito precoce e alta: infecção necrosante por estreptococo/Clostridium.',
-  cd: ['Fisioterapia e mobilização', 'Antibiótico de amplo espectro', 'Reabrir a ferida', 'Tomografia de abdome urgente'],
+  cd: ['Analgesia, deambulação e fisioterapia respiratória', 'Meropeném empírico, hemoculturas e urocultura', 'Reabrir a ferida operatória', 'TC de abdome de urgência'],
   ecd: 'Analgesia adequada, deambulação precoce, fisioterapia respiratória e espirometria de incentivo; observar evolução. Investigar e tratar infecção se febre persistente, alta ou com sinais focais.' });
 
 CASO({ id: 'po_isc', area: 'cir', dif: 1, tema: 'Pós-operatório', cond: 'Infecção de sítio cirúrgico incisional superficial', tags: ['infec', 'febre', 'ef'],
@@ -99,7 +99,7 @@ CASO({ id: 'po_isc', area: 'cir', dif: 1, tema: 'Pós-operatório', cond: 'Infec
   pista: 'Pele e subcutâneo apenas, com coleção.',
   dx: ['Infecção incisional', 'Abscesso intra-abdominal', 'Deiscência de aponeurose', 'Seroma infectado da parede'],
   edx: 'ISC até 30 dias (90 com prótese): incisional superficial (pele/subcutâneo), incisional profunda (fáscia/músculo), de órgão/espaço (abscesso, peritonite). Fatores: contaminação, diabetes, obesidade, tabagismo, desnutrição, tricotomia com lâmina, hipotermia.',
-  cd: ['Abrir a ferida e drenar', 'Antibiótico oral isolado', 'Laparotomia', 'Pomada e manter os pontos'],
+  cd: ['Retirar pontos, abrir e drenar a ferida', 'Cefalexina 500 mg VO de 6/6 h isolada por 10 dias', 'Relaparotomia exploradora', 'Pomada de neomicina e manter os pontos'],
   ecd: 'Retirar pontos, abrir e drenar, lavagem e curativo (cicatrização por segunda intenção ou fechamento tardio); antibiótico só se celulite extensa, sinais sistêmicos ou imunossupressão. Cultura da secreção.' });
 
 CASO({ id: 'po_abscesso_cavitario', area: 'cir', dif: 2, tema: 'Pós-operatório', cond: 'Abscesso intra-abdominal pós-operatório', tags: ['infec', 'sepse', 'img', 'febre'],
@@ -114,7 +114,7 @@ CASO({ id: 'po_abscesso_cavitario', area: 'cir', dif: 2, tema: 'Pós-operatório
   pista: 'Coleção organizada e paciente estável.',
   dx: ['Abscesso pélvico', 'Infecção de ferida superficial', 'Deiscência de aponeurose', 'Íleo paralítico'],
   edx: 'Abscessos intra-abdominais são comuns após peritonite (apendicite perfurada, diverticulite). Febre persistente após 5-7 dias, íleo prolongado, diarreia/tenesmo (pélvico). TC confirma e guia a drenagem.',
-  cd: ['Drenagem percutânea guiada', 'Só antibiótico oral', 'Laparotomia exploradora', 'Alta e retorno em 1 semana'],
+  cd: ['Antibiótico EV e drenagem percutânea guiada por TC', 'Ciprofloxacino e metronidazol VO isolados e alta hospitalar', 'Relaparotomia exploradora imediata', 'Alta e retorno em 1 semana com USG'],
   ecd: 'Antibiótico venoso de amplo espectro (Gram-negativos e anaeróbios) e drenagem percutânea guiada por TC/USG (ou transretal); coleções < 3 cm podem responder só ao antibiótico. Cirurgia se peritonite difusa, coleções múltiplas/inacessíveis ou falha.' });
 
 CASO({ id: 'po_deiscencia_anastomose', area: 'cir', dif: 3, tema: 'Pós-operatório', cond: 'Deiscência de anastomose colorretal com peritonite', tags: ['sepse', 'choque', 'infec'],
@@ -128,7 +128,7 @@ CASO({ id: 'po_deiscencia_anastomose', area: 'cir', dif: 3, tema: 'Pós-operató
   pista: 'Peritonite difusa e choque séptico após anastomose colônica.',
   dx: ['Deiscência de anastomose', 'Íleo pós-operatório', 'Infecção urinária', 'Pneumonia aspirativa'],
   edx: 'Deiscência de anastomose: geralmente 3º-7º dia; fatores — desnutrição, hipoalbuminemia, anastomose baixa (reto), tensão/isquemia, corticoide, contaminação, choque, tabagismo. Contida e pequena: antibiótico e drenagem percutânea; com peritonite difusa/sepse: reoperação.',
-  cd: ['Relaparotomia e colostomia', 'Antibiótico e observar 48 h', 'Drenagem percutânea isolada', 'Jejum e nutrição parenteral'],
+  cd: ['Relaparotomia, desfazer a anastomose e colostomia', 'Antibiótico de amplo espectro e observação por 48 horas', 'Drenagem percutânea isolada guiada por tomografia', 'Jejum, nutrição parenteral total e octreotida'],
   ecd: 'Pacote de sepse (cultura, antibiótico de amplo espectro, volume, vasopressor) e relaparotomia: lavagem, desfazer a anastomose com colostomia terminal (Hartmann) ou proteger com estoma derivativo conforme achados.' });
 
 CASO({ id: 'po_evisceracao', area: 'cir', dif: 2, tema: 'Pós-operatório', cond: 'Deiscência de aponeurose com evisceração', tags: ['ef'],
@@ -141,7 +141,7 @@ CASO({ id: 'po_evisceracao', area: 'cir', dif: 2, tema: 'Pós-operatório', cond
   pista: 'Secreção "água de carne" é o aviso de que a aponeurose abriu.',
   dx: ['Evisceração', 'Seroma de ferida', 'Hérnia incisional tardia', 'Fístula enterocutânea'],
   edx: 'Deiscência aponeurótica: geralmente 5º-10º dia; prenúncio clássico é a drenagem serossanguinolenta abundante. Fatores: técnica (sutura muito próxima à borda, tensão), aumento de pressão (tosse, íleo, ascite), infecção, desnutrição, corticoide, obesidade, diabetes, idade.',
-  cd: ['Cobrir e reoperar', 'Reintroduzir as alças no leito', 'Curativo e alta', 'Aguardar granulação'],
+  cd: ['Cobrir com compressas úmidas e reoperar', 'Reintroduzir as alças no leito e fazer curativo', 'Curativo oclusivo e alta com cinta', 'Aguardar a granulação da ferida aberta'],
   ecd: 'Cobrir as alças com compressas estéreis umedecidas em soro, faixa abdominal, analgesia, antibiótico e reoperação para fechamento da parede (sutura contínua de fio de absorção lenta, relação comprimento do fio/ferida ≥ 4:1, pontos pequenos; tela ou fechamento temporário se tensão).' });
 
 CASO({ id: 'po_fistula_enterocutanea', area: 'cir', dif: 3, tema: 'Pós-operatório', cond: 'Fístula enterocutânea de alto débito', tags: ['hidrat', 'infec'],
@@ -156,7 +156,7 @@ CASO({ id: 'po_fistula_enterocutanea', area: 'cir', dif: 3, tema: 'Pós-operató
   pista: 'Mais de 500 mL/dia de efluente: hidratação, eletrólitos, pele e nutrição antes de pensar em reoperar.',
   dx: ['Fístula de alto débito', 'Infecção de ferida superficial', 'Deiscência com evisceração', 'Ascite infectada'],
   edx: 'Débito: baixo < 200, moderado 200-500, alto > 500 mL/dia. Fatores que impedem fechamento espontâneo (FRIENDS): corpo estranho, radiação, inflamação/infecção, epitelização do trajeto, neoplasia, obstrução distal, trajeto curto (< 2 cm)/alto débito. Manejo por etapas (SOWATS): sepse, otimização nutricional, cuidados com a ferida, anatomia, tempo e cirurgia.',
-  cd: ['Repor, nutrir e proteger a pele', 'Relaparotomia imediata', 'Dieta oral livre', 'Antibiótico por 6 semanas'],
+  cd: ['Repor volume e eletrólitos, nutrição e bolsa coletora', 'Relaparotomia imediata para fechar a fístula', 'Dieta oral livre para manter o trofismo intestinal', 'Meropeném por 6 semanas e observação'],
   ecd: 'Controlar sepse, repor volume e eletrólitos, proteger a pele (bolsa coletora/terapia por pressão negativa), suporte nutricional (parenteral em alto débito; enteral se possível), reduzir débito (IBP, loperamida, considerar octreotida). Reoperação definitiva, se não fechar, após 3-6 meses.' });
 
 CASO({ id: 'po_nutricao_precoce', area: 'cir', dif: 2, tema: 'Pós-operatório', cond: 'Terapia nutricional enteral precoce após esofagectomia', tags: ['hidrat'],
@@ -170,7 +170,7 @@ CASO({ id: 'po_nutricao_precoce', area: 'cir', dif: 2, tema: 'Pós-operatório',
   pista: 'Intestino funcionante e acesso distal à anastomose.',
   dx: ['Desnutrido com via enteral', 'Indicação de jejum prolongado', 'Íleo paralítico grave', 'Síndrome do intestino curto'],
   edx: 'Nutrição enteral precoce (24-48 h) reduz complicações infecciosas e tempo de internação em pacientes cirúrgicos; é preferível à parenteral sempre que o trato gastrointestinal funciona. Desnutridos graves: risco de síndrome de realimentação (hipofosfatemia, hipocalemia, hipomagnesemia) — progredir devagar e repor tiamina.',
-  cd: ['Enteral pela jejunostomia', 'Parenteral exclusiva por 7 dias', 'Jejum até o 10º dia', 'Dieta oral livre hoje'],
+  cd: ['Dieta enteral pela jejunostomia em 24-48 h', 'Nutrição parenteral total exclusiva pelos primeiros 7 dias', 'Jejum até o 10º dia pós-operatório', 'Dieta oral livre a partir de hoje'],
   ecd: 'Iniciar dieta enteral pela jejunostomia nas primeiras 24-48 h com progressão lenta, monitorando fósforo, potássio e magnésio e repondo tiamina. Parenteral se a enteral for impossível ou insuficiente por mais de 5-7 dias (mais cedo em desnutridos graves).' });
 
 CASO({ id: 'po_tev_profilaxia', area: 'cir', dif: 1, tema: 'Pós-operatório', cond: 'Profilaxia de tromboembolismo em cirurgia oncológica', tags: ['anticoag'],
@@ -184,5 +184,5 @@ CASO({ id: 'po_tev_profilaxia', area: 'cir', dif: 1, tema: 'Pós-operatório', c
   pista: 'Câncer, cirurgia abdominal de grande porte, idade, obesidade e TEV prévio.',
   dx: ['Alto risco de TEV', 'Risco muito baixo de TEV', 'Contraindicação à heparina', 'TVP atual'],
   edx: 'Escore de Caprini estratifica o risco de TEV cirúrgico (idade, cirurgia de grande porte, câncer, TEV prévio, obesidade, imobilidade, varizes). Alto risco: profilaxia farmacológica + mecânica; em cirurgia oncológica abdominal/pélvica de grande porte, estender a profilaxia por 4 semanas.',
-  cd: ['Enoxaparina estendida', 'Só deambulação precoce', 'Varfarina plena', 'AAS isolado'],
+  cd: ['Enoxaparina 40 mg/dia por 28 dias após a alta', 'Só deambulação precoce e meias elásticas, sem anticoagulante', 'Varfarina em dose plena por 3 meses', 'AAS 100 mg/dia por 28 dias'],
   ecd: 'Enoxaparina 40 mg SC 1x/dia (iniciar 12 h antes ou 6-12 h após a cirurgia) + compressão pneumática intermitente; estender por 28 dias após a alta. Ajustar à função renal e risco de sangramento.' });

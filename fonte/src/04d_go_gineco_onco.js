@@ -18,7 +18,7 @@ CASO({ id: 'gm_fibroadenoma', area: 'go', local: 'gineco', dif: 1, tema: 'Doenç
   pista: 'Mulher jovem, nódulo móvel e circunscrito, provavelmente benigno.',
   dx: ['Fibroadenoma', 'Carcinoma ductal invasivo', 'Cisto simples', 'Tumor filoides'],
   edx: 'Fibroadenoma: tumor benigno mais comum em mulheres jovens (fibroepitelial). Em menores de 40 anos, a ultrassonografia é o exame inicial. BI-RADS 3: provavelmente benigno (risco de malignidade < 2%).',
-  cd: ['Ultrassonografia em 6 meses', 'Mastectomia', 'Mamografia anual a partir de agora', 'Quimioterapia'],
+  cd: ['Ultrassonografia de controle em 6 meses (BI-RADS 3)', 'Exérese cirúrgica imediata do nódulo sob anestesia geral', 'Mamografia anual a partir de agora, sem ultrassonografia', 'Core biopsy imediata e ressonância magnética das mamas'],
   ecd: 'BI-RADS 3: controle de imagem em 6 meses (depois 6 e 12 meses). Biópsia se crescimento rápido, > 3 cm, ansiedade importante ou fatores de risco. Exérese se muito volumoso ou suspeita de tumor filoides (crescimento rápido, grande).' });
 
 CASO({ id: 'gm_derrame_papilar', area: 'go', local: 'gineco', dif: 2, tema: 'Doenças da mama', cond: 'Derrame papilar suspeito (papiloma intraductal)', tags: ['gineco', 'usg'],
@@ -32,7 +32,7 @@ CASO({ id: 'gm_derrame_papilar', area: 'go', local: 'gineco', dif: 2, tema: 'Doe
   pista: 'Espontânea, uniductal, unilateral e sanguinolenta.',
   dx: ['Papiloma intraductal', 'Ectasia ductal', 'Galactorreia', 'Mastite periductal'],
   edx: 'Descarga patológica: espontânea, unilateral, uniductal, serosa ou sanguinolenta. A causa mais comum é o papiloma intraductal; carcinoma deve ser excluído. Descarga bilateral, multiductal e à expressão costuma ser fisiológica.',
-  cd: ['Exérese seletiva do ducto', 'Cabergolina', 'Tranquilizar sem investigar mais', 'Antibiótico oral'],
+  cd: ['Mamografia, US e exérese seletiva do ducto acometido', 'Cabergolina 0,5 mg/semana e dosagem de prolactina', 'Tranquilizar e repetir a citologia do derrame em 6 meses', 'Cefalexina 500 mg de 6/6 h por 10 dias e compressas'],
   ecd: 'Investigar com mamografia e ultrassonografia; biópsia da lesão visível e exérese seletiva do ducto acometido (ou dos ductos centrais) para diagnóstico e tratamento.' });
 
 CASO({ id: 'gm_birads2', area: 'go', local: 'gineco', dif: 1, tema: 'Doenças da mama', cond: 'Mamografia BI-RADS 2 (achado benigno)', tags: ['gineco'],
@@ -46,7 +46,7 @@ CASO({ id: 'gm_birads2', area: 'go', local: 'gineco', dif: 1, tema: 'Doenças da
   pista: 'Calcificação grosseira "em pipoca", estável.',
   dx: ['BI-RADS 2', 'BI-RADS 4', 'BI-RADS 0', 'BI-RADS 5'],
   edx: 'Calcificações grosseiras "em pipoca" (fibroadenoma involuído), vasculares, cutâneas e linfonodos intramamários são achados benignos: BI-RADS 2. Categorias: 0 incompleto; 1 negativo; 2 benigno; 3 provavelmente benigno (controle em 6 meses); 4 suspeito (biópsia; 4A 2-10%, 4B 10-50%, 4C 50-95%); 5 altamente suspeito (≥ 95%); 6 malignidade comprovada.',
-  cd: ['Rotina de rastreamento', 'Biópsia estereotáxica', 'Controle de imagem em 6 meses', 'Ressonância de mamas'],
+  cd: ['Manter o rastreamento de rotina', 'Biópsia estereotáxica das calcificações', 'Mamografia de controle em 6 meses', 'Ressonância magnética das mamas'],
   ecd: 'BI-RADS 1 e 2: rotina de rastreamento (Ministério da Saúde: mamografia bienal dos 50 aos 69 anos; dos 40 aos 49 sob decisão compartilhada; sociedades recomendam anual a partir dos 40).' });
 
 /* ---------- Câncer de mama ---------- */
@@ -62,7 +62,7 @@ CASO({ id: 'gm_cdis', area: 'go', local: 'gineco', dif: 2, tema: 'Câncer de mam
   pista: 'Microcalcificações finas e lineares sem nódulo.',
   dx: ['Carcinoma ductal in situ', 'Carcinoma lobular invasivo', 'Fibroadenoma calcificado', 'Esteatonecrose'],
   edx: 'O CDIS manifesta-se principalmente por microcalcificações na mamografia. Sem correspondente ultrassonográfico, a biópsia é estereotáxica (mamotomia). É lesão não invasiva, precursora do carcinoma invasivo.',
-  cd: ['Cirurgia conservadora e radioterapia', 'Mastectomia radical com esvaziamento axilar', 'Quimioterapia exclusiva', 'Controle em 6 meses'],
+  cd: ['Setorectomia com margens livres e radioterapia', 'Mastectomia radical com esvaziamento axilar completo', 'Quimioterapia com antraciclina e taxano isolada', 'Mamografia de controle em 6 meses sem cirurgia'],
   ecd: 'Cirurgia conservadora com margens livres seguida de radioterapia (ou mastectomia se extenso); biópsia de linfonodo sentinela apenas se mastectomia ou suspeita de invasão. Hormonioterapia (tamoxifeno ou inibidor de aromatase) se receptor positivo, para reduzir recidiva.' });
 
 CASO({ id: 'gm_luminal', area: 'go', local: 'gineco', dif: 2, tema: 'Câncer de mama', cond: 'Carcinoma ductal invasivo luminal A inicial', tags: ['gineco', 'onco'],
@@ -77,7 +77,7 @@ CASO({ id: 'gm_luminal', area: 'go', local: 'gineco', dif: 2, tema: 'Câncer de 
   pista: 'Receptores positivos, HER2 negativo e Ki-67 baixo.',
   dx: ['Carcinoma luminal A', 'Carcinoma triplo-negativo', 'Carcinoma HER2-positivo', 'Luminal B HER2-positivo'],
   edx: 'O carcinoma invasivo do tipo não especial (ductal) corresponde a 70-80% dos casos; o lobular, 10-15%. Subtipos moleculares: luminal A (RE/RP+, HER2-, Ki-67 baixo, melhor prognóstico), luminal B (RE+ com Ki-67 alto e/ou HER2+), HER2 superexpresso (RE-, HER2+) e triplo-negativo.',
-  cd: ['Cirurgia conservadora e hormonioterapia', 'Mastectomia radical e quimioterapia obrigatória', 'Trastuzumabe isolado', 'Apenas tamoxifeno'],
+  cd: ['Setorectomia, linfonodo sentinela, radioterapia e hormonioterapia', 'Mastectomia radical modificada e quimioterapia adjuvante obrigatória', 'Trastuzumabe isolado por 1 ano, sem cirurgia', 'Tamoxifeno isolado por 5 anos, sem cirurgia'],
   ecd: 'Tumor inicial: cirurgia conservadora com biópsia de linfonodo sentinela e radioterapia na mama. Luminal A: hormonioterapia adjuvante por 5-10 anos (pós-menopausa: inibidor de aromatase; pré: tamoxifeno ± supressão ovariana). Quimioterapia raramente necessária (avaliar assinaturas genômicas).' });
 
 CASO({ id: 'gm_her2', area: 'go', local: 'gineco', dif: 3, tema: 'Câncer de mama', cond: 'Câncer de mama HER2 superexpresso', tags: ['gineco', 'onco', 'cardio'],
@@ -92,7 +92,7 @@ CASO({ id: 'gm_her2', area: 'go', local: 'gineco', dif: 3, tema: 'Câncer de mam
   pista: 'Receptores hormonais negativos e HER2 3+.',
   dx: ['HER2 superexpresso', 'Luminal A', 'Triplo-negativo', 'Carcinoma lobular in situ'],
   edx: 'HER2 superexpresso (imuno-histoquímica 3+ ou FISH amplificado): mais agressivo, porém com alvo terapêutico. Responde bem à quimioterapia neoadjuvante associada a anti-HER2.',
-  cd: ['Neoadjuvância com anti-HER2', 'Tamoxifeno isolado por 5 anos', 'Apenas radioterapia', 'Inibidor de aromatase'],
+  cd: ['Quimioterapia neoadjuvante com trastuzumabe e pertuzumabe', 'Tamoxifeno isolado por 5 anos após a mastectomia, sem quimioterapia', 'Mastectomia e radioterapia, sem terapia sistêmica', 'Anastrozol neoadjuvante por 6 meses'],
   ecd: 'Tumores HER2+ ≥ 2 cm ou com axila positiva: quimioterapia neoadjuvante com trastuzumabe (± pertuzumabe), depois cirurgia; completar 1 ano de anti-HER2 (T-DM1 se doença residual). Monitorar função cardíaca (cardiotoxicidade do trastuzumabe). Hormonioterapia não tem papel com receptores negativos.' });
 
 CASO({ id: 'gm_brca', area: 'go', local: 'gineco', dif: 3, tema: 'Câncer de mama', cond: 'Risco hereditário: mutação BRCA1', tags: ['gineco', 'onco'],
@@ -105,7 +105,7 @@ CASO({ id: 'gm_brca', area: 'go', local: 'gineco', dif: 3, tema: 'Câncer de mam
   pista: 'Portadora de BRCA1 com prole completa.',
   dx: ['Portadora de BRCA1', 'Risco populacional', 'Síndrome de Lynch', 'Síndrome de Li-Fraumeni'],
   edx: 'BRCA1: risco de câncer de mama de até 70% e de ovário/tuba de 40-60% ao longo da vida; tumores de mama costumam ser triplo-negativos. Indicações de teste: câncer de mama jovem, triplo-negativo ≤ 60 anos, câncer de ovário em qualquer idade, familiares de portadores.',
-  cd: ['RM anual e salpingo-ooforectomia', 'Rastreio igual ao da população geral', 'Apenas ultrassonografia anual', 'CA-125 semestral isolado'],
+  cd: ['RM anual das mamas e salpingo-ooforectomia aos 35-40 anos', 'Rastreamento igual ao da população geral, a partir dos 50 anos', 'Apenas ultrassonografia mamária e transvaginal anuais', 'CA-125 semestral isolado, sem cirurgia redutora de risco'],
   ecd: 'Rastreamento com RM de mamas anual a partir dos 25 anos (mamografia a partir dos 30); considerar mastectomia redutora de risco. Salpingo-ooforectomia bilateral redutora entre 35-40 anos (BRCA1) após a prole, que reduz câncer de ovário e mortalidade. Não há rastreio eficaz para ovário.' });
 
 /* ---------- Ovário ---------- */
@@ -122,7 +122,7 @@ CASO({ id: 'gm_ovario_epitelial', area: 'go', local: 'gineco', dif: 2, tema: 'C�
   pista: 'Pós-menopausa, massa sólido-cística com projeções, ascite e CA-125 muito alto.',
   dx: ['Câncer epitelial de ovário', 'Endometrioma bilateral', 'Cistoadenoma seroso', 'Tumor de Krukenberg'],
   edx: 'Carcinoma seroso de alto grau: tipo mais comum e letal, muitas vezes originado na fímbria tubária (STIC). Fatores de risco: idade, nuliparidade, menarca precoce, menopausa tardia, BRCA, Lynch. Protetores: anticoncepcional, gestação, amamentação, laqueadura. Sinais ultrassonográficos de malignidade: componente sólido, septos grossos, projeções papilares, fluxo central, ascite.',
-  cd: ['Citorredução e quimioterapia', 'Punção do cisto guiada', 'Observar e repetir CA-125', 'Anticoncepcional oral'],
+  cd: ['Citorredução máxima e carboplatina com paclitaxel', 'Punção do cisto guiada por ultrassonografia e citologia do líquido', 'Observar e repetir o CA-125 em 3 meses', 'Anticoncepcional oral para reduzir a massa'],
   ecd: 'Estadiamento cirúrgico FIGO e citorredução máxima (resíduo zero) seguida de carboplatina + paclitaxel (ou quimioterapia neoadjuvante e cirurgia de intervalo se doença irressecável); inibidores de PARP na manutenção (BRCA/HRD). Teste genético para todas.' });
 
 CASO({ id: 'gm_disgerminoma', area: 'go', local: 'gineco', dif: 3, tema: 'Câncer de ovário', cond: 'Disgerminoma em adolescente', tags: ['gineco', 'onco', 'usg'],
@@ -137,7 +137,7 @@ CASO({ id: 'gm_disgerminoma', area: 'go', local: 'gineco', dif: 3, tema: 'Cânce
   pista: 'Jovem, massa sólida de crescimento rápido e DHL elevada.',
   dx: ['Disgerminoma', 'Teratoma maduro', 'Carcinoma seroso', 'Tumor de seio endodérmico'],
   edx: 'Tumores de células germinativas predominam em jovens. Marcadores: DHL (disgerminoma), alfafetoproteína (seio endodérmico/saco vitelino), hCG (coriocarcinoma), inibina (granulosa). Disgerminoma é o maligno germinativo mais comum, unilateral na maioria e muito sensível à quimioterapia.',
-  cd: ['Anexectomia unilateral', 'Histerectomia total com anexectomia bilateral', 'Apenas observação', 'Punção aspirativa da massa'],
+  cd: ['Anexectomia unilateral com estadiamento cirúrgico', 'Histerectomia total com anexectomia bilateral e omentectomia', 'Observação com US e marcadores a cada 3 meses', 'Punção aspirativa da massa guiada por ultrassom'],
   ecd: 'Cirurgia conservadora da fertilidade (anexectomia unilateral, estadiamento) é padrão nos tumores germinativos, mesmo em estádios avançados, seguida de quimioterapia (BEP) quando indicada. Excelente prognóstico. Verificar cariótipo se amenorreia primária (disgenesia gonadal).' });
 
 /* ---------- Colo uterino ---------- */
@@ -152,7 +152,7 @@ CASO({ id: 'gm_hpv16', area: 'go', local: 'gineco', dif: 2, tema: 'Câncer de co
   pista: 'HPV 16 ou 18: direto para colposcopia.',
   dx: ['DNA-HPV 16 positivo', 'Câncer de colo invasivo', 'Infecção por HPV de baixo risco', 'Lesão de baixo grau confirmada'],
   edx: 'Diretriz brasileira 2025: rastreamento primário com teste de DNA-HPV oncogênico dos 25 aos 64 anos, a cada 5 anos se negativo. HPV 16 ou 18 positivo: colposcopia diretamente. Outros tipos oncogênicos: citologia reflexa no mesmo material (alterada → colposcopia; normal → repetir HPV em 1 ano).',
-  cd: ['Colposcopia', 'Repetir o teste em 5 anos', 'Conização imediata', 'Histerectomia'],
+  cd: ['Encaminhar para colposcopia', 'Repetir o teste de DNA-HPV em 5 anos', 'Conização a frio imediata', 'Histerectomia total'],
   ecd: 'Encaminhar à colposcopia com biópsia de áreas suspeitas. O teste de HPV tem maior sensibilidade para NIC 2+ e alto valor preditivo negativo, permitindo intervalos maiores. Vacinação contra HPV e cessação do tabagismo.' });
 
 CASO({ id: 'gm_hsil', area: 'go', local: 'gineco', dif: 2, tema: 'Câncer de colo uterino', cond: 'Lesão intraepitelial de alto grau (NIC 3)', tags: ['gineco', 'onco'],
@@ -166,7 +166,7 @@ CASO({ id: 'gm_hsil', area: 'go', local: 'gineco', dif: 2, tema: 'Câncer de col
   pista: 'Lesão precursora de alto grau, zona de transformação visível.',
   dx: ['NIC 3', 'Carcinoma escamoso invasivo', 'LSIL', 'Cervicite crônica'],
   edx: 'NIC 2 e 3 (HSIL) são lesões precursoras verdadeiras, com risco de progressão para câncer; NIC 1 (LSIL) geralmente regride. Achados colposcópicos de alto grau: acetobranco denso, mosaico e pontilhado grosseiros; vasos atípicos sugerem invasão.',
-  cd: ['Excisão da zona de transformação', 'Histerectomia', 'Repetir a citologia em 1 ano', 'Crioterapia sem biópsia'],
+  cd: ['Exérese da zona de transformação (CAF)', 'Histerectomia total abdominal', 'Repetir a citologia oncótica em 1 ano', 'Crioterapia sem biópsia prévia'],
   ecd: 'Tratamento excisional (EZT por cirurgia de alta frequência), que diagnostica e trata, preservando a fertilidade. Seguimento com teste de HPV/citologia em 6 meses. Em menores de 25 anos com NIC 2, pode-se observar. Na gestação, adiar o tratamento para o pós-parto se não houver suspeita de invasão.' });
 
 CASO({ id: 'gm_ca_colo', area: 'go', local: 'gineco', dif: 3, tema: 'Câncer de colo uterino', cond: 'Carcinoma escamoso de colo estádio IIIB', tags: ['gineco', 'onco', 'nefro'],
@@ -181,7 +181,7 @@ CASO({ id: 'gm_ca_colo', area: 'go', local: 'gineco', dif: 3, tema: 'Câncer de 
   pista: 'Paramétrio até a parede pélvica e hidronefrose.',
   dx: ['Estádio IIIB', 'Estádio IB1', 'Câncer de endométrio', 'Pólipo endocervical'],
   edx: 'Carcinoma escamoso (associado a HPV 16) é o tipo mais comum; adenocarcinoma (HPV 18), menos frequente e de rastreio mais difícil. FIGO: IA microinvasor; IB restrito ao colo; IIA vagina superior; IIB paramétrio sem atingir parede; IIIA terço inferior da vagina; IIIB parede pélvica ou hidronefrose; IIIC linfonodos; IVA bexiga ou reto; IVB à distância.',
-  cd: ['Radioquimioterapia', 'Histerectomia radical', 'Conização a frio', 'Apenas quimioterapia paliativa'],
+  cd: ['Radioterapia pélvica com cisplatina semanal e braquiterapia', 'Histerectomia radical (Wertheim-Meigs) com linfadenectomia pélvica', 'Conização a frio com margens livres', 'Quimioterapia paliativa exclusiva com carboplatina'],
   ecd: 'IB3 a IVA: radioterapia pélvica com cisplatina semanal e braquiterapia. Cirurgia radical (Wertheim-Meigs) fica para estádios iniciais (IA2-IB2); IA1 sem invasão linfovascular: conização com margens livres (fertilidade) ou histerectomia simples. Avaliar desobstrução urinária.' });
 
 /* ---------- Endométrio ---------- */
@@ -197,5 +197,5 @@ CASO({ id: 'gm_endometrio', area: 'go', local: 'gineco', dif: 2, tema: 'Câncer 
   pista: 'Sangramento pós-menopausa em obesa, diabética e nulípara.',
   dx: ['Câncer de endométrio', 'Atrofia endometrial', 'Pólipo endometrial', 'Câncer de colo uterino'],
   edx: 'Sangramento pós-menopausa exige investigação: endométrio > 4 mm (ou heterogêneo, ou sangramento persistente) indica amostragem (biópsia ou histeroscopia). Tipo I (endometrioide): estrogênio-dependente, associado a obesidade, nuliparidade, anovulação (SOP), tamoxifeno, diabetes; bom prognóstico. Tipo II (seroso, células claras): mais agressivo.',
-  cd: ['Histerectomia e estadiamento', 'Progestagênio e observar', 'Radioterapia exclusiva', 'Curetagem isolada'],
+  cd: ['Histerectomia, salpingo-ooforectomia e linfonodo sentinela', 'Acetato de megestrol contínuo e nova biópsia endometrial em 3 meses', 'Radioterapia pélvica exclusiva', 'Curetagem uterina fracionada isolada'],
   ecd: 'Histerectomia total com salpingo-ooforectomia bilateral e estadiamento cirúrgico (linfonodo sentinela), preferencialmente laparoscópica. Adjuvância conforme o risco (FIGO 2023 inclui classificação molecular: POLE, p53, MMR). Tratamento hormonal conservador só em jovens que desejam gestar.' });

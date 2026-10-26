@@ -17,7 +17,7 @@ CASO({ id: 'va_aaa_rastreio', area: 'cir', dif: 1, tema: 'Cirurgia vascular', co
   pista: 'Abaixo de 5,5 cm em homem assintomático o risco de romper é menor que o da cirurgia.',
   dx: ['AAA pequeno (4,3 cm)', 'Aorta ectasiada normal', 'Aneurisma roto contido', 'Dissecção aórtica crônica'],
   edx: 'AAA: diâmetro ≥ 3,0 cm. Rastreamento único com USG em homens de 65-75 anos que já fumaram (e com história familiar). O risco de ruptura cresce com o diâmetro, crescimento rápido, tabagismo, sexo feminino e forma sacular.',
-  cd: ['USG seriada e parar de fumar', 'Correção aberta imediata', 'Endoprótese de urgência', 'Alta sem seguimento'],
+  cd: ['USG anual, cessar o tabagismo, estatina e controle da PA', 'Correção aberta eletiva imediata com enxerto aortobifemoral', 'Endoprótese (EVAR) de urgência pelo risco de ruptura', 'Alta sem seguimento, pois o aneurisma é pequeno'],
   ecd: 'Vigilância com USG (anual para 4,0-4,9 cm; semestral para 5,0-5,4 cm), cessação do tabagismo, controle pressórico e estatina. Indicar reparo se ≥ 5,5 cm (homens), ≥ 5,0 cm (mulheres), crescimento > 1 cm/ano ou sintomas.' });
 
 CASO({ id: 'va_aaa_eletivo', area: 'cir', dif: 2, tema: 'Cirurgia vascular', cond: 'Aneurisma de aorta abdominal com indicação de reparo', tags: ['img', 'cardio'],
@@ -31,7 +31,7 @@ CASO({ id: 'va_aaa_eletivo', area: 'cir', dif: 2, tema: 'Cirurgia vascular', con
   pista: 'Mais de 5,5 cm, com anatomia favorável e paciente com risco pulmonar.',
   dx: ['AAA de 6 cm', 'AAA roto contido', 'Aneurisma de ilíaca isolado', 'Massa retroperitoneal'],
   edx: 'Indicações de correção: ≥ 5,5 cm em homens (≥ 5,0 em mulheres), crescimento rápido (> 0,5 cm em 6 meses ou > 1 cm/ano), sintomático, ou sacular. EVAR: menor morbimortalidade perioperatória, exige anatomia favorável e vigilância por imagem para endoleaks.',
-  cd: ['Reparo endovascular', 'Seguimento semestral', 'Betabloqueador e alta', 'Cirurgia só se doer'],
+  cd: ['Reparo endovascular (EVAR) eletivo', 'Ultrassom semestral até atingir 6,5 cm de diâmetro', 'Metoprolol para reduzir a expansão e alta', 'Cirurgia apenas se o aneurisma ficar doloroso'],
   ecd: 'Correção eletiva — EVAR preferida com anatomia adequada e alto risco cirúrgico; aberta em jovens com bom risco ou anatomia desfavorável. Após EVAR: angioTC/USG seriados (endoleak tipo II é o mais comum; tipo I e III exigem correção).' });
 
 CASO({ id: 'va_aaa_roto', area: 'cir', dif: 3, tema: 'Cirurgia vascular', cond: 'Aneurisma de aorta abdominal roto', tags: ['choque', 'cardio', 'dor'],
@@ -44,7 +44,7 @@ CASO({ id: 'va_aaa_roto', area: 'cir', dif: 3, tema: 'Cirurgia vascular', cond: 
   pista: 'Tríade: dor, hipotensão e massa pulsátil.',
   dx: ['AAA roto', 'Cólica renal', 'Pancreatite aguda', 'Infarto agudo do miocárdio'],
   edx: 'Tríade clássica (dor abdominal/lombar, hipotensão, massa pulsátil) em ~50%. A ruptura retroperitoneal pode ser temporariamente contida. Mortalidade global muito alta.',
-  cd: ['Centro cirúrgico agora', 'TC antes de decidir', 'Cristaloide até PA normal', 'Analgesia e observação'],
+  cd: ['Hipotensão permissiva e centro cirúrgico imediato', 'Angio-TC de abdome antes de decidir a conduta', 'Cristaloide vigoroso até normalizar a pressão arterial', 'Analgesia com morfina e observação em UTI'],
   ecd: 'Instável com diagnóstico clínico: ir direto ao centro cirúrgico (EVAR de urgência se disponível e anatomia conhecida/viável; senão cirurgia aberta com controle proximal). Hipotensão permissiva (PAS 70-90 com consciência preservada), sangue e não hiper-hidratar. TC só no estável.' });
 
 CASO({ id: 'va_disseccao_b', area: 'cir', dif: 3, tema: 'Cirurgia vascular', cond: 'Dissecção aguda da aorta tipo B complicada', tags: ['cardio', 'img', 'dor'],
@@ -60,7 +60,7 @@ CASO({ id: 'va_disseccao_b', area: 'cir', dif: 3, tema: 'Cirurgia vascular', con
   pista: 'Só a aorta descendente, mas com sinal de rotura.',
   dx: ['Dissecção tipo B', 'Dissecção tipo A de Stanford', 'Infarto agudo do miocárdio', 'Pneumotórax espontâneo'],
   edx: 'Stanford A: envolve a aorta ascendente (cirurgia de emergência). B: só a descendente (distal à subclávia esquerda). Tipo B não complicada: tratamento clínico. Complicada: rotura/hemotórax, má perfusão visceral/renal/de membros, dor ou hipertensão refratárias, expansão rápida.',
-  cd: ['Controle de PA/FC e TEVAR', 'Só tratamento clínico', 'Trombólise', 'Cirurgia da aorta ascendente'],
+  cd: ['Esmolol (FC < 60), nitroprussiato e TEVAR', 'Tratamento clínico exclusivo com betabloqueador oral', 'Trombólise com alteplase pela isquemia visceral', 'Troca da aorta ascendente com prótese valvada'],
   ecd: 'Controle de impulso (betabloqueador IV para FC < 60 e PAS 100-120; vasodilatador após betabloqueio), analgesia e correção endovascular (TEVAR) por ser complicada. Marfan exige seguimento vitalício e cirurgia profilática da raiz aórtica conforme diâmetro.' });
 
 CASO({ id: 'va_isquemia_aguda', area: 'cir', dif: 2, tema: 'Cirurgia vascular', cond: 'Isquemia arterial aguda embólica de membro inferior', tags: ['anticoag', 'dor', 'cardio'],
@@ -73,7 +73,7 @@ CASO({ id: 'va_isquemia_aguda', area: 'cir', dif: 2, tema: 'Cirurgia vascular', 
   pista: 'Início súbito, FA sem anticoagulação, membro contralateral normal.',
   dx: ['Embolia arterial aguda', 'Trombose venosa profunda', 'Isquemia crônica crítica', 'Neuropatia diabética'],
   edx: '6 Ps: dor (pain), palidez, ausência de pulso, parestesia, paralisia, poiquilotermia. Embolia: início súbito, fonte cardíaca (FA), sem claudicação prévia, contralateral normal. Trombose in situ: claudicação prévia e doença aterosclerótica. Classificação de Rutherford orienta a urgência (alteração sensitiva leve: IIa; motora: IIb; irreversível: III).',
-  cd: ['Heparina e embolectomia', 'Só AAS e observar', 'Amputação primária', 'Doppler venoso e alta'],
+  cd: ['Heparina não fracionada EV e embolectomia com Fogarty', 'AAS 300 mg, cilostazol e observação com Doppler arterial em 24 horas', 'Amputação primária acima do joelho', 'Doppler venoso para afastar TVP e alta'],
   ecd: 'Heparina não fracionada IV imediata e revascularização de urgência: embolectomia com cateter de Fogarty (embolia) ou trombólise/angioplastia em casos selecionados. Isquemia prolongada: fasciotomia (síndrome de reperfusão). Depois, anticoagulação permanente pela FA.' });
 
 CASO({ id: 'va_carotida', area: 'cir', dif: 2, tema: 'Cirurgia vascular', cond: 'Estenose carotídea sintomática grave', tags: ['neuro', 'usg'],
@@ -87,7 +87,7 @@ CASO({ id: 'va_carotida', area: 'cir', dif: 2, tema: 'Cirurgia vascular', cond: 
   pista: 'Sintomas do mesmo lado da estenose (amaurose fugaz e déficit contralateral).',
   dx: ['Estenose carotídea sintomática', 'Estenose carotídea assintomática', 'AIT cardioembólico', 'Arterite temporal'],
   edx: 'Estenose sintomática (AIT/AVC não incapacitante no território nos últimos 6 meses) de 70-99% tem grande benefício da endarterectomia, maior quanto mais precoce (idealmente em até 2 semanas). 50-69%: benefício moderado. Amaurose fugaz = isquemia da artéria oftálmica (ramo da carótida interna).',
-  cd: ['Endarterectomia precoce', 'Só antiagregante e estatina', 'Angioplastia em 6 meses', 'Anticoagulação plena'],
+  cd: ['Endarterectomia em até 2 semanas, com AAS e estatina', 'Só AAS e atorvastatina, sem intervenção', 'Angioplastia com stent carotídeo eletiva em 6 meses, após estabilizar', 'Anticoagulação plena com varfarina'],
   ecd: 'Tratamento clínico otimizado (antiplaquetário, estatina de alta potência, controle pressórico e glicêmico, cessar tabagismo) + endarterectomia carotídea precoce. Angioplastia com stent: alternativa em pescoço hostil (radioterapia, reestenose) ou alto risco cirúrgico.' });
 
 /* ---------- Urologia ---------- */
@@ -103,7 +103,7 @@ CASO({ id: 'ur_calculo_expulsivo', area: 'cir', dif: 1, tema: 'Urologia', cond: 
   pista: 'Menos de 10 mm, distal, sem infecção e com dor controlável.',
   dx: ['Litíase ureteral', 'Pielonefrite obstrutiva', 'Apendicite aguda', 'Torção testicular'],
   edx: 'Cálculos ≤ 5 mm passam espontaneamente em ~70-90%; 5-10 mm se beneficiam de terapia expulsiva com alfabloqueador, principalmente distais. Indicações de intervenção: infecção com obstrução (urgência), dor refratária, LRA, rim único obstruído, cálculos > 10 mm ou sem progressão em 4-6 semanas.',
-  cd: ['AINE e tansulosina', 'Ureteroscopia de urgência', 'Nefrostomia', 'Antibiótico venoso'],
+  cd: ['Diclofenaco e tansulosina 0,4 mg/dia', 'Ureteroscopia com laser de urgência para retirar o cálculo', 'Nefrostomia percutânea', 'Ceftriaxona EV e internação'],
   ecd: 'Analgesia com AINE (primeira linha) ± opioide, antiemético, tansulosina e seguimento com imagem; orientar sinais de alarme (febre). Coar a urina e analisar o cálculo; prevenção com hidratação (> 2,5 L/dia de diurese).' });
 
 CASO({ id: 'ur_calculo_renal_grande', area: 'cir', dif: 2, tema: 'Urologia', cond: 'Cálculo renal de 2 cm no polo inferior', tags: ['img'],
@@ -118,7 +118,7 @@ CASO({ id: 'ur_calculo_renal_grande', area: 'cir', dif: 2, tema: 'Urologia', con
   pista: 'Cálculo maior que 2 cm no rim.',
   dx: ['Litíase renal de 2 cm', 'Litíase ureteral distal', 'Tumor renal', 'Rim em esponja medular'],
   edx: 'Cálculos renais: < 1 cm — LECO ou ureteroscopia flexível; 1-2 cm — LECO (exceto polo inferior/alta densidade) ou ureteroscopia flexível; > 2 cm — nefrolitotripsia percutânea (NLPC). Polo inferior e alta densidade reduzem o sucesso da LECO.',
-  cd: ['Nefrolitotripsia percutânea', 'Terapia expulsiva com tansulosina', 'Citrato e observar', 'Nefrectomia'],
+  cd: ['Nefrolitotripsia percutânea', 'Tansulosina para terapia expulsiva', 'Citrato de potássio e observação anual', 'Nefrectomia simples laparoscópica'],
   ecd: 'Nefrolitotripsia percutânea (ou ureteroscopia flexível em casos selecionados). Análise do cálculo e investigação metabólica (urina de 24 h) para prevenção de recorrência.' });
 
 CASO({ id: 'ur_retencao_cistostomia', area: 'cir', dif: 2, tema: 'Urologia', cond: 'Retenção urinária com falha de sondagem: cistostomia', tags: ['usg', 'dor'],
@@ -132,7 +132,7 @@ CASO({ id: 'ur_retencao_cistostomia', area: 'cir', dif: 2, tema: 'Urologia', con
   pista: 'Não insistir na uretra traumatizada.',
   dx: ['Retenção urinária', 'Rotura vesical', 'Lesão renal intrínseca', 'Cálculo ureteral'],
   edx: 'Retenção urinária aguda na HPB, precipitada por anticolinérgicos, opioides, constipação, imobilidade, infecção. Primeira medida: sondagem vesical (de alívio/demora). Falha ou trauma uretral: cistostomia suprapúbica.',
-  cd: ['Cistostomia suprapúbica', 'Forçar a sonda com mandril', 'Furosemida venosa', 'Aguardar a micção espontânea'],
+  cd: ['Cistostomia suprapúbica por punção guiada', 'Forçar a sonda de Foley com mandril metálico rígido', 'Furosemida 40 mg EV', 'Aguardar a micção espontânea por 6 horas'],
   ecd: 'Cistostomia suprapúbica por punção guiada por USG, esvaziamento e controle de hematúria ex-vácuo; depois alfabloqueador e avaliação urológica (prova de retirada, cirurgia desobstrutiva).' });
 
 CASO({ id: 'ur_hpb', area: 'cir', dif: 1, tema: 'Urologia', cond: 'Hiperplasia prostática benigna sintomática', tags: ['usg'],
@@ -147,7 +147,7 @@ CASO({ id: 'ur_hpb', area: 'cir', dif: 1, tema: 'Urologia', cond: 'Hiperplasia p
   pista: 'Próstata grande e sintomas moderados a graves, sem complicações.',
   dx: ['HPB sintomática', 'Câncer de próstata', 'Bexiga hiperativa isolada', 'Estenose de uretra'],
   edx: 'HPB: sintomas do trato urinário inferior (esvaziamento e armazenamento). Indicações de cirurgia: retenção urinária refratária, ITU recorrente, hematúria recorrente, litíase vesical, hidronefrose/insuficiência renal, falha clínica.',
-  cd: ['Alfabloqueador + finasterida', 'Ressecção transuretral imediata', 'Prostatectomia radical', 'Antibiótico por 6 semanas'],
+  cd: ['Tansulosina associada a finasterida', 'Ressecção transuretral da próstata imediata', 'Prostatectomia radical retropúbica', 'Ciprofloxacino por 6 semanas pela prostatite'],
   ecd: 'Terapia combinada: alfabloqueador (alívio rápido) + inibidor da 5-alfa-redutase (finasterida/dutasterida, reduz volume e risco de retenção/cirurgia em próstatas > 30-40 g; reduz o PSA à metade). Medidas comportamentais. Cirurgia (RTU, enucleação) se falha ou complicações.' });
 
 CASO({ id: 'ur_ca_prostata', area: 'cir', dif: 2, tema: 'Urologia', cond: 'Suspeita de câncer de próstata: PSA elevado e nódulo', tags: ['onco', 'img'],
@@ -161,7 +161,7 @@ CASO({ id: 'ur_ca_prostata', area: 'cir', dif: 2, tema: 'Urologia', cond: 'Suspe
   pista: 'Toque alterado basta para investigar.',
   dx: ['Suspeita de câncer', 'HPB isolada', 'Prostatite aguda', 'Câncer de bexiga'],
   edx: 'Rastreamento com PSA e toque é decisão compartilhada (50-69 anos; antes em negros e com história familiar). Toque com nódulo/endurecimento ou PSA elevado/velocidade alta: RM multiparamétrica e biópsia. A graduação de Gleason/ISUP, o PSA e o estadiamento definem o risco.',
-  cd: ['RM e biópsia', 'Repetir o PSA em 2 anos', 'Tratar como prostatite crônica', 'Prostatectomia sem biópsia'],
+  cd: ['RM multiparamétrica e biópsia guiada', 'Repetir o PSA em 2 anos', 'Ciprofloxacino por 4 semanas e repetir o PSA', 'Prostatectomia radical sem biópsia'],
   ecd: 'RM multiparamétrica (PI-RADS) e biópsia guiada (transperineal preferível). Tratamento conforme risco: vigilância ativa (baixo risco), prostatectomia radical ou radioterapia ± hormonioterapia; doença metastática: bloqueio androgênico.' });
 
 CASO({ id: 'ur_tumor_testiculo', area: 'cir', dif: 2, tema: 'Urologia', cond: 'Tumor de testículo', tags: ['onco', 'usg'],
@@ -176,7 +176,7 @@ CASO({ id: 'ur_tumor_testiculo', area: 'cir', dif: 2, tema: 'Urologia', cond: 'T
   pista: 'Massa sólida intratesticular em homem jovem é câncer até prova em contrário.',
   dx: ['Tumor germinativo', 'Orquiepididimite', 'Hidrocele', 'Varicocele'],
   edx: 'Neoplasia sólida mais comum em homens de 15-35 anos. Fator de risco: criptorquidia. Marcadores: AFP (não seminomatoso — saco vitelino), beta-hCG (coriocarcinoma, alguns seminomas), DHL (volume tumoral). Seminoma puro não eleva AFP.',
-  cd: ['Orquiectomia radical inguinal', 'Biópsia transescrotal', 'Antibiótico por mais 4 semanas', 'Punção aspirativa'],
+  cd: ['Orquiectomia radical por via inguinal', 'Biópsia por via transescrotal', 'Ciprofloxacino por mais 4 semanas pela orquiepididimite', 'Punção aspirativa por agulha fina'],
   ecd: 'Orquiectomia radical por via inguinal (ligadura alta do cordão), nunca biópsia ou incisão escrotal (altera a drenagem linfática). Estadiamento com TC de tórax/abdome/pelve e marcadores pós-operatórios; oferecer criopreservação de sêmen.' });
 
 CASO({ id: 'ur_fournier', area: 'cir', dif: 3, tema: 'Urologia', cond: 'Gangrena de Fournier', tags: ['sepse', 'infec', 'choque', 'img'],
@@ -191,7 +191,7 @@ CASO({ id: 'ur_fournier', area: 'cir', dif: 3, tema: 'Urologia', cond: 'Gangrena
   pista: 'Necrose com crepitação e sepse: o tratamento é tirar todo o tecido morto.',
   dx: ['Gangrena de Fournier', 'Erisipela', 'Orquiepididimite', 'Abscesso perianal simples'],
   edx: 'Fasceíte necrosante polimicrobiana do períneo/genitais, com origem anorretal, urogenital ou cutânea; fatores: diabetes, alcoolismo, imunossupressão. Progride rapidamente pelas fáscias; crepitação, necrose e toxemia.',
-  cd: ['Desbridamento amplo', 'Antibiótico e reavaliar em 48 h', 'Câmara hiperbárica isolada', 'Drenagem por punção'],
+  cd: ['Desbridamento cirúrgico amplo de urgência e antibiótico', 'Piperacilina-tazobactam e reavaliar em 48 horas', 'Oxigenoterapia hiperbárica isolada, sem desbridamento cirúrgico', 'Drenagem por punção guiada por ultrassom'],
   ecd: 'Ressuscitação (pacote de sepse), antibiótico de amplo espectro (ex.: piperacilina-tazobactam ou carbapenêmico + clindamicina ± vancomicina) e desbridamento cirúrgico amplo e urgente, com reabordagens programadas a cada 24-48 h; colostomia/cistostomia de derivação quando necessário; controle glicêmico.' });
 
 CASO({ id: 'ur_hematuria', area: 'cir', dif: 2, tema: 'Urologia', cond: 'Hematúria macroscópica indolor em tabagista', tags: ['onco', 'img'],
@@ -205,7 +205,7 @@ CASO({ id: 'ur_hematuria', area: 'cir', dif: 2, tema: 'Urologia', cond: 'Hematú
   pista: 'Hematúria macroscópica indolor em tabagista: investigar todo o trato urinário.',
   dx: ['Carcinoma urotelial', 'Glomerulonefrite aguda', 'Cistite bacteriana', 'Litíase renal'],
   edx: 'Hematúria macroscópica (sem infecção) em adulto exige investigação de neoplasia. Fatores para carcinoma urotelial: tabagismo (principal), aminas aromáticas (tintas, borracha), ciclofosfamida, esquistossomose (CEC). Hematúria glomerular: dismorfismo, cilindros hemáticos, proteinúria.',
-  cd: ['Cistoscopia e urotomografia', 'Antibiótico e repetir a urina', 'Só USG em 1 ano', 'Biópsia renal'],
+  cd: ['Cistoscopia e urotomografia', 'Ciprofloxacino e repetir o sumário de urina', 'Só ultrassom de controle em 1 ano', 'Biópsia renal percutânea'],
   ecd: 'Cistoscopia (avaliar bexiga e uretra) e urotomografia (trato superior); citologia urinária complementar. Lesão vesical: ressecção transuretral (diagnóstico, estadiamento e tratamento); músculo-invasivo: cistectomia radical com quimioterapia neoadjuvante. Cessar tabagismo.' });
 
 CASO({ id: 'ur_massa_renal', area: 'cir', dif: 2, tema: 'Urologia', cond: 'Massa renal sólida incidental (carcinoma de células renais)', tags: ['onco', 'img'],
@@ -220,5 +220,5 @@ CASO({ id: 'ur_massa_renal', area: 'cir', dif: 2, tema: 'Urologia', cond: 'Massa
   pista: 'Massa sólida com realce, pequena e localizada.',
   dx: ['Carcinoma de células renais', 'Cisto renal simples', 'Angiomiolipoma', 'Pielonefrite focal'],
   edx: 'Massa renal sólida com realce ao contraste é carcinoma até prova em contrário (tipo células claras é o mais comum). Tríade clássica (dor, hematúria, massa) é rara hoje; síndromes paraneoplásicas: policitemia, hipercalcemia, hipertensão, Stauffer. Angiomiolipoma: gordura macroscópica na TC. Cistos: classificação de Bosniak.',
-  cd: ['Nefrectomia parcial', 'Biópsia percutânea obrigatória', 'Quimioterapia citotóxica', 'Repetir USG em 1 ano'],
+  cd: ['Nefrectomia parcial', 'Biópsia percutânea obrigatória antes de operar', 'Quimioterapia citotóxica com gencitabina', 'Ultrassom de controle em 1 ano'],
   ecd: 'Tumores T1 (≤ 7 cm): nefrectomia parcial (preserva função renal); maiores ou centrais: nefrectomia radical. Biópsia não é rotina antes da cirurgia. Pequenas massas em idosos/alto risco: vigilância ativa ou ablação. Doença metastática: imunoterapia/terapia-alvo.' });

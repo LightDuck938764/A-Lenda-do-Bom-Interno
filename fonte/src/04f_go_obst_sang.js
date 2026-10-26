@@ -18,7 +18,7 @@ CASO({ id: 'os_ameaca_aborto', area: 'go', local: 'obst', dif: 1, tema: 'Abortam
   pista: 'Colo fechado e embrião vivo.',
   dx: ['Ameaça de abortamento', 'Abortamento inevitável', 'Abortamento retido', 'Gravidez ectópica'],
   edx: 'Abortamento: interrupção antes de 20-22 semanas ou feto < 500 g. Ameaça: sangramento leve, colo impérvio, embrião vivo. Inevitável/incompleto: colo pérvio. Retido: embrião sem BCF com colo fechado. Completo: útero vazio, colo fechando, sangramento diminuindo.',
-  cd: ['Expectante e nova USG', 'Curetagem uterina imediata', 'Misoprostol vaginal 800 µg', 'Metotrexato intramuscular'],
+  cd: ['Conduta expectante, analgésico e nova USG em 7-10 dias', 'Curetagem uterina imediata pelo sangramento ativo', 'Misoprostol 800 µg via vaginal em dose única', 'Progesterona IM e repouso absoluto no leito até 20 semanas'],
   ecd: 'Ameaça de abortamento: conduta expectante, analgésico/antiespasmódico, abstinência sexual enquanto houver sangramento, orientar sinais de alerta e repetir USG. Repouso absoluto não muda o desfecho. Se Rh negativo, imunoglobulina anti-D.' });
 
 CASO({ id: 'os_aborto_completo', area: 'go', local: 'obst', dif: 1, tema: 'Abortamento', cond: 'Abortamento completo', tags: ['obst', 'usg'],
@@ -32,7 +32,7 @@ CASO({ id: 'os_aborto_completo', area: 'go', local: 'obst', dif: 1, tema: 'Abort
   pista: 'Cavidade vazia, endométrio fino, sangramento parando.',
   dx: ['Abortamento completo', 'Abortamento incompleto', 'Gestação não visualizada', 'Ameaça de abortamento'],
   edx: 'Abortamento completo: eliminação total do conteúdo, comum antes de 8 semanas; colo se fecha, sangramento e cólica cedem; USG com endométrio < 15 mm. Se não houve USG prévia confirmando gestação tópica, acompanhar o beta-hCG até negativar (excluir ectópica).',
-  cd: ['Conduta expectante', 'Curetagem uterina', 'AMIU imediata', 'Misoprostol vaginal'],
+  cd: ['Conduta expectante, sem esvaziamento', 'Curetagem uterina para garantir a cavidade vazia', 'AMIU imediata no pronto-socorro', 'Misoprostol 400 µg vaginal por precaução'],
   ecd: 'Não há necessidade de esvaziamento. Orientar retorno se sangramento ou febre, oferecer contracepção e apoio. A gestação pode ser tentada novamente quando a paciente desejar.' });
 
 CASO({ id: 'os_aborto_incompleto', area: 'go', local: 'obst', dif: 2, tema: 'Abortamento', cond: 'Abortamento incompleto no primeiro trimestre', tags: ['obst', 'usg'],
@@ -47,7 +47,7 @@ CASO({ id: 'os_aborto_incompleto', area: 'go', local: 'obst', dif: 2, tema: 'Abo
   pista: 'Colo aberto com restos e menos de 12 semanas.',
   dx: ['Abortamento incompleto', 'Abortamento completo', 'Ameaça de abortamento', 'Mola hidatiforme completa'],
   edx: 'Incompleto: eliminação parcial, colo pérvio, restos na cavidade (eco endometrial ≥ 15 mm, heterogêneo). Sangramento costuma ser mais intenso.',
-  cd: ['AMIU', 'Expectante por 4 semanas', 'Histerectomia', 'Metotrexato'],
+  cd: ['Aspiração manual intrauterina (AMIU)', 'Conduta expectante por 4 semanas com USG semanal', 'Histerectomia subtotal pelo sangramento', 'Metotrexato 50 mg/m² IM em dose única'],
   ecd: 'Até 12 semanas, aspiração manual intrauterina (AMIU) é o método de escolha (menos perfuração, menos sinéquias, pode ser ambulatorial). Acima de 12 semanas: misoprostol para expulsão e curetagem se necessário. Alternativa: misoprostol 400-600 µg. Anti-D se Rh negativo. Material para histopatológico.' });
 
 CASO({ id: 'os_aborto_inevitavel', area: 'go', local: 'obst', dif: 2, tema: 'Abortamento', cond: 'Abortamento inevitável', tags: ['obst', 'usg'],
@@ -61,7 +61,7 @@ CASO({ id: 'os_aborto_inevitavel', area: 'go', local: 'obst', dif: 2, tema: 'Abo
   pista: 'Colo aberto, ovo ainda dentro, sem eliminação.',
   dx: ['Abortamento inevitável', 'Abortamento completo', 'Ameaça de abortamento', 'Abortamento retido antigo'],
   edx: 'Inevitável (em curso): colo pérvio, sangramento intenso e cólicas, com o ovo ainda na cavidade/canal. A gestação não pode ser mantida.',
-  cd: ['Esvaziamento e anti-D', 'Repouso e progesterona', 'Cerclagem de urgência', 'Expectante e alta'],
+  cd: ['AMIU e imunoglobulina anti-D em até 72 h', 'Repouso absoluto e progesterona vaginal 400 mg/dia', 'Cerclagem de urgência com colo dilatado', 'Conduta expectante e alta sem imunoglobulina'],
   ecd: 'Estabilizar, esvaziar a cavidade (AMIU/aspiração até 12 semanas) e, por ser Rh negativo com Coombs indireto negativo, imunoglobulina anti-D em até 72 horas.' });
 
 CASO({ id: 'os_aborto_retido', area: 'go', local: 'obst', dif: 2, tema: 'Abortamento', cond: 'Abortamento retido', tags: ['obst', 'usg'],
@@ -75,7 +75,7 @@ CASO({ id: 'os_aborto_retido', area: 'go', local: 'obst', dif: 2, tema: 'Abortam
   pista: 'Com CCN ≥ 7 mm o coração já deveria bater.',
   dx: ['Abortamento retido (sem BCF)', 'Ameaça de abortamento inicial', 'Gestação inicial normal', 'Gravidez anembrionada'],
   edx: 'Critérios de gestação inviável (USG TV): CCN ≥ 7 mm sem BCF; saco gestacional com diâmetro médio ≥ 25 mm sem embrião (anembrionada); ausência de embrião com BCF ≥ 2 semanas após saco sem vesícula vitelínica.',
-  cd: ['Misoprostol ou AMIU', 'Repetir USG em 4 semanas', 'Progesterona vaginal', 'Cerclagem uterina'],
+  cd: ['Misoprostol 800 µg vaginal ou AMIU', 'Repetir a USG em 4 semanas antes de decidir', 'Progesterona vaginal 200 mg/dia até 12 semanas', 'Cerclagem uterina e repouso domiciliar'],
   ecd: 'Opções: expectante (se a paciente preferir e estável), medicamentosa (misoprostol 800 µg via vaginal no 1º trimestre) ou aspiração. Retenção prolongada eleva risco de coagulopatia (raro no 1º trimestre).' });
 
 CASO({ id: 'os_aborto_infectado', area: 'go', local: 'obst', dif: 3, tema: 'Abortamento', cond: 'Abortamento infectado após manipulação', tags: ['obst', 'sepse', 'usg', 'infec', 'choque'],
@@ -90,7 +90,7 @@ CASO({ id: 'os_aborto_infectado', area: 'go', local: 'obst', dif: 3, tema: 'Abor
   pista: 'Restos infectados são o foco: tratar e remover.',
   dx: ['Abortamento infectado com sepse', 'Endometrite pós-parto tardia', 'Doença inflamatória pélvica', 'Pielonefrite aguda'],
   edx: 'Abortamento infectado: polimicrobiano (anaeróbios, Gram-negativos; Clostridium em formas graves com gás no miométrio). Sinais de sepse indicam tratamento imediato.',
-  cd: ['Antibiótico e esvaziamento', 'Antibiótico oral e alta', 'Aguardar 72 h para esvaziar', 'Misoprostol isolado'],
+  cd: ['Clindamicina + gentamicina e esvaziamento uterino logo após', 'Amoxicilina-clavulanato VO e alta com retorno em 48 horas', 'Antibiótico venoso e aguardar 72 horas para esvaziar o útero', 'Misoprostol vaginal isolado, sem antibiótico'],
   ecd: 'Reanimação (pacote de sepse), clindamicina + gentamicina (± ampicilina) e esvaziamento uterino logo após o início do antibiótico. Histerectomia se falha, miometrite necrosante/gás, perfuração ou choque refratário. Notificação e acolhimento sem julgamento; sigilo profissional.' });
 
 /* ---------- Perdas recorrentes e prematuridade ---------- */
@@ -105,7 +105,7 @@ CASO({ id: 'os_iic', area: 'go', local: 'obst', dif: 2, tema: 'Abortamento', con
   pista: 'Perdas de segundo trimestre indolores, com feto vivo e dilatação silenciosa.',
   dx: ['Insuficiência istmocervical', 'Síndrome antifosfolípide', 'Aneuploidia fetal recorrente', 'Trombofilia hereditária'],
   edx: 'IIC: incapacidade do colo de manter a gestação, com dilatação indolor no 2º trimestre. Fatores: conização, dilatações e lacerações cervicais, malformações uterinas. Diagnóstico pela história.',
-  cd: ['Cerclagem com 12-16 semanas', 'Repouso absoluto até 37 semanas', 'Enoxaparina e AAS', 'Cerclagem só com 28 semanas'],
+  cd: ['Cerclagem (McDonald) entre 12 e 16 semanas', 'Repouso absoluto domiciliar até 37 semanas', 'Enoxaparina profilática e AAS 100 mg/dia', 'Cerclagem apenas com 28 semanas, se o colo encurtar'],
   ecd: 'Cerclagem eletiva (McDonald) entre 12-16 semanas, após USG confirmar feto vivo e sem malformações; retirada com 36-37 semanas ou no trabalho de parto. Contraindicações: bolsa rota, infecção, sangramento, trabalho de parto, malformação incompatível.' });
 
 CASO({ id: 'os_colo_curto', area: 'go', local: 'obst', dif: 2, tema: 'Prematuridade', cond: 'Colo curto assintomático no segundo trimestre', tags: ['obst', 'usg'],
@@ -119,7 +119,7 @@ CASO({ id: 'os_colo_curto', area: 'go', local: 'obst', dif: 2, tema: 'Prematurid
   pista: 'Colo ≤ 25 mm sem história de perdas: há uma medicação que reduz parto prematuro.',
   dx: ['Colo curto (risco de prematuridade)', 'Insuficiência istmocervical clássica', 'Trabalho de parto prematuro', 'Placenta prévia marginal'],
   edx: 'Medida do colo por USG transvaginal entre 18-24 semanas: ≤ 25 mm aumenta o risco de parto prematuro. Sem história de perdas, a progesterona vaginal reduz parto prematuro e morbidade neonatal.',
-  cd: ['Progesterona vaginal', 'Tocólise com nifedipina', 'Corticoide e alta definitiva', 'Repouso absoluto domiciliar'],
+  cd: ['Progesterona vaginal 200 mg/dia até 36 semanas', 'Tocólise com nifedipino por 48 horas e alta com repouso relativo', 'Betametasona e alta sem outro tratamento', 'Repouso absoluto domiciliar até 34 semanas'],
   ecd: 'Progesterona micronizada vaginal 200 mg/dia até 36 semanas. Cerclagem é considerada quando há colo curto e história de perda de 2º trimestre/parto prematuro. Corticoide só se houver risco de parto iminente.' });
 
 CASO({ id: 'os_saf', area: 'go', local: 'obst', dif: 3, tema: 'Abortamento', cond: 'Síndrome antifosfolípide obstétrica', tags: ['obst', 'hemato', 'anticoag'],
@@ -133,7 +133,7 @@ CASO({ id: 'os_saf', area: 'go', local: 'obst', dif: 3, tema: 'Abortamento', con
   pista: 'Trombose + perdas de repetição + anticorpo positivo em duas dosagens.',
   dx: ['Síndrome antifosfolípide', 'Trombofilia hereditária', 'Insuficiência istmocervical', 'Lúpus sem SAF'],
   edx: 'SAF: critério clínico (trombose; ≥ 3 perdas < 10 semanas; óbito fetal ≥ 10 semanas; parto < 34 semanas por pré-eclâmpsia grave/insuficiência placentária) + laboratorial (anticoagulante lúpico, anticardiolipina ou anti-β2-glicoproteína I em títulos moderados/altos, confirmados após 12 semanas).',
-  cd: ['AAS e heparina na gestação', 'Varfarina durante a gestação', 'Só AAS após 20 semanas', 'Corticoide em dose alta'],
+  cd: ['AAS em baixa dose e enoxaparina durante a gestação', 'Varfarina durante toda a gestação, com RNI entre 2 e 3', 'AAS em baixa dose isolado, só a partir de 20 semanas', 'Prednisona 40 mg/dia desde o primeiro trimestre'],
   ecd: 'Na gestação: AAS em baixa dose (desde a concepção) + enoxaparina; com trombose prévia, dose terapêutica/intermediária. Varfarina é teratogênica (6-12 semanas) — trocar por heparina. Vigiar pré-eclâmpsia e crescimento fetal; manter anticoagulação no puerpério.' });
 
 /* ---------- Doença trofoblástica gestacional ---------- */
@@ -150,7 +150,7 @@ CASO({ id: 'os_mola_completa', area: 'go', local: 'obst', dif: 2, tema: 'Doença
   pista: 'Vesículas em cacho de uva, útero grande, hCG altíssimo, hipertireoidismo e PA alta antes de 20 semanas.',
   dx: ['Mola hidatiforme completa', 'Mola hidatiforme parcial', 'Abortamento retido', 'Gestação gemelar com hiperêmese'],
   edx: 'Mola completa: cariótipo 46,XX (androgenético), sem tecido fetal, hCG muito elevado; complicações: hiperêmese, pré-eclâmpsia precoce (< 20 semanas), hipertireoidismo, cistos tecaluteínicos, anemia. Risco de neoplasia trofoblástica ~15-20%.',
-  cd: ['Aspiração a vácuo', 'Misoprostol para expulsão', 'Histerectomia de rotina', 'Metotrexato'],
+  cd: ['Vácuo-aspiração e beta-hCG seriado', 'Misoprostol vaginal para expulsão da mola', 'Histerectomia total como rotina', 'Metotrexato profilático em todas as pacientes'],
   ecd: 'Esvaziamento por aspiração (vácuo-aspiração ou AMIU) com ocitocina após o início, controle do hipertireoidismo (betabloqueador) e da PA, histopatológico. Seguimento com hCG semanal até 3 negativos e depois mensal; contracepção hormonal eficaz durante o seguimento.' });
 
 CASO({ id: 'os_mola_parcial', area: 'go', local: 'obst', dif: 3, tema: 'Doença trofoblástica', cond: 'Mola hidatiforme parcial', tags: ['obst', 'usg'],
@@ -165,7 +165,7 @@ CASO({ id: 'os_mola_parcial', area: 'go', local: 'obst', dif: 3, tema: 'Doença 
   pista: 'Feto presente, placenta com cistos e cariótipo triploide.',
   dx: ['Mola hidatiforme parcial', 'Mola hidatiforme completa', 'Coriocarcinoma', 'Placenta acreta'],
   edx: 'Mola parcial: triploide (69,XXY/XXX — 1 óvulo + 2 espermatozoides), tecido fetal presente (geralmente malformado/RCIU), útero pequeno ou compatível, hCG menos elevado. Risco de NTG baixo (~1-5%).',
-  cd: ['Esvaziamento e hCG seriado', 'Histerectomia imediata', 'Quimioterapia de rotina', 'Expectante sem seguimento'],
+  cd: ['Aspiração uterina e hCG semanal até negativar', 'Histerectomia total imediata', 'Metotrexato profilático de rotina', 'Conduta expectante, sem seguimento com dosagens de hCG'],
   ecd: 'Esvaziamento uterino (aspiração; se partes fetais grandes, misoprostol prévio pode ser necessário), histopatológico e seguimento com hCG semanal até negativar e mensal depois. Imunoglobulina anti-D se Rh negativo (há tecido fetal com antígeno Rh).' });
 
 CASO({ id: 'os_ntg', area: 'go', local: 'obst', dif: 3, tema: 'Doença trofoblástica', cond: 'Neoplasia trofoblástica gestacional pós-molar (platô de hCG)', tags: ['obst', 'onco'],
@@ -179,7 +179,7 @@ CASO({ id: 'os_ntg', area: 'go', local: 'obst', dif: 3, tema: 'Doença trofoblá
   pista: 'Quatro valores sem queda por 3 semanas.',
   dx: ['Neoplasia trofoblástica gestacional', 'Regressão normal pós-molar lenta', 'Nova gestação intrauterina', 'hCG falso-positivo'],
   edx: 'Critérios FIGO de NTG pós-molar: platô (variação ≤ 10%) em 4 dosagens por 3 semanas; elevação > 10% em 3 dosagens por 2 semanas; hCG detectável após 6 meses; histologia de coriocarcinoma. Estadiar (FIGO e escore prognóstico OMS): RX de tórax, USG pélvica, TC/RM se metástases.',
-  cd: ['Metotrexato em monoterapia', 'Repetir o hCG por mais 2 meses', 'Novo esvaziamento uterino', 'Histerectomia e alta'],
+  cd: ['Metotrexato em monoterapia', 'Repetir o hCG por mais 2 meses antes de tratar', 'Novo esvaziamento uterino por aspiração', 'Histerectomia total e alta, sem seguimento'],
   ecd: 'Baixo risco (escore OMS ≤ 6): monoquimioterapia com metotrexato (ou actinomicina D). Alto risco (≥ 7): poliquimioterapia (EMA-CO). Taxa de cura próxima de 100% no baixo risco. Contracepção durante o seguimento.' });
 
 /* ---------- Ectópica e gestação de localização desconhecida ---------- */
@@ -195,7 +195,7 @@ CASO({ id: 'os_ectopica_mtx', area: 'go', local: 'obst', dif: 2, tema: 'Gravidez
   pista: 'Estável, hCG < 5.000, massa < 3,5 cm sem BCF.',
   dx: ['Ectópica tubária íntegra', 'Gravidez ectópica rota', 'Abortamento completo', 'Cisto de corpo lúteo roto'],
   edx: 'Critérios para metotrexato: estabilidade hemodinâmica, ectópica íntegra, hCG < 5.000 mUI/mL (melhor se < 2.000-3.000), massa < 3,5 cm, sem BCF, exames normais, desejo reprodutivo e possibilidade de seguimento.',
-  cd: ['Metotrexato IM', 'Salpingectomia de urgência', 'Curetagem uterina', 'Alta sem seguimento algum'],
+  cd: ['Metotrexato 50 mg/m² IM e hCG nos dias 4 e 7', 'Salpingectomia laparoscópica de urgência', 'Curetagem uterina para confirmar o diagnóstico', 'Metotrexato e alta sem dosar o hCG depois'],
   ecd: 'Metotrexato 50 mg/m² IM; dosar hCG nos dias 4 e 7: queda ≥ 15% entre D4 e D7 indica sucesso (seguir semanal até negativar); senão, segunda dose ou cirurgia. Evitar AINE, álcool, ácido fólico e relação sexual. Anti-D se Rh negativo.' });
 
 CASO({ id: 'os_glo', area: 'go', local: 'obst', dif: 2, tema: 'Gravidez ectópica', cond: 'Gestação de localização desconhecida', tags: ['obst', 'usg'],
@@ -210,7 +210,7 @@ CASO({ id: 'os_glo', area: 'go', local: 'obst', dif: 2, tema: 'Gravidez ectópic
   pista: 'O hCG ainda está abaixo da zona discriminatória e a paciente está estável.',
   dx: ['Localização desconhecida', 'Gravidez ectópica rota', 'Abortamento completo confirmado', 'Mola hidatiforme'],
   edx: 'Zona discriminatória (USG TV): hCG ~1.500-3.500 mUI/mL, acima do qual a gestação tópica deveria ser vista. Abaixo dela, útero vazio pode ser gestação inicial normal, abortamento ou ectópica.',
-  cd: ['Beta-hCG em 48 h', 'Metotrexato empírico', 'Laparoscopia diagnóstica agora', 'Alta sem retorno'],
+  cd: ['Repetir o beta-hCG em 48 horas', 'Metotrexato empírico em dose única', 'Laparoscopia diagnóstica imediata', 'Alta sem retorno programado'],
   ecd: 'Estável: dosar hCG em 48 h. Aumento ≥ 35-53% sugere gestação tópica viável (repetir USG quando acima da zona); queda > 50% sugere abortamento; platô ou aumento lento sugere ectópica. Orientar sinais de alarme (dor forte, síncope).' });
 
 /* ---------- Sangramentos da segunda metade ---------- */
@@ -226,7 +226,7 @@ CASO({ id: 'os_placenta_previa', area: 'go', local: 'obst', dif: 2, tema: 'Sangr
   pista: 'Sangramento indolor, vermelho vivo, útero relaxado e apresentação alta.',
   dx: ['Placenta prévia', 'Descolamento prematuro de placenta', 'Rotura uterina', 'Vasa prévia'],
   edx: 'Placenta prévia: placenta sobre ou próxima (< 2 cm) do orifício interno após 28 semanas. Sangramento vermelho vivo, indolor, recorrente ("de repente, sem causa"), útero de tônus normal, apresentações anômalas. Toque vaginal contraindicado até excluir placenta prévia.',
-  cd: ['Internar, corticoide, reservar sangue', 'Cesárea de emergência agora mesmo', 'Toque vaginal para avaliar o colo', 'Tocólise e alta em 24 h'],
+  cd: ['Internar, betametasona e reserva de sangue', 'Cesárea de emergência imediata com 32 semanas', 'Toque vaginal para avaliar o colo uterino', 'Tocólise com nifedipino e alta em 24 horas'],
   ecd: 'Pré-termo e estável: internação, repouso relativo, reserva de sangue, corticoide (< 34 semanas), sulfato de magnésio se parto < 32 semanas iminente, suplementar ferro. Cesárea eletiva com 36-37 semanas (prévia total). Cesárea de urgência se sangramento grave ou instabilidade, independentemente da IG.' });
 
 CASO({ id: 'os_acretismo', area: 'go', local: 'obst', dif: 3, tema: 'Sangramento da 2ª metade', cond: 'Espectro do acretismo placentário', tags: ['obst', 'usg'],
@@ -240,7 +240,7 @@ CASO({ id: 'os_acretismo', area: 'go', local: 'obst', dif: 3, tema: 'Sangramento
   pista: 'Placenta prévia anterior sobre a cicatriz em quem já fez cesáreas.',
   dx: ['Placenta prévia com acretismo', 'Descolamento prematuro de placenta', 'Placenta prévia isolada', 'Vasa prévia'],
   edx: 'Placenta prévia + cesárea(s) anterior(es) é o principal fator de risco do espectro do acretismo (acreta, increta, percreta); o risco sobe com o número de cesáreas. Diagnóstico pré-natal por USG com Doppler, com RM em casos duvidosos ou para avaliar invasão.',
-  cd: ['Cesárea-histerectomia programada', 'Parto vaginal a termo', 'Cesárea com extração manual da placenta', 'Indução com misoprostol'],
+  cd: ['Cesárea-histerectomia programada em centro terciário', 'Parto vaginal a termo com a equipe cirúrgica de sobreaviso', 'Cesárea com extração manual da placenta', 'Indução com misoprostol a termo'],
   ecd: 'Encaminhar a centro terciário com equipe multidisciplinar, banco de sangue e UTI. Programar cesárea-histerectomia com 34-36 semanas, incisão uterina longe da placenta e sem tentar descolá-la; considerar cateteres de oclusão vascular e ácido tranexâmico.' });
 
 CASO({ id: 'os_dpp', area: 'go', local: 'obst', dif: 3, tema: 'Sangramento da 2ª metade', cond: 'Descolamento prematuro de placenta com feto vivo', tags: ['obst', 'cardio', 'choque'],
@@ -254,7 +254,7 @@ CASO({ id: 'os_dpp', area: 'go', local: 'obst', dif: 3, tema: 'Sangramento da 2�
   pista: 'Dor, hipertonia, sangramento escuro e hipertensão.',
   dx: ['Descolamento de placenta', 'Placenta prévia', 'Trabalho de parto prematuro', 'Vasa prévia'],
   edx: 'DPP: separação da placenta normalmente inserida após 20 semanas. Fatores: hipertensão/pré-eclâmpsia (principal), trauma, cocaína, tabagismo, RPMO, polidrâmnio com descompressão súbita. Clínico: dor, hipertonia, sangramento escuro (pode ser oculto), sofrimento ou morte fetal, coagulopatia (CIVD) e útero de Couvelaire.',
-  cd: ['Amniotomia e cesárea de urgência', 'Tocólise venosa e corticoide', 'Aguardar o parto vaginal espontâneo', 'Toque vaginal e alta'],
+  cd: ['Amniotomia e cesárea de urgência', 'Terbutalina venosa e betametasona', 'Aguardar o parto vaginal espontâneo', 'Toque vaginal, repouso e alta em 24 horas'],
   ecd: 'Estabilizar (2 acessos, cristaloide, hemoderivados, corrigir coagulopatia), amniotomia (reduz pressão e passagem de tromboplastina) e via mais rápida: feto vivo e parto não iminente → cesárea. Parto vaginal se feto vivo com parto iminente (dilatação total) ou feto morto com mãe estável.' });
 
 CASO({ id: 'os_rotura_uterina', area: 'go', local: 'obst', dif: 3, tema: 'Sangramento da 2ª metade', cond: 'Iminência de rotura uterina (síndrome de Bandl-Frommel)', tags: ['obst'],
@@ -267,7 +267,7 @@ CASO({ id: 'os_rotura_uterina', area: 'go', local: 'obst', dif: 3, tema: 'Sangra
   pista: 'Anel de Bandl e ligamentos redondos tensos: o útero está prestes a romper.',
   dx: ['Iminência de rotura uterina', 'Descolamento prematuro de placenta', 'Fase ativa prolongada', 'Distocia de ombro'],
   edx: 'Iminência de rotura: dor intensa, hiperatividade uterina, sinal de Bandl (anel de retração) e de Frommel (ligamentos redondos retesados). Rotura consumada: parada súbita das contrações, alívio transitório da dor, choque, subida da apresentação, partes fetais palpáveis sob a pele, bradicardia fetal (sinal mais precoce). Fatores: cesáreas prévias, miomectomia, ocitocina/misoprostol, DCP.',
-  cd: ['Cesárea imediata', 'Aumentar a ocitocina', 'Fórcipe imediato', 'Aguardar a dilatação completa'],
+  cd: ['Suspender a ocitocina e cesárea imediata', 'Aumentar a ocitocina para abreviar o parto', 'Fórcipe imediato com 6 cm de dilatação', 'Aguardar a dilatação completa e parto vaginal'],
   ecd: 'Suspender ocitócitos, tocólise aguda se disponível e cesárea imediata. Rotura consumada: laparotomia com sutura do útero ou histerectomia, reposição volêmica e hemoderivados.' });
 
 CASO({ id: 'os_vasa_previa', area: 'go', local: 'obst', dif: 3, tema: 'Sangramento da 2ª metade', cond: 'Vasa prévia', tags: ['obst', 'cardio'],
@@ -280,7 +280,7 @@ CASO({ id: 'os_vasa_previa', area: 'go', local: 'obst', dif: 3, tema: 'Sangramen
   pista: 'Mãe estável e feto em sofrimento agudo logo após a amniorrexe: o sangue é fetal.',
   dx: ['Vasa prévia', 'Placenta prévia', 'Descolamento de placenta', 'Rotura uterina'],
   edx: 'Vasa prévia: vasos fetais atravessando as membranas sobre ou perto do orifício interno, sem proteção de placenta ou geleia de Wharton. Fatores: inserção velamentosa, placenta bilobada/sucenturiada, placenta baixa, FIV. Rotura dos vasos leva a exsanguinação fetal (volume pequeno já é fatal).',
-  cd: ['Cesárea de emergência', 'Ocitocina e parto vaginal', 'Tocólise e observação', 'Transfundir a mãe e aguardar'],
+  cd: ['Cesárea de emergência com equipe neonatal pronta', 'Ocitocina em bomba e parto vaginal assistido com fórcipe', 'Tocólise com nifedipino e observação', 'Transfundir a gestante e aguardar o parto'],
   ecd: 'Cesárea imediata e equipe neonatal pronta para reanimação com transfusão. Diagnóstico pré-natal (USG TV com Doppler): internação com 30-32 semanas e cesárea eletiva com 34-36 semanas.' });
 
 /* ---------- Aloimunização ---------- */
@@ -295,7 +295,7 @@ CASO({ id: 'os_rh_profilaxia', area: 'go', local: 'obst', dif: 1, tema: 'Aloimun
   pista: 'Rh negativo, parceiro Rh positivo e Coombs indireto negativo.',
   dx: ['Rh negativo não sensibilizada', 'Aloimunização Rh já estabelecida', 'Incompatibilidade ABO grave', 'Anemia fetal por Rh'],
   edx: 'Gestante Rh negativo com Coombs indireto negativo não está sensibilizada. Profilaxia com imunoglobulina anti-D reduz a aloimunização. Coombs indireto positivo após anti-D pode ser passivo (títulos baixos).',
-  cd: ['Anti-D com 28 semanas e no pós-parto', 'Anti-D somente se o RN for Rh negativo', 'Doppler da artéria cerebral média', 'Cordocentese diagnóstica'],
+  cd: ['Imunoglobulina anti-D com 28 semanas e até 72 h pós-parto', 'Imunoglobulina anti-D apenas se o recém-nascido for Rh negativo', 'Doppler da artéria cerebral média fetal mensal', 'Cordocentese diagnóstica com 28 semanas'],
   ecd: 'Imunoglobulina anti-D 300 µg com 28 semanas e até 72 h pós-parto se RN Rh positivo e Coombs direto negativo. Também após abortamento, ectópica, mola, sangramentos, procedimentos invasivos, trauma abdominal e versão externa. Teste de Kleihauer-Betke para ajustar dose em hemorragia feto-materna volumosa.' });
 
 CASO({ id: 'os_rh_sensibilizada', area: 'go', local: 'obst', dif: 3, tema: 'Aloimunização Rh', cond: 'Aloimunização Rh com suspeita de anemia fetal', tags: ['obst', 'hemato', 'usg'],
@@ -310,5 +310,5 @@ CASO({ id: 'os_rh_sensibilizada', area: 'go', local: 'obst', dif: 3, tema: 'Aloi
   pista: 'PVS-ACM > 1,5 MoM indica anemia fetal moderada a grave.',
   dx: ['Anemia fetal por aloimunização Rh', 'Rh negativo não sensibilizada', 'Hidropisia não imune', 'Incompatibilidade ABO'],
   edx: 'Sensibilizada: Coombs indireto positivo. Título ≥ 1:16 (ou história de feto acometido) → seguimento com Doppler da ACM a cada 1-2 semanas. PVS-ACM > 1,5 MoM sugere anemia moderada/grave.',
-  cd: ['Cordocentese e transfusão', 'Imunoglobulina anti-D agora', 'Repetir Coombs em 4 semanas', 'Parto imediato já'],
+  cd: ['Cordocentese e transfusão intrauterina', 'Imunoglobulina anti-D 300 µg agora', 'Repetir o Coombs indireto em 4 semanas', 'Interromper a gestação imediatamente por cesárea'],
   ecd: 'Cordocentese para hemoglobina/hematócrito fetal e transfusão intrauterina se anemia; corticoide pela possibilidade de parto prematuro. Imunoglobulina anti-D não tem utilidade após sensibilização. Resolução em torno de 37 semanas conforme evolução. Incompatibilidade ABO não causa doença fetal grave (anticorpos IgM/IgG fracos, antígenos pouco expressos).' });

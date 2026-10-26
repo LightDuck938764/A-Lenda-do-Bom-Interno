@@ -21,7 +21,7 @@ CASO({ id: 'oc_pe_sem_gravidade', area: 'go', local: 'obst', dif: 2, tema: 'Sín
   pista: 'Hipertensão após 20 semanas com proteinúria, sem sintomas nem exames alterados.',
   dx: ['Pré-eclâmpsia sem gravidade', 'Hipertensão gestacional', 'Iminência de eclâmpsia', 'Síndrome HELLP parcial'],
   edx: 'Pré-eclâmpsia: PA ≥ 140 x 90 após 20 semanas + proteinúria (P/C ≥ 0,3; ≥ 300 mg/24 h) ou, sem proteinúria, disfunção de órgão-alvo (plaquetas < 100 mil, creatinina > 1,1, transaminases 2x, edema pulmonar, sintomas cerebrais/visuais) ou disfunção uteroplacentária. Sinais de gravidade: PA ≥ 160 x 110, sintomas, alterações laboratoriais, edema agudo de pulmão.',
-  cd: ['Seguir e resolver com 37 semanas', 'Sulfato de magnésio e cesárea já', 'Alta sem retorno programado', 'Parto imediato com 34 semanas'],
+  cd: ['Vigilância materno-fetal semanal e resolução com 37 semanas', 'Sulfato de magnésio e cesárea imediata, independentemente da IG', 'Alta com metildopa e retorno somente no parto', 'Indução do parto imediata com 34 semanas'],
   ecd: 'Sem gravidade: acompanhamento materno (PA, sintomas, exames semanais) e fetal (CTG, USG, Doppler), anti-hipertensivo se PA ≥ 140 x 90 (metildopa, nifedipina, anlodipino), resolução com 37 semanas. Orientar sinais de alarme.' });
 
 CASO({ id: 'oc_hipertensao_gestacional', area: 'go', local: 'obst', dif: 2, tema: 'Síndromes hipertensivas', cond: 'Hipertensão gestacional', tags: ['obst', 'cardio'],
@@ -36,7 +36,7 @@ CASO({ id: 'oc_hipertensao_gestacional', area: 'go', local: 'obst', dif: 2, tema
   pista: 'Hipertensão nova após 20 semanas, sem proteinúria e sem lesão de órgão-alvo.',
   dx: ['Hipertensão gestacional', 'Pré-eclâmpsia sem gravidade', 'Hipertensão arterial crônica', 'Pré-eclâmpsia sobreposta'],
   edx: 'Hipertensão gestacional: PA ≥ 140 x 90 após 20 semanas, sem proteinúria e sem critérios de pré-eclâmpsia; até 25-50% evoluem para pré-eclâmpsia. Hipertensão crônica: antes da gestação ou antes de 20 semanas (ou persistindo > 12 semanas pós-parto).',
-  cd: ['Anti-hipertensivo oral', 'Enalapril em dose baixa', 'Sulfato de magnésio venoso', 'Interromper a gestação agora'],
+  cd: ['Metildopa (ou nifedipino retard) e vigilância seriada', 'Enalapril 10 mg/dia, que é seguro a partir de 20 semanas de gestação', 'Sulfato de magnésio venoso por 24 horas', 'Interromper a gestação imediatamente'],
   ecd: 'Metildopa, nifedipina retard ou anlodipino; IECA e BRA são contraindicados na gestação. Vigilância seriada de PA, proteinúria e exames, vitalidade e crescimento fetal; resolução com 37 semanas se controlada.' });
 
 CASO({ id: 'oc_has_cronica', area: 'go', local: 'obst', dif: 2, tema: 'Síndromes hipertensivas', cond: 'Hipertensa crônica em uso de IECA no início da gestação', tags: ['obst', 'cardio'],
@@ -50,7 +50,7 @@ CASO({ id: 'oc_has_cronica', area: 'go', local: 'obst', dif: 2, tema: 'Síndrome
   pista: 'Uma medicação precisa ser trocada e há duas medidas de prevenção a iniciar.',
   dx: ['Hipertensão arterial crônica', 'Hipertensão gestacional', 'Pré-eclâmpsia sobreposta', 'Hipertensão do avental branco'],
   edx: 'HAS crônica: diagnosticada antes da gestação ou antes de 20 semanas. É fator de alto risco para pré-eclâmpsia (assim como pré-eclâmpsia prévia, DM, doença renal, LES/SAF, gemelar). IECA/BRA no 2º e 3º trimestres causam oligoâmnio, insuficiência renal fetal e hipoplasia pulmonar.',
-  cd: ['Metildopa, AAS e cálcio', 'Manter enalapril e associar AAS', 'Suspender anti-hipertensivos', 'Losartana, AAS e cálcio'],
+  cd: ['Trocar o enalapril por metildopa, AAS 100 mg e cálcio', 'Manter o enalapril e associar AAS 100 mg à noite', 'Suspender todos os anti-hipertensivos até o 2º trimestre', 'Trocar o enalapril por losartana, com AAS e cálcio'],
   ecd: 'Trocar o IECA por metildopa (ou nifedipina/anlodipino), AAS 100-150 mg à noite a partir de 12 semanas até 36, carbonato de cálcio 1 g/dia se baixa ingesta. Meta de PA ~ 135 x 85. Rastrear pré-eclâmpsia sobreposta.' });
 
 CASO({ id: 'oc_pe_sobreposta', area: 'go', local: 'obst', dif: 3, tema: 'Síndromes hipertensivas', cond: 'Pré-eclâmpsia sobreposta com comprometimento fetal', tags: ['obst', 'cardio'],
@@ -65,7 +65,7 @@ CASO({ id: 'oc_pe_sobreposta', area: 'go', local: 'obst', dif: 3, tema: 'Síndro
   pista: 'Crise hipertensiva com CTG de variabilidade reduzida e desacelerações.',
   dx: ['Pré-eclâmpsia sobreposta grave', 'Hipertensão crônica isolada', 'Hipertensão gestacional', 'Síndrome HELLP completa'],
   edx: 'Pré-eclâmpsia sobreposta: hipertensa crônica que desenvolve proteinúria após 20 semanas, piora súbita da PA ou lesão de órgão-alvo. CTG com variabilidade mínima e desacelerações sugere hipóxia fetal.',
-  cd: ['Estabilizar e resolver', 'Corticoide e aguardar 48 h', 'Aumentar a metildopa e dar alta', 'Furosemida e observação'],
+  cd: ['Hidralazina EV, sulfato de magnésio e resolução da gestação', 'Betametasona e aguardar 48 horas antes de decidir a via de parto', 'Aumentar a metildopa para 2 g/dia e alta com retorno em 1 semana', 'Furosemida 40 mg EV e observação clínica'],
   ecd: 'Crise hipertensiva (≥ 160 x 110): hidralazina IV, nifedipina oral de ação rápida ou labetalol, para PA 140-150 x 90-100. Sulfato de magnésio. Com comprometimento fetal e 34 semanas: resolução após estabilização materna (via conforme condições; cesárea se sofrimento fetal com colo desfavorável).' });
 
 CASO({ id: 'oc_pe_grave_pretermo', area: 'go', local: 'obst', dif: 3, tema: 'Síndromes hipertensivas', cond: 'Pré-eclâmpsia grave antes de 34 semanas, estável', tags: ['obst', 'cardio', 'cortic'],
@@ -80,7 +80,7 @@ CASO({ id: 'oc_pe_grave_pretermo', area: 'go', local: 'obst', dif: 3, tema: 'Sí
   pista: 'Gravidade pela PA, mas mãe e feto estáveis com 30 semanas.',
   dx: ['PE grave estável', 'Síndrome HELLP', 'Eclâmpsia', 'Hipertensão gestacional'],
   edx: 'Antes de 34 semanas, com controle pressórico, sem sintomas persistentes, exames estáveis e vitalidade fetal preservada, a conduta pode ser expectante em centro terciário para ganhar maturidade. Indicações de resolução imediata: eclâmpsia, HELLP, edema pulmonar, DPP, PA incontrolável, sintomas persistentes, deterioração renal, sofrimento fetal, óbito fetal.',
-  cd: ['Corticoide e expectante', 'Cesárea imediata hoje', 'Alta com metildopa oral', 'Indução com misoprostol já'],
+  cd: ['Betametasona, sulfato de magnésio e conduta expectante', 'Cesárea imediata hoje, sem aguardar o ciclo de corticoide', 'Alta com metildopa oral e retorno semanal', 'Indução com misoprostol a partir de agora'],
   ecd: 'Internação em centro terciário, betametasona, sulfato de magnésio nas primeiras 24 h/se sintomas ou parto iminente (também neuroproteção < 32 semanas), anti-hipertensivo oral, exames seriados e vitalidade diária. Resolução com 34 semanas ou antes se surgir indicação materna ou fetal.' });
 
 CASO({ id: 'oc_iminencia_eclampsia', area: 'go', local: 'obst', dif: 2, tema: 'Síndromes hipertensivas', cond: 'Iminência de eclâmpsia', tags: ['obst', 'cardio', 'neuro', 'convul'],
@@ -94,7 +94,7 @@ CASO({ id: 'oc_iminencia_eclampsia', area: 'go', local: 'obst', dif: 2, tema: 'S
   pista: 'Sintomas neurológicos e visuais com epigastralgia: a convulsão pode estar próxima.',
   dx: ['Iminência de eclâmpsia', 'Enxaqueca com aura visual', 'Eclâmpsia', 'Síndrome HELLP'],
   edx: 'Iminência de eclâmpsia: pré-eclâmpsia com sintomas de irritação cerebral (cefaleia, escotomas, turvação, fotofobia), epigastralgia/dor em hipocôndrio direito e hiper-reflexia. Indica sulfato de magnésio.',
-  cd: ['Sulfato de magnésio e parto', 'Diazepam e observação', 'Analgésico comum e alta', 'Fenitoína e manter a gestação'],
+  cd: ['Sulfato de magnésio (Zuspan), hidralazina e resolução', 'Diazepam 10 mg EV e observação por 24 horas', 'Dipirona para a cefaleia e alta com retorno', 'Fenitoína EV e manter a gestação até 37 semanas com vigilância'],
   ecd: 'Sulfato de magnésio (Zuspan: 4 g IV em 20 min + 1 g/h por 24 h; ou Pritchard), anti-hipertensivo para PA ≥ 160 x 110 (hidralazina, nifedipina) e resolução da gestação após estabilização (≥ 34 semanas). Monitorar reflexos, FR e diurese.' });
 
 CASO({ id: 'oc_eclampsia', area: 'go', local: 'obst', dif: 2, tema: 'Síndromes hipertensivas', cond: 'Eclâmpsia', tags: ['obst', 'neuro', 'convul'],
@@ -108,7 +108,7 @@ CASO({ id: 'oc_eclampsia', area: 'go', local: 'obst', dif: 2, tema: 'Síndromes 
   pista: 'Convulsão em gestante com pré-eclâmpsia, sem outra causa.',
   dx: ['Eclâmpsia', 'Epilepsia', 'Hipoglicemia', 'AVC isquêmico'],
   edx: 'Eclâmpsia: convulsões tônico-clônicas em gestante/puérpera com pré-eclâmpsia, sem outra causa. A bradicardia fetal durante e logo após a crise costuma se recuperar com a estabilização materna.',
-  cd: ['Sulfato de magnésio', 'Diazepam e fenitoína', 'Cesárea durante a crise', 'Fenobarbital'],
+  cd: ['Sulfato de magnésio: ataque de 4-6 g EV e manutenção', 'Diazepam 10 mg EV seguido de fenitoína 20 mg/kg em dose de ataque', 'Cesárea de emergência durante a crise convulsiva', 'Fenobarbital 20 mg/kg EV em dose de ataque'],
   ecd: 'Proteger vias aéreas, decúbito lateral, O2, acesso venoso. Sulfato de magnésio (ataque 4-6 g IV + manutenção 1-2 g/h por 24 h após o parto/última crise); recorrência: 2 g IV adicional. Controle pressórico. Resolução da gestação após estabilização (não durante a crise); a via pode ser vaginal se condições favoráveis.' });
 
 CASO({ id: 'oc_hellp', area: 'go', local: 'obst', dif: 3, tema: 'Síndromes hipertensivas', cond: 'Síndrome HELLP', tags: ['obst', 'hemato', 'figado'],
@@ -122,7 +122,7 @@ CASO({ id: 'oc_hellp', area: 'go', local: 'obst', dif: 3, tema: 'Síndromes hipe
   pista: 'Hemólise, enzimas hepáticas altas e plaquetas baixas.',
   dx: ['Síndrome HELLP', 'Esteatose hepática aguda da gestação', 'Hepatite viral aguda', 'Púrpura trombocitopênica imune'],
   edx: 'HELLP: hemólise (DHL > 600, esquizócitos, bilirrubina > 1,2, haptoglobina baixa), enzimas hepáticas elevadas (TGO > 70) e plaquetopenia (< 100 mil). Pode ocorrer sem hipertensão grave. Complicações: hematoma/rotura hepática, CIVD, DPP, insuficiência renal. Esteatose aguda cursa com hipoglicemia, insuficiência hepática e coagulopatia mais marcantes.',
-  cd: ['Estabilizar e resolver a gestação', 'Corticoide e aguardar 34 semanas', 'Plaquetas e alta', 'Prednisona para subir plaquetas'],
+  cd: ['Magnésio, anti-hipertensivo e resolução da gestação', 'Dexametasona e aguardar até 34 semanas', 'Transfusão de plaquetas e alta hospitalar', 'Prednisona em dose alta para elevar as plaquetas'],
   ecd: 'Sulfato de magnésio, anti-hipertensivo, corrigir coagulopatia e resolução da gestação (independentemente da IG após estabilização; corticoide se < 34 semanas não deve atrasar). Plaquetas < 70-80 mil contraindicam anestesia neuraxial (preferir geral); transfundir plaquetas se < 50 mil antes de cesárea. Investigar hematoma hepático (USG) se dor intensa.' });
 
 CASO({ id: 'oc_intox_magnesio', area: 'go', local: 'obst', dif: 2, tema: 'Síndromes hipertensivas', cond: 'Intoxicação por sulfato de magnésio', tags: ['obst', 'renal'],
@@ -136,7 +136,7 @@ CASO({ id: 'oc_intox_magnesio', area: 'go', local: 'obst', dif: 2, tema: 'Síndr
   pista: 'O primeiro sinal clínico de toxicidade é a perda do reflexo patelar; a oligúria acumulou o magnésio.',
   dx: ['Intoxicação por magnésio', 'Eclâmpsia pós-ictal', 'AVC hemorrágico', 'Hipoglicemia'],
   edx: 'Toxicidade: abolição do reflexo patelar (~10 mg/dL) → depressão respiratória (~12 mg/dL) → parada cardíaca (> 25 mg/dL). Como a excreção é renal, oligúria e insuficiência renal predispõem. Vigiar reflexos, FR (≥ 12-16) e diurese (≥ 25-30 mL/h).',
-  cd: ['Gluconato de cálcio', 'Dobrar a dose do magnésio', 'Diazepam venoso', 'Manter a infusão e observar'],
+  cd: ['Suspender a infusão e gluconato de cálcio 10% 10 mL EV', 'Dobrar a dose do sulfato de magnésio pela iminência de eclâmpsia', 'Diazepam 10 mg EV para a sonolência', 'Manter a infusão e observar os reflexos em 1 hora'],
   ecd: 'Suspender a infusão, gluconato de cálcio 10% 10 mL IV lento (1 g), suporte ventilatório se necessário, dosar magnésio; reiniciar com dose menor quando reflexos voltarem, ajustando à função renal.' });
 
 /* ---------- Hiperglicemia na gestação ---------- */
@@ -151,7 +151,7 @@ CASO({ id: 'oc_dm_franco', area: 'go', local: 'obst', dif: 2, tema: 'Diabetes na
   pista: 'Jejum ≥ 126 mg/dL no primeiro trimestre não é DMG.',
   dx: ['DM diagnosticado na gestação', 'Diabetes mellitus gestacional', 'Glicemia normal da gestação', 'Pré-diabetes'],
   edx: 'Glicemia de jejum ≥ 126 mg/dL (ou HbA1c ≥ 6,5%, ou aleatória ≥ 200 com sintomas) em qualquer momento = DM diagnosticado na gestação (provável DM2 prévio). Jejum 92-125 = DMG. Maior risco de malformações (cardíacas, tubo neural, regressão caudal) e abortamento quando a HbA1c periconcepcional é alta.',
-  cd: ['Insulina e alto risco', 'TOTG com 24-28 semanas', 'Glibenclamida', 'Só dieta até o fim da gestação'],
+  cd: ['Insulina NPH e pré-natal de alto risco', 'TOTG 75 g com 24-28 semanas para confirmar', 'Glibenclamida 5 mg/dia até o parto', 'Só dieta até o fim da gestação'],
   ecd: 'Pré-natal de alto risco, terapia nutricional, automonitorização e insulina (NPH ± regular/análogos) para metas: jejum < 95, 1 h pós-prandial < 140, 2 h < 120 mg/dL. Ácido fólico, ecocardiografia fetal e morfológica. Avaliar retinopatia e função renal.' });
 
 CASO({ id: 'oc_dmg_1tri', area: 'go', local: 'obst', dif: 2, tema: 'Diabetes na gestação', cond: 'Diabetes gestacional diagnosticado no primeiro trimestre', tags: ['obst', 'endo', 'diabetes'],
@@ -165,7 +165,7 @@ CASO({ id: 'oc_dmg_1tri', area: 'go', local: 'obst', dif: 2, tema: 'Diabetes na 
   pista: 'Faixa entre 92 e 125 mg/dL no primeiro trimestre.',
   dx: ['Diabetes gestacional', 'DM diagnosticado na gestação', 'Glicemia normal', 'Pré-diabetes não gestacional'],
   edx: 'Pelo critério brasileiro (OPAS/MS/FEBRASGO/SBD), glicemia de jejum de 92-125 mg/dL em qualquer IG define DMG; não é necessário TOTG. Jejum < 92 no 1º trimestre: TOTG 75 g entre 24-28 semanas (jejum ≥ 92, 1 h ≥ 180, 2 h ≥ 153).',
-  cd: ['Dieta e automonitorização', 'Insulina imediatamente', 'Repetir o jejum com 28 semanas', 'TOTG 75 g agora'],
+  cd: ['Terapia nutricional e perfil glicêmico domiciliar', 'Insulina NPH imediatamente', 'Repetir a glicemia de jejum com 28 semanas antes de qualquer conduta', 'TOTG 75 g agora para confirmar'],
   ecd: 'Tratamento inicial não farmacológico (terapia nutricional, atividade física) com perfil glicêmico domiciliar. Insulina se as metas não forem atingidas em 1-2 semanas (metformina é alternativa). Reclassificar 6-8 semanas após o parto (TOTG).' });
 
 CASO({ id: 'oc_dm_bariatrica', area: 'go', local: 'obst', dif: 3, tema: 'Diabetes na gestação', cond: 'Rastreamento de DMG após bypass gástrico', tags: ['obst', 'endo', 'diabetes'],
@@ -179,7 +179,7 @@ CASO({ id: 'oc_dm_bariatrica', area: 'go', local: 'obst', dif: 3, tema: 'Diabete
   pista: 'A sobrecarga de 75 g de glicose provoca síndrome de dumping.',
   dx: ['TOTG contraindicado', 'Diabetes gestacional confirmado', 'DM2 prévio', 'Hipoglicemia de jejum'],
   edx: 'Após cirurgia bariátrica disabsortiva, o TOTG 75 g pode desencadear dumping (hipoglicemia reativa) e não é recomendado. Alternativa: perfil glicêmico (jejum e pós-prandiais) por 1-2 semanas entre 24-28 semanas. Atenção a anemia ferropriva, deficiência de B12, folato, cálcio/vitamina D e a hérnias internas (dor abdominal).',
-  cd: ['Perfil glicêmico domiciliar', 'TOTG 75 g', 'Teste com 100 g de glicose', 'Dispensar rastreio'],
+  cd: ['Perfil glicêmico capilar domiciliar no lugar do TOTG', 'TOTG 75 g com 24 a 28 semanas', 'Teste com 100 g de glicose em 3 horas', 'Dispensar o rastreio de diabetes gestacional após a cirurgia bariátrica'],
   ecd: 'Substituir o TOTG por perfil glicêmico capilar (jejum e 1-2 h após refeições). Repor ferro (considerar ferro venoso), B12, ácido fólico, cálcio e vitamina D; fracionar a dieta e evitar açúcares simples.' });
 
 CASO({ id: 'oc_dm_ajuste_insulina', area: 'go', local: 'obst', dif: 3, tema: 'Diabetes na gestação', cond: 'DM2 na gestação: ajuste de insulina pela monitorização', tags: ['obst', 'endo', 'diabetes'],
@@ -193,7 +193,7 @@ CASO({ id: 'oc_dm_ajuste_insulina', area: 'go', local: 'obst', dif: 3, tema: 'Di
   pista: 'Hiperglicemia entre 0h e 6h; hipoglicemias pela manhã e no início da noite.',
   dx: ['Hipoglicemias diurnas', 'Controle glicêmico ideal', 'Cetoacidose diabética', 'Fenômeno do alvorecer isolado'],
   edx: 'A curva mostra glicemia acima do alvo na madrugada (cobertura basal noturna insuficiente da NPH das 22h) e hipoglicemias entre 8h-13h e por volta de 20h (excesso de insulina de ação nesses períodos). Ajustar por horário, uma alteração de cada vez, conforme o pico de ação de cada insulina.',
-  cd: ['Ajustar NPH por horário', 'Manter todas as doses atuais', 'Reduzir a NPH das 22 horas', 'Suspender a insulina regular'],
+  cd: ['Aumentar a NPH das 22 h e reduzir a NPH da manhã', 'Manter todas as doses atuais de insulina', 'Reduzir a NPH das 22 horas e aumentar a NPH da manhã', 'Suspender a insulina regular do jantar'],
   ecd: 'Aumentar a NPH das 22h (madrugada) e reduzir a NPH da manhã (hipoglicemia matinal); revisar a regular do jantar (hipoglicemia ~20h). Na gestação, a necessidade de insulina sobe progressivamente no 2º-3º trimestres; queda abrupta da necessidade pode indicar insuficiência placentária.' });
 
 /* ---------- Gemelaridade ---------- */
@@ -208,7 +208,7 @@ CASO({ id: 'oc_gemelar_dicorionica', area: 'go', local: 'obst', dif: 1, tema: 'G
   pista: 'Sinal do lambda no primeiro trimestre.',
   dx: ['Dicoriônica diamniótica', 'Monocoriônica diamniótica', 'Monocoriônica monoamniótica', 'Gemelaridade imperfeita'],
   edx: 'Corionicidade deve ser definida até 14 semanas: lambda = dicoriônica; sinal do T (membrana fina inserida em ângulo reto) = monocoriônica diamniótica; ausência de membrana = monoamniótica. Dicoriônicas: 1/3 monozigóticas (divisão até o 3º dia), todas as dizigóticas.',
-  cd: ['AAS, cálcio e USG mensal', 'USG a cada 2 semanas desde 16', 'Cesárea com 32 semanas', 'Cerclagem profilática'],
+  cd: ['AAS, cálcio e USG de crescimento a cada 4 semanas', 'USG morfológica e de colo a cada 2 semanas desde 16 semanas', 'Cesárea eletiva com 32 semanas', 'Cerclagem profilática com 14 semanas'],
   ecd: 'Gemelar é fator de risco para pré-eclâmpsia: AAS e cálcio. Dicoriônica sem complicações: USG de crescimento a cada 4 semanas a partir de 20-24 semanas, parto com 37-38 semanas. Cerclagem profilática não é indicada.' });
 
 CASO({ id: 'oc_stff', area: 'go', local: 'obst', dif: 3, tema: 'Gestação gemelar', cond: 'Síndrome de transfusão feto-fetal', tags: ['obst', 'usg'],
@@ -222,7 +222,7 @@ CASO({ id: 'oc_stff', area: 'go', local: 'obst', dif: 3, tema: 'Gestação gemel
   pista: 'Monocoriônica com polidrâmnio em um e oligoâmnio no outro.',
   dx: ['Transfusão feto-fetal', 'Restrição de crescimento seletiva', 'Sequência anemia-policitemia', 'Gestação dicoriônica normal'],
   edx: 'STFF: anastomoses placentárias desbalanceadas em monocoriônicas. Doador: hipovolemia, oligúria, oligoâmnio, RCF. Receptor: hipervolemia, poliúria, polidrâmnio, insuficiência cardíaca e hidropisia. Estadiamento de Quintero (I: discordância de líquido; II: bexiga do doador não visível; III: Doppler alterado; IV: hidropisia; V: óbito).',
-  cd: ['Laser fetoscópico', 'Parto imediato com 20 semanas', 'Amniodrenagem semanal isolada', 'Repetir USG em 4 semanas'],
+  cd: ['Coagulação a laser das anastomoses por fetoscopia', 'Interrupção da gestação com 20 semanas pela gravidade', 'Amniodrenagem semanal isolada', 'Repetir a USG em 4 semanas'],
   ecd: 'Encaminhar à medicina fetal: coagulação a laser das anastomoses por fetoscopia (16-26 semanas, Quintero II-IV, e I selecionados) é o tratamento de escolha. Monocoriônicas exigem USG a cada 2 semanas a partir de 16 semanas para rastrear STFF.' });
 
 CASO({ id: 'oc_rcf_seletiva', area: 'go', local: 'obst', dif: 3, tema: 'Gestação gemelar', cond: 'Restrição de crescimento fetal seletiva em monocoriônica', tags: ['obst', 'usg'],
@@ -236,7 +236,7 @@ CASO({ id: 'oc_rcf_seletiva', area: 'go', local: 'obst', dif: 3, tema: 'Gestaç�
   pista: 'Discordância de peso com líquido normal nos dois fetos.',
   dx: ['RCF seletiva', 'Transfusão feto-fetal', 'Sequência anemia-policitemia', 'Sequência TRAP'],
   edx: 'RCF seletiva: um feto < P10 (ou < P3) e/ou discordância ≥ 25%, sem discordância de líquido (que caracterizaria STFF). Classificação de Gratacós pelo Doppler da artéria umbilical do menor: I (normal, melhor prognóstico), II (diástole zero/reversa persistente), III (intermitente).',
-  cd: ['Doppler semanal', 'Laser fetoscópico de urgência', 'Parto imediato', 'Alta sem seguimento'],
+  cd: ['Doppler semanal e parto com 34-36 semanas', 'Laser fetoscópico de urgência nas anastomoses', 'Parto imediato por cesárea', 'Alta sem seguimento específico'],
   ecd: 'Tipo I: seguimento com USG e Doppler semanal ou quinzenal, parto em torno de 34-36 semanas. Tipos II/III: considerar coagulação seletiva do cordão ou laser em centro especializado. O óbito de um gemelar monocoriônico pode causar lesão neurológica ou óbito do outro.' });
 
 CASO({ id: 'oc_gemelar_parto', area: 'go', local: 'obst', dif: 3, tema: 'Gestação gemelar', cond: 'Via de parto em gemelar com segundo feto pélvico', tags: ['obst'],
@@ -249,7 +249,7 @@ CASO({ id: 'oc_gemelar_parto', area: 'go', local: 'obst', dif: 3, tema: 'Gestaç
   pista: 'O que importa mais é a apresentação do primeiro gemelar.',
   dx: ['Primeiro gemelar cefálico', 'Gemelaridade monoamniótica', 'Entrelaçamento fetal', 'Desproporção cefalopélvica'],
   edx: 'Twin Birth Study: em gemelares ≥ 32 semanas com o primeiro feto cefálico, a cesárea planejada não reduziu morbimortalidade em relação ao parto vaginal planejado. Primeiro não cefálico, monoamnióticos, gemelares imperfeitos e trigemelares: cesárea.',
-  cd: ['Parto vaginal planejado', 'Cesárea pelo feto B pélvico', 'Cesárea pelo baixo peso', 'Misoprostol e cesárea se B não rodar'],
+  cd: ['Parto vaginal planejado com equipe experiente', 'Cesárea eletiva porque o segundo gemelar está em apresentação pélvica', 'Cesárea pelo baixo peso estimado dos fetos', 'Misoprostol e cesárea se o feto B não rodar'],
   ecd: 'Parto vaginal com equipe experiente, monitorização dos dois fetos, analgesia e USG em sala; após o nascimento de A, extração pélvica/versão interna ou externa de B conforme expertise. Intervalo entre os nascimentos o mais curto possível com vigilância.' });
 
 /* ---------- Infecções no parto ---------- */
@@ -264,7 +264,7 @@ CASO({ id: 'oc_hiv_parto', area: 'go', local: 'obst', dif: 2, tema: 'Infecções
   pista: 'Carga viral detectável, mas abaixo de 1.000 cópias.',
   dx: ['HIV com carga viral < 1.000', 'HIV com carga viral desconhecida', 'HIV com indicação de cesárea eletiva', 'Infecção aguda pelo HIV'],
   edx: 'Via de parto (MS): carga viral < 1.000 cópias/mL após 34 semanas → via obstétrica; ≥ 1.000 ou desconhecida → cesárea eletiva com 38 semanas (bolsa íntegra, dilatação ≤ 3-4 cm). AZT IV intraparto: indicado se carga viral detectável ou desconhecida (dispensável se indetectável com boa adesão).',
-  cd: ['AZT venoso e via obstétrica', 'Cesárea de urgência', 'Suspender a TARV no parto', 'Amniotomia precoce'],
+  cd: ['AZT EV até o clampeamento e via obstétrica', 'Cesárea de urgência, independentemente da carga viral', 'Suspender a TARV oral durante o trabalho de parto', 'Amniotomia precoce para abreviar o parto'],
   ecd: 'Manter TARV oral, AZT IV desde o início do trabalho de parto até o clampeamento; evitar amniotomia, toques repetidos, episiotomia e procedimentos invasivos; clampeamento imediato do cordão. RN: profilaxia antirretroviral e contraindicar aleitamento (cabergolina para inibir lactação).' });
 
 CASO({ id: 'oc_herpes_parto', area: 'go', local: 'obst', dif: 2, tema: 'Infecções na gestação', cond: 'Herpes genital primário no trabalho de parto', tags: ['obst', 'infec'],
@@ -277,7 +277,7 @@ CASO({ id: 'oc_herpes_parto', area: 'go', local: 'obst', dif: 2, tema: 'Infecç�
   pista: 'Primoinfecção com lesão ativa no momento do parto.',
   dx: ['Herpes genital primário', 'Sífilis primária com cancro', 'Cancro mole (cancroide)', 'Candidíase vulvar'],
   edx: 'Lesão herpética ativa ou pródromo no parto aumenta a transmissão neonatal (até 30-50% na primoinfecção, menor na recorrência). Herpes neonatal pode ser cutâneo, encefálico ou disseminado.',
-  cd: ['Cesariana e aciclovir', 'Parto vaginal com aciclovir', 'Fórcipe para encurtar', 'Amniotomia e ocitocina'],
+  cd: ['Cesariana e aciclovir para a mãe', 'Parto vaginal com aciclovir EV', 'Fórcipe de alívio para encurtar a exposição', 'Amniotomia e ocitocina em bomba'],
   ecd: 'Cesárea (idealmente antes da rotura das membranas) e aciclovir para a mãe; avisar o pediatra para avaliação/aciclovir no RN. Recorrência no 3º trimestre: aciclovir supressivo a partir de 36 semanas.' });
 
 /* ---------- Hemorragia pós-parto ---------- */
@@ -292,7 +292,7 @@ CASO({ id: 'oc_hpp_atonia', area: 'go', local: 'obst', dif: 2, tema: 'Hemorragia
   pista: 'Útero flácido: tônus é o "T" mais comum; o índice de choque mede a gravidade.',
   dx: ['HPP por atonia uterina', 'Laceração de trajeto', 'Inversão uterina', 'Embolia amniótica'],
   edx: 'HPP: perda ≥ 500 mL (vaginal) ou ≥ 1.000 mL (cesárea), ou qualquer perda com instabilidade. 4 Ts: tônus (70%), trauma, tecido, trombina. Índice de choque ≥ 0,9 indica perda importante; ≥ 1,4 prediz necessidade de transfusão maciça.',
-  cd: ['Massagem e uterotônicos', 'Histerectomia imediata', 'Aguardar a contração espontânea', 'Só cristaloide e observar'],
+  cd: ['Massagem bimanual, ocitocina EV e ácido tranexâmico 1 g', 'Histerectomia subtotal imediata', 'Aguardar a contração uterina espontânea', 'Cristaloide aquecido e observar o sangramento por 1 hora antes de agir'],
   ecd: 'Pedir ajuda (hora de ouro), 2 acessos, cristaloide aquecido, O2, sonda vesical; massagem uterina bimanual, ocitocina IV, ácido tranexâmico 1 g IV em até 3 h, metilergometrina (contraindicada em hipertensas) e misoprostol. IC ≥ 1,4: protocolo de transfusão maciça. Refratária: balão de tamponamento (Bakri), suturas compressivas (B-Lynch), ligaduras vasculares, histerectomia.' });
 
 CASO({ id: 'oc_retencao_placentaria', area: 'go', local: 'obst', dif: 2, tema: 'Hemorragia pós-parto', cond: 'Retenção placentária', tags: ['obst'],
@@ -305,7 +305,7 @@ CASO({ id: 'oc_retencao_placentaria', area: 'go', local: 'obst', dif: 2, tema: '
   pista: 'Mais de 30 minutos sem dequitação; cicatriz e curetagem anteriores.',
   dx: ['Retenção placentária', 'Inversão uterina', 'Atonia uterina isolada', 'Rotura uterina'],
   edx: 'Retenção placentária: ausência de dequitação após 30 min com manejo ativo. Causas: placenta aderida/encarcerada ou acretismo (fatores: cesárea, curetagem, placenta prévia, idade, multiparidade). Risco de HPP.',
-  cd: ['Extração manual', 'Tração vigorosa do cordão', 'Aguardar mais 3 horas', 'Metotrexato sistêmico'],
+  cd: ['Extração manual sob analgesia com antibiótico', 'Tração vigorosa e contínua do cordão umbilical com ocitocina', 'Aguardar mais 3 horas a dequitação espontânea', 'Metotrexato sistêmico'],
   ecd: 'Extração manual da placenta sob analgesia/anestesia, com antibiótico profilático e uterotônicos. Se não houver plano de clivagem (acretismo), não forçar: preparar para laparotomia/histerectomia com hemoderivados.' });
 
 /* ---------- Puerpério ---------- */
@@ -320,7 +320,7 @@ CASO({ id: 'oc_endometrite', area: 'go', local: 'obst', dif: 2, tema: 'Puerpéri
   pista: 'Febre, útero doloroso e lóquios fétidos após cesárea.',
   dx: ['Endometrite puerperal', 'Tromboflebite pélvica séptica', 'Mastite puerperal', 'Pielonefrite'],
   edx: 'Endometrite: principal causa de febre puerperal; polimicrobiana. Maior fator de risco: cesárea (especialmente intraparto), além de bolsa rota prolongada, muitos toques, corioamnionite, restos placentários.',
-  cd: ['Clindamicina + gentamicina', 'Amoxicilina oral por 7 dias', 'Cefalexina oral', 'Heparina em dose plena'],
+  cd: ['Clindamicina 900 mg de 8/8 h + gentamicina EV', 'Amoxicilina VO por 7 dias', 'Cefalexina 500 mg VO de 6/6 h', 'Heparina não fracionada em dose plena e cefalexina VO'],
   ecd: 'Clindamicina 600-900 mg 8/8 h + gentamicina 3,5-5 mg/kg/dia IV até 48-72 h afebril (sem necessidade de antibiótico oral depois). USG para restos (curetagem) ou abscesso. Sem resposta: pensar em abscesso, tromboflebite pélvica séptica.' });
 
 CASO({ id: 'oc_tromboflebite_pelvica', area: 'go', local: 'obst', dif: 3, tema: 'Puerpério', cond: 'Tromboflebite pélvica séptica', tags: ['obst', 'infec', 'hemato', 'anticoag'],
@@ -335,7 +335,7 @@ CASO({ id: 'oc_tromboflebite_pelvica', area: 'go', local: 'obst', dif: 3, tema: 
   pista: 'Febre "em agulha" sem foco, refratária a antibiótico adequado.',
   dx: ['Tromboflebite pélvica', 'Endometrite resistente', 'Abscesso de parede', 'Febre medicamentosa'],
   edx: 'Diagnóstico de exclusão: febre persistente no puerpério (sobretudo pós-cesárea) apesar de antibioticoterapia adequada, sem foco; trombose da veia ovariana (mais à direita) pode ser vista em TC/RM. A resposta à heparina reforça o diagnóstico.',
-  cd: ['Associar heparina', 'Trocar só o antibiótico', 'Histerectomia', 'Suspender tudo e observar'],
+  cd: ['Associar heparina ao antibiótico', 'Trocar o antibiótico para meropeném', 'Histerectomia total abdominal', 'Suspender tudo e observar'],
   ecd: 'Anticoagulação (heparina não fracionada ou enoxaparina) associada ao antibiótico; defervescência em 48-72 h. Manter anticoagulação por tempo variável (até 6 semanas a 3 meses se trombose extensa).' });
 
 CASO({ id: 'oc_blues', area: 'go', local: 'obst', dif: 1, tema: 'Puerpério', cond: 'Tristeza puerperal (baby blues)', tags: ['obst', 'psiq'],
@@ -348,7 +348,7 @@ CASO({ id: 'oc_blues', area: 'go', local: 'obst', dif: 1, tema: 'Puerpério', co
   pista: 'Começou nos primeiros dias, é leve e transitório.',
   dx: ['Tristeza puerperal', 'Depressão pós-parto', 'Psicose puerperal', 'Transtorno bipolar'],
   edx: 'Blues puerperal: até 50-80% das puérperas; início em 2-4 dias, pico no 5º dia, remissão espontânea em até 2 semanas; sintomas leves sem prejuízo funcional. Persistência > 2 semanas ou gravidade sugere depressão pós-parto.',
-  cd: ['Acolhimento e apoio', 'Sertralina', 'Internação psiquiátrica', 'Suspender a amamentação'],
+  cd: ['Acolhimento, apoio familiar e reavaliação em 2 semanas', 'Sertralina 50 mg/dia e reavaliação em 4 semanas', 'Internação psiquiátrica', 'Suspender a amamentação e encaminhar ao CAPS para avaliação'],
   ecd: 'Tranquilizar, apoio familiar, descanso, orientar sinais de alerta e reavaliar em 2 semanas (rastrear com escala de Edimburgo). Não requer medicação.' });
 
 CASO({ id: 'oc_depressao_pos_parto', area: 'go', local: 'obst', dif: 2, tema: 'Puerpério', cond: 'Depressão pós-parto', tags: ['obst', 'psiq'],
@@ -362,7 +362,7 @@ CASO({ id: 'oc_depressao_pos_parto', area: 'go', local: 'obst', dif: 2, tema: 'P
   pista: 'Mais de 2 semanas, prejuízo funcional e ideação passiva de morte.',
   dx: ['Depressão pós-parto', 'Tristeza puerperal', 'Psicose puerperal', 'Hipotireoidismo pós-parto'],
   edx: 'Depressão pós-parto: episódio depressivo maior com início na gestação ou nas primeiras semanas após o parto (até 1 ano na prática clínica); 10-15% das puérperas. Fatores: depressão prévia, falta de suporte, eventos estressores. Afastar tireoidite pós-parto.',
-  cd: ['ISRS e psicoterapia', 'Esperar passar sozinha', 'Suspender a amamentação', 'Benzodiazepínico isolado'],
+  cd: ['Sertralina e psicoterapia, mantendo a amamentação', 'Aguardar remissão espontânea em 6 meses', 'Suspender a amamentação e iniciar fluoxetina 20 mg/dia', 'Clonazepam 2 mg/dia isolado'],
   ecd: 'Avaliar risco (ideação suicida e risco ao bebê), rede de apoio, psicoterapia e antidepressivo compatível com amamentação (sertralina, paroxetina). Ideação com plano ou sintomas psicóticos: internação. Acompanhamento conjunto com saúde mental.' });
 
 CASO({ id: 'oc_psicose_puerperal', area: 'go', local: 'obst', dif: 3, tema: 'Puerpério', cond: 'Psicose puerperal', tags: ['obst', 'psiq'],
@@ -376,5 +376,5 @@ CASO({ id: 'oc_psicose_puerperal', area: 'go', local: 'obst', dif: 3, tema: 'Pue
   pista: 'Início súbito nas primeiras semanas, com delírio envolvendo o bebê: risco de infanticídio.',
   dx: ['Psicose puerperal', 'Depressão pós-parto', 'Tristeza puerperal', 'Delirium por infecção'],
   edx: 'Psicose puerperal: 1-2 por 1.000 partos, início abrupto nas 2 primeiras semanas, frequentemente manifestação de transtorno bipolar. Emergência psiquiátrica pelo risco de suicídio e infanticídio. Excluir causas orgânicas (infecção, eclâmpsia, tireoide, drogas).',
-  cd: ['Internação e antipsicótico', 'Alta com orientações', 'Somente psicoterapia', 'Fluoxetina e retorno em 30 dias'],
+  cd: ['Internação e antipsicótico (olanzapina ou haloperidol)', 'Alta com orientações à família', 'Somente psicoterapia semanal', 'Fluoxetina 20 mg/dia e retorno ambulatorial em 30 dias com o bebê'],
   ecd: 'Internação (preferencialmente com supervisão do contato mãe-bebê), não deixar a mãe sozinha com o RN, antipsicótico (ex.: olanzapina, haloperidol) ± estabilizador de humor (lítio); eletroconvulsoterapia em casos graves/refratários. Alto risco de recorrência em futuras gestações.' });

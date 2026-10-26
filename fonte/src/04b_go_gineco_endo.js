@@ -19,7 +19,7 @@ CASO({ id: 'gg_rokitansky', area: 'go', local: 'gineco', dif: 2, tema: 'Amenorre
   pista: 'Caracteres sexuais normais, útero ausente, cariótipo feminino e androgênios normais.',
   dx: ['Agenesia mülleriana', 'Insensibilidade androgênica completa', 'Hímen imperfurado', 'Síndrome de Turner'],
   edx: 'Agenesia mülleriana (ductos paramesonéfricos): ausência de útero e dois terços superiores da vagina, com ovários funcionantes (mamas e pelos normais), cariótipo 46,XX e testosterona feminina. Associa-se a malformações renais e esqueléticas. Na insensibilidade androgênica (46,XY), os pelos são escassos e a testosterona é masculina.',
-  cd: ['Dilatação vaginal', 'Gonadectomia profilática', 'Estrogênio para induzir menarca', 'Histeroscopia diagnóstica'],
+  cd: ['Dilatação vaginal progressiva com moldes (Frank)', 'Gonadectomia profilática bilateral por videolaparoscopia', 'Estrogênio em doses crescentes para induzir a menarca', 'Histeroscopia diagnóstica e neovaginoplastia no mesmo tempo'],
   ecd: 'Primeira linha: dilatação vaginal com moldes (método de Frank); neovaginoplastia se falhar. Ovários funcionam: não precisa de reposição hormonal. Apoio psicológico; fertilidade possível por útero de substituição ou transplante uterino. Investigar trato urinário.' });
 
 CASO({ id: 'gg_morris', area: 'go', local: 'gineco', dif: 3, tema: 'Amenorreia primária', cond: 'Síndrome de Morris (insensibilidade androgênica completa)', tags: ['gineco', 'usg'],
@@ -34,7 +34,7 @@ CASO({ id: 'gg_morris', area: 'go', local: 'gineco', dif: 3, tema: 'Amenorreia p
   pista: 'Mamas sem pelos, testosterona masculina e cariótipo 46,XY.',
   dx: ['Insensibilidade androgênica', 'Agenesia mülleriana (Rokitansky)', 'Síndrome de Swyer', 'Hiperplasia adrenal congênita'],
   edx: 'Defeito do receptor de androgênio em indivíduo 46,XY: testículos produzem testosterona (convertida em estrogênio, que forma as mamas) e hormônio antimülleriano (útero ausente), mas os tecidos não respondem aos androgênios (genitália feminina, pelos escassos). Herança ligada ao X.',
-  cd: ['Gonadectomia pós-puberal e estrogênio', 'Gonadectomia imediata na infância', 'Testosterona em dose alta', 'Indução de ovulação com letrozol'],
+  cd: ['Gonadectomia após a puberdade e estrogênio isolado', 'Gonadectomia imediata na infância, antes da puberdade', 'Testosterona em dose alta para virilização completa', 'Estrogênio associado a progestagênio cíclico e letrozol'],
   ecd: 'Gonadectomia (risco de neoplasia, menor que na disgenesia), geralmente após a puberdade completa, seguida de reposição estrogênica (sem progestagênio, pois não há útero); dilatação vaginal. Aconselhamento genético e cuidado psicológico, respeitando a identidade de gênero feminina.' });
 
 CASO({ id: 'gg_swyer', area: 'go', local: 'gineco', dif: 3, tema: 'Amenorreia primária', cond: 'Síndrome de Swyer (disgenesia gonadal pura 46,XY)', tags: ['gineco', 'usg'],
@@ -49,7 +49,7 @@ CASO({ id: 'gg_swyer', area: 'go', local: 'gineco', dif: 3, tema: 'Amenorreia pr
   pista: 'Útero presente, hipogonadismo hipergonadotrófico e cariótipo XY.',
   dx: ['Síndrome de Swyer', 'Síndrome de Morris', 'Síndrome de Kallmann', 'Síndrome de Turner'],
   edx: 'Gônadas em fita não produzem hormônio antimülleriano nem testosterona: os ductos de Müller se desenvolvem (útero presente) e a genitália é feminina; sem estrogênio não há puberdade. FSH alto. A presença do cromossomo Y confere alto risco de gonadoblastoma/disgerminoma.',
-  cd: ['Gonadectomia já', 'Gonadectomia somente aos 40 anos', 'Apenas observar a evolução', 'Testosterona em dose de reposição'],
+  cd: ['Gonadectomia imediata e indução puberal com estrogênio', 'Gonadectomia somente aos 40 anos, após a prole constituída', 'Estrogênio e progestagênio, preservando as gônadas em fita', 'Testosterona em dose de reposição e acompanhamento anual'],
   ecd: 'Gonadectomia profilática assim que diagnosticada (risco elevado de tumor germinativo), indução puberal com estrogênio e depois associação de progestagênio (há útero). Gestação possível com ovodoação.' });
 
 CASO({ id: 'gg_turner', area: 'go', local: 'gineco', dif: 2, tema: 'Amenorreia primária', cond: 'Síndrome de Turner', tags: ['gineco', 'cardio'],
@@ -64,7 +64,7 @@ CASO({ id: 'gg_turner', area: 'go', local: 'gineco', dif: 2, tema: 'Amenorreia p
   pista: 'Baixa estatura, estigmas e hipogonadismo hipergonadotrófico.',
   dx: ['Síndrome de Turner', 'Síndrome de Swyer', 'Síndrome de Kallmann', 'Atraso constitucional'],
   edx: 'Monossomia do X (ou mosaicismo): disgenesia gonadal com FSH alto, baixa estatura, estigmas, cardiopatias (coarctação da aorta, valva aórtica bicúspide) e malformações renais.',
-  cd: ['Estrogênio e ecocardiograma', 'Gonadectomia imediata bilateral', 'Apenas observar o crescimento', 'Anticoncepcional e alta'],
+  cd: ['Estrogênio em doses crescentes e ecocardiograma', 'Gonadectomia bilateral imediata por risco de gonadoblastoma', 'Observar o crescimento e repetir o cariótipo em 1 ano', 'Anticoncepcional oral combinado e alta do acompanhamento'],
   ecd: 'Indução da puberdade com estrogênio em doses crescentes e depois progestagênio; hormônio do crescimento na infância. Rastrear coarctação, valva bicúspide e dilatação aórtica, rins, tireoide, audição, diabetes. Gonadectomia só se houver material do cromossomo Y no cariótipo.' });
 
 CASO({ id: 'gg_kallmann', area: 'go', local: 'gineco', dif: 2, tema: 'Amenorreia primária', cond: 'Síndrome de Kallmann', tags: ['gineco', 'neuro'],
@@ -79,7 +79,7 @@ CASO({ id: 'gg_kallmann', area: 'go', local: 'gineco', dif: 2, tema: 'Amenorreia
   pista: 'Hipogonadismo hipogonadotrófico com anosmia.',
   dx: ['Síndrome de Kallmann', 'Síndrome de Turner', 'Prolactinoma', 'Síndrome de Swyer'],
   edx: 'Deficiência de GnRH por falha da migração dos neurônios produtores (que migram junto com os olfatórios): hipogonadismo hipogonadotrófico (FSH e LH baixos) com anosmia ou hiposmia.',
-  cd: ['Estrogênio e progestagênio', 'Gonadectomia bilateral', 'Cabergolina em dose baixa', 'Cirurgia hipofisária'],
+  cd: ['Estrogênio e progestagênio (GnRH pulsátil para engravidar)', 'Gonadectomia bilateral por risco de neoplasia', 'Cabergolina 0,5 mg/semana pela anosmia', 'Cirurgia transesfenoidal para retirar a lesão hipofisária causadora'],
   ecd: 'Indução puberal e manutenção com estrogênio e progestagênio. Para fertilidade, gonadotrofinas ou GnRH pulsátil (os ovários são normais).' });
 
 CASO({ id: 'gg_himen', area: 'go', local: 'gineco', dif: 1, tema: 'Amenorreia primária', cond: 'Hímen imperfurado com hematocolpo', tags: ['gineco', 'usg'],
@@ -94,7 +94,7 @@ CASO({ id: 'gg_himen', area: 'go', local: 'gineco', dif: 1, tema: 'Amenorreia pr
   pista: 'Dor cíclica, puberdade normal e membrana abaulada.',
   dx: ['Hímen imperfurado', 'Agenesia mülleriana', 'Septo vaginal longitudinal', 'Tumor ovariano'],
   edx: 'Obstrução do trato de saída com útero funcionante: o sangue menstrual se acumula (hematocolpo), causando dor cíclica, massa e retenção urinária.',
-  cd: ['Himenotomia', 'Anticoncepcional contínuo e observar', 'Laparotomia exploradora', 'Dilatação vaginal com moldes'],
+  cd: ['Himenotomia com drenagem do hematocolpo', 'Anticoncepcional oral contínuo e observar os sintomas', 'Laparotomia exploradora pela massa pélvica', 'Dilatação vaginal com moldes por 3 meses'],
   ecd: 'Himenotomia (incisão em cruz ou excisão) com drenagem do hematocolpo. Diferenciar de septo vaginal transverso e agenesia, que exigem cirurgia mais complexa.' });
 
 /* ---------- Amenorreias secundárias ---------- */
@@ -110,7 +110,7 @@ CASO({ id: 'gg_prolactinoma', area: 'go', local: 'gineco', dif: 2, tema: 'Amenor
   pista: 'Amenorreia e galactorreia com prolactina alta, sem drogas, hipotireoidismo ou gestação.',
   dx: ['Microprolactinoma', 'Hiperprolactinemia por drogas', 'Síndrome de Sheehan', 'SOP'],
   edx: 'A prolactina inibe a pulsatilidade do GnRH: hipogonadismo hipogonadotrófico, amenorreia e galactorreia. Investigar antes: gestação, hipotireoidismo primário, insuficiência renal, drogas antidopaminérgicas e macroprolactina.',
-  cd: ['Cabergolina', 'Cirurgia transesfenoidal', 'Radioterapia hipofisária', 'Anticoncepcional e alta'],
+  cd: ['Cabergolina 0,5 mg/semana', 'Cirurgia transesfenoidal de imediato', 'Radioterapia hipofisária estereotáxica', 'Anticoncepcional oral combinado e alta'],
   ecd: 'Agonista dopaminérgico (cabergolina, preferida; bromocriptina na gestação planejada) normaliza a prolactina, restaura ciclos e reduz o tumor. Cirurgia transesfenoidal se intolerância ou resistência.' });
 
 CASO({ id: 'gg_hiperprl_droga', area: 'go', local: 'gineco', dif: 2, tema: 'Amenorreia secundária', cond: 'Hiperprolactinemia induzida por antipsicótico', tags: ['gineco', 'psiq'],
@@ -124,7 +124,7 @@ CASO({ id: 'gg_hiperprl_droga', area: 'go', local: 'gineco', dif: 2, tema: 'Amen
   pista: 'Antagonista dopaminérgico iniciado antes do quadro.',
   dx: ['Hiperprolactinemia por drogas', 'Prolactinoma', 'Hipotireoidismo primário', 'Síndrome de Asherman'],
   edx: 'Antipsicóticos (sobretudo risperidona e típicos), metoclopramida, domperidona, antidepressivos e verapamil elevam a prolactina por bloqueio dopaminérgico. Valores costumam ser < 100-150 ng/mL.',
-  cd: ['Rever as drogas com o psiquiatra', 'Cabergolina e manter tudo como está', 'RM e cirurgia hipofisária', 'Suspender o antipsicótico de vez'],
+  cd: ['Discutir com o psiquiatra a troca por aripiprazol', 'Cabergolina e manter a risperidona na mesma dose', 'RM de sela turca e cirurgia transesfenoidal', 'Suspender a risperidona de forma definitiva por conta própria'],
   ecd: 'Junto com o psiquiatra, trocar por antipsicótico poupador de prolactina (aripiprazol, quetiapina) ou associar aripiprazol em dose baixa; suspender antieméticos antidopaminérgicos. Se não for possível trocar, estrogênio para proteção óssea. RM se prolactina não normalizar.' });
 
 CASO({ id: 'gg_hipotalamica', area: 'go', local: 'gineco', dif: 2, tema: 'Amenorreia secundária', cond: 'Amenorreia hipotalâmica funcional da atleta', tags: ['gineco', 'endocrino'],
@@ -138,7 +138,7 @@ CASO({ id: 'gg_hipotalamica', area: 'go', local: 'gineco', dif: 2, tema: 'Amenor
   pista: 'Baixa disponibilidade energética, hipogonadismo hipogonadotrófico e fratura de estresse.',
   dx: ['Amenorreia hipotalâmica', 'Insuficiência ovariana prematura', 'SOP', 'Prolactinoma'],
   edx: 'Tríade da mulher atleta (deficiência energética relativa no esporte): baixa disponibilidade energética, amenorreia hipotalâmica (redução de GnRH) e baixa densidade óssea. Teste de progesterona negativo indica hipoestrogenismo.',
-  cd: ['Mais calorias e menos treino', 'Anticoncepcional oral isolado', 'Cabergolina em dose baixa', 'Indução de ovulação imediata'],
+  cd: ['Aumentar a ingesta calórica e reduzir a carga de treino', 'Anticoncepcional oral combinado isolado para voltar a menstruar', 'Cabergolina 0,25 mg/semana para regular o ciclo', 'Indução de ovulação imediata com citrato de clomifeno'],
   ecd: 'Tratar a causa: aporte calórico, redução da carga, equipe multiprofissional (nutrição, psicologia, rastrear transtorno alimentar). Densitometria. Se persistir, estradiol transdérmico com progestagênio cíclico (o anticoncepcional oral não protege bem o osso e mascara a recuperação).' });
 
 CASO({ id: 'gg_sheehan', area: 'go', local: 'gineco', dif: 3, tema: 'Amenorreia secundária', cond: 'Síndrome de Sheehan', tags: ['gineco', 'endocrino'],
@@ -152,7 +152,7 @@ CASO({ id: 'gg_sheehan', area: 'go', local: 'gineco', dif: 3, tema: 'Amenorreia 
   pista: 'Agalactia e amenorreia após hemorragia obstétrica com choque.',
   dx: ['Síndrome de Sheehan', 'Síndrome de Asherman', 'Insuficiência ovariana prematura', 'Depressão pós-parto'],
   edx: 'Necrose isquêmica da hipófise (aumentada na gestação) após hemorragia e hipotensão no parto: hipopituitarismo. Primeiros sinais: agalactia (falta de prolactina) e amenorreia; depois hipotireoidismo central e insuficiência adrenal secundária.',
-  cd: ['Hidrocortisona antes da levotiroxina', 'Levotiroxina isolada primeiro', 'Histeroscopia com lise de sinéquias', 'Cabergolina'],
+  cd: ['Hidrocortisona antes de iniciar a levotiroxina', 'Levotiroxina isolada primeiro e reavaliar o cortisol', 'Histeroscopia com lise de sinéquias uterinas', 'Cabergolina para restaurar a lactação'],
   ecd: 'Repor glicocorticoide antes de iniciar levotiroxina (a tiroxina acelera o metabolismo do cortisol e pode precipitar crise adrenal). Estrogênio com progestagênio para o hipogonadismo; GH em casos selecionados.' });
 
 CASO({ id: 'gg_iop', area: 'go', local: 'gineco', dif: 2, tema: 'Amenorreia secundária', cond: 'Insuficiência ovariana prematura', tags: ['gineco', 'endocrino'],
@@ -166,7 +166,7 @@ CASO({ id: 'gg_iop', area: 'go', local: 'gineco', dif: 2, tema: 'Amenorreia secu
   pista: 'Antes dos 40 anos, FSH alto em duas dosagens.',
   dx: ['Insuficiência ovariana prematura', 'Amenorreia hipotalâmica', 'SOP', 'Síndrome de Sheehan'],
   edx: 'IOP: perda da função ovariana antes dos 40 anos (oligo/amenorreia por 4 meses e FSH > 25 UI/L em duas dosagens com 4-6 semanas). Causas: genéticas (pré-mutação do FMR1 – X frágil, Turner), autoimunes, iatrogênicas (quimio, radioterapia, cirurgia), idiopáticas.',
-  cd: ['Terapia hormonal até os 50 anos', 'Contraindicar qualquer hormônio', 'Clomifeno para ovular', 'Observar sem tratar'],
+  cd: ['Estradiol e progestagênio até cerca de 50 anos', 'Contraindicar qualquer hormônio pelo risco de câncer de mama', 'Citrato de clomifeno em doses crescentes para ovular', 'Observar sem tratar e repetir FSH em 6 meses'],
   ecd: 'Reposição hormonal (estrogênio com progestagênio) até cerca de 50 anos, para sintomas e proteção óssea e cardiovascular. Cariótipo, pré-mutação do FMR1 (aconselhamento familiar), autoanticorpos (adrenal, tireoide). Gestação espontânea é rara (5-10%); ovodoação é a principal opção.' });
 
 CASO({ id: 'gg_savage', area: 'go', local: 'gineco', dif: 3, tema: 'Amenorreia secundária', cond: 'Síndrome de Savage (ovários resistentes às gonadotrofinas)', tags: ['gineco', 'usg'],
@@ -181,7 +181,7 @@ CASO({ id: 'gg_savage', area: 'go', local: 'gineco', dif: 3, tema: 'Amenorreia s
   pista: 'FSH alto, mas folículos e AMH preservados.',
   dx: ['Síndrome de Savage', 'IOP por depleção folicular', 'SOP', 'Síndrome de Turner'],
   edx: 'Forma rara de hipogonadismo hipergonadotrófico: os folículos existem, mas não respondem ao FSH (defeito de receptor). AMH e contagem de folículos antrais preservados diferenciam da depleção folicular.',
-  cd: ['Reposição hormonal', 'Ooforectomia bilateral', 'Cabergolina', 'Corticoide em dose alta'],
+  cd: ['Terapia hormonal com estrogênio e progestagênio', 'Ooforectomia bilateral pela resistência ovariana', 'Cabergolina 0,5 mg/semana', 'Prednisona em dose alta por 3 meses'],
   ecd: 'Terapia hormonal para hipoestrogenismo. Fertilidade difícil: tentativas de maturação in vitro de oócitos ou ovodoação.' });
 
 CASO({ id: 'gg_asherman', area: 'go', local: 'gineco', dif: 2, tema: 'Amenorreia secundária', cond: 'Síndrome de Asherman', tags: ['gineco', 'usg'],
@@ -196,7 +196,7 @@ CASO({ id: 'gg_asherman', area: 'go', local: 'gineco', dif: 2, tema: 'Amenorreia
   pista: 'Eixo hormonal normal e ausência de sangramento mesmo com estrogênio e progesterona: o problema é o útero.',
   dx: ['Síndrome de Asherman', 'Síndrome de Sheehan', 'Insuficiência ovariana prematura', 'SOP'],
   edx: 'Sinéquias intrauterinas por lesão da camada basal do endométrio (curetagem pós-parto ou pós-aborto, infecção). Amenorreia de causa uterina: o teste com estrogênio e progestagênio não induz sangramento.',
-  cd: ['Lise histeroscópica', 'Nova curetagem uterina', 'Cabergolina', 'Histerectomia'],
+  cd: ['Lise histeroscópica das sinéquias e estrogênio', 'Nova curetagem uterina para regularizar o endométrio', 'Cabergolina e anticoncepcional oral combinado', 'Histerectomia total abdominal'],
   ecd: 'Histeroscopia cirúrgica com lise das sinéquias, seguida de estrogênio para regeneração endometrial e, às vezes, barreira intrauterina (balão ou DIU temporário). Risco de recorrência e de acretismo em gestações futuras.' });
 
 /* ---------- SOP ---------- */
@@ -213,7 +213,7 @@ CASO({ id: 'gg_sop', area: 'go', local: 'gineco', dif: 2, tema: 'Síndrome dos o
   pista: 'Dois de três critérios de Rotterdam, após excluir outras causas.',
   dx: ['SOP', 'HAC não clássica', 'Síndrome de Cushing', 'Tumor ovariano virilizante'],
   edx: 'Rotterdam: 2 de 3 (oligo/anovulação, hiperandrogenismo clínico ou laboratorial, morfologia policística), excluindo hipotireoidismo, hiperprolactinemia, HAC não clássica, Cushing e tumores. Associa-se a resistência insulínica, intolerância à glicose, dislipidemia, esteatose e risco de hiperplasia endometrial.',
-  cd: ['Estilo de vida e ACO combinado', 'Clomifeno', 'Drilling ovariano', 'Apenas observar'],
+  cd: ['Mudança no estilo de vida e ACO combinado', 'Citrato de clomifeno 50 mg do 5º ao 9º dia', 'Drilling ovariano por videolaparoscopia', 'Apenas observar e repetir os androgênios em 1 ano'],
   ecd: 'Mudança de estilo de vida (perda de 5-10% do peso já restaura ciclos). Sem desejo reprodutivo: anticoncepcional combinado (suprime LH e androgênios ovarianos, aumenta SHBG, protege o endométrio); antiandrogênio (espironolactona, ciproterona) para hirsutismo após 6 meses, sempre com contracepção. Metformina para alterações metabólicas.' });
 
 CASO({ id: 'gg_sop_infertil', area: 'go', local: 'gineco', dif: 3, tema: 'Síndrome dos ovários policísticos', cond: 'SOP com infertilidade anovulatória', tags: ['gineco', 'endocrino'],
@@ -227,7 +227,7 @@ CASO({ id: 'gg_sop_infertil', area: 'go', local: 'gineco', dif: 3, tema: 'Síndr
   pista: 'Anovulação crônica é a causa da infertilidade.',
   dx: ['Anovulação por SOP', 'Fator tubário', 'Fator masculino', 'Endometriose profunda'],
   edx: 'A SOP é a principal causa de infertilidade por anovulação crônica. Avaliar também tubas e sêmen antes de induzir.',
-  cd: ['Letrozol', 'Fertilização in vitro imediata', 'Retomar ciproterona e espironolactona', 'Apenas aguardar mais 1 ano'],
+  cd: ['Letrozol 2,5 mg do 3º ao 7º dia do ciclo', 'Fertilização in vitro imediata', 'Retomar ciproterona e espironolactona por 6 meses', 'Aguardar mais 1 ano de tentativas espontâneas'],
   ecd: 'Primeira linha: letrozol (inibidor da aromatase), com maiores taxas de nascido vivo que o clomifeno; metformina como adjuvante; gonadotrofinas ou drilling ovariano como segunda linha; FIV depois. Ácido fólico e rastreio de diabetes antes da gestação.' });
 
 /* ---------- Climatério e osteoporose ---------- */
@@ -242,7 +242,7 @@ CASO({ id: 'gg_climaterio_th', area: 'go', local: 'gineco', dif: 2, tema: 'Clima
   pista: 'Menos de 60 anos e menos de 10 anos de menopausa, sem contraindicações.',
   dx: ['Síndrome climatérica', 'Hipertireoidismo', 'Insuficiência ovariana prematura', 'Síndrome carcinoide'],
   edx: 'Menopausa: 12 meses de amenorreia após os 40 anos (diagnóstico clínico, sem necessidade de FSH). Sintomas vasomotores por instabilidade do centro termorregulador hipotalâmico com a queda do estrogênio.',
-  cd: ['Estradiol e progestagênio', 'Estrogênio isolado por via oral', 'Tibolona em dose plena', 'Fitoestrogênio de soja'],
+  cd: ['Estradiol transdérmico e progesterona micronizada', 'Estrogênio isolado por via oral, sem progestagênio', 'Tibolona 2,5 mg/dia associada a estradiol oral', 'Isoflavona de soja como primeira escolha'],
   ecd: 'A terapia hormonal é o tratamento mais eficaz para sintomas vasomotores na "janela de oportunidade" (< 60 anos ou < 10 anos de menopausa). Com útero, associar progestagênio (proteção endometrial). Via transdérmica tem menor risco trombótico, preferida na hipertensa. Contraindicações: câncer de mama ou endométrio, TEV, AVC, DAC, hepatopatia grave, sangramento sem diagnóstico.' });
 
 CASO({ id: 'gg_climaterio_nh', area: 'go', local: 'gineco', dif: 2, tema: 'Climatério', cond: 'Fogachos em sobrevivente de câncer de mama', tags: ['gineco', 'onco'],
@@ -255,7 +255,7 @@ CASO({ id: 'gg_climaterio_nh', area: 'go', local: 'gineco', dif: 2, tema: 'Clima
   pista: 'Câncer de mama hormônio-dependente contraindica estrogênio.',
   dx: ['Fogachos com contraindicação à TH', 'Hipertireoidismo', 'Recidiva do câncer de mama', 'Feocromocitoma'],
   edx: 'Câncer de mama é contraindicação absoluta à terapia hormonal sistêmica. Opções não hormonais: venlafaxina/desvenlafaxina, escitalopram, gabapentina, clonidina, fezolinetanto (antagonista do receptor de neurocinina-3), terapia cognitivo-comportamental.',
-  cd: ['Venlafaxina', 'Estradiol oral em dose baixa', 'Paroxetina associada ao tamoxifeno', 'Tibolona'],
+  cd: ['Venlafaxina 37,5-75 mg/dia', 'Estradiol oral em dose baixa por 2 anos', 'Paroxetina associada ao tamoxifeno', 'Tibolona 2,5 mg/dia'],
   ecd: 'Preferir venlafaxina, desvenlafaxina, citalopram ou gabapentina. Paroxetina e fluoxetina inibem fortemente o CYP2D6 e reduzem a ativação do tamoxifeno (evitar). Tibolona aumenta recidiva de câncer de mama.' });
 
 CASO({ id: 'gg_sgm', area: 'go', local: 'gineco', dif: 1, tema: 'Climatério', cond: 'Síndrome geniturinária da menopausa', tags: ['gineco', 'nefro'],
@@ -269,7 +269,7 @@ CASO({ id: 'gg_sgm', area: 'go', local: 'gineco', dif: 1, tema: 'Climatério', c
   pista: 'Atrofia vulvovaginal com sintomas urinários após anos de menopausa.',
   dx: ['Síndrome geniturinária', 'Candidíase vulvovaginal recorrente', 'Líquen escleroso vulvar', 'Cistite intersticial'],
   edx: 'Atrofia por hipoestrogenismo de vulva, vagina, uretra e bexiga: secura, dispareunia, urgência e ITU de repetição. Tende a piorar com o tempo, ao contrário dos fogachos.',
-  cd: ['Estrogênio vaginal', 'Antibiótico contínuo isolado', 'Terapia hormonal sistêmica', 'Corticoide tópico'],
+  cd: ['Estriol (ou promestrieno) vaginal em dose baixa', 'Nitrofurantoína contínua isolada', 'Terapia hormonal sistêmica combinada', 'Corticoide tópico vulvar por 4 semanas e lubrificante à base de água'],
   ecd: 'Hidratantes e lubrificantes; estrogênio vaginal em dose baixa (estriol, promestrieno), com absorção sistêmica mínima e sem necessidade de progestagênio. Reduz ITU de repetição. Alternativas: laser, ospemifeno, DHEA vaginal.' });
 
 CASO({ id: 'gg_osteoporose', area: 'go', local: 'gineco', dif: 2, tema: 'Osteoporose pós-menopausa', cond: 'Osteoporose pós-menopausa com indicação de bifosfonato', tags: ['gineco', 'reumato'],
@@ -283,7 +283,7 @@ CASO({ id: 'gg_osteoporose', area: 'go', local: 'gineco', dif: 2, tema: 'Osteopo
   pista: 'T-score ≤ -2,5 em qualquer sítio.',
   dx: ['Osteoporose pós-menopausa', 'Osteopenia', 'Osteomalácia', 'Hiperparatireoidismo primário'],
   edx: 'OMS: T-score ≤ -2,5 = osteoporose; entre -1 e -2,5 = osteopenia. Fratura por fragilidade (quadril, vértebra) define osteoporose independentemente da DMO. FRAX estima o risco em 10 anos.',
-  cd: ['Alendronato', 'Apenas caminhada', 'Terapia hormonal combinada', 'Calcitonina nasal'],
+  cd: ['Alendronato 70 mg/semana, cálcio e vitamina D', 'Apenas caminhada e exposição solar', 'Terapia hormonal combinada por 10 anos como primeira escolha', 'Calcitonina nasal diária'],
   ecd: 'Bifosfonato (alendronato semanal: em jejum, com água, permanecer sentada 30 min) ou ácido zoledrônico anual; repor vitamina D e cálcio; exercício resistido e prevenção de quedas; parar de fumar. Alto risco ou fraturas: denosumabe ou anabólicos (teriparatida, romosozumabe). Suspender denosumabe exige bifosfonato depois (efeito rebote).' });
 
 /* ---------- Uroginecologia ---------- */
@@ -298,7 +298,7 @@ CASO({ id: 'gg_iue', area: 'go', local: 'gineco', dif: 2, tema: 'Incontinência 
   pista: 'Perda aos esforços sem urgência.',
   dx: ['Incontinência urinária de esforço', 'Bexiga hiperativa', 'Incontinência por transbordamento', 'Fístula vesicovaginal'],
   edx: 'IUE: perda involuntária com aumento da pressão abdominal, por hipermobilidade uretral ou deficiência esfincteriana intrínseca. Fatores: partos vaginais, obesidade, envelhecimento, hipoestrogenismo, tosse crônica.',
-  cd: ['Fisioterapia do assoalho pélvico', 'Oxibutinina', 'Sling sem tratamento clínico prévio', 'Sondagem vesical de alívio'],
+  cd: ['Treinamento do assoalho pélvico supervisionado por 3 meses', 'Oxibutinina 5 mg de 8/8 h', 'Sling de uretra média sem tentar tratamento clínico antes, pela perda', 'Cateterismo vesical intermitente de alívio'],
   ecd: 'Primeira linha: treinamento muscular do assoalho pélvico supervisionado (3 meses), perda de peso, tratar tosse e constipação. Falha: sling de uretra média (retropúbico ou transobturatório). Estudo urodinâmico antes da cirurgia em casos complexos ou mistos.' });
 
 CASO({ id: 'gg_bexiga_hiperativa', area: 'go', local: 'gineco', dif: 2, tema: 'Incontinência urinária', cond: 'Síndrome da bexiga hiperativa', tags: ['gineco', 'nefro'],
@@ -312,7 +312,7 @@ CASO({ id: 'gg_bexiga_hiperativa', area: 'go', local: 'gineco', dif: 2, tema: 'I
   pista: 'Urgência com ou sem perda, sem infecção ou obstrução.',
   dx: ['Bexiga hiperativa', 'Incontinência de esforço', 'Cistite bacteriana', 'Incontinência por transbordamento'],
   edx: 'Urgência miccional, geralmente com polaciúria e noctúria, com ou sem incontinência de urgência, na ausência de infecção ou outra causa. Diagnóstico clínico; urodinâmica não é obrigatória no início.',
-  cd: ['Treinamento vesical', 'Sling transobturatório', 'Antibiótico profilático', 'Cateterismo intermitente'],
+  cd: ['Treinamento vesical, diário miccional e reduzir cafeína', 'Sling transobturatório', 'Nitrofurantoína profilática contínua', 'Cateterismo vesical intermitente limpo de 6/6 h e antibiótico'],
   ecd: 'Primeira linha: medidas comportamentais (diário miccional, treinamento vesical, reduzir cafeína e líquidos à noite) e fisioterapia. Segunda: mirabegrona (agonista beta-3, preferida em idosas) ou antimuscarínicos (evitar oxibutinina em idosas pelo efeito cognitivo); estrogênio vaginal. Refratárias: toxina botulínica, neuromodulação.' });
 
 CASO({ id: 'gg_cistocele', area: 'go', local: 'gineco', dif: 2, tema: 'Distopias genitais', cond: 'Prolapso de parede vaginal anterior (cistocele)', tags: ['gineco'],
@@ -327,7 +327,7 @@ CASO({ id: 'gg_cistocele', area: 'go', local: 'gineco', dif: 2, tema: 'Distopias
   pista: 'Compartimento anterior e manobra de redução para urinar.',
   dx: ['Cistocele estádio II', 'Retocele', 'Prolapso uterino estádio IV', 'Cisto de Gartner'],
   edx: 'POP-Q: estádio 0 sem prolapso; I ponto mais distal > 1 cm acima do hímen; II entre 1 cm acima e 1 cm abaixo; III > 1 cm abaixo sem eversão total; IV eversão completa. Cistocele pode causar disfunção miccional e resíduo elevado.',
-  cd: ['Pessário ou colporrafia', 'Sling suburetral isolado', 'Antimuscarínico oral', 'Observar sem orientação'],
+  cd: ['Pessário vaginal ou colporrafia anterior', 'Sling suburetral isolado, sem corrigir o prolapso', 'Oxibutinina 5 mg de 8/8 h', 'Observar sem orientação específica'],
   ecd: 'Sintomático: pessário (com estrogênio vaginal) ou cirurgia (colporrafia anterior, considerar correção apical). Fisioterapia em prolapsos leves. Medidas: perda de peso, evitar constipação e esforço.' });
 
 CASO({ id: 'gg_retocele', area: 'go', local: 'gineco', dif: 2, tema: 'Distopias genitais', cond: 'Prolapso de parede vaginal posterior (retocele)', tags: ['gineco', 'gastro'],
@@ -340,7 +340,7 @@ CASO({ id: 'gg_retocele', area: 'go', local: 'gineco', dif: 2, tema: 'Distopias 
   pista: 'Compartimento posterior com evacuação obstruída e digitação vaginal.',
   dx: ['Retocele', 'Cistocele', 'Prolapso retal completo', 'Enterocele isolada'],
   edx: 'Defeito da fáscia retovaginal: herniação do reto na parede vaginal posterior, com evacuação obstruída e necessidade de digitação vaginal ou perineal.',
-  cd: ['Colporrafia posterior', 'Sling suburetral', 'Histerectomia vaginal isolada', 'Antimuscarínico'],
+  cd: ['Colporrafia posterior com perineorrafia', 'Sling suburetral transobturatório', 'Histerectomia vaginal isolada, sem correção da parede posterior', 'Oxibutinina e laxativo osmótico'],
   ecd: 'Fibras, laxativos e fisioterapia; sintomática persistente: colporrafia posterior (correção da fáscia retovaginal) e perineorrafia. Pessário é alternativa em quem não quer cirurgia.' });
 
 CASO({ id: 'gg_hac', area: 'go', local: 'gineco', dif: 3, tema: 'Amenorreia primária', cond: 'Hiperplasia adrenal congênita forma virilizante simples com amenorreia primária', tags: ['gineco', 'endocrino'],
@@ -355,5 +355,5 @@ CASO({ id: 'gg_hac', area: 'go', local: 'gineco', dif: 3, tema: 'Amenorreia prim
   pista: '46,XX virilizada desde a infância, 17-OH-progesterona muito alta.',
   dx: ['HAC clássica', 'Insensibilidade androgênica', 'SOP', 'Tumor ovariano virilizante'],
   edx: 'Deficiência de 21-hidroxilase: acúmulo de 17-OH-progesterona desviado para androgênios. Forma clássica virilizante simples: genitália atípica ao nascer e pubarca precoce, aceleração do crescimento com fechamento precoce das epífises (baixa estatura final), anovulação e amenorreia. Sem perda de sal. A forma não clássica aparece na adolescência com hirsutismo e irregularidade menstrual.',
-  cd: ['Glicocorticoide', 'Anticoncepcional isolado', 'Gonadectomia', 'Espironolactona isolada'],
+  cd: ['Hidrocortisona (ou prednisolona) para suprimir o ACTH', 'Anticoncepcional oral combinado isolado para regularizar os ciclos', 'Gonadectomia bilateral', 'Espironolactona 100 mg/dia isolada'],
   ecd: 'Glicocorticoide (hidrocortisona, prednisolona ou dexametasona após o crescimento) suprime o ACTH e os androgênios, restaurando ciclos ovulatórios; fludrocortisona na forma perdedora de sal. Avaliação cirúrgica (clitoroplastia, vaginoplastia) com decisão compartilhada; apoio psicológico; orientação de dose de estresse. Triagem neonatal (teste do pezinho) evita o diagnóstico tardio.' });
