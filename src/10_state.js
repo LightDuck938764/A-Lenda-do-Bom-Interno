@@ -9,9 +9,16 @@ const G = {            // estado de execução (não salvo)
 };
 const INV_SIZE = 60;
 
-function newState(p) {
+/* Dois modos, cada um com o seu save:
+   - 'internato': a campanha individual (estágios em sequência, missões, chefes)
+   - 'vest' (Modo Vestibulando): todos os setores abertos, só casos de pacientes,
+     outros jogadores no mapa, duelos no bar e o título de Melhor Interno */
+function isVest() { return !!(S && S.modo === 'vest'); }
+function modoNome(m) { return m === 'vest' ? 'Modo Vestibulando' : 'Modo Internato'; }
+function saveKeyFor(m) { return m === 'vest' ? SAVE_KEY_VEST : SAVE_KEY; }
+function newState(p, modo) {
   return {
-    v: SAVE_VERSION, created: Date.now(), playTime: 0,
+    v: SAVE_VERSION, created: Date.now(), playTime: 0, modo: modo === 'vest' ? 'vest' : 'internato',
     player: p, ligaColor: 'Vermelho',
     xpTotal: 0, xpAvail: 0, vida: 80, energia: 60, coins: 60, rep: 0, repMin: 0, repMax: 0,
     inv: Array(INV_SIZE).fill(null), equip: { mao: null, cabeca: null, corpo: 'jaleco_padrao', amuleto: null },
@@ -156,8 +163,9 @@ function learnSkill(id) {
 
 /* ---------------- Campanha ---------------- */
 function currentAreaIdx() { return S.order.findIndex(a => !S.completed[a]); }
-function currentArea() { const i = currentAreaIdx(); return i < 0 ? null : S.order[i]; }
-function areaUnlocked(a) { return !!S.completed[a] || currentArea() === a; }
+// no Modo Vestibulando não há campanha: nenhum estágio "atual" e todos os setores abertos
+function currentArea() { if (isVest()) return null; const i = currentAreaIdx(); return i < 0 ? null : S.order[i]; }
+function areaUnlocked(a) { return isVest() || !!S.completed[a] || currentArea() === a; }
 function areaStepIdx(a) { return S.areaStep[a] || 0; }
 function chainStep(a) { return CHAINS[a] && CHAINS[a][areaStepIdx(a)]; }
 function prog(a) { if (!S.prog[a]) S.prog[a] = { cases: 0, side: 0, opened: {}, learned: 0 }; return S.prog[a]; }
@@ -230,16 +238,17 @@ function checkAch() {
 function saveGame() {
   if (!S || G.mode === 'title' || G.mode === 'create' || G.mode === 'order') return;
   if (G.player && G.map) { S.map = { id: G.map.id, x: G.player.x, y: G.player.y, dir: G.player.dir }; }
-  try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) { /* armazenamento indisponível */ }
+  try { localStorage.setItem(saveKeyFor(S.modo), JSON.stringify(S)); } catch (e) { /* armazenamento indisponível */ }
   if (typeof cloudQueue === 'function') cloudQueue();   // site: copia também para a conta Google
 }
-function loadGame() {
-  try { const raw = localStorage.getItem(SAVE_KEY); if (!raw) return null; return migrateSave(JSON.parse(raw)); } catch (e) { return null; }
+function loadGame(modo) {
+  try { const raw = localStorage.getItem(saveKeyFor(modo)); if (!raw) return null; const d = migrateSave(JSON.parse(raw)); if (d) d.modo = modo === 'vest' ? 'vest' : 'internato'; return d; } catch (e) { return null; }
 }
 function migrateSave(d) {
   if (!d || typeof d !== 'object' || !d.player) return null;
-  const base = newState(d.player);
+  const base = newState(d.player, d.modo);
   const out = Object.assign(base, d);
+  out.modo = d.modo === 'vest' ? 'vest' : 'internato';
   out.stats = Object.assign(newState(d.player).stats, d.stats || {});
   out.equip = Object.assign({ mao: null, cabeca: null, corpo: 'jaleco_padrao', amuleto: null }, d.equip || {});
   if (!Array.isArray(out.inv)) out.inv = Array(INV_SIZE).fill(null);
@@ -263,5 +272,13 @@ function migrateSave(d) {
 }
 function exportSave() { saveGame(); try { return btoa(unescape(encodeURIComponent(JSON.stringify(S)))); } catch (e) { return ''; } }
 function importSave(code) { try { const d = migrateSave(JSON.parse(decodeURIComponent(escape(atob(code.trim()))))); return d; } catch (e) { return null; } }
-function hasSave() { try { return !!localStorage.getItem(SAVE_KEY); } catch (e) { return false; } }
-function deleteSave() { try { localStorage.removeItem(SAVE_KEY); } catch (e) { } }
+function hasSave(modo) { try { return !!localStorage.getItem(saveKeyFor(modo)); } catch (e) { return false; } }
+function deleteSave(modo) { try { localStorage.removeItem(saveKeyFor(modo)); } catch (e) { } }
+// resumo de um save para a tela inicial e para a escolha entre aparelho e nuvem
+function saveSummaryOf(d) {
+  if (!d || !d.player) return '—';
+  let L = 1; while (L < BAL.maxLevel && (d.xpTotal || 0) >= BAL.xpForLevel(L + 1)) L++;
+  const h = Math.floor((d.playTime || 0) / 3600), m = Math.floor(((d.playTime || 0) % 3600) / 60);
+  const meio = d.modo === 'vest' ? `${(d.stats && d.stats.cases) || 0} casos` : `${Object.keys(d.completed || {}).length}/${AREA_IDS.length} estágios`;
+  return `<b>${U.esc(d.player.name || 'Interno(a)')}</b> · Nv ${L} · ${meio} · ${h}h${String(m).padStart(2, '0')} de jogo`;
+}

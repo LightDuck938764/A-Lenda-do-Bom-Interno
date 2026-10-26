@@ -1,8 +1,9 @@
 /* =====================================================================
-   MULTIPLAYER (opcional, por cima da campanha individual)
-   - Cada jogador continua com o próprio save e a própria campanha.
-   - Quem está com o jogo aberto ao mesmo tempo aparece no mapa para os
-     outros (posição, direção, roupa e nome do personagem).
+   MULTIPLAYER (só no Modo Vestibulando)
+   - O Modo Internato é individual: quem está nele não aparece para
+     ninguém e não vê ninguém.
+   - No Modo Vestibulando, quem está com o jogo aberto ao mesmo tempo
+     aparece no mapa para os outros (posição, direção, roupa e nome).
    - No Bar do Rodolfo dá para desafiar outro interno para um Duelo de
      Pergunta Relâmpago (melhor de 5, perguntas de residência).
    Sem conexão (jogo aberto sozinho, arquivo salvo, link público), nada
@@ -81,12 +82,12 @@ function mpTick(dt) {
   const now = performance.now();
   if (now - MP.sentAt > 100) {
     let pres;
-    if (S && G.map && G.player) {
+    if (S && G.map && G.player && isVest()) {
       const st = MP.duel ? 'duelo' : (G.mode === 'explore' ? 'livre' : 'ocupado');
       pres = { v: 1, nm: mpName(S.player.name), lv: level(), rp: Math.round(S.rep || 0), map: G.map.id, x: Math.round(G.player.x * 20) / 20, y: Math.round(G.player.y * 20) / 20, d: G.player.dir, mv: !!G.player.moving, st };
     } else pres = { v: 1, map: null };
     const key = JSON.stringify(pres);
-    const lk = S && G.player ? JSON.stringify(playerLook()) : '';
+    const lk = S && G.player && isVest() ? JSON.stringify(playerLook()) : '';
     if (key !== MP.lastPres || lk !== MP.lastLook) {
       const patch = Object.assign({}, pres);
       if (lk !== MP.lastLook) { patch.lk = lk ? JSON.parse(lk) : null; MP.lastLook = lk; }
@@ -101,20 +102,20 @@ function mpTick(dt) {
     g.moving = g.mv || d > 0.06;
     if (g.moving) { g.animT += dt * 9; g.frame = Math.floor(g.animT) % 4; } else { g.animT = 0; g.frame = 0; }
   }
-  if (S && G.map && G.map.id === 'bar' && !MP.barHint && [...MP.ghosts.values()].some(g => g.map === 'bar')) {
+  if (S && isVest() && G.map && G.map.id === 'bar' && !MP.barHint && [...MP.ghosts.values()].some(g => g.map === 'bar')) {
     MP.barHint = true; toast('<b>Outros internos estão no bar!</b><br><small>Chegue perto de alguém e aperte E para desafiar para um Duelo de Pergunta Relâmpago.</small>', 'quest');
   }
   mpDuelTick(now);
   if (MP.duel && G.panelName === 'mp_duelo') mpScene(now);
 }
-function mpGhostsHere() { if (!MP.room || !G.map) return []; const id = G.map.id; return [...MP.ghosts.values()].filter(g => g.map === id); }
+function mpGhostsHere() { if (!MP.room || !G.map || !isVest()) return []; const id = G.map.id; return [...MP.ghosts.values()].filter(g => g.map === id); }
 function mpDrawGhost(c, g, cx, cy) {
   try { return drawEnt(c, g, cx, cy); } catch (e) { if (!g.bad) { g.bad = true; g.look = MP_FALLBACK_LOOK; } return null; }
 }
 // "Melhor Interno": quem tem mais pontos de reputação entre todos os internos online agora
 // (empate: maior nível; depois um critério fixo, para todos verem a mesma pessoa)
 function mpBest() {
-  if (!MP.room || !MP.ok || !S || !MP.roster.size) return null;
+  if (!MP.room || !MP.ok || !S || !isVest() || !MP.roster.size) return null;
   const me = mpMyPeer(); if (!me) return null;
   const all = [...MP.roster.values()].map(g => ({ peer: g.peer, rp: g.rp || 0, lv: g.lv || 1 }));
   all.push({ peer: me, rp: Math.round(S.rep || 0), lv: level() });
@@ -152,7 +153,7 @@ function mpNameTags(c, cx, cy) {
 }
 // interno online mais próximo, à frente do jogador, no bar
 function mpNearbyPeer() {
-  if (!MP.room || !G.map || G.map.id !== 'bar') return null;
+  if (!MP.room || !G.map || G.map.id !== 'bar' || !isVest()) return null;
   const [fx, fy] = frontPoint(0.8), P = G.player; let best = null, bd = 9;
   for (const g of mpGhostsHere()) { const d = Math.hypot(g.x - fx, g.y - fy), d2 = Math.hypot(g.x - P.x, g.y - P.y); if ((d < 0.9 || d2 < 1.1) && d2 < 1.6 && d < bd) { bd = d; best = g; } }
   return best;
@@ -163,6 +164,7 @@ function mpChip() {
   const show = !!(S && G.map && !document.getElementById('hud').hidden);
   if (!el) { if (!show) return; el = document.createElement('div'); el.id = 'mpChip'; document.getElementById('stage').appendChild(el); }
   el.hidden = !show; if (!show) return;
+  if (!isVest()) { const t = '🔒 Modo Internato · jogo individual'; el.className = 'mp-off'; if (el.textContent !== t) el.textContent = t; return; }
   const inBar = [...MP.roster.values()].filter(g => g.map === 'bar').length;
   // estado da conexão sempre visível, para cada jogador saber se está no modo online
   const txt = MP.status === 'on' ? (n ? `🟢 Online · ${n} interno${n > 1 ? 's' : ''}${inBar ? ` · ${inBar} no bar` : ''}` : '🟢 Online · só você por aqui')
@@ -190,7 +192,7 @@ function mpMsg(msg) {
   const D = MP.duel;
   switch (m.t) {
     case 'convite': {
-      const busy = !S || !G.map || G.map.id !== 'bar' || G.mode !== 'explore' || MP.duel || MP.inv || MP.out;
+      const busy = !S || !isVest() || !G.map || G.map.id !== 'bar' || G.mode !== 'explore' || MP.duel || MP.inv || MP.out;
       if (busy) return mpEmit({ t: 'resposta', id: m.id, to: msg.peer, ok: false, motivo: 'ocupado' });
       MP.inv = { id: m.id, from: msg.peer, nm: mpName(m.nm), lv: Math.max(1, Math.min(99, m.lv | 0)), t: performance.now() };
       mpShowInvite(); SFX.play('quest');
