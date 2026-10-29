@@ -227,7 +227,7 @@ function buildMaps() {
   {
     const M = new MapB('rua', 'Avenida dos Plantonistas', 48, 30, 'rua', 'g');
     M.fill(0, 12, 48, 2, '_').fill(0, 14, 48, 4, '=').fill(0, 18, 48, 2, '_').fill(30, 14, 3, 4, 'z');
-    // Hospital Santa Esperança: prédio alto (fachada de 10 andares de tile), torre central de vidro azul
+    // Hospital Santa Mamãezinha: prédio alto (fachada de 10 andares de tile), torre central de vidro azul
     M.fill(20, 0, 28, 12, '#'); M.door(33, 10, 2, 2);
     // UPA
     M.fill(2, 2, 14, 10, '#'); M.door(8, 10, 2, 2);

@@ -563,7 +563,7 @@ for (const k of ['fachada_upa']) { const f = DECALS[k]; DECALS[k] = (c, x, y, w,
 
 /* ---------------- Rua: hospital alto, marquise, boteco e telhados ---------------- */
 Object.assign(DECALS, {
-  // Hospital Santa Esperança: alas com faixas de janelas azuis + torre central de vidro + térreo envidraçado
+  // Hospital Santa Mamãezinha: alas com faixas de janelas azuis + torre central de vidro + térreo envidraçado
   fachada_hosp(c, x, y, w, h) {
     const H = PAL.hex, B = PAL.ramp('#2f62b8'), G = PAL.ramp('#6fa8dc'), Wt = PAL.ramp('#eef0ea');
     const tx0 = x + 320, tw = 256, wingTop = y + 64, ground = y + h - 64;
@@ -588,9 +588,9 @@ Object.assign(DECALS, {
     RR(c, tx0 - 6, y, 6, ground - y, H(Wt.l1)); RR(c, tx0 + tw, y, 6, ground - y, H(Wt.d1));        // molduras brancas
     // coroamento com o nome
     RR(c, tx0 - 6, y, tw + 12, 30, H(Wt.b)); RR(c, tx0 - 6, y, tw + 12, 3, H(Wt.l2)); RR(c, tx0 - 6, y + 27, tw + 12, 3, H(B.b));
-    const t1 = 'HOSPITAL', t2 = 'SANTA ESPERANCA';
+    const t1 = 'HOSPITAL', t2 = 'SANTA MAMAEZINHA';
     text57(c, t1, tx0 + tw / 2 - text57W(t1) / 2, y + 4, H(B.d1)); text57(c, t2, tx0 + tw / 2 - text57W(t2, 2) / 2 + 1, y + 13, H(B.d2), 2); text57(c, t2, tx0 + tw / 2 - text57W(t2, 2) / 2, y + 12, H(B.b), 2);
-    DECALS.logo(c, tx0 + 8, y + 3, 24, 24); DECALS.logo(c, tx0 + tw - 32, y + 3, 24, 24);
+    DECALS.logo(c, tx0 + 1, y + 5, 20, 20); DECALS.logo(c, tx0 + tw - 21, y + 5, 20, 20);
     // térreo: pedra clara nas alas, vidro na entrada
     RR(c, x, ground, w, 64, H(PAL.ramp('#cfcfc6').b)); for (let k = 0; k < w; k += 32) RR(c, x + k, ground, 1, 64, H(PAL.ramp('#cfcfc6').d1)); RR(c, x, ground, w, 4, H(B.b));
     for (let k = 16; k < w; k += 64) { if (x + k > tx0 - 40 && x + k < tx0 + tw + 8) continue; bevelBox(c, x + k, ground + 14, 36, 34, '#3f6f99'); RR(c, x + k + 3, ground + 17, 30, 3, 'rgba(255,255,255,0.4)'); }
@@ -722,6 +722,6 @@ OD('marquise', 10, 2, (P) => {
   for (const px of [12, 300]) P.box(px, 18, 8, 44, '#e8ebee', { pat: (x, y) => (x === px ? 1 : 0) });
   P.box(0, -30, 320, 40, '#d9dee2', { pat: (x, y) => (y < -27 ? 1 : (x % 32 === 0 ? -1 : 0)) });
   P.box(0, 8, 320, 12, '#2f62b8', { pat: (x, y) => (y === 8 ? 1 : 0) });
-  P.text('HOSPITAL SANTA ESPERANCA - ENTRADA', 160 - text57W('HOSPITAL SANTA ESPERANCA - ENTRADA') / 2, 11, '#ffffff');
+  P.text('HOSPITAL SANTA MAMAEZINHA - ENTRADA', 160 - text57W('HOSPITAL SANTA MAMAEZINHA - ENTRADA') / 2, 11, '#ffffff');
 }, { solid: false, over: true, tall: 40 });
 OD('pilar_marquise', 1, 1, (P) => { P.box(12, 22, 8, 8, '#cfd5da'); }, { noShadow: true });

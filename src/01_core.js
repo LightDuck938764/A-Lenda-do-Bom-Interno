@@ -4,7 +4,7 @@
    A LENDA DO BOM INTERNO — núcleo: constantes, balanceamento, utilidades
    ===================================================================== */
 const GAME_TITLE = 'A Lenda do Bom Interno';
-const HOSPITAL_NOME = 'Hospital Escola Santa Esperança';
+const HOSPITAL_NOME = 'Hospital Santa Mamãezinha';
 const MOEDA = 'Moedas de Plantão';
 const MOEDA_CURTA = 'MP';
 const SAVE_KEY = 'lendaBomInterno_save_v1';            // Modo Internato (campanha)

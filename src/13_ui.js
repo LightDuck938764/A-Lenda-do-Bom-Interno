@@ -73,7 +73,7 @@ function drawTitleScene() {
   // hospital
   const hx = 110, hw = 420; bevelBox(c, hx, 52, hw, 106, '#e9e3d3'); c.fillStyle = '#c9c2b2'; c.fillRect(hx, 52, hw, 8);
   for (let r = 0; r < 3; r++) for (let k = 0; k < 9; k++) { const wx = hx + 16 + k * 45, wy = 74 + r * 26; if (r === 2 && k >= 3 && k <= 5) continue; bevelBox(c, wx, wy, 26, 18, hsh(k, r) > 0.4 ? '#ffe39a' : '#9fc6dc'); c.fillStyle = 'rgba(255,255,255,0.5)'; c.fillRect(wx + 2, wy + 2, 22, 2); c.fillStyle = '#7a8a96'; c.fillRect(wx + 12, wy, 2, 18); }
-  bevelBox(c, hx + hw / 2 - 90, 58, 180, 16, '#1f3f9a'); text57(c, 'SANTA ESPERANCA', hx + hw / 2 - text57W('SANTA ESPERANCA') / 2, 62, '#ffffff');
+  bevelBox(c, hx + hw / 2 - 90, 58, 180, 16, '#1f3f9a'); text57(c, 'SANTA MAMAEZINHA', hx + hw / 2 - text57W('SANTA MAMAEZINHA') / 2, 62, '#ffffff');
   DECALS.logo(c, hx + hw / 2 - 12, 122, 24, 24); DECALS.porta(c, hx + hw / 2 - 60, 100, 40, 58, 'vidro'); DECALS.porta(c, hx + hw / 2 + 20, 100, 40, 58, 'vidro');
   // calçada portuguesa e rua
   for (let y = 158; y < H; y++) for (let x = 0; x < W; x += 1) { const band = Math.floor((y + Math.sin(x / 11) * 5) / 8) % 2; if ((x + y) % 2 === 0 || x % 4 === 0) { c.fillStyle = band ? '#3a3a40' : '#e8e4da'; c.fillRect(x, y, 1, 1); } else { c.fillStyle = band ? '#2e2e34' : '#d8d2c4'; c.fillRect(x, y, 1, 1); } }
