@@ -117,3 +117,7 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 - Diagnóstico no jogo: o chip mostra onde está o outro interno ("Caio está em: Saguão") ou o motivo de estar offline (servidor recusou por permissão; login anônimo falhou + código; rede bloqueou o servidor). MAPA: outros internos em azul-claro no mapa do setor, nomes no mapa Mundo e lista "Internos online agora" com o setor de cada um.
 - Lembrar: só o Modo Vestibulando é online; personagem antigo (save de antes dos modos) virou Modo Internato.
 - Atraso entre jogadores (2026-10-26): posição enviada a cada ~90 ms (antes 250 ms), presença a cada 80 ms; quem recebe estima a velocidade entre duas posições e continua o movimento por até 0,3 s (sem atravessar parede) até chegar a próxima; suavização mais rápida. Na simulação (fbsim/lag.py): erro médio 0,72 → 0,27 tile andando.
+
+## 29/10
+- Nome do hospital trocado a pedido do usuário para "Hospital Santa Mamãezinha" (HOSPITAL_NOME, placas da fachada/marquise/tela inicial em pixel "SANTA MAMAEZINHA", fala da Marli, item do crachá). Substitui a regra antiga de manter "Santa Esperança".
+- Celular em paisagem: HUD do topo (ficha, reputação, objetivo, chip online, missões) 30% menor via transform: scale(.7). Botões de menu agora à esquerda do AGIR, alinhados pela base; CORRER fica em cima do AGIR. AGIR verde translúcido (rgba(95,212,160,.38)) com anel verde.

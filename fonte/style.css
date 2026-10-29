@@ -552,3 +552,20 @@ table.lab tr.lab-sub td { font-weight: 700; color: #2f6fd6; padding-top: .45rem;
 .mp-lista ul { list-style: none; padding: 0; margin: .3rem 0 0; display: grid; gap: .25rem; }
 .mp-lista li { display: flex; justify-content: space-between; gap: .6rem; background: var(--panel2); padding: .3rem .55rem; box-shadow: inset 3px 0 0 #7af0ff; }
 .mp-lista small { color: var(--muted); } .mp-lista .aqui { color: #7fd8a8; }
+
+/* ---------- Ajustes de 29/10: HUD do topo 30% menor no celular, menus ao lado do AGIR, AGIR translúcido ---------- */
+@media (max-height: 540px) and (orientation: landscape) {
+  .hud-me { transform: scale(.7); transform-origin: 0 0; }
+  .hud-rep { transform: translateX(-50%) scale(.7); transform-origin: 50% 0; }
+  .hud-obj { transform: scale(.7); transform-origin: 100% 0; }
+  #mpChip, #sideq { transform: scale(.7); transform-origin: 0 0; top: 64px; }
+  #toasts { top: 44px; }
+}
+/* menus encostados à esquerda do AGIR, alinhados pela base; CORRER fica em cima do AGIR */
+.tact { flex-direction: column; gap: 10px; }
+.tmenu { bottom: 12px; right: calc(12px + 70px + 16px + env(safe-area-inset-right, 0px)); }
+.tact .e { background: rgba(95,212,160,.38); color: #f2fff8; text-shadow: 0 1px 0 rgba(0,0,0,.6); box-shadow: 0 0 0 2px rgba(95,212,160,.95), 0 0 0 4px rgba(5,8,10,.35); }
+.tact .e:active { background: rgba(95,212,160,.65); }
+@media (pointer: coarse) and (max-height: 380px) and (orientation: landscape) {
+  .tmenu { bottom: 12px; right: calc(12px + 64px + 14px + env(safe-area-inset-right, 0px)); }
+}

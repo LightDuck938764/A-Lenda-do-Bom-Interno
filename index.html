@@ -582,6 +582,23 @@ table.lab tr.lab-sub td { font-weight: 700; color: #2f6fd6; padding-top: .45rem;
 .mp-lista ul { list-style: none; padding: 0; margin: .3rem 0 0; display: grid; gap: .25rem; }
 .mp-lista li { display: flex; justify-content: space-between; gap: .6rem; background: var(--panel2); padding: .3rem .55rem; box-shadow: inset 3px 0 0 #7af0ff; }
 .mp-lista small { color: var(--muted); } .mp-lista .aqui { color: #7fd8a8; }
+
+/* ---------- Ajustes de 29/10: HUD do topo 30% menor no celular, menus ao lado do AGIR, AGIR translúcido ---------- */
+@media (max-height: 540px) and (orientation: landscape) {
+  .hud-me { transform: scale(.7); transform-origin: 0 0; }
+  .hud-rep { transform: translateX(-50%) scale(.7); transform-origin: 50% 0; }
+  .hud-obj { transform: scale(.7); transform-origin: 100% 0; }
+  #mpChip, #sideq { transform: scale(.7); transform-origin: 0 0; top: 64px; }
+  #toasts { top: 44px; }
+}
+/* menus encostados à esquerda do AGIR, alinhados pela base; CORRER fica em cima do AGIR */
+.tact { flex-direction: column; gap: 10px; }
+.tmenu { bottom: 12px; right: calc(12px + 70px + 16px + env(safe-area-inset-right, 0px)); }
+.tact .e { background: rgba(95,212,160,.38); color: #f2fff8; text-shadow: 0 1px 0 rgba(0,0,0,.6); box-shadow: 0 0 0 2px rgba(95,212,160,.95), 0 0 0 4px rgba(5,8,10,.35); }
+.tact .e:active { background: rgba(95,212,160,.65); }
+@media (pointer: coarse) and (max-height: 380px) and (orientation: landscape) {
+  .tmenu { bottom: 12px; right: calc(12px + 64px + 14px + env(safe-area-inset-right, 0px)); }
+}
 </style>
 <div id="app">
   <div id="stage">
@@ -625,7 +642,7 @@ table.lab tr.lab-sub td { font-weight: 700; color: #2f6fd6; padding-top: .45rem;
    A LENDA DO BOM INTERNO — núcleo: constantes, balanceamento, utilidades
    ===================================================================== */
 const GAME_TITLE = 'A Lenda do Bom Interno';
-const HOSPITAL_NOME = 'Hospital Escola Santa Esperança';
+const HOSPITAL_NOME = 'Hospital Santa Mamãezinha';
 const MOEDA = 'Moedas de Plantão';
 const MOEDA_CURTA = 'MP';
 const SAVE_KEY = 'lendaBomInterno_save_v1';            // Modo Internato (campanha)
@@ -824,7 +841,7 @@ IT('jaleco_padrao', { nome: 'Jaleco Padrão Branco', cat: 'corpo', rar: 'comum',
   desc: 'O jaleco do primeiro dia. Ainda sem mancha de café. Por enquanto.',
   efeito: 'Atributos neutros. Identificação básica de interno.', stats: {} });
 IT('jaleco_hosp', { nome: 'Jaleco do Hospital', cat: 'corpo', rar: 'incomum', preco: 140, icon: 'jaleco_h', visual: 'jaleco_hosp', loja: true,
-  desc: 'Bordado com o brasão do Santa Esperança. Os seguranças agora te cumprimentam.',
+  desc: 'Bordado com o brasão do Santa Mamãezinha. Os seguranças agora te cumprimentam.',
   efeito: '+2 Influência. Ganhos de reputação +15%.', stats: { influencia: 2 }, fx: { repGainMult: 0.15 } });
 IT('pijama_cir', { nome: 'Pijama Cirúrgico', cat: 'corpo', rar: 'comum', preco: 120, icon: 'pijama', visual: 'pijama', loja: true,
   desc: 'Confortável, azul, com bolso que some com a sua caneta.',
@@ -14904,7 +14921,7 @@ function buildMaps() {
   {
     const M = new MapB('rua', 'Avenida dos Plantonistas', 48, 30, 'rua', 'g');
     M.fill(0, 12, 48, 2, '_').fill(0, 14, 48, 4, '=').fill(0, 18, 48, 2, '_').fill(30, 14, 3, 4, 'z');
-    // Hospital Santa Esperança: prédio alto (fachada de 10 andares de tile), torre central de vidro azul
+    // Hospital Santa Mamãezinha: prédio alto (fachada de 10 andares de tile), torre central de vidro azul
     M.fill(20, 0, 28, 12, '#'); M.door(33, 10, 2, 2);
     // UPA
     M.fill(2, 2, 14, 10, '#'); M.door(8, 10, 2, 2);
@@ -15854,7 +15871,7 @@ for (const k of ['fachada_upa']) { const f = DECALS[k]; DECALS[k] = (c, x, y, w,
 
 /* ---------------- Rua: hospital alto, marquise, boteco e telhados ---------------- */
 Object.assign(DECALS, {
-  // Hospital Santa Esperança: alas com faixas de janelas azuis + torre central de vidro + térreo envidraçado
+  // Hospital Santa Mamãezinha: alas com faixas de janelas azuis + torre central de vidro + térreo envidraçado
   fachada_hosp(c, x, y, w, h) {
     const H = PAL.hex, B = PAL.ramp('#2f62b8'), G = PAL.ramp('#6fa8dc'), Wt = PAL.ramp('#eef0ea');
     const tx0 = x + 320, tw = 256, wingTop = y + 64, ground = y + h - 64;
@@ -15879,9 +15896,9 @@ Object.assign(DECALS, {
     RR(c, tx0 - 6, y, 6, ground - y, H(Wt.l1)); RR(c, tx0 + tw, y, 6, ground - y, H(Wt.d1));        // molduras brancas
     // coroamento com o nome
     RR(c, tx0 - 6, y, tw + 12, 30, H(Wt.b)); RR(c, tx0 - 6, y, tw + 12, 3, H(Wt.l2)); RR(c, tx0 - 6, y + 27, tw + 12, 3, H(B.b));
-    const t1 = 'HOSPITAL', t2 = 'SANTA ESPERANCA';
+    const t1 = 'HOSPITAL', t2 = 'SANTA MAMAEZINHA';
     text57(c, t1, tx0 + tw / 2 - text57W(t1) / 2, y + 4, H(B.d1)); text57(c, t2, tx0 + tw / 2 - text57W(t2, 2) / 2 + 1, y + 13, H(B.d2), 2); text57(c, t2, tx0 + tw / 2 - text57W(t2, 2) / 2, y + 12, H(B.b), 2);
-    DECALS.logo(c, tx0 + 8, y + 3, 24, 24); DECALS.logo(c, tx0 + tw - 32, y + 3, 24, 24);
+    DECALS.logo(c, tx0 + 1, y + 5, 20, 20); DECALS.logo(c, tx0 + tw - 21, y + 5, 20, 20);
     // térreo: pedra clara nas alas, vidro na entrada
     RR(c, x, ground, w, 64, H(PAL.ramp('#cfcfc6').b)); for (let k = 0; k < w; k += 32) RR(c, x + k, ground, 1, 64, H(PAL.ramp('#cfcfc6').d1)); RR(c, x, ground, w, 4, H(B.b));
     for (let k = 16; k < w; k += 64) { if (x + k > tx0 - 40 && x + k < tx0 + tw + 8) continue; bevelBox(c, x + k, ground + 14, 36, 34, '#3f6f99'); RR(c, x + k + 3, ground + 17, 30, 3, 'rgba(255,255,255,0.4)'); }
@@ -16013,7 +16030,7 @@ OD('marquise', 10, 2, (P) => {
   for (const px of [12, 300]) P.box(px, 18, 8, 44, '#e8ebee', { pat: (x, y) => (x === px ? 1 : 0) });
   P.box(0, -30, 320, 40, '#d9dee2', { pat: (x, y) => (y < -27 ? 1 : (x % 32 === 0 ? -1 : 0)) });
   P.box(0, 8, 320, 12, '#2f62b8', { pat: (x, y) => (y === 8 ? 1 : 0) });
-  P.text('HOSPITAL SANTA ESPERANCA - ENTRADA', 160 - text57W('HOSPITAL SANTA ESPERANCA - ENTRADA') / 2, 11, '#ffffff');
+  P.text('HOSPITAL SANTA MAMAEZINHA - ENTRADA', 160 - text57W('HOSPITAL SANTA MAMAEZINHA - ENTRADA') / 2, 11, '#ffffff');
 }, { solid: false, over: true, tall: 40 });
 OD('pilar_marquise', 1, 1, (P) => { P.box(12, 22, 8, 8, '#cfd5da'); }, { noShadow: true });
 
@@ -16644,7 +16661,7 @@ NPC({ id: 'pedestre2', nome: 'Acompanhante apressada', look: randomCivilLook(29)
 NPC({ id: 'pedestre3', nome: 'Seu Zé (aposentado)', look: randomCivilLook(53, 'idoso'), map: 'rua', x: 40, y: 26.5, beh: { t: 'wander', r: [24, 26, 22, 2] }, fala: ['Na minha época a UPA era um posto com dois bancos e um ventilador.', 'Esse Rodolfo vende o melhor pastel da região. E o pior café.'] });
 NPC({ id: 'pipoqueiro', nome: 'Pipoqueiro', look: Object.assign(randomCivilLook(71), { cap: '#c0392b', apron: '#f4f4f0' }), map: 'rua', x: 26, y: 19, fala: ['Pipoca doce ou salgada? ... Ah, você é interno. Já tá salgado o suficiente.', 'Vi o Leão chegando de manhã. Tava mais acordado do que parece, viu.'] });
 // ---------- Saguão ----------
-NPC({ id: 'marli', nome: 'Marli (recepção)', look: 'recep', map: 'lobby', x: 15, y: 17, role: 'equipe', fala: ['Bem-vindo ao Santa Esperança! As alas estão sinalizadas: Pediatria à esquerda, Cirurgia à direita, GO e Clínica ao fundo.', 'Precisa de alguma coisa? Se for a senha do Wi-Fi, ninguém sabe.'] });
+NPC({ id: 'marli', nome: 'Marli (recepção)', look: 'recep', map: 'lobby', x: 15, y: 17, role: 'equipe', fala: ['Bem-vindo ao Santa Mamãezinha! As alas estão sinalizadas: Pediatria à esquerda, Cirurgia à direita, GO e Clínica ao fundo.', 'Precisa de alguma coisa? Se for a senha do Wi-Fi, ninguém sabe.'] });
 NPC({ id: 'valdemar', nome: 'Seu Valdemar (segurança)', look: 'seguranca', map: 'lobby', x: 21.5, y: 19, role: 'equipe', fala: ['Crachá visível, doutor(a)? Ótimo. INTERNO, hein... força aí.', 'Já vi muito interno entrar chorando e sair formado. Você chega lá.'] });
 NPC({ id: 'cida', nome: 'Dona Cida (cantina)', look: 'cida', map: 'lobby', x: 3, y: 16, role: 'cantina', reach: 2.4 });
 NPC({ id: 'visitante1', nome: 'Visitante', look: randomCivilLook(101), map: 'lobby', x: 24, y: 10, beh: { t: 'wander', r: [12, 3, 16, 9] } });
@@ -18344,7 +18361,7 @@ function drawTitleScene() {
   // hospital
   const hx = 110, hw = 420; bevelBox(c, hx, 52, hw, 106, '#e9e3d3'); c.fillStyle = '#c9c2b2'; c.fillRect(hx, 52, hw, 8);
   for (let r = 0; r < 3; r++) for (let k = 0; k < 9; k++) { const wx = hx + 16 + k * 45, wy = 74 + r * 26; if (r === 2 && k >= 3 && k <= 5) continue; bevelBox(c, wx, wy, 26, 18, hsh(k, r) > 0.4 ? '#ffe39a' : '#9fc6dc'); c.fillStyle = 'rgba(255,255,255,0.5)'; c.fillRect(wx + 2, wy + 2, 22, 2); c.fillStyle = '#7a8a96'; c.fillRect(wx + 12, wy, 2, 18); }
-  bevelBox(c, hx + hw / 2 - 90, 58, 180, 16, '#1f3f9a'); text57(c, 'SANTA ESPERANCA', hx + hw / 2 - text57W('SANTA ESPERANCA') / 2, 62, '#ffffff');
+  bevelBox(c, hx + hw / 2 - 90, 58, 180, 16, '#1f3f9a'); text57(c, 'SANTA MAMAEZINHA', hx + hw / 2 - text57W('SANTA MAMAEZINHA') / 2, 62, '#ffffff');
   DECALS.logo(c, hx + hw / 2 - 12, 122, 24, 24); DECALS.porta(c, hx + hw / 2 - 60, 100, 40, 58, 'vidro'); DECALS.porta(c, hx + hw / 2 + 20, 100, 40, 58, 'vidro');
   // calçada portuguesa e rua
   for (let y = 158; y < H; y++) for (let x = 0; x < W; x += 1) { const band = Math.floor((y + Math.sin(x / 11) * 5) / 8) % 2; if ((x + y) % 2 === 0 || x % 4 === 0) { c.fillStyle = band ? '#3a3a40' : '#e8e4da'; c.fillRect(x, y, 1, 1); } else { c.fillStyle = band ? '#2e2e34' : '#d8d2c4'; c.fillRect(x, y, 1, 1); } }

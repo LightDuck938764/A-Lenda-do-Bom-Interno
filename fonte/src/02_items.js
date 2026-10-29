@@ -58,7 +58,7 @@ IT('jaleco_padrao', { nome: 'Jaleco Padrão Branco', cat: 'corpo', rar: 'comum',
   desc: 'O jaleco do primeiro dia. Ainda sem mancha de café. Por enquanto.',
   efeito: 'Atributos neutros. Identificação básica de interno.', stats: {} });
 IT('jaleco_hosp', { nome: 'Jaleco do Hospital', cat: 'corpo', rar: 'incomum', preco: 140, icon: 'jaleco_h', visual: 'jaleco_hosp', loja: true,
-  desc: 'Bordado com o brasão do Santa Esperança. Os seguranças agora te cumprimentam.',
+  desc: 'Bordado com o brasão do Santa Mamãezinha. Os seguranças agora te cumprimentam.',
   efeito: '+2 Influência. Ganhos de reputação +15%.', stats: { influencia: 2 }, fx: { repGainMult: 0.15 } });
 IT('pijama_cir', { nome: 'Pijama Cirúrgico', cat: 'corpo', rar: 'comum', preco: 120, icon: 'pijama', visual: 'pijama', loja: true,
   desc: 'Confortável, azul, com bolso que some com a sua caneta.',
