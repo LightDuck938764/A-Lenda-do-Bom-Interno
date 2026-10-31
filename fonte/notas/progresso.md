@@ -121,3 +121,9 @@ Quando um tema for coberto pelo banco novo, remover/ajustar os casos antigos do 
 ## 29/10
 - Nome do hospital trocado a pedido do usuário para "Hospital Santa Mamãezinha" (HOSPITAL_NOME, placas da fachada/marquise/tela inicial em pixel "SANTA MAMAEZINHA", fala da Marli, item do crachá). Substitui a regra antiga de manter "Santa Esperança".
 - Celular em paisagem: HUD do topo (ficha, reputação, objetivo, chip online, missões) 30% menor via transform: scale(.7). Botões de menu agora à esquerda do AGIR, alinhados pela base; CORRER fica em cima do AGIR. AGIR verde translúcido (rgba(95,212,160,.38)) com anel verde.
+
+## Bancas prioritárias (2026-10-31)
+- Painel "Bancas Prioritárias" (togglePanel('bancas'); abre pelo Caderno de Erros e pela Pausa). Até 3 bancas; liga/desliga a priorização. 22 bancas: SUS-SP, USP-SP, USP-RP, Unifesp, Unicamp, Unesp, Santa Casa SP, FAMERP, Einstein, Sírio-Libanês, ENARE/ENAMED, FEBRASGO (TEGO), SUS-BA, PSU-MG, PSU-GO, SES-DF, SES-PE, SES-RJ, UERJ, HCPA, AMRIGS, AMP-PR.
+- Dados: src/06e_data_bancas.js, gerado por scratchpad/bancas/build.py (+ subareas.py, mapjogo.py). As 4.900 questões do banco (campo src = banca e ano, 2022–2026) foram classificadas por palavras-chave em 30 grandes temas (SUBAREAS); "sh" = participação suavizada (%) de cada grande tema na banca. Unicamp não está no banco: usa os destaques publicados pela Medway (sem %), peso 1,8 nos citados. FEBRASGO/TEGO não está no banco: 90% do peso nos temas de GO, com a distribuição média. ENAMED usa os dados do ENARE.
+- TEMA_SUB liga cada tema do jogo (casos, emergências, perguntas rápidas) a um grande tema. Peso = (participação média nas bancas escolhidas ÷ média)^0,85, entre 0,35 e 4; multiplica o peso do Caderno de Erros (prioW = errW × bancaW). pickPrio usa esses pesos nos casos dos leitos, emergências, perguntas rápidas e dúvidas.
+- Estado: S.bancas (ids), S.bancaPrio. Amostras < 40 questões aparecem como "amostra pequena".

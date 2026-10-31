@@ -302,7 +302,7 @@ function openPanel(name, title, body, opts = {}) {
 function togglePanel(name) {
   if (G.mode === 'panel' && G.panelName === name) return closeOverlay();
   if (G.mode === 'panel') closeOverlay();
-  ({ map: openMap, inv: openInventory, journal: openJournal, skills: openSkills, status: openStatus, pause: openPause, caderno: openCaderno })[name]();
+  ({ map: openMap, inv: openInventory, journal: openJournal, skills: openSkills, status: openStatus, pause: openPause, caderno: openCaderno, bancas: openBancas })[name]();
 }
 
 /* ---------- Inventário ---------- */
@@ -503,12 +503,13 @@ function openStatus() {
 
 /* ---------- Pausa ---------- */
 function openPause() {
-  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button>${IS_TOUCH ? `<button class="btn ghost" id="pzFS">${document.fullscreenElement || document.webkitFullscreenElement ? 'Sair da tela cheia' : 'Tela cheia'}</button>` : ''}<button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzT">Tela inicial (trocar de modo)</button><button class="btn ghost" id="pzN">Recomeçar este modo</button>
+  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzBancas">🎯 Bancas prioritárias</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button>${IS_TOUCH ? `<button class="btn ghost" id="pzFS">${document.fullscreenElement || document.webkitFullscreenElement ? 'Sair da tela cheia' : 'Tela cheia'}</button>` : ''}<button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzT">Tela inicial (trocar de modo)</button><button class="btn ghost" id="pzN">Recomeçar este modo</button>
     <div class="help"><h3>Controles</h3>${IS_TOUCH ? controlesHTML() : `<p><kbd>WASD</kbd>/<kbd>setas</kbd> andar · <kbd>E</kbd> interagir · <kbd>M</kbd> mapa · <kbd>I</kbd> inventário · <kbd>J</kbd> diário · <kbd>K</kbd> habilidades · <kbd>C</kbd> ficha · <kbd>Esc</kbd> pausa${hasSkill('int18') ? ' · <kbd>Shift</kbd> correr' : ''}</p>`}<p class="disclaimer">O progresso é salvo automaticamente neste navegador. Use "Exportar save" para guardar uma cópia. Conteúdo educacional: não substitui protocolos, supervisão ou orientação médica real.</p></div></div>`;
   openPanel('pause', 'Pausa', body, { cls: 'small' });
   $('#pzC').onclick = () => closeOverlay();
   $('#pzF').onclick = () => { closeOverlay(); openStatus(); };
   $('#pzS').onclick = () => { saveGame(); toast('Jogo salvo.'); };
+  $('#pzBancas').onclick = () => { closeOverlay(); openBancas(); };
   $('#pzSom').onclick = () => { SFX.on = !SFX.on; reopen(openPause); };
   if ($('#pzFS')) $('#pzFS').onclick = () => { const on = document.fullscreenElement || document.webkitFullscreenElement; telaCheia(on ? 'sair' : true); setTimeout(() => { if (G.panelName === 'pause') reopen(openPause); }, 400); };
   $('#pzE').onclick = () => { const code = exportSave(); const box = U.el('div', 'confirm', `<div class="panel small"><h3>Exportar save</h3><p>Guarde este código para restaurar o progresso.</p><textarea rows="6" readonly>${code}</textarea><div class="row"><button class="btn" id="exCp">Copiar</button><button class="btn ghost" id="exX">Fechar</button></div></div>`); OV().appendChild(box); const ta = box.querySelector('textarea'); box.querySelector('#exCp').onclick = () => { try { navigator.clipboard.writeText(code).then(() => toast('Copiado!'), () => { ta.select(); }); } catch (e) { ta.select(); } }; box.querySelector('#exX').onclick = () => box.remove(); };
