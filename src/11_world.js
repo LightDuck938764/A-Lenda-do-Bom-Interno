@@ -165,7 +165,7 @@ function pickCase(area, spot) {
   if (area === 'cm' && spot.obj.ala) { const g = pool.filter(c => c.ala === spot.obj.ala); if (g.length) pool = g; }
   if (spot.obj.bebe) { const b = pool.filter(c => c.pac.tipo === 'bebe'); if (b.length) pool = b; }
   else if (area === 'ped') { const b = pool.filter(c => c.pac.tipo !== 'bebe'); if (b.length) pool = b; }
-  const fresh = pool.filter(c => !S.seen.includes(c.id) || prioW(temaDe(c)) > 1); if (fresh.length >= 2) pool = fresh;
+  const fresh = pool.filter(c => !S.seen.includes(c.id) || errW(temaDe(c)) > 1); if (fresh.length >= 2) pool = fresh;
   const w = pool.map(c => ({ c, w: (c.dif <= maxDif ? 4 : 1) * prioW(temaDe(c)) }));
   return U.weighted(w).c;
 }

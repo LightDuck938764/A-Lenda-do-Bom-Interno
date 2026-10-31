@@ -27,7 +27,7 @@ function newState(p, modo) {
     stats: { cases: 0, dxOk: 0, cdOk: 0, both: 0, streak: 0, best: 0, procs: 0, rivais: 0, agit: 0, raros: [], bosses: 0, desafios: 0, eventos: 0, timeouts: 0 },
     ach: {}, flags: {}, map: { id: 'rua', x: 34, y: 13.2, dir: 0 }, seen: [], sumico: {}, restUntil: 0, coffeeUntil: 0, buffs: [],
     shop: { rare: 'ultrassom', next: 480 }, tips: {}, spotsState: {}, finished: false,
-    erros: {}, priorizar: false, duvidaCd: {},
+    erros: {}, priorizar: false, duvidaCd: {}, bancas: [], bancaPrio: false,
   };
 }
 
