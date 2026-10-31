@@ -33,7 +33,8 @@ function startEmergencia(ps) {
       if (S.stats.emerg >= 5) unlockAch('emerg5');
     } else if (acertos === 1) { const xp = addXP(30 * BAL.xpMult(S.rep)); rew = `<p class="big">A equipe completou o atendimento com você (${acertos}/${E.r.length}).</p><p>Revise os pontos abaixo: a sequência importa.</p><div class="rewards"><span>+${xp} XP</span></div>`; }
     else { const rp = addRep(-5, 'emergência'); rew = `<p class="bad big">A equipe precisou assumir o atendimento (${acertos}/${E.r.length}).</p><p>Revise os pontos abaixo (${rp} reputação). O tema foi anotado no seu caderno de erros.</p>`; }
-    m.innerHTML = `<div class="result">${rew}<ul class="proc-log">${E.resumo.map(t => `<li>${U.esc(t)}</li>`).join('')}</ul><button class="btn" id="eOk">Voltar ao plantão</button></div>`;
+    m.innerHTML = `<div class="result">${rew}<ul class="proc-log">${E.resumo.map(t => `<li>${U.esc(t)}</li>`).join('')}</ul><div class="res-acts">${repBotao({ tipo: 'emergencia', id: E.id || E.titulo, titulo: E.titulo })}<button class="btn" id="eOk">Voltar ao plantão</button></div></div>`;
+    bindRepBotoes(m);
     document.getElementById('eOk').onclick = () => { G.npcs = G.npcs.filter(x => x !== ps.ent); if (G.psy === ps) G.psy = null; closeOverlay(); checkAch(); saveGame(); };
   };
   step();

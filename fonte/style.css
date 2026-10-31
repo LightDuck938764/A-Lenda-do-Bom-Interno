@@ -599,3 +599,30 @@ table.lab tr.lab-sub td { font-weight: 700; color: #2f6fd6; padding-top: .45rem;
 .bc-bar { height: 7px; background: #0e1317; } .bc-bar i { display: block; height: 100%; background: linear-gradient(90deg, #3a9e7a, var(--accent)); }
 @media (max-width: 900px) { .bancas { grid-template-columns: 1fr; } }
 @media (max-height: 540px) and (orientation: landscape) { .bancas { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr); gap: .9rem; } .bc-side p { font-size: 12.5px; } .bc-chip { font-size: 11.5px; padding: .25em .55em; } .bc-foco ul { grid-template-columns: 1fr; } }
+
+/* ---------- Reportar erro / créditos ---------- */
+.res-acts { display: flex; gap: .6rem; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+.res-acts .btn.big, .res-acts #dNext, .res-acts #eOk { flex: 1 1 220px; }
+.rep-btn { flex: 0 0 auto; opacity: .85; font-size: 13px; }
+.rep-btn:hover { opacity: 1; }
+.rep-box { z-index: 10000; }
+.rep-panel { width: min(460px, 94vw); display: grid; gap: .55rem; }
+.rep-panel h3, .rep-panel p { margin: 0; }
+.rep-panel textarea { margin: 0; box-sizing: border-box; }
+.rep-sobre { margin: 0; background: var(--panel2); padding: .45rem .6rem; font-size: 14px; } .rep-sobre small { color: var(--mut, #9aa3ad); }
+.rep-mot { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem .8rem; font-size: 14px; }
+.rep-mot label { display: flex; gap: .4rem; align-items: center; cursor: pointer; }
+.rep-panel textarea { font: 14px/1.4 inherit; font-family: inherit; resize: vertical; min-height: 84px; }
+.creditos > p { margin: 0 0 .7rem; }
+.creditos h3 { margin: 1rem 0 .3rem; }
+.cred-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: .5rem; }
+.cred-lista li { display: grid; grid-template-columns: 64px 1fr; gap: .6rem; align-items: center; background: var(--panel2); padding: .4rem; }
+.cred-lista img { width: 64px; height: 64px; object-fit: cover; background: #fff; display: block; }
+.cred-lista b { display: block; font-size: 14px; line-height: 1.25; }
+.cred-lista span { display: block; font-size: 12.5px; color: #aeb7bf; line-height: 1.35; word-break: break-word; }
+.cred-lista a { color: var(--accent); }
+.lightbox .lb-cred { display: block; font-style: normal; font-size: 12.5px; color: #aeb7bf; margin-top: .15rem; }
+@media (max-height: 540px) and (orientation: landscape) {
+  .rep-panel { gap: .35rem; width: min(560px, 94vw); } .rep-panel .hint { display: none; } .rep-panel textarea { min-height: 54px; } .rep-mot { font-size: 13px; grid-template-columns: 1fr 1fr 1fr; }
+  .cred-lista { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+}

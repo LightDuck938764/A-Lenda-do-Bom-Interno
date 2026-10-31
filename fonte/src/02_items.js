@@ -98,10 +98,6 @@ IT('energetico_inf', { nome: 'Energético Infinito', cat: 'amuleto', rar: 'raro'
   desc: 'Uma lata que nunca esvazia. Os cientistas não sabem explicar. Nem o seu coração.',
   efeito: 'Regeneração de energia x2. Habilidades custam 20% menos energia. Penalidade: -1 Precisão (tremor).',
   stats: { precisao: -1 }, fx: { energyRegenMult: 1, skillEnergyMult: -0.2 } });
-IT('ritalina', { nome: '"Ritalina" do RPG', cat: 'amuleto', rar: 'epico', preco: 380, icon: 'ritalina', loja: true, req: { nivel: 6 },
-  desc: 'ITEM SATÍRICO E FICTÍCIO. Paródia de RPG — no mundo real, medicação só com prescrição e acompanhamento médico. Nada de automedicação.',
-  efeito: '+4 Foco. Casos: +15s. Penalidade: -2 Influência (você fala rápido demais).',
-  stats: { foco: 4, influencia: -2 }, fx: { timeBonus: 15 } });
 IT('medidor_pa', { nome: 'Medidor de Pressão Automático', cat: 'amuleto', rar: 'incomum', preco: 160, icon: 'pa', loja: true,
   desc: 'Infla sozinho, aperta o braço e emite um bipe de aprovação.',
   efeito: 'Casos cardiovasculares, de choque ou monitorização: pista revelada e +8s.',

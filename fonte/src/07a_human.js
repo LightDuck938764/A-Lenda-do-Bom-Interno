@@ -1022,7 +1022,6 @@ function drawGear(ctx, tL, tR, back) {
   if (am === 'chupeta_dourada') { for (let k = 0; k < 7; k++) { F.set(cx - 4 + Math.round(k * 0.55), tTop + k, C('#e6b422')); F.set(cx + 3 - Math.round(k * 0.55), tTop + k, C('#e6b422')); } pxRects(F, cx - 2, tTop + 7, [[0, 0, 4, 3, '#ffd84a'], [1, 1, 2, 1, '#f6b8c8'], [1, 3, 2, 1, '#e6b422']]); }
   if (am === 'juba_leao') pxRects(F, cx + 4, tTop + 2, [[0, 0, 4, 4, '#d99a2b'], [1, 1, 2, 2, '#f3c86a'], [1, 1, 1, 1, '#1b1622']]);
   if (am === 'caneta_tinteiro') pxRects(F, hasCoat ? cx + 4 : cx + 3, tTop + (hasCoat ? 3 : 2), [[0, 0, 1, 4, '#e6b422'], [0, 0, 1, 1, '#fff1a8'], [1, 1, 1, 2, '#1d2a6a']]);
-  if (am === 'ritalina') pxRects(F, cx + 3, tBot + 1, [[0, 0, 3, 2, '#f4f4f0'], [0, 0, 2, 2, '#ff7a3a']]);
   if (am === 'barrinha') pxRects(F, cx - 7, tBot + 1, [[0, 0, 4, 2, '#b07a3a'], [1, 0, 2, 2, '#e8e8e8']]);
   if (am === 'medidor_pa') { pxRects(F, gL.x, gL.y + gL.dy + 2, [[0, 0, gL.aw, 3, '#2f5fa8'], [0, 1, gL.aw, 1, '#4f7fd0']]); F.set(gL.x + gL.aw, gL.y + gL.dy + 3, C('#7c868f')); }
 }

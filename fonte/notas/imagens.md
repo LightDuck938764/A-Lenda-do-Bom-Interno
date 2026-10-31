@@ -81,7 +81,7 @@
 | foto_fournier.jpg | Fasceíte necrosante perineal com necrose extensa | Banco de questões: CIR6 #113 |
 | foto_hemorroidas_prolapsadas.jpg | Prolapso hemorroidário circunferencial (inspeção anal) | Banco de questões: CIR3 #123 |
 | foto_manchas_koplik.jpg | Manchas de Koplik na mucosa jugal | Wikimedia Commons: CDC — Public domain — https://commons.wikimedia.org/wiki/File:Koplik_spots,_measles_6111_lores.jpg (aprovada pelo usuário) |
-| foto_exantema_sarampo.jpg | Exantema maculopapular do sarampo | Wikimedia Commons: ? — Public domain — https://commons.wikimedia.org/wiki/File:Measles_rash_PHIL_4497_lores.jpg (aprovada pelo usuário) |
+| foto_exantema_sarampo.jpg | Exantema maculopapular do sarampo | Wikimedia Commons: CDC (PHIL 4497) — Public domain — https://commons.wikimedia.org/wiki/File:Measles_rash_PHIL_4497_lores.jpg (aprovada pelo usuário) |
 | foto_eritema_infeccioso.jpg | Face esbofeteada (eritema infeccioso) | Wikimedia Commons: Fifth_disease.jpg: Andrew Kerr derivative work: Berita — Public domain — https://commons.wikimedia.org/wiki/File:Fifth_disease_cropped.jpg (aprovada pelo usuário) |
 | foto_exantema_rubeola.jpg | Exantema da rubéola no dorso | Wikimedia Commons: CDC — Public domain — https://commons.wikimedia.org/wiki/File:Rash_of_rubella_on_back_(crop).JPG (aprovada pelo usuário) |
 | foto_varicela.jpg | Lesões de varicela em vários estágios | Wikimedia Commons: Camiloaranzales — Public domain — https://commons.wikimedia.org/wiki/File:Varicela_Aranzales.jpg (aprovada pelo usuário) |

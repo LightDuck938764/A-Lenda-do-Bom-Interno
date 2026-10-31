@@ -629,6 +629,33 @@ table.lab tr.lab-sub td { font-weight: 700; color: #2f6fd6; padding-top: .45rem;
 .bc-bar { height: 7px; background: #0e1317; } .bc-bar i { display: block; height: 100%; background: linear-gradient(90deg, #3a9e7a, var(--accent)); }
 @media (max-width: 900px) { .bancas { grid-template-columns: 1fr; } }
 @media (max-height: 540px) and (orientation: landscape) { .bancas { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr); gap: .9rem; } .bc-side p { font-size: 12.5px; } .bc-chip { font-size: 11.5px; padding: .25em .55em; } .bc-foco ul { grid-template-columns: 1fr; } }
+
+/* ---------- Reportar erro / créditos ---------- */
+.res-acts { display: flex; gap: .6rem; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+.res-acts .btn.big, .res-acts #dNext, .res-acts #eOk { flex: 1 1 220px; }
+.rep-btn { flex: 0 0 auto; opacity: .85; font-size: 13px; }
+.rep-btn:hover { opacity: 1; }
+.rep-box { z-index: 10000; }
+.rep-panel { width: min(460px, 94vw); display: grid; gap: .55rem; }
+.rep-panel h3, .rep-panel p { margin: 0; }
+.rep-panel textarea { margin: 0; box-sizing: border-box; }
+.rep-sobre { margin: 0; background: var(--panel2); padding: .45rem .6rem; font-size: 14px; } .rep-sobre small { color: var(--mut, #9aa3ad); }
+.rep-mot { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem .8rem; font-size: 14px; }
+.rep-mot label { display: flex; gap: .4rem; align-items: center; cursor: pointer; }
+.rep-panel textarea { font: 14px/1.4 inherit; font-family: inherit; resize: vertical; min-height: 84px; }
+.creditos > p { margin: 0 0 .7rem; }
+.creditos h3 { margin: 1rem 0 .3rem; }
+.cred-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: .5rem; }
+.cred-lista li { display: grid; grid-template-columns: 64px 1fr; gap: .6rem; align-items: center; background: var(--panel2); padding: .4rem; }
+.cred-lista img { width: 64px; height: 64px; object-fit: cover; background: #fff; display: block; }
+.cred-lista b { display: block; font-size: 14px; line-height: 1.25; }
+.cred-lista span { display: block; font-size: 12.5px; color: #aeb7bf; line-height: 1.35; word-break: break-word; }
+.cred-lista a { color: var(--accent); }
+.lightbox .lb-cred { display: block; font-style: normal; font-size: 12.5px; color: #aeb7bf; margin-top: .15rem; }
+@media (max-height: 540px) and (orientation: landscape) {
+  .rep-panel { gap: .35rem; width: min(560px, 94vw); } .rep-panel .hint { display: none; } .rep-panel textarea { min-height: 54px; } .rep-mot { font-size: 13px; grid-template-columns: 1fr 1fr 1fr; }
+  .cred-lista { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+}
 </style>
 <div id="app">
   <div id="stage">
@@ -666,7 +693,8 @@ table.lab tr.lab-sub td { font-weight: 700; color: #2f6fd6; padding-top: .45rem;
   </div>
   <div id="overlay" hidden></div>
 </div>
-<script>
+<script>const CREDITOS_IMG = [{"f": "foto_manchas_koplik.jpg", "m": "Manchas de Koplik na mucosa jugal", "fonte": "Wikimedia Commons", "autor": "CDC", "lic": "Public domain", "link": "https://commons.wikimedia.org/wiki/File:Koplik_spots,_measles_6111_lores.jpg"}, {"f": "foto_exantema_sarampo.jpg", "m": "Exantema maculopapular do sarampo", "fonte": "Wikimedia Commons", "autor": "CDC (PHIL 4497)", "lic": "Public domain", "link": "https://commons.wikimedia.org/wiki/File:Measles_rash_PHIL_4497_lores.jpg"}, {"f": "foto_eritema_infeccioso.jpg", "m": "Face esbofeteada (eritema infeccioso)", "fonte": "Wikimedia Commons", "autor": "Fifth_disease.jpg: Andrew Kerr derivative work: Berita", "lic": "Public domain", "link": "https://commons.wikimedia.org/wiki/File:Fifth_disease_cropped.jpg"}, {"f": "foto_exantema_rubeola.jpg", "m": "Exantema da rubéola no dorso", "fonte": "Wikimedia Commons", "autor": "CDC", "lic": "Public domain", "link": "https://commons.wikimedia.org/wiki/File:Rash_of_rubella_on_back_(crop).JPG"}, {"f": "foto_varicela.jpg", "m": "Lesões de varicela em vários estágios", "fonte": "Wikimedia Commons", "autor": "Camiloaranzales", "lic": "Public domain", "link": "https://commons.wikimedia.org/wiki/File:Varicela_Aranzales.jpg"}, {"f": "foto_mao_pe_boca.jpg", "m": "Vesículas e úlceras orais (doença mão-pé-boca)", "fonte": "Wikimedia Commons", "autor": "1006will", "lic": "CC BY-SA 4.0", "link": "https://commons.wikimedia.org/wiki/File:Hand_foot_and_mouth_disease_on_a_child.jpg"}, {"f": "foto_herpangina.jpg", "m": "Vesículas e úlceras no palato mole e pilares (herpangina)", "fonte": "Wikimedia Commons", "autor": "James Heilman, MD", "lic": "CC BY-SA 4.0", "link": "https://commons.wikimedia.org/wiki/File:Herpangina2016.jpg"}, {"f": "foto_pseudomembrana_difteria.jpg", "m": "Pseudomembrana branco-acinzentada na orofaringe (difteria)", "fonte": "Wikimedia Commons", "autor": "User:Dileepunnikri", "lic": "CC BY-SA 3.0", "link": "https://commons.wikimedia.org/wiki/File:Dirty_white_pseudomembrane_classically_seen_in_diphtheria_2013-07-06_11-07.jpg"}, {"f": "rx_bronquiolite.jpg", "m": "Radiografia de tórax com hiperinsuflação (bronquiolite)", "fonte": "Wikimedia Commons", "autor": "Matteo Di Nardo, Daniela Perrotta, Francesca Stoppa, Corrado Cecchetti, Marco Marano and N", "lic": "CC BY 2.0", "link": "https://commons.wikimedia.org/wiki/File:Bronchiolitis_chest_X-ray.jpg"}, {"f": "rx_membrana_hialina.jpg", "m": "Radiografia: padrão reticulogranular com broncogramas (DMH)", "fonte": "Wikimedia Commons", "autor": "Mikael Häggström, M.D. Author info - Reusing images- Conflicts of interest:  None Mikael H", "lic": "CC0", "link": "https://commons.wikimedia.org/wiki/File:X-ray_of_infant_respiratory_distress_syndrome_(IRDS).png"}, {"f": "rx_aspiracao_meconio.jpg", "m": "Radiografia: infiltrados grosseiros assimétricos (aspiração de mecônio)", "fonte": "Wikimedia Commons", "autor": "Hellerhoff", "lic": "CC BY-SA 4.0", "link": "https://commons.wikimedia.org/wiki/File:Mekoniumaspiration_bei_Neugeborenen_im_Roentgenbild_0W_-_CR_ap_-_001.jpg"}, {"f": "rx_corpo_estranho_bronquico.jpg", "m": "Radiografia de tórax após aspiração de amendoim", "fonte": "Wikimedia Commons", "autor": "Hellerhoff", "lic": "CC BY-SA 3.0", "link": "https://commons.wikimedia.org/wiki/File:Erdnussaspiration_3j_-_Roe_pa_-_001.jpg"}, {"f": "foto_higroma_cistico.jpg", "m": "Recém-nascido com higroma cístico", "fonte": "Wikimedia Commons", "autor": "Timothyjosephwood", "lic": "CC BY-SA 4.0", "link": "https://commons.wikimedia.org/wiki/File:Newborn_infant_with_a_cystic_hygroma_(cropped).jpg"}, {"f": "foto_leucocoria.jpg", "m": "Leucocoria (reflexo branco na pupila)", "fonte": "Wikimedia Commons", "autor": "J Morley-Smith (talk)", "lic": "Public domain", "link": "https://commons.wikimedia.org/wiki/File:Rb_whiteeye.PNG"}, {"f": "ecg_alternancia_eletrica.jpg", "m": "ECG com alternância elétrica", "fonte": "Wikimedia Commons", "autor": "James Heilman, MD", "lic": "CC BY-SA 3.0", "link": "https://commons.wikimedia.org/wiki/File:Electrical_Alternans.JPG"}, {"f": "ecg_bavt.jpg", "m": "ECG com bloqueio atrioventricular total", "fonte": "Wikimedia Commons", "autor": "James Heilman, MD", "lic": "CC BY-SA 3.0", "link": "https://commons.wikimedia.org/wiki/File:CompleteHeartBlock.jpg"}, {"f": "rx_bateria_esofago.jpg", "m": "Radiografia frontal e lateral: bateria em disco impactada no esôfago proximal", "fonte": "PubMed Central (PMC12731419)", "autor": "Amodio J. et al., A Review of Button Battery Ingestions in Children", "lic": "CC BY 4.0", "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12731419/"}, {"f": "rx_atresia_esofago.jpg", "m": "Radiografia de tórax: sonda enrolada no coto esofágico superior (recorte do tórax)", "fonte": "PubMed Central (PMC10514492)", "autor": "Jung E. et al.", "lic": "CC BY 4.0", "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10514492/"}, {"f": "tc_hnf.jpg", "m": "TC trifásica de hiperplasia nodular focal: realce arterial homogêneo com cicatriz central", "fonte": "PubMed Central (PMC4301902)", "autor": "Scialpi M. et al.", "lic": "CC BY 4.0", "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4301902/"}, {"f": "tc_hemangioma_hepatico.jpg", "m": "TC de hemangioma hepático: realce periférico nodular (arterial) e preenchimento centrípeto (portal)", "fonte": "Wikimedia Commons", "autor": "Hellerhoff", "lic": "CC BY-SA 4.0", "link": "https://commons.wikimedia.org/wiki/File:Leberhaemangiom_in_der_Computertomografie_81W_-_CT_axial_KM_arteriell_und_portalvenoes_-_001.jpg"}, {"f": "foto_onfalocele.jpg", "m": "Recém-nascido com onfalocele", "fonte": "PubMed Central (PMC13041776)", "autor": "Misticoni F. et al.", "lic": "CC BY 4.0", "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13041776/"}, {"f": "foto_kawasaki_labios.jpg", "m": "Lábios fissurados e língua em framboesa (Kawasaki)", "fonte": "Wikimedia Commons", "autor": "Dong Soo Kim (derivado por Natr)", "lic": "CC BY 2.0", "link": "https://commons.wikimedia.org/wiki/File:Kawasaki_symptoms_B.jpg"}, {"f": "foto_escarlatina.jpg", "m": "Exantema em lixa no dorso e língua em framboesa (escarlatina)", "fonte": "PubMed Central (PMC10213718)", "autor": "Matsubara V.H. et al. (fotos: Dr. Zuzanna Ślebioda)", "lic": "CC BY 4.0", "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10213718/"}, {"f": "ilustracao_gastrosquise.jpg", "m": "Ilustração de gastrosquise", "fonte": "Wikimedia Commons", "autor": "CDC (EUA)", "lic": "Domínio público", "link": "https://commons.wikimedia.org/wiki/File:Gastroschisis-web.jpg"}, {"f": "ecg_fa_preexcitada.jpg", "m": "ECG de 12 derivações: FA pré-excitada (WPW)", "fonte": "PubMed Central (PMC6166305)", "autor": "Silverman A. et al., Atrial Fibrillation in a Patient With an Accessory Pathway", "lic": "CC BY 4.0", "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6166305/"}, {"f": "ecg_fa_preexcitada_2.jpg", "m": "ECG de 12 derivações fotografado: FA pré-excitada em sanfona", "fonte": "PubMed Central (PMC10173537)", "autor": "Diallo T.H. et al., Pre-excited atrial fibrillation revealed at a very delayed age", "lic": "CC BY 4.0", "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10173537/"}, {"f": "tc_hematoma_cerebelar.jpg", "m": "TC de crânio: hematoma cerebelar volumoso (recorte)", "fonte": "PubMed Central (PMC13079656)", "autor": "Jalal H. et al.", "lic": "CC BY 4.0", "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13079656/"}, {"f": "rx_derrame_parapneumonico_esq.jpg", "m": "RX de tórax: opacidade na base esquerda com derrame (criança de 2,5 anos; convertida para tons de cinza)", "fonte": "PubMed Central (PMC5408360)", "autor": "Diawara I. et al.", "lic": "CC BY 4.0", "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5408360/"}, {"f": "rx_empiema_esq.jpg", "m": "RX de tórax: opacificação completa do hemitórax esquerdo (pneumonia complicada, 5 anos)", "fonte": "PubMed Central (PMC8566417)", "autor": "Rafailidis V. et al.", "lic": "CC BY 4.0", "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8566417/"}, {"f": "rx_derrame_volumoso_esq.jpg", "m": "RX de tórax: derrame pleural volumoso à esquerda com desvio do mediastino (lactente)", "fonte": "PubMed Central (PMC11234768)", "autor": "Zhu Y. et al.", "lic": "CC BY 4.0", "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11234768/"}];
+
 'use strict';
 /* =====================================================================
    A LENDA DO BOM INTERNO — núcleo: constantes, balanceamento, utilidades
@@ -911,10 +939,6 @@ IT('energetico_inf', { nome: 'Energético Infinito', cat: 'amuleto', rar: 'raro'
   desc: 'Uma lata que nunca esvazia. Os cientistas não sabem explicar. Nem o seu coração.',
   efeito: 'Regeneração de energia x2. Habilidades custam 20% menos energia. Penalidade: -1 Precisão (tremor).',
   stats: { precisao: -1 }, fx: { energyRegenMult: 1, skillEnergyMult: -0.2 } });
-IT('ritalina', { nome: '"Ritalina" do RPG', cat: 'amuleto', rar: 'epico', preco: 380, icon: 'ritalina', loja: true, req: { nivel: 6 },
-  desc: 'ITEM SATÍRICO E FICTÍCIO. Paródia de RPG — no mundo real, medicação só com prescrição e acompanhamento médico. Nada de automedicação.',
-  efeito: '+4 Foco. Casos: +15s. Penalidade: -2 Influência (você fala rápido demais).',
-  stats: { foco: 4, influencia: -2 }, fx: { timeBonus: 15 } });
 IT('medidor_pa', { nome: 'Medidor de Pressão Automático', cat: 'amuleto', rar: 'incomum', preco: 160, icon: 'pa', loja: true,
   desc: 'Infla sozinho, aperta o braço e emite um bipe de aprovação.',
   efeito: 'Casos cardiovasculares, de choque ou monitorização: pista revelada e +8s.',
@@ -13494,7 +13518,6 @@ SPR.icon = function (key, size = 32) {
     case 'peste': P(4, 1, 8, 3, '#151218'); P(2, 4, 12, 1, '#151218'); P(5, 5, 6, 4, '#3a3440'); P(9, 7, 5, 2, '#cdb28a'); P(6, 6, 1, 1, '#b23b3b'); P(4, 9, 8, 6, '#2a2630'); break;
     case 'pendrive': P(4, 5, 7, 6, '#3a7bd5'); P(11, 6, 3, 4, '#c9d0d6'); P(5, 6, 3, 1, '#ffd84a'); P(5, 8, 4, 1, '#fff'); break;
     case 'energetico': case 'lata': P(5, 2, 6, 12, '#1d8a4a'); P(5, 2, 6, 1, '#c9d0d6'); P(5, 13, 6, 1, '#c9d0d6'); P(6, 5, 4, 4, '#e8f04a'); P(7, 6, 1, 2, '#1d8a4a'); break;
-    case 'ritalina': P(4, 6, 8, 4, '#e8e8e8'); P(4, 6, 4, 4, '#ff7a3a'); P(3, 7, 1, 2, '#e8e8e8'); P(12, 7, 1, 2, '#e8e8e8'); P(9, 2, 1, 2, '#ffd84a'); P(11, 3, 1, 1, '#ffd84a'); break;
     case 'pa': P(2, 4, 8, 7, '#2b4a7a'); P(3, 5, 6, 3, '#9fe0ff'); P(4, 6, 2, 1, '#173a2a'); P(10, 6, 4, 6, '#3a3a44'); P(9, 11, 2, 3, '#555'); break;
     case 'barrinha': P(2, 6, 12, 4, '#b07a3a'); P(2, 6, 12, 1, '#e6c08a'); P(5, 6, 6, 4, '#e8e8e8'); P(6, 7, 4, 2, '#d13b3b'); break;
     case 'abada': P(3, 2, 10, 10, '#ffcc33'); P(3, 2, 3, 3, '#0000'); P(10, 2, 3, 3, '#0000'); P(5, 5, 6, 3, '#d13b3b'); P(6, 12, 4, 2, '#ffcc33'); break;
@@ -14632,7 +14655,6 @@ function drawGear(ctx, tL, tR, back) {
   if (am === 'chupeta_dourada') { for (let k = 0; k < 7; k++) { F.set(cx - 4 + Math.round(k * 0.55), tTop + k, C('#e6b422')); F.set(cx + 3 - Math.round(k * 0.55), tTop + k, C('#e6b422')); } pxRects(F, cx - 2, tTop + 7, [[0, 0, 4, 3, '#ffd84a'], [1, 1, 2, 1, '#f6b8c8'], [1, 3, 2, 1, '#e6b422']]); }
   if (am === 'juba_leao') pxRects(F, cx + 4, tTop + 2, [[0, 0, 4, 4, '#d99a2b'], [1, 1, 2, 2, '#f3c86a'], [1, 1, 1, 1, '#1b1622']]);
   if (am === 'caneta_tinteiro') pxRects(F, hasCoat ? cx + 4 : cx + 3, tTop + (hasCoat ? 3 : 2), [[0, 0, 1, 4, '#e6b422'], [0, 0, 1, 1, '#fff1a8'], [1, 1, 1, 2, '#1d2a6a']]);
-  if (am === 'ritalina') pxRects(F, cx + 3, tBot + 1, [[0, 0, 3, 2, '#f4f4f0'], [0, 0, 2, 2, '#ff7a3a']]);
   if (am === 'barrinha') pxRects(F, cx - 7, tBot + 1, [[0, 0, 4, 2, '#b07a3a'], [1, 0, 2, 2, '#e8e8e8']]);
   if (am === 'medidor_pa') { pxRects(F, gL.x, gL.y + gL.dy + 2, [[0, 0, gL.aw, 3, '#2f5fa8'], [0, 1, gL.aw, 1, '#4f7fd0']]); F.set(gL.x + gL.aw, gL.y + gL.dy + 3, C('#7c868f')); }
 }
@@ -18379,7 +18401,7 @@ function showTitle() {
         <p class="sub">${N_ESTAGIOS_TXT[0].toUpperCase() + N_ESTAGIOS_TXT.slice(1)} estágios. ${N_ESTAGIOS_TXT[0].toUpperCase() + N_ESTAGIOS_TXT.slice(1)} preceptores. Um jaleco ainda sem mancha de café.</p>
         <div id="acctBox" class="acct" hidden></div>
         <div class="mode-cards">${card('internato')}${card('vest')}</div>
-        <div class="row center"><button class="btn ghost" id="bImp">Importar save</button><button class="btn ghost" id="bSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button></div>
+        <div class="row center"><button class="btn ghost" id="bImp">Importar save</button><button class="btn ghost" id="bSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button><button class="btn ghost" id="bCred">Créditos</button></div>
         <p class="disclaimer">Jogo educacional e ficcional. O conteúdo clínico não substitui protocolos institucionais, supervisão nem orientação médica real.</p>
       </div>
     </div>`, 'full');
@@ -18395,6 +18417,7 @@ function showTitle() {
   });
   $('#bImp').onclick = () => importBox();
   $('#bSom').onclick = () => { SFX.on = !SFX.on; showTitle(); };
+  $('#bCred').onclick = () => openCreditos(showTitle);
   if (typeof acctRender === 'function') acctRender();
 }
 function drawTitleScene() {
@@ -18639,7 +18662,7 @@ function openPanel(name, title, body, opts = {}) {
 function togglePanel(name) {
   if (G.mode === 'panel' && G.panelName === name) return closeOverlay();
   if (G.mode === 'panel') closeOverlay();
-  ({ map: openMap, inv: openInventory, journal: openJournal, skills: openSkills, status: openStatus, pause: openPause, caderno: openCaderno, bancas: openBancas })[name]();
+  ({ map: openMap, inv: openInventory, journal: openJournal, skills: openSkills, status: openStatus, pause: openPause, caderno: openCaderno, bancas: openBancas, creditos: openCreditos })[name]();
 }
 
 /* ---------- Inventário ---------- */
@@ -18840,13 +18863,15 @@ function openStatus() {
 
 /* ---------- Pausa ---------- */
 function openPause() {
-  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzBancas">🎯 Bancas prioritárias</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button>${IS_TOUCH ? `<button class="btn ghost" id="pzFS">${document.fullscreenElement || document.webkitFullscreenElement ? 'Sair da tela cheia' : 'Tela cheia'}</button>` : ''}<button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzT">Tela inicial (trocar de modo)</button><button class="btn ghost" id="pzN">Recomeçar este modo</button>
+  const body = `<div class="pause"><button class="btn big" id="pzC">Continuar</button><button class="btn" id="pzF">Ficha do interno (C)</button><button class="btn" id="pzS">Salvar agora</button><button class="btn ghost" id="pzBancas">🎯 Bancas prioritárias</button><button class="btn ghost" id="pzRep">⚑ Reportar erro</button><button class="btn ghost" id="pzSom">Som: ${SFX.on ? 'ligado' : 'desligado'}</button>${IS_TOUCH ? `<button class="btn ghost" id="pzFS">${document.fullscreenElement || document.webkitFullscreenElement ? 'Sair da tela cheia' : 'Tela cheia'}</button>` : ''}<button class="btn ghost" id="pzE">Exportar save</button><button class="btn ghost" id="pzI">Importar save</button><button class="btn ghost" id="pzT">Tela inicial (trocar de modo)</button><button class="btn ghost" id="pzN">Recomeçar este modo</button><button class="btn ghost" id="pzCred">Créditos das imagens</button>
     <div class="help"><h3>Controles</h3>${IS_TOUCH ? controlesHTML() : `<p><kbd>WASD</kbd>/<kbd>setas</kbd> andar · <kbd>E</kbd> interagir · <kbd>M</kbd> mapa · <kbd>I</kbd> inventário · <kbd>J</kbd> diário · <kbd>K</kbd> habilidades · <kbd>C</kbd> ficha · <kbd>Esc</kbd> pausa${hasSkill('int18') ? ' · <kbd>Shift</kbd> correr' : ''}</p>`}<p class="disclaimer">O progresso é salvo automaticamente neste navegador. Use "Exportar save" para guardar uma cópia. Conteúdo educacional: não substitui protocolos, supervisão ou orientação médica real.</p></div></div>`;
   openPanel('pause', 'Pausa', body, { cls: 'small' });
   $('#pzC').onclick = () => closeOverlay();
   $('#pzF').onclick = () => { closeOverlay(); openStatus(); };
   $('#pzS').onclick = () => { saveGame(); toast('Jogo salvo.'); };
   $('#pzBancas').onclick = () => { closeOverlay(); openBancas(); };
+  $('#pzRep').onclick = () => reportarErro(ULTIMO_CONTEUDO || { tipo: 'geral' });
+  $('#pzCred').onclick = () => { closeOverlay(); openCreditos(() => { closeOverlay(); openPause(); }); };
   $('#pzSom').onclick = () => { SFX.on = !SFX.on; reopen(openPause); };
   if ($('#pzFS')) $('#pzFS').onclick = () => { const on = document.fullscreenElement || document.webkitFullscreenElement; telaCheia(on ? 'sair' : true); setTimeout(() => { if (G.panelName === 'pause') reopen(openPause); }, 400); };
   $('#pzE').onclick = () => { const code = exportSave(); const box = U.el('div', 'confirm', `<div class="panel small"><h3>Exportar save</h3><p>Guarde este código para restaurar o progresso.</p><textarea rows="6" readonly>${code}</textarea><div class="row"><button class="btn" id="exCp">Copiar</button><button class="btn ghost" id="exX">Fechar</button></div></div>`); OV().appendChild(box); const ta = box.querySelector('textarea'); box.querySelector('#exCp').onclick = () => { try { navigator.clipboard.writeText(code).then(() => toast('Copiado!'), () => { ta.select(); }); } catch (e) { ta.select(); } }; box.querySelector('#exX').onclick = () => box.remove(); };
@@ -19014,7 +19039,6 @@ function caseBonuses(c) {
     if (it.fx.areaTime && it.fx.areaTime[c.area]) add(it.fx.areaTime[c.area], it.nome);
     if (it.fx.areaClue === c.area) { out.clue = true; out.notes.push('pista: ' + it.nome); }
   }
-  if (fx('timeBonus')) add(fx('timeBonus'), '"Ritalina" do RPG');
   if (hasSkill('med2') && tags.includes('ef')) add(8, 'Inspeção Sistemática');
   if (hasSkill('med5') && c.area === 'upa') add(10, 'ABCDE Instintivo');
   if (hasSkill('med11') && tags.includes('neuro')) add(10, 'Exame Neurológico Fino');
@@ -19049,7 +19073,7 @@ function bindCaseImgs(host) {
 }
 function openLightbox(src, t) {
   const lb = document.createElement('div'); lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-label', t || 'Exame');
-  lb.innerHTML = `<figure><div class="lb-scroll"><img src="${U.esc(src)}" alt="${U.esc(t || 'Exame')}"></div><figcaption>${U.esc(t || '')} <small>${IS_TOUCH ? 'Toque na imagem para aproximar · ✕ para fechar' : 'Clique na imagem para aproximar · Esc para fechar'}</small></figcaption></figure><button class="lb-x" aria-label="Fechar">✕</button>`;
+  lb.innerHTML = `<figure><div class="lb-scroll"><img src="${U.esc(src)}" alt="${U.esc(t || 'Exame')}"></div><figcaption>${U.esc(t || '')}${creditoCurto(src) ? ` <em class="lb-cred">${U.esc(creditoCurto(src))}</em>` : ''} <small>${IS_TOUCH ? 'Toque na imagem para aproximar · ✕ para fechar' : 'Clique na imagem para aproximar · Esc para fechar'}</small></figcaption></figure><button class="lb-x" aria-label="Fechar">✕</button>`;
   const close = () => { lb.remove(); document.removeEventListener('keydown', key, true); };
   const key = e => { if (e.key === 'Escape') { e.stopPropagation(); e.preventDefault(); close(); } };
   lb.onclick = e => { if (e.target === lb || e.target.classList.contains('lb-x')) close(); };
@@ -19076,6 +19100,7 @@ function CaseRunner(host, c, opts = {}) {
     return txt.split(/(\s+)/).map(w => { if (/\s/.test(w) || w.length < 4 || /\d/.test(w)) return U.esc(w); const id = 'b' + (bid++); if (Math.random() < rate) { blurred.add(id); return `<span class="blur" data-b="${id}" title="Clique para investigar (2 energia)">${U.esc(w)}</span>`; } return U.esc(w); }).join('');
   };
   const p = c.pac;
+  marcarConteudo('caso', c.id, 'Paciente ' + c.pac.nome + ' · ' + AREAS[c.area].nome);
   const fields = [['Queixa principal', c.qp, 'qp'], ['História da doença atual', c.hda, 'hda'], ['Antecedentes e medicações', c.ant, 'ant'], ['Exame físico', c.ef, 'ef'], ['Sinais vitais', c.sv, 'sv'], ['Exames laboratoriais', c.lab, 'lab'], ['Exames complementares', c.ex, 'ex'], ['Imagem / ultrassonografia', c.usg, 'usg'], ['Exames de imagem e traçados', c.img, 'img']].filter(f => f[1] && (!Array.isArray(f[1]) || f[1].length));
   const chartHTML = fields.map(([l, t, k]) => `<div class="fld-c ${k === 'lab' || k === 'img' ? 'fld-x' : ''}"><dt>${l}</dt><dd>${k === 'lab' ? labTableHTML(t) : k === 'img' ? caseImgsHTML(t) : k === 'qp' || k === 'sv' ? U.esc(t) : blurText(t, k)}</dd></div>`).join('');
   const tipoTxt = { bebe: 'Lactente/RN', crianca: 'Criança', adolescente: 'Adolescente', idoso: 'Idoso(a)', gestante: 'Gestante', adulto: 'Adulto(a)' }[p.tipo] || '';
@@ -19141,7 +19166,8 @@ function CaseRunner(host, c, opts = {}) {
       <div class="res-row ${res.dxOk ? 'ok' : 'no'}"><b>${res.dxOk ? '✓' : '✗'} Diagnóstico</b><span>Resposta esperada: <b>${U.esc(dxRight)}</b></span><p>${U.esc(c.edx)}</p></div>
       ${opts.dxOnly ? '' : `<div class="res-row ${res.cdOk ? 'ok' : 'no'}"><b>${res.cdOk ? '✓' : '✗'} Conduta${R.revised ? ' (revisada)' : ''}</b><span>Resposta esperada: <b>${U.esc(cdRight)}</b></span><p>${U.esc(c.ecd)}</p></div>`}
       ${rewardsHTML}
-      <button class="btn big" id="resOk">Continuar</button></div>`;
+      <div class="res-acts">${repBotao({ tipo: 'caso', id: c.id, titulo: 'Paciente ' + c.pac.nome + ' · ' + AREAS[c.area].nome })}<button class="btn big" id="resOk">Continuar</button></div></div>`;
+    bindRepBotoes(foot);
     const ro = foot.querySelector('#resOk'); ro.onclick = () => { if (ro.disabled) return; ro.disabled = true; opts.onDone && opts.onDone(res); };
     foot.scrollIntoView({ block: 'nearest' });
     SFX.play(res.dxOk && res.cdOk ? 'win' : res.dxOk || res.cdOk ? 'ok' : 'bad');
@@ -19191,6 +19217,7 @@ function startCase(c, spot) {
 function QuickRunner(host, q, opts = {}) {
   const time = opts.time || 15; let remain = time, done = false;
   const ord = U.shuffle(q.o.map((t, i) => ({ t, ok: i === 0 })));
+  marcarConteudo('pergunta', q.id || q.q.slice(0, 60), q.q.slice(0, 140));
   const veil = opts.veil || 0; let veilT = veil;
   host.innerHTML = `<div class="quick"><div class="tbar"><i id="qFill"></i></div>${q.img ? '<div class="qfig-wrap"><canvas class="qfig"></canvas></div>' : ''}<p class="q">${U.esc(q.q)}</p><div class="opts ${veil ? 'veiled' : ''}" id="qOpts">${ord.map((o, i) => `<button class="opt" data-o="${i}"><span class="ol">${'ABCD'[i]}</span><span class="otx">${U.esc(o.t)}</span></button>`).join('')}</div>${veil ? '<button class="btn small ghost" id="unveil">"Doutor, seja objetivo" (5 energia)</button>' : ''}<p class="qexp" hidden></p></div>`;
   if (q.img) drawFig(host.querySelector('.qfig'), q.img);
@@ -20588,7 +20615,8 @@ function startEmergencia(ps) {
       if (S.stats.emerg >= 5) unlockAch('emerg5');
     } else if (acertos === 1) { const xp = addXP(30 * BAL.xpMult(S.rep)); rew = `<p class="big">A equipe completou o atendimento com você (${acertos}/${E.r.length}).</p><p>Revise os pontos abaixo: a sequência importa.</p><div class="rewards"><span>+${xp} XP</span></div>`; }
     else { const rp = addRep(-5, 'emergência'); rew = `<p class="bad big">A equipe precisou assumir o atendimento (${acertos}/${E.r.length}).</p><p>Revise os pontos abaixo (${rp} reputação). O tema foi anotado no seu caderno de erros.</p>`; }
-    m.innerHTML = `<div class="result">${rew}<ul class="proc-log">${E.resumo.map(t => `<li>${U.esc(t)}</li>`).join('')}</ul><button class="btn" id="eOk">Voltar ao plantão</button></div>`;
+    m.innerHTML = `<div class="result">${rew}<ul class="proc-log">${E.resumo.map(t => `<li>${U.esc(t)}</li>`).join('')}</ul><div class="res-acts">${repBotao({ tipo: 'emergencia', id: E.id || E.titulo, titulo: E.titulo })}<button class="btn" id="eOk">Voltar ao plantão</button></div></div>`;
+    bindRepBotoes(m);
     document.getElementById('eOk').onclick = () => { G.npcs = G.npcs.filter(x => x !== ps.ent); if (G.psy === ps) G.psy = null; closeOverlay(); checkAch(); saveGame(); };
   };
   step();
@@ -20686,6 +20714,7 @@ function runDuvida(n, qs) {
     const m = document.getElementById('dMain'); if (!m) return;
     if (k >= qs.length) return end();
     const q = qs[k]; const ord = U.shuffle(q.o.map((t, i) => ({ t, ok: i === 0 })));
+    marcarConteudo('duvida', q.id || q.q.slice(0, 60), q.q.slice(0, 140));
     m.innerHTML = `<div class="quick"><p class="eyebrow">Dúvida ${k + 1} de ${qs.length} · ${U.esc(q.tema)}</p>${q.img ? '<div class="qfig-wrap"><canvas class="qfig" role="img" aria-label="Figura da questão"></canvas></div>' : ''}<p class="q">${U.esc(q.q)}</p><div class="opts">${ord.map((x, i) => `<button class="opt" data-i="${i}"><span class="ol">${'ABCD'[i]}</span><span class="otx">${U.esc(x.t)}</span></button>`).join('')}</div></div>`;
     if (q.img) drawFig(m.querySelector('.qfig'), q.img);
     m.querySelectorAll('.opt').forEach(b => b.onclick = () => {
@@ -20694,7 +20723,8 @@ function runDuvida(n, qs) {
       SFX.play(ok ? 'ok' : 'bad');
       m.querySelectorAll('.opt').forEach((x, i) => { x.disabled = true; if (ord[i].ok) x.classList.add('right'); });
       if (!ok) b.classList.add('wrong');
-      m.insertAdjacentHTML('beforeend', `<div class="fb ${ok ? 'good' : 'bad'}"><b>${ok ? 'Isso! Agora eu entendi.' : 'Hmm, acho que não é isso.'}</b> ${U.esc(q.e)}</div><button class="btn" id="dNext">${k + 1 < qs.length ? 'Próxima dúvida' : 'Encerrar'}</button>`);
+      m.insertAdjacentHTML('beforeend', `<div class="fb ${ok ? 'good' : 'bad'}"><b>${ok ? 'Isso! Agora eu entendi.' : 'Hmm, acho que não é isso.'}</b> ${U.esc(q.e)}</div><div class="res-acts">${repBotao({ tipo: 'duvida', id: q.id || q.q.slice(0, 60), titulo: q.q.slice(0, 140) })}<button class="btn" id="dNext">${k + 1 < qs.length ? 'Próxima dúvida' : 'Encerrar'}</button></div>`);
+      bindRepBotoes(m);
       const nx = document.getElementById('dNext'); nx.onclick = () => { k++; step(); }; nx.focus();
     });
   };
@@ -20709,6 +20739,83 @@ function runDuvida(n, qs) {
     document.getElementById('dOk').onclick = () => { closeOverlay(); onMainEvent('duvida', { ok, npc: n.id }); checkAch(); saveGame(); };
   };
   step();
+}
+
+/* =====================================================================
+   REPORTAR ERRO + CRÉDITOS DAS IMAGENS
+   - reportarErro(ctx): caixa sobre a tela atual (não fecha o caso).
+     Sempre guarda uma cópia neste aparelho (localStorage 'lbi_reportes');
+     no site, também envia para o Firebase em reportes/{id}.
+     ctx = { tipo: 'caso'|'pergunta'|'duvida'|'emergencia'|'geral', id, titulo }
+   - ULTIMO_CONTEUDO guarda o último caso/pergunta mostrado, para o botão
+     do menu de pausa já saber do que o jogador está falando.
+   - openCreditos(): lista as imagens de licença livre (CREDITOS_IMG vem
+     do build.py, lido de notas/imagens.md).
+   ===================================================================== */
+let ULTIMO_CONTEUDO = null;
+function marcarConteudo(tipo, id, titulo) { ULTIMO_CONTEUDO = { tipo, id: String(id || '').slice(0, 120), titulo: String(titulo || '').slice(0, 160) }; }
+const REP_KEY = 'lbi_reportes';
+const REP_MOTIVOS = [['resposta', 'Gabarito errado'], ['explicacao', 'Explicação ou texto'], ['imagem', 'Imagem ou exame'], ['desatualizado', 'Conduta desatualizada'], ['bug', 'Falha do jogo'], ['outro', 'Outro']];
+function repLocais() { try { const a = JSON.parse(localStorage.getItem(REP_KEY) || '[]'); return Array.isArray(a) ? a : []; } catch (e) { return []; } }
+function repSalvarLocal(r) { try { const a = repLocais(); a.push(r); while (a.length > 60) a.shift(); localStorage.setItem(REP_KEY, JSON.stringify(a)); } catch (e) { } }
+function repBotao(ctx, cls = '') { return `<button class="btn small ghost rep-btn ${cls}" data-rep='${U.esc(JSON.stringify(ctx))}'>⚑ Reportar erro</button>`; }
+function bindRepBotoes(host) { host.querySelectorAll('.rep-btn').forEach(b => b.onclick = e => { e.stopPropagation(); let ctx = null; try { ctx = JSON.parse(b.dataset.rep); } catch (er) { } reportarErro(ctx); }); }
+
+function reportarErro(ctx) {
+  ctx = ctx || ULTIMO_CONTEUDO || { tipo: 'geral', id: '', titulo: '' };
+  if (document.querySelector('.rep-box')) return;
+  const sobre = ctx.tipo === 'geral' || !ctx.id ? '' : `<p class="rep-sobre"><b>${{ caso: 'Caso', pergunta: 'Pergunta', duvida: 'Dúvida', emergencia: 'Emergência' }[ctx.tipo] || 'Conteúdo'}:</b> ${U.esc(ctx.titulo || ctx.id)}${ctx.id && ctx.titulo ? ` <small>(${U.esc(ctx.id)})</small>` : ''}</p>`;
+  const box = U.el('div', 'confirm rep-box', `<div class="panel small rep-panel" role="dialog" aria-label="Reportar erro"><h3>⚑ Reportar erro</h3>${sobre}
+    <p class="hint">O que está errado? A equipe revisa cada reporte.</p>
+    <div class="rep-mot">${REP_MOTIVOS.map(([k, t], i) => `<label><input type="radio" name="repm" value="${k}" ${i === 0 && ctx.tipo !== 'geral' ? 'checked' : i === 4 && ctx.tipo === 'geral' ? 'checked' : ''}> ${t}</label>`).join('')}</div>
+    <textarea id="repTxt" rows="4" maxlength="800" placeholder="Explique em poucas palavras. Se souber, cite a fonte (diretriz, livro, artigo)."></textarea>
+    <div class="row"><button class="btn" id="repOk">Enviar</button><button class="btn ghost" id="repX">Cancelar</button></div></div>`);
+  document.body.appendChild(box);
+  const ta = box.querySelector('#repTxt'); setTimeout(() => { try { ta.focus(); } catch (e) { } }, 30);
+  const close = () => { box.remove(); document.removeEventListener('keydown', key, true); };
+  const key = e => { e.stopPropagation(); if (e.key === 'Escape') { e.preventDefault(); close(); } };
+  document.addEventListener('keydown', key, true);
+  box.onclick = e => { if (e.target === box) close(); };
+  box.querySelector('#repX').onclick = close;
+  box.querySelector('#repOk').onclick = () => {
+    const txt = ta.value.trim(); const m = (box.querySelector('input[name=repm]:checked') || {}).value || 'outro';
+    if (txt.length < 5) { toast('Escreva o que está errado (pelo menos algumas palavras).', 'bad'); ta.focus(); return; }
+    const r = { tipo: ctx.tipo || 'geral', id: ctx.id || '', titulo: ctx.titulo || '', motivo: m, txt: txt.slice(0, 800), modo: S ? S.modo : '', nivel: S ? level() : 0, quando: new Date().toISOString(), tela: innerWidth + 'x' + innerHeight + (IS_TOUCH ? ' toque' : '') };
+    repSalvarLocal(r);
+    close();
+    repEnviar(r).then(ok => toast(ok ? '⚑ Obrigado! Reporte enviado para a equipe.' : '⚑ Obrigado! Reporte guardado neste aparelho.'));
+  };
+}
+async function repEnviar(r) {
+  if (typeof FB === 'undefined' || !FB.ok) return false;
+  try {
+    const u = await Promise.race([FB.ready, new Promise(res => setTimeout(() => res(null), 4000))]); if (!u) return false;
+    await Promise.race([FB.db.ref('reportes').push(Object.assign({ uid: u.uid, t: firebase.database.ServerValue.TIMESTAMP }, r)), new Promise((_, rej) => setTimeout(() => rej(new Error('tempo')), 6000))]);
+    return true;
+  } catch (e) { console.warn('reporte', e); return false; }
+}
+
+/* ---------- Créditos das imagens ---------- */
+const CRED_BY = Object.fromEntries((typeof CREDITOS_IMG !== 'undefined' ? CREDITOS_IMG : []).map(c => [c.f, c]));
+function creditoCurto(f) { const c = CRED_BY[String(f).split('/').pop()]; if (!c) return ''; return `Imagem: ${c.autor && c.autor !== '?' ? c.autor + ' · ' : ''}${c.fonte} · ${c.lic}`; }
+function licLink(lic) {
+  const m = /CC BY(-SA)? ?([0-9.]+)/i.exec(lic); if (m) return `https://creativecommons.org/licenses/by${m[1] ? '-sa' : ''}/${m[2]}/deed.pt-br`;
+  if (/CC0/i.test(lic)) return 'https://creativecommons.org/publicdomain/zero/1.0/deed.pt-br';
+  return '';
+}
+function openCreditos(voltar) {
+  const lista = (typeof CREDITOS_IMG !== 'undefined' ? CREDITOS_IMG : []).slice().sort((a, b) => a.m.localeCompare(b.m, 'pt'));
+  const linhas = lista.map(c => { const ll = licLink(c.lic); return `<li><img src="${U.esc(IMG_BASE + c.f)}" alt="" loading="lazy"><div><b>${U.esc(c.m)}</b><span>${U.esc(c.autor && c.autor !== '?' ? c.autor : 'Autor não identificado')} · ${U.esc(c.fonte)}</span><span>${ll ? `<a href="${ll}" target="_blank" rel="noopener">${U.esc(c.lic)}</a>` : U.esc(c.lic)} · <a href="${U.esc(c.link)}" target="_blank" rel="noopener">original</a></span></div></li>`; }).join('');
+  const body = `<div class="creditos"><p>As imagens de exames e fotos clínicas abaixo são de terceiros, usadas sob licenças livres (domínio público, CC0, CC BY ou CC BY-SA). Algumas foram recortadas ou redimensionadas para caber na tela do jogo; isso não indica endosso dos autores.</p>
+    <ul class="cred-lista">${linhas || '<li>Nenhuma imagem de terceiros.</li>'}</ul>
+    <h3>Tipografia</h3><p>Pixelify Sans, Silkscreen e Atkinson Hyperlegible, pelo Google Fonts, sob a SIL Open Font License.</p>
+    <h3>Arte e sons</h3><p>Personagens, mapas, objetos e efeitos sonoros foram desenhados e gerados para o próprio jogo.</p>
+    ${voltar ? '<div class="row center"><button class="btn" id="crVolta">Voltar</button></div>' : ''}</div>`;
+  if (G.mode === 'title') {
+    setOverlay(`<div class="panel wide" role="dialog" aria-label="Créditos"><header class="p-head"><h2>Créditos</h2><button class="x" id="pClose" aria-label="Fechar">✕</button></header><div class="p-body">${body}</div></div>`, 'dim');
+    $('#pClose').onclick = () => showTitle();
+  } else openPanel('creditos', 'Créditos', body, { cls: 'wide' });
+  const v = OV().querySelector('#crVolta'); if (v) v.onclick = () => voltar();
 }
 
 /* =====================================================================
