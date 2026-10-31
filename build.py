@@ -1,6 +1,20 @@
 import glob, os
 root = os.path.dirname(os.path.abspath(__file__))
 js = '\n'.join(open(f, encoding='utf-8').read() for f in sorted(glob.glob(os.path.join(root, 'src', '*.js'))))
+# créditos das imagens com licença livre, lidos de notas/imagens.md (Fonte: autor — licença — link)
+import json, re
+def creditos():
+    out = []
+    for ln in open(os.path.join(root, 'notas', 'imagens.md'), encoding='utf-8'):
+        c = [x.strip() for x in ln.strip().strip('|').split('|')]
+        if len(c) < 3 or not c[0].endswith(('.jpg', '.png', '.jpeg', '.webp')): continue
+        m = re.match(r'(Wikimedia Commons|PubMed Central[^:]*|Open-i[^:]*|SciELO[^:]*|Cureus[^:]*|PhysioNet[^:]*):\s*(.*?)\s+—\s+(.*?)\s+—\s+(\S+)', c[2])
+        if not m: continue
+        lic = m.group(3)
+        if re.search(r'\bNC\b|\bND\b|autorizado', lic): continue
+        out.append({'f': c[0], 'm': c[1], 'fonte': m.group(1).strip(), 'autor': m.group(2).strip(), 'lic': lic, 'link': m.group(4)})
+    return out
+js = 'const CREDITOS_IMG = ' + json.dumps(creditos(), ensure_ascii=False) + ';\n' + js
 css = open(os.path.join(root, 'style.css'), encoding='utf-8').read()
 shell = open(os.path.join(root, 'shell.html'), encoding='utf-8').read()
 out = shell.replace('/*__CSS__*/', css).replace('/*__JS__*/', js)

@@ -23,7 +23,6 @@ function caseBonuses(c) {
     if (it.fx.areaTime && it.fx.areaTime[c.area]) add(it.fx.areaTime[c.area], it.nome);
     if (it.fx.areaClue === c.area) { out.clue = true; out.notes.push('pista: ' + it.nome); }
   }
-  if (fx('timeBonus')) add(fx('timeBonus'), '"Ritalina" do RPG');
   if (hasSkill('med2') && tags.includes('ef')) add(8, 'Inspeção Sistemática');
   if (hasSkill('med5') && c.area === 'upa') add(10, 'ABCDE Instintivo');
   if (hasSkill('med11') && tags.includes('neuro')) add(10, 'Exame Neurológico Fino');
@@ -58,7 +57,7 @@ function bindCaseImgs(host) {
 }
 function openLightbox(src, t) {
   const lb = document.createElement('div'); lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-label', t || 'Exame');
-  lb.innerHTML = `<figure><div class="lb-scroll"><img src="${U.esc(src)}" alt="${U.esc(t || 'Exame')}"></div><figcaption>${U.esc(t || '')} <small>${IS_TOUCH ? 'Toque na imagem para aproximar · ✕ para fechar' : 'Clique na imagem para aproximar · Esc para fechar'}</small></figcaption></figure><button class="lb-x" aria-label="Fechar">✕</button>`;
+  lb.innerHTML = `<figure><div class="lb-scroll"><img src="${U.esc(src)}" alt="${U.esc(t || 'Exame')}"></div><figcaption>${U.esc(t || '')}${creditoCurto(src) ? ` <em class="lb-cred">${U.esc(creditoCurto(src))}</em>` : ''} <small>${IS_TOUCH ? 'Toque na imagem para aproximar · ✕ para fechar' : 'Clique na imagem para aproximar · Esc para fechar'}</small></figcaption></figure><button class="lb-x" aria-label="Fechar">✕</button>`;
   const close = () => { lb.remove(); document.removeEventListener('keydown', key, true); };
   const key = e => { if (e.key === 'Escape') { e.stopPropagation(); e.preventDefault(); close(); } };
   lb.onclick = e => { if (e.target === lb || e.target.classList.contains('lb-x')) close(); };
@@ -85,6 +84,7 @@ function CaseRunner(host, c, opts = {}) {
     return txt.split(/(\s+)/).map(w => { if (/\s/.test(w) || w.length < 4 || /\d/.test(w)) return U.esc(w); const id = 'b' + (bid++); if (Math.random() < rate) { blurred.add(id); return `<span class="blur" data-b="${id}" title="Clique para investigar (2 energia)">${U.esc(w)}</span>`; } return U.esc(w); }).join('');
   };
   const p = c.pac;
+  marcarConteudo('caso', c.id, 'Paciente ' + c.pac.nome + ' · ' + AREAS[c.area].nome);
   const fields = [['Queixa principal', c.qp, 'qp'], ['História da doença atual', c.hda, 'hda'], ['Antecedentes e medicações', c.ant, 'ant'], ['Exame físico', c.ef, 'ef'], ['Sinais vitais', c.sv, 'sv'], ['Exames laboratoriais', c.lab, 'lab'], ['Exames complementares', c.ex, 'ex'], ['Imagem / ultrassonografia', c.usg, 'usg'], ['Exames de imagem e traçados', c.img, 'img']].filter(f => f[1] && (!Array.isArray(f[1]) || f[1].length));
   const chartHTML = fields.map(([l, t, k]) => `<div class="fld-c ${k === 'lab' || k === 'img' ? 'fld-x' : ''}"><dt>${l}</dt><dd>${k === 'lab' ? labTableHTML(t) : k === 'img' ? caseImgsHTML(t) : k === 'qp' || k === 'sv' ? U.esc(t) : blurText(t, k)}</dd></div>`).join('');
   const tipoTxt = { bebe: 'Lactente/RN', crianca: 'Criança', adolescente: 'Adolescente', idoso: 'Idoso(a)', gestante: 'Gestante', adulto: 'Adulto(a)' }[p.tipo] || '';
@@ -150,7 +150,8 @@ function CaseRunner(host, c, opts = {}) {
       <div class="res-row ${res.dxOk ? 'ok' : 'no'}"><b>${res.dxOk ? '✓' : '✗'} Diagnóstico</b><span>Resposta esperada: <b>${U.esc(dxRight)}</b></span><p>${U.esc(c.edx)}</p></div>
       ${opts.dxOnly ? '' : `<div class="res-row ${res.cdOk ? 'ok' : 'no'}"><b>${res.cdOk ? '✓' : '✗'} Conduta${R.revised ? ' (revisada)' : ''}</b><span>Resposta esperada: <b>${U.esc(cdRight)}</b></span><p>${U.esc(c.ecd)}</p></div>`}
       ${rewardsHTML}
-      <button class="btn big" id="resOk">Continuar</button></div>`;
+      <div class="res-acts">${repBotao({ tipo: 'caso', id: c.id, titulo: 'Paciente ' + c.pac.nome + ' · ' + AREAS[c.area].nome })}<button class="btn big" id="resOk">Continuar</button></div></div>`;
+    bindRepBotoes(foot);
     const ro = foot.querySelector('#resOk'); ro.onclick = () => { if (ro.disabled) return; ro.disabled = true; opts.onDone && opts.onDone(res); };
     foot.scrollIntoView({ block: 'nearest' });
     SFX.play(res.dxOk && res.cdOk ? 'win' : res.dxOk || res.cdOk ? 'ok' : 'bad');
@@ -200,6 +201,7 @@ function startCase(c, spot) {
 function QuickRunner(host, q, opts = {}) {
   const time = opts.time || 15; let remain = time, done = false;
   const ord = U.shuffle(q.o.map((t, i) => ({ t, ok: i === 0 })));
+  marcarConteudo('pergunta', q.id || q.q.slice(0, 60), q.q.slice(0, 140));
   const veil = opts.veil || 0; let veilT = veil;
   host.innerHTML = `<div class="quick"><div class="tbar"><i id="qFill"></i></div>${q.img ? '<div class="qfig-wrap"><canvas class="qfig"></canvas></div>' : ''}<p class="q">${U.esc(q.q)}</p><div class="opts ${veil ? 'veiled' : ''}" id="qOpts">${ord.map((o, i) => `<button class="opt" data-o="${i}"><span class="ol">${'ABCD'[i]}</span><span class="otx">${U.esc(o.t)}</span></button>`).join('')}</div>${veil ? '<button class="btn small ghost" id="unveil">"Doutor, seja objetivo" (5 energia)</button>' : ''}<p class="qexp" hidden></p></div>`;
   if (q.img) drawFig(host.querySelector('.qfig'), q.img);

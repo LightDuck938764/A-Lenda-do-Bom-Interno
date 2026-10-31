@@ -90,6 +90,7 @@ function runDuvida(n, qs) {
     const m = document.getElementById('dMain'); if (!m) return;
     if (k >= qs.length) return end();
     const q = qs[k]; const ord = U.shuffle(q.o.map((t, i) => ({ t, ok: i === 0 })));
+    marcarConteudo('duvida', q.id || q.q.slice(0, 60), q.q.slice(0, 140));
     m.innerHTML = `<div class="quick"><p class="eyebrow">Dúvida ${k + 1} de ${qs.length} · ${U.esc(q.tema)}</p>${q.img ? '<div class="qfig-wrap"><canvas class="qfig" role="img" aria-label="Figura da questão"></canvas></div>' : ''}<p class="q">${U.esc(q.q)}</p><div class="opts">${ord.map((x, i) => `<button class="opt" data-i="${i}"><span class="ol">${'ABCD'[i]}</span><span class="otx">${U.esc(x.t)}</span></button>`).join('')}</div></div>`;
     if (q.img) drawFig(m.querySelector('.qfig'), q.img);
     m.querySelectorAll('.opt').forEach(b => b.onclick = () => {
@@ -98,7 +99,8 @@ function runDuvida(n, qs) {
       SFX.play(ok ? 'ok' : 'bad');
       m.querySelectorAll('.opt').forEach((x, i) => { x.disabled = true; if (ord[i].ok) x.classList.add('right'); });
       if (!ok) b.classList.add('wrong');
-      m.insertAdjacentHTML('beforeend', `<div class="fb ${ok ? 'good' : 'bad'}"><b>${ok ? 'Isso! Agora eu entendi.' : 'Hmm, acho que não é isso.'}</b> ${U.esc(q.e)}</div><button class="btn" id="dNext">${k + 1 < qs.length ? 'Próxima dúvida' : 'Encerrar'}</button>`);
+      m.insertAdjacentHTML('beforeend', `<div class="fb ${ok ? 'good' : 'bad'}"><b>${ok ? 'Isso! Agora eu entendi.' : 'Hmm, acho que não é isso.'}</b> ${U.esc(q.e)}</div><div class="res-acts">${repBotao({ tipo: 'duvida', id: q.id || q.q.slice(0, 60), titulo: q.q.slice(0, 140) })}<button class="btn" id="dNext">${k + 1 < qs.length ? 'Próxima dúvida' : 'Encerrar'}</button></div>`);
+      bindRepBotoes(m);
       const nx = document.getElementById('dNext'); nx.onclick = () => { k++; step(); }; nx.focus();
     });
   };
